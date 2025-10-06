@@ -8,15 +8,15 @@ LLMs often have incomplete or outdated knowledge of NHS design patterns and comp
 
 ## Contents
 
-All generated documentation lives in the `dist/` folder:
+All generated documentation lives in the [`dist/`](dist/) folder:
 
 **Auto-generated component documentation:**
-- `nhs-frontend-component-reference-short.instructions.md` - Quick reference with examples
-- `nhs-frontend-component-reference.instructions.md` - Complete parameter specifications
-- `nhs-frontend-sass-reference.instructions.md` - Complete Sass documentation (mixins, functions, variables) with metadata
+- [`nhs-frontend-component-reference-short.instructions.md`](dist/nhs-frontend-component-reference-short.instructions.md) - Quick reference with examples
+- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete parameter specifications
+- [`nhs-frontend-sass-reference.instructions.md`](dist/nhs-frontend-sass-reference.instructions.md) - Complete Sass documentation (mixins, functions, variables) with metadata
 
 **Hand-written guides:**
-- `nhs-prototype-kit-style-guide.instructions.md` - Patterns and best practices for prototyping with Nunjucks
+- [`nhs-prototype-kit-style-guide.instructions.md`](dist/nhs-prototype-kit-style-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
 
 ## Using with LLMs
 
@@ -46,10 +46,10 @@ To generate Sass documentation (requires [sassdoc](https://www.npmjs.com/package
 
 ```bash
 # From project root (looks for ../nhsuk-frontend by default)
-node scripts/generate-nhs-sass-docs.js
+node scripts/generate-nhs-frontend-sass-docs.js
 
 # Or specify custom path
-NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node scripts/generate-nhs-sass-docs.js
+NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node scripts/generate-nhs-frontend-sass-docs.js
 ```
 
 **Note:** The Sass documentation script uses `npx sassdoc` so you don't need to install sassdoc globally. If you want to install it globally:
@@ -63,8 +63,8 @@ npm install -g sassdoc
 To regenerate both component and Sass documentation:
 
 ```bash
-node scripts/generate-nhs-frontend-docs.js
-node scripts/generate-nhs-sass-docs.js
+node scripts/generate-nhs-frontend-component-docs.js
+node scripts/generate-nhs-frontend-sass-docs.js
 ```
 
 ## Repository structure
@@ -73,12 +73,12 @@ node scripts/generate-nhs-sass-docs.js
 nhs-llm-docs/
 ├── README.md
 ├── scripts/
-│   ├── generate-nhs-frontend-docs.js
-│   └── generate-nhs-sass-docs.js
+│   ├── generate-nhs-frontend-component-docs.js
+│   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-crib-sheet.instructions.md
-│   ├── nhs-frontend-detailed-reference.instructions.md
-│   ├── nhs-frontend-sass-reference.json
+│   ├── nhs-frontend-component-reference-short.instructions.md
+│   ├── nhs-frontend-component-reference.instructions.md
+│   ├── nhs-frontend-sass-reference.instructions.md
 │   └── nhs-prototype-kit-style-guide.instructions.md
 └── .gitignore
 ```
