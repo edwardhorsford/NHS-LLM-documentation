@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Generate documentation for NHS Frontend components
-// Usage: node generate-nhs-frontend-docs.js
+// Usage: node generate-nhs-frontend-component-docs.js
 
 import fs from 'fs/promises';
 import path from 'path';
@@ -49,7 +49,7 @@ NHS Frontend Documentation Generator
 Generates comprehensive documentation from NHS Frontend components.
 
 USAGE:
-  node generate-nhs-frontend-docs.js [options]
+  node generate-nhs-frontend-component-docs.js [options]
 
 OPTIONS:
   --help              Show this help message
@@ -60,15 +60,15 @@ ENVIRONMENT VARIABLES:
 
 EXAMPLES:
   # Use default repository location
-  node generate-nhs-frontend-docs.js
+  node generate-nhs-frontend-component-docs.js
 
   # Use custom repository location
-  NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node generate-nhs-frontend-docs.js
+  NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node generate-nhs-frontend-component-docs.js
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-crib-sheet.instructions.md       Quick reference with examples
-  - nhs-frontend-detailed-reference.instructions.md  Complete parameter documentation
+  - nhs-frontend-component-reference-short.instructions.md  Quick reference with examples
+  - nhs-frontend-component-reference.instructions.md        Complete parameter documentation
 `);
   process.exit(0);
 }
@@ -298,13 +298,13 @@ function generateFallbackExample(component) {
 }
 
 /**
- * Generate both crib sheet and detailed reference in one pass
+ * Generate both short and full reference in one pass
  */
 function generateDocumentation(components, version, gitInfo, generatedAt) {
   const header = generateHeader(version, gitInfo, generatedAt);
   
   // Initialize both outputs
-  let cribSheet = `# NHS Frontend Components - Quick Reference
+  let shortReference = `# NHS Frontend Components - Quick Reference
 
 ${header}This is a quick reference guide for NHS Frontend components, generated from macro-options.mjs files.
 
@@ -314,13 +314,13 @@ ${header}This is a quick reference guide for NHS Frontend components, generated 
 |-----------|----------------|-------------------|
 `;
 
-  let detailedReference = `# NHS Frontend Components - Detailed Reference
+  let fullReference = `# NHS Frontend Components - Detailed Reference
 
 ${header}This comprehensive reference guide for NHS Frontend components includes all parameters and examples.
 
 `;
 
-  // Generate overview table for crib sheet
+  // Generate overview table for short reference
   for (const component of components) {
     const flatParams = flattenParams(component.params);
     const requiredParams = flatParams
@@ -333,30 +333,30 @@ ${header}This comprehensive reference guide for NHS Frontend components includes
       .map(param => param.name)
       .slice(0, 3);
 
-    cribSheet += `| **${component.name}** | ${requiredParams.join(', ') || 'None'} | ${keyOptionalParams.join(', ') || 'None'} |\n`;
+    shortReference += `| **${component.name}** | ${requiredParams.join(', ') || 'None'} | ${keyOptionalParams.join(', ') || 'None'} |\n`;
   }
 
-  cribSheet += `\n## Quick Usage Examples\n\n`;
+  shortReference += `\n## Quick Usage Examples\n\n`;
 
   // Process each component once
   for (const component of components) {
-    // Add to crib sheet
-    cribSheet += `### ${component.name}\n\n`;
+    // Add to short reference
+    shortReference += `### ${component.name}\n\n`;
 
-    // Add to detailed reference
-    detailedReference += `## ${component.name}\n\n`;
+    // Add to full reference
+    fullReference += `## ${component.name}\n\n`;
 
     // Add component description if available in examples
     const defaultExample = component.examples.default || component.examples[Object.keys(component.examples)[0]];
     if (defaultExample?.description) {
-      detailedReference += `${defaultExample.description}\n\n`;
+      fullReference += `${defaultExample.description}\n\n`;
     }
 
-    // Parameters section (detailed reference only)
+    // Parameters section (full reference only)
     if (Object.keys(component.params).length > 0) {
-      detailedReference += `### Parameters\n\n`;
-      detailedReference += `| Parameter | Type | Required | Description |\n`;
-      detailedReference += `|-----------|------|----------|-------------|\n`;
+      fullReference += `### Parameters\n\n`;
+      fullReference += `| Parameter | Type | Required | Description |\n`;
+      fullReference += `|-----------|------|----------|-------------|\n`;
 
       const flatParams = flattenParams(component.params);
 
@@ -365,10 +365,10 @@ ${header}This comprehensive reference guide for NHS Frontend components includes
         const required = param.required ? '✓' : '';
         const description = param.description || '';
 
-        detailedReference += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
+        fullReference += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
       }
 
-      detailedReference += `\n`;
+      fullReference += `\n`;
     }
 
     // Examples section
@@ -376,7 +376,7 @@ ${header}This comprehensive reference guide for NHS Frontend components includes
     let hasValidExample = false;
 
     if (exampleKeys.length > 0) {
-      detailedReference += `### Examples\n\n`;
+      fullReference += `### Examples\n\n`;
 
       // Process each example
       for (let i = 0; i < exampleKeys.length; i++) {
@@ -385,39 +385,39 @@ ${header}This comprehensive reference guide for NHS Frontend components includes
         const formattedExample = formatExample(component, exampleKey, example);
 
         if (formattedExample) {
-          // Add to detailed reference (all examples)
-          detailedReference += `#### ${exampleKey}\n\n`;
-          detailedReference += `\`\`\`njk\n`;
-          detailedReference += formattedExample;
-          detailedReference += `\n\`\`\`\n\n`;
+          // Add to full reference (all examples)
+          fullReference += `#### ${exampleKey}\n\n`;
+          fullReference += `\`\`\`njk\n`;
+          fullReference += formattedExample;
+          fullReference += `\n\`\`\`\n\n`;
 
-          // Add to crib sheet (first example only)
+          // Add to short reference (first example only)
           if (i === 0) {
             hasValidExample = true;
-            cribSheet += `\`\`\`njk\n`;
-            cribSheet += formattedExample;
-            cribSheet += `\n\`\`\`\n\n`;
+            shortReference += `\`\`\`njk\n`;
+            shortReference += formattedExample;
+            shortReference += `\n\`\`\`\n\n`;
           }
         }
       }
     }
 
-    // If no valid examples found, use fallback for crib sheet
+    // If no valid examples found, use fallback for short reference
     if (!hasValidExample) {
       const fallback = generateFallbackExample(component);
       if (fallback !== '*No required parameters*') {
-        cribSheet += `\`\`\`njk\n`;
-        cribSheet += fallback;
-        cribSheet += `\n\`\`\`\n\n`;
+        shortReference += `\`\`\`njk\n`;
+        shortReference += fallback;
+        shortReference += `\n\`\`\`\n\n`;
       } else {
-        cribSheet += `${fallback}\n\n`;
+        shortReference += `${fallback}\n\n`;
       }
     }
 
-    detailedReference += `---\n\n`;
+    fullReference += `---\n\n`;
   }
 
-  return { cribSheet, detailedReference };
+  return { shortReference, fullReference };
 }
 
 /**
@@ -446,8 +446,8 @@ async function main() {
     showHelp();
   }
 
-  console.log('🏥 NHS Frontend Documentation Generator');
-  console.log('========================================\n');
+  console.log('🏥 NHS Frontend Component Documentation Generator');
+  console.log('==================================================\n');
 
   // Resolve paths
   let repoPath = path.resolve(CONFIG.repoPath);
@@ -461,7 +461,7 @@ async function main() {
       console.log(`✓ Found NHS Frontend at: ${repoPath}\n`);
       pathValid = true;
     } catch (error) {
-      console.error(`❌ NHS Frontend not found at: ${repoPath}`);
+      console.error(`✗ NHS Frontend not found at: ${repoPath}`);
       console.error(`   Looking for: ${componentsDir}\n`);
       
       const userPath = await prompt('Enter path to NHS Frontend repository (or press Ctrl+C to cancel): ');
@@ -485,7 +485,7 @@ async function main() {
   const componentDirs = await findComponents(componentsDir);
 
   if (componentDirs.length === 0) {
-    console.error('❌ No component directories found. Check repository structure.');
+    console.error('✗ No component directories found. Check repository structure.');
     process.exit(1);
   }
 
@@ -514,7 +514,7 @@ async function main() {
   console.log(`✓ Found ${successCount} components\n`);
 
   if (components.length === 0) {
-    console.error('❌ No components were successfully parsed. Check repository structure.');
+    console.error('✗ No components were successfully parsed. Check repository structure.');
     process.exit(1);
   }
 
@@ -530,21 +530,21 @@ async function main() {
 
   // Generate both documents in one pass
   console.log('📝 Generating documentation...');
-  const { cribSheet, detailedReference } = generateDocumentation(components, version, gitInfo, generatedAt);
+  const { shortReference, fullReference } = generateDocumentation(components, version, gitInfo, generatedAt);
 
   // Write files with .instructions.md suffix for Copilot compatibility
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-crib-sheet.instructions.md'), cribSheet);
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-detailed-reference.instructions.md'), detailedReference);
+  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference-short.instructions.md'), shortReference);
+  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.instructions.md'), fullReference);
 
-  console.log(`✓ Crib sheet: ${CONFIG.outputDir}/nhs-frontend-crib-sheet.instructions.md`);
-  console.log(`✓ Detailed reference: ${CONFIG.outputDir}/nhs-frontend-detailed-reference.instructions.md`);
+  console.log(`✓ Short reference: ${CONFIG.outputDir}/nhs-frontend-component-reference-short.instructions.md`);
+  console.log(`✓ Full reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
   console.log('\n✅ Documentation generation complete!\n');
 }
 
 // Run the script
 if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(error => {
-    console.error('\n❌ Error generating documentation:');
+    console.error('\n✗ Error generating documentation:');
     console.error(error.message);
     console.error('\nRun with --help for usage information.\n');
     process.exit(1);

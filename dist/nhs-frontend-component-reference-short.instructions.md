@@ -6,7 +6,7 @@
 - **NHS Frontend Version:** 10.0.0
 - **Git Branch:** main
 - **Git Commit:** 52eeee1
-- **Generated:** 2025-10-06 09:43:30 UTC
+- **Generated:** 2025-10-06 11:03:51 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
