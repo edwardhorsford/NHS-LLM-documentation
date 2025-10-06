@@ -74,6 +74,19 @@ Form components support either a `value` or `values` params for pre-filling exis
 }) }}
 ```
 
+## Default data
+
+Default data can be added in `app/data/session-data-defaults.js`. This is imported when the kit starts or restarts, or if a user visits the reset data route.
+
+Default data can be useful for:
+
+* Pre-setting user answers for testing returning journeys to flows
+* Storing sets of reference data - lists of countries, medical conditions
+* Storing other static content that might want to get reused
+* Storing lists of users (or user objects) for testing multi-user flows
+
+Keys included in `session-data-defaults.js` will be available in views as `data.[key]` and in routes as `req.session.data.[key]`.
+
 ## Radios / checkboxes / select components
 
 Radios, Checkboxes and Select components support directly setting a `checked` or `selected` boolean param on each item - this should be rarely needed.
