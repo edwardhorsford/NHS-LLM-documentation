@@ -67,8 +67,7 @@ EXAMPLES:
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-component-reference-short.instructions.md  Quick reference with examples
-  - nhs-frontend-component-reference.instructions.md        Complete parameter documentation
+  - nhs-frontend-component-reference.instructions.md        Complete component documentation with parameters and examples
 `);
   process.exit(0);
 }
@@ -154,7 +153,7 @@ function generateHeader(version, gitInfo, generatedAt) {
 function formatAsNunjucks(obj, indent = 0) {
   if (obj === null) return 'null';
   if (typeof obj === 'undefined') return 'undefined';
-  if (typeof obj === 'string') return `'${obj}'`;
+  if (typeof obj === 'string') return `"${obj}"`;
   if (typeof obj === 'number' || typeof obj === 'boolean') return String(obj);
 
   if (Array.isArray(obj)) {
@@ -179,6 +178,25 @@ function formatAsNunjucks(obj, indent = 0) {
 }
 
 /**
+ * Extract the macro name from a macro.njk file
+ */
+async function extractMacroName(componentDir) {
+  try {
+    const macroPath = path.join(componentDir, 'macro.njk');
+    const macroContent = await fs.readFile(macroPath, 'utf-8');
+    
+    // Match {% macro macroName(params) %}
+    const match = macroContent.match(/\{%\s*macro\s+(\w+)\s*\(/);
+    if (match) {
+      return match[1];
+    }
+    return null;
+  } catch (error) {
+    return null;
+  }
+}
+
+/**
  * Dynamically import and parse a macro-options.mjs file
  */
 async function parseComponentFile(filePath) {
@@ -187,8 +205,12 @@ async function parseComponentFile(filePath) {
     const fileUrl = `file://${path.resolve(filePath)}`;
     const module = await import(fileUrl);
 
+    const componentDir = path.dirname(filePath);
+    const macroName = await extractMacroName(componentDir);
+
     return {
       name: module.name || path.basename(path.dirname(filePath)),
+      macroName: macroName,
       params: module.params || {},
       examples: module.examples || {},
       options: module.options || {},
@@ -229,12 +251,13 @@ function flattenParams(params, prefix = '') {
 function formatExample(component, exampleName, example) {
   if (!example.context) return null;
 
-  const componentName = component.name.toLowerCase().replace(/\s+/g, '');
+  // Use the actual macro name if available, otherwise derive from component name
+  const macroName = component.macroName || component.name.toLowerCase().replace(/\s+/g, '');
 
   // Check if this example has a callBlock (content inside the component)
   if (example.callBlock && typeof example.callBlock === 'string' && example.callBlock.trim().length > 0) {
     // Show as a Nunjucks call block
-    let output = `{% call ${componentName}(${formatAsNunjucks(example.context)}) %}\n`;
+    let output = `{% call ${macroName}(${formatAsNunjucks(example.context)}) %}\n`;
     // Clean up the callBlock content
     const cleanCallBlock = example.callBlock
       .replace(/^\s*outdent`/, '') // Remove outdent` at start
@@ -245,7 +268,7 @@ function formatExample(component, exampleName, example) {
     return output;
   } else {
     // Show wrapped in component macro syntax
-    return `{{ ${componentName}(${formatAsNunjucks(example.context)}) }}`;
+    return `{{ ${macroName}(${formatAsNunjucks(example.context)}) }}`;
   }
 }
 
@@ -255,12 +278,12 @@ function formatExample(component, exampleName, example) {
 function getExampleValue(type, name) {
   switch (type) {
     case 'string':
-      if (name.includes('id') || name.includes('Id')) return "'example-id'";
-      if (name === 'name') return "'example-name'";
-      if (name === 'text') return "'Example text'";
-      if (name === 'href') return "'#example'";
-      if (name === 'classes') return "'nhsuk-example-class'";
-      return "'example'";
+      if (name.includes('id') || name.includes('Id')) return '"example-id"';
+      if (name === 'name') return '"example-name"';
+      if (name === 'text') return '"Example text"';
+      if (name === 'href') return '"#example"';
+      if (name === 'classes') return '"nhsuk-example-class"';
+      return '"example"';
     case 'boolean':
       return 'false';
     case 'array':
@@ -270,7 +293,7 @@ function getExampleValue(type, name) {
     case 'integer':
       return '1';
     default:
-      return "'example'";
+      return '"example"';
   }
 }
 
@@ -298,53 +321,193 @@ function generateFallbackExample(component) {
 }
 
 /**
- * Generate both short and full reference in one pass
+ * Create URL-safe slug from component name
+ */
+function slugify(text) {
+  return text.toLowerCase().replace(/\s+/g, '-');
+}
+
+/**
+ * Intelligently categorize a component based on its characteristics
+ */
+function categorizeComponent(component) {
+  const slug = component.name.toLowerCase().replace(/\s+/g, '-');
+  const flatParams = flattenParams(component.params);
+  const paramNames = flatParams.map(p => p.name);
+  
+  // Static mapping for known components (takes precedence)
+  const knownCategories = {
+    // Form Inputs
+    'input': 'Form Inputs',
+    'textarea': 'Form Inputs',
+    'select': 'Form Inputs',
+    'radios': 'Form Inputs',
+    'checkboxes': 'Form Inputs',
+    'date-input': 'Form Inputs',
+    'file-upload': 'Form Inputs',
+    'character-count': 'Form Inputs',
+    
+    // Form Controls
+    'button': 'Form Controls',
+    'fieldset': 'Form Controls',
+    'label': 'Form Controls',
+    'hint': 'Form Controls',
+    'error-message': 'Form Controls',
+    'error-summary': 'Form Controls',
+    
+    // Navigation
+    'back-link': 'Navigation',
+    'breadcrumb': 'Navigation',
+    'breadcrumbs': 'Navigation',
+    'pagination': 'Navigation',
+    'skip-link': 'Navigation',
+    'contents-list': 'Navigation',
+    
+    // Layout
+    'header': 'Layout',
+    'footer': 'Layout',
+    'width-container': 'Layout',
+    'container': 'Layout',
+    
+    // Notifications
+    'warning-callout': 'Notifications',
+    'care-card': 'Notifications',
+    'error-summary': 'Notifications',
+    
+    // Content
+    'action-link': 'Content',
+    'card': 'Content',
+    'details': 'Content',
+    'expander': 'Content',
+    'images': 'Content',
+    'image': 'Content',
+    'inset-text': 'Content',
+    'summary-list': 'Content',
+    'table': 'Content',
+    'tag': 'Content',
+    'do-dont-list': 'Content',
+    'review-date': 'Content'
+  };
+  
+  // Check known categories first
+  if (knownCategories[slug]) {
+    return knownCategories[slug];
+  }
+  
+  // Dynamic categorization based on characteristics
+  
+  // Check if it's a form input (has input-like parameters)
+  if (paramNames.includes('name') && paramNames.includes('id') && 
+      (paramNames.includes('value') || paramNames.includes('items'))) {
+    return 'Form Inputs';
+  }
+  
+  // Check if it's navigation (has href or items for navigation)
+  if (slug.includes('nav') || slug.includes('link') || slug.includes('menu') ||
+      (paramNames.includes('href') && (slug.includes('back') || slug.includes('skip')))) {
+    return 'Navigation';
+  }
+  
+  // Check if it's a notification/callout (has visual prominence indicators)
+  if (slug.includes('alert') || slug.includes('warning') || slug.includes('callout') || 
+      slug.includes('banner') || slug.includes('notification')) {
+    return 'Notifications';
+  }
+  
+  // Check if it's layout (has structural role)
+  if (slug.includes('container') || slug.includes('wrapper') || slug.includes('grid') ||
+      slug.includes('header') || slug.includes('footer')) {
+    return 'Layout';
+  }
+  
+  // Check if it's a form control (has label, error, hint type params)
+  if ((slug.includes('label') || slug.includes('error') || slug.includes('hint')) ||
+      (paramNames.includes('label') && paramNames.includes('errorMessage'))) {
+    return 'Form Controls';
+  }
+  
+  // Default to Content
+  return 'Content';
+}
+
+/**
+ * Categorize all components and return organized structure
+ */
+function categorizeComponents(components) {
+  const categories = {
+    'Form Inputs': [],
+    'Form Controls': [],
+    'Navigation': [],
+    'Content': [],
+    'Layout': [],
+    'Notifications': []
+  };
+  
+  const uncategorizedComponents = [];
+
+  for (const component of components) {
+    const category = categorizeComponent(component);
+    
+    if (categories[category]) {
+      categories[category].push(component);
+    } else {
+      // Shouldn't happen with current logic, but safe fallback
+      categories['Content'].push(component);
+      uncategorizedComponents.push(component.name);
+    }
+  }
+
+  // Remove empty categories
+  for (const [category, comps] of Object.entries(categories)) {
+    if (comps.length === 0) {
+      delete categories[category];
+    }
+  }
+  
+  // Log any components that might need manual categorization
+  if (uncategorizedComponents.length > 0) {
+    console.log(`ℹ️  Note: The following components were auto-categorized to 'Content':`);
+    console.log(`   ${uncategorizedComponents.join(', ')}`);
+  }
+
+  return categories;
+}
+
+/**
+ * Generate detailed component reference
  */
 function generateDocumentation(components, version, gitInfo, generatedAt) {
   const header = generateHeader(version, gitInfo, generatedAt);
   
-  // Initialize both outputs
-  let shortReference = `# NHS Frontend Components - Quick Reference
-
-${header}This is a quick reference guide for NHS Frontend components, generated from macro-options.mjs files.
-
-## Components Overview
-
-| Component | Required Params | Optional Key Params |
-|-----------|----------------|-------------------|
-`;
-
-  let fullReference = `# NHS Frontend Components - Detailed Reference
+  // Categorize components
+  const categories = categorizeComponents(components);
+  
+  let fullReference = `# NHS Frontend Component Reference
 
 ${header}This comprehensive reference guide for NHS Frontend components includes all parameters and examples.
 
+## Table of Contents
+
 `;
 
-  // Generate overview table for short reference
-  for (const component of components) {
-    const flatParams = flattenParams(component.params);
-    const requiredParams = flatParams
-      .filter(param => param.required)
-      .map(param => param.name)
-      .slice(0, 3); // Limit to avoid wide tables
-
-    const keyOptionalParams = flatParams
-      .filter(param => !param.required && ['items', 'text', 'html', 'href', 'classes', 'fieldset', 'hint'].includes(param.name))
-      .map(param => param.name)
-      .slice(0, 3);
-
-    shortReference += `| **${component.name}** | ${requiredParams.join(', ') || 'None'} | ${keyOptionalParams.join(', ') || 'None'} |\n`;
+  // Generate TOC
+  for (const [category, comps] of Object.entries(categories)) {
+    fullReference += `### ${category}\n`;
+    for (const comp of comps) {
+      fullReference += `- [${comp.name}](#${slugify(comp.name)})\n`;
+    }
+    fullReference += '\n';
   }
 
-  shortReference += `\n## Quick Usage Examples\n\n`;
+  fullReference += `---
 
-  // Process each component once
+`;
+
+  // Process each component
   for (const component of components) {
-    // Add to short reference
-    shortReference += `### ${component.name}\n\n`;
-
     // Add to full reference
     fullReference += `## ${component.name}\n\n`;
+    fullReference += `[↑ Back to top](#table-of-contents)\n\n`;
 
     // Add component description if available in examples
     const defaultExample = component.examples.default || component.examples[Object.keys(component.examples)[0]];
@@ -390,34 +553,14 @@ ${header}This comprehensive reference guide for NHS Frontend components includes
           fullReference += `\`\`\`njk\n`;
           fullReference += formattedExample;
           fullReference += `\n\`\`\`\n\n`;
-
-          // Add to short reference (first example only)
-          if (i === 0) {
-            hasValidExample = true;
-            shortReference += `\`\`\`njk\n`;
-            shortReference += formattedExample;
-            shortReference += `\n\`\`\`\n\n`;
-          }
         }
-      }
-    }
-
-    // If no valid examples found, use fallback for short reference
-    if (!hasValidExample) {
-      const fallback = generateFallbackExample(component);
-      if (fallback !== '*No required parameters*') {
-        shortReference += `\`\`\`njk\n`;
-        shortReference += fallback;
-        shortReference += `\n\`\`\`\n\n`;
-      } else {
-        shortReference += `${fallback}\n\n`;
       }
     }
 
     fullReference += `---\n\n`;
   }
 
-  return { shortReference, fullReference };
+  return fullReference;
 }
 
 /**
@@ -528,16 +671,14 @@ async function main() {
   const generatedAt = formatDateTime();
   console.log(`✓ NHS Frontend v${version} (${gitInfo.branch}@${gitInfo.commitHash})\n`);
 
-  // Generate both documents in one pass
+  // Generate documentation
   console.log('📝 Generating documentation...');
-  const { shortReference, fullReference } = generateDocumentation(components, version, gitInfo, generatedAt);
+  const fullReference = generateDocumentation(components, version, gitInfo, generatedAt);
 
-  // Write files with .instructions.md suffix for Copilot compatibility
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference-short.instructions.md'), shortReference);
+  // Write file with .instructions.md suffix for Copilot compatibility
   await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.instructions.md'), fullReference);
 
-  console.log(`✓ Short reference: ${CONFIG.outputDir}/nhs-frontend-component-reference-short.instructions.md`);
-  console.log(`✓ Full reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
+  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
   console.log('\n✅ Documentation generation complete!\n');
 }
 

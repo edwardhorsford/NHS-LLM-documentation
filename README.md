@@ -10,19 +10,19 @@ LLMs often have incomplete or outdated knowledge of NHS design patterns and comp
 
 All generated documentation lives in the [`dist/`](dist/) folder:
 
-**Auto-generated component documentation:**
-- [`nhs-frontend-component-reference-short.instructions.md`](dist/nhs-frontend-component-reference-short.instructions.md) - Quick reference with examples
-- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete parameter specifications
-- [`nhs-frontend-sass-reference.instructions.md`](dist/nhs-frontend-sass-reference.instructions.md) - Complete Sass documentation (mixins, functions, variables) with metadata
-
 **Hand-written guides:**
-- [`nhs-prototype-kit-style-guide.instructions.md`](dist/nhs-prototype-kit-style-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
+- [`nhs-frontend-guide.instructions.md`](dist/nhs-frontend-guide.instructions.md) - Core NHS Frontend patterns, conventions, and best practices
+- [`nhs-prototype-kit-guide.instructions.md`](dist/nhs-prototype-kit-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
+
+**Auto-generated component documentation:**
+- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete component documentation with parameters, examples and table of contents
+- [`nhs-frontend-sass-reference.json`](dist/nhs-frontend-sass-reference.json) - Complete Sass documentation (mixins, functions, variables) with metadata
 
 ## Using with LLMs
 
 **With Claude or ChatGPT:** Upload the markdown files or paste their content into your conversation.
 
-**With GitHub Copilot:** Add this repo to your workspace. Copilot automatically recognizes `.instructions.md` files and uses them as context.
+**With GitHub Copilot:** Add the files from `/dist` to your `.github/instructions` folder. Copilot automatically recognizes `.instructions.md` files and uses them as context. You may want to reference them from your `.github/copilot-instructions.md` file.
 
 ## Regenerating documentation
 
@@ -76,10 +76,10 @@ nhs-llm-docs/
 │   ├── generate-nhs-frontend-component-docs.js
 │   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-component-reference-short.instructions.md
 │   ├── nhs-frontend-component-reference.instructions.md
-│   ├── nhs-frontend-sass-reference.instructions.md
-│   └── nhs-prototype-kit-style-guide.instructions.md
+│   ├── nhs-frontend-sass-reference.json
+│   ├── nhs-frontend-guide.instructions.md
+│   └── nhs-prototype-kit-guide.instructions.md
 └── .gitignore
 ```
 
