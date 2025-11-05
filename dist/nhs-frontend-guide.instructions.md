@@ -64,6 +64,27 @@ Add custom CSS classes to any component using the `classes` parameter:
 - `nhsuk-u-margin-bottom-*` - Bottom margin (0-9)
 - `nhsuk-u-visually-hidden` - Hide visually but keep for screen readers
 
+**Class naming conventions:**
+
+NHS Frontend uses the **Block Element Modifier (BEM)** methodology:
+
+- `.nhsuk-block` - The root of a component
+- `.nhsuk-block__element` - A part of the block
+- `.nhsuk-block--modifier` - A variant of the block
+
+Examples:
+```scss
+.nhsuk-card {}                // Block
+.nhsuk-card__heading {}       // Element
+.nhsuk-card--clickable {}     // Modifier
+
+.nhsuk-a-z-nav {}             // Block (can be hyphenated)
+.nhsuk-a-z-nav__link {}       // Element
+.nhsuk-a-z-nav__link--disabled {} // Modifier
+```
+
+All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes.
+
 ### Attributes parameter
 
 Add custom HTML attributes using the `attributes` object:
@@ -80,6 +101,19 @@ Add custom HTML attributes using the `attributes` object:
 
 **Note:** Keys should be quoted, values should be quoted strings.
 
+**HTML attribute order:**
+
+When writing HTML directly (not via Nunjucks macros), use this attribute order for consistency:
+
+1. `class`
+2. `id`, `name`
+3. `data-*`
+4. `src`, `for`, `type`, `href`, `value`
+5. `title`, `alt`
+6. `role`, `aria-*`
+
+Classes make for great reusable components, so they come first. IDs are more specific and should be used sparingly.
+
 ### Parameter naming patterns
 
 NHS Frontend uses consistent naming patterns:
@@ -93,6 +127,8 @@ NHS Frontend uses consistent naming patterns:
 - **`hint`** - Helper text (object with `text` or `html`)
 - **`errorMessage`** - Error message (object with `text` or `html`)
 - **`fieldset`** - Grouping wrapper (object with `legend`)
+
+**Naming convention:** Parameter names use **camelCase** (e.g., `errorMessage`, not `error_message` or `error-message`).
 
 ---
 
@@ -669,5 +705,6 @@ NHS Frontend components are designed to meet WCAG 2.2 Level AA, but correct usag
 
 - [NHS design system](https://service-manual.nhs.uk/design-system) - Design guidance
 - [NHS Frontend GitHub](https://github.com/nhsuk/nhsuk-frontend) - Source code and examples
+- [NHS Frontend coding standards](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/contributing/coding-standards.md) - Detailed coding conventions
 - [NHS prototype kit](https://prototype-kit.service.manual.nhs.uk/) - Prototyping tool
 - [Component reference documentation](nhs-frontend-component-reference.instructions.md) - Full parameter specifications
