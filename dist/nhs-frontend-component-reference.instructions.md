@@ -1,12 +1,12 @@
-# NHS Frontend Components - Detailed Reference
+# NHS Frontend Component Reference
 
 ---
 **Auto-generated Documentation**
 
-- **NHS Frontend Version:** 10.0.0
+- **NHS Frontend Version:** 10.1.0
 - **Git Branch:** main
-- **Git Commit:** 52eeee1
-- **Generated:** 2025-10-06 11:03:51 UTC
+- **Git Commit:** f9e7fdb
+- **Generated:** 2025-11-05 14:21:55 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -15,7 +15,60 @@
 
 This comprehensive reference guide for NHS Frontend components includes all parameters and examples.
 
+## Table of Contents
+
+### Form Inputs
+- [Character count](#character-count)
+- [Checkboxes](#checkboxes)
+- [Date input](#date-input)
+- [Input](#input)
+- [Radios](#radios)
+- [Select](#select)
+- [Textarea](#textarea)
+
+### Form Controls
+- [Button](#button)
+- [Error message](#error-message)
+- [Fieldset](#fieldset)
+- [Hint text](#hint-text)
+- [Label](#label)
+
+### Navigation
+- [Back link](#back-link)
+- [Breadcrumb](#breadcrumb)
+- [Contents list](#contents-list)
+- [Pagination](#pagination)
+- [Skip link](#skip-link)
+
+### Content
+- [Action link](#action-link)
+- [Card](#card)
+- [Details](#details)
+- [Do and Don't list](#do-and-don't-list)
+- [Hero](#hero)
+- [Images](#images)
+- [Inset text](#inset-text)
+- [Panel](#panel)
+- [Summary list](#summary-list)
+- [Tables](#tables)
+- [Tabs](#tabs)
+- [Tag](#tag)
+- [Task list](#task-list)
+
+### Layout
+- [Footer](#footer)
+- [Header](#header)
+
+### Notifications
+- [Error summary](#error-summary)
+- [Notification banner](#notification-banner)
+- [Warning callout](#warning-callout)
+
+---
+
 ## Action link
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -33,25 +86,27 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ actionlink({
-  text: 'Find your nearest A&E',
-  href: '#'
+{{ actionLink({
+  text: "Find your nearest A&E",
+  href: "#"
 }) }}
 ```
 
 #### reverse
 
 ```njk
-{{ actionlink({
-  classes: 'nhsuk-action-link--reverse',
-  text: 'Find your nearest A&E',
-  href: '#'
+{{ actionLink({
+  classes: "nhsuk-action-link--reverse",
+  text: "Find your nearest A&E",
+  href: "#"
 }) }}
 ```
 
 ---
 
 ## Back link
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -63,6 +118,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `href` | string |  | The value of the link href attribute. |
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the tag. |
+| `visuallyHiddenText` | string |  | An optional visually hidden prefix used before the back link text, for example `"Back to"` used by the breadcrumbs component. |
 | `element` | string |  | HTML element for the back link component – `"button"` or `"a"`. If not provided, defaults to `"a"`. |
 
 ### Examples
@@ -70,34 +126,46 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ backlink({
-  text: 'Back',
-  href: '#'
+{{ backLink({
+  text: "Back",
+  href: "#"
 }) }}
 ```
 
 #### as a button
 
 ```njk
-{{ backlink({
-  text: 'Back',
-  element: 'button'
+{{ backLink({
+  text: "Back",
+  element: "button"
 }) }}
 ```
 
 #### reverse
 
 ```njk
-{{ backlink({
-  text: 'Back',
-  href: '#',
-  classes: 'nhsuk-back-link--reverse'
+{{ backLink({
+  text: "Back",
+  href: "#",
+  classes: "nhsuk-back-link--reverse"
+}) }}
+```
+
+#### with visually hidden text
+
+```njk
+{{ backLink({
+  visuallyHiddenText: "Back to",
+  text: "Search results",
+  href: "#"
 }) }}
 ```
 
 ---
 
 ## Breadcrumb
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -113,6 +181,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the container. |
 | `labelText` | string |  | Plain text label identifying the landmark to screen readers. Defaults to "Breadcrumb". |
+| `backLink` | object |  | The back link used by the breadcrumbs component on mobile. |
 
 ### Examples
 
@@ -122,16 +191,16 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ breadcrumb({
   items: [
     {
-      href: '#',
-      text: 'Home'
+      href: "#",
+      text: "Home"
     },
     {
-      href: '#',
-      text: 'NHS services'
+      href: "#",
+      text: "NHS services"
     },
     {
-      href: '#',
-      text: 'Hospitals'
+      href: "#",
+      text: "Hospitals"
     }
   ]
 }) }}
@@ -141,21 +210,62 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ breadcrumb({
-  classes: 'nhsuk-breadcrumb--reverse',
+  classes: "nhsuk-breadcrumb--reverse",
   items: [
     {
-      href: '#',
-      text: 'Home'
+      href: "#",
+      text: "Home"
     },
     {
-      href: '#',
-      text: 'NHS services'
+      href: "#",
+      text: "NHS services"
     },
     {
-      href: '#',
-      text: 'Hospitals'
+      href: "#",
+      text: "Hospitals"
     }
   ]
+}) }}
+```
+
+#### with back link as a button
+
+```njk
+{{ breadcrumb({
+  items: [
+    {
+      href: "#",
+      text: "Home"
+    },
+    {
+      href: "#",
+      text: "Search results"
+    }
+  ],
+  backLink: {
+    element: "button"
+  }
+}) }}
+```
+
+#### with back link custom text
+
+```njk
+{{ breadcrumb({
+  items: [
+    {
+      href: "#",
+      text: "Home"
+    },
+    {
+      href: "#",
+      text: "Advanced search"
+    }
+  ],
+  backLink: {
+    text: "Search results",
+    href: "#"
+  }
 }) }}
 ```
 
@@ -163,36 +273,45 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ breadcrumb({
+  id: "with-attributes",
   items: [
     {
-      href: '#',
-      text: 'Home',
+      href: "#",
+      text: "Home",
       attributes: {
-        lang: 'en'
+        lang: "en"
       }
     },
     {
-      href: '#',
-      text: 'NHS services',
+      href: "#",
+      text: "NHS services",
       attributes: {
-        lang: 'en'
+        lang: "en"
       }
     },
     {
-      href: '#',
-      text: 'Hospitals',
-      classes: 'example-class-one example-class-two',
+      href: "#",
+      text: "Hospitals",
+      classes: "example-class-one example-class-two",
       attributes: {
-        lang: 'en'
+        lang: "en"
       }
     }
-  ]
+  ],
+  backLink: {
+    id: "back-link-with-attributes",
+    attributes: {
+      lang: "en"
+    }
+  }
 }) }}
 ```
 
 ---
 
 ## Button
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -217,7 +336,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Save and continue'
+  text: "Save and continue"
 }) }}
 ```
 
@@ -225,7 +344,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Disabled button',
+  text: "Disabled button",
   disabled: true
 }) }}
 ```
@@ -234,8 +353,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Link button',
-  href: '#'
+  text: "Link button",
+  href: "#"
 }) }}
 ```
 
@@ -243,8 +362,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Continue',
-  classes: 'nhsuk-button--login'
+  text: "Continue",
+  classes: "nhsuk-button--login"
 }) }}
 ```
 
@@ -252,8 +371,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Continue',
-  classes: 'nhsuk-button--login',
+  text: "Continue",
+  classes: "nhsuk-button--login",
   disabled: true
 }) }}
 ```
@@ -262,9 +381,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Continue',
-  classes: 'nhsuk-button--login',
-  href: '#'
+  text: "Continue",
+  classes: "nhsuk-button--login",
+  href: "#"
 }) }}
 ```
 
@@ -272,7 +391,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Save and continue',
+  text: "Save and continue",
   preventDoubleClick: true
 }) }}
 ```
@@ -281,7 +400,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Save and continue',
+  text: "Save and continue",
   preventDoubleClick: false
 }) }}
 ```
@@ -290,8 +409,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Log out',
-  classes: 'nhsuk-button--reverse'
+  text: "Log out",
+  classes: "nhsuk-button--reverse"
 }) }}
 ```
 
@@ -299,8 +418,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Log out',
-  classes: 'nhsuk-button--reverse',
+  text: "Log out",
+  classes: "nhsuk-button--reverse",
   disabled: true
 }) }}
 ```
@@ -309,9 +428,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Log out',
-  classes: 'nhsuk-button--reverse',
-  href: '#'
+  text: "Log out",
+  classes: "nhsuk-button--reverse",
+  href: "#"
 }) }}
 ```
 
@@ -319,8 +438,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary'
+  text: "Find my location",
+  classes: "nhsuk-button--secondary"
 }) }}
 ```
 
@@ -328,8 +447,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary',
+  text: "Find my location",
+  classes: "nhsuk-button--secondary",
   disabled: true
 }) }}
 ```
@@ -338,9 +457,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary',
-  href: '#'
+  text: "Find my location",
+  classes: "nhsuk-button--secondary",
+  href: "#"
 }) }}
 ```
 
@@ -348,8 +467,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary-solid'
+  text: "Find my location",
+  classes: "nhsuk-button--secondary-solid"
 }) }}
 ```
 
@@ -357,8 +476,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary-solid',
+  text: "Find my location",
+  classes: "nhsuk-button--secondary-solid",
   disabled: true
 }) }}
 ```
@@ -367,9 +486,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Find my location',
-  classes: 'nhsuk-button--secondary-solid',
-  href: '#'
+  text: "Find my location",
+  classes: "nhsuk-button--secondary-solid",
+  href: "#"
 }) }}
 ```
 
@@ -377,8 +496,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Yes, delete this vaccine',
-  classes: 'nhsuk-button--warning'
+  text: "Yes, delete this vaccine",
+  classes: "nhsuk-button--warning"
 }) }}
 ```
 
@@ -386,8 +505,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Yes, delete this vaccine',
-  classes: 'nhsuk-button--warning',
+  text: "Yes, delete this vaccine",
+  classes: "nhsuk-button--warning",
   disabled: true
 }) }}
 ```
@@ -396,15 +515,17 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ button({
-  text: 'Yes, delete this vaccine',
-  classes: 'nhsuk-button--warning',
-  href: '#'
+  text: "Yes, delete this vaccine",
+  classes: "nhsuk-button--warning",
+  href: "#"
 }) }}
 ```
 
 ---
 
 ## Card
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -436,7 +557,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'If you need help now, but it's not an emergency',
+  heading: "If you need help now, but it's not an emergency",
   headingLevel: 3
 }) %}
   <p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
@@ -447,7 +568,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'Help from NHS 111',
+  heading: "Help from NHS 111",
   headingLevel: 3
 }) %}
   <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
@@ -460,9 +581,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'Speak to a GP if:',
+  heading: "Speak to a GP if:",
   headingLevel: 3,
-  type: 'non-urgent'
+  type: "non-urgent"
 }) %}
   <ul>
     <li>you're not sure it's chickenpox</li>
@@ -478,9 +599,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'Ask for an urgent GP appointment if:',
+  heading: "Ask for an urgent GP appointment if:",
   headingLevel: 3,
-  type: 'urgent'
+  type: "urgent"
 }) %}
   <ul>
     <li>you're an adult and have chickenpox</li>
@@ -496,9 +617,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'Call 999 if you have sudden chest pain that:',
+  heading: "Call 999 if you have sudden chest pain that:",
   headingLevel: 3,
-  type: 'emergency'
+  type: "emergency"
 }) %}
   <ul>
     <li>spreads to your arms, back, neck or jaw</li>
@@ -513,9 +634,9 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call card({
-  heading: 'Call 999 or go to A&E now if:',
+  heading: "Call 999 or go to A&E now if:",
   headingLevel: 3,
-  type: 'emergency'
+  type: "emergency"
 }) %}
   <ul>
     <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
@@ -539,11 +660,11 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  href: '#',
+  href: "#",
   primary: true,
   clickable: true,
-  heading: 'Breast screening',
-  headingClasses: 'nhsuk-heading-m'
+  heading: "Breast screening",
+  headingClasses: "nhsuk-heading-m"
 }) }}
 ```
 
@@ -551,12 +672,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  href: '#',
+  href: "#",
   primary: true,
   clickable: true,
-  heading: 'Introduction to care and support',
-  headingClasses: 'nhsuk-heading-m',
-  description: 'A quick guide for people who have care and support needs and their carers'
+  heading: "Introduction to care and support",
+  headingClasses: "nhsuk-heading-m",
+  description: "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -564,11 +685,11 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  href: '#',
+  href: "#",
   clickable: true,
-  heading: 'Introduction to care and support',
-  headingClasses: 'nhsuk-heading-m',
-  description: 'A quick guide for people who have care and support needs and their carers'
+  heading: "Introduction to care and support",
+  headingClasses: "nhsuk-heading-m",
+  description: "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -576,12 +697,24 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  href: '#',
+  href: "#",
   clickable: true,
   secondary: true,
-  heading: 'Urgent and emergency care services',
-  headingClasses: 'nhsuk-heading-m',
-  description: 'Services the NHS provides if you need urgent or emergency medical help'
+  heading: "Urgent and emergency care services",
+  headingClasses: "nhsuk-heading-m",
+  description: "Services the NHS provides if you need urgent or emergency medical help"
+}) }}
+```
+
+#### secondary non-clickable with custom description
+
+```njk
+{{ card({
+  href: "#",
+  secondary: true,
+  heading: "Why we are reinvesting in the NHS Prototype kit",
+  headingClasses: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2",
+  descriptionHtml: "<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p><p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>"
 }) }}
 ```
 
@@ -590,10 +723,10 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ card({
   feature: true,
-  href: '#',
-  heading: 'Feature card heading',
-  headingClasses: 'nhsuk-heading-m',
-  description: 'Feature card description'
+  href: "#",
+  heading: "Feature card heading",
+  headingClasses: "nhsuk-heading-m",
+  description: "Feature card description."
 }) }}
 ```
 
@@ -601,12 +734,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  imgURL: 'https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg',
-  href: '#',
+  imgURL: "https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg",
+  href: "#",
   clickable: true,
-  heading: 'Exercise',
-  headingClasses: 'nhsuk-heading-m',
-  description: 'Programmes, workouts and tips to get you moving and improve your fitness and wellbeing'
+  heading: "Exercise",
+  headingClasses: "nhsuk-heading-m",
+  description: "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
 }) }}
 ```
 
@@ -614,17 +747,19 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ card({
-  href: '#',
+  href: "#",
   clickable: true,
   headingLevel: 5,
-  heading: 'Order a repeat prescription',
-  headingClasses: 'nhsuk-heading-xs'
+  heading: "Order a repeat prescription",
+  headingClasses: "nhsuk-heading-xs"
 }) }}
 ```
 
 ---
 
 ## Character count
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -634,9 +769,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `name` | string | ✓ | The name of the textarea, which is submitted with the form data. |
 | `rows` | string |  | Optional number of textarea rows (default is 5 rows). |
 | `value` | string |  | Optional initial value of the textarea. |
-| `label` | object | ✓ | Options for the label component. |
-| `hint` | object |  | Options for the hint component. |
-| `errorMessage` | object |  | Options for the error message component. |
+| `maxlength` | string | ✓ | If `maxwords` is set, this is not required. The maximum number of characters. If `maxwords` is provided, the `maxlength` option will be ignored. |
+| `maxwords` | string | ✓ | If `maxlength` is set, this is not required. The maximum number of words. If `maxwords` is provided, the `maxlength` option will be ignored. |
+| `threshold` | string |  | The percentage value of the limit at which point the count message is displayed. If this attribute is set, the count message will be hidden by default. |
+| `label` | object | ✓ | The label used by the character count component. |
+| `hint` | object |  | Can be used to add a hint to the character count component. |
+| `errorMessage` | object |  | Can be used to add an error message to the character count component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the character count component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -646,30 +784,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `formGroup.afterInput` | object |  | Content to add after the textarea used by the character count component. |
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the textarea. If `html` is provided, the `text` option will be ignored. |
-| `classes` | string |  | Optional additional classes to add to the textarea tag. Separate each class with a space. |
-| `maxlength` | string |  | If `maxwords` is set, this is not required. The maximum number of characters. If `maxwords` is provided, the `maxlength` argument will be ignored. |
-| `maxwords` | string |  | If `maxlength` is set, this is not required. The maximum number of words. If `maxwords` is provided, the `maxlength` argument will be ignored. |
-| `threshold` | string |  | The percentage value of the limit at which point the count message is displayed. If this attribute is set, the count message will be hidden by default. |
-| `spellcheck` | boolean |  | Optional field to enable or disable the spellcheck attribute on the textarea. |
-| `attributes` | object |  | Any extra HTML attributes (for example data attributes) to add to the textarea tag. |
+| `classes` | string |  | Classes to add to the textarea. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the textarea. |
+| `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the character count. |
 | `countMessage` | object |  | Additional options for the count message used by the character count component. |
 | `countMessage.classes` | string |  | Classes to add to the count message. |
+| `textareaDescriptionText` | string |  | Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page when JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` or `maxwords` parameter. |
 
 ### Examples
 
 #### default
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  name: 'example',
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -677,17 +813,17 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with hint
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description',
-    classes: 'nhsuk-label--l',
+    text: "Enter a job description",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'with-hint',
-  name: 'example',
+  id: "with-hint",
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -695,74 +831,71 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with error message
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description',
-    classes: 'nhsuk-label--l',
+    text: "Enter a job description",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   errorMessage: {
-    text: 'Job description must be 350 characters or less'
+    text: "Job description must be 350 characters or less"
   },
-  id: 'with-error-message',
-  name: 'example',
+  id: "with-error-message",
+  name: "example",
   maxlength: 350,
-  value: 'A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format.'
+  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
 #### with hint and error
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description',
-    classes: 'nhsuk-label--l',
+    text: "Enter a job description",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
   errorMessage: {
-    text: 'Job description must be 350 characters or less'
+    text: "Job description must be 350 characters or less"
   },
-  id: 'with-error-message',
-  name: 'example',
+  id: "with-error-message",
+  name: "example",
   maxlength: 350,
-  value: 'A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format.'
+  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
 #### with default value
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description',
-    classes: 'nhsuk-label--l',
+    text: "Enter a job description",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  errorMessage: {
-    text: 'Job description must be 350 characters or less'
-  },
-  id: 'with-error-message',
-  name: 'example',
+  id: "with-default-value",
+  name: "example",
   maxlength: 350,
-  value: 'A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels.'
+  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
 #### with custom rows
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'custom-rows',
-  name: 'example',
+  id: "custom-rows",
+  name: "example",
   maxlength: 350,
   rows: 15
 }) }}
@@ -771,14 +904,14 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with label size S
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--s',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--s",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -786,14 +919,14 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with label size M
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--m',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--m",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -801,14 +934,14 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with label size L
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -816,14 +949,14 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with label size XL
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--xl',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--xl",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   maxlength: 200
 }) }}
 ```
@@ -831,12 +964,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### without page heading
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Tell us more about what happened'
+    text: "Tell us more about what happened"
   },
-  id: 'without-heading',
-  name: 'example',
+  id: "without-heading",
+  name: "example",
   maxlength: 150
 }) }}
 ```
@@ -844,12 +977,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with maxlength attribute
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description'
+    text: "Enter a job description"
   },
-  id: 'maxlength-attribute',
-  name: 'example',
+  id: "maxlength-attribute",
+  name: "example",
   maxlength: 11,
   attributes: {
     maxlength: 11
@@ -860,14 +993,14 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with word count
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Enter a job description',
-    classes: 'nhsuk-label--l',
+    text: "Enter a job description",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'with-word-count',
-  name: 'example',
+  id: "with-word-count",
+  name: "example",
   maxwords: 150
 }) }}
 ```
@@ -875,17 +1008,98 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with threshold
 
 ```njk
-{{ charactercount({
+{{ characterCount({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'with-threshold',
-  name: 'example',
-  value: 'Type another letter into this field after this message to see the threshold feature',
+  id: "with-threshold",
+  name: "example",
+  value: "Type another letter into this field after this message to see the threshold feature",
   maxlength: 112,
   threshold: 75
+}) }}
+```
+
+#### with neither maxlength nor maxwords set
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  },
+  textareaDescriptionText: "No more than %{count} characters",
+  id: "no-maximum-description",
+  name: "example",
+  value: "This textarea has no maximum character or word count.",
+  rows: 8
+}) }}
+```
+
+#### with neither maxlength, maxwords nor textarea description set
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  },
+  id: "no-maximum",
+  name: "example",
+  value: "This textarea has no maximum character or word count.",
+  rows: 8
+}) }}
+```
+
+#### with translations
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Allwch chi roi mwy o fanylion?",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Peidiwch â chynnwys gwybodaeth bersonol, fel eich enw, dyddiad geni na rhif y GIG"
+  },
+  id: "with-translations",
+  name: "example",
+  maxlength: 200,
+  textareaDescriptionText: "Gallwch ddefnyddio hyd at %{count} nod",
+  charactersUnderLimitText: {
+    one: "Mae gennych %{count} nod ar ôl",
+    two: "Mae gennych %{count} nod ar ôl",
+    few: "Mae gennych %{count} nod ar ôl",
+    many: "Mae gennych %{count} nod ar ôl",
+    other: "Mae gennych %{count} nod ar ôl"
+  },
+  charactersAtLimitText: "Mae gennych 0 nod ar ôl",
+  charactersOverLimitText: {
+    one: "Mae gennych %{count} nod yn ormod",
+    two: "Mae gennych %{count} nod yn ormod",
+    few: "Mae gennych %{count} nod yn ormod",
+    many: "Mae gennych %{count} nod yn ormod",
+    other: "Mae gennych chi %{count} nod yn ormod"
+  }
+}) }}
+```
+
+#### to configure in JavaScript
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  },
+  id: "to-configure-in-javascript",
+  name: "example"
 }) }}
 ```
 
@@ -893,15 +1107,17 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ## Checkboxes
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the checkboxes component. |
 | `describedBy` | string |  | One or more element IDs to add to the input `aria-describedby` attribute without a fieldset, used to provide additional descriptive information for screenreader users. |
-| `fieldset` | object |  | Options for the fieldset component (for example legend). |
-| `hint` | object |  | Options for the hint component (for example text). |
-| `errorMessage` | object |  | Options for the error message component. |
+| `fieldset` | object |  | Can be used to add a fieldset to the checkboxes component. |
+| `hint` | object |  | Can be used to add a hint to the checkboxes component. |
+| `errorMessage` | object |  | Can be used to add an error message to the checkboxes component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the checkboxes component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -911,27 +1127,29 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `formGroup.afterInputs` | object |  | Content to add after all checkbox items within the checkboxes component. |
 | `formGroup.afterInputs.text` | string | ✓ | Text to add after all checkbox items. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInputs.html` | string | ✓ | HTML to add after all checkbox items. If `html` is provided, the `text` option will be ignored. |
-| `idPrefix` | string |  | String to prefix id for each checkbox item if no id is specified on each item. If not passed, fall back to using the name option instead. |
+| `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for each checkbox item input, hint and error message, separated by `-`. Defaults to the `name` option value. |
 | `name` | string | ✓ | Name attribute for all checkbox items. |
-| `items` | array | ✓ | Array of checkbox items objects. |
-| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each checkbox item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each checkbox item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.id` | string |  | Specific id attribute for the checkbox item. If omitted, then component global `idPrefix` option will be applied. |
+| `items` | array | ✓ | The checkbox items within the checkboxes component. |
+| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each checkbox item label. If `html` is provided, the `text` option will be ignored. |
+| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each checkbox item label. If `html` is provided, the `text` option will be ignored. |
+| `items.id` | string |  | Specific ID attribute for the checkbox item. If omitted, then component global `idPrefix` option will be applied. |
 | `items.name` | string |  | Specific name for the checkbox item. If omitted, then component global `name` string will be applied. |
-| `items.label` | object |  | Options for the label component. |
 | `items.value` | string | ✓ | Value for the checkbox input. |
-| `items.divider` | string | ✓ | Optional divider text to separate checkbox items, for example the text `'or'`. |
-| `items.hint` | object |  | Provide hint to each checkbox item. |
-| `items.checked` | boolean |  | If true, checkbox will be checked. |
+| `items.label` | object |  | Subset of options for the label used by each checkbox item within the checkboxes component. |
+| `items.label.classes` | string |  | Classes to add to the label tag. |
+| `items.label.attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
+| `items.hint` | object |  | Can be used to add a hint to each checkbox item within the checkboxes component. |
+| `items.divider` | string |  | Divider text to separate checkbox items, for example the text `"or"`. |
+| `items.checked` | boolean |  | Whether the checkbox should be checked when the page loads. Takes precedence over the top-level `values` option. |
 | `items.conditional` | object |  | Provide additional content to reveal when the checkbox is checked. |
 | `items.conditional.html` | string | ✓ | The HTML to reveal when the checkbox is checked. |
-| `items.disabled` | boolean |  | If true, checkbox will be disabled. |
+| `items.disabled` | boolean |  | If `true`, checkbox will be disabled. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the checkbox input tag. |
-| `exclusive` | boolean |  | If set to `true`, marks this checkbox as the None option in a None of these type behaviour. Unchecking all other checkboxes in the group when None is clicked. |
-| `exclusiveGroup` | string |  | Used in conjunction with `exclusive` - this should be set to a string which groups checkboxes together into a set for use in a None of these scenario. |
+| `items.exclusive` | boolean |  | If set to `true`, marks this checkbox as the None option in a None of these type behaviour. Unchecking all other checkboxes in the group when None is clicked. |
+| `items.exclusiveGroup` | string |  | Used in conjunction with `exclusive` - this should be set to a string which groups checkboxes together into a set for use in a None of these scenario. |
 | `values` | array |  | Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
 | `classes` | string |  | Classes to add to the checkboxes container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the anchor tag. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the checkboxes container. |
 
 ### Examples
 
@@ -941,27 +1159,27 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  name: 'example',
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text',
-      text: 'Text message'
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
@@ -973,28 +1191,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'What is your nationality?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'If you have dual nationality, select all options that are relevant to you'
+    text: "If you have dual nationality, select all options that are relevant to you"
   },
-  idPrefix: 'with-hint',
-  name: 'example',
+  idPrefix: "with-hint",
+  name: "example",
   items: [
     {
-      value: 'british',
-      text: 'British'
+      value: "british",
+      text: "British"
     },
     {
-      value: 'irish',
-      text: 'Irish'
+      value: "irish",
+      text: "Irish"
     },
     {
-      value: 'other',
-      text: 'Citizen of another country'
+      value: "other",
+      text: "Citizen of another country"
     }
   ]
 }) }}
@@ -1006,28 +1224,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'What is your nationality?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'with-values',
-  name: 'example',
+  idPrefix: "with-values",
+  name: "example",
   values: [
-    'british'
+    "british"
   ],
   items: [
     {
-      value: 'british',
-      text: 'British'
+      value: "british",
+      text: "British"
     },
     {
-      value: 'irish',
-      text: 'Irish'
+      value: "irish",
+      text: "Irish"
     },
     {
-      value: 'other',
-      text: 'Citizen of another country'
+      value: "other",
+      text: "Citizen of another country"
     }
   ]
 }) }}
@@ -1039,31 +1257,31 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'What is your nationality?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'If you have dual nationality, select all options that are relevant to you'
+    text: "If you have dual nationality, select all options that are relevant to you"
   },
-  idPrefix: 'with-hint-item',
-  name: 'example',
+  idPrefix: "with-hint-item",
+  name: "example",
   items: [
     {
-      value: 'british',
-      text: 'British',
+      value: "british",
+      text: "British",
       hint: {
-        text: 'including English, Scottish, Welsh and Northern Irish'
+        text: "including English, Scottish, Welsh and Northern Irish"
       }
     },
     {
-      value: 'irish',
-      text: 'Irish'
+      value: "irish",
+      text: "Irish"
     },
     {
-      value: 'other',
-      text: 'Citizen of another country'
+      value: "other",
+      text: "Citizen of another country"
     }
   ]
 }) }}
@@ -1073,20 +1291,20 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {{ checkboxes({
-  id: 'with-disabled-item',
-  name: 'colours',
+  id: "with-disabled-item",
+  name: "colours",
   items: [
     {
-      value: 'red',
-      text: 'Red'
+      value: "red",
+      text: "Red"
     },
     {
-      value: 'green',
-      text: 'Green'
+      value: "green",
+      text: "Green"
     },
     {
-      value: 'blue',
-      text: 'Blue',
+      value: "blue",
+      text: "Blue",
       disabled: true
     }
   ]
@@ -1099,28 +1317,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   errorMessage: {
-    text: 'Select how you want to be contacted'
+    text: "Select how you want to be contacted"
   },
-  idPrefix: 'with-error-message',
-  name: 'example',
+  idPrefix: "with-error-message",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1132,31 +1350,75 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
   errorMessage: {
-    text: 'Select how you want to be contacted'
+    text: "Select how you want to be contacted"
   },
-  idPrefix: 'with-hint-error',
-  name: 'example',
+  idPrefix: "with-hint-error",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with long text
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "Venenatis Condimentum",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-long-text",
+  name: "example",
+  items: [
+    {
+      value: "nullam",
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
+quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
+at eget metus."
+    },
+    {
+      value: "aenean",
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
+nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+venenatis vestibulum. Cras mattis consectetur purus sit amet
+fermentum."
+    },
+    {
+      value: "fusce",
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+malesuada magna mollis euismod. Praesent commodo cursus magna, vel
+scelerisque nisl consectetur et. Etiam porta sem malesuada magna
+mollis euismod. Etiam porta sem malesuada magna mollis euismod.
+Donec sed odio dui. Sed posuere consectetur est at lobortis."
     }
   ]
 }) }}
@@ -1168,28 +1430,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--s',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--s",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1201,28 +1463,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--m',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1234,28 +1496,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1267,28 +1529,28 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--xl',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--xl",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1300,26 +1562,26 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?'
+      text: "How do you want to be contacted about this?"
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'without-heading',
-  name: 'example',
+  idPrefix: "without-heading",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email'
+      value: "email",
+      text: "Email"
     },
     {
-      value: 'phone',
-      text: 'Phone'
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: 'text message',
-      text: 'Text message'
+      value: "text message",
+      text: "Text message"
     }
   ]
 }) }}
@@ -1331,48 +1593,48 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'conditional',
-  name: 'contact',
+  idPrefix: "conditional",
+  name: "contact",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -1385,51 +1647,51 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
   errorMessage: {
-    text: 'Select how you like to be contacted'
+    text: "Select how you like to be contacted"
   },
-  idPrefix: 'conditional',
-  name: 'contact',
+  idPrefix: "conditional",
+  name: "contact",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -1442,53 +1704,53 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select all options that are relevant to you'
+    text: "Select all options that are relevant to you"
   },
-  idPrefix: 'conditional',
-  name: 'example',
+  idPrefix: "conditional",
+  name: "example",
   values: [
-    'phone'
+    "phone"
   ],
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group nhsuk-form-group--error">
+        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>  <span class="nhsuk-error-message" id="phone-error">
   <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
   </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -1501,53 +1763,53 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'conditional',
-  name: 'example',
+  idPrefix: "conditional",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     },
     {
-      divider: 'or'
+      divider: "or"
     },
     {
-      value: 'none',
-      text: 'None of the above',
+      value: "none",
+      text: "None of the above",
       exclusive: true
     }
   ]
@@ -1560,58 +1822,58 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'conditional',
-  name: 'example',
+  idPrefix: "conditional",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email',
-      exclusiveGroup: 'communication-preferences',
+      value: "email",
+      text: "Email",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
-      exclusiveGroup: 'communication-preferences',
+      value: "phone",
+      text: "Phone",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
-      exclusiveGroup: 'communication-preferences',
+      value: "text",
+      text: "Text message",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     },
     {
-      divider: 'or'
+      divider: "or"
     },
     {
-      value: 'none',
-      text: 'None of the above',
+      value: "none",
+      text: "None of the above",
       exclusive: true,
-      exclusiveGroup: 'communication-preferences'
+      exclusiveGroup: "communication-preferences"
     }
   ]
 }) }}
@@ -1623,61 +1885,605 @@ This comprehensive reference guide for NHS Frontend components includes all para
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'conditional',
+  idPrefix: "conditional",
   items: [
     {
-      name: 'preference-email',
-      value: 'yes',
-      text: 'Email',
-      exclusiveGroup: 'communication-preferences',
+      name: "preference-email",
+      value: "yes",
+      text: "Email",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      name: 'preference-phone',
-      value: 'yes',
-      text: 'Phone',
-      exclusiveGroup: 'communication-preferences',
+      name: "preference-phone",
+      value: "yes",
+      text: "Phone",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      name: 'preference-text',
-      value: 'yes',
-      text: 'Text message',
-      exclusiveGroup: 'communication-preferences',
+      name: "preference-text",
+      value: "yes",
+      text: "Text message",
+      exclusiveGroup: "communication-preferences",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     },
     {
-      divider: 'or'
+      divider: "or"
     },
     {
-      name: 'preference-none',
-      value: 'yes',
-      text: 'None of the above',
+      name: "preference-none",
+      value: "yes",
+      text: "None of the above",
       exclusive: true,
-      exclusiveGroup: 'communication-preferences'
+      exclusiveGroup: "communication-preferences"
+    }
+  ]
+}) }}
+```
+
+#### small
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### small with hint
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "If you have dual nationality, select all options that are relevant to you"
+  },
+  idPrefix: "with-hint",
+  name: "example",
+  items: [
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    },
+    {
+      value: "other",
+      text: "Citizen of another country"
+    }
+  ]
+}) }}
+```
+
+#### small with pre-checked values
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    classes: "nhsuk-checkboxes--small",
+    legend: {
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-values",
+  name: "example",
+  values: [
+    "british"
+  ],
+  items: [
+    {
+      value: "british",
+      text: "British"
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    },
+    {
+      value: "other",
+      text: "Citizen of another country"
+    }
+  ]
+}) }}
+```
+
+#### small with hints on items
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    classes: "nhsuk-checkboxes--small",
+    legend: {
+      text: "What is your nationality?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "If you have dual nationality, select all options that are relevant to you"
+  },
+  idPrefix: "with-hint-item",
+  name: "example",
+  items: [
+    {
+      value: "british",
+      text: "British",
+      hint: {
+        text: "including English, Scottish, Welsh and Northern Irish"
+      }
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    },
+    {
+      value: "other",
+      text: "Citizen of another country"
+    }
+  ]
+}) }}
+```
+
+#### small with disabled item
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  id: "with-disabled-item",
+  name: "colours",
+  items: [
+    {
+      value: "red",
+      text: "Red"
+    },
+    {
+      value: "green",
+      text: "Green"
+    },
+    {
+      value: "blue",
+      text: "Blue",
+      disabled: true
+    }
+  ]
+}) }}
+```
+
+#### small with error message
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-error-message",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### small with hint and error
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### small with long text
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Venenatis Condimentum",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-long-text",
+  name: "example",
+  items: [
+    {
+      value: "nullam",
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
+quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
+at eget metus."
+    },
+    {
+      value: "aenean",
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
+nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+venenatis vestibulum. Cras mattis consectetur purus sit amet
+fermentum."
+    },
+    {
+      value: "fusce",
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+malesuada magna mollis euismod. Praesent commodo cursus magna, vel
+scelerisque nisl consectetur et. Etiam porta sem malesuada magna
+mollis euismod. Etiam porta sem malesuada magna mollis euismod.
+Donec sed odio dui. Sed posuere consectetur est at lobortis."
+    }
+  ]
+}) }}
+```
+
+#### small without page heading
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?"
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "without-heading",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "conditional",
+  name: "contact",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content, error message
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  errorMessage: {
+    text: "Select how you like to be contacted"
+  },
+  idPrefix: "conditional",
+  name: "contact",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content, error message (nested)
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "conditional",
+  name: "example",
+  values: [
+    "phone"
+  ],
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>  <span class="nhsuk-error-message" id="phone-error">
+  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
+  </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with "none of the above" option
+
+```njk
+{{ checkboxes({
+  classes: "nhsuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "conditional",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "None of the above",
+      exclusive: true
     }
   ]
 }) }}
@@ -1686,6 +2492,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ---
 
 ## Contents list
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -1696,36 +2504,38 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `items.href` | string | ✓ | href value to use within each content list item label. |
 | `items.text` | string | ✓ | Text to use within each content list item label. |
 | `current` | boolean |  | Set the current active page. |
+| `landmarkLabel` | string |  | The label for the navigation landmark that wraps the contents list. Defaults to `"Pages in this guide"`. |
 | `classes` | string |  | Classes to add to the content list container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to items in the content list. |
+| `visuallyHiddenTitle` | string |  | Visually hidden title for the contents list items. Defaults to `"Contents"`. |
 
 ### Examples
 
 #### default
 
 ```njk
-{{ contentslist({
+{{ contentsList({
   items: [
     {
-      href: '#',
-      text: 'What is AMD?',
+      href: "#",
+      text: "What is AMD?",
       current: true
     },
     {
-      href: '#',
-      text: 'Symptoms'
+      href: "#",
+      text: "Symptoms"
     },
     {
-      href: '#',
-      text: 'Getting diagnosed'
+      href: "#",
+      text: "Getting diagnosed"
     },
     {
-      href: '#',
-      text: 'Treatments'
+      href: "#",
+      text: "Treatments"
     },
     {
-      href: '#',
-      text: 'Living with AMD'
+      href: "#",
+      text: "Living with AMD"
     }
   ]
 }) }}
@@ -1735,25 +2545,26 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ## Date input
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string |  | This is used for the main component and to compose id attribute for each item. |
-| `namePrefix` | string |  | Optional prefix. This is used to prefix each `item.name` using `'-'`. |
-| `items` | array |  | An array of input objects with name, value and classes. |
-| `items.id` | string |  | Item-specific id. If provided, it will be used instead of the generated id. |
+| `id` | string | ✓ | This is used for the main component and to compose the ID attribute for each item. |
+| `namePrefix` | string |  | Optional prefix. This is used to prefix each item `name`, separated by `-`. |
+| `items` | array |  | The inputs within the date input component. |
+| `items.id` | string |  | Item-specific ID. If provided, it will be used instead of the generated ID. |
 | `items.name` | string | ✓ | Item-specific name attribute. |
 | `items.label` | string |  | Item-specific label text. If provided, this will be used instead of `name` for item label text. |
-| `items.inputmode` | string |  | Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). Defaults to `'numeric'`. |
-| `items.value` | string |  | Optional initial value of the input. |
-| `items.autocomplete` | string |  | Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html), for instance `'postal-code'` or `'username'`. See [Autofilling form controls: the autocomplete attribute](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for the full list of attributes that can be used. |
-| `items.pattern` | string |  | Attribute to [provide a regular expression pattern](https://www.w3.org/TR/html51/sec-forms.html#the-pattern-attribute), used to match allowed character combinations for the input value. |
-| `items.classes` | string |  | Classes to add to the date input item. |
-| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the date input item. |
-| `fieldset` | object |  | Options for the fieldset component (for example legend). |
-| `hint` | object |  | Options for the hint component. |
-| `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
+| `items.inputmode` | string |  | Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). Defaults to `"numeric"`. |
+| `items.value` | string |  | If provided, it will be used as the initial value of the input. |
+| `items.autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used. |
+| `items.pattern` | string |  | Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value. |
+| `items.classes` | string |  | Classes to add to date input item. |
+| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the date input tag. |
+| `hint` | object |  | Can be used to add a hint to a date input component. |
+| `errorMessage` | object |  | Can be used to add an error message to the date input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the date input component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -1763,6 +2574,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `formGroup.afterInputs` | object |  | Content to add after the inputs used by the date input component. |
 | `formGroup.afterInputs.text` | string | ✓ | Text to add after the inputs. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInputs.html` | string | ✓ | HTML to add after the inputs. If `html` is provided, the `text` option will be ignored. |
+| `fieldset` | object |  | Can be used to add a fieldset to the date input component. |
 | `values` | object |  | An optional object use to specify value attributes for the date parts without setting items. |
 | `values.day` | string |  | Value attribute for the day input. |
 | `values.month` | string |  | Value attribute for the month input. |
@@ -1775,40 +2587,40 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'example'
+  id: "example"
 }) }}
 ```
 
 #### with values
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'example',
+  id: "example",
   values: {
-    day: '5',
-    month: '8',
-    year: '2024'
+    day: "5",
+    month: "8",
+    year: "2024"
   }
 }) }}
 ```
@@ -1816,26 +2628,26 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### day and month
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your birthday?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your birthday?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 5 12'
+    text: "For example, 5 12"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2'
+      name: "day",
+      classes: "nhsuk-input--width-2"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2'
+      name: "month",
+      classes: "nhsuk-input--width-2"
     }
   ]
 }) }}
@@ -1844,26 +2656,26 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### month and year
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'When did you start your job?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "When did you start your job?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 11 2023'
+    text: "For example, 11 2023"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2'
+      name: "month",
+      classes: "nhsuk-input--width-2"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4'
+      name: "year",
+      classes: "nhsuk-input--width-4"
     }
   ]
 }) }}
@@ -1872,30 +2684,30 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### month and year with values
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'When did you start your job?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "When did you start your job?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 11 2023'
+    text: "For example, 11 2023"
   },
-  id: 'example',
+  id: "example",
   values: {
-    month: '8',
-    year: '2024'
+    month: "8",
+    year: "2024"
   },
   items: [
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2'
+      name: "month",
+      classes: "nhsuk-input--width-2"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4'
+      name: "year",
+      classes: "nhsuk-input--width-4"
     }
   ]
 }) }}
@@ -1904,121 +2716,121 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with legend size S
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--s',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--s",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'custom-size'
+  id: "custom-size"
 }) }}
 ```
 
 #### with legend size M
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--m',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--m",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'custom-size'
+  id: "custom-size"
 }) }}
 ```
 
 #### with legend size L
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'custom-size'
+  id: "custom-size"
 }) }}
 ```
 
 #### with legend size XL
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--xl',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--xl",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'custom-size'
+  id: "custom-size"
 }) }}
 ```
 
 #### without page heading
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?'
+      text: "What is your date of birth?"
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'example'
+  id: "example"
 }) }}
 ```
 
 #### with autocomplete values
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2',
-      autocomplete: 'bday-day'
+      name: "day",
+      classes: "nhsuk-input--width-2",
+      autocomplete: "bday-day"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2',
-      autocomplete: 'bday-month'
+      name: "month",
+      classes: "nhsuk-input--width-2",
+      autocomplete: "bday-month"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4',
-      autocomplete: 'bday-year'
+      name: "year",
+      classes: "nhsuk-input--width-4",
+      autocomplete: "bday-year"
     }
   ]
 }) }}
@@ -2027,49 +2839,49 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with custom name prefix
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
-  id: 'example',
-  namePrefix: 'example'
+  id: "example",
+  namePrefix: "example"
 }) }}
 ```
 
 #### with errors only
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   errorMessage: {
-    text: 'Enter your date of birth'
+    text: "Enter your date of birth"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "day",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "month",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4 nhsuk-input--error'
+      name: "year",
+      classes: "nhsuk-input--width-4 nhsuk-input--error"
     }
   ]
 }) }}
@@ -2078,33 +2890,33 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with errors and hint
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
   errorMessage: {
-    text: 'Enter your date of birth'
+    text: "Enter your date of birth"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "day",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "month",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4 nhsuk-input--error'
+      name: "year",
+      classes: "nhsuk-input--width-4 nhsuk-input--error"
     }
   ]
 }) }}
@@ -2113,35 +2925,35 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with error on day input
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
   errorMessage: {
-    text: 'Date of birth must include a day'
+    text: "Date of birth must include a day"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "day",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'month',
-      value: '3',
-      classes: 'nhsuk-input--width-2'
+      name: "month",
+      value: "3",
+      classes: "nhsuk-input--width-2"
     },
     {
-      name: 'year',
-      value: '1980',
-      classes: 'nhsuk-input--width-4'
+      name: "year",
+      value: "1980",
+      classes: "nhsuk-input--width-4"
     }
   ]
 }) }}
@@ -2150,35 +2962,35 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with error on month input
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
   errorMessage: {
-    text: 'Date of birth must include a month'
+    text: "Date of birth must include a month"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2',
-      value: '31'
+      name: "day",
+      classes: "nhsuk-input--width-2",
+      value: "31"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2 nhsuk-input--error'
+      name: "month",
+      classes: "nhsuk-input--width-2 nhsuk-input--error"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4',
-      value: '1980'
+      name: "year",
+      classes: "nhsuk-input--width-4",
+      value: "1980"
     }
   ]
 }) }}
@@ -2187,35 +2999,35 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### with error on year input
 
 ```njk
-{{ dateinput({
+{{ dateInput({
   fieldset: {
     legend: {
-      text: 'What is your date of birth?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "What is your date of birth?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'For example, 31 3 1980'
+    text: "For example, 31 3 1980"
   },
   errorMessage: {
-    text: 'Date of birth must include a year'
+    text: "Date of birth must include a year"
   },
-  id: 'example',
+  id: "example",
   items: [
     {
-      name: 'day',
-      classes: 'nhsuk-input--width-2',
-      value: '31'
+      name: "day",
+      classes: "nhsuk-input--width-2",
+      value: "31"
     },
     {
-      name: 'month',
-      classes: 'nhsuk-input--width-2',
-      value: '3'
+      name: "month",
+      classes: "nhsuk-input--width-2",
+      value: "3"
     },
     {
-      name: 'year',
-      classes: 'nhsuk-input--width-4 nhsuk-input--error'
+      name: "year",
+      classes: "nhsuk-input--width-4 nhsuk-input--error"
     }
   ]
 }) }}
@@ -2224,6 +3036,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ---
 
 ## Details
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -2245,7 +3059,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call details({
-  summaryText: 'How to find your NHS number'
+  summaryText: "How to find your NHS number"
 }) %}
   <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
   <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p>
@@ -2263,7 +3077,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call details({
-  summaryText: 'How to find your NHS number',
+  summaryText: "How to find your NHS number",
   open: true
 }) %}
   <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
@@ -2282,8 +3096,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call details({
-  summaryText: 'Opening times',
-  classes: 'nhsuk-expander'
+  summaryText: "Opening times",
+  classes: "nhsuk-expander"
 }) %}
   <table class="nhsuk-table">    <thead class="nhsuk-table__head">
         <tr>          <th scope="col" class="nhsuk-table__header">Day of the week</th>          <th scope="col" class="nhsuk-table__header">Opening hours</th>      </tr>
@@ -2296,8 +3110,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ```njk
 {% call details({
-  summaryText: 'Opening times',
-  classes: 'nhsuk-expander',
+  summaryText: "Opening times",
+  classes: "nhsuk-expander",
   open: true
 }) %}
   <table class="nhsuk-table">    <thead class="nhsuk-table__head">
@@ -2311,16 +3125,20 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ## Do and Don't list
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the do and don't list component. |
 | `title` | string | ✓ | Title to be displayed on the do and don't list component. |
-| `type` | string | ✓ | Type of do and don't list component – `'cross'` or `'tick'`. |
+| `type` | string | ✓ | Type of do and don't list component – `"cross"` or `"tick"`. |
 | `items` | array | ✓ | Array of do and don't items objects. |
-| `items.item` | string | ✓ | Text to use within each do and don't item label. |
-| `hidePrefix` | boolean |  | If set to true when type is `'cross'`, then removes the default `'do not'` text prefix to each item. |
+| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
+| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
+| `prefixText` | string |  | Optional prefix text used before each do and don't item. Defaults to `"do not"` when `type` is `"cross"`. |
+| `hidePrefix` | boolean |  | If set to `true`, the optional `prefixText` will be removed from each do and don't item. |
 | `headingLevel` | integer |  | Optional heading level for the title heading. Defaults to `3`. |
 | `classes` | string |  | Classes to add to the do and don't list container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the do and don't list container. |
@@ -2330,41 +3148,153 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ doanddon'tlist({
-  title: 'Do',
-  type: 'tick',
+{{ list({
+  title: "Do",
+  type: "tick",
   items: [
     {
-      item: 'cover blisters with a soft plaster or padded dressing'
+      text: "cover blisters with a soft plaster or padded dressing"
     },
     {
-      item: 'wash your hands before touching a burst blister'
+      text: "wash your hands before touching a burst blister"
     },
     {
-      item: 'allow the fluid in a burst blister to drain before covering it with a plaster or dressing'
+      text: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
     }
   ]
 }) }}
 ```
 
-#### don't
+#### (do) with deprecated parameters
 
 ```njk
-{{ doanddon'tlist({
-  title: 'Don't',
-  type: 'cross',
+{{ list({
+  title: "Do",
+  type: "tick",
   items: [
     {
-      item: 'burst a blister yourself'
+      item: "cover blisters with a soft plaster or padded dressing"
     },
     {
-      item: 'peel the skin off a burst blister'
+      item: "wash your hands before touching a burst blister"
     },
     {
-      item: 'pick at the edges of the remaining skin'
+      item: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+    }
+  ]
+}) }}
+```
+
+#### (do) with custom prefix
+
+```njk
+{{ list({
+  title: "Do",
+  type: "tick",
+  prefixText: "always",
+  items: [
+    {
+      item: "cover blisters with a soft plaster or padded dressing"
     },
     {
-      item: 'wear the shoes or use the equipment that caused your blister until it heals'
+      item: "wash your hands before touching a burst blister"
+    },
+    {
+      item: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+    }
+  ]
+}) }}
+```
+
+#### (don't)
+
+```njk
+{{ list({
+  title: "Don't",
+  type: "cross",
+  items: [
+    {
+      text: "burst a blister yourself"
+    },
+    {
+      text: "peel the skin off a burst blister"
+    },
+    {
+      text: "pick at the edges of the remaining skin"
+    },
+    {
+      text: "wear the shoes or use the equipment that caused your blister until it heals"
+    }
+  ]
+}) }}
+```
+
+#### (don't) with deprecated parameters
+
+```njk
+{{ list({
+  title: "Don't",
+  type: "cross",
+  items: [
+    {
+      item: "burst a blister yourself"
+    },
+    {
+      item: "peel the skin off a burst blister"
+    },
+    {
+      item: "pick at the edges of the remaining skin"
+    },
+    {
+      item: "wear the shoes or use the equipment that caused your blister until it heals"
+    }
+  ]
+}) }}
+```
+
+#### (don't) with custom prefix
+
+```njk
+{{ list({
+  title: "Never",
+  type: "cross",
+  prefixText: "never",
+  items: [
+    {
+      text: "burst a blister yourself"
+    },
+    {
+      text: "peel the skin off a burst blister"
+    },
+    {
+      text: "pick at the edges of the remaining skin"
+    },
+    {
+      text: "wear the shoes or use the equipment that caused your blister until it heals"
+    }
+  ]
+}) }}
+```
+
+#### (don't) with hidden prefix
+
+```njk
+{{ list({
+  title: "Don't",
+  type: "cross",
+  hidePrefix: true,
+  items: [
+    {
+      text: "avoid bursting a blister yourself"
+    },
+    {
+      text: "certainly don't peel the skin off a burst blister"
+    },
+    {
+      text: "absolutely do not pick at the edges of the remaining skin"
+    },
+    {
+      text: "please don't wear the shoes or use the equipment that caused your blister until it heals"
     }
   ]
 }) }}
@@ -2374,15 +3304,17 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ## Error message
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the error message. If `html` is provided, the `text` argument will be ignored. |
-| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the error message. If `html` is provided, the `text` argument will be ignored. |
-| `id` | string |  | Id attribute to add to the error message span tag. |
-| `classes` | string |  | Classes to add to the error message span tag. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the error message span tag. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the error message. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the error message. If `html` is provided, the `text` option will be ignored. |
+| `id` | string |  | ID attribute to add to the error message `<span>` tag. |
+| `classes` | string |  | Classes to add to the error message `<span>` tag. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the error message `<span>` tag. |
 | `visuallyHiddenText` | string |  | A visually hidden prefix used before the error message. Defaults to `"Error"`. |
 
 ### Examples
@@ -2390,14 +3322,16 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ errormessage({
-  text: 'Enter your full name'
+{{ errorMessage({
+  text: "Enter your full name"
 }) }}
 ```
 
 ---
 
 ## Error summary
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -2408,11 +3342,11 @@ This comprehensive reference guide for NHS Frontend components includes all para
 | `titleHtml` | string | ✓ | If `titleText` is set, this is not required. HTML to use for the heading of the error summary block. If `titleHtml` is provided, `titleText` will be ignored. |
 | `descriptionText` | string |  | Text to use for the description of the errors. If you set `descriptionHtml`, the component will ignore `descriptionText`. |
 | `descriptionHtml` | string |  | HTML to use for the description of the errors. If you set this option, the component will ignore `descriptionText`. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire error summary component in a `call` block. |
-| `errorList` | array | ✓ | Contains an array of error link items and all their available arguments. |
+| `caller` | nunjucks-block |  | Not strictly a parameter but [Nunjucks code convention](https://mozilla.github.io/nunjucks/templating.html#call). Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire error summary component in a `call` block. |
+| `errorList` | array |  | A list of errors to include in the error summary. |
 | `errorList.href` | string |  | Href attribute for the error link item. If provided item will be an anchor. |
-| `errorList.text` | string | ✓ | If `html` is set, this is not required. Text for the error link item. If `html` is provided, the `text` argument will be ignored. |
-| `errorList.html` | string | ✓ | If `text` is set, this is not required. HTML for the error link item. If `html` is provided, the `text` argument will be ignored. |
+| `errorList.text` | string | ✓ | If `html` is set, this is not required. Text for the error link item. If `html` is provided, the `text` option will be ignored. |
+| `errorList.html` | string | ✓ | If `text` is set, this is not required. HTML for the error link item. If `html` is provided, the `text` option will be ignored. |
 | `errorList.attributes` | object |  | HTML attributes (for example data attributes) to add to the error link anchor. |
 | `disableAutoFocus` | boolean |  | Prevent moving focus to the error summary when the page loads. |
 | `classes` | string |  | Classes to add to the error-summary container. |
@@ -2423,13 +3357,13 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### default
 
 ```njk
-{{ errorsummary({
-  titleText: 'There is a problem',
-  descriptionText: 'Describe the errors and how to correct them',
+{{ errorSummary({
+  titleText: "There is a problem",
+  descriptionText: "Describe the errors and how to correct them",
   errorList: [
     {
-      text: 'Date of birth must be in the past',
-      href: '#example-day'
+      text: "Date of birth must be in the past",
+      href: "#example-day"
     }
   ]
 }) }}
@@ -2438,12 +3372,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### without description
 
 ```njk
-{{ errorsummary({
-  titleText: 'There is a problem',
+{{ errorSummary({
+  titleText: "There is a problem",
   errorList: [
     {
-      text: 'Date of birth must be in the past',
-      href: '#example-day'
+      text: "Date of birth must be in the past",
+      href: "#example-day"
     }
   ]
 }) }}
@@ -2452,12 +3386,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### auto-focus disabled
 
 ```njk
-{{ errorsummary({
-  titleText: 'There is a problem',
+{{ errorSummary({
+  titleText: "There is a problem",
   errorList: [
     {
-      text: 'Date of birth must be in the past',
-      href: '#example-day'
+      text: "Date of birth must be in the past",
+      href: "#example-day"
     }
   ],
   disableAutoFocus: true
@@ -2467,12 +3401,12 @@ This comprehensive reference guide for NHS Frontend components includes all para
 #### auto-focus explicitly enabled
 
 ```njk
-{{ errorsummary({
-  titleText: 'There is a problem',
+{{ errorSummary({
+  titleText: "There is a problem",
   errorList: [
     {
-      text: 'Date of birth must be in the past',
-      href: '#example-day'
+      text: "Date of birth must be in the past",
+      href: "#example-day"
     }
   ],
   disableAutoFocus: false
@@ -2483,20 +3417,24 @@ This comprehensive reference guide for NHS Frontend components includes all para
 
 ## Fieldset
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the fieldset. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
-| `legend` | object |  | Options for the legend |
-| `legend.text` | string | ✓ | If `html` is set, this is not required. Text to use within the legend. If `html` is provided, the `text` argument will be ignored. |
-| `legend.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the legend. If `html` is provided, the `text` argument will be ignored. |
+| `legend` | object |  | The legend for the fieldset component. |
+| `legend.text` | string | ✓ | If `html` is set, this is not required. Text to use within the legend. If `html` is provided, the `text` option will be ignored. |
+| `legend.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the legend. If `html` is provided, the `text` option will be ignored. |
 | `legend.classes` | string |  | Classes to add to the legend. |
 | `legend.isPageHeading` | boolean |  | Whether the legend also acts as the heading for the page. |
 | `classes` | string |  | Classes to add to the fieldset container. |
+| `role` | string |  | Optional ARIA role attribute. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the fieldset container. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire fieldset component in a `call` block. |
+| `html` | string |  | HTML to use/render within the fieldset element. |
+| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire fieldset component in a `call` block. |
 
 ### Examples
 
@@ -2505,8 +3443,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {% call fieldset({
   legend: {
-    text: 'What is your address?',
-    classes: 'nhsuk-fieldset__legend--l',
+    text: "What is your address?",
+    classes: "nhsuk-fieldset__legend--l",
     isPageHeading: true
   }
 }) %}
@@ -2540,8 +3478,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ fieldset({
   legend: {
-    text: 'What is your address?',
-    classes: 'nhsuk-fieldset__legend--xl',
+    text: "What is your address?",
+    classes: "nhsuk-fieldset__legend--xl",
     isPageHeading: true
   }
 }) }}
@@ -2552,8 +3490,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ fieldset({
   legend: {
-    text: 'What is your address?',
-    classes: 'nhsuk-fieldset__legend--l',
+    text: "What is your address?",
+    classes: "nhsuk-fieldset__legend--l",
     isPageHeading: true
   }
 }) }}
@@ -2564,8 +3502,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ fieldset({
   legend: {
-    text: 'What is your address?',
-    classes: 'nhsuk-fieldset__legend--m',
+    text: "What is your address?",
+    classes: "nhsuk-fieldset__legend--m",
     isPageHeading: true
   }
 }) }}
@@ -2576,8 +3514,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ fieldset({
   legend: {
-    text: 'What is your address?',
-    classes: 'nhsuk-fieldset__legend--s',
+    text: "What is your address?",
+    classes: "nhsuk-fieldset__legend--s",
     isPageHeading: true
   }
 }) }}
@@ -2588,7 +3526,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ fieldset({
   legend: {
-    text: 'What is your address?'
+    text: "What is your address?"
   }
 }) }}
 ```
@@ -2596,6 +3534,8 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ---
 
 ## Footer
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -2639,24 +3579,24 @@ This comprehensive reference guide for NHS Frontend components includes all para
   meta: {
     items: [
       {
-        href: '#',
-        text: 'Accessibility statement'
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        href: '#',
-        text: 'Contact us'
+        href: "#",
+        text: "Contact us"
       },
       {
-        href: '#',
-        text: 'Cookies'
+        href: "#",
+        text: "Cookies"
       },
       {
-        href: '#',
-        text: 'Privacy policy'
+        href: "#",
+        text: "Privacy policy"
       },
       {
-        href: '#',
-        text: 'Terms and conditions'
+        href: "#",
+        text: "Terms and conditions"
       }
     ]
   }
@@ -2668,7 +3608,7 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ footer({
   copyright: {
-    text: '© East London NHS Foundation Trust'
+    text: "© East London NHS Foundation Trust"
   }
 }) }}
 ```
@@ -2680,24 +3620,24 @@ This comprehensive reference guide for NHS Frontend components includes all para
   meta: {
     items: [
       {
-        href: '#',
-        text: 'Accessibility statement'
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        href: '#',
-        text: 'Contact us'
+        href: "#",
+        text: "Contact us"
       },
       {
-        href: '#',
-        text: 'Cookies'
+        href: "#",
+        text: "Cookies"
       },
       {
-        href: '#',
-        text: 'Privacy policy'
+        href: "#",
+        text: "Privacy policy"
       },
       {
-        href: '#',
-        text: 'Terms and conditions'
+        href: "#",
+        text: "Terms and conditions"
       }
     ]
   }
@@ -2709,30 +3649,30 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ footer({
   copyright: {
-    text: '© Crown copyright'
+    text: "© Crown copyright"
   },
   meta: {
-    text: 'All content is available under the Open Government Licence v3.0, except where otherwise stated.',
+    text: "All content is available under the Open Government Licence v3.0, except where otherwise stated.",
     items: [
       {
-        href: '#',
-        text: 'Accessibility statement'
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        href: '#',
-        text: 'Contact us'
+        href: "#",
+        text: "Contact us"
       },
       {
-        href: '#',
-        text: 'Cookies'
+        href: "#",
+        text: "Cookies"
       },
       {
-        href: '#',
-        text: 'Privacy policy'
+        href: "#",
+        text: "Privacy policy"
       },
       {
-        href: '#',
-        text: 'Terms and conditions'
+        href: "#",
+        text: "Terms and conditions"
       }
     ]
   }
@@ -2746,24 +3686,24 @@ This comprehensive reference guide for NHS Frontend components includes all para
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Accessibility statement'
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        href: '#',
-        text: 'Contact us'
+        href: "#",
+        text: "Contact us"
       },
       {
-        href: '#',
-        text: 'Cookies'
+        href: "#",
+        text: "Cookies"
       },
       {
-        href: '#',
-        text: 'Privacy policy'
+        href: "#",
+        text: "Privacy policy"
       },
       {
-        href: '#',
-        text: 'Terms and conditions'
+        href: "#",
+        text: "Terms and conditions"
       }
     ]
   }
@@ -2775,110 +3715,110 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ footer({
   copyright: {
-    text: '© Crown copyright'
+    text: "© Crown copyright"
   },
   navigation: [
     {
       items: [
         {
-          href: '#',
-          text: 'Home'
+          href: "#",
+          text: "Home"
         },
         {
-          href: '#',
-          text: 'Health A to Z'
+          href: "#",
+          text: "Health A to Z"
         },
         {
-          href: '#',
-          text: 'NHS services'
+          href: "#",
+          text: "NHS services"
         },
         {
-          href: '#',
-          text: 'Live Well'
+          href: "#",
+          text: "Live Well"
         },
         {
-          href: '#',
-          text: 'Mental health'
+          href: "#",
+          text: "Mental health"
         },
         {
-          href: '#',
-          text: 'Care and support'
+          href: "#",
+          text: "Care and support"
         },
         {
-          href: '#',
-          text: 'Accessibility statement'
+          href: "#",
+          text: "Accessibility statement"
         },
         {
-          href: '#',
-          text: 'Pregnancy'
+          href: "#",
+          text: "Pregnancy"
         },
         {
-          href: '#',
-          text: 'COVID-19'
+          href: "#",
+          text: "COVID-19"
         }
       ]
     },
     {
       items: [
         {
-          href: '#',
-          text: 'NHS App'
+          href: "#",
+          text: "NHS App"
         },
         {
-          href: '#',
-          text: 'Find my NHS number'
+          href: "#",
+          text: "Find my NHS number"
         },
         {
-          href: '#',
-          text: 'View your GP health records'
+          href: "#",
+          text: "View your GP health records"
         },
         {
-          href: '#',
-          text: 'View your test results'
+          href: "#",
+          text: "View your test results"
         },
         {
-          href: '#',
-          text: 'About the NHS'
+          href: "#",
+          text: "About the NHS"
         },
         {
-          href: '#',
-          text: 'Healthcare abroad'
+          href: "#",
+          text: "Healthcare abroad"
         }
       ]
     },
     {
       items: [
         {
-          href: '#',
-          text: 'Other NHS websites'
+          href: "#",
+          text: "Other NHS websites"
         },
         {
-          href: '#',
-          text: 'Profile editor login'
+          href: "#",
+          text: "Profile editor login"
         }
       ]
     },
     {
       items: [
         {
-          href: '#',
-          text: 'About us'
+          href: "#",
+          text: "About us"
         },
         {
-          href: '#',
-          text: 'Give us feedback'
+          href: "#",
+          text: "Give us feedback"
         },
         {
-          href: '#',
-          text: 'Accessibility statement'
+          href: "#",
+          text: "Accessibility statement"
         },
         {
-          href: '#',
-          text: 'Our policies'
+          href: "#",
+          text: "Our policies"
         },
         {
-          href: '#',
-          text: 'Cookies'
+          href: "#",
+          text: "Cookies"
         }
       ]
     }
@@ -2891,56 +3831,56 @@ This comprehensive reference guide for NHS Frontend components includes all para
 ```njk
 {{ footer({
   copyright: {
-    text: '© 2025 – Manchester University NHS Foundation Trust'
+    text: "© 2025 – Manchester University NHS Foundation Trust"
   },
   columns: 3,
   navigation: [
     {
-      width: 'one-quarter',
+      width: "one-quarter",
       items: [
         {
-          href: '#',
-          text: 'About us'
+          href: "#",
+          text: "About us"
         },
         {
-          href: '#',
-          text: 'Give us feedback'
+          href: "#",
+          text: "Give us feedback"
         },
         {
-          href: '#',
-          text: 'Accessibility statement'
+          href: "#",
+          text: "Accessibility statement"
         }
       ]
     },
     {
-      width: 'one-quarter',
+      width: "one-quarter",
       items: [
         {
-          href: '#',
-          text: 'Cookies'
+          href: "#",
+          text: "Cookies"
         },
         {
-          href: '#',
-          text: 'Privacy policy'
+          href: "#",
+          text: "Privacy policy"
         },
         {
-          href: '#',
-          text: 'Terms and conditions'
+          href: "#",
+          text: "Terms and conditions"
         }
       ]
     },
     {
-      width: 'one-half',
-      html: '<p class="nhsuk-body-s nhsuk-u-margin-bottom-6"><strong>Manchester
+      width: "one-half",
+      html: "<p class="nhsuk-body-s nhsuk-u-margin-bottom-6"><strong>Manchester
 University NHS Foundation Trust (MFT)</strong> was formed on 1st
 October 2017 following the merger of Central Manchester University
 Hospitals NHS Foundation Trust (CMFT) and University Hospital of
-South Manchester NHS Foundation Trust (UHSM).</p>'
+South Manchester NHS Foundation Trust (UHSM).</p>"
     },
     {
-      width: 'full',
-      html: '<p class="nhsuk-body-s">Cobbett House, Manchester University NHS
-Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
+      width: "full",
+      html: "<p class="nhsuk-body-s">Cobbett House, Manchester University NHS
+Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     }
   ]
 }) }}
@@ -2952,53 +3892,53 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ footer({
   navigation: [
     {
-      title: 'Legal',
+      title: "Legal",
       items: [
         {
-          href: '#',
-          text: 'Looking after your data'
+          href: "#",
+          text: "Looking after your data"
         },
         {
-          href: '#',
-          text: 'Freedom of information'
+          href: "#",
+          text: "Freedom of information"
         },
         {
-          href: '#',
-          text: 'Modern Slavery and human trafficking statement'
+          href: "#",
+          text: "Modern Slavery and human trafficking statement"
         }
       ]
     },
     {
-      title: 'Get in touch',
+      title: "Get in touch",
       items: [
         {
-          href: '#',
-          text: 'Contact us'
+          href: "#",
+          text: "Contact us"
         },
         {
-          href: '#',
-          text: 'Press office'
+          href: "#",
+          text: "Press office"
         },
         {
-          href: '#',
-          text: 'Tell us what you think of our website'
+          href: "#",
+          text: "Tell us what you think of our website"
         },
         {
-          href: '#',
-          text: 'RSS feeds'
+          href: "#",
+          text: "RSS feeds"
         }
       ]
     },
     {
-      title: 'Follow us',
+      title: "Follow us",
       items: [
         {
-          href: '#',
-          text: 'LinkedIn'
+          href: "#",
+          text: "LinkedIn"
         },
         {
-          href: '#',
-          text: 'YouTube'
+          href: "#",
+          text: "YouTube"
         }
       ]
     }
@@ -3011,113 +3951,113 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ footer({
   copyright: {
-    text: '© Crown copyright'
+    text: "© Crown copyright"
   },
   navigation: [
     {
       items: [
         {
-          href: '#',
-          text: 'Home'
+          href: "#",
+          text: "Home"
         },
         {
-          href: '#',
-          text: 'Health A to Z'
+          href: "#",
+          text: "Health A to Z"
         },
         {
-          href: '#',
-          text: 'Live Well'
+          href: "#",
+          text: "Live Well"
         },
         {
-          href: '#',
-          text: 'Mental health'
+          href: "#",
+          text: "Mental health"
         },
         {
-          href: '#',
-          text: 'Care and support'
+          href: "#",
+          text: "Care and support"
         },
         {
-          href: '#',
-          text: 'Accessibility statement'
+          href: "#",
+          text: "Accessibility statement"
         },
         {
-          href: '#',
-          text: 'Pregnancy'
+          href: "#",
+          text: "Pregnancy"
         },
         {
-          href: '#',
-          text: 'NHS services'
+          href: "#",
+          text: "NHS services"
         },
         {
-          href: '#',
-          text: 'Coronavirus (COVID-19)'
+          href: "#",
+          text: "Coronavirus (COVID-19)"
         }
       ]
     },
     {
       items: [
         {
-          href: '#',
-          text: 'NHS App'
+          href: "#",
+          text: "NHS App"
         },
         {
-          href: '#',
-          text: 'Find my NHS number'
+          href: "#",
+          text: "Find my NHS number"
         },
         {
-          href: '#',
-          text: 'Your health records'
+          href: "#",
+          text: "Your health records"
         },
         {
-          href: '#',
-          text: 'About the NHS'
+          href: "#",
+          text: "About the NHS"
         },
         {
-          href: '#',
-          text: 'Healthcare abroad'
+          href: "#",
+          text: "Healthcare abroad"
         }
       ]
     },
     {
       items: [
         {
-          href: '#',
-          text: 'Other NHS websites'
+          href: "#",
+          text: "Other NHS websites"
         },
         {
-          href: '#',
-          text: 'Profile editor login'
+          href: "#",
+          text: "Profile editor login"
         }
       ]
     }
   ],
   meta: {
-    html: '<p class="nhsuk-body-s">
+    html: "<p class="nhsuk-body-s">
   <svg class="nhsuk-u-static-margin-right-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 17" aria-hidden="true" focusable="false" height="17" width="41">
     <path fill="currentColor" d="M35.77 12.4V.02l-4.3 2.8V16.8H41v-4.4Zm-10.38-.83a3.93 3.93 0 0 1-4.29.64 4.09 4.09 0 0 1-2.35-3.71 3.97 3.97 0 0 1 7.36-2.2l3.63-2.35A8.25 8.25 0 0 0 22.75.02c-3.1 0-5.8 1.74-7.22 4.3A8.3 8.3 0 0 0 8.3.02 8.4 8.4 0 0 0 0 8.5a8.4 8.4 0 0 0 8.3 8.48c3.1 0 5.8-1.75 7.22-4.32a8.17 8.17 0 0 0 12.7 2.2l1.64 1.93h.25V9.18h-6.79Zm-17.1 1.02A4.04 4.04 0 0 1 4.3 8.5c0-2.25 1.8-4.08 4-4.08s4 1.82 4 4.08c0 2.25-1.8 4.09-4 4.09"/>
   </svg>
   All content is available under the <a class="nhsuk-footer__list-item-link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
-</p>',
+</p>",
     items: [
       {
-        href: '#',
-        text: 'About us'
+        href: "#",
+        text: "About us"
       },
       {
-        href: '#',
-        text: 'Give us feedback'
+        href: "#",
+        text: "Give us feedback"
       },
       {
-        href: '#',
-        text: 'Accessibility statement'
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        href: '#',
-        text: 'Our policies'
+        href: "#",
+        text: "Our policies"
       },
       {
-        href: '#',
-        text: 'Cookies'
+        href: "#",
+        text: "Cookies"
       }
     ]
   }
@@ -3128,16 +4068,18 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Header
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the header. |
-| `logo` | object |  | Object containing options for the logo |
+| `logo` | object |  | Object containing options for the logo. |
 | `logo.href` | string |  | The `href` of the link for the logo. If not set, and a `service.href` is set, or both are set to same value, then the logo and service name will be combined into a single link. |
 | `logo.src` | string |  | The path of the logo image, if you are not using the default NHS logo. |
-| `logo.alt` | string |  | The alt text for the logo. Defaults to `'NHS'` |
-| `logo.ariaLabel` | string |  | The `aria-label` for a linked logo. Defaults to `'NHS homepage'` |
+| `logo.alt` | string |  | The alt text for the logo. Defaults to `"NHS"`. |
+| `logo.ariaLabel` | string |  | The `aria-label` for a linked logo. Defaults to `"NHS homepage"`. |
 | `service` | object |  | Object containing options for the service name. |
 | `service.text` | string |  | The text to use for the service name. |
 | `service.href` | string |  | The `href` of the link for the service name. |
@@ -3154,15 +4096,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 | `navigation.items.active` | boolean |  | Set to true if the current page is within this section, but the link doesn't necessarily link to the current page |
 | `navigation.items.classes` | string |  | Classes to add to the list item containing the link. |
 | `navigation.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the list item containing the link. |
-| `navigation.ariaLabel` | string |  | The `aria-label` for the primary navigation. Defaults to `'Menu'` |
+| `navigation.ariaLabel` | string |  | The `aria-label` for the primary navigation. Defaults to `"Menu"`. |
+| `navigation.toggleMenuText` | string |  | Text for the toggle menu button. Defaults to `"More"`. |
+| `navigation.toggleMenuVisuallyHiddenText` | string |  | A visually hidden prefix used before the toggle menu button text. Defaults to `"Browse"`. |
 | `navigation.classes` | string |  | Classes to add to the primary navigation. |
 | `navigation.attributes` | object |  | HTML attributes (for example data attributes) to add to the primary navigation. |
-| `search` | object |  | Object containing settings for a search box |
-| `search.action` | string |  | The search action endpoint. Defaults to `'https://www.nhs.uk/search'` |
-| `search.name` | string |  | The name for the search field. Defaults to `'q'` |
-| `search.placeholder` | string |  | The placeholder text for the search field. Defaults to `'Search'` |
-| `search.visuallyHiddenLabel` | string |  | The label for the search field. Defaults to `'Search the NHS website'` |
-| `search.visuallyHiddenButton` | string |  | The label for the visually hidden button. Defaults to `'Search'` |
+| `search` | object |  | Object containing settings for a search box. |
+| `search.action` | string |  | The search action endpoint. Defaults to `"https://www.nhs.uk/search"`. |
+| `search.name` | string |  | The name for the search field. Defaults to `"q"`. |
+| `search.placeholder` | string |  | The placeholder text for the search field. Defaults to `"Search"`. |
+| `search.visuallyHiddenLabel` | string |  | The label for the search field. Defaults to `"Search the NHS website"`. |
+| `search.visuallyHiddenButton` | string |  | The label for the visually hidden button. Defaults to `"Search"`. |
 | `account` | object |  | Object containing settings for the account section of the header. |
 | `account.items` | array |  | Array of account items for use in the header. |
 | `account.items.href` | string |  | The href of an account item in the header. |
@@ -3170,8 +4114,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 | `account.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the account item. If `html` is provided, the `text` argument will be ignored. |
 | `account.items.icon` | boolean |  | Whether to include the account icon for the account item. Defaults to `false`. |
 | `account.items.action` | string |  | If set, the item will become a button wrapped in a form with the action given. Useful for log out buttons. |
-| `account.items.method` | string |  | The value to use for the `method` of the form if `action` is set. Defaults to `'post'` |
-| `account.ariaLabel` | string |  | The `aria-label` for the account navigation. Defaults to `'Account'` |
+| `account.items.method` | string |  | The value to use for the `method` of the form if `action` is set. Defaults to `"post"`. |
+| `account.ariaLabel` | string |  | The `aria-label` for the account navigation. Defaults to `"Account"`. |
 | `account.classes` | string |  | Classes to add to the account navigation. |
 | `account.attributes` | object |  | HTML attributes (for example data attributes) to add to the account navigation. |
 | `baseUrl` | string |  | Base URL to prepend to the `logo.src` path. |
@@ -3186,37 +4130,37 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   service: {
-    text: 'Digital service manual',
-    href: '#'
+    text: "Digital service manual",
+    href: "#"
   },
   search: {
-    placeholder: 'Search',
-    visuallyHiddenLabel: 'Search the NHS digital service manual'
+    placeholder: "Search",
+    visuallyHiddenLabel: "Search the NHS digital service manual"
   },
   navigation: {
     items: [
       {
-        text: 'NHS service standard',
-        href: '#'
+        text: "NHS service standard",
+        href: "#"
       },
       {
-        text: 'Design system',
-        href: '#'
+        text: "Design system",
+        href: "#"
       },
       {
-        text: 'Content guide',
-        href: '#'
+        text: "Content guide",
+        href: "#"
       },
       {
-        text: 'Accessibility',
-        href: '#'
+        text: "Accessibility",
+        href: "#"
       },
       {
-        text: 'Community and contribution',
-        href: '#'
+        text: "Community and contribution",
+        href: "#"
       }
     ]
   }
@@ -3234,7 +4178,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   }
 }) }}
 ```
@@ -3246,13 +4190,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
   account: {
     items: [
       {
-        href: '#',
-        text: 'florence.nightingale@nhs.net',
+        href: "#",
+        text: "florence.nightingale@nhs.net",
         icon: true
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   }
@@ -3266,8 +4210,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
   account: {
     items: [
       {
-        href: '#',
-        text: 'Log in'
+        href: "#",
+        text: "Log in"
       }
     ]
   }
@@ -3279,34 +4223,34 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       }
     ]
   }
@@ -3318,35 +4262,35 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
-    classes: 'nhsuk-header__navigation--justified',
+    classes: "nhsuk-header__navigation--justified",
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       }
     ]
   }
@@ -3358,42 +4302,42 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       },
       {
-        href: '#',
-        text: 'Another item #1'
+        href: "#",
+        text: "Another item #1"
       },
       {
-        href: '#',
-        text: 'Another item #2'
+        href: "#",
+        text: "Another item #2"
       }
     ]
   }
@@ -3405,43 +4349,43 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
-    classes: 'nhsuk-header__navigation--white',
+    classes: "nhsuk-header__navigation--white",
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       },
       {
-        href: '#',
-        text: 'Another item #1'
+        href: "#",
+        text: "Another item #1"
       },
       {
-        href: '#',
-        text: 'Another item #2'
+        href: "#",
+        text: "Another item #2"
       }
     ]
   }
@@ -3461,10 +4405,10 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   service: {
-    text: 'Find your NHS number'
+    text: "Find your NHS number"
   }
 }) }}
 ```
@@ -3474,11 +4418,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#nhs'
+    href: "#nhs"
   },
   service: {
-    text: 'Find your NHS number',
-    href: '#'
+    text: "Find your NHS number",
+    href: "#"
   }
 }) }}
 ```
@@ -3488,8 +4432,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   service: {
-    text: 'Prototype kit',
-    href: '#'
+    text: "Prototype kit",
+    href: "#"
   }
 }) }}
 ```
@@ -3499,11 +4443,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#nhs'
+    href: "#nhs"
   },
   service: {
-    text: 'This a really long service name to fully test wrapping',
-    href: '#'
+    text: "This a really long service name to fully test wrapping",
+    href: "#"
   },
   search: true
 }) }}
@@ -3514,46 +4458,46 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   service: {
-    href: '#',
-    text: 'Manage patients'
+    href: "#",
+    text: "Manage patients"
   },
   search: {
-    placeholder: 'Name or NHS number',
-    visuallyHiddenLabel: 'Search patients by name or NHS number'
+    placeholder: "Name or NHS number",
+    visuallyHiddenLabel: "Search patients by name or NHS number"
   },
   account: {
     items: [
       {
-        href: '#',
-        text: 'Florence Nightingale',
+        href: "#",
+        text: "Florence Nightingale",
         icon: true
       },
       {
-        text: 'Regional Manager, Hull and East Yorkshire Hospitals NHS Trust'
+        text: "Regional Manager, Hull and East Yorkshire Hospitals NHS Trust"
       },
       {
-        href: '#',
-        text: 'Change role'
+        href: "#",
+        text: "Change role"
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Home'
+        href: "#",
+        text: "Home"
       },
       {
-        href: '#',
-        text: 'Create user'
+        href: "#",
+        text: "Create user"
       },
       {
-        href: '#',
-        text: 'Find user'
+        href: "#",
+        text: "Find user"
       }
     ]
   }
@@ -3565,42 +4509,42 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   service: {
-    text: 'Search patient directory',
-    href: '#'
+    text: "Search patient directory",
+    href: "#"
   },
   search: {
-    placeholder: 'Name or NHS number',
-    visuallyHiddenLabel: 'Search patients by name or NHS number'
+    placeholder: "Name or NHS number",
+    visuallyHiddenLabel: "Search patients by name or NHS number"
   },
   account: {
     items: [
       {
-        text: 'Florence Nightingale',
+        text: "Florence Nightingale",
         icon: true
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Home'
+        href: "#",
+        text: "Home"
       },
       {
-        href: '#',
-        text: 'Patient list'
+        href: "#",
+        text: "Patient list"
       },
       {
-        href: '#',
-        text: 'Advanced search'
+        href: "#",
+        text: "Advanced search"
       },
       {
-        href: '#',
-        text: 'Help guides'
+        href: "#",
+        text: "Help guides"
       }
     ]
   }
@@ -3612,10 +4556,10 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Business Services Authority'
+    name: "Business Services Authority"
   }
 }) }}
 ```
@@ -3625,11 +4569,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace Anywhere",
+    descriptor: "NHS Foundation Trust"
   }
 }) }}
 ```
@@ -3639,12 +4583,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace',
-    split: 'Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace",
+    split: "Anywhere",
+    descriptor: "NHS Foundation Trust"
   }
 }) }}
 ```
@@ -3654,15 +4598,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ header({
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace',
-    split: 'Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace",
+    split: "Anywhere",
+    descriptor: "NHS Foundation Trust"
   },
   search: {
-    visuallyHiddenLabel: 'Search the Anytown Anyplace Anywhere website'
+    visuallyHiddenLabel: "Search the Anytown Anyplace Anywhere website"
   }
 }) }}
 ```
@@ -3671,7 +4615,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white'
+  classes: "nhsuk-header--white"
 }) }}
 ```
 
@@ -3679,9 +4623,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   }
 }) }}
 ```
@@ -3690,10 +4634,10 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    ariaLabel: 'NHS white homepage',
-    href: '#'
+    ariaLabel: "NHS white homepage",
+    href: "#"
   }
 }) }}
 ```
@@ -3702,11 +4646,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#',
-    src: '/nhsuk-frontend/assets/example-logo.svg',
-    alt: 'Great Ormond Street Hospital for Children, NHS Foundation Trust'
+    href: "#",
+    src: "/nhsuk-frontend/assets/example-logo.svg",
+    alt: "Great Ormond Street Hospital for Children, NHS Foundation Trust"
   }
 }) }}
 ```
@@ -3715,17 +4659,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   account: {
     items: [
       {
-        href: '#',
-        text: 'florence.nightingale@nhs.net',
+        href: "#",
+        text: "florence.nightingale@nhs.net",
         icon: true
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   }
@@ -3736,12 +4680,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   account: {
     items: [
       {
-        href: '#',
-        text: 'Log in'
+        href: "#",
+        text: "Log in"
       }
     ]
   }
@@ -3752,36 +4696,36 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       }
     ]
   }
@@ -3792,37 +4736,37 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
-    classes: 'nhsuk-header__navigation--justified',
+    classes: "nhsuk-header__navigation--justified",
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       }
     ]
   }
@@ -3833,44 +4777,44 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       },
       {
-        href: '#',
-        text: 'Another item #1'
+        href: "#",
+        text: "Another item #1"
       },
       {
-        href: '#',
-        text: 'Another item #2'
+        href: "#",
+        text: "Another item #2"
       }
     ]
   }
@@ -3881,45 +4825,45 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   navigation: {
-    classes: 'nhsuk-header__navigation--white',
+    classes: "nhsuk-header__navigation--white",
     items: [
       {
-        href: '#',
-        text: 'Health A to Z'
+        href: "#",
+        text: "Health A to Z"
       },
       {
-        href: '#',
-        text: 'Live Well'
+        href: "#",
+        text: "Live Well"
       },
       {
-        href: '#',
-        text: 'Mental health'
+        href: "#",
+        text: "Mental health"
       },
       {
-        href: '#',
-        text: 'Care and support'
+        href: "#",
+        text: "Care and support"
       },
       {
-        href: '#',
-        text: 'Pregnancy',
+        href: "#",
+        text: "Pregnancy",
         active: true
       },
       {
-        href: '#',
-        text: 'NHS services'
+        href: "#",
+        text: "NHS services"
       },
       {
-        href: '#',
-        text: 'Another item #1'
+        href: "#",
+        text: "Another item #1"
       },
       {
-        href: '#',
-        text: 'Another item #2'
+        href: "#",
+        text: "Another item #2"
       }
     ]
   }
@@ -3930,7 +4874,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   search: true
 }) }}
 ```
@@ -3939,12 +4883,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   service: {
-    text: 'Find your NHS number'
+    text: "Find your NHS number"
   }
 }) }}
 ```
@@ -3953,13 +4897,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#nhs'
+    href: "#nhs"
   },
   service: {
-    text: 'Find your NHS number',
-    href: '#'
+    text: "Find your NHS number",
+    href: "#"
   }
 }) }}
 ```
@@ -3968,10 +4912,10 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   service: {
-    text: 'Prototype kit',
-    href: '#'
+    text: "Prototype kit",
+    href: "#"
   }
 }) }}
 ```
@@ -3980,13 +4924,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#nhs'
+    href: "#nhs"
   },
   service: {
-    text: 'This a really long service name to fully test wrapping',
-    href: '#'
+    text: "This a really long service name to fully test wrapping",
+    href: "#"
   },
   search: true
 }) }}
@@ -3996,48 +4940,48 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   service: {
-    href: '#',
-    text: 'Manage patients'
+    href: "#",
+    text: "Manage patients"
   },
   search: {
-    placeholder: 'Name or NHS number',
-    visuallyHiddenLabel: 'Search patients by name or NHS number'
+    placeholder: "Name or NHS number",
+    visuallyHiddenLabel: "Search patients by name or NHS number"
   },
   account: {
     items: [
       {
-        href: '#',
-        text: 'Florence Nightingale',
+        href: "#",
+        text: "Florence Nightingale",
         icon: true
       },
       {
-        text: 'Regional Manager, Hull and East Yorkshire Hospitals NHS Trust'
+        text: "Regional Manager, Hull and East Yorkshire Hospitals NHS Trust"
       },
       {
-        href: '#',
-        text: 'Change role'
+        href: "#",
+        text: "Change role"
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Home'
+        href: "#",
+        text: "Home"
       },
       {
-        href: '#',
-        text: 'Create user'
+        href: "#",
+        text: "Create user"
       },
       {
-        href: '#',
-        text: 'Find user'
+        href: "#",
+        text: "Find user"
       }
     ]
   }
@@ -4048,44 +4992,44 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   service: {
-    text: 'Search patient directory',
-    href: '#'
+    text: "Search patient directory",
+    href: "#"
   },
   search: {
-    placeholder: 'Name or NHS number',
-    visuallyHiddenLabel: 'Search patients by name or NHS number'
+    placeholder: "Name or NHS number",
+    visuallyHiddenLabel: "Search patients by name or NHS number"
   },
   account: {
     items: [
       {
-        text: 'Florence Nightingale',
+        text: "Florence Nightingale",
         icon: true
       },
       {
-        action: '#',
-        text: 'Log out'
+        action: "#",
+        text: "Log out"
       }
     ]
   },
   navigation: {
     items: [
       {
-        href: '#',
-        text: 'Home'
+        href: "#",
+        text: "Home"
       },
       {
-        href: '#',
-        text: 'Patient list'
+        href: "#",
+        text: "Patient list"
       },
       {
-        href: '#',
-        text: 'Advanced search'
+        href: "#",
+        text: "Advanced search"
       },
       {
-        href: '#',
-        text: 'Help guides'
+        href: "#",
+        text: "Help guides"
       }
     ]
   }
@@ -4096,12 +5040,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Business Services Authority'
+    name: "Business Services Authority"
   }
 }) }}
 ```
@@ -4110,13 +5054,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace Anywhere",
+    descriptor: "NHS Foundation Trust"
   }
 }) }}
 ```
@@ -4125,14 +5069,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace',
-    split: 'Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace",
+    split: "Anywhere",
+    descriptor: "NHS Foundation Trust"
   }
 }) }}
 ```
@@ -4141,17 +5085,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ header({
-  classes: 'nhsuk-header--white',
+  classes: "nhsuk-header--white",
   logo: {
-    href: '#'
+    href: "#"
   },
   organisation: {
-    name: 'Anytown Anyplace',
-    split: 'Anywhere',
-    descriptor: 'NHS Foundation Trust'
+    name: "Anytown Anyplace",
+    split: "Anywhere",
+    descriptor: "NHS Foundation Trust"
   },
   search: {
-    visuallyHiddenLabel: 'Search the Anytown Anyplace Anywhere website'
+    visuallyHiddenLabel: "Search the Anytown Anyplace Anywhere website"
   }
 }) }}
 ```
@@ -4159,6 +5103,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ---
 
 ## Hero
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4182,8 +5128,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ hero({
-  heading: 'We're here for you',
-  text: 'Helping you take control of your health and wellbeing.'
+  heading: "We're here for you",
+  text: "Helping you take control of your health and wellbeing."
 }) }}
 ```
 
@@ -4191,7 +5137,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ hero({
-  imageURL: 'https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg'
+  imageURL: "https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg"
 }) }}
 ```
 
@@ -4199,9 +5145,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ hero({
-  heading: 'We're here for you',
-  text: 'Helping you take control of your health and wellbeing.',
-  imageURL: 'https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg'
+  heading: "We're here for you",
+  text: "Helping you take control of your health and wellbeing.",
+  imageURL: "https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg"
 }) }}
 ```
 
@@ -4209,9 +5155,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ hero({
-  heading: 'This is a header for the product or service',
-  headingClasses: 'nhsuk-heading-l nhsuk-u-margin-top-5',
-  html: '<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>
+  heading: "This is a header for the product or service",
+  headingClasses: "nhsuk-heading-l nhsuk-u-margin-top-5",
+  html: "<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>
 
 
 
@@ -4223,13 +5169,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
   Sign up
 </a>
 
-'
+"
 }) }}
 ```
 
 ---
 
 ## Hint text
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4246,14 +5194,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 #### default
 
 ```njk
-{{ hinttext({
-  text: 'Do not include personal information like your name, date of birth or NHS number'
+{{ hint({
+  text: "Do not include personal information like your name, date of birth or NHS number"
 }) }}
 ```
 
 ---
 
 ## Images
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4273,21 +5223,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 #### default
 
 ```njk
-{{ images({
-  src: 'https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg',
-  sizes: '(max-width: 768px) 100vw, 66vw',
-  srcset: 'https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w',
-  alt: 'Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin.',
-  caption: 'Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time.'
+{{ image({
+  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  srcset: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
+  alt: "Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin.",
+  caption: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
 }) }}
 ```
 
 #### without caption
 
 ```njk
-{{ images({
-  src: 'https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg',
-  alt: 'Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin.'
+{{ image({
+  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  alt: "Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin."
 }) }}
 ```
 
@@ -4295,34 +5245,49 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Input
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the input. Defaults to the value of `name`. |
 | `name` | string | ✓ | The name of the input, which is submitted with the form data. |
-| `type` | string |  | Type of input control to render. Defaults to `"text"`. |
-| `inputmode` | string |  | Optional value for inputmode. |
+| `type` | string |  | Type of input control to render, for example, an email input control. Defaults to `"text"`. |
+| `inputmode` | string |  | Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). |
 | `value` | string |  | Optional initial value of the input. |
+| `disabled` | boolean |  | If `true`, input will be disabled. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
-| `label` | object | ✓ | Options for the label component. |
-| `hint` | object |  | Options for the hint component. |
-| `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
-| `prefix` | string |  | Optional prefix text to be displayed before the input. |
-| `suffix` | string |  | Optional suffix text to be displayed after the input. |
-| `formGroup` | object |  | Additional options for the form group containing the input component. |
+| `label` | object | ✓ | The label used by the text input component. |
+| `hint` | object |  | Can be used to add a hint to a text input component. |
+| `errorMessage` | object |  | Can be used to add an error message to the text input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
+| `prefix` | object |  | Can be used to add a prefix to the text input component. |
+| `prefix.text` | string | ✓ | Required. If `html` is set, this is not required. Text to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.html` | string | ✓ | Required. If `text` is set, this is not required. HTML to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.classes` | string |  | Classes to add to the prefix. |
+| `prefix.attributes` | object |  | HTML attributes (for example data attributes) to add to the prefix element. |
+| `suffix` | object |  | Can be used to add a suffix to the text input component. |
+| `suffix.text` | string | ✓ | If `html` is set, this is not required. Text to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.classes` | string |  | Classes to add to the suffix element. |
+| `suffix.attributes` | object |  | HTML attributes (for example data attributes) to add to the suffix element. |
+| `formGroup` | object |  | Additional options for the form group containing the text input component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
 | `formGroup.beforeInput` | object |  | Content to add before the input used by the text input component. |
 | `formGroup.beforeInput.text` | string | ✓ | Text to add before the input. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.beforeInput.html` | string | ✓ | HTML to add before the input. If `html` is provided, the `text` option will be ignored. |
-| `formGroup.afterInput` | object |  | Content to add after the input used by the date input component. |
+| `formGroup.afterInput` | object |  | Content to add after the input used by the text input component. |
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the input. |
-| `autocomplete` | string |  | autocomplete attribute to identify input purpose, for instance `"postal-code"` or `"username"`. |
-| `pattern` | string |  | pattern attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
-| `spellcheck` | boolean |  | Optional field to enable or disable the spellcheck attribute on the input. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used. |
+| `pattern` | string |  | Attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
+| `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the input. |
+| `autocapitalize` | string |  | Optional field to enable or disable autocapitalisation of user input. [See the Autocapitalization section in the HTML spec](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used. |
+| `inputWrapper` | object |  | If any of `prefix`, `suffix`, `formGroup.beforeInput` or `formGroup.afterInput` have a value, a wrapping element is added around the input and inserted content. This object allows you to customise that wrapping element. |
+| `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
+| `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the input. |
 
 ### Examples
@@ -4332,11 +5297,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your full name?',
-    classes: 'nhsuk-label--l',
+    text: "What is your full name?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  name: 'example'
+  name: "example"
 }) }}
 ```
 
@@ -4345,17 +5310,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--l',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Your NHS number is a 10 digit number that you find on any letter the NHS has sent you, for example, 485 777 3456'
+    text: "Your NHS number is a 10 digit number that you find on any letter the NHS has sent you, for example, 485 777 3456"
   },
-  id: 'with-hint',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "with-hint",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4365,17 +5330,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--l',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   errorMessage: {
-    text: 'Enter NHS number'
+    text: "Enter NHS number"
   },
-  id: 'with-error-message',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "with-error-message",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4385,20 +5350,20 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--l',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Your NHS number is a 10 digit number that you find on any letter the NHS has sent you, for example, 485 777 3456'
+    text: "Your NHS number is a 10 digit number that you find on any letter the NHS has sent you, for example, 485 777 3456"
   },
   errorMessage: {
-    text: 'Enter NHS number'
+    text: "Enter NHS number"
   },
-  id: 'with-hint-error',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "with-hint-error",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4408,11 +5373,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '2 character width'
+    text: "2 character width"
   },
-  id: 'input-width-2',
-  name: 'example',
-  classes: 'nhsuk-input--width-2'
+  id: "input-width-2",
+  name: "example",
+  classes: "nhsuk-input--width-2"
 }) }}
 ```
 
@@ -4421,11 +5386,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '3 character width'
+    text: "3 character width"
   },
-  id: 'input-width-3',
-  name: 'example',
-  classes: 'nhsuk-input--width-3'
+  id: "input-width-3",
+  name: "example",
+  classes: "nhsuk-input--width-3"
 }) }}
 ```
 
@@ -4434,11 +5399,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '4 character width'
+    text: "4 character width"
   },
-  id: 'input-width-4',
-  name: 'example',
-  classes: 'nhsuk-input--width-4'
+  id: "input-width-4",
+  name: "example",
+  classes: "nhsuk-input--width-4"
 }) }}
 ```
 
@@ -4447,11 +5412,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '5 character width'
+    text: "5 character width"
   },
-  id: 'input-width-5',
-  name: 'example',
-  classes: 'nhsuk-input--width-5'
+  id: "input-width-5",
+  name: "example",
+  classes: "nhsuk-input--width-5"
 }) }}
 ```
 
@@ -4460,11 +5425,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '10 character width'
+    text: "10 character width"
   },
-  id: 'input-width-10',
-  name: 'example',
-  classes: 'nhsuk-input--width-10'
+  id: "input-width-10",
+  name: "example",
+  classes: "nhsuk-input--width-10"
 }) }}
 ```
 
@@ -4473,11 +5438,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '20 character width'
+    text: "20 character width"
   },
-  id: 'input-width-20',
-  name: 'example',
-  classes: 'nhsuk-input--width-20'
+  id: "input-width-20",
+  name: "example",
+  classes: "nhsuk-input--width-20"
 }) }}
 ```
 
@@ -4486,11 +5451,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: '30 character width'
+    text: "30 character width"
   },
-  id: 'input-width-30',
-  name: 'example',
-  classes: 'nhsuk-input--width-30'
+  id: "input-width-30",
+  name: "example",
+  classes: "nhsuk-input--width-30"
 }) }}
 ```
 
@@ -4499,14 +5464,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--s',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--s",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "custom-size",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4516,14 +5481,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--m',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--m",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "custom-size",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4533,14 +5498,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--l',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "custom-size",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4550,14 +5515,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?',
-    classes: 'nhsuk-label--xl',
+    text: "What is your NHS number?",
+    classes: "nhsuk-label--xl",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "custom-size",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4567,12 +5532,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'What is your NHS number?'
+    text: "What is your NHS number?"
   },
-  id: 'without-heading',
-  name: 'example',
-  classes: 'nhsuk-input--width-10',
-  inputmode: 'numeric',
+  id: "without-heading",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
@@ -4582,13 +5547,46 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'Cost in pounds',
+    text: "Cost in pounds",
     isPageHeading: true
   },
-  id: 'with-prefix',
-  name: 'example',
-  prefix: '£',
-  classes: 'nhsuk-input--width-5'
+  id: "with-prefix",
+  name: "example",
+  prefix: {
+    text: "£"
+  },
+  classes: "nhsuk-input--width-5"
+}) }}
+```
+
+#### with prefix HTML
+
+```njk
+{{ input({
+  label: {
+    text: "Cost in pounds",
+    isPageHeading: true
+  },
+  id: "with-prefix",
+  name: "example",
+  prefix: {
+    html: "<span>£</span>"
+  },
+  classes: "nhsuk-input--width-5"
+}) }}
+```
+
+#### with deprecated prefix string parameter
+
+```njk
+{{ input({
+  label: {
+    text: "Cost in pounds",
+    isPageHeading: true
+  },
+  id: "with-prefix",
+  name: "example",
+  prefix: "£"
 }) }}
 ```
 
@@ -4597,13 +5595,47 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'Weight in kilograms',
+    text: "Weight in kilograms",
     isPageHeading: true
   },
-  id: 'with-suffix',
-  name: 'example',
-  suffix: 'kg',
-  classes: 'nhsuk-input--width-5'
+  id: "with-suffix",
+  name: "example",
+  suffix: {
+    text: "kg"
+  },
+  classes: "nhsuk-input--width-5"
+}) }}
+```
+
+#### with suffix HTML
+
+```njk
+{{ input({
+  label: {
+    text: "Weight in kilograms",
+    isPageHeading: true
+  },
+  id: "with-suffix",
+  name: "example",
+  suffix: {
+    html: "<span>kg</span>"
+  },
+  classes: "nhsuk-input--width-5"
+}) }}
+```
+
+#### with deprecated suffix string parameter
+
+```njk
+{{ input({
+  label: {
+    text: "Weight in kilograms",
+    isPageHeading: true
+  },
+  id: "with-suffix",
+  name: "example",
+  suffix: "kg",
+  classes: "nhsuk-input--width-5"
 }) }}
 ```
 
@@ -4612,14 +5644,18 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'Cost per item, in pounds',
+    text: "Cost per item, in pounds",
     isPageHeading: true
   },
-  id: 'with-prefix-suffix',
-  name: 'example',
-  prefix: '£',
-  suffix: 'per item',
-  classes: 'nhsuk-input--width-5'
+  id: "with-prefix-suffix",
+  name: "example",
+  prefix: {
+    text: "£"
+  },
+  suffix: {
+    text: "per item"
+  },
+  classes: "nhsuk-input--width-5"
 }) }}
 ```
 
@@ -4628,17 +5664,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'Cost per item, in pounds',
+    text: "Cost per item, in pounds",
     isPageHeading: true
   },
   errorMessage: {
-    text: 'Enter a cost per item, in pounds'
+    text: "Enter a cost per item, in pounds"
   },
-  id: 'with-prefix-suffix',
-  name: 'example',
-  prefix: '£',
-  suffix: 'per item',
-  classes: 'nhsuk-input--width-5'
+  id: "with-prefix-suffix",
+  name: "example",
+  prefix: {
+    text: "£"
+  },
+  suffix: {
+    text: "per item"
+  },
+  classes: "nhsuk-input--width-5"
 }) }}
 ```
 
@@ -4647,21 +5687,23 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ input({
   label: {
-    text: 'Enter a full postcode in England',
+    text: "Enter a full postcode in England",
     isPageHeading: true
   },
   hint: {
-    text: 'For example, LS1 1AB'
+    text: "For example, LS1 1AB"
   },
-  id: 'with-autocomplete-attribute',
-  name: 'example',
-  autocomplete: 'postal-code'
+  id: "with-autocomplete-attribute",
+  name: "example",
+  autocomplete: "postal-code"
 }) }}
 ```
 
 ---
 
 ## Inset text
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4673,6 +5715,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire inset text component in a `call` block. |
 | `classes` | string |  | Classes to add to the inset text. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the inset text. |
+| `visuallyHiddenText` | string |  | A visually hidden prefix used before the inset text. Defaults to `"Information"`. |
 
 ### Examples
 
@@ -4680,16 +5723,18 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Label
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the label. |
-| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` argument will be ignored. |
-| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` argument will be ignored. |
-| `for` | string | ✓ | The value of the for attribute, the id of the input the label is associated with. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
+| `for` | string |  | The value of the `for` attribute, the ID of the input the label is associated with. |
 | `isPageHeading` | boolean |  | Whether the label also acts as the heading for the page. |
-| `classes` | string |  | Classes to add to the label tag. Separate each class with a space. |
+| `classes` | string |  | Classes to add to the label tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
 
 ### Examples
@@ -4698,8 +5743,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?',
-  classes: 'nhsuk-label--l',
+  text: "What is your full name?",
+  classes: "nhsuk-label--l",
   isPageHeading: true
 }) }}
 ```
@@ -4708,8 +5753,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?',
-  classes: 'nhsuk-label--xl',
+  text: "What is your full name?",
+  classes: "nhsuk-label--xl",
   isPageHeading: true
 }) }}
 ```
@@ -4718,8 +5763,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?',
-  classes: 'nhsuk-label--l',
+  text: "What is your full name?",
+  classes: "nhsuk-label--l",
   isPageHeading: true
 }) }}
 ```
@@ -4728,8 +5773,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?',
-  classes: 'nhsuk-label--m',
+  text: "What is your full name?",
+  classes: "nhsuk-label--m",
   isPageHeading: true
 }) }}
 ```
@@ -4738,8 +5783,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?',
-  classes: 'nhsuk-label--s',
+  text: "What is your full name?",
+  classes: "nhsuk-label--s",
   isPageHeading: true
 }) }}
 ```
@@ -4748,13 +5793,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ label({
-  text: 'What is your full name?'
+  text: "What is your full name?"
 }) }}
 ```
 
 ---
 
 ## Notification banner
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4782,83 +5829,83 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 #### default
 
 ```njk
-{{ notificationbanner({
-  text: 'The patient record was updated.'
+{{ notificationBanner({
+  text: "The patient record was updated."
 }) }}
 ```
 
 #### paragraph as html heading
 
 ```njk
-{{ notificationbanner({
-  html: '<p class="nhsuk-notification-banner__heading">You have 9 days to send a response.</p>'
+{{ notificationBanner({
+  html: "<p class="nhsuk-notification-banner__heading">You have 9 days to send a response.</p>"
 }) }}
 ```
 
 #### with text as html
 
 ```njk
-{{ notificationbanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">
+{{ notificationBanner({
+  html: "<h3 class="nhsuk-notification-banner__heading">
   The patient record was updated
 </h3>
 <p class="nhsuk-body">
   Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there's a problem.
-</p>'
+</p>"
 }) }}
 ```
 
 #### with type as success
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
-  text: 'Email sent to example@email.com'
+{{ notificationBanner({
+  type: "success",
+  text: "Email sent to example@email.com"
 }) }}
 ```
 
 #### success with custom html
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
-  html: '<h3 class="nhsuk-notification-banner__heading">
+{{ notificationBanner({
+  type: "success",
+  html: "<h3 class="nhsuk-notification-banner__heading">
   4 files uploaded
 </h3>
 <ul class="nhsuk-u-margin-0 nhsuk-list">
   <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
   <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>
-</ul>'
+</ul>"
 }) }}
 ```
 
 #### with a list
 
 ```njk
-{{ notificationbanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">4 files uploaded</h3>
+{{ notificationBanner({
+  html: "<h3 class="nhsuk-notification-banner__heading">4 files uploaded</h3>
 <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-0">
   <li><a href="#" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
   <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v2.pdf</a></li>
   <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v3-FINAL.pdf</a></li>
   <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v4-FINAL-v2.pdf</a></li>
-</ul>'
+</ul>"
 }) }}
 ```
 
 #### with long heading
 
 ```njk
-{{ notificationbanner({
-  text: 'The patient record was withdrawn on 7 March 2014, before being sent in, sent back, queried, lost, found, subjected to public inquiry, lost again, and finally buried in soft peat for three months and recycled as firelighters.'
+{{ notificationBanner({
+  text: "The patient record was withdrawn on 7 March 2014, before being sent in, sent back, queried, lost, found, subjected to public inquiry, lost again, and finally buried in soft peat for three months and recycled as firelighters."
 }) }}
 ```
 
 #### with lots of content
 
 ```njk
-{{ notificationbanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">
+{{ notificationBanner({
+  html: "<h3 class="nhsuk-notification-banner__heading">
   Check if you need to apply the reverse charge to this application
 </h3>
 <p class="nhsuk-body">
@@ -4867,46 +5914,46 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 <ul class="nhsuk-list nhsuk-list--bullet">
   <li>constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services</li>
   <li>constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours</li>
-</ul>'
+</ul>"
 }) }}
 ```
 
 #### auto-focus disabled, with type as success
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
+{{ notificationBanner({
+  type: "success",
   disableAutoFocus: true,
-  text: 'Email sent to example@email.com'
+  text: "Email sent to example@email.com"
 }) }}
 ```
 
 #### auto-focus explicitly enabled, with type as success
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
+{{ notificationBanner({
+  type: "success",
   disableAutoFocus: false,
-  text: 'Email sent to example@email.com'
+  text: "Email sent to example@email.com"
 }) }}
 ```
 
 #### role=alert overridden to role=region, with type as success
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
-  role: 'region',
-  text: 'Email sent to example@email.com'
+{{ notificationBanner({
+  type: "success",
+  role: "region",
+  text: "Email sent to example@email.com"
 }) }}
 ```
 
 #### custom tabindex
 
 ```njk
-{{ notificationbanner({
-  type: 'success',
-  text: 'Email sent to example@email.com',
+{{ notificationBanner({
+  type: "success",
+  text: "Email sent to example@email.com",
   attributes: {
     tabindex: 2
   }
@@ -4917,17 +5964,35 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Pagination
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the pagination container. |
-| `previousUrl` | string | ✓ | The value of the previous link href attribute. |
-| `previousPage` | string | ✓ | The text of the previous link. |
-| `nextUrl` | string | ✓ | The value of the next link href attribute. |
-| `nextPage` | string | ✓ | The text of the next link. |
-| `classes` | string |  | Classes to add to the pagination container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the pagination container. |
+| `items` | array |  | The items within the pagination component. |
+| `items.number` | string |  | The pagination item text – usually a page number.  Required unless the item is an ellipsis. |
+| `items.visuallyHiddenText` | string |  | The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". |
+| `items.href` | string |  | The link's URL. Required unless the item is an ellipsis. |
+| `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
+| `items.ellipsis` | boolean |  | Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored. |
+| `items.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `previous` | object |  | A link to the previous page, if there is a previous page. |
+| `previous.text` | string |  | The text content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
+| `previous.html` | string |  | The HTML content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
+| `previous.labelText` | string |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. |
+| `previous.href` | string | ✓ | The previous page's URL. |
+| `previous.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `next` | object |  | A link to the next page, if there is a next page. |
+| `next.text` | string |  | The text content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
+| `next.html` | string |  | The HTML content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
+| `next.labelText` | string |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. |
+| `next.href` | string | ✓ | The next page's URL. |
+| `next.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `landmarkLabel` | string |  | The label for the navigation landmark that wraps the pagination. Defaults to `"Pagination"`. |
+| `classes` | string |  | The classes you want to add to the pagination `nav` parent. |
+| `attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the pagination `nav` parent. |
 
 ### Examples
 
@@ -4935,16 +6000,230 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ pagination({
-  previousUrl: '/section/treatments',
-  previousPage: 'Treatments',
-  nextUrl: '/section/symptoms',
-  nextPage: 'Symptoms'
+  previous: {
+    labelText: "Treatments",
+    href: "/section/treatments"
+  },
+  next: {
+    labelText: "Symptoms",
+    href: "/section/symptoms"
+  }
+}) }}
+```
+
+#### with deprecated parameters
+
+```njk
+{{ pagination({
+  previousUrl: "/section/treatments",
+  previousPage: "Treatments",
+  nextUrl: "/section/symptoms",
+  nextPage: "Symptoms"
+}) }}
+```
+
+#### with only previous
+
+```njk
+{{ pagination({
+  previous: {
+    labelText: "Treatments",
+    href: "/section/treatments"
+  }
+}) }}
+```
+
+#### with only next
+
+```njk
+{{ pagination({
+  next: {
+    labelText: "Symptoms",
+    href: "/section/symptoms"
+  }
+}) }}
+```
+
+#### with translations
+
+```njk
+{{ pagination({
+  previous: {
+    text: "Blaenorol",
+    labelText: "Driniaethau",
+    href: "/section/driniaethau"
+  },
+  next: {
+    text: "Nesaf",
+    labelText: "Symptomau",
+    href: "/section/symptomau"
+  }
+}) }}
+```
+
+#### numbered
+
+```njk
+{{ pagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#",
+      current: true
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+```
+
+#### numbered with many pages
+
+```njk
+{{ pagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      ellipsis: true
+    },
+    {
+      number: 8,
+      href: "#"
+    },
+    {
+      number: 9,
+      href: "#"
+    },
+    {
+      number: 10,
+      href: "#",
+      current: true
+    },
+    {
+      number: 11,
+      href: "#"
+    },
+    {
+      number: 12,
+      href: "#"
+    },
+    {
+      ellipsis: true
+    },
+    {
+      number: 40,
+      href: "#"
+    }
+  ]
+}) }}
+```
+
+#### numbered first page
+
+```njk
+{{ pagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#",
+      current: true
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+```
+
+#### numbered last page
+
+```njk
+{{ pagination({
+  previous: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#",
+      current: true
+    }
+  ]
+}) }}
+```
+
+#### numbered with translations
+
+```njk
+{{ pagination({
+  previous: {
+    text: "Blaenorol",
+    href: "#"
+  },
+  next: {
+    text: "Nesaf",
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#",
+      current: true
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
 }) }}
 ```
 
 ---
 
 ## Panel
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -4966,8 +6245,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ panel({
-  titleText: 'Booking complete',
-  text: 'We have sent you a confirmation email'
+  titleText: "Booking complete",
+  text: "We have sent you a confirmation email"
 }) }}
 ```
 
@@ -4975,14 +6254,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Radios
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the radios component. |
-| `fieldset` | object |  | Options for the fieldset component (for example legend). |
-| `hint` | object |  | Options for the hint component (for example text). |
-| `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
+| `fieldset` | object |  | The fieldset used by the radios component. |
+| `hint` | object |  | Can be used to add a hint to the radios component. |
+| `errorMessage` | object |  | Can be used to add an error message to the radios component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the radios component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -4992,22 +6273,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 | `formGroup.afterInputs` | object |  | Content to add after all radio items within the radios component. |
 | `formGroup.afterInputs.text` | string | ✓ | Text to add after all radio items. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInputs.html` | string | ✓ | HTML to add after all radio items. If `html` is provided, the `text` option will be ignored. |
-| `idPrefix` | string |  | String to prefix id for each radio item if no id is specified on each item. If `idPrefix` is not passed, fallback to using the name attribute instead. |
-| `name` | string | ✓ | Name attribute for each radio item. |
-| `value` | string |  | The value for the radio which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
-| `items` | array | ✓ | Array of radio items objects. |
-| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each radio item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each radio item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.id` | string |  | Specific id attribute for the radio item. If omitted, then `idPrefix` string will be applied. |
-| `items.label` | object |  | Options for the label component. |
+| `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for each radio input, hint and error message, separated by `-`. Defaults to the `name` option value. |
+| `name` | string | ✓ | Name attribute for the radio items. |
+| `items` | array | ✓ | The radio items within the radios component. |
+| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each radio item label. If `html` is provided, the `text` option will be ignored. |
+| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each radio item label. If `html` is provided, the `text` option will be ignored. |
+| `items.id` | string |  | Specific ID attribute for the radio item. If omitted, then `idPrefix` string will be applied. |
 | `items.value` | string | ✓ | Value for the radio input. |
-| `items.hint` | object |  | Provide hint to each radio item. |
-| `items.divider` | string |  | Divider text to separate radio items, for example the text `'or'`. |
-| `items.checked` | boolean |  | If true, radio will be checked. |
+| `items.label` | object |  | Subset of options for the label used by each radio item within the radios component. |
+| `items.label.classes` | string |  | Classes to add to the label tag. |
+| `items.label.attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
+| `items.hint` | object |  | Can be used to add a hint to each radio item within the radios component. |
+| `items.divider` | string |  | Divider text to separate radio items, for example the text `"or"`. |
+| `items.checked` | boolean |  | Whether the radio should be checked when the page loads. Takes precedence over the top-level `value` option. |
 | `items.conditional` | object |  | Provide additional content to reveal when the radio is checked. |
 | `items.conditional.html` | string | ✓ | The HTML to reveal when the radio is checked. |
-| `classes` | string |  | Classes to add to the radio container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the radio input tag. |
+| `items.disabled` | boolean |  | If `true`, radio will be disabled. |
+| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the radio input tag. |
+| `value` | string |  | The value for the radio which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
+| `classes` | string |  | Classes to add to the radios container. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the radios container. |
 
 ### Examples
 
@@ -5017,20 +6302,20 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  name: 'example',
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5042,28 +6327,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Do you know your NHS number?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Do you know your NHS number?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'This is a 10 digit number, like 485 777 3456, that you can find on an NHS letter, prescription or in the NHS App'
+    text: "This is a 10 digit number, like 485 777 3456, that you can find on an NHS letter, prescription or in the NHS App"
   },
-  idPrefix: 'with-hint',
-  name: 'example',
+  idPrefix: "with-hint",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes, I know my NHS number'
+      value: "yes",
+      text: "Yes, I know my NHS number"
     },
     {
-      value: 'no',
-      text: 'No, I do not know my NHS number'
+      value: "no",
+      text: "No, I do not know my NHS number"
     },
     {
-      value: 'not sure',
-      text: 'I'm not sure'
+      value: "not sure",
+      text: "I'm not sure"
     }
   ]
 }) }}
@@ -5073,25 +6358,25 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ radios({
-  classes: 'nhsuk-radios--inline',
+  classes: "nhsuk-radios--inline",
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'inline',
-  name: 'example',
-  value: 'no',
+  idPrefix: "inline",
+  name: "example",
+  value: "no",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5103,21 +6388,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--s',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--s",
       isPageHeading: true
     }
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5129,21 +6414,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--m',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--m",
       isPageHeading: true
     }
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5155,21 +6440,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5181,21 +6466,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?',
-      classes: 'nhsuk-fieldset__legend--xl',
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--xl",
       isPageHeading: true
     }
   },
-  idPrefix: 'custom-size',
-  name: 'example',
+  idPrefix: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5207,19 +6492,19 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Are you 18 or over?'
+      text: "Are you 18 or over?"
     }
   },
-  idPrefix: 'without-heading',
-  name: 'example',
+  idPrefix: "without-heading",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5231,28 +6516,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'How do you want to sign in?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to sign in?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'with-divider',
-  name: 'example',
+  idPrefix: "with-divider",
+  name: "example",
   items: [
     {
-      value: 'nhsuk-login',
-      text: 'Use NHS login'
+      value: "nhsuk-login",
+      text: "Use NHS login"
     },
     {
-      value: 'government-verify',
-      text: 'Use GOV.UK Verify'
+      value: "government-verify",
+      text: "Use GOV.UK Verify"
     },
     {
-      divider: 'or'
+      divider: "or"
     },
     {
-      value: 'create-account',
-      text: 'Create an account'
+      value: "create-account",
+      text: "Create an account"
     }
   ]
 }) }}
@@ -5264,26 +6549,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Do you have a mobile phone with signal?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Do you have a mobile phone with signal?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  idPrefix: 'with-hint-item',
-  name: 'example',
+  idPrefix: "with-hint-item",
+  name: "example",
   items: [
     {
-      value: 'mobile',
-      text: 'Yes, I have a mobile phone with signal',
+      value: "mobile",
+      text: "Yes, I have a mobile phone with signal",
       hint: {
-        text: 'We will text you a 6 digit security code'
+        text: "We will text you a 6 digit security code"
       }
     },
     {
-      value: 'landline',
-      text: 'No, I want to use my landline',
+      value: "landline",
+      text: "No, I want to use my landline",
       hint: {
-        text: 'We will call you to give you a 6 digit security code'
+        text: "We will call you to give you a 6 digit security code"
       }
     }
   ]
@@ -5294,20 +6579,20 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ```njk
 {{ radios({
-  id: 'without-fieldset',
-  name: 'colours',
+  id: "without-fieldset",
+  name: "colours",
   items: [
     {
-      value: 'red',
-      text: 'Red'
+      value: "red",
+      text: "Red"
     },
     {
-      value: 'green',
-      text: 'Green'
+      value: "green",
+      text: "Green"
     },
     {
-      value: 'blue',
-      text: 'Blue'
+      value: "blue",
+      text: "Blue"
     }
   ]
 }) }}
@@ -5319,25 +6604,25 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Have you changed your name?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'This includes changing your last name or spelling your name differently'
+    text: "This includes changing your last name or spelling your name differently"
   },
-  idPrefix: 'with-disabled-item',
-  name: 'example',
+  idPrefix: "with-disabled-item",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes',
+      value: "yes",
+      text: "Yes",
       disabled: true
     },
     {
-      value: 'no',
-      text: 'No',
+      value: "no",
+      text: "No",
       disabled: true
     }
   ]
@@ -5350,24 +6635,24 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Have you changed your name?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   errorMessage: {
-    text: 'Select yes if you have changed your name'
+    text: "Select yes if you have changed your name"
   },
-  idPrefix: 'with-error-message',
-  name: 'example',
+  idPrefix: "with-error-message",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
@@ -5379,27 +6664,71 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'Have you changed your name?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'This includes changing your last name or spelling your name differently'
+    text: "This includes changing your last name or spelling your name differently"
   },
   errorMessage: {
-    text: 'Select yes if you have changed your name'
+    text: "Select yes if you have changed your name"
   },
-  idPrefix: 'with-hint-error',
-  name: 'example',
+  idPrefix: "with-hint-error",
+  name: "example",
   items: [
     {
-      value: 'yes',
-      text: 'Yes'
+      value: "yes",
+      text: "Yes"
     },
     {
-      value: 'no',
-      text: 'No'
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### with long text
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      text: "Venenatis Condimentum",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-long-text",
+  name: "example",
+  items: [
+    {
+      value: "nullam",
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
+quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
+at eget metus."
+    },
+    {
+      value: "aenean",
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
+nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+venenatis vestibulum. Cras mattis consectetur purus sit amet
+fermentum."
+    },
+    {
+      value: "fusce",
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+malesuada magna mollis euismod. Praesent commodo cursus magna, vel
+scelerisque nisl consectetur et. Etiam porta sem malesuada magna
+mollis euismod. Etiam porta sem malesuada magna mollis euismod.
+Donec sed odio dui. Sed posuere consectetur est at lobortis."
     }
   ]
 }) }}
@@ -5411,48 +6740,48 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select 1 option'
+    text: "Select 1 option"
   },
-  idPrefix: 'conditional',
-  name: 'example',
+  idPrefix: "conditional",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -5465,51 +6794,51 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select 1 option'
+    text: "Select 1 option"
   },
   errorMessage: {
-    text: 'Select how you prefer to be contacted'
+    text: "Select how you prefer to be contacted"
   },
-  idPrefix: 'conditional',
-  name: 'example',
+  idPrefix: "conditional",
+  name: "example",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -5522,51 +6851,51 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--l',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select 1 option'
+    text: "Select 1 option"
   },
-  idPrefix: 'conditional',
-  name: 'example',
-  value: 'phone',
+  idPrefix: "conditional",
+  name: "example",
+  value: "phone",
   items: [
     {
-      value: 'email',
-      text: 'Email',
+      value: "email",
+      text: "Email",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="email">
     Email address
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-'
+"
       }
     },
     {
-      value: 'phone',
-      text: 'Phone',
+      value: "phone",
+      text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group nhsuk-form-group--error">
+        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
   <label class="nhsuk-label" for="phone">
     Phone number
   </label>  <span class="nhsuk-error-message" id="phone-error">
   <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
   </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
-'
+"
       }
     },
     {
-      value: 'text',
-      text: 'Text message',
+      value: "text",
+      text: "Text message",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
   <label class="nhsuk-label" for="mobile">
     Mobile phone number
   </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-'
+"
       }
     }
   ]
@@ -5579,26 +6908,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 {{ radios({
   fieldset: {
     legend: {
-      text: 'How do you want to be contacted about this?',
-      classes: 'nhsuk-fieldset__legend--m',
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
       isPageHeading: true
     }
   },
   hint: {
-    text: 'Select 1 option'
+    text: "Select 1 option"
   },
-  idPrefix: 'conditional-nested',
-  name: 'example-outer',
+  idPrefix: "conditional-nested",
+  name: "example-outer",
   items: [
     {
-      value: 'no-conditional',
-      text: 'No conditional'
+      value: "no-conditional",
+      text: "No conditional"
     },
     {
-      value: 'nested',
-      text: 'Nested conditional',
+      value: "nested",
+      text: "Nested conditional",
       conditional: {
-        html: '<div class="nhsuk-form-group">
+        html: "<div class="nhsuk-form-group">
 
 <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">    How do you want to be contacted about this?
 </legend>  <div class="nhsuk-hint" id="example-inner-hint">
@@ -5643,7 +6972,600 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
   </div>
 </fieldset>
 </div>
-'
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### small with hint
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Do you know your NHS number?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "This is a 10 digit number, like 485 777 3456, that you can find on an NHS letter, prescription or in the NHS App"
+  },
+  idPrefix: "with-hint",
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes, I know my NHS number"
+    },
+    {
+      value: "no",
+      text: "No, I do not know my NHS number"
+    },
+    {
+      value: "not sure",
+      text: "I'm not sure"
+    }
+  ]
+}) }}
+```
+
+#### small inline
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small nhsuk-radios--inline",
+  fieldset: {
+    legend: {
+      text: "Are you 18 or over?",
+      classes: "nhsuk-fieldset__legend--s",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "inline",
+  name: "example",
+  value: "no",
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### small without page heading
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Are you 18 or over?"
+    }
+  },
+  idPrefix: "without-heading",
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### small with divider
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to sign in?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-divider",
+  name: "example",
+  items: [
+    {
+      value: "nhsuk-login",
+      text: "Use NHS login"
+    },
+    {
+      value: "government-verify",
+      text: "Use GOV.UK Verify"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "create-account",
+      text: "Create an account"
+    }
+  ]
+}) }}
+```
+
+#### small with hints on items
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Do you have a mobile phone with signal?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-hint-item",
+  name: "example",
+  items: [
+    {
+      value: "mobile",
+      text: "Yes, I have a mobile phone with signal",
+      hint: {
+        text: "We will text you a 6 digit security code"
+      }
+    },
+    {
+      value: "landline",
+      text: "No, I want to use my landline",
+      hint: {
+        text: "We will call you to give you a 6 digit security code"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small without fieldset
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  id: "without-fieldset",
+  name: "colours",
+  items: [
+    {
+      value: "red",
+      text: "Red"
+    },
+    {
+      value: "green",
+      text: "Green"
+    },
+    {
+      value: "blue",
+      text: "Blue"
+    }
+  ]
+}) }}
+```
+
+#### small with disabled item
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "This includes changing your last name or spelling your name differently"
+  },
+  idPrefix: "with-disabled-item",
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      disabled: true
+    },
+    {
+      value: "no",
+      text: "No",
+      disabled: true
+    }
+  ]
+}) }}
+```
+
+#### small with error message
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  errorMessage: {
+    text: "Select yes if you have changed your name"
+  },
+  idPrefix: "with-error-message",
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### small with hint and error
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Have you changed your name?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "This includes changing your last name or spelling your name differently"
+  },
+  errorMessage: {
+    text: "Select yes if you have changed your name"
+  },
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+```
+
+#### small with long text
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "Venenatis Condimentum",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "with-long-text",
+  name: "example",
+  items: [
+    {
+      value: "nullam",
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
+quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
+at eget metus."
+    },
+    {
+      value: "aenean",
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
+nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+venenatis vestibulum. Cras mattis consectetur purus sit amet
+fermentum."
+    },
+    {
+      value: "fusce",
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+malesuada magna mollis euismod. Praesent commodo cursus magna, vel
+scelerisque nisl consectetur et. Etiam porta sem malesuada magna
+mollis euismod. Etiam porta sem malesuada magna mollis euismod.
+Donec sed odio dui. Sed posuere consectetur est at lobortis."
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select 1 option"
+  },
+  idPrefix: "conditional",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content, error message
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select 1 option"
+  },
+  errorMessage: {
+    text: "Select how you prefer to be contacted"
+  },
+  idPrefix: "conditional",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with conditional content, error message (nested)
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select 1 option"
+  },
+  idPrefix: "conditional",
+  name: "example",
+  value: "phone",
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+"
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>  <span class="nhsuk-error-message" id="phone-error">
+  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
+  </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
+"
+      }
+    },
+    {
+      value: "text",
+      text: "Text message",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+"
+      }
+    }
+  ]
+}) }}
+```
+
+#### small with nested conditional radios
+
+```njk
+{{ radios({
+  classes: "nhsuk-radios--small",
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select 1 option"
+  },
+  idPrefix: "conditional-nested",
+  name: "example-outer",
+  items: [
+    {
+      value: "no-conditional",
+      text: "No conditional"
+    },
+    {
+      value: "nested",
+      text: "Nested conditional",
+      conditional: {
+        html: "<div class="nhsuk-form-group">
+
+<fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">    How do you want to be contacted about this?
+</legend>  <div class="nhsuk-hint" id="example-inner-hint">
+    Select 1 option
+  </div>
+  <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" aria-controls="conditional-example-inner" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-inner">
+        Email
+      </label>    </div>
+    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">
+      <div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="email">
+    Email address
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+
+    </div>
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" aria-controls="conditional-example-inner-2" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">
+        Phone
+      </label>    </div>
+    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">
+      <div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="phone">
+    Phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+
+    </div>
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" aria-controls="conditional-example-inner-3" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">
+        Text message
+      </label>    </div>
+    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">
+      <div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="mobile">
+    Mobile phone number
+  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+
+    </div>
+  </div>
+</fieldset>
+</div>
+"
       }
     }
   ]
@@ -5654,24 +7576,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 
 ## Select
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string |  | The ID of the select. Defaults to the value of `name`. |
+| `id` | string |  | ID for the select box. Defaults to the value of `name`. |
 | `name` | string | ✓ | Name property for the select. |
-| `items` | array | ✓ | Array of option items for the select. |
-| `items.value` | string |  | Value for the option item. Defaults to an empty string. |
+| `items` | array | ✓ | The items within the select component. |
+| `items.value` | string |  | Value for the option. If this is omitted, the value is taken from the text content of the option element. |
 | `items.text` | string | ✓ | Text for the option item. |
-| `items.selected` | boolean |  | Sets the option as the selected. |
+| `items.selected` | boolean |  | Whether the option should be selected when the page loads. Takes precedence over the top-level `value` option. |
 | `items.disabled` | boolean |  | Sets the option item as disabled. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the option. |
 | `value` | string |  | Value for the option which should be selected. Use this as an alternative to setting the `selected` option on each individual item. |
 | `disabled` | boolean |  | If `true`, select box will be disabled. Use the `disabled` option on each individual item to only disable certain options. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
-| `label` | object |  | Options for the label component. |
-| `hint` | object |  | Options for the hint component. |
-| `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
+| `label` | object | ✓ | The label used by the select component. |
+| `hint` | object |  | Can be used to add a hint to the select component. |
+| `errorMessage` | object |  | Can be used to add an error message to the select component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the select component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -5691,26 +7615,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
+    text: "Sort by",
     isPageHeading: true
   },
-  name: 'example',
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5721,27 +7645,27 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
+    text: "Sort by",
     isPageHeading: true
   },
-  id: 'with-disabled-item',
-  name: 'example',
+  id: "with-disabled-item",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments',
+      value: "comments",
+      text: "Most comments",
       disabled: true
     }
   ]
@@ -5753,54 +7677,54 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Choose location',
+    text: "Choose location",
     isPageHeading: true
   },
   hint: {
-    text: 'This can be different to where you went before'
+    text: "This can be different to where you went before"
   },
-  id: 'with-hint',
-  name: 'example',
+  id: "with-hint",
+  name: "example",
   items: [
     {
-      value: 'choose',
-      text: 'Choose location'
+      value: "choose",
+      text: "Choose location"
     },
     {
-      value: 'eastmidlands',
-      text: 'East Midlands'
+      value: "eastmidlands",
+      text: "East Midlands"
     },
     {
-      value: 'eastofengland',
-      text: 'East of England'
+      value: "eastofengland",
+      text: "East of England"
     },
     {
-      value: 'london',
-      text: 'London'
+      value: "london",
+      text: "London"
     },
     {
-      value: 'northeast',
-      text: 'North East'
+      value: "northeast",
+      text: "North East"
     },
     {
-      value: 'northwest',
-      text: 'North West'
+      value: "northwest",
+      text: "North West"
     },
     {
-      value: 'southeast',
-      text: 'South East'
+      value: "southeast",
+      text: "South East"
     },
     {
-      value: 'southwest',
-      text: 'South West'
+      value: "southwest",
+      text: "South West"
     },
     {
-      value: 'westmidlands',
-      text: 'West Midlands'
+      value: "westmidlands",
+      text: "West Midlands"
     },
     {
-      value: 'yorkshire',
-      text: 'Yorkshire and the Humber'
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
     }
   ]
 }) }}
@@ -5811,28 +7735,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
-    classes: 'nhsuk-label--s',
+    text: "Sort by",
+    classes: "nhsuk-label--s",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5843,28 +7767,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
-    classes: 'nhsuk-label--m',
+    text: "Sort by",
+    classes: "nhsuk-label--m",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5875,28 +7799,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
-    classes: 'nhsuk-label--l',
+    text: "Sort by",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5907,28 +7831,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
-    classes: 'nhsuk-label--xl',
+    text: "Sort by",
+    classes: "nhsuk-label--xl",
     isPageHeading: true
   },
-  id: 'custom-size',
-  name: 'example',
+  id: "custom-size",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5939,26 +7863,26 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by'
+    text: "Sort by"
   },
-  id: 'without-heading',
-  name: 'example',
+  id: "without-heading",
+  name: "example",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -5969,54 +7893,54 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Choose location',
+    text: "Choose location",
     isPageHeading: true
   },
   errorMessage: {
-    text: 'Select a location'
+    text: "Select a location"
   },
-  id: 'with-error-message',
-  name: 'example',
+  id: "with-error-message",
+  name: "example",
   items: [
     {
-      value: 'choose',
-      text: 'Choose location'
+      value: "choose",
+      text: "Choose location"
     },
     {
-      value: 'eastmidlands',
-      text: 'East Midlands'
+      value: "eastmidlands",
+      text: "East Midlands"
     },
     {
-      value: 'eastofengland',
-      text: 'East of England'
+      value: "eastofengland",
+      text: "East of England"
     },
     {
-      value: 'london',
-      text: 'London'
+      value: "london",
+      text: "London"
     },
     {
-      value: 'northeast',
-      text: 'North East'
+      value: "northeast",
+      text: "North East"
     },
     {
-      value: 'northwest',
-      text: 'North West'
+      value: "northwest",
+      text: "North West"
     },
     {
-      value: 'southeast',
-      text: 'South East'
+      value: "southeast",
+      text: "South East"
     },
     {
-      value: 'southwest',
-      text: 'South West'
+      value: "southwest",
+      text: "South West"
     },
     {
-      value: 'westmidlands',
-      text: 'West Midlands'
+      value: "westmidlands",
+      text: "West Midlands"
     },
     {
-      value: 'yorkshire',
-      text: 'Yorkshire and the Humber'
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
     }
   ]
 }) }}
@@ -6027,57 +7951,57 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Choose location',
+    text: "Choose location",
     isPageHeading: true
   },
   hint: {
-    text: 'This can be different to where you went before'
+    text: "This can be different to where you went before"
   },
   errorMessage: {
-    text: 'Select a location'
+    text: "Select a location"
   },
-  id: 'with-hint-error',
-  name: 'example',
+  id: "with-hint-error",
+  name: "example",
   items: [
     {
-      value: 'choose',
-      text: 'Choose location'
+      value: "choose",
+      text: "Choose location"
     },
     {
-      value: 'eastmidlands',
-      text: 'East Midlands'
+      value: "eastmidlands",
+      text: "East Midlands"
     },
     {
-      value: 'eastofengland',
-      text: 'East of England'
+      value: "eastofengland",
+      text: "East of England"
     },
     {
-      value: 'london',
-      text: 'London'
+      value: "london",
+      text: "London"
     },
     {
-      value: 'northeast',
-      text: 'North East'
+      value: "northeast",
+      text: "North East"
     },
     {
-      value: 'northwest',
-      text: 'North West'
+      value: "northwest",
+      text: "North West"
     },
     {
-      value: 'southeast',
-      text: 'South East'
+      value: "southeast",
+      text: "South East"
     },
     {
-      value: 'southwest',
-      text: 'South West'
+      value: "southwest",
+      text: "South West"
     },
     {
-      value: 'westmidlands',
-      text: 'West Midlands'
+      value: "westmidlands",
+      text: "West Midlands"
     },
     {
-      value: 'yorkshire',
-      text: 'Yorkshire and the Humber'
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
     }
   ]
 }) }}
@@ -6088,28 +8012,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ```njk
 {{ select({
   label: {
-    text: 'Sort by',
+    text: "Sort by",
     isPageHeading: true
   },
-  id: 'with-value',
-  name: 'example',
-  value: 'updated',
+  id: "with-value",
+  name: "example",
+  value: "updated",
   items: [
     {
-      value: 'published',
-      text: 'Recently published'
+      value: "published",
+      text: "Recently published"
     },
     {
-      value: 'updated',
-      text: 'Recently updated'
+      value: "updated",
+      text: "Recently updated"
     },
     {
-      value: 'views',
-      text: 'Most views'
+      value: "views",
+      text: "Most views"
     },
     {
-      value: 'comments',
-      text: 'Most comments'
+      value: "comments",
+      text: "Most comments"
     }
   ]
 }) }}
@@ -6118,6 +8042,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 ---
 
 ## Skip link
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -6134,15 +8060,17 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 #### default
 
 ```njk
-{{ skiplink({
-  href: '#maincontent',
-  text: 'Skip to main content'
+{{ skipLink({
+  href: "#maincontent",
+  text: "Skip to main content"
 }) }}
 ```
 
 ---
 
 ## Summary list
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -6174,75 +8102,75 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>'
 #### default
 
 ```njk
-{{ summarylist({
+{{ summaryList({
   rows: [
     {
       key: {
-        text: 'Name'
+        text: "Name"
       },
       value: {
-        text: 'Karen Francis'
+        text: "Karen Francis"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'name'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Date of birth'
+        text: "Date of birth"
       },
       value: {
-        text: '15 March 1984'
+        text: "15 March 1984"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'date of birth'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Contact information'
+        text: "Contact information"
       },
       value: {
-        html: '73 Roman Rd<br>
+        html: "73 Roman Rd<br>
 Leeds<br>
-LS2 5ZN'
+LS2 5ZN"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'contact information'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact information"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Contact details'
+        text: "Contact details"
       },
       value: {
-        html: '<p>07700 900362</p>
-<p>karen.francis@example.com</p>'
+        html: "<p>07700 900362</p>
+<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'contact details'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
           }
         ]
       }
@@ -6254,95 +8182,95 @@ LS2 5ZN'
 #### with multiple actions
 
 ```njk
-{{ summarylist({
+{{ summaryList({
   rows: [
     {
       key: {
-        text: 'Name'
+        text: "Name"
       },
       value: {
-        text: 'Karen Francis'
+        text: "Karen Francis"
       }
     },
     {
       key: {
-        text: 'Date of birth'
+        text: "Date of birth"
       },
       value: {
-        text: '15 March 1984'
+        text: "15 March 1984"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'date of birth'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Contact information'
+        text: "Contact information"
       },
       value: {
-        html: '73 Roman Rd<br>
+        html: "73 Roman Rd<br>
 Leeds<br>
-LS2 5ZN'
+LS2 5ZN"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'contact information'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact information"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Contact details'
+        text: "Contact details"
       },
       value: {
-        html: '<p>07700 900362</p>
-<p>karen.francis@example.com</p>'
+        html: "<p>07700 900362</p>
+<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Add',
-            visuallyHiddenText: 'new contact details'
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "new contact details"
           },
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'contact details'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
           }
         ]
       }
     },
     {
       key: {
-        text: 'Medicines'
+        text: "Medicines"
       },
       value: {
-        html: '<p>Isotretinoin capsules (Roaccutane)</p>
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>
 <p>Isotretinoin gel (Isotrex)</p>
-<p>Pepto-Bismol (bismuth subsalicylate)</p>'
+<p>Pepto-Bismol (bismuth subsalicylate)</p>"
       },
       actions: {
         items: [
           {
-            href: '#',
-            text: 'Add',
-            visuallyHiddenText: 'new medicine'
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "new medicine"
           },
           {
-            href: '#',
-            text: 'Change',
-            visuallyHiddenText: 'medicines'
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "medicines"
           }
         ]
       }
@@ -6354,41 +8282,41 @@ LS2 5ZN'
 #### without actions
 
 ```njk
-{{ summarylist({
+{{ summaryList({
   rows: [
     {
       key: {
-        text: 'Name'
+        text: "Name"
       },
       value: {
-        text: 'Karen Francis'
+        text: "Karen Francis"
       }
     },
     {
       key: {
-        text: 'Date of birth'
+        text: "Date of birth"
       },
       value: {
-        text: '15 March 1984'
+        text: "15 March 1984"
       }
     },
     {
       key: {
-        text: 'Contact information'
+        text: "Contact information"
       },
       value: {
-        html: '73 Roman Rd<br>
+        html: "73 Roman Rd<br>
 Leeds<br>
-LS2 5ZN'
+LS2 5ZN"
       }
     },
     {
       key: {
-        text: 'Contact details'
+        text: "Contact details"
       },
       value: {
-        html: '<p>07700 900362</p>
-<p>karen.francis@example.com</p>'
+        html: "<p>07700 900362</p>
+<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -6398,42 +8326,42 @@ LS2 5ZN'
 #### without border
 
 ```njk
-{{ summarylist({
-  classes: 'nhsuk-summary-list--no-border',
+{{ summaryList({
+  classes: "nhsuk-summary-list--no-border",
   rows: [
     {
       key: {
-        text: 'Name'
+        text: "Name"
       },
       value: {
-        text: 'Karen Francis'
+        text: "Karen Francis"
       }
     },
     {
       key: {
-        text: 'Date of birth'
+        text: "Date of birth"
       },
       value: {
-        text: '15 March 1984'
+        text: "15 March 1984"
       }
     },
     {
       key: {
-        text: 'Contact information'
+        text: "Contact information"
       },
       value: {
-        html: '73 Roman Rd<br>
+        html: "73 Roman Rd<br>
 Leeds<br>
-LS2 5ZN'
+LS2 5ZN"
       }
     },
     {
       key: {
-        text: 'Contact details'
+        text: "Contact details"
       },
       value: {
-        html: '<p>07700 900362</p>
-<p>karen.francis@example.com</p>'
+        html: "<p>07700 900362</p>
+<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -6443,42 +8371,42 @@ LS2 5ZN'
 #### without row border
 
 ```njk
-{{ summarylist({
+{{ summaryList({
   rows: [
     {
       key: {
-        text: 'Name'
+        text: "Name"
       },
       value: {
-        text: 'Karen Francis'
+        text: "Karen Francis"
       }
     },
     {
       key: {
-        text: 'Date of birth'
+        text: "Date of birth"
       },
       value: {
-        text: '15 March 1984'
+        text: "15 March 1984"
       }
     },
     {
       key: {
-        text: 'Contact information'
+        text: "Contact information"
       },
       value: {
-        html: '73 Roman Rd<br>
+        html: "73 Roman Rd<br>
 Leeds<br>
-LS2 5ZN'
+LS2 5ZN"
       }
     },
     {
-      classes: 'nhsuk-summary-list__row--no-border',
+      classes: "nhsuk-summary-list__row--no-border",
       key: {
-        text: 'Contact details'
+        text: "Contact details"
       },
       value: {
-        html: '<p>07700 900362</p>
-<p>karen.francis@example.com</p>'
+        html: "<p>07700 900362</p>
+<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -6489,6 +8417,8 @@ LS2 5ZN'
 
 ## Tables
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
@@ -6498,19 +8428,19 @@ LS2 5ZN'
 | `rows.text` | string | ✓ | If `html` is set, this is not required. Text for cells in table rows. If `html` is provided, the `text` argument will be ignored. |
 | `rows.html` | string | ✓ | If `text` is set, this is not required. HTML for cells in table rows. If `html` is provided, the `text` argument will be ignored. |
 | `rows.header` | string |  | Header text for cells in responsive table rows only. |
-| `rows.format` | string |  | Specify format of a cell. Currently we only use `'numeric'`. |
+| `rows.format` | string |  | Specify format of a cell. Currently we only use `"numeric"`. |
 | `rows.colspan` | integer |  | Specify how many columns a cell extends. |
 | `rows.rowspan` | integer |  | Specify how many rows a cell extends. |
 | `head` | array |  | Array of table head cells. |
 | `head.text` | string |  | If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` argument will be ignored. |
 | `head.html` | string |  | If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` argument will be ignored. |
-| `head.format` | string |  | Specify format of a cell. Currently we only use `'numeric'`. |
+| `head.format` | string |  | Specify format of a cell. Currently we only use `"numeric"`. |
 | `head.colspan` | integer |  | Specify how many columns a cell extends. |
 | `head.rowspan` | integer |  | Specify how many rows a cell extends. |
 | `heading` | string |  | Heading/label of the panel if the panel argument is set to true. |
 | `headingLevel` | integer |  | Optional heading level for the heading. Defaults to `3`. |
 | `caption` | string |  | Caption text. |
-| `captionClasses` | string |  | Classes for caption text size. Classes to add to the table caption, for example `'nhsuk-table__caption--l'`. |
+| `captionClasses` | string |  | Classes for caption text size. Classes to add to the table caption, for example `"nhsuk-table__caption--l"`. |
 | `firstCellIsHeader` | boolean |  | If set to true, first cell in table row will be a TH instead of a TD. |
 | `responsive` | boolean |  | If set to true, responsive table classes will be applied. |
 | `tableClasses` | string |  | Classes to add to the table container. |
@@ -6521,39 +8451,39 @@ LS2 5ZN'
 #### default
 
 ```njk
-{{ tables({
-  caption: 'Skin symptoms and possible causes',
+{{ table({
+  caption: "Skin symptoms and possible causes",
   head: [
     {
-      text: 'Skin symptoms'
+      text: "Skin symptoms"
     },
     {
-      text: 'Possible cause'
+      text: "Possible cause"
     }
   ],
   rows: [
     [
       {
-        text: 'Blisters on lips or around the mouth'
+        text: "Blisters on lips or around the mouth"
       },
       {
-        text: 'Cold sores'
+        text: "Cold sores"
       }
     ],
     [
       {
-        text: 'Itchy, dry, cracked, sore'
+        text: "Itchy, dry, cracked, sore"
       },
       {
-        text: 'Eczema'
+        text: "Eczema"
       }
     ],
     [
       {
-        text: 'Itchy blisters'
+        text: "Itchy blisters"
       },
       {
-        text: 'Shingles, chickenpox'
+        text: "Shingles, chickenpox"
       }
     ]
   ]
@@ -6563,41 +8493,41 @@ LS2 5ZN'
 #### with missing data
 
 ```njk
-{{ tables({
-  caption: 'Vaccinations given',
+{{ table({
+  caption: "Vaccinations given",
   head: [
     {
-      text: 'Date'
+      text: "Date"
     },
     {
-      text: 'Vaccine'
+      text: "Vaccine"
     },
     {
-      text: 'Product'
+      text: "Product"
     }
   ],
   rows: [
     [
       {
-        text: '10 July 2024'
+        text: "10 July 2024"
       },
       {
-        text: 'RSV'
+        text: "RSV"
       },
       {
-        text: 'Abrysvo'
+        text: "Abrysvo"
       }
     ],
     [
       {
-        text: '6 September 2023'
+        text: "6 September 2023"
       },
       {
-        text: 'Flu'
+        text: "Flu"
       },
       {
-        text: 'No data',
-        classes: 'nhsuk-u-secondary-text-colour'
+        text: "No data",
+        classes: "nhsuk-u-secondary-text-colour"
       }
     ]
   ]
@@ -6607,59 +8537,59 @@ LS2 5ZN'
 #### with numeric data
 
 ```njk
-{{ tables({
-  caption: 'Prescription prepayment certificate (PPC) charges',
+{{ table({
+  caption: "Prescription prepayment certificate (PPC) charges",
   head: [
     {
-      text: 'Item'
+      text: "Item"
     },
     {
-      text: 'Current charge',
-      format: 'numeric'
+      text: "Current charge",
+      format: "numeric"
     },
     {
-      text: 'New charge',
-      format: 'numeric'
+      text: "New charge",
+      format: "numeric"
     }
   ],
   rows: [
     [
       {
-        text: '3-month'
+        text: "3-month"
       },
       {
-        text: '£31.25',
-        format: 'numeric'
+        text: "£31.25",
+        format: "numeric"
       },
       {
-        text: '£32.05',
-        format: 'numeric'
+        text: "£32.05",
+        format: "numeric"
       }
     ],
     [
       {
-        text: '12-month'
+        text: "12-month"
       },
       {
-        text: '£111.60',
-        format: 'numeric'
+        text: "£111.60",
+        format: "numeric"
       },
       {
-        text: '£114.50',
-        format: 'numeric'
+        text: "£114.50",
+        format: "numeric"
       }
     ],
     [
       {
-        text: 'HRT'
+        text: "HRT"
       },
       {
-        text: '£19.30',
-        format: 'numeric'
+        text: "£19.30",
+        format: "numeric"
       },
       {
-        text: '£19.80',
-        format: 'numeric'
+        text: "£19.80",
+        format: "numeric"
       }
     ]
   ]
@@ -6669,120 +8599,120 @@ LS2 5ZN'
 #### with responsive layout
 
 ```njk
-{{ tables({
-  caption: 'Ibuprofen syrup dosages for children',
+{{ table({
+  caption: "Ibuprofen syrup dosages for children",
   responsive: true,
   head: [
     {
-      text: 'Age',
-      classes: 'nhsuk-u-width-one-half'
+      text: "Age",
+      classes: "nhsuk-u-width-one-half"
     },
     {
-      text: 'How much?',
-      classes: 'nhsuk-u-width-one-quarter'
+      text: "How much?",
+      classes: "nhsuk-u-width-one-quarter"
     },
     {
-      text: 'How often?',
-      classes: 'nhsuk-u-width-one-quarter'
+      text: "How often?",
+      classes: "nhsuk-u-width-one-quarter"
     }
   ],
   rows: [
     [
       {
-        header: 'Age',
-        text: '3 to 5 months (weighing more than 5kg)'
+        header: "Age",
+        text: "3 to 5 months (weighing more than 5kg)"
       },
       {
-        header: 'How much?',
-        text: '2.5ml'
+        header: "How much?",
+        text: "2.5ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '6 to 11 months'
+        header: "Age",
+        text: "6 to 11 months"
       },
       {
-        header: 'How much?',
-        text: '2.5ml'
+        header: "How much?",
+        text: "2.5ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 to 4 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 to 4 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '1 to 3 years'
+        header: "Age",
+        text: "1 to 3 years"
       },
       {
-        header: 'How much?',
-        text: '5ml'
+        header: "How much?",
+        text: "5ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '4 to 6 years'
+        header: "Age",
+        text: "4 to 6 years"
       },
       {
-        header: 'How much?',
-        text: '7.5ml'
+        header: "How much?",
+        text: "7.5ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '7 to 9 years'
+        header: "Age",
+        text: "7 to 9 years"
       },
       {
-        header: 'How much?',
-        text: '10ml'
+        header: "How much?",
+        text: "10ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '10 to 11 years'
+        header: "Age",
+        text: "10 to 11 years"
       },
       {
-        header: 'How much?',
-        text: '15ml'
+        header: "How much?",
+        text: "15ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: 'Age',
-        text: '12 to 17 years'
+        header: "Age",
+        text: "12 to 17 years"
       },
       {
-        header: 'How much?',
-        text: '15ml to 20ml'
+        header: "How much?",
+        text: "15ml to 20ml"
       },
       {
-        header: 'How often?',
-        text: 'Max 3 to 4 times in 24 hours'
+        header: "How often?",
+        text: "Max 3 to 4 times in 24 hours"
       }
     ]
   ]
@@ -6792,53 +8722,53 @@ LS2 5ZN'
 #### with word breaks
 
 ```njk
-{{ tables({
-  caption: 'Users',
+{{ table({
+  caption: "Users",
   head: [
     {
-      text: 'Name'
+      text: "Name"
     },
     {
-      text: 'Email address'
+      text: "Email address"
     },
     {
-      text: 'Status'
+      text: "Status"
     },
     {
-      html: '<span class="nhsuk-u-visually-hidden">Actions</span>'
+      html: "<span class="nhsuk-u-visually-hidden">Actions</span>"
     }
   ],
   rows: [
     [
       {
-        text: 'Stephanie Meyer',
-        classes: 'nhsuk-u-text-break-word'
+        text: "Stephanie Meyer",
+        classes: "nhsuk-u-text-break-word"
       },
       {
-        text: 'stephanie.meyer9@test.com',
-        classes: 'nhsuk-u-text-break-word'
+        text: "stephanie.meyer9@test.com",
+        classes: "nhsuk-u-text-break-word"
       },
       {
-        text: 'Active'
+        text: "Active"
       },
       {
-        html: '<a href="#">Change <span class="nhsuk-u-visually-hidden">status for Stephanie Meyer</span></a>'
+        html: "<a href="#">Change <span class="nhsuk-u-visually-hidden">status for Stephanie Meyer</span></a>"
       }
     ],
     [
       {
-        text: 'Aleksandrina Featherstonehaugh-Whitehead',
-        classes: 'nhsuk-u-text-break-word'
+        text: "Aleksandrina Featherstonehaugh-Whitehead",
+        classes: "nhsuk-u-text-break-word"
       },
       {
-        text: 'aleksandrina.featherstonehaughwhitehead23@folkestonepharmacy.test.com',
-        classes: 'nhsuk-u-text-break-word'
+        text: "aleksandrina.featherstonehaughwhitehead23@folkestonepharmacy.test.com",
+        classes: "nhsuk-u-text-break-word"
       },
       {
-        text: 'Inactive'
+        text: "Inactive"
       },
       {
-        html: '<a href="#">Change <span class="nhsuk-u-visually-hidden">status for Aleksandrina Featherstonehaugh-Whitehead</span></a>'
+        html: "<a href="#">Change <span class="nhsuk-u-visually-hidden">status for Aleksandrina Featherstonehaugh-Whitehead</span></a>"
       }
     ]
   ]
@@ -6848,71 +8778,71 @@ LS2 5ZN'
 #### with first cell as header
 
 ```njk
-{{ tables({
+{{ table({
   firstCellIsHeader: true,
   head: [
     {
-      text: 'Day of the week'
+      text: "Day of the week"
     },
     {
-      text: 'Opening hours'
+      text: "Opening hours"
     }
   ],
   rows: [
     [
       {
-        text: 'Monday'
+        text: "Monday"
       },
       {
-        text: '9am to 6pm'
+        text: "9am to 6pm"
       }
     ],
     [
       {
-        text: 'Tuesday'
+        text: "Tuesday"
       },
       {
-        text: '9am to 6pm'
+        text: "9am to 6pm"
       }
     ],
     [
       {
-        text: 'Wednesday'
+        text: "Wednesday"
       },
       {
-        text: '9am to 6pm'
+        text: "9am to 6pm"
       }
     ],
     [
       {
-        text: 'Thursday'
+        text: "Thursday"
       },
       {
-        text: '9am to 6pm'
+        text: "9am to 6pm"
       }
     ],
     [
       {
-        text: 'Friday'
+        text: "Friday"
       },
       {
-        text: '9am to 6pm'
+        text: "9am to 6pm"
       }
     ],
     [
       {
-        text: 'Saturday'
+        text: "Saturday"
       },
       {
-        text: '9am to 1pm'
+        text: "9am to 1pm"
       }
     ],
     [
       {
-        text: 'Sunday'
+        text: "Sunday"
       },
       {
-        text: 'Closed'
+        text: "Closed"
       }
     ]
   ]
@@ -6922,42 +8852,42 @@ LS2 5ZN'
 #### as a panel
 
 ```njk
-{{ tables({
-  heading: 'Conditions similar to impetigo',
-  caption: 'Other possible causes of your symptoms',
-  captionClasses: 'nhsuk-u-visually-hidden',
+{{ table({
+  heading: "Conditions similar to impetigo",
+  caption: "Other possible causes of your symptoms",
+  captionClasses: "nhsuk-u-visually-hidden",
   panel: true,
   head: [
     {
-      text: 'Skin symptoms'
+      text: "Skin symptoms"
     },
     {
-      text: 'Possible cause'
+      text: "Possible cause"
     }
   ],
   rows: [
     [
       {
-        text: 'Blisters on lips or around the mouth'
+        text: "Blisters on lips or around the mouth"
       },
       {
-        text: 'Cold sores'
+        text: "Cold sores"
       }
     ],
     [
       {
-        text: 'Itchy, dry, cracked, sore'
+        text: "Itchy, dry, cracked, sore"
       },
       {
-        text: 'Eczema'
+        text: "Eczema"
       }
     ],
     [
       {
-        text: 'Itchy blisters'
+        text: "Itchy blisters"
       },
       {
-        text: 'Shingles, chickenpox'
+        text: "Shingles, chickenpox"
       }
     ]
   ]
@@ -6967,6 +8897,8 @@ LS2 5ZN'
 ---
 
 ## Tabs
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -6979,7 +8911,7 @@ LS2 5ZN'
 | `items.id` | string | ✓ | Specific id attribute for the tab item. If omitted, then idPrefix string is required instead. |
 | `items.label` | string | ✓ | The text label of a tab item. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the tab. |
-| `items.panel` | object | ✓ | Content for the panel |
+| `items.panel` | object | ✓ | Content for the panel. |
 | `items.panel.text` | string | ✓ | Specific id attribute for the tab item. If omitted, then idPrefix string is required instead. |
 | `items.panel.html` | string | ✓ | The title of the panel. |
 | `items.panel.attributes` | object |  | The body of the panel. |
@@ -6992,43 +8924,43 @@ LS2 5ZN'
 {{ tabs({
   items: [
     {
-      label: 'Past day',
-      id: 'past-day',
+      label: "Past day",
+      id: "past-day",
       panel: {
-        html: '  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past day</caption>    <thead class="nhsuk-table__head">
+        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past day</caption>    <thead class="nhsuk-table__head">
       <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
     </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>    </tbody>
-  </table>'
+  </table>"
       }
     },
     {
-      label: 'Past week',
-      id: 'past-week',
+      label: "Past week",
+      id: "past-week",
       panel: {
-        html: '  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past week</caption>    <thead class="nhsuk-table__head">
+        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past week</caption>    <thead class="nhsuk-table__head">
       <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
     </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">18</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">16</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">20</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">27</td>      </tr>    </tbody>
-  </table>'
+  </table>"
       }
     },
     {
-      label: 'Past month',
-      id: 'past-month',
+      label: "Past month",
+      id: "past-month",
       panel: {
-        html: '  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past month</caption>    <thead class="nhsuk-table__head">
+        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past month</caption>    <thead class="nhsuk-table__head">
       <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
     </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">98</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">95</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">122</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">131</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">126</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">142</td>      </tr>    </tbody>
-  </table>'
+  </table>"
       }
     },
     {
-      label: 'Past year',
-      id: 'past-year',
+      label: "Past year",
+      id: "past-year",
       panel: {
-        html: '  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past year</caption>    <thead class="nhsuk-table__head">
+        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past year</caption>    <thead class="nhsuk-table__head">
       <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
     </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1380</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1472</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1129</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1083</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1539</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1265</td>      </tr>    </tbody>
-  </table>'
+  </table>"
       }
     }
   ]
@@ -7041,32 +8973,32 @@ LS2 5ZN'
 {{ tabs({
   items: [
     {
-      label: 'Tab 1',
-      id: 'tab-1',
+      label: "Tab 1",
+      id: "tab-1",
       panel: {
-        html: '<h2>Tab 1 content</h2>
+        html: "<h2>Tab 1 content</h2>
 <p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>
 <ul>
   <li><a href="#tab-1" id="anchor">Tab panel 1</a></li>
   <li><a href="#tab-2">Tab panel 2</a></li>
   <li><a href="#tab-3">Tab panel 3</a></li>
-</ul>'
+</ul>"
       }
     },
     {
-      label: 'Tab 2',
-      id: 'tab-2',
+      label: "Tab 2",
+      id: "tab-2",
       panel: {
-        html: '<h2>Tab 2 content</h2>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>'
+        html: "<h2>Tab 2 content</h2>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>"
       }
     },
     {
-      label: 'Tab 3',
-      id: 'tab-3',
+      label: "Tab 3",
+      id: "tab-3",
       panel: {
-        html: '<h2>Tab 3 content</h2>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>'
+        html: "<h2>Tab 3 content</h2>
+<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
       }
     }
   ]
@@ -7076,6 +9008,8 @@ LS2 5ZN'
 ---
 
 ## Tag
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -7093,7 +9027,7 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Active'
+  text: "Active"
 }) }}
 ```
 
@@ -7101,8 +9035,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'In progress',
-  classes: 'nhsuk-tag--white'
+  text: "In progress",
+  classes: "nhsuk-tag--white"
 }) }}
 ```
 
@@ -7110,8 +9044,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Inactive',
-  classes: 'nhsuk-tag--grey'
+  text: "Inactive",
+  classes: "nhsuk-tag--grey"
 }) }}
 ```
 
@@ -7119,8 +9053,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'New',
-  classes: 'nhsuk-tag--green'
+  text: "New",
+  classes: "nhsuk-tag--green"
 }) }}
 ```
 
@@ -7128,8 +9062,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Active',
-  classes: 'nhsuk-tag--aqua-green'
+  text: "Active",
+  classes: "nhsuk-tag--aqua-green"
 }) }}
 ```
 
@@ -7137,8 +9071,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Pending',
-  classes: 'nhsuk-tag--blue'
+  text: "Pending",
+  classes: "nhsuk-tag--blue"
 }) }}
 ```
 
@@ -7146,8 +9080,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Received',
-  classes: 'nhsuk-tag--purple'
+  text: "Received",
+  classes: "nhsuk-tag--purple"
 }) }}
 ```
 
@@ -7155,8 +9089,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Sent',
-  classes: 'nhsuk-tag--pink'
+  text: "Sent",
+  classes: "nhsuk-tag--pink"
 }) }}
 ```
 
@@ -7164,8 +9098,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Rejected',
-  classes: 'nhsuk-tag--red'
+  text: "Rejected",
+  classes: "nhsuk-tag--red"
 }) }}
 ```
 
@@ -7173,8 +9107,8 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Declined',
-  classes: 'nhsuk-tag--orange'
+  text: "Declined",
+  classes: "nhsuk-tag--orange"
 }) }}
 ```
 
@@ -7182,14 +9116,16 @@ LS2 5ZN'
 
 ```njk
 {{ tag({
-  text: 'Delayed',
-  classes: 'nhsuk-tag--yellow'
+  text: "Delayed",
+  classes: "nhsuk-tag--yellow"
 }) }}
 ```
 
 ---
 
 ## Task list
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -7198,7 +9134,7 @@ LS2 5ZN'
 | `id` | string |  | The ID of the button. |
 | `classes` | string |  | Classes to add to the `ul` container for the task list. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the `ul` container for the task list. |
-| `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for the task list item tag and hint, separated by `'-'`. Defaults to `'task-list'`. |
+| `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for the task list item tag and hint, separated by `"-"`. Defaults to `"task-list"`. |
 | `items` | array | ✓ | The items for each task within the task list component. See items. |
 | `items.title` | object | ✓ | The main title for the task within the task list component. See title. |
 | `items.title.text` | string | ✓ | Text to use within the title. If `html` is provided, the `text` argument will be ignored. |
@@ -7220,63 +9156,63 @@ LS2 5ZN'
 #### default
 
 ```njk
-{{ tasklist({
-  idPrefix: 'your-health',
+{{ taskList({
+  idPrefix: "your-health",
   items: [
     {
       title: {
-        text: 'Exercise'
+        text: "Exercise"
       },
-      href: '#',
+      href: "#",
       status: {
-        text: 'Completed',
-        classes: 'nhsuk-task-list__status--completed'
+        text: "Completed",
+        classes: "nhsuk-task-list__status--completed"
       }
     },
     {
       title: {
-        text: 'Personal health'
+        text: "Personal health"
       },
-      href: '#',
+      href: "#",
       status: {
-        text: 'Completed',
-        classes: 'nhsuk-task-list__status--completed'
+        text: "Completed",
+        classes: "nhsuk-task-list__status--completed"
       }
     },
     {
       title: {
-        text: 'Family health history'
+        text: "Family health history"
       },
       hint: {
-        text: 'Details of your parents, brothers and sisters'
+        text: "Details of your parents, brothers and sisters"
       },
-      href: '#',
+      href: "#",
       status: {
         tag: {
-          text: 'Incomplete',
-          classes: 'nhsuk-tag--blue'
+          text: "Incomplete",
+          classes: "nhsuk-tag--blue"
         }
       }
     },
     {
       title: {
-        text: 'Smoking history'
+        text: "Smoking history"
       },
-      href: '#',
+      href: "#",
       status: {
         tag: {
-          text: 'Incomplete',
-          classes: 'nhsuk-tag--blue'
+          text: "Incomplete",
+          classes: "nhsuk-tag--blue"
         }
       }
     },
     {
       title: {
-        text: 'Blood test'
+        text: "Blood test"
       },
       status: {
-        text: 'Cannot start yet',
-        classes: 'nhsuk-task-list__status--cannot-start-yet'
+        text: "Cannot start yet",
+        classes: "nhsuk-task-list__status--cannot-start-yet"
       }
     }
   ]
@@ -7287,18 +9223,22 @@ LS2 5ZN'
 
 ## Textarea
 
+[↑ Back to top](#table-of-contents)
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the textarea. Defaults to the value of `name`. |
 | `name` | string | ✓ | The name of the textarea, which is submitted with the form data. |
+| `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the textarea. |
 | `rows` | string |  | Optional number of textarea rows (default is 5 rows). |
 | `value` | string |  | Optional initial value of the textarea. |
+| `disabled` | boolean |  | If `true`, textarea will be disabled. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
-| `label` | object | ✓ | Options for the label component. |
-| `hint` | object |  | Options for the hint component. |
-| `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
+| `label` | object | ✓ | The label used by the textarea component. |
+| `hint` | object |  | Can be used to add a hint to the textarea component. |
+| `errorMessage` | object |  | Can be used to add an error message to the textarea component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. |
 | `formGroup` | object |  | Additional options for the form group containing the textarea component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -7308,8 +9248,8 @@ LS2 5ZN'
 | `formGroup.afterInput` | object |  | Content to add after the textarea used by the textarea component. |
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the textarea. If `html` is provided, the `text` option will be ignored. |
-| `autocomplete` | string |  | autocomplete attribute to identify input purpose, for instance `'postal-code'` or `'username'`. |
 | `classes` | string |  | Classes to add to the textarea. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the textarea. |
 
 ### Examples
@@ -7319,14 +9259,14 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  name: 'example'
+  name: "example"
 }) }}
 ```
 
@@ -7335,15 +9275,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'with-hint',
-  name: 'example'
+  id: "with-hint",
+  name: "example"
 }) }}
 ```
 
@@ -7352,15 +9292,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--s',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--s",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'custom-size',
-  name: 'example'
+  id: "custom-size",
+  name: "example"
 }) }}
 ```
 
@@ -7369,15 +9309,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--m',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--m",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'custom-size',
-  name: 'example'
+  id: "custom-size",
+  name: "example"
 }) }}
 ```
 
@@ -7386,15 +9326,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'custom-size',
-  name: 'example'
+  id: "custom-size",
+  name: "example"
 }) }}
 ```
 
@@ -7403,15 +9343,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--xl',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--xl",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'custom-size',
-  name: 'example'
+  id: "custom-size",
+  name: "example"
 }) }}
 ```
 
@@ -7420,13 +9360,13 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?'
+    text: "Can you provide more detail?"
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
-  id: 'without-heading',
-  name: 'example'
+  id: "without-heading",
+  name: "example"
 }) }}
 ```
 
@@ -7435,15 +9375,15 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   errorMessage: {
-    text: 'You must provide an explanation'
+    text: "You must provide an explanation"
   },
-  id: 'with-error-message',
-  name: 'example'
+  id: "with-error-message",
+  name: "example"
 }) }}
 ```
 
@@ -7452,18 +9392,18 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Can you provide more detail?',
-    classes: 'nhsuk-label--l',
+    text: "Can you provide more detail?",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
   hint: {
-    text: 'Do not include personal information like your name, date of birth or NHS number'
+    text: "Do not include personal information like your name, date of birth or NHS number"
   },
   errorMessage: {
-    text: 'You must provide an explanation'
+    text: "You must provide an explanation"
   },
-  id: 'with-hint-error',
-  name: 'example'
+  id: "with-hint-error",
+  name: "example"
 }) }}
 ```
 
@@ -7472,19 +9412,21 @@ LS2 5ZN'
 ```njk
 {{ textarea({
   label: {
-    text: 'Full address',
-    classes: 'nhsuk-label--l',
+    text: "Full address",
+    classes: "nhsuk-label--l",
     isPageHeading: true
   },
-  id: 'with-autocomplete-attribute',
-  name: 'example',
-  autocomplete: 'street-address'
+  id: "with-autocomplete-attribute",
+  name: "example",
+  autocomplete: "street-address"
 }) }}
 ```
 
 ---
 
 ## Warning callout
+
+[↑ Back to top](#table-of-contents)
 
 ### Parameters
 
@@ -7498,24 +9440,25 @@ LS2 5ZN'
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire warning callout component in a `call` block. |
 | `classes` | string |  | Classes to add to the warning callout. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the warning callout. |
+| `visuallyHiddenText` | string |  | A visually hidden prefix used before the heading. Defaults to `"Important"`. |
 
 ### Examples
 
 #### default
 
 ```njk
-{{ warningcallout({
-  heading: 'Important',
-  text: 'For safety, tell your doctor or pharmacist if you're taking any other medicines, including herbal medicines, vitamins or supplements.'
+{{ warningCallout({
+  heading: "Important",
+  text: "For safety, tell your doctor or pharmacist if you're taking any other medicines, including herbal medicines, vitamins or supplements."
 }) }}
 ```
 
 #### with custom heading
 
 ```njk
-{{ warningcallout({
-  heading: 'School, nursery or work',
-  text: 'Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.'
+{{ warningCallout({
+  heading: "School, nursery or work",
+  text: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
 }) }}
 ```
 

@@ -1,6 +1,12 @@
-{# /reference/nhs-design-system-nunjucks-style-guide.instructions.js #}
+# NHS Prototype Kit Guide
 
-Refer to `/reference/[datetime]_nhs-components-crib-sheet.md` and `/reference/[datetime]_nhs-components-detailed-reference.md` for detailed component params and documetation.
+A guide for building prototypes with NHS Frontend components in the NHS Prototype Kit.
+
+**Related guides:**
+- [NHS Frontend Guide](nhs-frontend-guide.instructions.md) - Core NHS Frontend patterns, conventions, and best practices
+- [NHS Frontend Component Reference](nhs-frontend-component-reference.instructions.md) - Detailed component parameters and documentation
+
+---
 
 ## Nunjucks preferences
 
@@ -26,6 +32,97 @@ This data will be available in routes at `req.session.data.fullName` or in views
 Save to nested properties using square brackets and no quotation marks. Express will expand this. Eg `name: "person[fullName]"`, will expand to `data.person.fullName`. `name: "person[address][line1]"` will expand to `data.person.address.line1`.
 
 Prefer `camelCase` for names.
+
+## Routes and branching
+
+**In most cases, routes aren't needed.** The prototype kit automatically saves form data and handles navigation. You only need routes when:
+- Deciding which page to show next based on user answers (branching)
+- Doing custom processing of data before saving
+- Redirecting users based on missing data
+
+### Creating a route
+
+When adding a route, **don't post to the same page**. Instead, post to a separate route. For example, if your page is `contact-preference`, post to `contact-preference-answer`:
+
+**In your view (e.g., `contact-preference.html`):**
+```nunjucks
+<form method="post" action="contact-preference-answer">
+  {{ radios({
+    name: "contactPreference",
+    fieldset: {
+      legend: {
+        text: "How would you like to be contacted?",
+        classes: "nhsuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    },
+    items: [
+      {
+        value: "Email",
+        text: "Email"
+      },
+      {
+        value: "Phone",
+        text: "Phone"
+      },
+      {
+        value: "Text message",
+        text: "Text message"
+      }
+    ]
+  }) }}
+
+  {{ button({
+    text: "Continue"
+  }) }}
+</form>
+```
+
+**In your routes file (e.g., `app/routes.js`):**
+```javascript
+router.post('/contact-preference-answer', function (req, res) {
+  const data = req.session.data
+  const contactPreference = data.contactPreference
+
+  // Branch based on the answer
+  if (contactPreference === 'Email') {
+    res.redirect('email-address')
+  } else if (contactPreference === 'Phone') {
+    res.redirect('phone-number')
+  } else if (contactPreference === 'Text message') {
+    res.redirect('mobile-number')
+  } else {
+    // Redirect back if no valid answer
+    res.redirect('contact-preference')
+  }
+})
+```
+
+### Checking for missing data
+
+**In most cases, error validation isn't necessary in a prototype.** However, you can use a route to check for likely missing data and redirect back if needed:
+
+```javascript
+router.post('/contact-preference-answer', function (req, res) {
+  const data = req.session.data
+  const contactPreference = data.contactPreference
+
+  // Redirect back if no answer provided
+  if (!contactPreference) {
+    res.redirect('contact-preference')
+    return
+  }
+
+  // Continue with branching logic
+  if (contactPreference === 'Email') {
+    res.redirect('email-address')
+  } else {
+    res.redirect('phone-number')
+  }
+})
+```
+
+**Note:** This doesn't show error messages - it just prevents users progressing without answering. For most prototypes, this level of validation is sufficient.
 
 ## Prefilling data
 
@@ -273,7 +370,7 @@ Checkboxes where there are other questions or another h1 on the page:
   hint: {
     text: "Select all options that are relevant to you"
   },
-  values: data.contactMethods
+  values: data.contactMethods,
   items: [
     {
       value: "Email",

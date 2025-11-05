@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "nhsFrontendVersion": "10.0.0",
+    "nhsFrontendVersion": "10.1.0",
     "gitBranch": "main",
-    "gitCommit": "52eeee1",
-    "generated": "2025-10-06 11:03:57 UTC",
+    "gitCommit": "29a7f24",
+    "generated": "2025-11-05 13:26:23 UTC",
     "source": "https://github.com/nhsuk/nhsuk-frontend",
     "description": "Auto-generated Sass documentation from NHS Frontend. This contains all Sass mixins, functions, variables, and placeholders extracted using sassdoc."
   },
@@ -11,16 +11,16 @@
     {
       "description": "Header link styling\n\n",
       "commentRange": {
-        "start": 35,
-        "end": 41
+        "start": 37,
+        "end": 43
       },
       "context": {
         "type": "mixin",
         "name": "_header-link-style",
         "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
         "line": {
-          "start": 43,
-          "end": 68
+          "start": 45,
+          "end": 70
         }
       },
       "parameter": [
@@ -654,10 +654,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-panel",
-            "code": "\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
             "line": {
               "start": 242,
-              "end": 256
+              "end": 257
             }
           }
         },
@@ -668,8 +668,8 @@
             "name": "nhsuk-care-card",
             "code": "\n  .nhsuk-card--care__heading-container {\n    color: $heading-text-colour;\n    background-color: $heading-background-colour;\n  }\n\n  @include nhsuk-print-colour {\n    border: $print-border-size solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
             "line": {
-              "start": 370,
-              "end": 380
+              "start": 371,
+              "end": 381
             }
           }
         },
@@ -768,22 +768,22 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         },
         {
-          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n",
+          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n\n",
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-radio",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 54,
-              "end": 57
+              "start": 60,
+              "end": 76
             }
           }
         },
@@ -792,10 +792,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-checkbox",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 64,
-              "end": 67
+              "start": 83,
+              "end": 99
             }
           }
         },
@@ -806,8 +806,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -818,8 +818,8 @@
             "name": "nhsuk-focused-box",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  box-shadow:\n    0 0 0 4px $nhsuk-focus-colour,\n    0 0 0 8px $nhsuk-focus-text-colour;\n",
             "line": {
-              "start": 95,
-              "end": 100
+              "start": 127,
+              "end": 132
             }
           }
         }
@@ -858,8 +858,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -870,8 +870,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -916,10 +916,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         },
@@ -928,22 +928,22 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         },
         {
-          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n",
+          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n\n",
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-radio",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 54,
-              "end": 57
+              "start": 60,
+              "end": 76
             }
           }
         },
@@ -952,10 +952,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-checkbox",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 64,
-              "end": 67
+              "start": 83,
+              "end": 99
             }
           }
         },
@@ -966,8 +966,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -978,8 +978,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -990,8 +990,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -1002,8 +1002,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -1014,8 +1014,8 @@
             "name": "nhsuk-focused-box",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  box-shadow:\n    0 0 0 4px $nhsuk-focus-colour,\n    0 0 0 8px $nhsuk-focus-text-colour;\n",
             "line": {
-              "start": 95,
-              "end": 100
+              "start": 127,
+              "end": 132
             }
           }
         }
@@ -1228,10 +1228,36 @@
       }
     },
     {
-      "description": "Form element background colour\n\n",
+      "description": "Input hover colour\n\nUsed for hover states on form controls\n\n",
       "commentRange": {
         "start": 130,
-        "end": 132
+        "end": 134
+      },
+      "context": {
+        "type": "variable",
+        "name": "nhsuk-hover-colour",
+        "value": "nhsuk-colour(\"grey-3\")",
+        "scope": "default",
+        "line": {
+          "start": 136,
+          "end": 136
+        }
+      },
+      "type": "Colour",
+      "group": [
+        "settings/colours"
+      ],
+      "access": "public",
+      "file": {
+        "path": "core/settings/_colours-applied.scss",
+        "name": "_colours-applied.scss"
+      }
+    },
+    {
+      "description": "Form element background colour\n\n",
+      "commentRange": {
+        "start": 138,
+        "end": 140
       },
       "context": {
         "type": "variable",
@@ -1239,8 +1265,8 @@
         "value": "nhsuk-colour(\"white\")",
         "scope": "default",
         "line": {
-          "start": 134,
-          "end": 134
+          "start": 142,
+          "end": 142
         }
       },
       "type": "Colour",
@@ -1256,8 +1282,8 @@
     {
       "description": "Link colour\n\n",
       "commentRange": {
-        "start": 140,
-        "end": 142
+        "start": 148,
+        "end": 150
       },
       "context": {
         "type": "variable",
@@ -1265,8 +1291,8 @@
         "value": "nhsuk-colour(\"blue\")",
         "scope": "default",
         "line": {
-          "start": 144,
-          "end": 144
+          "start": 152,
+          "end": 152
         }
       },
       "type": "Colour",
@@ -1296,8 +1322,8 @@
     {
       "description": "Visited link colour\n\n",
       "commentRange": {
-        "start": 146,
-        "end": 148
+        "start": 154,
+        "end": 156
       },
       "context": {
         "type": "variable",
@@ -1305,8 +1331,8 @@
         "value": "nhsuk-colour(\"purple\")",
         "scope": "default",
         "line": {
-          "start": 150,
-          "end": 150
+          "start": 158,
+          "end": 158
         }
       },
       "type": "Colour",
@@ -1322,8 +1348,8 @@
     {
       "description": "Link hover colour\n\n",
       "commentRange": {
-        "start": 152,
-        "end": 154
+        "start": 160,
+        "end": 162
       },
       "context": {
         "type": "variable",
@@ -1331,8 +1357,8 @@
         "value": "nhsuk-colour(\"dark-pink\")",
         "scope": "default",
         "line": {
-          "start": 156,
-          "end": 156
+          "start": 164,
+          "end": 164
         }
       },
       "type": "Colour",
@@ -1348,8 +1374,8 @@
     {
       "description": "Active link colour\n\n",
       "commentRange": {
-        "start": 158,
-        "end": 160
+        "start": 166,
+        "end": 168
       },
       "context": {
         "type": "variable",
@@ -1357,8 +1383,8 @@
         "value": "nhsuk-shade($nhsuk-link-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 162,
-          "end": 162
+          "start": 170,
+          "end": 170
         }
       },
       "type": "Colour",
@@ -1374,8 +1400,8 @@
     {
       "description": "Button background colour\n\n",
       "commentRange": {
-        "start": 168,
-        "end": 170
+        "start": 176,
+        "end": 178
       },
       "context": {
         "type": "variable",
@@ -1383,8 +1409,8 @@
         "value": "nhsuk-colour(\"green\")",
         "scope": "default",
         "line": {
-          "start": 172,
-          "end": 172
+          "start": 180,
+          "end": 180
         }
       },
       "type": "Colour",
@@ -1400,8 +1426,8 @@
     {
       "description": "Button text colour\n\n",
       "commentRange": {
-        "start": 174,
-        "end": 176
+        "start": 182,
+        "end": 184
       },
       "context": {
         "type": "variable",
@@ -1409,8 +1435,8 @@
         "value": "nhsuk-colour(\"white\")",
         "scope": "default",
         "line": {
-          "start": 178,
-          "end": 178
+          "start": 186,
+          "end": 186
         }
       },
       "type": "Colour",
@@ -1426,8 +1452,8 @@
     {
       "description": "Button background colour (hover)\n\n",
       "commentRange": {
-        "start": 180,
-        "end": 182
+        "start": 188,
+        "end": 190
       },
       "context": {
         "type": "variable",
@@ -1435,8 +1461,8 @@
         "value": "nhsuk-shade($nhsuk-button-colour, 20%)",
         "scope": "default",
         "line": {
-          "start": 184,
-          "end": 184
+          "start": 192,
+          "end": 192
         }
       },
       "type": "Colour",
@@ -1452,8 +1478,8 @@
     {
       "description": "Button background colour (active)\n\n",
       "commentRange": {
-        "start": 186,
-        "end": 188
+        "start": 194,
+        "end": 196
       },
       "context": {
         "type": "variable",
@@ -1461,8 +1487,8 @@
         "value": "nhsuk-shade($nhsuk-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 190,
-          "end": 190
+          "start": 198,
+          "end": 198
         }
       },
       "type": "Colour",
@@ -1478,8 +1504,8 @@
     {
       "description": "Button shadow colour\n\n",
       "commentRange": {
-        "start": 192,
-        "end": 194
+        "start": 200,
+        "end": 202
       },
       "context": {
         "type": "variable",
@@ -1487,8 +1513,8 @@
         "value": "nhsuk-shade($nhsuk-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 196,
-          "end": 196
+          "start": 204,
+          "end": 204
         }
       },
       "type": "Colour",
@@ -1504,8 +1530,8 @@
     {
       "description": "Secondary button background colour\n\n",
       "commentRange": {
-        "start": 198,
-        "end": 200
+        "start": 206,
+        "end": 208
       },
       "context": {
         "type": "variable",
@@ -1513,8 +1539,8 @@
         "value": "transparent",
         "scope": "default",
         "line": {
-          "start": 202,
-          "end": 202
+          "start": 210,
+          "end": 210
         }
       },
       "type": "Colour",
@@ -1530,8 +1556,8 @@
     {
       "description": "Secondary button (solid background) background colour\n\n",
       "commentRange": {
-        "start": 204,
-        "end": 206
+        "start": 212,
+        "end": 214
       },
       "context": {
         "type": "variable",
@@ -1539,8 +1565,8 @@
         "value": "nhsuk-colour(\"white\")",
         "scope": "default",
         "line": {
-          "start": 208,
-          "end": 208
+          "start": 216,
+          "end": 216
         }
       },
       "type": "Colour",
@@ -1556,8 +1582,8 @@
     {
       "description": "Secondary button border colour\n\n",
       "commentRange": {
-        "start": 210,
-        "end": 212
+        "start": 218,
+        "end": 220
       },
       "context": {
         "type": "variable",
@@ -1565,8 +1591,8 @@
         "value": "$nhsuk-brand-colour",
         "scope": "default",
         "line": {
-          "start": 214,
-          "end": 214
+          "start": 222,
+          "end": 222
         }
       },
       "type": "Colour",
@@ -1582,8 +1608,8 @@
     {
       "description": "Secondary button text colour\n\n",
       "commentRange": {
-        "start": 216,
-        "end": 218
+        "start": 224,
+        "end": 226
       },
       "context": {
         "type": "variable",
@@ -1591,8 +1617,8 @@
         "value": "$nhsuk-brand-colour",
         "scope": "default",
         "line": {
-          "start": 220,
-          "end": 220
+          "start": 228,
+          "end": 228
         }
       },
       "type": "Colour",
@@ -1608,8 +1634,8 @@
     {
       "description": "Secondary button background colour (hover)\n\n",
       "commentRange": {
-        "start": 222,
-        "end": 224
+        "start": 230,
+        "end": 232
       },
       "context": {
         "type": "variable",
@@ -1617,8 +1643,8 @@
         "value": "nhsuk-tint($nhsuk-secondary-button-border-colour, 85%)",
         "scope": "default",
         "line": {
-          "start": 226,
-          "end": 226
+          "start": 234,
+          "end": 234
         }
       },
       "type": "Colour",
@@ -1634,8 +1660,8 @@
     {
       "description": "Secondary button background colour (active)\n\n",
       "commentRange": {
-        "start": 228,
-        "end": 230
+        "start": 236,
+        "end": 238
       },
       "context": {
         "type": "variable",
@@ -1643,8 +1669,8 @@
         "value": "nhsuk-tint($nhsuk-secondary-button-border-colour, 78%)",
         "scope": "default",
         "line": {
-          "start": 232,
-          "end": 232
+          "start": 240,
+          "end": 240
         }
       },
       "type": "Colour",
@@ -1660,8 +1686,8 @@
     {
       "description": "Secondary button shadow colour\n\n",
       "commentRange": {
-        "start": 234,
-        "end": 236
+        "start": 242,
+        "end": 244
       },
       "context": {
         "type": "variable",
@@ -1669,8 +1695,8 @@
         "value": "$nhsuk-secondary-button-border-colour",
         "scope": "default",
         "line": {
-          "start": 238,
-          "end": 238
+          "start": 246,
+          "end": 246
         }
       },
       "type": "Colour",
@@ -1686,8 +1712,8 @@
     {
       "description": "Reverse button background colour\n\n",
       "commentRange": {
-        "start": 240,
-        "end": 242
+        "start": 248,
+        "end": 250
       },
       "context": {
         "type": "variable",
@@ -1695,8 +1721,8 @@
         "value": "nhsuk-colour(\"white\")",
         "scope": "default",
         "line": {
-          "start": 244,
-          "end": 244
+          "start": 252,
+          "end": 252
         }
       },
       "type": "Colour",
@@ -1712,8 +1738,8 @@
     {
       "description": "Reverse button text colour\n\n",
       "commentRange": {
-        "start": 246,
-        "end": 248
+        "start": 254,
+        "end": 256
       },
       "context": {
         "type": "variable",
@@ -1721,8 +1747,8 @@
         "value": "nhsuk-colour(\"black\")",
         "scope": "default",
         "line": {
-          "start": 250,
-          "end": 250
+          "start": 258,
+          "end": 258
         }
       },
       "type": "Colour",
@@ -1738,8 +1764,8 @@
     {
       "description": "Reverse button background colour (hover)\n\n",
       "commentRange": {
-        "start": 252,
-        "end": 254
+        "start": 260,
+        "end": 262
       },
       "context": {
         "type": "variable",
@@ -1747,8 +1773,8 @@
         "value": "nhsuk-shade($nhsuk-reverse-button-colour, 15%)",
         "scope": "default",
         "line": {
-          "start": 256,
-          "end": 256
+          "start": 264,
+          "end": 264
         }
       },
       "type": "Colour",
@@ -1764,8 +1790,8 @@
     {
       "description": "Reverse button background colour (active)\n\n",
       "commentRange": {
-        "start": 258,
-        "end": 260
+        "start": 266,
+        "end": 268
       },
       "context": {
         "type": "variable",
@@ -1773,8 +1799,8 @@
         "value": "nhsuk-shade($nhsuk-reverse-button-colour, 30%)",
         "scope": "default",
         "line": {
-          "start": 262,
-          "end": 262
+          "start": 270,
+          "end": 270
         }
       },
       "type": "Colour",
@@ -1790,8 +1816,8 @@
     {
       "description": "Reverse button shadow colour\n\n",
       "commentRange": {
-        "start": 264,
-        "end": 266
+        "start": 272,
+        "end": 274
       },
       "context": {
         "type": "variable",
@@ -1799,8 +1825,8 @@
         "value": "nhsuk-shade($nhsuk-reverse-button-colour, 30%)",
         "scope": "default",
         "line": {
-          "start": 268,
-          "end": 268
+          "start": 276,
+          "end": 276
         }
       },
       "type": "Colour",
@@ -1816,8 +1842,8 @@
     {
       "description": "Warning button background colour\n\n",
       "commentRange": {
-        "start": 270,
-        "end": 272
+        "start": 278,
+        "end": 280
       },
       "context": {
         "type": "variable",
@@ -1825,8 +1851,8 @@
         "value": "nhsuk-colour(\"red\")",
         "scope": "default",
         "line": {
-          "start": 274,
-          "end": 274
+          "start": 282,
+          "end": 282
         }
       },
       "type": "Colour",
@@ -1842,8 +1868,8 @@
     {
       "description": "Warning button background colour (hover)\n\n",
       "commentRange": {
-        "start": 276,
-        "end": 278
+        "start": 284,
+        "end": 286
       },
       "context": {
         "type": "variable",
@@ -1851,8 +1877,8 @@
         "value": "nhsuk-shade($nhsuk-warning-button-colour, 20%)",
         "scope": "default",
         "line": {
-          "start": 280,
-          "end": 280
+          "start": 288,
+          "end": 288
         }
       },
       "type": "Colour",
@@ -1868,8 +1894,8 @@
     {
       "description": "Warning button background colour (active)\n\n",
       "commentRange": {
-        "start": 282,
-        "end": 284
+        "start": 290,
+        "end": 292
       },
       "context": {
         "type": "variable",
@@ -1877,8 +1903,8 @@
         "value": "nhsuk-shade($nhsuk-warning-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 286,
-          "end": 286
+          "start": 294,
+          "end": 294
         }
       },
       "type": "Colour",
@@ -1894,8 +1920,8 @@
     {
       "description": "Warning button shadow colour\n\n",
       "commentRange": {
-        "start": 288,
-        "end": 290
+        "start": 296,
+        "end": 298
       },
       "context": {
         "type": "variable",
@@ -1903,8 +1929,8 @@
         "value": "nhsuk-shade($nhsuk-warning-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 292,
-          "end": 292
+          "start": 300,
+          "end": 300
         }
       },
       "type": "Colour",
@@ -1920,8 +1946,8 @@
     {
       "description": "Login button background colour\n\n",
       "commentRange": {
-        "start": 294,
-        "end": 296
+        "start": 302,
+        "end": 304
       },
       "context": {
         "type": "variable",
@@ -1929,8 +1955,8 @@
         "value": "$nhsuk-brand-colour",
         "scope": "default",
         "line": {
-          "start": 298,
-          "end": 298
+          "start": 306,
+          "end": 306
         }
       },
       "type": "Colour",
@@ -1946,8 +1972,8 @@
     {
       "description": "Login button background colour (hover)\n\n",
       "commentRange": {
-        "start": 300,
-        "end": 302
+        "start": 308,
+        "end": 310
       },
       "context": {
         "type": "variable",
@@ -1955,8 +1981,8 @@
         "value": "nhsuk-shade($nhsuk-login-button-colour, 20%)",
         "scope": "default",
         "line": {
-          "start": 304,
-          "end": 304
+          "start": 312,
+          "end": 312
         }
       },
       "type": "Colour",
@@ -1972,8 +1998,8 @@
     {
       "description": "Login button background colour (active)\n\n",
       "commentRange": {
-        "start": 306,
-        "end": 308
+        "start": 314,
+        "end": 316
       },
       "context": {
         "type": "variable",
@@ -1981,8 +2007,8 @@
         "value": "nhsuk-shade($nhsuk-login-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 310,
-          "end": 310
+          "start": 318,
+          "end": 318
         }
       },
       "type": "Colour",
@@ -1998,8 +2024,8 @@
     {
       "description": "Login button shadow colour\n\n",
       "commentRange": {
-        "start": 312,
-        "end": 314
+        "start": 320,
+        "end": 322
       },
       "context": {
         "type": "variable",
@@ -2007,8 +2033,8 @@
         "value": "nhsuk-shade($nhsuk-login-button-colour, 50%)",
         "scope": "default",
         "line": {
-          "start": 316,
-          "end": 316
+          "start": 324,
+          "end": 324
         }
       },
       "type": "Colour",
@@ -2314,10 +2340,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         },
@@ -2326,10 +2352,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         }
@@ -2394,8 +2420,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -2428,34 +2454,34 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-input",
-            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+            "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
             "line": {
               "start": 42,
-              "end": 47
+              "end": 51
             }
           }
         },
         {
-          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n",
+          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n\n",
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-radio",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 54,
-              "end": 57
+              "start": 60,
+              "end": 76
             }
           }
         },
         {
-          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n",
+          "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n\n",
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-radio",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 54,
-              "end": 57
+              "start": 60,
+              "end": 76
             }
           }
         },
@@ -2464,10 +2490,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-checkbox",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 64,
-              "end": 67
+              "start": 83,
+              "end": 99
             }
           }
         },
@@ -2476,10 +2502,22 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-focused-checkbox",
-            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
             "line": {
-              "start": 64,
-              "end": 67
+              "start": 83,
+              "end": 99
+            }
+          }
+        },
+        {
+          "description": "Focused checkbox input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by checkbox.\n",
+          "context": {
+            "type": "mixin",
+            "name": "nhsuk-focused-checkbox",
+            "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
+            "line": {
+              "start": 83,
+              "end": 99
             }
           }
         },
@@ -2490,8 +2528,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -2502,8 +2540,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -2514,8 +2552,8 @@
             "name": "nhsuk-focused-button",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
             "line": {
-              "start": 74,
-              "end": 86
+              "start": 106,
+              "end": 118
             }
           }
         },
@@ -2526,12 +2564,38 @@
             "name": "nhsuk-focused-box",
             "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  box-shadow:\n    0 0 0 4px $nhsuk-focus-colour,\n    0 0 0 8px $nhsuk-focus-text-colour;\n",
             "line": {
-              "start": 95,
-              "end": 100
+              "start": 127,
+              "end": 132
             }
           }
         }
       ]
+    },
+    {
+      "description": "Hover width for form controls with a hover state\n\n",
+      "commentRange": {
+        "start": 84,
+        "end": 86
+      },
+      "context": {
+        "type": "variable",
+        "name": "nhsuk-hover-width",
+        "value": "10px",
+        "scope": "default",
+        "line": {
+          "start": 88,
+          "end": 88
+        }
+      },
+      "type": "Number",
+      "group": [
+        "settings/globals"
+      ],
+      "access": "public",
+      "file": {
+        "path": "core/settings/_globals.scss",
+        "name": "_globals.scss"
+      }
     },
     {
       "description": "Breakpoint definitions\n",
@@ -3031,8 +3095,8 @@
             "name": "panel",
             "code": "\n  @include nhsuk-warning(\"panel\", \"panel is deprecated. Use nhsuk-panel instead.\");\n  @include nhsuk-panel($args...);\n",
             "line": {
-              "start": 263,
-              "end": 266
+              "start": 264,
+              "end": 267
             }
           }
         },
@@ -3043,8 +3107,8 @@
             "name": "panel-with-label",
             "code": "\n  @include nhsuk-warning(\"panel-with-label\", \"panel-with-label is deprecated. Use nhsuk-panel-with-label instead.\");\n  @include nhsuk-panel-with-label($args...);\n",
             "line": {
-              "start": 295,
-              "end": 298
+              "start": 296,
+              "end": 299
             }
           }
         },
@@ -3055,8 +3119,8 @@
             "name": "heading-label",
             "code": "\n  @include nhsuk-warning(\"heading-label\", \"heading-label is deprecated. Use nhsuk-heading-label instead.\");\n  @include nhsuk-heading-label($args...);\n",
             "line": {
-              "start": 354,
-              "end": 357
+              "start": 355,
+              "end": 358
             }
           }
         },
@@ -3067,8 +3131,8 @@
             "name": "care-card",
             "code": "\n  @include nhsuk-warning(\"care-card\", \"care-card is deprecated. Use nhsuk-care-card instead.\");\n  @include nhsuk-care-card($args...);\n",
             "line": {
-              "start": 388,
-              "end": 391
+              "start": 389,
+              "end": 392
             }
           }
         },
@@ -3079,8 +3143,8 @@
             "name": "nhsuk-print-color",
             "code": "\n  @include nhsuk-warning(\"color-to-colour\", \"nhsuk-print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
             "line": {
-              "start": 415,
-              "end": 418
+              "start": 416,
+              "end": 419
             }
           }
         },
@@ -3091,8 +3155,8 @@
             "name": "print-color",
             "code": "\n  @include nhsuk-warning(\"print-color\", \"print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
             "line": {
-              "start": 426,
-              "end": 429
+              "start": 427,
+              "end": 430
             }
           }
         },
@@ -3103,8 +3167,8 @@
             "name": "print-hide",
             "code": "\n  @include nhsuk-warning(\"print-hide\", \"print-hide is deprecated. Use nhsuk-print-hide instead.\");\n  @include nhsuk-print-hide;\n",
             "line": {
-              "start": 448,
-              "end": 451
+              "start": 449,
+              "end": 452
             }
           }
         },
@@ -3115,8 +3179,8 @@
             "name": "flex",
             "code": "\n  @include nhsuk-warning(\"flex\", \"flex is deprecated. Use nhsuk-flex instead.\");\n  @include nhsuk-flex;\n",
             "line": {
-              "start": 469,
-              "end": 472
+              "start": 470,
+              "end": 473
             }
           }
         },
@@ -3127,8 +3191,8 @@
             "name": "flex-item",
             "code": "\n  @include nhsuk-warning(\"flex-item\", \"flex-item is deprecated. Use nhsuk-flex-item instead.\");\n  @include nhsuk-flex-item;\n",
             "line": {
-              "start": 493,
-              "end": 496
+              "start": 494,
+              "end": 497
             }
           }
         },
@@ -3139,8 +3203,8 @@
             "name": "remove-margin-mobile",
             "code": "\n  @include nhsuk-warning(\n    \"remove-margin-mobile\",\n    \"remove-margin-mobile is deprecated. Use nhsuk-remove-margin-mobile instead.\"\n  );\n\n  @include nhsuk-remove-margin-mobile;\n",
             "line": {
-              "start": 516,
-              "end": 523
+              "start": 517,
+              "end": 524
             }
           }
         },
@@ -3548,10 +3612,10 @@
       "context": {
         "type": "mixin",
         "name": "nhsuk-focused-input",
-        "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  outline-offset: 0;\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
+        "code": "\n  border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;\n  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;\n  // Ensure outline appears outside of the element\n  outline-offset: 0;\n  // Double the border by adding its width again. Use `box-shadow` to do\n  // this instead of changing `border-width` (which changes element size)\n  // and since `outline` is already used for the yellow focus state.\n  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;\n",
         "line": {
           "start": 42,
-          "end": 47
+          "end": 51
         }
       },
       "group": [
@@ -3596,20 +3660,28 @@
       }
     },
     {
-      "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n",
+      "description": "Focused radio input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by radios.\n\n",
       "commentRange": {
-        "start": 49,
-        "end": 52
+        "start": 53,
+        "end": 58
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-focused-radio",
-        "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+        "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
         "line": {
-          "start": 54,
-          "end": 57
+          "start": 60,
+          "end": 76
         }
       },
+      "parameter": [
+        {
+          "type": "Number",
+          "name": "focus-width",
+          "default": "$nhsuk-focus-width + 1px",
+          "description": "Focus width"
+        }
+      ],
       "group": [
         "tools"
       ],
@@ -3646,16 +3718,16 @@
     {
       "description": "Focused checkbox input (form element)\n\nProvides an additional outline and border to clearly indicate when\nthe target element has focus. Used by checkbox.\n",
       "commentRange": {
-        "start": 59,
-        "end": 62
+        "start": 78,
+        "end": 81
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-focused-checkbox",
-        "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n",
+        "code": "\n  border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;\n\n  // When colours are overridden, the yellow box-shadow becomes invisible\n  // which means the focus state is less obvious. By adding a transparent\n  // outline, which becomes solid (text-coloured) in that context, we ensure\n  // the focus remains clearly visible.\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: 1px;\n  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;\n\n  // When in an explicit forced-color mode, we can use the Highlight system\n  // color for the outline to better match focus states of native controls\n  @media screen and (forced-colors: active), (-ms-high-contrast: active) {\n    outline-color: Highlight;\n  }\n",
         "line": {
-          "start": 64,
-          "end": 67
+          "start": 83,
+          "end": 99
         }
       },
       "group": [
@@ -3683,6 +3755,10 @@
         },
         {
           "type": "variable",
+          "name": "nhsuk-focus-width"
+        },
+        {
+          "type": "variable",
           "name": "nhsuk-focus-colour"
         }
       ],
@@ -3694,16 +3770,16 @@
     {
       "description": "Focused button\n\nProvides an additional outline and background to clearly indicate when\nthe target element has focus. Used for buttons.\n",
       "commentRange": {
-        "start": 69,
-        "end": 72
+        "start": 101,
+        "end": 104
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-focused-button",
         "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  outline-offset: $nhsuk-focus-width;\n  color: $nhsuk-focus-text-colour;\n  background-color: $nhsuk-focus-colour;\n  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;\n\n  &,\n  .nhsuk-icon {\n    color: $nhsuk-focus-text-colour;\n    fill: $nhsuk-focus-text-colour;\n  }\n",
         "line": {
-          "start": 74,
-          "end": 86
+          "start": 106,
+          "end": 118
         }
       },
       "group": [
@@ -3758,16 +3834,16 @@
     {
       "description": "Focused box\n\nProvides an outline to clearly indicate when the target element is focused.\nUnlike nhsuk-focused-text, which only draws an underline below the element,\nnhsuk-focused-box draws an outline around all sides of the element.\nBest used for non-text content contained within links.\n",
       "commentRange": {
-        "start": 88,
-        "end": 93
+        "start": 120,
+        "end": 125
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-focused-box",
         "code": "\n  outline: $nhsuk-focus-width solid transparent;\n  box-shadow:\n    0 0 0 4px $nhsuk-focus-colour,\n    0 0 0 8px $nhsuk-focus-text-colour;\n",
         "line": {
-          "start": 95,
-          "end": 100
+          "start": 127,
+          "end": 132
         }
       },
       "group": [
@@ -4048,10 +4124,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-grid-column",
-            "code": "\n  box-sizing: border-box;\n  @if $at != tablet {\n    width: 100%;\n  }\n  padding: 0 $nhsuk-gutter-half;\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n\n  @if $at != tablet {\n    width: 100%;\n  }\n\n  padding: 0 $nhsuk-gutter-half;\n\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
             "line": {
               "start": 59,
-              "end": 69
+              "end": 72
             }
           }
         }
@@ -4066,10 +4142,10 @@
       "context": {
         "type": "mixin",
         "name": "nhsuk-grid-column",
-        "code": "\n  box-sizing: border-box;\n  @if $at != tablet {\n    width: 100%;\n  }\n  padding: 0 $nhsuk-gutter-half;\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
+        "code": "\n  box-sizing: border-box;\n\n  @if $at != tablet {\n    width: 100%;\n  }\n\n  padding: 0 $nhsuk-gutter-half;\n\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
         "line": {
           "start": 59,
-          "end": 69
+          "end": 72
         }
       },
       "parameter": [
@@ -4362,8 +4438,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -4439,8 +4515,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -4501,8 +4577,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -4566,8 +4642,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -5337,10 +5413,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-panel",
-            "code": "\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
             "line": {
               "start": 242,
-              "end": 256
+              "end": 257
             }
           }
         }
@@ -5391,10 +5467,10 @@
       "context": {
         "type": "mixin",
         "name": "nhsuk-panel",
-        "code": "\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
+        "code": "\n  box-sizing: border-box;\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
         "line": {
           "start": 242,
-          "end": 256
+          "end": 257
         }
       },
       "parameter": [
@@ -5466,8 +5542,8 @@
             "name": "panel",
             "code": "\n  @include nhsuk-warning(\"panel\", \"panel is deprecated. Use nhsuk-panel instead.\");\n  @include nhsuk-panel($args...);\n",
             "line": {
-              "start": 263,
-              "end": 266
+              "start": 264,
+              "end": 267
             }
           }
         },
@@ -5478,8 +5554,8 @@
             "name": "nhsuk-panel-with-label",
             "code": "\n  // stylelint-disable-next-line declaration-no-important\n  padding-top: 0 !important;\n  border: 1px solid $panel-border-colour;\n\n  @include nhsuk-panel($panel-background-colour, $panel-text-colour, $panel-border-colour);\n  @include nhsuk-responsive-margin(7, \"top\");\n  @include nhsuk-responsive-padding(5);\n",
             "line": {
-              "start": 279,
-              "end": 287
+              "start": 280,
+              "end": 288
             }
           }
         }
@@ -5488,16 +5564,16 @@
     {
       "description": "Panel mixin (deprecated)\n\n",
       "commentRange": {
-        "start": 258,
-        "end": 261
+        "start": 259,
+        "end": 262
       },
       "context": {
         "type": "mixin",
         "name": "panel",
         "code": "\n  @include nhsuk-warning(\"panel\", \"panel is deprecated. Use nhsuk-panel instead.\");\n  @include nhsuk-panel($args...);\n",
         "line": {
-          "start": 263,
-          "end": 266
+          "start": 264,
+          "end": 267
         }
       },
       "alias": "nhsuk-panel",
@@ -5524,16 +5600,16 @@
     {
       "description": "Panel with label mixin, inherits panel styling\nand removes padding top for the label positioning\n\n",
       "commentRange": {
-        "start": 268,
-        "end": 277
+        "start": 269,
+        "end": 278
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-panel-with-label",
         "code": "\n  // stylelint-disable-next-line declaration-no-important\n  padding-top: 0 !important;\n  border: 1px solid $panel-border-colour;\n\n  @include nhsuk-panel($panel-background-colour, $panel-text-colour, $panel-border-colour);\n  @include nhsuk-responsive-margin(7, \"top\");\n  @include nhsuk-responsive-padding(5);\n",
         "line": {
-          "start": 279,
-          "end": 287
+          "start": 280,
+          "end": 288
         }
       },
       "parameter": [
@@ -5600,8 +5676,8 @@
             "name": "panel-with-label",
             "code": "\n  @include nhsuk-warning(\"panel-with-label\", \"panel-with-label is deprecated. Use nhsuk-panel-with-label instead.\");\n  @include nhsuk-panel-with-label($args...);\n",
             "line": {
-              "start": 295,
-              "end": 298
+              "start": 296,
+              "end": 299
             }
           }
         }
@@ -5610,16 +5686,16 @@
     {
       "description": "Panel with label mixin, inherits panel styling\nand removes padding top for the label positioning (deprecated)\n\n",
       "commentRange": {
-        "start": 289,
-        "end": 293
+        "start": 290,
+        "end": 294
       },
       "context": {
         "type": "mixin",
         "name": "panel-with-label",
         "code": "\n  @include nhsuk-warning(\"panel-with-label\", \"panel-with-label is deprecated. Use nhsuk-panel-with-label instead.\");\n  @include nhsuk-panel-with-label($args...);\n",
         "line": {
-          "start": 295,
-          "end": 298
+          "start": 296,
+          "end": 299
         }
       },
       "alias": "nhsuk-panel-with-label",
@@ -5646,16 +5722,16 @@
     {
       "description": "Heading label mixin, adds a tab heading to\nwarning callout, do and don't lists and panel\n\n1. Background colour to be set on the @include.\n2. Ensures heading appears separate to the body text in high contrast mode.\n3. Text colour to be set on the @include.\n4. Display inline-block so it does not take up the full width.\n5. Negative left margin aligns the heading to the box.\n6. Top positioning set to minus to make heading sit just outside the box.\n\n",
       "commentRange": {
-        "start": 300,
-        "end": 315
+        "start": 301,
+        "end": 316
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-heading-label",
         "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
         "line": {
-          "start": 317,
-          "end": 346
+          "start": 318,
+          "end": 347
         }
       },
       "parameter": [
@@ -5749,8 +5825,8 @@
             "name": "heading-label",
             "code": "\n  @include nhsuk-warning(\"heading-label\", \"heading-label is deprecated. Use nhsuk-heading-label instead.\");\n  @include nhsuk-heading-label($args...);\n",
             "line": {
-              "start": 354,
-              "end": 357
+              "start": 355,
+              "end": 358
             }
           }
         }
@@ -5759,16 +5835,16 @@
     {
       "description": "Heading label mixin, adds a tab heading to\nwarning callout, do and don't lists and panel (deprecated)\n\n",
       "commentRange": {
-        "start": 348,
-        "end": 352
+        "start": 349,
+        "end": 353
       },
       "context": {
         "type": "mixin",
         "name": "heading-label",
         "code": "\n  @include nhsuk-warning(\"heading-label\", \"heading-label is deprecated. Use nhsuk-heading-label instead.\");\n  @include nhsuk-heading-label($args...);\n",
         "line": {
-          "start": 354,
-          "end": 357
+          "start": 355,
+          "end": 358
         }
       },
       "alias": "nhsuk-heading-label",
@@ -5795,16 +5871,16 @@
     {
       "description": "Care card mixin, used for creating\ndifferent coloured care cards\n\n",
       "commentRange": {
-        "start": 359,
-        "end": 368
+        "start": 360,
+        "end": 369
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-care-card",
         "code": "\n  .nhsuk-card--care__heading-container {\n    color: $heading-text-colour;\n    background-color: $heading-background-colour;\n  }\n\n  @include nhsuk-print-colour {\n    border: $print-border-size solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
         "line": {
-          "start": 370,
-          "end": 380
+          "start": 371,
+          "end": 381
         }
       },
       "parameter": [
@@ -5863,8 +5939,8 @@
             "name": "care-card",
             "code": "\n  @include nhsuk-warning(\"care-card\", \"care-card is deprecated. Use nhsuk-care-card instead.\");\n  @include nhsuk-care-card($args...);\n",
             "line": {
-              "start": 388,
-              "end": 391
+              "start": 389,
+              "end": 392
             }
           }
         }
@@ -5873,16 +5949,16 @@
     {
       "description": "Care card mixin, used for creating\ndifferent coloured care cards (deprecated)\n\n",
       "commentRange": {
-        "start": 382,
-        "end": 386
+        "start": 383,
+        "end": 387
       },
       "context": {
         "type": "mixin",
         "name": "care-card",
         "code": "\n  @include nhsuk-warning(\"care-card\", \"care-card is deprecated. Use nhsuk-care-card instead.\");\n  @include nhsuk-care-card($args...);\n",
         "line": {
-          "start": 388,
-          "end": 391
+          "start": 389,
+          "end": 392
         }
       },
       "alias": "nhsuk-care-card",
@@ -5909,16 +5985,16 @@
     {
       "description": "Print colour mixin, sets the text print colour\nwarning callout, do and don't lists and panels\n\n",
       "commentRange": {
-        "start": 393,
-        "end": 400
+        "start": 394,
+        "end": 401
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-print-colour",
         "code": "\n  @include nhsuk-media-query($media-type: print) {\n    color: $print-colour;\n    @content;\n  }\n",
         "line": {
-          "start": 402,
-          "end": 407
+          "start": 403,
+          "end": 408
         }
       },
       "parameter": [
@@ -5976,8 +6052,8 @@
             "name": "_header-link-style",
             "code": "\n  & {\n    color: $link-colour;\n  }\n\n  @include nhsuk-link-style-visited($link-colour);\n  @include nhsuk-link-style-hover($link-hover-colour);\n  @include nhsuk-link-style-active($link-active-colour);\n  @include nhsuk-link-style-focus;\n\n  &:focus,\n  &:focus:visited {\n    color: $nhsuk-focus-text-colour;\n    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;\n  }\n\n  @include nhsuk-print-colour($print-colour: inherit) {\n    &::after {\n      content: \"\";\n    }\n  }\n",
             "line": {
-              "start": 43,
-              "end": 68
+              "start": 45,
+              "end": 70
             }
           }
         },
@@ -5988,8 +6064,8 @@
             "name": "nhsuk-print-color",
             "code": "\n  @include nhsuk-warning(\"color-to-colour\", \"nhsuk-print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
             "line": {
-              "start": 415,
-              "end": 418
+              "start": 416,
+              "end": 419
             }
           }
         },
@@ -6000,8 +6076,8 @@
             "name": "print-color",
             "code": "\n  @include nhsuk-warning(\"print-color\", \"print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
             "line": {
-              "start": 426,
-              "end": 429
+              "start": 427,
+              "end": 430
             }
           }
         }
@@ -6010,16 +6086,16 @@
     {
       "description": "Print colour mixin, sets the text print colour\nwarning callout, do and don't lists and panels (deprecated)\n\n",
       "commentRange": {
-        "start": 409,
-        "end": 413
+        "start": 410,
+        "end": 414
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-print-color",
         "code": "\n  @include nhsuk-warning(\"color-to-colour\", \"nhsuk-print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
         "line": {
-          "start": 415,
-          "end": 418
+          "start": 416,
+          "end": 419
         }
       },
       "alias": "nhsuk-print-colour",
@@ -6046,16 +6122,16 @@
     {
       "description": "Print colour mixin, sets the text print colour\nwarning callout, do and don't lists and panels (deprecated)\n\n",
       "commentRange": {
-        "start": 420,
-        "end": 424
+        "start": 421,
+        "end": 425
       },
       "context": {
         "type": "mixin",
         "name": "print-color",
         "code": "\n  @include nhsuk-warning(\"print-color\", \"print-color is deprecated. Use nhsuk-print-colour instead.\");\n  @include nhsuk-print-colour($args...);\n",
         "line": {
-          "start": 426,
-          "end": 429
+          "start": 427,
+          "end": 430
         }
       },
       "alias": "nhsuk-print-colour",
@@ -6082,16 +6158,16 @@
     {
       "description": "Print hide mixin, hides the element from print\n\n",
       "commentRange": {
-        "start": 431,
-        "end": 435
+        "start": 432,
+        "end": 436
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-print-hide",
         "code": "\n  @include nhsuk-media-query($media-type: print) {\n    display: none;\n  }\n",
         "line": {
-          "start": 437,
-          "end": 441
+          "start": 438,
+          "end": 442
         }
       },
       "example": [
@@ -6133,8 +6209,8 @@
             "name": "print-hide",
             "code": "\n  @include nhsuk-warning(\"print-hide\", \"print-hide is deprecated. Use nhsuk-print-hide instead.\");\n  @include nhsuk-print-hide;\n",
             "line": {
-              "start": 448,
-              "end": 451
+              "start": 449,
+              "end": 452
             }
           }
         }
@@ -6143,16 +6219,16 @@
     {
       "description": "Print hide mixin, hides the element from print (deprecated)\n\n",
       "commentRange": {
-        "start": 443,
-        "end": 446
+        "start": 444,
+        "end": 447
       },
       "context": {
         "type": "mixin",
         "name": "print-hide",
         "code": "\n  @include nhsuk-warning(\"print-hide\", \"print-hide is deprecated. Use nhsuk-print-hide instead.\");\n  @include nhsuk-print-hide;\n",
         "line": {
-          "start": 448,
-          "end": 451
+          "start": 449,
+          "end": 452
         }
       },
       "alias": "nhsuk-print-hide",
@@ -6179,16 +6255,16 @@
     {
       "description": "Flex mixin\n\n",
       "commentRange": {
-        "start": 453,
-        "end": 457
+        "start": 454,
+        "end": 458
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-flex",
         "code": "\n  display: flex;\n  flex-wrap: wrap;\n",
         "line": {
-          "start": 459,
-          "end": 462
+          "start": 460,
+          "end": 463
         }
       },
       "example": [
@@ -6224,8 +6300,8 @@
             "name": "flex",
             "code": "\n  @include nhsuk-warning(\"flex\", \"flex is deprecated. Use nhsuk-flex instead.\");\n  @include nhsuk-flex;\n",
             "line": {
-              "start": 469,
-              "end": 472
+              "start": 470,
+              "end": 473
             }
           }
         }
@@ -6234,16 +6310,16 @@
     {
       "description": "\n",
       "commentRange": {
-        "start": 465,
-        "end": 467
+        "start": 466,
+        "end": 468
       },
       "context": {
         "type": "mixin",
         "name": "flex",
         "code": "\n  @include nhsuk-warning(\"flex\", \"flex is deprecated. Use nhsuk-flex instead.\");\n  @include nhsuk-flex;\n",
         "line": {
-          "start": 469,
-          "end": 472
+          "start": 470,
+          "end": 473
         }
       },
       "alias": "nhsuk-flex",
@@ -6270,16 +6346,16 @@
     {
       "description": "Flex item mixin\n\n",
       "commentRange": {
-        "start": 474,
-        "end": 478
+        "start": 475,
+        "end": 479
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-flex-item",
         "code": "\n  display: flex;\n\n  @include nhsuk-media-query($until: desktop) {\n    flex: 0 0 100%;\n  }\n",
         "line": {
-          "start": 480,
-          "end": 486
+          "start": 481,
+          "end": 487
         }
       },
       "example": [
@@ -6321,8 +6397,8 @@
             "name": "flex-item",
             "code": "\n  @include nhsuk-warning(\"flex-item\", \"flex-item is deprecated. Use nhsuk-flex-item instead.\");\n  @include nhsuk-flex-item;\n",
             "line": {
-              "start": 493,
-              "end": 496
+              "start": 494,
+              "end": 497
             }
           }
         }
@@ -6331,16 +6407,16 @@
     {
       "description": "\n",
       "commentRange": {
-        "start": 489,
-        "end": 491
+        "start": 490,
+        "end": 492
       },
       "context": {
         "type": "mixin",
         "name": "flex-item",
         "code": "\n  @include nhsuk-warning(\"flex-item\", \"flex-item is deprecated. Use nhsuk-flex-item instead.\");\n  @include nhsuk-flex-item;\n",
         "line": {
-          "start": 493,
-          "end": 496
+          "start": 494,
+          "end": 497
         }
       },
       "alias": "nhsuk-flex-item",
@@ -6367,16 +6443,16 @@
     {
       "description": "Remove margin mobile mixin\n\nRemoves left and right margin at tablet breakpoint\n",
       "commentRange": {
-        "start": 498,
-        "end": 500
+        "start": 499,
+        "end": 501
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-remove-margin-mobile",
         "code": "\n  @include nhsuk-media-query($until: tablet) {\n    margin-right: -$nhsuk-gutter-half;\n    margin-left: -$nhsuk-gutter-half;\n  }\n",
         "line": {
-          "start": 502,
-          "end": 507
+          "start": 503,
+          "end": 508
         }
       },
       "group": [
@@ -6412,8 +6488,8 @@
             "name": "remove-margin-mobile",
             "code": "\n  @include nhsuk-warning(\n    \"remove-margin-mobile\",\n    \"remove-margin-mobile is deprecated. Use nhsuk-remove-margin-mobile instead.\"\n  );\n\n  @include nhsuk-remove-margin-mobile;\n",
             "line": {
-              "start": 516,
-              "end": 523
+              "start": 517,
+              "end": 524
             }
           }
         }
@@ -6422,16 +6498,16 @@
     {
       "description": "Remove margin mobile mixin (deprecated)\n\nRemoves left and right margin at tablet breakpoint\n\n",
       "commentRange": {
-        "start": 509,
-        "end": 514
+        "start": 510,
+        "end": 515
       },
       "context": {
         "type": "mixin",
         "name": "remove-margin-mobile",
         "code": "\n  @include nhsuk-warning(\n    \"remove-margin-mobile\",\n    \"remove-margin-mobile is deprecated. Use nhsuk-remove-margin-mobile instead.\"\n  );\n\n  @include nhsuk-remove-margin-mobile;\n",
         "line": {
-          "start": 516,
-          "end": 523
+          "start": 517,
+          "end": 524
         }
       },
       "alias": "nhsuk-remove-margin-mobile",
@@ -6458,16 +6534,16 @@
     {
       "description": "NHS logo size helper\n\nSaves duplicating the code for when using the logo as a link.\nUsed in the header and footer.\n",
       "commentRange": {
-        "start": 525,
-        "end": 528
+        "start": 526,
+        "end": 529
       },
       "context": {
         "type": "mixin",
         "name": "nhsuk-logo-size",
         "code": "\n  width: 100px;\n  height: 40px;\n",
         "line": {
-          "start": 530,
-          "end": 533
+          "start": 531,
+          "end": 534
         }
       },
       "group": [
@@ -6589,10 +6665,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-grid-column",
-            "code": "\n  box-sizing: border-box;\n  @if $at != tablet {\n    width: 100%;\n  }\n  padding: 0 $nhsuk-gutter-half;\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n\n  @if $at != tablet {\n    width: 100%;\n  }\n\n  padding: 0 $nhsuk-gutter-half;\n\n  @include nhsuk-media-query($from: $at) {\n    width: nhsuk-grid-width($width);\n    float: $float;\n  }\n",
             "line": {
               "start": 59,
-              "end": 69
+              "end": 72
             }
           }
         },
@@ -6601,10 +6677,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-panel",
-            "code": "\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
             "line": {
               "start": 242,
-              "end": 256
+              "end": 257
             }
           }
         },
@@ -6615,8 +6691,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -6627,8 +6703,8 @@
             "name": "nhsuk-print-colour",
             "code": "\n  @include nhsuk-media-query($media-type: print) {\n    color: $print-colour;\n    @content;\n  }\n",
             "line": {
-              "start": 402,
-              "end": 407
+              "start": 403,
+              "end": 408
             }
           }
         },
@@ -6639,8 +6715,8 @@
             "name": "nhsuk-print-hide",
             "code": "\n  @include nhsuk-media-query($media-type: print) {\n    display: none;\n  }\n",
             "line": {
-              "start": 437,
-              "end": 441
+              "start": 438,
+              "end": 442
             }
           }
         },
@@ -6651,8 +6727,8 @@
             "name": "nhsuk-flex-item",
             "code": "\n  display: flex;\n\n  @include nhsuk-media-query($until: desktop) {\n    flex: 0 0 100%;\n  }\n",
             "line": {
-              "start": 480,
-              "end": 486
+              "start": 481,
+              "end": 487
             }
           }
         },
@@ -6663,8 +6739,8 @@
             "name": "nhsuk-remove-margin-mobile",
             "code": "\n  @include nhsuk-media-query($until: tablet) {\n    margin-right: -$nhsuk-gutter-half;\n    margin-left: -$nhsuk-gutter-half;\n  }\n",
             "line": {
-              "start": 502,
-              "end": 507
+              "start": 503,
+              "end": 508
             }
           }
         },
@@ -7037,8 +7113,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7049,8 +7125,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7061,8 +7137,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7073,8 +7149,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7085,8 +7161,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7097,8 +7173,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7109,8 +7185,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7121,8 +7197,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7133,8 +7209,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
@@ -7370,10 +7446,10 @@
           "context": {
             "type": "mixin",
             "name": "nhsuk-panel",
-            "code": "\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
+            "code": "\n  box-sizing: border-box;\n  @if $panel-border-colour {\n    border: 1px solid $panel-border-colour;\n  }\n  color: $panel-text-colour;\n  background-color: $panel-background-colour;\n\n  @include nhsuk-top-and-bottom;\n  @include nhsuk-responsive-margin(7, \"bottom\");\n\n  @include nhsuk-media-query($media-type: print) {\n    border: 1px solid $nhsuk-print-text-colour;\n    page-break-inside: avoid;\n  }\n",
             "line": {
               "start": 242,
-              "end": 256
+              "end": 257
             }
           }
         },
@@ -7384,8 +7460,8 @@
             "name": "nhsuk-panel-with-label",
             "code": "\n  // stylelint-disable-next-line declaration-no-important\n  padding-top: 0 !important;\n  border: 1px solid $panel-border-colour;\n\n  @include nhsuk-panel($panel-background-colour, $panel-text-colour, $panel-border-colour);\n  @include nhsuk-responsive-margin(7, \"top\");\n  @include nhsuk-responsive-padding(5);\n",
             "line": {
-              "start": 279,
-              "end": 287
+              "start": 280,
+              "end": 288
             }
           }
         }
@@ -7465,8 +7541,8 @@
             "name": "nhsuk-panel-with-label",
             "code": "\n  // stylelint-disable-next-line declaration-no-important\n  padding-top: 0 !important;\n  border: 1px solid $panel-border-colour;\n\n  @include nhsuk-panel($panel-background-colour, $panel-text-colour, $panel-border-colour);\n  @include nhsuk-responsive-margin(7, \"top\");\n  @include nhsuk-responsive-padding(5);\n",
             "line": {
-              "start": 279,
-              "end": 287
+              "start": 280,
+              "end": 288
             }
           }
         }
@@ -7852,8 +7928,8 @@
             "name": "nhsuk-heading-label",
             "code": "\n  display: inline-block; // [4]\n\n  position: relative;\n  top: nhsuk-spacing(-3); // [6]\n\n  margin: 0;\n  margin-bottom: nhsuk-spacing(2);\n  margin-left: nhsuk-spacing(-5) - 1px; // [5]\n  padding: nhsuk-spacing(2) nhsuk-spacing(5);\n\n  outline: 1px solid transparent; // [2]\n  outline-offset: -1px;\n\n  color: $heading-text-colour; // [3]\n  background-color: $heading-background-colour; // [1]\n\n  @include nhsuk-font-size(26);\n\n  @include nhsuk-media-query($until: tablet) {\n    top: nhsuk-spacing(-2); // [6]\n    margin-left: nhsuk-spacing(-4) - 1px; // [5]\n    padding: nhsuk-spacing(2) nhsuk-spacing(4);\n  }\n\n  @include nhsuk-print-colour {\n    top: 0;\n    background: none;\n  }\n",
             "line": {
-              "start": 317,
-              "end": 346
+              "start": 318,
+              "end": 347
             }
           }
         },
