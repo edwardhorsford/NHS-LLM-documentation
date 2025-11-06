@@ -2,8 +2,8 @@
   "metadata": {
     "nhsFrontendVersion": "10.1.0",
     "gitBranch": "main",
-    "gitCommit": "29a7f24",
-    "generated": "2025-11-05 13:26:23 UTC",
+    "gitCommit": "fb0afbb",
+    "generated": "2025-11-06 11:01:49 UTC",
     "source": "https://github.com/nhsuk/nhsuk-frontend",
     "description": "Auto-generated Sass documentation from NHS Frontend. This contains all Sass mixins, functions, variables, and placeholders extracted using sassdoc."
   },

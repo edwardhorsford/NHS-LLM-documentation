@@ -67,7 +67,7 @@ EXAMPLES:
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-component-reference.instructions.md        Complete component documentation with parameters and examples
+  - nhs-frontend-component-reference.md        Complete component documentation with parameters and examples
 `);
   process.exit(0);
 }
@@ -484,7 +484,7 @@ function generateDocumentation(components, version, gitInfo, generatedAt) {
   
   let fullReference = `# NHS Frontend Component Reference
 
-${header}This comprehensive reference guide for NHS Frontend components includes all parameters and examples.
+${header}Reference guide for NHS Frontend components includes all parameters and examples. Use the table of contents to skip to relevant sections.
 
 ## Table of Contents
 
@@ -675,10 +675,10 @@ async function main() {
   console.log('📝 Generating documentation...');
   const fullReference = generateDocumentation(components, version, gitInfo, generatedAt);
 
-  // Write file with .instructions.md suffix for Copilot compatibility
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.instructions.md'), fullReference);
+  // Write file without .instructions.md suffix (loaded on request, not automatically)
+  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.md'), fullReference);
 
-  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
+  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.md`);
   console.log('\n✅ Documentation generation complete!\n');
 }
 

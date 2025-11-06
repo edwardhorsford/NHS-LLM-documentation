@@ -1,3 +1,7 @@
+---
+applyTo: “.njk, .html, app/routes/*.js”
+---
+
 # NHS LLM documentation
 
 An (unofficial) collection of documentation for building NHS digital services with Large Language Models (LLMs). Includes auto-generated component references and hand-written guidance for working with the NHS design system in the [NHS Prototype kit](https://prototype-kit.service.manual.nhs.uk/).
@@ -15,14 +19,31 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 - [`nhs-prototype-kit-guide.instructions.md`](dist/nhs-prototype-kit-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
 
 **Auto-generated component documentation:**
-- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete component documentation with parameters, examples and table of contents
+- [`nhs-frontend-component-reference.md`](dist/nhs-frontend-component-reference.md) - Complete component documentation with parameters, examples and table of contents (reference from instruction files as needed)
 - [`nhs-frontend-sass-reference.json`](dist/nhs-frontend-sass-reference.json) - Complete Sass documentation (mixins, functions, variables) with metadata
 
 ## Using with LLMs
 
-**With Claude or ChatGPT:** Upload the markdown files or paste their content into your conversation.
+**With Claude or ChatGPT:** Upload the markdown files or paste their content into your conversation. Reference the component reference file (`nhs-frontend-component-reference.md`) as needed for detailed component information.
 
-**With GitHub Copilot:** Add the files from `/dist` to your `.github/instructions` folder. Copilot automatically recognizes `.instructions.md` files and uses them as context. You may want to reference them from your `.github/copilot-instructions.md` file.
+**With GitHub Copilot:** 
+
+1. Add all files from the `/dist` folder to your `.github/instructions` folder in your project
+2. Add the following to your `.github/copilot-instructions.md` file to reference them:
+
+```markdown
+## NHS design system resources
+
+For NHS Frontend components, patterns, and prototyping guidance, refer to:
+- `nhs-frontend-guide.instructions.md` - Core NHS Frontend patterns and best practices
+- `nhs-prototype-kit-guide.instructions.md` - Prototyping with Nunjucks
+- `nhs-frontend-component-reference.md` - Full component reference (use table of contents to navigate, only read specific component sections when detailed parameters are needed)
+- `nhs-frontend-sass-reference.json` - Sass mixins, functions, and variables (only read if needed)
+
+When working with NHS components, start with the guides. Only consult the component reference when you need complete parameter details or examples for a specific component.
+```
+
+**Note:** The component reference (`nhs-frontend-component-reference.md`) is comprehensive and includes a table of contents. Copilot should use the TOC to navigate to specific components rather than reading the entire file unless full details are required.
 
 ## Regenerating documentation
 
@@ -76,7 +97,7 @@ nhs-llm-docs/
 │   ├── generate-nhs-frontend-component-docs.js
 │   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-component-reference.instructions.md
+│   ├── nhs-frontend-component-reference.md
 │   ├── nhs-frontend-sass-reference.json
 │   ├── nhs-frontend-guide.instructions.md
 │   └── nhs-prototype-kit-guide.instructions.md

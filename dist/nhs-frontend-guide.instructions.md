@@ -1,3 +1,7 @@
+---
+applyTo: “.njk, .html, app/routes/*.js”
+---
+
 # NHS Frontend Guide
 
 A curated guide for using NHS Frontend components effectively with Large Language Models.
@@ -707,4 +711,3 @@ NHS Frontend components are designed to meet WCAG 2.2 Level AA, but correct usag
 - [NHS Frontend GitHub](https://github.com/nhsuk/nhsuk-frontend) - Source code and examples
 - [NHS Frontend coding standards](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/contributing/coding-standards.md) - Detailed coding conventions
 - [NHS prototype kit](https://prototype-kit.service.manual.nhs.uk/) - Prototyping tool
-- [Component reference documentation](nhs-frontend-component-reference.instructions.md) - Full parameter specifications

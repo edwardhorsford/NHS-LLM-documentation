@@ -5,15 +5,15 @@
 
 - **NHS Frontend Version:** 10.1.0
 - **Git Branch:** main
-- **Git Commit:** f9e7fdb
-- **Generated:** 2025-11-05 14:21:55 UTC
+- **Git Commit:** fb0afbb
+- **Generated:** 2025-11-06 11:01:39 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
 
 ---
 
-This comprehensive reference guide for NHS Frontend components includes all parameters and examples.
+Reference guide for NHS Frontend components includes all parameters and examples. Use the table of contents to skip to relevant sections.
 
 ## Table of Contents
 
@@ -2559,7 +2559,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 | `items.label` | string |  | Item-specific label text. If provided, this will be used instead of `name` for item label text. |
 | `items.inputmode` | string |  | Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). Defaults to `"numeric"`. |
 | `items.value` | string |  | If provided, it will be used as the initial value of the input. |
-| `items.autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used. |
+| `items.autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `items.pattern` | string |  | Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value. |
 | `items.classes` | string |  | Classes to add to date input item. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the date input tag. |
@@ -5281,10 +5281,10 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the input. |
-| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `pattern` | string |  | Attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
 | `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the input. |
-| `autocapitalize` | string |  | Optional field to enable or disable autocapitalisation of user input. [See the Autocapitalization section in the HTML spec](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used. |
+| `autocapitalize` | string |  | Optional field to enable or disable autocapitalisation of user input. See the [Autocapitalization section in the HTML standard](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used. |
 | `inputWrapper` | object |  | If any of `prefix`, `suffix`, `formGroup.beforeInput` or `formGroup.afterInput` have a value, a wrapping element is added around the input and inserted content. This object allows you to customise that wrapping element. |
 | `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
 | `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
@@ -9249,7 +9249,7 @@ LS2 5ZN"
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the textarea. |
-| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the textarea. |
 
 ### Examples

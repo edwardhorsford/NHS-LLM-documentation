@@ -1,10 +1,10 @@
-# NHS Prototype Kit Guide
+---
+applyTo: “.njk, .html, app/routes/*.js”
+---
 
-A guide for building prototypes with NHS Frontend components in the NHS Prototype Kit.
+# NHS prototype kit guide
 
-**Related guides:**
-- [NHS Frontend Guide](nhs-frontend-guide.instructions.md) - Core NHS Frontend patterns, conventions, and best practices
-- [NHS Frontend Component Reference](nhs-frontend-component-reference.instructions.md) - Detailed component parameters and documentation
+A guide for building prototypes with the NHS prototype kit. This is kept separate from the main NHS frontend guide as it focuses on specifics of using the prototype kit rather than general NHS frontend usage.
 
 ---
 
@@ -116,7 +116,8 @@ router.post('/contact-preference-answer', function (req, res) {
   // Continue with branching logic
   if (contactPreference === 'Email') {
     res.redirect('email-address')
-  } else {
+  }
+  else {
     res.redirect('phone-number')
   }
 })
