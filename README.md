@@ -1,7 +1,3 @@
----
-applyTo: “.njk, .html, app/routes/*.js”
----
-
 # NHS LLM documentation
 
 An (unofficial) collection of documentation for building NHS digital services with Large Language Models (LLMs). Includes auto-generated component references and hand-written guidance for working with the NHS design system in the [NHS Prototype kit](https://prototype-kit.service.manual.nhs.uk/).
