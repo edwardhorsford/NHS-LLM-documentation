@@ -1,5 +1,5 @@
 ---
-applyTo: “.njk, .html, app/routes/*.js”
+applyTo: "**/*.njk, **/*.html, app/routes/*.js"
 ---
 
 # NHS prototype kit guide
@@ -12,10 +12,11 @@ A guide for building prototypes with the NHS prototype kit. This is kept separat
 
 - Prefer splitting object keys over separate lines
 - Trailing commas are not supported by Nunjucks
+- Use `elseif` rather than `elif`
 
 ## Saving data
 
-All data submitted via POST or GET will be saved to `req.session.data` using the name param.
+All data submitted via POST or GET will be saved to `req.session.data` using the 'name' parameter.
 
 ```nunjucks
 {{ input({
@@ -27,9 +28,9 @@ All data submitted via POST or GET will be saved to `req.session.data` using the
 }) }}
 ```
 
-This data will be available in routes at `req.session.data.fullName` or in views as `data.fullName` (or `data["fullName"]` if using square bracket notation).
+This data will be available in routes at `req.session.data.fullName` or in views as `data.fullName` or `data["fullName"]`.
 
-Save to nested properties using square brackets and no quotation marks. Express will expand this. Eg `name: "person[fullName]"`, will expand to `data.person.fullName`. `name: "person[address][line1]"` will expand to `data.person.address.line1`.
+To save to nested properties use square brackets and no quotation marks. Express will expand this. Eg `name: "person[fullName]"`, will expand to `req.session.data.person.fullName`. `name: "person[address][line1]"` will expand to `req.session.data.person.address.line1`.
 
 Prefer `camelCase` for names.
 
@@ -39,6 +40,7 @@ Prefer `camelCase` for names.
 - Deciding which page to show next based on user answers (branching)
 - Doing custom processing of data before saving
 - Redirecting users based on missing data
+- Dynamically rendering several pages with the same view (eg a generic summary page)
 
 ### Creating a route
 
@@ -310,6 +312,10 @@ Bad:
   ]
 }) }}
 ```
+
+## Labelling inputs
+
+For text inputs, checkboxes, radios, selects, prefer setting the `value` param to the same text as the `text` param. This makes it quicker to display data in views and routes without needing to apply logic to convert from a value to display text. If logic is likely to be needed, use `camelCase` for the value.
 
 ## Fieldsets
 

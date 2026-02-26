@@ -19,12 +19,11 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 - [`nhs-prototype-kit-guide.instructions.md`](dist/nhs-prototype-kit-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
 
 **Auto-generated component documentation:**
-- [`nhs-frontend-component-reference.md`](dist/nhs-frontend-component-reference.md) - Complete component documentation with parameters, examples and table of contents (reference from instruction files as needed)
-- [`nhs-frontend-sass-reference.json`](dist/nhs-frontend-sass-reference.json) - Complete Sass documentation (mixins, functions, variables) with metadata
+- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete component documentation with parameters, examples and table of contents (reference from instruction files as needed)
+- [`nhs-frontend-sass-reference.instructions.md`](dist/nhs-frontend-sass-reference.instructions.md) - LLM-friendly Sass reference (mixins, functions, variables)
+- [`nhs-frontend-sass-reference.json`](dist/nhs-frontend-sass-reference.json) - Optional raw Sass documentation with metadata (generated with `--include-json`)
 
 ## Using with LLMs
-
-**With Claude or ChatGPT:** Upload the markdown files or paste their content into your conversation. Reference the component reference file (`nhs-frontend-component-reference.md`) as needed for detailed component information.
 
 **With GitHub Copilot:** 
 
@@ -37,15 +36,56 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 For NHS Frontend components, patterns, and prototyping guidance, refer to:
 - `nhs-frontend-guide.instructions.md` - Core NHS Frontend patterns and best practices
 - `nhs-prototype-kit-guide.instructions.md` - Prototyping with Nunjucks
-- `nhs-frontend-component-reference.md` - Full component reference (use table of contents to navigate, only read specific component sections when detailed parameters are needed)
-- `nhs-frontend-sass-reference.json` - Sass mixins, functions, and variables (only read if needed)
+- `nhs-frontend-component-reference.instructions.md` - Full component reference (use table of contents to navigate, only read specific component sections when detailed parameters are needed)
+- `nhs-frontend-sass-reference.instructions.md` - Sass mixins, functions, and variables (preferred for LLM context)
 
-When working with NHS components, start with the guides. Only consult the component reference when you need complete parameter details or examples for a specific component.
+When working with NHS components, start with the guides. Only consult the component and sass reference when you need complete parameter details or examples for a specific component.
 ```
 
-**Note:** The component reference (`nhs-frontend-component-reference.md`) is comprehensive and includes a table of contents. Copilot should use the TOC to navigate to specific components rather than reading the entire file unless full details are required.
+**With Claude or ChatGPT:** Add the files to a suitable place in your repo or upload directly to the LLM.
 
 ## Regenerating documentation
+
+### Which NHS Frontend version is used?
+
+Both generator scripts read from a local NHS Frontend clone:
+
+- Default path: `../nhsuk-frontend` (relative to this repo root)
+- Override path: set `NHS_FRONTEND_PATH=/path/to/nhsuk-frontend`
+
+The generated files include the detected NHS Frontend version, git branch, and commit hash in their metadata/header.
+
+### Updating your local NHS Frontend clone
+
+If you use the default sibling clone, update it before regenerating docs:
+
+```bash
+cd ../nhsuk-frontend
+git fetch --all --tags
+git checkout main
+git pull
+```
+
+If you want docs for a specific release, checkout the relevant tag/branch in that clone (or point `NHS_FRONTEND_PATH` at another clone), then run the generation scripts in this repository.
+
+### Generate docs from latest released version (recommended for commits to `dist/`)
+
+`main` in `nhsuk-frontend` may contain unreleased `*-internal.*` versions.
+To keep `dist/` aligned to the latest public release:
+
+```bash
+# Update tags and checkout latest stable release tag
+cd ../nhsuk-frontend
+git fetch --all --tags
+git checkout "$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)"
+
+# Back in this repo, regenerate docs from that checkout
+cd ../nhs-llm-documentation
+node scripts/generate-nhs-frontend-component-docs.js
+node scripts/generate-nhs-frontend-sass-docs.js
+```
+
+Both scripts now refuse to generate from `*-internal.*` versions by default. If you intentionally want internal docs, use `--allow-internal` (or set `ALLOW_INTERNAL_NHS_FRONTEND=1`).
 
 ### Component documentation
 
@@ -71,6 +111,9 @@ node scripts/generate-nhs-frontend-sass-docs.js
 
 # Or specify custom path
 NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node scripts/generate-nhs-frontend-sass-docs.js
+
+# Optional: also output raw JSON alongside markdown
+node scripts/generate-nhs-frontend-sass-docs.js --include-json
 ```
 
 **Note:** The Sass documentation script uses `npx sassdoc` so you don't need to install sassdoc globally. If you want to install it globally:
@@ -97,8 +140,9 @@ nhs-llm-docs/
 │   ├── generate-nhs-frontend-component-docs.js
 │   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-component-reference.md
-│   ├── nhs-frontend-sass-reference.json
+│   ├── nhs-frontend-component-reference.instructions.md
+│   ├── nhs-frontend-sass-reference.instructions.md
+│   ├── nhs-frontend-sass-reference.json (optional)
 │   ├── nhs-frontend-guide.instructions.md
 │   └── nhs-prototype-kit-guide.instructions.md
 └── .gitignore
