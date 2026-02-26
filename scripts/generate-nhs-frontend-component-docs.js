@@ -53,6 +53,7 @@ USAGE:
 
 OPTIONS:
   --help              Show this help message
+  --allow-internal    Allow generation from *-internal.* versions
 
 ENVIRONMENT VARIABLES:
   NHS_FRONTEND_PATH   Path to NHS Frontend repository
@@ -67,9 +68,21 @@ EXAMPLES:
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-component-reference.md        Complete component documentation with parameters and examples
+  - nhs-frontend-component-reference.instructions.md  Complete component documentation with parameters and examples
+
+NOTE:
+  By default, this script exits if the NHS Frontend version contains "-internal.".
+  Use --allow-internal (or ALLOW_INTERNAL_NHS_FRONTEND=1) to override.
 `);
   process.exit(0);
+}
+
+function isInternalVersion(version) {
+  return typeof version === 'string' && version.includes('-internal.');
+}
+
+function shouldAllowInternal() {
+  return process.argv.includes('--allow-internal') || process.env.ALLOW_INTERNAL_NHS_FRONTEND === '1';
 }
 
 /**
@@ -669,16 +682,26 @@ async function main() {
   const version = await getNHSFrontendVersion(repoPath);
   const gitInfo = await getGitInfo(repoPath);
   const generatedAt = formatDateTime();
+
+  if (isInternalVersion(version) && !shouldAllowInternal()) {
+    console.error(`✗ Refusing to generate docs from internal NHS Frontend version: ${version}`);
+    console.error('   This usually means you are on an unreleased branch/commit (for example main).');
+    console.error('   To generate docs for latest release, checkout a stable tag in your nhsuk-frontend clone, e.g.:');
+    console.error('   git fetch --all --tags');
+    console.error("   git checkout \"$(git tag --sort=-v:refname | grep -E '^v[0-9]+\\.[0-9]+\\.[0-9]+$' | head -n1)\"");
+    console.error('   If you really want internal docs, rerun with --allow-internal or ALLOW_INTERNAL_NHS_FRONTEND=1.\n');
+    process.exit(1);
+  }
+
   console.log(`✓ NHS Frontend v${version} (${gitInfo.branch}@${gitInfo.commitHash})\n`);
 
   // Generate documentation
   console.log('📝 Generating documentation...');
   const fullReference = generateDocumentation(components, version, gitInfo, generatedAt);
 
-  // Write file without .instructions.md suffix (loaded on request, not automatically)
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.md'), fullReference);
+  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.instructions.md'), fullReference);
 
-  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.md`);
+  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
   console.log('\n✅ Documentation generation complete!\n');
 }
 

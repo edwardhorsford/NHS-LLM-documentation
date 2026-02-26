@@ -1,5 +1,5 @@
 ---
-applyTo: “.njk, .html, app/routes/*.js”
+applyTo: "**/*.njk, **/*.html, app/routes/*.js"
 ---
 
 # NHS Frontend Guide
@@ -27,7 +27,15 @@ A curated guide for using NHS Frontend components effectively with Large Languag
 - **NHS prototype kit** - Prototyping tool that includes NHS Frontend
 - **GOV.UK Frontend** - Similar component library for UK government services (different branding)
 
----
+## General design system guidance
+
+- Follow the [NHS design system](https://service-manual.nhs.uk/design-system) for overall design patterns and guidance
+- Content:
+  - Use clear, concise language
+  - Follow NHS tone of voice guidelines
+  - Use British English spelling and grammar
+  - Sentence case for all text and headings
+
 
 ## Key Conventions
 

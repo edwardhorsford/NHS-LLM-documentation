@@ -36,6 +36,8 @@ USAGE:
 
 OPTIONS:
   --help              Show this help message
+  --allow-internal    Allow generation from *-internal.* versions
+  --include-json      Also write raw JSON output
 
 ENVIRONMENT VARIABLES:
   NHS_FRONTEND_PATH   Path to NHS Frontend repository
@@ -50,13 +52,317 @@ EXAMPLES:
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-sass-reference.json  Complete Sass documentation with metadata
+  - nhs-frontend-sass-reference.instructions.md  LLM-friendly Sass reference
+  - nhs-frontend-sass-reference.json  Raw Sass documentation (only with --include-json)
 
 REQUIREMENTS:
   - sassdoc must be installed: npm install -g sassdoc
     or use npx: npx sassdoc (automatically used by this script)
+
+NOTE:
+  By default, this script exits if the NHS Frontend version contains "-internal.".
+  Use --allow-internal (or ALLOW_INTERNAL_NHS_FRONTEND=1) to override.
 `);
   process.exit(0);
+}
+
+function isInternalVersion(version) {
+  return typeof version === 'string' && version.includes('-internal.');
+}
+
+function shouldAllowInternal() {
+  return process.argv.includes('--allow-internal') || process.env.ALLOW_INTERNAL_NHS_FRONTEND === '1';
+}
+
+function shouldIncludeJson() {
+  return process.argv.includes('--include-json');
+}
+
+function normalizeText(value) {
+  if (value === null || typeof value === 'undefined') return '';
+  return String(value).trim();
+}
+
+function escapeMarkdownInline(value) {
+  return String(value)
+    .replace(/\\/g, '\\\\')
+    .replace(/\|/g, '\\|')
+    .replace(/`/g, '\\`');
+}
+
+function formatLineRange(lineInfo) {
+  if (!lineInfo || typeof lineInfo.start !== 'number') return 'unknown';
+  if (typeof lineInfo.end !== 'number' || lineInfo.end === lineInfo.start) return `L${lineInfo.start}`;
+  return `L${lineInfo.start}-L${lineInfo.end}`;
+}
+
+function formatTypeSectionTitle(type) {
+  switch (type) {
+    case 'function':
+      return 'Functions';
+    case 'mixin':
+      return 'Mixins';
+    case 'variable':
+      return 'Variables';
+    case 'placeholder':
+      return 'Placeholders';
+    default:
+      return `${type.charAt(0).toUpperCase()}${type.slice(1)}s`;
+  }
+}
+
+function renderParameterTable(parameters) {
+  if (!Array.isArray(parameters) || parameters.length === 0) return '';
+
+  const lines = [
+    '#### Parameters',
+    '',
+    '| Name | Type | Required | Default | Description |',
+    '| --- | --- | --- | --- | --- |'
+  ];
+
+  for (const parameter of parameters) {
+    const name = escapeMarkdownInline(parameter.name || '-');
+    const type = escapeMarkdownInline(parameter.type || '-');
+    const required = parameter.required === true ? 'Yes' : 'No';
+    const defaultValue = escapeMarkdownInline(normalizeText(parameter.default) || '-');
+    const description = escapeMarkdownInline(normalizeText(parameter.description) || '-');
+    lines.push(`| ${name} | ${type} | ${required} | ${defaultValue} | ${description} |`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderRequires(requirements) {
+  if (!Array.isArray(requirements) || requirements.length === 0) return '';
+
+  const unique = new Set();
+  const lines = ['#### Requires', ''];
+
+  for (const requirement of requirements) {
+    const key = `${requirement.type || 'unknown'}:${requirement.name || 'unknown'}`;
+    if (unique.has(key)) continue;
+    unique.add(key);
+
+    const type = escapeMarkdownInline(requirement.type || 'unknown');
+    const name = escapeMarkdownInline(requirement.name || 'unknown');
+    lines.push(`- ${type}: ${name}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderLinks(links) {
+  if (!Array.isArray(links) || links.length === 0) return '';
+
+  const lines = ['#### Links', ''];
+  for (const link of links) {
+    if (!link?.url) continue;
+    const caption = normalizeText(link.caption) || link.url;
+    lines.push(`- [${escapeMarkdownInline(caption)}](${link.url})`);
+  }
+
+  if (lines.length === 2) return '';
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderUsedBy(usedBy) {
+  if (!Array.isArray(usedBy) || usedBy.length === 0) return '';
+
+  const lines = ['#### Used By', ''];
+  for (const item of usedBy) {
+    const contextType = item?.context?.type || 'unknown';
+    const contextName = item?.context?.name || 'unknown';
+    lines.push(`- ${escapeMarkdownInline(contextType)}: ${escapeMarkdownInline(contextName)}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderThrows(throwsList) {
+  if (!Array.isArray(throwsList) || throwsList.length === 0) return '';
+
+  const lines = ['#### Throws', ''];
+  for (const throwMessage of throwsList) {
+    lines.push(`- ${escapeMarkdownInline(normalizeText(throwMessage) || 'Unknown error')}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderReturn(returnData) {
+  if (!returnData) return '';
+
+  const lines = ['#### Returns', ''];
+  const type = escapeMarkdownInline(returnData.type || 'unknown');
+  const description = normalizeText(returnData.description);
+
+  if (description) {
+    lines.push(`- Type: ${type}`);
+    lines.push(`- Description: ${escapeMarkdownInline(description)}`);
+  } else {
+    lines.push(`- ${type}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderContextSnippet(context) {
+  if (!context) return '';
+
+  if (typeof context.value !== 'undefined') {
+    return ['#### Value', '', '```scss', String(context.value), '```', ''].join('\n');
+  }
+
+  const code = normalizeText(context.code);
+  if (!code) return '';
+  return ['#### Implementation', '', '```scss', code, '```', ''].join('\n');
+}
+
+function renderExamples(examples) {
+  if (!Array.isArray(examples) || examples.length === 0) return '';
+
+  const lines = ['#### Examples', ''];
+  for (const example of examples) {
+    if (example?.description) {
+      lines.push(escapeMarkdownInline(normalizeText(example.description)), '');
+    }
+
+    const language = normalizeText(example?.type) || 'scss';
+    const code = normalizeText(example?.code);
+    if (!code) continue;
+
+    lines.push(`\`\`\`${language}`, code, '\`\`\`', '');
+  }
+
+  if (lines.length === 2) return '';
+  return lines.join('\n');
+}
+
+function renderItem(item) {
+  const context = item.context || {};
+  const type = normalizeText(context.type) || 'unknown';
+  const name = normalizeText(context.name) || 'unknown';
+  const description = normalizeText(item.description);
+  const filePath = normalizeText(item?.file?.path) || 'unknown';
+  const access = normalizeText(item.access) || 'unknown';
+  const validGroups = Array.isArray(item.group)
+    ? item.group
+      .map(group => normalizeText(group))
+      .filter(group => group && group !== 'undefined' && group !== 'null')
+    : [];
+  const groups = validGroups.length > 0
+    ? validGroups.map(group => escapeMarkdownInline(group)).join(', ')
+    : 'none';
+  const lineRange = formatLineRange(context.line);
+
+  const parts = [
+    `### ${escapeMarkdownInline(name)}`,
+    '',
+    `- Type: ${escapeMarkdownInline(type)}`,
+    `- Access: ${escapeMarkdownInline(access)}`,
+    `- Group: ${groups}`,
+    `- File: ${escapeMarkdownInline(filePath)} (${lineRange})`
+  ];
+
+  if (description) {
+    parts.push('', description, '');
+  } else {
+    parts.push('');
+  }
+
+  const contextSnippet = renderContextSnippet(context);
+  if (contextSnippet) parts.push(contextSnippet);
+
+  const parameterTable = renderParameterTable(item.parameter);
+  if (parameterTable) parts.push(parameterTable);
+
+  const returnSection = renderReturn(item.return);
+  if (returnSection) parts.push(returnSection);
+
+  const throwsSection = renderThrows(item.throw);
+  if (throwsSection) parts.push(throwsSection);
+
+  const requiresSection = renderRequires(item.require);
+  if (requiresSection) parts.push(requiresSection);
+
+  const linksSection = renderLinks(item.link);
+  if (linksSection) parts.push(linksSection);
+
+  const usedBySection = renderUsedBy(item.usedBy);
+  if (usedBySection) parts.push(usedBySection);
+
+  const examplesSection = renderExamples(item.example);
+  if (examplesSection) parts.push(examplesSection);
+
+  parts.push('---', '');
+  return parts.join('\n');
+}
+
+function generateMarkdownDocumentation(data) {
+  const metadata = data.metadata || {};
+  const items = Array.isArray(data.items) ? data.items : [];
+
+  const byType = new Map();
+  for (const item of items) {
+    const type = normalizeText(item?.context?.type) || 'unknown';
+    if (!byType.has(type)) byType.set(type, []);
+    byType.get(type).push(item);
+  }
+
+  const typeOrder = ['function', 'mixin', 'variable', 'placeholder', 'unknown'];
+  const discoveredTypes = Array.from(byType.keys()).sort((a, b) => {
+    const aIndex = typeOrder.indexOf(a);
+    const bIndex = typeOrder.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+
+  const lines = [
+    '# NHS Frontend Sass Reference',
+    '',
+    '> Auto-generated from NHS Frontend Sass documentation. Do not edit manually.',
+    '',
+    '## Metadata',
+    '',
+    `- NHS Frontend Version: ${escapeMarkdownInline(metadata.nhsFrontendVersion || 'unknown')}`,
+    `- Git Branch: ${escapeMarkdownInline(metadata.gitBranch || 'unknown')}`,
+    `- Git Commit: ${escapeMarkdownInline(metadata.gitCommit || 'unknown')}`,
+    `- Generated: ${escapeMarkdownInline(metadata.generated || 'unknown')}`,
+    `- Source: ${metadata.source || 'unknown'}`,
+    '',
+    '## Contents',
+    ''
+  ];
+
+  for (const type of discoveredTypes) {
+    const typeItems = byType.get(type) || [];
+    lines.push(`- ${formatTypeSectionTitle(type)} (${typeItems.length})`);
+  }
+  lines.push('');
+
+  for (const type of discoveredTypes) {
+    const typeItems = (byType.get(type) || []).slice().sort((left, right) => {
+      const leftName = normalizeText(left?.context?.name) || '';
+      const rightName = normalizeText(right?.context?.name) || '';
+      return leftName.localeCompare(rightName);
+    });
+
+    lines.push(`## ${formatTypeSectionTitle(type)}`, '');
+    for (const item of typeItems) {
+      lines.push(renderItem(item));
+    }
+  }
+
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
 }
 
 /**
@@ -148,7 +454,7 @@ async function generateDocumentation(jsonPath, version, gitInfo, generatedAt) {
     items: sassData
   };
   
-  return JSON.stringify(output, null, 2);
+  return output;
 }
 
 /**
@@ -196,25 +502,44 @@ async function main() {
   const version = await getNHSFrontendVersion(repoPath);
   const gitInfo = await getGitInfo(repoPath);
   const generatedAt = formatDateTime();
+
+  if (isInternalVersion(version) && !shouldAllowInternal()) {
+    console.error(`✗ Refusing to generate docs from internal NHS Frontend version: ${version}`);
+    console.error('   This usually means you are on an unreleased branch/commit (for example main).');
+    console.error('   To generate docs for latest release, checkout a stable tag in your nhsuk-frontend clone, e.g.:');
+    console.error('   git fetch --all --tags');
+    console.error("   git checkout \"$(git tag --sort=-v:refname | grep -E '^v[0-9]+\\.[0-9]+\\.[0-9]+$' | head -n1)\"");
+    console.error('   If you really want internal docs, rerun with --allow-internal or ALLOW_INTERNAL_NHS_FRONTEND=1.\n');
+    process.exit(1);
+  }
+
   console.log(`✓ NHS Frontend v${version} (${gitInfo.branch}@${gitInfo.commitHash})\n`);
 
   // Generate documentation
   console.log('📝 Generating Sass reference documentation...');
-  const jsonOutput = await generateDocumentation(
+  const outputData = await generateDocumentation(
     CONFIG.tempJsonPath,
     version,
     gitInfo,
     generatedAt
   );
 
-  // Write output
-  const outputPath = path.join(CONFIG.outputDir, 'nhs-frontend-sass-reference.json');
-  await fs.writeFile(outputPath, jsonOutput);
+  const markdownOutput = generateMarkdownDocumentation(outputData);
+
+  // Write output (Markdown is always generated)
+  const markdownPath = path.join(CONFIG.outputDir, 'nhs-frontend-sass-reference.instructions.md');
+  await fs.writeFile(markdownPath, markdownOutput);
+
+  if (shouldIncludeJson()) {
+    const jsonPath = path.join(CONFIG.outputDir, 'nhs-frontend-sass-reference.json');
+    await fs.writeFile(jsonPath, JSON.stringify(outputData, null, 2));
+    console.log(`✓ Generated: ${jsonPath}`);
+  }
 
   // Clean up temp JSON file
   await fs.unlink(CONFIG.tempJsonPath);
 
-  console.log(`✓ Generated: ${outputPath}`);
+  console.log(`✓ Generated: ${markdownPath}`);
   console.log('\n✅ Sass documentation generation complete!\n');
 }
 
