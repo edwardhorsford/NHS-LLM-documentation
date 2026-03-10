@@ -68,7 +68,7 @@ EXAMPLES:
 
 OUTPUT:
   Files are generated in ./dist/
-  - nhs-frontend-component-reference.instructions.md  Complete component documentation with parameters and examples
+  - nhs-frontend-component-reference.md  Complete component documentation with parameters and examples
 
 NOTE:
   By default, this script exits if the NHS Frontend version contains "-internal.".
@@ -210,6 +210,21 @@ async function extractMacroName(componentDir) {
 }
 
 /**
+ * Dynamically import examples from a fixtures.mjs file (separate from macro-options.mjs)
+ */
+async function loadFixtures(componentDir) {
+  try {
+    const fixturesPath = path.join(componentDir, 'fixtures.mjs');
+    const fixturesUrl = `file://${path.resolve(fixturesPath)}`;
+    const fixturesModule = await import(fixturesUrl);
+    return fixturesModule.examples || {};
+  } catch (error) {
+    // No fixtures file, or it failed to import - return empty
+    return {};
+  }
+}
+
+/**
  * Dynamically import and parse a macro-options.mjs file
  */
 async function parseComponentFile(filePath) {
@@ -221,11 +236,14 @@ async function parseComponentFile(filePath) {
     const componentDir = path.dirname(filePath);
     const macroName = await extractMacroName(componentDir);
 
+    // Examples live in fixtures.mjs (separate from macro-options.mjs)
+    const examples = await loadFixtures(componentDir);
+
     return {
       name: module.name || path.basename(path.dirname(filePath)),
       macroName: macroName,
       params: module.params || {},
-      examples: module.examples || {},
+      examples,
       options: module.options || {},
       filePath
     };
@@ -270,13 +288,10 @@ function formatExample(component, exampleName, example) {
   // Check if this example has a callBlock (content inside the component)
   if (example.callBlock && typeof example.callBlock === 'string' && example.callBlock.trim().length > 0) {
     // Show as a Nunjucks call block
+    // Note: callBlock is already a processed string (outdent template literals
+    // are evaluated at import time in fixtures.mjs)
     let output = `{% call ${macroName}(${formatAsNunjucks(example.context)}) %}\n`;
-    // Clean up the callBlock content
-    const cleanCallBlock = example.callBlock
-      .replace(/^\s*outdent`/, '') // Remove outdent` at start
-      .replace(/`\s*$/, '') // Remove ` at end
-      .trim();
-    output += cleanCallBlock.replace(/^/gm, '  '); // Indent each line
+    output += example.callBlock.trim().replace(/^/gm, '  '); // Indent each line
     output += `\n{% endcall %}`;
     return output;
   } else {
@@ -487,93 +502,132 @@ function categorizeComponents(components) {
 }
 
 /**
- * Generate detailed component reference
+ * Generate detailed component reference.
+ *
+ * Uses a two-pass approach so the TOC table can contain accurate line numbers:
+ *  Pass 1 – build the full document with a single-line %%TOC%% placeholder.
+ *            Scan that text to find the line number of every ## heading.
+ *  Pass 2 – build the real TOC table. The placeholder (1 line) expands into
+ *            (4 + N) lines, so shift every recorded line number by (3 + N).
+ *            Replace the placeholder with the finished table.
  */
 function generateDocumentation(components, version, gitInfo, generatedAt) {
   const header = generateHeader(version, gitInfo, generatedAt);
   
   // Categorize components
   const categories = categorizeComponents(components);
-  
-  let fullReference = `# NHS Frontend Component Reference
 
-${header}Reference guide for NHS Frontend components includes all parameters and examples. Use the table of contents to skip to relevant sections.
+  // Build a flat ordered list of { comp, category } matching the TOC order
+  const tocRows = [];
+  for (const [category, comps] of Object.entries(categories)) {
+    for (const comp of comps) {
+      tocRows.push({ comp, category });
+    }
+  }
+
+  // ── PASS 1 ───────────────────────────────────────────────────────────────
+  // Build full document with a one-line placeholder where the TOC table will go.
+
+  const TOC_PLACEHOLDER = '%%TOC%%';
+
+  let doc = `# NHS Frontend Component Reference
+
+${header}Use the component reference table below to find the line number for any component, then read it with a file tool.
 
 ## Table of Contents
 
-`;
+${TOC_PLACEHOLDER}
 
-  // Generate TOC
-  for (const [category, comps] of Object.entries(categories)) {
-    fullReference += `### ${category}\n`;
-    for (const comp of comps) {
-      fullReference += `- [${comp.name}](#${slugify(comp.name)})\n`;
-    }
-    fullReference += '\n';
-  }
-
-  fullReference += `---
+---
 
 `;
 
   // Process each component
   for (const component of components) {
-    // Add to full reference
-    fullReference += `## ${component.name}\n\n`;
-    fullReference += `[↑ Back to top](#table-of-contents)\n\n`;
+    doc += `## ${component.name}\n\n`;
+    doc += `[↑ Back to top](#table-of-contents)\n\n`;
+
+    if (component.macroName) {
+      doc += `**Macro name:** \`${component.macroName}\`\n\n`;
+    }
 
     // Add component description if available in examples
     const defaultExample = component.examples.default || component.examples[Object.keys(component.examples)[0]];
     if (defaultExample?.description) {
-      fullReference += `${defaultExample.description}\n\n`;
+      doc += `${defaultExample.description}\n\n`;
     }
 
-    // Parameters section (full reference only)
+    // Parameters section
     if (Object.keys(component.params).length > 0) {
-      fullReference += `### Parameters\n\n`;
-      fullReference += `| Parameter | Type | Required | Description |\n`;
-      fullReference += `|-----------|------|----------|-------------|\n`;
+      doc += `### Parameters\n\n`;
+      doc += `| Parameter | Type | Required | Description |\n`;
+      doc += `|-----------|------|----------|-------------|\n`;
 
       const flatParams = flattenParams(component.params);
 
       for (const param of flatParams) {
         const type = param.type || 'unknown';
         const required = param.required ? '✓' : '';
-        const description = param.description || '';
+        let description = param.description || '';
+        if (param.isComponent) {
+          description = description ? `${description} *(accepts nested component params)*` : '*(accepts nested component params)*';
+        }
 
-        fullReference += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
+        doc += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
       }
 
-      fullReference += `\n`;
+      doc += `\n`;
     }
 
     // Examples section
     const exampleKeys = Object.keys(component.examples);
-    let hasValidExample = false;
 
     if (exampleKeys.length > 0) {
-      fullReference += `### Examples\n\n`;
+      doc += `### Examples\n\n`;
 
-      // Process each example
-      for (let i = 0; i < exampleKeys.length; i++) {
-        const exampleKey = exampleKeys[i];
+      for (const exampleKey of exampleKeys) {
         const example = component.examples[exampleKey];
         const formattedExample = formatExample(component, exampleKey, example);
 
         if (formattedExample) {
-          // Add to full reference (all examples)
-          fullReference += `#### ${exampleKey}\n\n`;
-          fullReference += `\`\`\`njk\n`;
-          fullReference += formattedExample;
-          fullReference += `\n\`\`\`\n\n`;
+          doc += `#### ${exampleKey}\n\n`;
+          doc += `\`\`\`njk\n`;
+          doc += formattedExample;
+          doc += `\n\`\`\`\n\n`;
         }
       }
     }
 
-    fullReference += `---\n\n`;
+    doc += `---\n\n`;
   }
 
-  return fullReference;
+  // ── PASS 2 ───────────────────────────────────────────────────────────────
+  // Scan the placeholder document to find where each ## heading landed.
+  const lines = doc.split('\n');
+  const headingLineMap = {};
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(/^## (.+)$/);
+    if (match && match[1] !== 'Table of Contents') {
+      headingLineMap[match[1]] = i + 1; // 1-based
+    }
+  }
+
+  // The placeholder (1 line) will be replaced by the TOC table.
+  // The replacement has: 1 column-header row + 1 separator row + N data rows = (2+N) content lines.
+  // The trailing \n on tocTable creates an extra blank before the following \n\n in the template,
+  // adding 1 more line. Net shift = (2+N+1) - 1 = 2+N.
+  const lineOffset = 2 + tocRows.length;
+
+  // Build the TOC table with corrected line numbers.
+  let tocTable = `| Component | Macro | Category | Line |\n`;
+  tocTable    += `|-----------|-------|----------|------|\n`;
+  for (const { comp, category } of tocRows) {
+    const macroLabel = comp.macroName ? `\`${comp.macroName}()\`` : '—';
+    const lineNum = (headingLineMap[comp.name] ?? 0) + lineOffset;
+    tocTable += `| ${comp.name} | ${macroLabel} | ${category} | ${lineNum} |\n`;
+  }
+
+  return doc.replace(TOC_PLACEHOLDER, tocTable);
 }
 
 /**
@@ -699,9 +753,9 @@ async function main() {
   console.log('📝 Generating documentation...');
   const fullReference = generateDocumentation(components, version, gitInfo, generatedAt);
 
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.instructions.md'), fullReference);
+  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.md'), fullReference);
 
-  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.instructions.md`);
+  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.md`);
   console.log('\n✅ Documentation generation complete!\n');
 }
 

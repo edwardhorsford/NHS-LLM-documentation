@@ -7,14 +7,188 @@
 - NHS Frontend Version: 10.3.1
 - Git Branch: detached
 - Git Commit: b3c4f56
-- Generated: 2026-02-26 14:46:30 UTC
+- Generated: 2026-03-10 16:30:08 UTC
 - Source: https://github.com/nhsuk/nhsuk-frontend
 
-## Contents
+## Table of Contents
 
-- Functions (17)
-- Mixins (76)
-- Variables (81)
+| Name | Type | Group | Line |
+|------|------|-------|------|
+| _map-sort-by-value | function | none | 195 |
+| _nhsuk-equilateral-height | function | tools | 252 |
+| _quick-sort | function | none | 292 |
+| _should-warn | function | settings/warnings | 344 |
+| _warning-text | function | settings/warnings | 379 |
+| get-breakpoint-width | function | none | 415 |
+| nhsuk-chevron-size | function | tools | 464 |
+| nhsuk-colour | function | helpers/colour | 507 |
+| nhsuk-colour-compatible | function | helpers/colour | 556 |
+| nhsuk-em | function | tools | 624 |
+| nhsuk-grid-width | function | tools | 685 |
+| nhsuk-line-height | function | tools | 733 |
+| nhsuk-px-to-rem | function | tools | 792 |
+| nhsuk-shade | function | helpers/colour | 847 |
+| nhsuk-spacing | function | tools | 893 |
+| nhsuk-tint | function | helpers/colour | 997 |
+| px2em | function | none | 1038 |
+| _header-link-style | mixin | components/header | 1087 |
+| _nhsuk-generate-responsive-spacing-overrides | mixin | utilities | 1141 |
+| _nhsuk-generate-static-spacing-overrides | mixin | utilities | 1200 |
+| _nhsuk-visually-hide-content | mixin | tools | 1250 |
+| add-breakpoint | mixin | none | 1320 |
+| care-card | mixin | tools | 1360 |
+| clearfix | mixin | tools | 1384 |
+| flex | mixin | tools | 1407 |
+| flex-item | mixin | tools | 1428 |
+| govuk-media-query | mixin | tools | 1449 |
+| heading-label | mixin | tools | 1474 |
+| mq | mixin | none | 1498 |
+| nhsuk-button-style | mixin | tools | 1618 |
+| nhsuk-care-card | mixin | tools | 1705 |
+| nhsuk-clearfix | mixin | tools | 1754 |
+| nhsuk-exports | mixin | tools | 1785 |
+| nhsuk-flex | mixin | tools | 1828 |
+| nhsuk-flex-item | mixin | tools | 1856 |
+| nhsuk-focused-box | mixin | tools | 1891 |
+| nhsuk-focused-button | mixin | tools | 1930 |
+| nhsuk-focused-checkbox | mixin | tools | 1970 |
+| nhsuk-focused-input | mixin | tools | 2014 |
+| nhsuk-focused-radio | mixin | tools | 2053 |
+| nhsuk-focused-text | mixin | tools | 2103 |
+| nhsuk-font | mixin | tools | 2154 |
+| nhsuk-font-dynamic-type | mixin | generic | 2208 |
+| nhsuk-font-size | mixin | tools | 2241 |
+| nhsuk-grid-column | mixin | tools | 2397 |
+| nhsuk-heading-label | mixin | tools | 2477 |
+| nhsuk-link-image | mixin | tools | 2552 |
+| nhsuk-link-style | mixin | tools | 2587 |
+| nhsuk-link-style-active | mixin | tools | 2638 |
+| nhsuk-link-style-default | mixin | tools | 2679 |
+| nhsuk-link-style-focus | mixin | tools | 2706 |
+| nhsuk-link-style-hover | mixin | tools | 2745 |
+| nhsuk-link-style-no-visited-state | mixin | tools | 2787 |
+| nhsuk-link-style-success | mixin | tools | 2828 |
+| nhsuk-link-style-text | mixin | tools | 2871 |
+| nhsuk-link-style-visited | mixin | tools | 2927 |
+| nhsuk-link-style-white | mixin | tools | 2968 |
+| nhsuk-logo-size | mixin | tools | 2998 |
+| nhsuk-media-query | mixin | tools | 3019 |
+| nhsuk-panel | mixin | tools | 3103 |
+| nhsuk-panel-with-label | mixin | tools | 3161 |
+| nhsuk-print-color | mixin | tools | 3208 |
+| nhsuk-print-colour | mixin | tools | 3232 |
+| nhsuk-print-hide | mixin | tools | 3275 |
+| nhsuk-reading-width | mixin | tools | 3308 |
+| nhsuk-remove-margin-mobile | mixin | tools | 3336 |
+| nhsuk-responsive-margin | mixin | tools | 3367 |
+| nhsuk-responsive-padding | mixin | tools | 3420 |
+| nhsuk-responsive-spacing | mixin | tools | 3472 |
+| nhsuk-shape-arrow | mixin | tools | 3591 |
+| nhsuk-shape-chevron | mixin | tools | 3670 |
+| nhsuk-text-break-word | mixin | tools | 3745 |
+| nhsuk-text-color | mixin | tools | 3787 |
+| nhsuk-text-colour | mixin | tools | 3810 |
+| nhsuk-top-and-bottom | mixin | tools | 3847 |
+| nhsuk-typography-responsive | mixin | tools | 3882 |
+| nhsuk-typography-weight-bold | mixin | tools | 3924 |
+| nhsuk-typography-weight-normal | mixin | tools | 3960 |
+| nhsuk-visually-hidden | mixin | tools | 3996 |
+| nhsuk-visually-hidden-focusable | mixin | tools | 4045 |
+| nhsuk-warning | mixin | settings/warnings | 4088 |
+| nhsuk-width-container | mixin | objects/layout | 4165 |
+| panel | mixin | tools | 4257 |
+| panel-with-label | mixin | tools | 4280 |
+| print-color | mixin | tools | 4304 |
+| print-hide | mixin | tools | 4328 |
+| reading-width | mixin | tools | 4351 |
+| remove-margin-mobile | mixin | tools | 4375 |
+| show-breakpoints | mixin | none | 4404 |
+| top-and-bottom | mixin | tools | 4470 |
+| visually-hidden | mixin | tools | 4494 |
+| visually-hidden-focusable | mixin | tools | 4516 |
+| visually-shown | mixin | tools | 4544 |
+| _icon-sizes | variable | styles | 4611 |
+| _spacing-directions | variable | utilities | 4628 |
+| imported-modules | variable | tools | 4654 |
+| mq-breakpoints | variable | none | 4677 |
+| mq-media-type | variable | none | 4714 |
+| mq-show-breakpoints | variable | none | 4748 |
+| nhsuk-body-background-colour | variable | settings/colours | 4779 |
+| nhsuk-border-colour | variable | settings/colours | 4796 |
+| nhsuk-border-hover-colour | variable | settings/colours | 4815 |
+| nhsuk-border-width | variable | settings/globals | 4832 |
+| nhsuk-border-width-form-element | variable | settings/globals | 4849 |
+| nhsuk-border-width-form-group-error | variable | settings/globals | 4871 |
+| nhsuk-brand-colour | variable | settings/colours | 4888 |
+| nhsuk-breakpoints | variable | settings/layout | 4905 |
+| nhsuk-button-active-colour | variable | settings/colours | 4927 |
+| nhsuk-button-border-radius | variable | settings/globals | 4944 |
+| nhsuk-button-colour | variable | settings/colours | 4965 |
+| nhsuk-button-hover-colour | variable | settings/colours | 4982 |
+| nhsuk-button-shadow-colour | variable | settings/colours | 4999 |
+| nhsuk-button-shadow-size | variable | settings/globals | 5016 |
+| nhsuk-button-text-colour | variable | settings/colours | 5038 |
+| nhsuk-card-background-colour | variable | settings/colours | 5055 |
+| nhsuk-code-font | variable | settings/typography | 5072 |
+| nhsuk-colours | variable | settings/colours | 5097 |
+| nhsuk-error-colour | variable | settings/colours | 5144 |
+| nhsuk-focus-colour | variable | settings/colours | 5163 |
+| nhsuk-focus-text-colour | variable | settings/colours | 5193 |
+| nhsuk-focus-width | variable | settings/globals | 5230 |
+| nhsuk-font-family | variable | settings/globals | 5263 |
+| nhsuk-font-family-print | variable | settings/globals | 5280 |
+| nhsuk-font-weight-bold | variable | settings/globals | 5300 |
+| nhsuk-font-weight-normal | variable | settings/globals | 5322 |
+| nhsuk-fonts-path | variable | settings/globals | 5344 |
+| nhsuk-grid-widths | variable | settings/globals | 5361 |
+| nhsuk-gutter | variable | settings/globals | 5390 |
+| nhsuk-gutter-half | variable | settings/globals | 5415 |
+| nhsuk-hover-colour | variable | settings/colours | 5446 |
+| nhsuk-hover-width | variable | settings/globals | 5465 |
+| nhsuk-include-default-font-face | variable | settings/globals | 5482 |
+| nhsuk-include-dynamic-type | variable | settings/globals | 5502 |
+| nhsuk-input-background-colour | variable | settings/colours | 5530 |
+| nhsuk-input-border-colour | variable | settings/colours | 5547 |
+| nhsuk-link-active-colour | variable | settings/colours | 5566 |
+| nhsuk-link-colour | variable | settings/colours | 5583 |
+| nhsuk-link-hover-colour | variable | settings/colours | 5604 |
+| nhsuk-link-visited-colour | variable | settings/colours | 5621 |
+| nhsuk-login-button-active-colour | variable | settings/colours | 5638 |
+| nhsuk-login-button-colour | variable | settings/colours | 5655 |
+| nhsuk-login-button-hover-colour | variable | settings/colours | 5672 |
+| nhsuk-login-button-shadow-colour | variable | settings/colours | 5689 |
+| nhsuk-page-width | variable | settings/globals | 5706 |
+| nhsuk-panel-border-width | variable | components/panel | 5723 |
+| nhsuk-print-text-colour | variable | settings/colours | 5747 |
+| nhsuk-reverse-button-active-colour | variable | settings/colours | 5772 |
+| nhsuk-reverse-button-colour | variable | settings/colours | 5789 |
+| nhsuk-reverse-button-hover-colour | variable | settings/colours | 5806 |
+| nhsuk-reverse-button-shadow-colour | variable | settings/colours | 5823 |
+| nhsuk-reverse-button-text-colour | variable | settings/colours | 5840 |
+| nhsuk-reverse-text-colour | variable | settings/colours | 5857 |
+| nhsuk-root-font-size | variable | settings/globals | 5878 |
+| nhsuk-secondary-border-colour | variable | settings/colours | 5910 |
+| nhsuk-secondary-button-active-colour | variable | settings/colours | 5927 |
+| nhsuk-secondary-button-border-colour | variable | settings/colours | 5944 |
+| nhsuk-secondary-button-colour | variable | settings/colours | 5961 |
+| nhsuk-secondary-button-hover-colour | variable | settings/colours | 5978 |
+| nhsuk-secondary-button-shadow-colour | variable | settings/colours | 5995 |
+| nhsuk-secondary-button-solid-background-colour | variable | settings/colours | 6012 |
+| nhsuk-secondary-button-text-colour | variable | settings/colours | 6029 |
+| nhsuk-secondary-text-colour | variable | settings/colours | 6046 |
+| nhsuk-show-breakpoints | variable | settings/layout | 6065 |
+| nhsuk-spacing-points | variable | settings/spacing | 6084 |
+| nhsuk-spacing-responsive-scale | variable | settings/spacing | 6122 |
+| nhsuk-success-colour | variable | settings/colours | 6200 |
+| nhsuk-suppressed-warnings | variable | settings/warnings | 6226 |
+| nhsuk-template-background-colour | variable | settings/colours | 6274 |
+| nhsuk-text-colour | variable | settings/colours | 6294 |
+| nhsuk-typography-scale | variable | settings/typography | 6315 |
+| nhsuk-warning-button-active-colour | variable | settings/colours | 6468 |
+| nhsuk-warning-button-colour | variable | settings/colours | 6485 |
+| nhsuk-warning-button-hover-colour | variable | settings/colours | 6502 |
+| nhsuk-warning-button-shadow-colour | variable | settings/colours | 6519 |
+
 
 ## Functions
 

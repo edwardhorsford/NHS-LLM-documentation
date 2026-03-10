@@ -23,7 +23,9 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 
 **With GitHub Copilot:** 
 
-1. Add all files from the `/dist` folder to your `.github/instructions` folder in your project
+1. Add all files from the `/dist` folder to your project in these locations:
+  a. Instruction guide files to `.github/instructions`
+  b. References to `docs`
 2. Add the following to your `.github/copilot-instructions.md` file to reference them:
 
 ```markdown
@@ -32,10 +34,12 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 For NHS Frontend components, patterns, and prototyping guidance, refer to:
 - `nhs-frontend-guide.instructions.md` - Core NHS Frontend patterns and best practices
 - `nhs-prototype-kit-guide.instructions.md` - Prototyping with Nunjucks
-- `nhs-frontend-component-reference.instructions.md` - Full component reference (use table of contents to navigate, only read specific component sections when detailed parameters are needed)
-- `nhs-frontend-sass-reference.instructions.md` - Sass mixins, functions, and variables (preferred for LLM context)
+- `docs/nhs-frontend-component-reference.md` - Full component reference (use table of contents to navigate)
+- `docs/nhs-frontend-sass-reference.md` - Sass mixins, functions, and variables
 
-When working with NHS components, start with the guides. Only consult the component and sass reference when you need complete parameter details or examples for a specific component.
+When working with NHS components, start with the guides. *Always* consult the component reference when adding NHS components to pages or refactoring so you get the right parameter names and usage. There is a TOC from line 20, or you can directly find components using either "**Macro name:** `macroName`" or `## Macro name`.
+
+For Sass mixins, functions, and variables, use the TOC from line 15 to find any item, then navigate directly to it.
 ```
 
 **With Claude or ChatGPT:** Add the files to a suitable place in your repo or upload directly to the LLM.
