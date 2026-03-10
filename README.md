@@ -23,10 +23,10 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 
 **With GitHub Copilot:** 
 
-1. Add all files from the `/dist` folder to your project in these locations:
-  a. Instruction guide files to `.github/instructions`
-  b. References to `docs`
-2. Add the following to your `.github/copilot-instructions.md` file to reference them:
+1. Add all files from the `/dist` folder to your project in these locations:  
+    1. Instruction guide files to `.github/instructions`
+    2. References to `docs`
+3. Add the following to your `.github/copilot-instructions.md` file to reference them:
 
 ```markdown
 ## NHS design system resources
