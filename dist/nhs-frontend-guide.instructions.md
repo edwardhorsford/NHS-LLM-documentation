@@ -2,7 +2,7 @@
 applyTo: "**/*.njk, **/*.html, app/routes/*.js"
 ---
 
-# NHS Frontend Guide
+# NHS Frontend guide
 
 A curated guide for using NHS Frontend components effectively with Large Language Models.
 
@@ -30,14 +30,19 @@ A curated guide for using NHS Frontend components effectively with Large Languag
 ## General design system guidance
 
 - Follow the [NHS design system](https://service-manual.nhs.uk/design-system) for overall design patterns and guidance
-- Content:
+## Content
+
   - Use clear, concise language
   - Follow NHS tone of voice guidelines
   - Use British English spelling and grammar
   - Sentence case for all text and headings
 
+### Hints
+Hints should be kept short and simple, ideally one sentence. With no terminating full stop.
 
-## Key Conventions
+Avoid formatting or using links within hints, as this can cause issues with screen readers. If you need to include links or formatting, use the question page pattern of putting this content in the main body of the page above the form, rather than in the hint. This is documented in the [NHS design system question page guidance](https://service-manual.nhs.uk/design-system/patterns/question-pages#asking-complex-questions-without-using-hint-text).
+
+## Key conventions
 
 ### Text vs HTML parameters
 
@@ -74,6 +79,7 @@ Add custom CSS classes to any component using the `classes` parameter:
 **Common utility classes:**
 - `nhsuk-u-nowrap` - Prevent wrapping - useful for tags that may otherwise wrap awkwardly
 - `nhsuk-u-margin-bottom-*` - Bottom margin (0-9)
+- `nhsuk-u-margin-top-*` - Top margin (0-9)
 - `nhsuk-u-visually-hidden` - Hide visually but keep for screen readers
 
 **Class naming conventions:**
@@ -95,7 +101,7 @@ Examples:
 .nhsuk-a-z-nav__link--disabled {} // Modifier
 ```
 
-All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes.
+All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes. Do not restyle NHS Frontend components by overriding `.nhsuk-` classes - use custom classes and modifiers instead.
 
 ### Attributes parameter
 
@@ -184,7 +190,7 @@ Use Nunjucks conditionals to show/hide content:
 
 ### Arrays of items
 
-Many components use an `items` array:
+Many components use an `items` array. Items can be made conditional with no need to manually filter the array.
 
 ```njk
 {{ radios({
@@ -206,7 +212,7 @@ Many components use an `items` array:
     {
       value: "text",
       text: "Text message"
-    }
+    } if supportsText
   ]
 }) }}
 ```
@@ -345,11 +351,6 @@ NHS Frontend provides some modifier classes you can use:
 }) }}
 ```
 
-**When to create custom modifiers:**
-- If you're using the same custom style very frequently across your service
-- When NHS Frontend doesn't provide a suitable modifier
-- For organization-specific design patterns
-
 ### Use Sass variables, not magic numbers
 
 NHS Frontend provides Sass variables for colors, spacing, typography, and more. Prefer these instead of hardcoded values.
@@ -380,7 +381,7 @@ NHS Frontend provides Sass variables for colors, spacing, typography, and more. 
 
 ### Sass best practices
 
-**Use direct class selectors, not nested selectors** - Keep selectors flat and specific rather than deeply nested.
+**Prefer direct class selectors, not nested selectors** - Keep selectors flat and specific rather than deeply nested. A small amount of nesting is acceptable if it improves readability, but avoid unnecessary nesting.
 
 **✅ Correct:**
 ```scss
@@ -434,7 +435,7 @@ li {
 }
 ```
 
-**Don't dynamically build selectors** - Write out full class names explicitly.
+**Never dynamically build selectors** - Write out full class names explicitly.
 
 **✅ Correct:**
 ```scss
@@ -477,54 +478,6 @@ This makes selectors easier to search for and understand.
 ---
 
 ## Common mistakes and gotchas
-
-### Using both text and html parameters
-
-**❌ Wrong:**
-```njk
-{# Wrong - only use one #}
-{{ button({ text: "Click", html: "<strong>Click</strong>" }) }}
-```
-
-Most components accept **either** `text` OR `html` - never both together.
-
-### Forgetting required parameters
-
-**❌ Wrong:**
-```njk
-{# Wrong - missing required 'name' parameter #}
-{{ input({ label: { text: "Name" } }) }}
-```
-
-**✅ Correct:**
-```njk
-{{ input({ 
-  name: "full-name",
-  label: { text: "Name" } 
-}) }}
-```
-
-All form inputs require a `name` attribute for form submission.
-
-### Incorrect array syntax
-
-**❌ Wrong:**
-```njk
-{# Wrong - items should be objects #}
-{{ radios({ items: ["Email", "Phone"] }) }}
-```
-
-**✅ Correct:**
-```njk
-{{ radios({ 
-  items: [
-    { value: "email", text: "Email" },
-    { value: "phone", text: "Phone" }
-  ]
-}) }}
-```
-
-The `items` array must contain objects with `value` and `text` properties.
 
 ### Quoting object keys in Nunjucks
 
@@ -613,6 +566,8 @@ Groups of radios or checkboxes need a fieldset and legend. Single checkboxes (li
 
 ### Hint text should be plain text only
 
+Keep hint text short and with no full stop.
+
 **Hints should avoid links** because when hint text is announced by screen readers (via `aria-describedby`), only the text content is read out - link destinations are not announced. Bold text is less problematic but should still be used sparingly.
 
 **✅ Correct:**
@@ -621,7 +576,7 @@ Groups of radios or checkboxes need a fieldset and legend. Single checkboxes (li
   name: "nhs-number",
   label: { text: "NHS number" },
   hint: { 
-    text: "Your NHS number is a 10 digit number that you can find on any letter the NHS has sent you, for example, 458 777 3456" 
+    text: "Your NHS number is a 10 digit number that you can find on any letter the NHS has sent you, for example, 458 777 3456"
   }
 }) }}
 ```

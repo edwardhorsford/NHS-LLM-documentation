@@ -7,6 +7,8 @@ applyTo: "**/*.njk, **/*.html, app/routes/*.js"
 A guide for building prototypes with the NHS prototype kit. This is kept separate from the main NHS frontend guide as it focuses on specifics of using the prototype kit rather than general NHS frontend usage.
 
 ---
+## General
+- Prefer clean html code with whitespace and line breaks for readability
 
 ## Nunjucks preferences
 
@@ -44,7 +46,7 @@ Prefer `camelCase` for names.
 
 ### Creating a route
 
-When adding a route, **don't post to the same page**. Instead, post to a separate route. For example, if your page is `contact-preference`, post to `contact-preference-answer`:
+When adding a route, **don't post to the same page**. Instead, post to a separate route. For example, if your page is `contact-preference`, post to `contact-preference-answer`. If no branching or data manipulation is needed, you can just POST to the next page in the flow.
 
 **In your view (e.g., `contact-preference.html`):**
 ```nunjucks
@@ -98,6 +100,15 @@ router.post('/contact-preference-answer', function (req, res) {
     res.redirect('contact-preference')
   }
 })
+```
+
+Bad:
+
+```javascript
+// Route unecessary if no branching or data manipulation is needed
+router.post("/power-type-answer", function (req, res) {
+  res.redirect("magical-origin");
+});
 ```
 
 ### Checking for missing data

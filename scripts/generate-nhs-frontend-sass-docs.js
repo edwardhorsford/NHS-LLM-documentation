@@ -527,7 +527,7 @@ async function main() {
   const markdownOutput = generateMarkdownDocumentation(outputData);
 
   // Write output (Markdown is always generated)
-  const markdownPath = path.join(CONFIG.outputDir, 'nhs-frontend-sass-reference.instructions.md');
+  const markdownPath = path.join(CONFIG.outputDir, 'nhs-frontend-sass-reference.md');
   await fs.writeFile(markdownPath, markdownOutput);
 
   if (shouldIncludeJson()) {
