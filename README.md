@@ -37,7 +37,9 @@ For NHS Frontend components, patterns, and prototyping guidance, refer to:
 - `docs/nhs-frontend-component-reference.md` - Full component reference (use table of contents to navigate)
 - `docs/nhs-frontend-sass-reference.md` - Sass mixins, functions, and variables
 
-When working with NHS components, start with the guides. *Always* consult the component reference when adding NHS components to pages or refactoring so you get the right parameter names and usage. There is a TOC on lines 20-59, or you can directly find components using either "**Macro name:** `macroName`" or `## Macro name`.
+When working with NHS components, start with the guides. *Always* consult the component reference when adding NHS components to pages or refactoring so you get the right parameter names and usage. There is a TOC from line 20, or you can directly find components using either "**Macro name:** `macroName`" or `## Macro name`.
+
+For Sass mixins, functions, and variables, use the TOC from line 15 to find any item, then navigate directly to it.
 ```
 
 **With Claude or ChatGPT:** Add the files to a suitable place in your repo or upload directly to the LLM.

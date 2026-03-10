@@ -326,6 +326,31 @@ function generateMarkdownDocumentation(data) {
     return aIndex - bIndex;
   });
 
+  // Pre-sort items per type so the TOC and document body use the same order.
+  const sortedByType = new Map();
+  for (const type of discoveredTypes) {
+    sortedByType.set(type, (byType.get(type) || []).slice().sort((left, right) => {
+      const leftName = normalizeText(left?.context?.name) || '';
+      const rightName = normalizeText(right?.context?.name) || '';
+      return leftName.localeCompare(rightName);
+    }));
+  }
+
+  // Flat list of all items in document order (type order, alphabetical within type).
+  const tocRows = [];
+  for (const type of discoveredTypes) {
+    for (const item of sortedByType.get(type)) {
+      tocRows.push({ item, type });
+    }
+  }
+
+  const TOC_PLACEHOLDER = '%%TOC%%';
+
+  // ── PASS 1 ─────────────────────────────────────────────────────────────
+  // Build full document with a one-line placeholder where the TOC table will go.
+  // Scan that text to find the line number of every ### heading.
+  // Pass 2 builds the real TOC table and replaces the placeholder.
+
   const lines = [
     '# NHS Frontend Sass Reference',
     '',
@@ -339,30 +364,53 @@ function generateMarkdownDocumentation(data) {
     `- Generated: ${escapeMarkdownInline(metadata.generated || 'unknown')}`,
     `- Source: ${metadata.source || 'unknown'}`,
     '',
-    '## Contents',
-    ''
+    '## Table of Contents',
+    '',
+    TOC_PLACEHOLDER,
+    '',
   ];
 
   for (const type of discoveredTypes) {
-    const typeItems = byType.get(type) || [];
-    lines.push(`- ${formatTypeSectionTitle(type)} (${typeItems.length})`);
-  }
-  lines.push('');
-
-  for (const type of discoveredTypes) {
-    const typeItems = (byType.get(type) || []).slice().sort((left, right) => {
-      const leftName = normalizeText(left?.context?.name) || '';
-      const rightName = normalizeText(right?.context?.name) || '';
-      return leftName.localeCompare(rightName);
-    });
-
     lines.push(`## ${formatTypeSectionTitle(type)}`, '');
-    for (const item of typeItems) {
+    for (const item of sortedByType.get(type)) {
       lines.push(renderItem(item));
     }
   }
 
-  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  const doc = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+
+  // ── PASS 2 ─────────────────────────────────────────────────────────────
+  // Scan placeholder document to find line numbers of each ### item heading.
+  // Item headings use exactly 3 hashes; sub-section headings use 4 hashes (####).
+  const docLines = doc.split('\n');
+  const headingLineNums = [];
+  for (let i = 0; i < docLines.length; i++) {
+    if (/^### /.test(docLines[i])) {
+      headingLineNums.push(i + 1); // 1-based
+    }
+  }
+
+  // The placeholder (1 line) expands to: 1 header row + 1 separator row + N data rows = (2+N) lines.
+  // The trailing \n on tocTable adds 1 more blank line. Net shift = 2+N.
+  const lineOffset = 2 + tocRows.length;
+
+  // Build the TOC table with corrected line numbers.
+  let tocTable = `| Name | Type | Group | Line |\n`;
+  tocTable    += `|------|------|-------|------|\n`;
+  for (let i = 0; i < tocRows.length; i++) {
+    const { item, type } = tocRows[i];
+    const name = escapeMarkdownInline(normalizeText(item?.context?.name) || 'unknown');
+    const validGroups = Array.isArray(item.group)
+      ? item.group.map(g => normalizeText(g)).filter(g => g && g !== 'undefined' && g !== 'null')
+      : [];
+    const groups = validGroups.length > 0
+      ? validGroups.map(g => escapeMarkdownInline(g)).join(', ')
+      : 'none';
+    const lineNum = (headingLineNums[i] ?? 0) + lineOffset;
+    tocTable += `| ${name} | ${escapeMarkdownInline(type)} | ${groups} | ${lineNum} |\n`;
+  }
+
+  return doc.replace(TOC_PLACEHOLDER, tocTable);
 }
 
 /**
