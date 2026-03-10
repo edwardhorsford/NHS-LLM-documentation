@@ -280,7 +280,9 @@ function flattenParams(params, prefix = '') {
  * Format a single example for display
  */
 function formatExample(component, exampleName, example) {
-  if (!example.context) return null;
+  // Some examples (e.g. inset-text) use only a callBlock with no context params — treat as {}
+  if (!example.context && !example.callBlock) return null;
+  const context = example.context ?? {};
 
   // Use the actual macro name if available, otherwise derive from component name
   const macroName = component.macroName || component.name.toLowerCase().replace(/\s+/g, '');
@@ -290,13 +292,13 @@ function formatExample(component, exampleName, example) {
     // Show as a Nunjucks call block
     // Note: callBlock is already a processed string (outdent template literals
     // are evaluated at import time in fixtures.mjs)
-    let output = `{% call ${macroName}(${formatAsNunjucks(example.context)}) %}\n`;
+    let output = `{% call ${macroName}(${formatAsNunjucks(context)}) %}\n`;
     output += example.callBlock.trim().replace(/^/gm, '  '); // Indent each line
     output += `\n{% endcall %}`;
     return output;
   } else {
     // Show wrapped in component macro syntax
-    return `{{ ${macroName}(${formatAsNunjucks(example.context)}) }}`;
+    return `{{ ${macroName}(${formatAsNunjucks(context)}) }}`;
   }
 }
 

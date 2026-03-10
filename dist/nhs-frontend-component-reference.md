@@ -6,7 +6,7 @@
 - **NHS Frontend Version:** 10.3.1
 - **Git Branch:** detached
 - **Git Commit:** b3c4f56
-- **Generated:** 2026-03-10 16:17:16 UTC
+- **Generated:** 2026-03-10 16:41:54 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -24,20 +24,20 @@ Use the component reference table below to find the line number for any componen
 | Date input | `dateInput()` | Form Inputs | 2903 |
 | File upload | `fileUpload()` | Form Inputs | 3973 |
 | Input | `input()` | Form Inputs | 5566 |
-| Password input | `passwordInput()` | Form Inputs | 6702 |
-| Radios | `radios()` | Form Inputs | 6874 |
-| Select | `select()` | Form Inputs | 7607 |
-| Textarea | `textarea()` | Form Inputs | 10219 |
+| Password input | `passwordInput()` | Form Inputs | 6710 |
+| Radios | `radios()` | Form Inputs | 6882 |
+| Select | `select()` | Form Inputs | 7615 |
+| Textarea | `textarea()` | Form Inputs | 10227 |
 | Button | `button()` | Form Controls | 314 |
 | Error message | `errorMessage()` | Form Controls | 3710 |
 | Fieldset | `fieldset()` | Form Controls | 3869 |
 | Hint text | `hint()` | Form Controls | 5489 |
-| Label | `label()` | Form Controls | 6006 |
+| Label | `label()` | Form Controls | 6014 |
 | Back link | `backLink()` | Navigation | 105 |
 | Breadcrumb | `breadcrumb()` | Navigation | 166 |
 | Contents list | `contentsList()` | Navigation | 2822 |
-| Pagination | `pagination()` | Navigation | 6262 |
-| Skip link | `skipLink()` | Navigation | 8167 |
+| Pagination | `pagination()` | Navigation | 6270 |
+| Skip link | `skipLink()` | Navigation | 8175 |
 | Action link | `actionLink()` | Content | 64 |
 | Card | `card()` | Content | 704 |
 | Details | `details()` | Content | 3400 |
@@ -45,18 +45,18 @@ Use the component reference table below to find the line number for any componen
 | Hero | `hero()` | Content | 5407 |
 | Images | `image()` | Content | 5517 |
 | Inset text | `insetText()` | Content | 5984 |
-| Legend | `legend()` | Content | 6078 |
-| Panel | `panel()` | Content | 6567 |
-| Summary list | `summaryList()` | Content | 8197 |
-| Tables | `table()` | Content | 9085 |
-| Tabs | `tabs()` | Content | 9844 |
-| Tag | `tag()` | Content | 9957 |
-| Task list | `taskList()` | Content | 10075 |
+| Legend | `legend()` | Content | 6086 |
+| Panel | `panel()` | Content | 6575 |
+| Summary list | `summaryList()` | Content | 8205 |
+| Tables | `table()` | Content | 9093 |
+| Tabs | `tabs()` | Content | 9852 |
+| Tag | `tag()` | Content | 9965 |
+| Task list | `taskList()` | Content | 10083 |
 | Footer | `footer()` | Layout | 4192 |
 | Header | `header()` | Layout | 4794 |
 | Error summary | `errorSummary()` | Notifications | 3739 |
-| Notification banner | `notificationBanner()` | Notifications | 6097 |
-| Warning callout | `warningCallout()` | Notifications | 10372 |
+| Notification banner | `notificationBanner()` | Notifications | 6105 |
+| Warning callout | `warningCallout()` | Notifications | 10380 |
 
 
 ---
@@ -6000,6 +6000,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `visuallyHiddenText` | string |  | A visually hidden prefix used before the inset text. Defaults to `"Information"`. |
 
 ### Examples
+
+#### default
+
+```njk
+{% call insetText({}) %}
+  <p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>
+{% endcall %}
+```
 
 ---
 

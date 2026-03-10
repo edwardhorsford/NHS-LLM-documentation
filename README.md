@@ -15,8 +15,8 @@ All generated documentation lives in the [`dist/`](dist/) folder:
 - [`nhs-prototype-kit-guide.instructions.md`](dist/nhs-prototype-kit-guide.instructions.md) - Patterns and best practices for prototyping with Nunjucks
 
 **Auto-generated component documentation:**
-- [`nhs-frontend-component-reference.instructions.md`](dist/nhs-frontend-component-reference.instructions.md) - Complete component documentation with parameters, examples and table of contents (reference from instruction files as needed)
-- [`nhs-frontend-sass-reference.instructions.md`](dist/nhs-frontend-sass-reference.instructions.md) - LLM-friendly Sass reference (mixins, functions, variables)
+- [`nhs-frontend-component-reference.md`](dist/nhs-frontend-component-reference.md) - Complete component documentation with parameters, examples and table of contents (reference from instruction files as needed)
+- [`nhs-frontend-sass-reference.md`](dist/nhs-frontend-sass-reference.md) - LLM-friendly Sass reference (mixins, functions, variables)
 - [`nhs-frontend-sass-reference.json`](dist/nhs-frontend-sass-reference.json) - Optional raw Sass documentation with metadata (generated with `--include-json`)
 
 ## Using with LLMs
