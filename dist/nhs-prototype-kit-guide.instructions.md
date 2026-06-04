@@ -10,11 +10,18 @@ A guide for building prototypes with the NHS prototype kit. This is kept separat
 ## General
 - Prefer clean html code with whitespace and line breaks for readability
 
+## Styles
+- Prefer using NHS frontend classes and components over custom styles.
+- Avoid inline styles in views - use classes instead.
+- Keep SCSS files organised by component or page rather than putting everything in main.scss.
+
 ## Nunjucks preferences
 
 - Prefer splitting object keys over separate lines
 - Trailing commas are not supported by Nunjucks
 - Use `elseif` rather than `elif`
+- Default to pre-filling existing answers in components.
+- Prefer using `set` or `call` blocks for HTML in components rather than inline.
 
 ## Saving data
 
@@ -140,7 +147,7 @@ router.post('/contact-preference-answer', function (req, res) {
 
 ## Prefilling data
 
-Form components support either a `value` or `values` params for pre-filling existing data.
+Form components support either a `value` or `values` params for pre-filling existing data. Default to pre-filling existing answers unless asked not to or it doesn't make sense.
 
 ```nunjucks
 {{ input({

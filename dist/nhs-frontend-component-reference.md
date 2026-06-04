@@ -3,10 +3,10 @@
 ---
 **Auto-generated Documentation**
 
-- **NHS Frontend Version:** 10.3.1
+- **NHS Frontend Version:** 10.5.1
 - **Git Branch:** detached
-- **Git Commit:** b3c4f56
-- **Generated:** 2026-03-10 16:41:54 UTC
+- **Git Commit:** ddd8147
+- **Generated:** 2026-06-04 14:46:25 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -19,44 +19,46 @@ Use the component reference table below to find the line number for any componen
 
 | Component | Macro | Category | Line |
 |-----------|-------|----------|------|
-| Character count | `characterCount()` | Form Inputs | 1698 |
-| Checkboxes | `checkboxes()` | Form Inputs | 2002 |
-| Date input | `dateInput()` | Form Inputs | 2903 |
-| File upload | `fileUpload()` | Form Inputs | 3973 |
-| Input | `input()` | Form Inputs | 5566 |
-| Password input | `passwordInput()` | Form Inputs | 6710 |
-| Radios | `radios()` | Form Inputs | 6882 |
-| Select | `select()` | Form Inputs | 7615 |
-| Textarea | `textarea()` | Form Inputs | 10227 |
-| Button | `button()` | Form Controls | 314 |
-| Error message | `errorMessage()` | Form Controls | 3710 |
-| Fieldset | `fieldset()` | Form Controls | 3869 |
-| Hint text | `hint()` | Form Controls | 5489 |
-| Label | `label()` | Form Controls | 6014 |
-| Back link | `backLink()` | Navigation | 105 |
-| Breadcrumb | `breadcrumb()` | Navigation | 166 |
-| Contents list | `contentsList()` | Navigation | 2822 |
-| Pagination | `pagination()` | Navigation | 6270 |
-| Skip link | `skipLink()` | Navigation | 8175 |
-| Action link | `actionLink()` | Content | 64 |
-| Card | `card()` | Content | 704 |
-| Details | `details()` | Content | 3400 |
-| Do and Don't list | `list()` | Content | 3490 |
-| Hero | `hero()` | Content | 5407 |
-| Images | `image()` | Content | 5517 |
-| Inset text | `insetText()` | Content | 5984 |
-| Legend | `legend()` | Content | 6086 |
-| Panel | `panel()` | Content | 6575 |
-| Summary list | `summaryList()` | Content | 8205 |
-| Tables | `table()` | Content | 9093 |
-| Tabs | `tabs()` | Content | 9852 |
-| Tag | `tag()` | Content | 9965 |
-| Task list | `taskList()` | Content | 10083 |
-| Footer | `footer()` | Layout | 4192 |
-| Header | `header()` | Layout | 4794 |
-| Error summary | `errorSummary()` | Notifications | 3739 |
-| Notification banner | `notificationBanner()` | Notifications | 6105 |
-| Warning callout | `warningCallout()` | Notifications | 10380 |
+| Character count | `characterCount()` | Form Inputs | 2074 |
+| Checkboxes | `checkboxes()` | Form Inputs | 2558 |
+| Date input | `dateInput()` | Form Inputs | 3801 |
+| File upload | `fileUpload()` | Form Inputs | 5385 |
+| Input | `input()` | Form Inputs | 7154 |
+| Password input | `passwordInput()` | Form Inputs | 8428 |
+| Radios | `radios()` | Form Inputs | 8734 |
+| Search input | `searchInput()` | Form Inputs | 9624 |
+| Select | `select()` | Form Inputs | 10075 |
+| Textarea | `textarea()` | Form Inputs | 13279 |
+| Button | `button()` | Form Controls | 311 |
+| Error message | `errorMessage()` | Form Controls | 5116 |
+| Fieldset | `fieldset()` | Form Controls | 5275 |
+| Hint text | `hint()` | Form Controls | 7053 |
+| Label | `label()` | Form Controls | 7748 |
+| Back link | `backLink()` | Navigation | 109 |
+| Breadcrumb | `breadcrumb()` | Navigation | 162 |
+| Contents list | `contentsList()` | Navigation | 3689 |
+| Pagination | `pagination()` | Navigation | 8006 |
+| Skip link | `skipLink()` | Navigation | 10650 |
+| Action link | `actionLink()` | Content | 66 |
+| Card | `card()` | Content | 1084 |
+| Code | `code()` | Content | 3556 |
+| Details | `details()` | Content | 4671 |
+| Do and Don't list | `list()` | Content | 4894 |
+| Hero | `hero()` | Content | 6978 |
+| Images | `image()` | Content | 7081 |
+| Inset text | `insetText()` | Content | 7718 |
+| Legend | `legend()` | Content | 7821 |
+| Panel | `panel()` | Content | 8315 |
+| Summary list | `summaryList()` | Content | 10698 |
+| Tables | `table()` | Content | 11762 |
+| Tabs | `tabs()` | Content | 12773 |
+| Tag | `tag()` | Content | 13086 |
+| Task list | `taskList()` | Content | 13135 |
+| Footer | `footer()` | Layout | 5605 |
+| Header | `header()` | Layout | 6201 |
+| Error summary | `errorSummary()` | Notifications | 5145 |
+| Notification banner | `notificationBanner()` | Notifications | 7840 |
+| Warning callout | `warningCallout()` | Notifications | 13450 |
 
 
 ---
@@ -74,10 +76,13 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the action link. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the action link. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the action link. If `html` is provided, the `text` option will be ignored. |
+| `type` | string |  | Type of `button` – `"button"` or `"submit"`. Defaults to `"submit"`. This has no effect on `a` elements. |
 | `href` | string | ✓ | The value of the link `href` attribute. |
-| `openInNewWindow` | boolean |  | If set to `true`, then the link will open in a new window. |
-| `classes` | string |  | Classes to add to the anchor tag. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the anchor tag. |
+| `openInNewWindow` | boolean |  | If set to `true`, then the link will open in a new window. This has no effect on `button` elements. |
+| `variant` | string |  | Optional variant of action link. You can use only `"reverse"` or empty values with this option. |
+| `classes` | string |  | Classes to add to the action link component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the action link component. |
+| `element` | string |  | HTML element for the action link component – `"button"` or `"a"`. Defaults to `"a"`. |
 
 ### Examples
 
@@ -90,13 +95,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### reverse
+#### as a button
 
 ```njk
 {{ actionLink({
-  classes: "nhsuk-action-link--reverse",
   text: "Find your nearest A&E",
-  href: "#"
+  element: "button"
 }) }}
 ```
 
@@ -115,11 +119,13 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the back link. |
 | `text` | string |  | Text to use within the back link component. If `html` is provided, the `text` argument will be ignored. Defaults to `"Back"`. |
 | `html` | string |  | HTML to use within the back link component. If `html` is provided, the `text` argument will be ignored. Defaults to `"Back"`. |
+| `type` | string |  | Type of `button` – `"button"` or `"submit"`. Defaults to `"submit"`. This has no effect on `a` elements. |
 | `href` | string |  | The value of the link `href` attribute. |
-| `classes` | string |  | Classes to add to the container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the tag. |
+| `variant` | string |  | Optional variant of back link. You can use only `"reverse"` or empty values with this option. |
+| `classes` | string |  | Classes to add to the back link component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the back link component. |
 | `visuallyHiddenText` | string |  | An optional visually hidden prefix used before the back link text, for example `"Back to"` used by the breadcrumbs component. |
-| `element` | string |  | HTML element for the back link component – `"button"` or `"a"`. If not provided, defaults to `"a"`. |
+| `element` | string |  | HTML element for the back link component – `"button"` or `"a"`. Defaults to `"a"`. |
 
 ### Examples
 
@@ -138,16 +144,6 @@ Use the component reference table below to find the line number for any componen
 {{ backLink({
   text: "Back",
   element: "button"
-}) }}
-```
-
-#### reverse
-
-```njk
-{{ backLink({
-  text: "Back",
-  href: "#",
-  classes: "nhsuk-back-link--reverse"
 }) }}
 ```
 
@@ -180,6 +176,7 @@ Use the component reference table below to find the line number for any componen
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the individual crumb. |
 | `text` | string | ✓ | Text to use for the parent page. |
 | `href` | string | ✓ | The value of the parent page link `href` attribute. |
+| `variant` | string |  | Optional variant of breadcrumb. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the container. |
 | `labelText` | string |  | Plain text label identifying the landmark to screen readers. Defaults to "Breadcrumb". |
@@ -212,7 +209,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ breadcrumb({
-  classes: "nhsuk-breadcrumb--reverse",
+  variant: "reverse",
   items: [
     {
       href: "#",
@@ -323,16 +320,24 @@ Use the component reference table below to find the line number for any componen
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the button. |
 | `element` | string |  | HTML element for the button component – `"input"`, `"button"` or `"a"`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. |
-| `text` | string | ✓ | If `html` is set, this is not required. Text for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
-| `html` | string | ✓ | If `text` is set, this is not required. HTML for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
+| `text` | string | ✓ | If `html` or `ariaLabel` is set, this is not required. Text for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
+| `html` | string | ✓ | If `text` or `ariaLabel` is set, this is not required. HTML for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
+| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire button component in a `call` block. |
 | `name` | string |  | Name for the `input` or `button`. This has no effect on `a` elements. |
 | `type` | string |  | Type of `input` or `button` – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"`. This has no effect on `a` elements. |
 | `value` | string |  | The `value` attribute for the `button` tag. This has no effect on `a` or `input` elements. |
 | `disabled` | boolean |  | Whether the button should be disabled. For button and input elements, `disabled` and `aria-disabled` attributes will be set automatically. |
 | `href` | string |  | The URL that the button should link to. If this is set, `element` will be automatically set to `"a"` if it has not already been defined. |
+| `variant` | string |  | Optional variant of button – `"brand"`, `"login"`, `"reverse"`, `"secondary"`, `"secondary-solid"` or `"warning"`. |
+| `small` | boolean |  | If set to `true`, smaller button size will be used. |
 | `classes` | string |  | Classes to add to the button component. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the button component. |
+| `ariaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when only an icon is used. |
 | `preventDoubleClick` | boolean |  | Prevent accidental double clicks on submit buttons from submitting forms multiple times. |
+| `icon` | object |  | Can be used to add an icon to the button component. |
+| `icon.name` | string | ✓ | Icon name for the button – for example, `"search"`, `"arrow-right"`, `"plus"` or `"minus"`. |
+| `icon.html` | string | ✓ | HTML to use for the icon, as an alternative to the `name` option. If `html` is provided, the `name` option will be ignored. |
+| `icon.placement` | string | ✓ | Placement of the icon within the button – `"start"` or `"end"`. |
 
 ### Examples
 
@@ -349,7 +354,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Save and continue",
-  classes: "nhsuk-button--small"
+  small: true
 }) }}
 ```
 
@@ -367,8 +372,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Disabled button",
-  classes: "nhsuk-button--small",
-  disabled: true
+  disabled: true,
+  small: true
 }) }}
 ```
 
@@ -386,66 +391,58 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Link button",
-  classes: "nhsuk-button--small",
+  small: true,
   href: "#"
 }) }}
 ```
 
-#### login
+#### with icon at start
 
 ```njk
 {{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login"
+  text: "Previous",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
 }) }}
 ```
 
-#### login, small
+#### with icon at start, small
 
 ```njk
 {{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login nhsuk-button--small"
+  text: "Previous",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
 }) }}
 ```
 
-#### login disabled
+#### with icon at end
 
 ```njk
 {{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login",
-  disabled: true
+  text: "Next",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
 }) }}
 ```
 
-#### login disabled, small
+#### with icon at end, small
 
 ```njk
 {{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login nhsuk-button--small",
-  disabled: true
-}) }}
-```
-
-#### login as a link
-
-```njk
-{{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login",
-  href: "#"
-}) }}
-```
-
-#### login as a link, small
-
-```njk
-{{ button({
-  text: "Continue",
-  classes: "nhsuk-button--login nhsuk-button--small",
-  href: "#"
+  text: "Next",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
 }) }}
 ```
 
@@ -467,12 +464,127 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### login
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login"
+}) }}
+```
+
+#### login, small
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login",
+  small: true
+}) }}
+```
+
+#### login disabled
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login",
+  disabled: true
+}) }}
+```
+
+#### login disabled, small
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login",
+  disabled: true,
+  small: true
+}) }}
+```
+
+#### login as a link
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login",
+  href: "#"
+}) }}
+```
+
+#### login as a link, small
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "login",
+  small: true,
+  href: "#"
+}) }}
+```
+
+#### login with icon at start
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "login",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### login with icon at start, small
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "login",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
+}) }}
+```
+
+#### login with icon at end
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "login",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
+}) }}
+```
+
+#### login with icon at end, small
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "login",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
+}) }}
+```
+
 #### reverse
 
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse"
+  variant: "reverse"
 }) }}
 ```
 
@@ -481,7 +593,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse nhsuk-button--small"
+  variant: "reverse",
+  small: true
 }) }}
 ```
 
@@ -490,7 +603,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse",
+  variant: "reverse",
   disabled: true
 }) }}
 ```
@@ -500,8 +613,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse nhsuk-button--small",
-  disabled: true
+  variant: "reverse",
+  disabled: true,
+  small: true
 }) }}
 ```
 
@@ -510,7 +624,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse",
+  variant: "reverse",
   href: "#"
 }) }}
 ```
@@ -520,8 +634,63 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Log out",
-  classes: "nhsuk-button--reverse nhsuk-button--small",
+  variant: "reverse",
+  small: true,
   href: "#"
+}) }}
+```
+
+#### reverse with icon at start
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "reverse",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### reverse with icon at start, small
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "reverse",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
+}) }}
+```
+
+#### reverse with icon at end
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "reverse",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
+}) }}
+```
+
+#### reverse with icon at end, small
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "reverse",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
 }) }}
 ```
 
@@ -530,7 +699,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary"
+  variant: "secondary"
 }) }}
 ```
 
@@ -539,7 +708,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary nhsuk-button--small"
+  variant: "secondary",
+  small: true
 }) }}
 ```
 
@@ -548,7 +718,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary",
+  variant: "secondary",
   disabled: true
 }) }}
 ```
@@ -558,8 +728,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary nhsuk-button--small",
-  disabled: true
+  variant: "secondary",
+  disabled: true,
+  small: true
 }) }}
 ```
 
@@ -568,7 +739,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary",
+  variant: "secondary",
   href: "#"
 }) }}
 ```
@@ -578,8 +749,63 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary nhsuk-button--small",
+  variant: "secondary",
+  small: true,
   href: "#"
+}) }}
+```
+
+#### secondary with icon at start
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "secondary",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### secondary with icon at start, small
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "secondary",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
+}) }}
+```
+
+#### secondary with icon at end
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "secondary",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
+}) }}
+```
+
+#### secondary with icon at end, small
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "secondary",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
 }) }}
 ```
 
@@ -588,7 +814,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid"
+  variant: "secondary-solid"
 }) }}
 ```
 
@@ -597,7 +823,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid nhsuk-button--small"
+  variant: "secondary-solid",
+  small: true
 }) }}
 ```
 
@@ -606,7 +833,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid",
+  variant: "secondary-solid",
   disabled: true
 }) }}
 ```
@@ -616,8 +843,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid nhsuk-button--small",
-  disabled: true
+  variant: "secondary-solid",
+  disabled: true,
+  small: true
 }) }}
 ```
 
@@ -626,7 +854,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid",
+  variant: "secondary-solid",
   href: "#"
 }) }}
 ```
@@ -636,8 +864,63 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Find my location",
-  classes: "nhsuk-button--secondary-solid nhsuk-button--small",
+  variant: "secondary-solid",
+  small: true,
   href: "#"
+}) }}
+```
+
+#### secondary, solid background with icon at start
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "secondary-solid",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### secondary, solid background with icon at start, small
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "secondary-solid",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
+}) }}
+```
+
+#### secondary, solid background with icon at end
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "secondary-solid",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
+}) }}
+```
+
+#### secondary, solid background with icon at end, small
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "secondary-solid",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
 }) }}
 ```
 
@@ -646,7 +929,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning"
+  variant: "warning"
 }) }}
 ```
 
@@ -655,7 +938,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning nhsuk-button--small"
+  small: true,
+  variant: "warning"
 }) }}
 ```
 
@@ -664,7 +948,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning",
+  variant: "warning",
   disabled: true
 }) }}
 ```
@@ -674,7 +958,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning nhsuk-button--small",
+  variant: "warning",
+  small: true,
   disabled: true
 }) }}
 ```
@@ -684,7 +969,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning",
+  variant: "warning",
   href: "#"
 }) }}
 ```
@@ -694,8 +979,103 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ button({
   text: "Yes, delete this vaccine",
-  classes: "nhsuk-button--warning nhsuk-button--small",
+  small: true,
+  variant: "warning",
   href: "#"
+}) }}
+```
+
+#### warning with icon at start
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "warning",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### warning with icon at start, small
+
+```njk
+{{ button({
+  text: "Previous",
+  variant: "warning",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
+}) }}
+```
+
+#### warning with icon at end
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "warning",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  }
+}) }}
+```
+
+#### warning with icon at end, small
+
+```njk
+{{ button({
+  text: "Next",
+  variant: "warning",
+  icon: {
+    name: "arrow-right",
+    placement: "end"
+  },
+  small: true
+}) }}
+```
+
+#### example reverse search button, small
+
+```njk
+{{ button({
+  text: "Search",
+  variant: "reverse",
+  small: true
+}) }}
+```
+
+#### example reverse save button, small
+
+```njk
+{{ button({
+  text: "Save",
+  variant: "reverse",
+  small: true
+}) }}
+```
+
+#### example secondary search button, small
+
+```njk
+{{ button({
+  text: "Search",
+  variant: "secondary",
+  small: true
+}) }}
+```
+
+#### example secondary save button, small
+
+```njk
+{{ button({
+  text: "Save",
+  variant: "secondary",
+  small: true
 }) }}
 ```
 
@@ -715,17 +1095,20 @@ Use the component reference table below to find the line number for any componen
 | `heading` | string | ✓ | Text to use within the heading of the card component. If `headingHtml` is provided, the `heading` argument will be ignored. |
 | `headingHtml` | string | ✓ | HTML to use within the heading of the card component. If `headingHtml` is provided, the `heading` argument will be ignored. |
 | `headingClasses` | string |  | Classes to add to the card heading. |
-| `headingSize` | string |  | Size of the heading – `"xss"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `headingSize` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `headingLevel` | integer |  | Optional heading level for the card heading. Defaults to `2`. |
 | `headingId` | string |  | Optional `id` attribute for the card heading. |
 | `headingVisuallyHiddenText` | string |  | Optional visually hidden prefix used before the heading. |
 | `href` | string |  | The value of the card link `href` attribute. |
 | `clickable` | boolean |  | If set to `true`, then the whole card will become a clickable card variant. |
-| `type` | string |  | Care card variant type – `"non-urgent"`, `"urgent"` or `"emergency"`. |
+| `variant` | string |  | Optional variant of card – `"feature"`, `"primary"`, `"secondary"`, `"warning"`, `"non-urgent"`, `"urgent"` or `"emergency"`. |
+| `type` | string |  | Optional type of care card – `"non-urgent"`, `"urgent"` or `"emergency"`. Replaced by the `variant` option. |
 | `feature` | boolean |  | If set to `true`, then the card will become a feature card variant. |
 | `primary` | boolean |  | If set to `true`, the card will become a primary card variant (with chevron). |
 | `secondary` | boolean |  | If set to `true`, the card will become a secondary card variant. |
 | `warning` | boolean |  | If set to `true`, then the card will become a warning card variant used by the warning callout. |
+| `imgURL` | string |  | The URL of the image in the card. Replaced by the `image.src` option. |
+| `imgALT` | string |  | The alternative text of the image in the card. Replaced by the `image.alt` option. |
 | `image` | object |  | Can be used to add an image to the card component. |
 | `image.src` | string | ✓ | The URL of the image in the card. |
 | `image.alt` | string |  | The alternative text of the image in the card. |
@@ -799,22 +1182,22 @@ Use the component reference table below to find the line number for any componen
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -828,43 +1211,43 @@ Use the component reference table below to find the line number for any componen
 }) %}
   <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
   
   
   <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Sarah Philips
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          5 January 1978
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Sarah Philips
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        5 January 1978
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -877,33 +1260,26 @@ Use the component reference table below to find the line number for any componen
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
   
   
-  
-  
-  
-  
-  
-  <button class="nhsuk-button nhsuk-button--secondary"
-    data-module="nhsuk-button"
-   type="submit">
+  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
     Add role
   </button>
 {% endcall %}
@@ -929,22 +1305,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -969,22 +1345,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1006,22 +1382,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1035,22 +1411,22 @@ Use the component reference table below to find the line number for any componen
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1059,7 +1435,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  secondary: true,
+  variant: "secondary",
   description: "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
@@ -1069,7 +1445,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  secondary: true,
+  variant: "secondary",
   heading: "Introduction to care and support",
   headingSize: "m",
   headingLevel: 3,
@@ -1081,7 +1457,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Help from NHS 111",
   headingLevel: 3
 }) %}
@@ -1095,27 +1471,27 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1124,49 +1500,49 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Managers",
   headingLevel: 3
 }) %}
   <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
   
   
   <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Sarah Philips
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          5 January 1978
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Sarah Philips
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        5 January 1978
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1175,38 +1551,31 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
   
   
-  
-  
-  
-  
-  
-  <button class="nhsuk-button nhsuk-button--secondary"
-    data-module="nhsuk-button"
-   type="submit">
+  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
     Add role
   </button>
 {% endcall %}
@@ -1216,7 +1585,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3,
   actions: {
@@ -1233,22 +1602,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1257,7 +1626,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   actions: {
     items: [
       {
@@ -1274,22 +1643,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1298,7 +1667,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3,
   actions: {
@@ -1312,22 +1681,22 @@ Use the component reference table below to find the line number for any componen
   }
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1337,27 +1706,27 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   href: "#",
-  secondary: true,
+  variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1368,7 +1737,7 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Speak to a GP if:",
   headingLevel: 3,
-  type: "non-urgent"
+  variant: "non-urgent"
 }) %}
   <ul>
     <li>you're not sure it's chickenpox</li>
@@ -1386,7 +1755,7 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Ask for an urgent GP appointment if:",
   headingLevel: 3,
-  type: "urgent"
+  variant: "urgent"
 }) %}
   <ul>
     <li>you're an adult and have chickenpox</li>
@@ -1404,7 +1773,7 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Call 999 if you have sudden chest pain that:",
   headingLevel: 3,
-  type: "emergency"
+  variant: "emergency"
 }) %}
   <ul>
     <li>spreads to your arms, back, neck or jaw</li>
@@ -1421,23 +1790,19 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Call 999 or go to A&E now if:",
   headingLevel: 3,
-  type: "emergency"
+  variant: "emergency"
 }) %}
   <ul>
     <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
     <li>you have severe difficulty breathing – you're gasping, choking or not able to get words out</li>
   </ul>
   
-  
-  <div class="nhsuk-action-link">
-    <a class="nhsuk-action-link__link nhsuk-action-link--reverse" href="#">
-      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-        <path d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-      </svg>
-      <span class="nhsuk-action-link__text">Find your nearest A&amp;E</span>
-    </a>
-  </div>
+  <a class="nhsuk-action-link nhsuk-action-link--reverse" href="#">
+    <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"/>
+    </svg>
+    <span class="nhsuk-action-link__text">Find your nearest A&amp;E</span>
+  </a>
 {% endcall %}
 ```
 
@@ -1446,7 +1811,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  primary: true,
+  variant: "primary",
   clickable: true,
   heading: "Breast screening",
   headingSize: "m"
@@ -1458,7 +1823,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  primary: true,
+  variant: "primary",
   clickable: true,
   heading: "Introduction to care and support",
   headingSize: "m",
@@ -1484,7 +1849,7 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   href: "#",
   clickable: true,
-  secondary: true,
+  variant: "secondary",
   heading: "Urgent and emergency care services",
   headingSize: "m",
   description: "Services the NHS provides if you need urgent or emergency medical help"
@@ -1496,7 +1861,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  secondary: true,
+  variant: "secondary",
   heading: "Why we are reinvesting in the NHS Prototype kit",
   headingClasses: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2",
   descriptionHtml: "<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>
@@ -1508,7 +1873,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  feature: true,
+  variant: "feature",
   heading: "Feature card heading",
   description: "Feature card description."
 }) }}
@@ -1518,7 +1883,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  feature: true,
+  variant: "feature",
   heading: "A",
   headingId: "a",
   headingSize: "m",
@@ -1534,26 +1899,26 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  feature: true,
+  variant: "feature",
   heading: "Feature card heading"
 }) %}
   <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Karen Francis
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15 March 1984
-        </dd>
-      </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+    </div>
   </dl>
 {% endcall %}
 ```
@@ -1562,42 +1927,52 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  feature: true,
+  variant: "feature",
   heading: "Flu: Follow-up requested"
 }) %}
   <p>Sarah Philips (Mum) would like to speak to a member of the team about other options for their child's vaccination.</p>
-  <a class="nhsuk-button nhsuk-button--secondary" href="#">Record a new consent response</a>
+  <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="#" role="button" draggable="false">
+    Record a new consent response
+  </a>
+  
   
   <h3 class="nhsuk-heading-s">Consent responses</h3>
   
-  <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Email address
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          sarah.philips@example.com
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          25 August 2025 at 4:04 pm
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-        <dt class="nhsuk-summary-list__key">
-          Response
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <strong class="nhsuk-tag nhsuk-tag--orange">
-            Follow up requested
-          </strong>
-        </dd>
-      </div>
-  </dl>
+  <div class="nhsuk-card nhsuk-card--clickable">
+    <div class="nhsuk-card__content">
+      <h4 class="nhsuk-card__heading">
+        <a class="nhsuk-card__link" href="#">Sarah Philips (Mum)</a>
+      </h4>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            sarah.philips@example.com
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            25 August 2025 at 4:04 pm
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+          <dt class="nhsuk-summary-list__key">
+            Response
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <strong class="nhsuk-tag nhsuk-tag--orange">
+              Follow up requested
+            </strong>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
 {% endcall %}
 ```
 
@@ -1605,7 +1980,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  warning: true,
+  variant: "warning",
   heading: "School, nursery or work",
   description: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
 }) }}
@@ -1615,7 +1990,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  warning: true,
+  variant: "warning",
   heading: "School, nursery or work",
   description: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.",
   actions: {
@@ -1649,11 +2024,12 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   image: {
-    html: "
-<figure class="nhsuk-image">
-  <img class="nhsuk-image__img" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">  <figcaption class="nhsuk-image__caption">
-    [object Object]
-  </figcaption></figure>
+    html: "<figure class="nhsuk-image">
+  <img class="nhsuk-image__img" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">
+  <figcaption class="nhsuk-image__caption">
+    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.
+  </figcaption>
+</figure>
 "
   },
   href: "#",
@@ -1687,9 +2063,9 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   href: "#",
   clickable: true,
-  headingLevel: 5,
   heading: "Order a repeat prescription",
-  headingSize: "xs"
+  headingSize: "xs",
+  headingLevel: 3
 }) }}
 ```
 
@@ -1709,8 +2085,9 @@ Use the component reference table below to find the line number for any componen
 | `name` | string | ✓ | The name of the textarea, which is submitted with the form data. |
 | `rows` | string |  | Optional number of textarea rows (default is 5 rows). |
 | `value` | string |  | Optional initial value of the textarea. |
-| `maxlength` | string | ✓ | If `maxwords` is set, this is not required. The maximum number of characters. If `maxwords` is provided, the `maxlength` option will be ignored. |
-| `maxwords` | string | ✓ | If `maxlength` is set, this is not required. The maximum number of words. If `maxwords` is provided, the `maxlength` option will be ignored. |
+| `maxlength` | string | ✓ | The maximum number of characters (or words if `countType` is set to `"words"`). |
+| `maxwords` | string | ✓ | The maximum number of words. Replaced by the `maxlength` and `countType: "words"` options. |
+| `countType` | string |  | The count type used to count the text – `"length"` or `"words"`. Defaults to `"length"`. |
 | `threshold` | string |  | The percentage value of the limit at which point the count message is displayed. If this attribute is set, the count message will be hidden by default. |
 | `label` | object | ✓ | The label used by the character count component. *(accepts nested component params)* |
 | `hint` | object |  | Can be used to add a hint to the character count component. *(accepts nested component params)* |
@@ -1727,9 +2104,11 @@ Use the component reference table below to find the line number for any componen
 | `classes` | string |  | Classes to add to the textarea. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the textarea. |
 | `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the character count. |
+| `disabled` | boolean |  | If `true`, textarea will be disabled. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"street-address"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `countMessage` | object |  | Additional options for the count message used by the character count component. |
 | `countMessage.classes` | string |  | Classes to add to the count message. |
-| `textareaDescriptionText` | string |  | Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page when JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` or `maxwords` parameter. |
+| `textareaDescriptionText` | string |  | Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page if `countType` is not supported or JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` parameter. |
 
 ### Examples
 
@@ -1747,6 +2126,24 @@ Use the component reference table below to find the line number for any componen
   },
   name: "example",
   maxlength: 200
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Can you provide more detail?",
+    size: "l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  name: "example",
+  maxlength: 200,
+  disabled: true
 }) }}
 ```
 
@@ -1783,11 +2180,11 @@ Use the component reference table below to find the line number for any componen
   id: "with-error-message",
   name: "example",
   maxlength: 350,
-  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ characterCount({
@@ -1805,11 +2202,11 @@ Use the component reference table below to find the line number for any componen
   id: "with-error-message",
   name: "example",
   maxlength: 350,
-  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
-#### with default value
+#### with value
 
 ```njk
 {{ characterCount({
@@ -1818,10 +2215,10 @@ Use the component reference table below to find the line number for any componen
     size: "l",
     isPageHeading: true
   },
-  id: "with-default-value",
+  id: "with-value",
   name: "example",
   maxlength: 350,
-  value: "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
@@ -1847,6 +2244,7 @@ Use the component reference table below to find the line number for any componen
 {{ characterCount({
   label: {
     text: "Can you provide more detail?",
+    size: "l",
     isPageHeading: true
   },
   id: "custom-size",
@@ -1884,7 +2282,7 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with word count
+#### with maxwords
 
 ```njk
 {{ characterCount({
@@ -1896,6 +2294,164 @@ Use the component reference table below to find the line number for any componen
   id: "with-word-count",
   name: "example",
   maxwords: 150
+}) }}
+```
+
+#### with count type 'length'
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-length-count-type",
+  name: "example",
+  countType: "length",
+  maxlength: 200
+}) }}
+```
+
+#### with count type 'characters'
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-characters-count-type",
+  name: "example",
+  countType: "characters",
+  maxlength: 200
+}) }}
+```
+
+#### with count type 'characters' and error message
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  errorMessage: {
+    text: "Job description must be 200 characters or less"
+  },
+  id: "with-characters-count-type-error-message",
+  name: "example",
+  countType: "characters",
+  maxlength: 350,
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
+#### with count type 'characters' and value
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-characters-count-type-value",
+  name: "example",
+  countType: "characters",
+  maxlength: 350,
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
+}) }}
+```
+
+#### with count type 'characters' and threshold
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-characters-count-type-threshold",
+  name: "example",
+  countType: "characters",
+  value: "Type another letter into this field after this message to see the threshold feature",
+  maxlength: 112,
+  threshold: 75
+}) }}
+```
+
+#### with count type 'words'
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-words-count-type",
+  name: "example",
+  countType: "words",
+  maxlength: 50
+}) }}
+```
+
+#### with count type 'words' and error message
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  errorMessage: {
+    text: "Job description must be 40 words or less"
+  },
+  id: "with-words-count-type-error-message",
+  name: "example",
+  countType: "words",
+  maxlength: 51,
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
+#### with count type 'words' and threshold
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-words-count-type-threshold",
+  name: "example",
+  countType: "words",
+  value: "Type another word into this field after this message to see the threshold feature",
+  maxlength: 51,
+  threshold: 30
+}) }}
+```
+
+#### with count type 'words' and value
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "with-words-count-type-value",
+  name: "example",
+  countType: "words",
+  maxlength: 51,
+  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
@@ -2011,7 +2567,7 @@ Use the component reference table below to find the line number for any componen
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the checkboxes component. |
 | `describedBy` | string |  | One or more element IDs to add to the input `aria-describedby` attribute without a fieldset, used to provide additional descriptive information for screenreader users. |
-| `fieldset` | object |  | Can be used to add a fieldset to the checkboxes component. *(accepts nested component params)* |
+| `fieldset` | object |  | Can be used to add a fieldset to the checkboxes component. The `fieldset.html` option is not supported. *(accepts nested component params)* |
 | `hint` | object |  | Can be used to add a hint to the checkboxes component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Can be used to add an error message to the checkboxes component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
 | `formGroup` | object |  | Additional options for the form group containing the checkboxes component. |
@@ -2031,9 +2587,7 @@ Use the component reference table below to find the line number for any componen
 | `items.id` | string |  | Specific `id` attribute for the checkbox item. If omitted, then component global `idPrefix` option will be applied. |
 | `items.name` | string |  | Specific `name` attribute for the checkbox item. If omitted, then component global `name` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the checkbox input. |
-| `items.label` | object |  | Subset of options for the label used by each checkbox item within the checkboxes component. *(accepts nested component params)* |
-| `items.label.classes` | string |  | Classes to add to the label tag. |
-| `items.label.attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
+| `items.label` | object |  | The label used by each checkbox item within the checkboxes component. The `label.size` and `label.isPageHeading` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each checkbox item within the checkboxes component. *(accepts nested component params)* |
 | `items.divider` | string |  | Divider text to separate checkbox items, for example the text `"or"`. |
 | `items.checked` | boolean |  | Whether the checkbox should be checked when the page loads. Takes precedence over the top-level `values` option. |
@@ -2045,6 +2599,9 @@ Use the component reference table below to find the line number for any componen
 | `items.exclusive` | boolean |  | If set to `true`, marks this checkbox as the None option in a None of these type behaviour. Unchecking all other checkboxes in the group when None is clicked. |
 | `items.exclusiveGroup` | string |  | Used in conjunction with `exclusive` - this should be set to a string which groups checkboxes together into a set for use in a None of these scenario. |
 | `values` | array |  | Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
+| `disabled` | boolean |  | If `true`, checkbox inputs used by the checkboxes component will be disabled. |
+| `small` | boolean |  | If set to `true`, small checkboxes will be used. |
+| `inline` | boolean |  | If set to `true`, inline checkboxes will be used. |
 | `classes` | string |  | Classes to add to the checkboxes container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the checkboxes container. |
 
@@ -2056,7 +2613,9 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2080,32 +2639,168 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### disabled
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "disabled",
+  name: "example",
+  disabled: true,
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### disabled input
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "disabled-input",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message",
+      disabled: true
+    }
+  ]
+}) }}
+```
+
+#### disabled with enabled input
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  idPrefix: "disabled-enabled-input",
+  name: "example",
+  disabled: true,
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message",
+      disabled: false
+    }
+  ]
+}) }}
+```
+
 #### with hint
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "What is your nationality?"
+      text: "What medical conditions do you have?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
-    text: "If you have dual nationality, select all options that are relevant to you"
+    text: "Select 1 or more"
   },
   idPrefix: "with-hint",
   name: "example",
   items: [
     {
-      value: "british",
-      text: "British"
+      value: "alzheimers",
+      text: "Alzheimer's disease or dementia"
     },
     {
-      value: "irish",
-      text: "Irish"
+      value: "asthma",
+      text: "Asthma"
     },
     {
-      value: "other",
-      text: "Citizen of another country"
+      value: "cancer",
+      text: "Cancer"
+    },
+    {
+      value: "diabetes",
+      text: "Diabetes"
+    }
+  ]
+}) }}
+```
+
+#### inline
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "Which nipple has changed?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "inline",
+  name: "example",
+  inline: true,
+  items: [
+    {
+      value: "right",
+      text: "Right nipple"
+    },
+    {
+      value: "left",
+      text: "Left nipple"
     }
   ]
 }) }}
@@ -2117,7 +2812,9 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2135,9 +2832,11 @@ Use the component reference table below to find the line number for any componen
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2146,9 +2845,11 @@ Use the component reference table below to find the line number for any componen
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -2157,9 +2858,11 @@ Use the component reference table below to find the line number for any componen
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -2173,29 +2876,35 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "What is your nationality?"
+      text: "What medical conditions do you have?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
-    text: "If you have dual nationality, select all options that are relevant to you"
+    text: "Select 1 or more"
   },
   idPrefix: "with-hint-item",
   name: "example",
   items: [
     {
-      value: "british",
-      text: "British",
+      value: "alzheimers",
+      text: "Alzheimer's disease or dementia"
+    },
+    {
+      value: "asthma",
+      text: "Asthma"
+    },
+    {
+      value: "cancer",
+      text: "Cancer"
+    },
+    {
+      value: "diabetes",
+      text: "Diabetes",
       hint: {
-        text: "including English, Scottish, Welsh and Northern Irish"
+        text: "including type 1, type 2, and gestational diabetes"
       }
-    },
-    {
-      value: "irish",
-      text: "Irish"
-    },
-    {
-      value: "other",
-      text: "Citizen of another country"
     }
   ]
 }) }}
@@ -2206,7 +2915,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ checkboxes({
   fieldset: null,
-  id: "with-disabled-item",
+  idPrefix: "without-fieldset",
   name: "colours",
   items: [
     {
@@ -2219,33 +2928,7 @@ Use the component reference table below to find the line number for any componen
     },
     {
       value: "blue",
-      text: "Blue",
-      disabled: true
-    }
-  ]
-}) }}
-```
-
-#### with disabled item
-
-```njk
-{{ checkboxes({
-  fieldset: null,
-  id: "with-disabled-item",
-  name: "colours",
-  items: [
-    {
-      value: "red",
-      text: "Red"
-    },
-    {
-      value: "green",
-      text: "Green"
-    },
-    {
-      value: "blue",
-      text: "Blue",
-      disabled: true
+      text: "Blue"
     }
   ]
 }) }}
@@ -2257,7 +2940,9 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   errorMessage: {
@@ -2282,13 +2967,15 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2322,7 +3009,9 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "Venenatis Condimentum"
+      text: "Venenatis Condimentum",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "with-long-text",
@@ -2364,7 +3053,8 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2427,7 +3117,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2441,9 +3133,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2452,9 +3146,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -2463,9 +3159,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -2479,7 +3177,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2493,9 +3193,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2504,9 +3206,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -2515,9 +3219,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -2531,7 +3237,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2548,9 +3256,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2559,9 +3269,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -2570,9 +3282,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -2586,7 +3300,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -2603,9 +3319,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2614,11 +3332,14 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group nhsuk-form-group--error">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>  <span class="nhsuk-error-message" id="phone-error">
-  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
-  </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
+  </label>
+  <span class="nhsuk-error-message" id="contact-by-phone-error">
+    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
+  </span>
+  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">
+</div>
 "
       }
     },
@@ -2627,9 +3348,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -2643,7 +3366,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "conditional",
@@ -2679,7 +3404,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "conditional",
@@ -2690,9 +3417,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -2701,9 +3430,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -2712,9 +3443,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     },
@@ -2784,6 +3517,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     }
   },
   idPrefix: "conditional",
+  name: "example",
   items: [
     {
       name: "preference-email",
@@ -2814,6 +3548,139 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       exclusiveGroup: "communication-preferences"
     }
   ]
+}) }}
+```
+
+---
+
+## Code
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `code`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the code component. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text for the code element. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML for the code element. If `html` is provided, the `text` option will be ignored. |
+| `classes` | string |  | Classes to add to the code container. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the code container. |
+| `copyButtonClassList` | array |  | Classes to add to the button. Default is `["nhsuk-button--secondary", "nhsuk-button--small"]`. |
+| `copyButtonText` | string |  | Button text before the code is copied to clipboard. Defaults to `"Copy code"`. |
+| `copiedButtonText` | string |  | Button text when the code is copied to clipboard. Defaults to `"Code copied"`. |
+| `copiedAnnouncementText` | string |  | Announcement made to screen reader users when the code is copied to clipboard. Defaults to `"Code copied to clipboard"`. |
+| `button` | object |  | Optional object allowing customisation of the copy button. The `button.attributes`, `button.html`, `button.small` and `button.variant` options are not supported. *(accepts nested component params)* |
+| `button.classes` | string |  | Classes to add to the button. |
+| `variant` | string |  | Optional variant of code. You can use only `"reverse"` or empty values with this option. |
+| `background` | string |  | Optional background colour for the code element – `"body"` or `"template"`. |
+| `border` | boolean |  | If set to `false`, remove border from the code container. |
+
+### Examples
+
+#### default
+
+```njk
+{{ code({
+  text: "This is a plain text code block"
+}) }}
+```
+
+#### button
+
+```njk
+{{ code({
+  text: "This is a plain text code block",
+  button: true
+}) }}
+```
+
+#### with button double click prevented
+
+```njk
+{{ code({
+  text: "This is a plain text code block",
+  button: {
+    preventDoubleClick: true
+  }
+}) }}
+```
+
+#### with button double click not prevented
+
+```njk
+{{ code({
+  text: "This is a plain text code block",
+  button: {
+    preventDoubleClick: false
+  }
+}) }}
+```
+
+#### without border
+
+```njk
+{{ code({
+  text: "This is a plain text code block",
+  border: false
+}) }}
+```
+
+#### with custom HTML
+
+```njk
+{{ code({
+  html: "<p>This is an HTML code block.</p>"
+}) }}
+```
+
+#### with custom HTML and button
+
+```njk
+{{ code({
+  html: "<p>This is an HTML code block.</p>",
+  button: true
+}) }}
+```
+
+#### with custom HTML (escaped) and button
+
+```njk
+{% call code({
+  button: true
+}) %}
+  &lt;p&gt;This is a code block.&lt;/p&gt;
+{% endcall %}
+```
+
+#### with scroll overflow
+
+```njk
+{{ code({
+  text: "Supercalifragilisticexpialidocious! Even though the sound of it is something quite atrocious, if you say it loud enough, you'll always sound precocious!"
+}) }}
+```
+
+#### with scroll overflow and button
+
+```njk
+{{ code({
+  text: "Supercalifragilisticexpialidocious! Even though the sound of it is something quite atrocious, if you say it loud enough, you'll always sound precocious!",
+  button: true
+}) }}
+```
+
+#### with translations
+
+```njk
+{{ code({
+  html: "<p>Bloc cod HTML yw hwn.</p>",
+  button: true,
+  copyButtonText: "Copïo cod",
+  copiedButtonText: "Cod wedi'i gopïo",
+  copiedAnnouncementText: "Cod wedi'i gopïo i'r clipfwrdd"
 }) }}
 ```
 
@@ -2898,6 +3765,37 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
+#### with nested lists
+
+```njk
+{{ contentsList({
+  items: [
+    {
+      href: "#",
+      text: "Chapter 1"
+    },
+    {
+      href: "#",
+      text: "Chapter 2",
+      items: [
+        {
+          href: "#",
+          text: "Section 2.1"
+        },
+        {
+          href: "#",
+          text: "Section 2.2"
+        }
+      ]
+    },
+    {
+      href: "#",
+      text: "Chapter 3"
+    }
+  ]
+}) }}
+```
+
 ---
 
 ## Date input
@@ -2912,17 +3810,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 |-----------|------|----------|-------------|
 | `id` | string | ✓ | This is used for the main component and to compose the `id` attribute for each item. |
 | `namePrefix` | string |  | Optional prefix. This is used to prefix each date input `name` attribute, wrapped in `[` and `]`. For example, setting `namePrefix: "dob"` will output the `name` attributes `dob[day]`, `dob[month]` and `dob[year]` respectively. |
-| `items` | array |  | The inputs within the date input component. |
-| `items.id` | string |  | Item-specific `id` attribute. If provided, it will be used instead of the generated ID. |
-| `items.name` | string | ✓ | Item-specific `name` attribute. |
-| `items.label` | string |  | Item-specific label text. If provided, this will be used instead of `name` for item label text. |
-| `items.inputmode` | string |  | Optional value for [the `inputmode` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). Defaults to `"numeric"`. |
-| `items.value` | string |  | If provided, it will be used as the initial `value` attribute of the input. |
-| `items.autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
-| `items.pattern` | string |  | Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value. |
-| `items.classes` | string |  | Classes to add to date input item. |
-| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the date input tag. |
-| `hint` | object |  | Can be used to add a hint to a date input component. *(accepts nested component params)* |
+| `items` | array |  | The inputs within the date input component. The `input.errorMessage` and `input.hint` options are not supported. *(accepts nested component params)* |
+| `items.name` | string | ✓ | Item-specific `name` attribute. Defaults to `"day"`, `"month"` or `"year"`. |
+| `items.label` | object |  | Item-specific label. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `items.error` | boolean |  | If set to `true`, show a red border on the item input. |
+| `hint` | object |  | Can be used to add a hint to the date input component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Can be used to add an error message to the date input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
 | `formGroup` | object |  | Additional options for the form group containing the date input component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
@@ -2933,13 +3825,32 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 | `formGroup.afterInputs` | object |  | Content to add after the inputs used by the date input component. |
 | `formGroup.afterInputs.text` | string | ✓ | Text to add after the inputs. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInputs.html` | string | ✓ | HTML to add after the inputs. If `html` is provided, the `text` option will be ignored. |
-| `fieldset` | object |  | Can be used to add a fieldset to the date input component. *(accepts nested component params)* |
-| `values` | object |  | An optional object use to specify `value` attributes for the date parts without setting items. |
+| `fieldset` | object |  | Can be used to add a fieldset to the date input component. The `fieldset.html` option is not supported. *(accepts nested component params)* |
+| `day` | object |  | Can be used to customise the day input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `day.name` | string |  | The `name` attribute for the day input. Defaults to `"day"`. |
+| `day.value` | string |  | The `value` attribute for the day input. |
+| `day.label` | object |  | The label used by the day input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `day.error` | boolean |  | If set to `true`, show a red border on the day input. |
+| `month` | object |  | Can be used to customise the month input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `month.name` | string |  | The `name` attribute for the month input. Defaults to `"month"`. |
+| `month.value` | string |  | The `value` attribute for the month input. |
+| `month.label` | object |  | The label used by the month input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `month.error` | boolean |  | If set to `true`, show a red border on the month input. |
+| `year` | object |  | Can be used to customise the year input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `year.name` | string |  | The `name` attribute for the year input. Defaults to `"year"`. |
+| `year.value` | string |  | The `value` attribute for the year input. |
+| `year.label` | object |  | The label used by the year input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `year.error` | boolean |  | If set to `true`, show a red border on the year input. |
+| `values` | object |  | An optional object used to specify `value` attributes for the inputs within the date input component without setting `items`. |
 | `values.day` | string |  | The `value` attribute for the day input. |
 | `values.month` | string |  | The `value` attribute for the month input. |
 | `values.year` | string |  | The `value` attribute for the year input. |
-| `classes` | string |  | Classes to add to the date-input container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the date-input container. |
+| `disabled` | boolean |  | If `true`, inputs used by the date input component will be disabled. |
+| `classes` | string |  | Classes to add to the date input container. |
+| `inputWrapper` | object |  | Additional options for the wrapping element containing the date input component. |
+| `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
+| `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the date input container. |
 
 ### Examples
 
@@ -2958,6 +3869,134 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "For example, 31 3 1980"
   },
   id: "example"
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  disabled: true
+}) }}
+```
+
+#### disabled with enabled input
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  disabled: true,
+  year: {
+    disabled: false
+  }
+}) }}
+```
+
+#### disabled input
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  year: {
+    disabled: true
+  }
+}) }}
+```
+
+#### disabled input (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  items: [
+    {
+      name: "day",
+      width: 2
+    },
+    {
+      name: "month",
+      width: 2
+    },
+    {
+      name: "year",
+      width: 4,
+      disabled: true
+    }
+  ]
+}) }}
+```
+
+#### with translations
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "Beth yw eich dyddiad geni?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Er enghraifft, 31 3 1980"
+  },
+  id: "example",
+  day: {
+    label: {
+      text: "Dydd"
+    }
+  },
+  month: {
+    label: {
+      text: "Mis"
+    }
+  },
+  year: {
+    label: {
+      text: "Blwyddyn"
+    }
+  }
 }) }}
 ```
 
@@ -2999,20 +4038,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "For example, 5 12"
   },
   id: "example",
-  items: [
-    {
-      name: "day",
-      classes: "nhsuk-input--width-2"
-    },
-    {
-      name: "month",
-      classes: "nhsuk-input--width-2"
-    }
-  ]
+  year: false
 }) }}
 ```
 
-#### day and month (empty item)
+#### day and month (using items)
 
 ```njk
 {{ dateInput({
@@ -3030,11 +4060,39 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2"
+      width: 2
     },
     {
       name: "month",
-      classes: "nhsuk-input--width-2"
+      width: 2
+    }
+  ]
+}) }}
+```
+
+#### day and month (with empty item)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your birthday?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 5 12"
+  },
+  id: "example",
+  items: [
+    {
+      name: "day",
+      width: 2
+    },
+    {
+      name: "month",
+      width: 2
     },
     false
   ]
@@ -3056,20 +4114,39 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "For example, 11 2023"
   },
   id: "example",
+  day: false
+}) }}
+```
+
+#### month and year (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "When did you start your job?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
   items: [
     {
       name: "month",
-      classes: "nhsuk-input--width-2"
+      width: 2
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4"
+      width: 4
     }
   ]
 }) }}
 ```
 
-#### month and year (empty item)
+#### month and year (with empty item)
 
 ```njk
 {{ dateInput({
@@ -3088,13 +4165,67 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     false,
     {
       name: "month",
-      classes: "nhsuk-input--width-2"
+      width: 2
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4"
+      width: 4
     }
   ]
+}) }}
+```
+
+#### month and year with fields
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "When did you start your job?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
+  day: false,
+  month: {
+    value: "11"
+  },
+  year: {
+    value: "2023"
+  }
+}) }}
+```
+
+#### month and year with fields overriding values
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "When did you start your job?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
+  day: false,
+  month: {
+    value: "11"
+  },
+  year: {
+    value: "2023"
+  },
+  values: {
+    month: "8",
+    year: "2024"
+  }
 }) }}
 ```
 
@@ -3113,20 +4244,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "For example, 11 2023"
   },
   id: "example",
+  day: false,
   values: {
     month: "8",
     year: "2024"
-  },
-  items: [
-    {
-      name: "month",
-      classes: "nhsuk-input--width-2"
-    },
-    {
-      name: "year",
-      classes: "nhsuk-input--width-4"
-    }
-  ]
+  }
 }) }}
 ```
 
@@ -3137,6 +4259,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   fieldset: {
     legend: {
       text: "What is your date of birth?",
+      size: "l",
       isPageHeading: true
     }
   },
@@ -3178,20 +4301,47 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "For example, 31 3 1980"
   },
   id: "example",
+  day: {
+    autocomplete: "bday-day"
+  },
+  month: {
+    autocomplete: "bday-month"
+  },
+  year: {
+    autocomplete: "bday-year"
+  }
+}) }}
+```
+
+#### with autocomplete values (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2",
+      width: 2,
       autocomplete: "bday-day"
     },
     {
       name: "month",
-      classes: "nhsuk-input--width-2",
+      width: 2,
       autocomplete: "bday-month"
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4",
+      width: 4,
       autocomplete: "bday-year"
     }
   ]
@@ -3217,7 +4367,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
-#### with errors only
+#### with error message
 
 ```njk
 {{ dateInput({
@@ -3231,25 +4381,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   errorMessage: {
     text: "Enter your date of birth"
   },
-  id: "example",
-  items: [
-    {
-      name: "day",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
-    },
-    {
-      name: "month",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
-    },
-    {
-      name: "year",
-      classes: "nhsuk-input--width-4 nhsuk-input--error"
-    }
-  ]
+  id: "example"
 }) }}
 ```
 
-#### with errors and hint
+#### with error message and hint
 
 ```njk
 {{ dateInput({
@@ -3266,19 +4402,61 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   errorMessage: {
     text: "Enter your date of birth"
   },
+  id: "example"
+}) }}
+```
+
+#### with errors only
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  id: "example",
+  day: {
+    error: true
+  },
+  month: {
+    error: true
+  },
+  year: {
+    error: true
+  }
+}) }}
+```
+
+#### with errors only (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
   id: "example",
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
+      width: 2,
+      error: true
     },
     {
       name: "month",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
+      width: 2,
+      error: true
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4 nhsuk-input--error"
+      width: 4,
+      error: true
     }
   ]
 }) }}
@@ -3302,20 +4480,51 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "Date of birth must include a day"
   },
   id: "example",
+  day: {
+    error: true
+  },
+  month: {
+    value: "3"
+  },
+  year: {
+    value: "1980"
+  }
+}) }}
+```
+
+#### with error on day input (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  errorMessage: {
+    text: "Date of birth must include a day"
+  },
+  id: "example",
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
+      width: 2,
+      error: true
     },
     {
       name: "month",
       value: "3",
-      classes: "nhsuk-input--width-2"
+      width: 2
     },
     {
       name: "year",
       value: "1980",
-      classes: "nhsuk-input--width-4"
+      width: 4
     }
   ]
 }) }}
@@ -3342,19 +4551,50 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2",
+      width: 2,
       value: "31"
     },
     {
       name: "month",
-      classes: "nhsuk-input--width-2 nhsuk-input--error"
+      width: 2,
+      error: true
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4",
+      width: 4,
       value: "1980"
     }
   ]
+}) }}
+```
+
+#### with error on month input (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  errorMessage: {
+    text: "Date of birth must include a month"
+  },
+  id: "example",
+  day: {
+    value: "31"
+  },
+  month: {
+    error: true
+  },
+  year: {
+    value: "1980"
+  }
 }) }}
 ```
 
@@ -3376,20 +4616,51 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: "Date of birth must include a year"
   },
   id: "example",
+  day: {
+    value: "31"
+  },
+  month: {
+    value: "3"
+  },
+  year: {
+    error: true
+  }
+}) }}
+```
+
+#### with error on year input (using items)
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  errorMessage: {
+    text: "Date of birth must include a year"
+  },
+  id: "example",
   items: [
     {
       name: "day",
-      classes: "nhsuk-input--width-2",
+      width: 2,
       value: "31"
     },
     {
       name: "month",
-      classes: "nhsuk-input--width-2",
+      width: 2,
       value: "3"
     },
     {
       name: "year",
-      classes: "nhsuk-input--width-4 nhsuk-input--error"
+      width: 4,
+      error: true
     }
   ]
 }) }}
@@ -3414,6 +4685,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 | `id` | string |  | The `id` to add to the details element. |
 | `open` | boolean |  | If `true`, details element will be expanded. |
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire details component in a `call` block. |
+| `variant` | string |  | Optional variant of details. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the details element. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the details element. |
 
@@ -3463,10 +4735,76 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   summaryText: "Opening times",
   classes: "nhsuk-expander"
 }) %}
-  <table class="nhsuk-table">    <thead class="nhsuk-table__head">
-        <tr>          <th scope="col" class="nhsuk-table__header">Day of the week</th>          <th scope="col" class="nhsuk-table__header">Opening hours</th>      </tr>
-      </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Monday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Tuesday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Wednesday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Thursday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Friday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Saturday</th>            <td class="nhsuk-table__cell">9am to 1pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Sunday</th>            <td class="nhsuk-table__cell">Closed</td>      </tr>    </tbody>
-    </table>
+  <table class="nhsuk-table">
+    <thead class="nhsuk-table__head">
+      <tr class="nhsuk-table__row">
+        <th scope="col" class="nhsuk-table__header">
+          Day of the week
+        </th>
+        <th scope="col" class="nhsuk-table__header">
+          Opening hours
+        </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Monday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Tuesday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Wednesday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Thursday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Friday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Saturday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 1pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Sunday
+        </th>
+        <td class="nhsuk-table__cell">
+          Closed
+        </td>
+      </tr>
+    </tbody>
+  </table>
 {% endcall %}
 ```
 
@@ -3478,10 +4816,76 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   classes: "nhsuk-expander",
   open: true
 }) %}
-  <table class="nhsuk-table">    <thead class="nhsuk-table__head">
-        <tr>          <th scope="col" class="nhsuk-table__header">Day of the week</th>          <th scope="col" class="nhsuk-table__header">Opening hours</th>      </tr>
-      </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Monday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Tuesday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Wednesday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Thursday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Friday</th>            <td class="nhsuk-table__cell">9am to 6pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Saturday</th>            <td class="nhsuk-table__cell">9am to 1pm</td>      </tr>      <tr class="nhsuk-table__row">            <th scope="row" class="nhsuk-table__header">Sunday</th>            <td class="nhsuk-table__cell">Closed</td>      </tr>    </tbody>
-    </table>
+  <table class="nhsuk-table">
+    <thead class="nhsuk-table__head">
+      <tr class="nhsuk-table__row">
+        <th scope="col" class="nhsuk-table__header">
+          Day of the week
+        </th>
+        <th scope="col" class="nhsuk-table__header">
+          Opening hours
+        </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Monday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Tuesday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Wednesday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Thursday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Friday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 6pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Saturday
+        </th>
+        <td class="nhsuk-table__cell">
+          9am to 1pm
+        </td>
+      </tr>
+      <tr class="nhsuk-table__row">
+        <th scope="row" class="nhsuk-table__header">
+          Sunday
+        </th>
+        <td class="nhsuk-table__cell">
+          Closed
+        </td>
+      </tr>
+    </tbody>
+  </table>
 {% endcall %}
 ```
 
@@ -3499,8 +4903,10 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the do and don't list component. |
 | `title` | string | ✓ | Title to be displayed on the do and don't list component. |
-| `type` | string | ✓ | Type of do and don't list component – `"cross"` or `"tick"`. |
+| `icon` | string |  | Optional icon modifier for the do and don't list items – `"cross"` or `"tick"`. Defaults to `"tick"`. |
+| `type` | string | ✓ | Optional type of do and don't list – `"cross"` or `"tick"`. Replaced by the `icon` option. |
 | `items` | array | ✓ | Array of do and don't items objects. |
+| `items.item` | string | ✓ | Text to use within each do and don't item. Replaced by the `text` and `html` options. |
 | `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `prefixText` | string |  | Optional prefix text used before each do and don't item. Defaults to `"do not"` when `type` is `"cross"`. |
@@ -3516,7 +4922,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Do",
-  type: "tick",
+  icon: "tick",
   items: [
     {
       text: "cover blisters with a soft plaster or padded dressing"
@@ -3536,7 +4942,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Do",
-  type: "tick",
+  icon: "tick",
   items: [
     {
       text: "cover blisters with a soft plaster or padded dressing"
@@ -3549,12 +4955,12 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
-#### (do) with deprecated parameters
+#### (do) with deprecated options
 
 ```njk
 {{ list({
   title: "Do",
-  type: "tick",
+  icon: "tick",
   items: [
     {
       item: "cover blisters with a soft plaster or padded dressing"
@@ -3574,7 +4980,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Do",
-  type: "tick",
+  icon: "tick",
   prefixText: "always",
   items: [
     {
@@ -3595,7 +5001,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Don't",
-  type: "cross",
+  icon: "cross",
   items: [
     {
       text: "burst a blister yourself"
@@ -3618,7 +5024,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Don't",
-  type: "cross",
+  icon: "cross",
   items: [
     {
       item: "burst a blister yourself"
@@ -3634,12 +5040,12 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
-#### (don't) with deprecated parameters
+#### (don't) with deprecated options
 
 ```njk
 {{ list({
   title: "Don't",
-  type: "cross",
+  icon: "cross",
   items: [
     {
       item: "burst a blister yourself"
@@ -3662,7 +5068,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Never",
-  type: "cross",
+  icon: "cross",
   prefixText: "never",
   items: [
     {
@@ -3686,7 +5092,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {{ list({
   title: "Don't",
-  type: "cross",
+  icon: "cross",
   hidePrefix: true,
   items: [
     {
@@ -3882,7 +5288,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 | `classes` | string |  | Classes to add to the fieldset container. |
 | `role` | string |  | Optional ARIA `role` attribute. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the fieldset container. |
-| `html` | string |  | HTML to use/render within the fieldset element. |
+| `html` | string |  | HTML to use within the fieldset element. |
 | `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire fieldset component in a `call` block. |
 
 ### Examples
@@ -3900,25 +5306,30 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="address-line1">
       Address line 1
-    </label>    <input class="nhsuk-input" id="address-line1" name="address-line1" type="text" autocomplete="address-line1"></div> 
-  
+    </label>
+    <input class="nhsuk-input" id="address-line1" name="address-line1" type="text" autocomplete="address-line1">
+  </div>
   
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="address-line2">
       Address line 2 (optional)
-    </label>    <input class="nhsuk-input" id="address-line2" name="address-line2" type="text" autocomplete="address-line2"></div> 
-  
+    </label>
+    <input class="nhsuk-input" id="address-line2" name="address-line2" type="text" autocomplete="address-line2">
+  </div>
   
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="address-town">
       Town or city
-    </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2"></div> 
-  
+    </label>
+    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+  </div>
   
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="address-postcode">
       Postcode
-    </label>    <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+  </div>
 {% endcall %}
 ```
 
@@ -3928,6 +5339,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ fieldset({
   legend: {
     text: "What is your address?",
+    size: "l",
     isPageHeading: true
   }
 }) }}
@@ -4023,6 +5435,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
+#### disabled
+
+```njk
+{{ fileUpload({
+  label: {
+    text: "Upload a file",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "file-upload",
+  name: "file-upload",
+  disabled: true
+}) }}
+```
+
 #### with hint
 
 ```njk
@@ -4057,7 +5484,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ fileUpload({
@@ -4083,6 +5510,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ fileUpload({
   label: {
     text: "Upload a file",
+    size: "l",
     isPageHeading: true
   },
   id: "file-upload",
@@ -4131,21 +5559,6 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   chooseFilesButtonText: "Choose files",
   dropInstructionText: "or drop files",
   noFileChosenText: "No files chosen"
-}) }}
-```
-
-#### disabled
-
-```njk
-{{ fileUpload({
-  label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
-  },
-  id: "file-upload",
-  name: "file-upload",
-  disabled: true
 }) }}
 ```
 
@@ -4259,12 +5672,6 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     ]
   }
 }) }}
-```
-
-#### with copyright text only
-
-```njk
-{{ footer({}) }}
 ```
 
 #### with custom copyright text
@@ -4810,13 +6217,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `service` | object |  | Object containing options for the service name. |
 | `service.text` | string |  | The text to use for the service name. |
 | `service.href` | string |  | The `href` of the link for the service name. |
+| `inline` | boolean |  | If set to `true`, positions the search box (or account links) inline with the NHS logo. |
 | `organisation` | object |  | Settings for header with organisational logo. |
 | `organisation.name` | string |  | Organisation name. |
 | `organisation.split` | string |  | Longer organisation names can be split onto multiple lines. |
 | `organisation.descriptor` | string |  | Organisation descriptor. |
 | `navigation` | object |  | Object containing settings for the primary navigation. |
 | `navigation.items` | array |  | Array of navigation links for use in the header. |
-| `navigation.items.href` | string | ✓ | The href of a navigation item in the header. |
+| `navigation.items.href` | string |  | The href of a navigation item in the header. |
 | `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text for the navigation item. If `html` is provided, the `text` argument will be ignored. |
 | `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the navigation item. If `html` is provided, the `text` argument will be ignored. |
 | `navigation.items.current` | boolean |  | Set to `true` if this links to the current page being shown. |
@@ -4828,6 +6236,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `navigation.toggleMenuVisuallyHiddenText` | string |  | A visually hidden prefix used before the toggle menu button text. Defaults to `"Browse"`. |
 | `navigation.classes` | string |  | Classes to add to the primary navigation. |
 | `navigation.attributes` | object |  | HTML attributes (for example data attributes) to add to the primary navigation. |
+| `navigation.justified` | boolean |  | If set to `true`, use justified alignment where navigation items appeared evenly spaced out. |
+| `navigation.colour` | string |  | Optional colour modifier for the primary navigation. You can use only `"white"` or empty values with this option. |
 | `search` | object |  | Object containing settings for a search box. |
 | `search.action` | string |  | The search form `action` attribute. Defaults to `"https://www.nhs.uk/search"`. |
 | `search.method` | string |  | The search form `method` attribute. Defaults to `"get"`. |
@@ -4853,6 +6263,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `containerClasses` | string |  | Classes to add to the header container, useful if you want to make the header fixed width. |
 | `classes` | string |  | Classes to add to the header container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the header container. |
+| `colour` | string |  | Optional colour modifier for the header. You can use only `"white"` or empty values with this option. |
 
 ### Examples
 
@@ -4928,10 +6339,53 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
+#### with account inline (logged in)
+
+```njk
+{{ header({
+  inline: true,
+  logo: {
+    href: "#"
+  },
+  account: {
+    items: [
+      {
+        href: "#",
+        text: "Account",
+        icon: true
+      },
+      {
+        action: "#",
+        text: "Log out"
+      }
+    ]
+  }
+}) }}
+```
+
 #### with account (logged out)
 
 ```njk
 {{ header({
+  account: {
+    items: [
+      {
+        href: "#",
+        text: "Log in"
+      }
+    ]
+  }
+}) }}
+```
+
+#### with account inline (logged out)
+
+```njk
+{{ header({
+  inline: true,
+  logo: {
+    href: "#"
+  },
   account: {
     items: [
       {
@@ -4972,6 +6426,44 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
         href: "#",
         text: "Pregnancy",
         active: true
+      },
+      {
+        href: "#",
+        text: "NHS services"
+      }
+    ]
+  }
+}) }}
+```
+
+#### with navigation (unlinked item)
+
+```njk
+{{ header({
+  logo: {
+    href: "#"
+  },
+  navigation: {
+    items: [
+      {
+        href: "#",
+        text: "Health A to Z"
+      },
+      {
+        href: "#",
+        text: "Live Well"
+      },
+      {
+        href: "#",
+        text: "Mental health"
+      },
+      {
+        href: "#",
+        text: "Care and support"
+      },
+      {
+        text: "Pregnancy",
+        current: true
       },
       {
         href: "#",
@@ -5031,7 +6523,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     href: "#"
   },
   navigation: {
-    classes: "nhsuk-header__navigation--justified",
+    justified: true,
     items: [
       {
         href: "#",
@@ -5069,6 +6561,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ header({
   logo: {
     href: "#"
+  },
+  service: {
+    text: "Digital service manual",
+    href: "#"
+  },
+  search: {
+    placeholder: "Search",
+    visuallyHiddenLabel: "Search the NHS digital service manual"
   },
   navigation: {
     items: [
@@ -5117,8 +6617,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   logo: {
     href: "#"
   },
+  service: {
+    text: "Digital service manual",
+    href: "#"
+  },
+  search: {
+    placeholder: "Search",
+    visuallyHiddenLabel: "Search the NHS digital service manual"
+  },
   navigation: {
-    classes: "nhsuk-header__navigation--white",
+    colour: "white",
     items: [
       {
         href: "#",
@@ -5166,6 +6674,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
+#### with search inline
+
+```njk
+{{ header({
+  inline: true,
+  search: true
+}) }}
+```
+
 #### with service name
 
 ```njk
@@ -5175,6 +6692,60 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   service: {
     text: "Find your NHS number"
+  }
+}) }}
+```
+
+#### with service name as separate link
+
+```njk
+{{ header({
+  logo: {
+    href: "#/logo"
+  },
+  service: {
+    text: "Find your NHS number",
+    href: "#/service"
+  }
+}) }}
+```
+
+#### with service name, account inline (logged in)
+
+```njk
+{{ header({
+  inline: true,
+  service: {
+    text: "Get a self-test kit for HIV",
+    href: "#"
+  },
+  account: {
+    items: [
+      {
+        action: "#",
+        text: "Log out"
+      }
+    ]
+  }
+}) }}
+```
+
+#### with service name, account inline (logged out)
+
+```njk
+{{ header({
+  inline: true,
+  service: {
+    text: "Get a self-test kit for HIV",
+    href: "#"
+  },
+  account: {
+    items: [
+      {
+        action: "#",
+        text: "Log in"
+      }
+    ]
   }
 }) }}
 ```
@@ -5381,7 +6952,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ header({
-  classes: "nhsuk-header--white",
+  colour: "white",
   logo: {
     ariaLabel: "NHS white homepage",
     href: "#"
@@ -5393,7 +6964,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ header({
-  classes: "nhsuk-header--white",
+  colour: "white",
   logo: {
     href: "#",
     src: "/nhsuk-frontend/assets/example-logo.svg",
@@ -5417,11 +6988,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `id` | string |  | The ID of the hero. |
 | `heading` | string | ✓ | Text heading of the hero. |
 | `headingClasses` | string |  | Optional additional classes to add to heading. Separate each class with a space. |
-| `headingSize` | string |  | Size of the heading – `"xss"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `headingSize` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `headingLevel` | integer |  | Optional heading level for the heading. Defaults to `1`. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the hero. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. Text to use within the hero. If `text` is provided, the `html` option will be ignored. |
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire hero component in a `call` block. |
+| `imageURL` | string |  | The URL of the image in the hero. Replaced by the `image.src` option. |
 | `image` | object |  | Can be used to add an image to the hero component. |
 | `image.src` | string | ✓ | The URL of the image in the hero. |
 | `containerClasses` | string |  | Classes to add to the hero container, useful if you want to make the hero fixed width. |
@@ -5469,17 +7041,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   headingSize: "l",
   headingClasses: "nhsuk-u-margin-top-5",
   html: "<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>
-
-
-
-
-
-<a class="nhsuk-button nhsuk-button--reverse"
-  data-module="nhsuk-button"
- href="#" draggable="false" role="button">
+<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Sign up
 </a>
-
 "
 }) }}
 ```
@@ -5542,6 +7106,30 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ image({
+  src: "https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg",
+  caption: {
+    text: "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
+  }
+}) }}
+```
+
+#### with srcset
+
+```njk
+{{ image({
+  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  srcset: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
+  caption: {
+    text: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
+  }
+}) }}
+```
+
+#### with srcset and alt text
+
+```njk
+{{ image({
   src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
   sizes: "(max-width: 768px) 100vw, 66vw",
   srcset: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
@@ -5575,7 +7163,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the input. Defaults to the value of `name`. |
 | `name` | string | ✓ | The name of the input, which is submitted with the form data. |
-| `type` | string |  | Type of input control to render, for example, an email input control. Defaults to `"text"`. |
+| `type` | string |  | Type of input control, for example, an email input control. Defaults to `"text"`. |
 | `inputmode` | string |  | Optional value for [the `inputmode` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). |
 | `value` | string |  | Optional initial value of the input. |
 | `disabled` | boolean |  | If `true`, input will be disabled. |
@@ -5593,6 +7181,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `suffix.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the suffix. If `html` is provided, the `text` option will be ignored. |
 | `suffix.classes` | string |  | Classes to add to the suffix element. |
 | `suffix.attributes` | object |  | HTML attributes (for example data attributes) to add to the suffix element. |
+| `code` | boolean |  | If set to `true`, use a monospace font for codes or sequences. |
+| `width` | integer |  | Optional fixed width for the text input component – `2`, `3`, `4`, `5`, `10`, `20` or `30`. |
+| `large` | boolean |  | If set to `true`, larger input size will be used. |
 | `formGroup` | object |  | Additional options for the form group containing the text input component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -5604,7 +7195,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the input. |
 | `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
-| `pattern` | string |  | Attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
+| `pattern` | string |  | Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value. |
 | `placeholder` | string |  | Attribute to provide placeholder text for the input. |
 | `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the input. |
 | `autocapitalize` | string |  | Optional field to enable or disable autocapitalisation of user input. See the [Autocapitalization section in the HTML standard](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used. |
@@ -5628,6 +7219,20 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
+#### disabled
+
+```njk
+{{ input({
+  label: {
+    text: "What is your full name?",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  disabled: true
+}) }}
+```
+
 #### with hint
 
 ```njk
@@ -5642,7 +7247,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-hint",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false
 }) }}
@@ -5659,22 +7265,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-button",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false,
   formGroup: {
     afterInput: {
-      html: "
-
-
-
-
-<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small"
-  data-module="nhsuk-button"
- type="submit">
+      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
   Search
 </button>
-
 "
     }
   }
@@ -5695,22 +7294,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-button-error-message",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false,
   formGroup: {
     afterInput: {
-      html: "
-
-
-
-
-<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small"
-  data-module="nhsuk-button"
- type="submit">
+      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
   Search
 </button>
-
 "
     }
   }
@@ -5731,13 +7323,14 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-error-message",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ input({
@@ -5754,7 +7347,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-hint-error",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false
 }) }}
@@ -5769,17 +7363,50 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
+#### width class
+
+```njk
+{{ input({
+  label: {
+    text: "What is your NHS number?",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "input-width",
+  name: "example",
+  classes: "nhsuk-input--width-10"
+}) }}
+```
+
+#### width class overriding width param
+
+```njk
+{{ input({
+  label: {
+    text: "What is your NHS number?",
+    size: "l",
+    isPageHeading: true
+  },
+  id: "input-width",
+  name: "example",
+  classes: "nhsuk-input--width-10",
+  width: 30
+}) }}
+```
+
 #### label
 
 ```njk
 {{ input({
   label: {
     text: "What is your NHS number?",
+    size: "l",
     isPageHeading: true
   },
   id: "custom-size",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false
 }) }}
@@ -5794,7 +7421,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "without-heading",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   inputmode: "numeric",
   spellcheck: false
 }) }}
@@ -5814,7 +7442,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "with-code-input-styling",
   name: "example",
-  classes: "nhsuk-input--width-10 nhsuk-input--code",
+  width: 10,
+  code: true,
   value: "999 123 4567",
   inputmode: "numeric",
   spellcheck: false
@@ -5834,7 +7463,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   prefix: {
     text: "£"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
@@ -5851,11 +7480,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   prefix: {
     html: "<span>£</span>"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
-#### with deprecated prefix string parameter
+#### with prefix deprecated option
 
 ```njk
 {{ input({
@@ -5866,7 +7495,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   id: "with-prefix",
   name: "example",
   prefix: "£",
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
@@ -5883,7 +7512,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   suffix: {
     text: "kg"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
@@ -5900,11 +7529,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   suffix: {
     html: "<span>kg</span>"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
-#### with deprecated suffix string parameter
+#### with suffix deprecated option
 
 ```njk
 {{ input({
@@ -5915,7 +7544,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   id: "with-suffix",
   name: "example",
   suffix: "kg",
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
@@ -5935,11 +7564,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   suffix: {
     text: "per item"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
-#### with prefix and suffix and error
+#### with prefix and suffix and error message
 
 ```njk
 {{ input({
@@ -5958,7 +7587,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   suffix: {
     text: "per item"
   },
-  classes: "nhsuk-input--width-5"
+  width: 5
 }) }}
 ```
 
@@ -5976,6 +7605,111 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   id: "with-autocomplete-attribute",
   name: "example",
   autocomplete: "postal-code"
+}) }}
+```
+
+#### example email address
+
+```njk
+{{ input({
+  label: {
+    text: "Email address"
+  },
+  name: "contact-by-email",
+  classes: "nhsuk-u-width-two-thirds",
+  spellcheck: false
+}) }}
+```
+
+#### example phone number
+
+```njk
+{{ input({
+  label: {
+    text: "Phone number"
+  },
+  type: "tel",
+  name: "contact-by-phone",
+  classes: "nhsuk-u-width-two-thirds"
+}) }}
+```
+
+#### example phone number with error message
+
+```njk
+{{ input({
+  label: {
+    text: "Phone number"
+  },
+  errorMessage: {
+    text: "Enter your phone number"
+  },
+  type: "tel",
+  name: "contact-by-phone",
+  classes: "nhsuk-u-width-two-thirds"
+}) }}
+```
+
+#### example mobile phone number
+
+```njk
+{{ input({
+  label: {
+    text: "Mobile phone number"
+  },
+  type: "tel",
+  name: "contact-by-text",
+  classes: "nhsuk-u-width-two-thirds"
+}) }}
+```
+
+#### example address line 1
+
+```njk
+{{ input({
+  label: {
+    text: "Address line 1"
+  },
+  name: "address-line1",
+  autocomplete: "address-line1"
+}) }}
+```
+
+#### example address line 2
+
+```njk
+{{ input({
+  label: {
+    text: "Address line 2 (optional)"
+  },
+  name: "address-line2",
+  autocomplete: "address-line2"
+}) }}
+```
+
+#### example address town or city
+
+```njk
+{{ input({
+  label: {
+    text: "Town or city"
+  },
+  name: "address-town",
+  autocomplete: "address-level2",
+  classes: "nhsuk-u-width-two-thirds"
+}) }}
+```
+
+#### example address postcode
+
+```njk
+{{ input({
+  label: {
+    text: "Postcode"
+  },
+  name: "address-postcode",
+  autocomplete: "postal-code",
+  width: 10
 }) }}
 ```
 
@@ -6048,6 +7782,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ label({
   text: "What is your full name?",
+  size: "l",
   isPageHeading: true
 }) }}
 ```
@@ -6117,15 +7852,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `html` | string | ✓ | The HTML to use within the notification banner. You can use any string with this option. If you set `html`, `text` is not required and is ignored. |
 | `caller` | nunjucks-block |  | Not strictly a parameter but [Nunjucks code convention](https://mozilla.github.io/nunjucks/templating.html#call). Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire notification banner component in a `call` block. |
 | `titleText` | string |  | The title text that displays in the notification banner. You can use any string with this option. Use this option to set text that does not contain HTML. The available default values are 'Important', 'Success', and null:
-- if you do not set `type`, `titleText` defaults to `"Important"`
-- if you set `type` to `success`, `titleText` defaults to `"Success"`
+- if you do not set `variant`, `titleText` defaults to `"Important"`
+- if you set `variant` to `success`, `titleText` defaults to `"Success"`
 - if you set `titleHtml`, this option is ignored |
 | `titleHtml` | string |  | The title HTML to use within the notification banner. You can use any string with this option. Use this option to set text that contains HTML. If you set `titleHtml`, the `titleText` option is ignored. |
 | `titleHeadingLevel` | string |  | Sets heading level for the title only. You can only use values between `1` and `6` with this option. The default is `2`. |
-| `type` | string |  | The type of notification to render. You can use only `"success"` or `null` values with this option. If you set `type` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `type`, the notification banner sets `role` to `"region"`. |
-| `role` | string |  | Overrides the value of the `role` attribute for the notification banner. Defaults to `"region"`. If you set `type` to `"success"`, `role` defaults to `"alert"`. |
+| `variant` | string |  | Optional variant of notification banner. You can use only `"success"` or empty values with this option. If you set `variant` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `variant`, the notification banner sets `role` to `"region"`. |
+| `type` | string |  | Optional type of notification banner. You can use only `"success"` or empty values with this option. If you set `type` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `type`, the notification banner sets `role` to `"region"`. Replaced by the `variant` option. |
+| `role` | string |  | Overrides the value of the `role` attribute for the notification banner. Defaults to `"region"`. If you set `variant` to `"success"`, `role` defaults to `"alert"`. |
 | `titleId` | string |  | The `id` for the banner title, and the `aria-labelledby` attribute in the banner. Defaults to `"nhsuk-notification-banner-title"`. |
-| `disableAutoFocus` | boolean |  | If you set `type` to `"success"`, or `role` to `"alert"`, JavaScript moves the keyboard focus to the notification banner when the page loads. To disable this behaviour, set `disableAutoFocus` to `true`. |
+| `disableAutoFocus` | boolean |  | If you set `variant` to `"success"`, or `role` to `"alert"`, JavaScript moves the keyboard focus to the notification banner when the page loads. To disable this behaviour, set `disableAutoFocus` to `true`. |
 | `classes` | string |  | The classes that you want to add to the notification banner. |
 | `attributes` | object |  | The HTML attributes that you want to add to the notification banner, for example, data attributes. |
 
@@ -6160,11 +7896,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
-#### with type as success
+#### with success variant
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   text: "Email sent to example@email.com"
 }) }}
 ```
@@ -6173,7 +7909,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   html: "<h3 class="nhsuk-notification-banner__heading">
   4 files uploaded
 </h3>
@@ -6223,31 +7959,31 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
-#### auto-focus disabled, with type as success
+#### auto-focus disabled, with success variant
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   disableAutoFocus: true,
   text: "Email sent to example@email.com"
 }) }}
 ```
 
-#### auto-focus explicitly enabled, with type as success
+#### auto-focus explicitly enabled, with success variant
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   disableAutoFocus: false,
   text: "Email sent to example@email.com"
 }) }}
 ```
 
-#### role=alert overridden to role=region, with type as success
+#### role=alert overridden to role=region, with success variant
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   role: "region",
   text: "Email sent to example@email.com"
 }) }}
@@ -6257,7 +7993,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  type: "success",
+  variant: "success",
   text: "Email sent to example@email.com",
   attributes: {
     tabindex: 2
@@ -6291,12 +8027,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `previous.labelText` | string |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. |
 | `previous.href` | string | ✓ | The previous page's URL. |
 | `previous.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `previousUrl` | string |  | The previous page's URL. Replaced by the `previous.href` option. |
+| `previousPage` | string |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. Replaced by the `previous.labelText` option. |
 | `next` | object |  | A link to the next page, if there is a next page. |
 | `next.text` | string |  | The text content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `next.html` | string |  | The HTML content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `next.labelText` | string |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. |
 | `next.href` | string | ✓ | The next page's URL. |
 | `next.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `nextUrl` | string |  | The next page's URL. Replaced by the `next.href` option. |
+| `nextPage` | string |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. Replaced by the `next.labelText` option. |
 | `landmarkLabel` | string |  | The label for the navigation landmark that wraps the pagination. Defaults to `"Pagination"`. |
 | `classes` | string |  | The classes you want to add to the pagination `nav` parent. |
 | `attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the pagination `nav` parent. |
@@ -6309,22 +8049,22 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ pagination({
   previous: {
     labelText: "Treatments",
-    href: "/section/treatments"
+    href: "#/section/treatments"
   },
   next: {
     labelText: "Symptoms",
-    href: "/section/symptoms"
+    href: "#/section/symptoms"
   }
 }) }}
 ```
 
-#### with deprecated parameters
+#### with deprecated options
 
 ```njk
 {{ pagination({
-  previousUrl: "/section/treatments",
+  previousUrl: "#/section/treatments",
   previousPage: "Treatments",
-  nextUrl: "/section/symptoms",
+  nextUrl: "#/section/symptoms",
   nextPage: "Symptoms"
 }) }}
 ```
@@ -6335,7 +8075,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ pagination({
   previous: {
     labelText: "Treatments",
-    href: "/section/treatments"
+    href: "#/section/treatments"
   }
 }) }}
 ```
@@ -6346,7 +8086,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ pagination({
   next: {
     labelText: "Symptoms",
-    href: "/section/symptoms"
+    href: "#/section/symptoms"
   }
 }) }}
 ```
@@ -6358,12 +8098,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   previous: {
     text: "Blaenorol",
     labelText: "Driniaethau",
-    href: "/section/driniaethau"
+    href: "#/section/driniaethau"
   },
   next: {
     text: "Nesaf",
     labelText: "Symptomau",
-    href: "/section/symptomau"
+    href: "#/section/symptomau"
   }
 }) }}
 ```
@@ -6373,24 +8113,24 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ pagination({
   previous: {
-    href: "#"
+    href: "#/section/1"
   },
   next: {
-    href: "#"
+    href: "#/section/3"
   },
   items: [
     {
       number: 1,
-      href: "#"
+      href: "#/section/1"
     },
     {
       number: 2,
-      href: "#",
+      href: "#/section/2",
       current: true
     },
     {
       number: 3,
-      href: "#"
+      href: "#/section/3"
     }
   ]
 }) }}
@@ -6401,46 +8141,46 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ pagination({
   previous: {
-    href: "#"
+    href: "#/section/9"
   },
   next: {
-    href: "#"
+    href: "#/section/11"
   },
   items: [
     {
       number: 1,
-      href: "#"
+      href: "#/section/1"
     },
     {
       ellipsis: true
     },
     {
       number: 8,
-      href: "#"
+      href: "#/section/8"
     },
     {
       number: 9,
-      href: "#"
+      href: "#/section/9"
     },
     {
       number: 10,
-      href: "#",
+      href: "#/section/10",
       current: true
     },
     {
       number: 11,
-      href: "#"
+      href: "#/section/11"
     },
     {
       number: 12,
-      href: "#"
+      href: "#/section/12"
     },
     {
       ellipsis: true
     },
     {
       number: 40,
-      href: "#"
+      href: "#/section/40"
     }
   ]
 }) }}
@@ -6451,15 +8191,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ pagination({
   previous: {
-    href: "#"
+    href: "#/section/9"
   },
   next: {
-    href: "#"
+    href: "#/section/11"
   },
   items: [
     {
       number: 1,
-      href: "#"
+      href: "#/section/1"
     },
     {
       ellipsis: true
@@ -6467,16 +8207,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     false,
     {
       number: 9,
-      href: "#"
+      href: "#/section/9"
     },
     {
       number: 10,
-      href: "#",
+      href: "#/section/10",
       current: true
     },
     {
       number: 11,
-      href: "#"
+      href: "#/section/11"
     },
     false,
     {
@@ -6484,7 +8224,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     },
     {
       number: 40,
-      href: "#"
+      href: "#/section/40"
     }
   ]
 }) }}
@@ -6495,21 +8235,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ pagination({
   next: {
-    href: "#"
+    href: "#/section/2"
   },
   items: [
     {
       number: 1,
-      href: "#",
+      href: "#/section/1",
       current: true
     },
     {
       number: 2,
-      href: "#"
+      href: "#/section/2"
     },
     {
       number: 3,
-      href: "#"
+      href: "#/section/3"
     }
   ]
 }) }}
@@ -6520,20 +8260,20 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ pagination({
   previous: {
-    href: "#"
+    href: "#/section/2"
   },
   items: [
     {
       number: 1,
-      href: "#"
+      href: "#/section/1"
     },
     {
       number: 2,
-      href: "#"
+      href: "#/section/2"
     },
     {
       number: 3,
-      href: "#",
+      href: "#/section/3",
       current: true
     }
   ]
@@ -6546,25 +8286,25 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ pagination({
   previous: {
     text: "Blaenorol",
-    href: "#"
+    href: "#/section/1"
   },
   next: {
     text: "Nesaf",
-    href: "#"
+    href: "#/section/3"
   },
   items: [
     {
       number: 1,
-      href: "#"
+      href: "#/section/1"
     },
     {
       number: 2,
-      href: "#",
+      href: "#/section/2",
       current: true
     },
     {
       number: 3,
-      href: "#"
+      href: "#/section/3"
     }
   ]
 }) }}
@@ -6593,6 +8333,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire panel component in a `call` block. |
 | `classes` | string |  | Optional additional classes to add to the hint `div` tag. Separate each class with a space. |
 | `attributes` | object |  | Any extra HTML attributes (for example data attributes) to add to the input component. |
+| `variant` | string |  | Optional variant of panel. You can use only `"interruption"` or empty values with this option. |
 
 ### Examples
 
@@ -6611,21 +8352,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ panel({
   titleText: "Jodie Brown had a COVID-19 vaccine less than 3 months ago",
   titleSize: "l",
-  classes: "nhsuk-panel--interruption",
+  variant: "interruption",
   html: "<p>They had a COVID-19 vaccine on 25 September 2025.</p>
 <p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>
 <div class="nhsuk-button-group">
-  
-
-
-
-
-<a class="nhsuk-button nhsuk-button--reverse"
-  data-module="nhsuk-button"
- href="#" draggable="false" role="button">
+  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Continue anyway
 </a>
-
 
   <a href="#">Cancel</a>
 </div>"
@@ -6638,21 +8371,13 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ panel({
   titleText: "Confirm you want to cancel your hospital appointment",
   titleSize: "l",
-  classes: "nhsuk-panel--interruption",
+  variant: "interruption",
   html: "<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>
 <p>Cancelling your appointment cannot be undone.</p>
 <div class="nhsuk-button-group">
-  
-
-
-
-
-<a class="nhsuk-button nhsuk-button--reverse"
-  data-module="nhsuk-button"
- href="#" draggable="false" role="button">
+  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Cancel appointment
 </a>
-
 
   <a href="#">Change my weight</a>
 </div>"
@@ -6665,20 +8390,12 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ panel({
   titleText: "Is your weight correct?",
   titleSize: "l",
-  classes: "nhsuk-panel--interruption",
+  variant: "interruption",
   html: "<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>
 <div class="nhsuk-button-group">
-  
-
-
-
-
-<a class="nhsuk-button nhsuk-button--reverse"
-  data-module="nhsuk-button"
- href="#" draggable="false" role="button">
+  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Yes, this is correct
 </a>
-
 
   <a href="#">Change my weight</a>
 </div>"
@@ -6690,6 +8407,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ panel({
   titleText: "Booking complete",
+  titleSize: "l",
   text: "We have sent you a confirmation email"
 }) }}
 ```
@@ -6725,6 +8443,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `label` | object | ✓ | Options for the label component. *(accepts nested component params)* |
 | `hint` | object |  | Options for the hint component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
+| `code` | boolean |  | If set to `true`, use a monospace font for codes or sequences. |
+| `width` | integer |  | Optional fixed width for the text input component – `2`, `3`, `4`, `5`, `10`, `20` or `30`. |
+| `large` | boolean |  | If set to `true`, larger input size will be used. |
 | `formGroup` | object |  | Additional options for the form group containing the text input component. |
 | `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
 | `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
@@ -6736,6 +8457,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the input. |
 | `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html). See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used. Default is `"current-password"`. |
+| `inputWrapper` | object |  | Additional options for the wrapping element containing the password input component. |
+| `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
+| `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the input. |
 | `showPasswordText` | string |  | Button text when the password is hidden. Defaults to `"Show"`. |
 | `hidePasswordText` | string |  | Button text when the password is visible. Defaults to `"Hide"`. |
@@ -6743,7 +8467,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `hidePasswordAriaLabelText` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is visible. Defaults to `"Hide password"`. |
 | `passwordShownAnnouncementText` | string |  | Announcement made to screen reader users when their password has become visible in plain text. Defaults to `"Your password is visible"`. |
 | `passwordHiddenAnnouncementText` | string |  | Announcement made to screen reader users when their password has been obscured and is not visible. Defaults to `"Your password is hidden"`. |
-| `button` | object |  | Optional object allowing customisation of the toggle button. |
+| `button` | object |  | Optional object allowing customisation of the toggle button. The `button.attributes` and `button.html` options are not supported. *(accepts nested component params)* |
+| `button.variant` | string |  | Optional variant of password input button – `"brand"`, `"login"`, `"reverse"`, `"secondary"`, `"secondary-solid"` or `"warning"`. |
 | `button.classes` | string |  | Classes to add to the button. |
 
 ### Examples
@@ -6758,6 +8483,85 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     isPageHeading: true
   },
   name: "example"
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Password",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  disabled: true
+}) }}
+```
+
+#### disabled with enabled button
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Password",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  disabled: true,
+  button: {
+    disabled: false
+  }
+}) }}
+```
+
+#### disabled button
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Password",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  button: {
+    disabled: true
+  }
+}) }}
+```
+
+#### with button double click prevented
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Password",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  button: {
+    preventDoubleClick: true
+  }
+}) }}
+```
+
+#### with button double click not prevented
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Password",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  button: {
+    preventDoubleClick: false
+  }
 }) }}
 ```
 
@@ -6795,7 +8599,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ passwordInput({
@@ -6815,6 +8619,54 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
+#### with prefix
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Secret code",
+    size: "m",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "PIN"
+  },
+  id: "with-prefix",
+  name: "example",
+  value: "3.14159",
+  width: 5,
+  code: true,
+  button: {
+    variant: "brand"
+  }
+}) }}
+```
+
+#### with prefix and error message
+
+```njk
+{{ passwordInput({
+  label: {
+    text: "Secret code",
+    size: "m",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "PIN"
+  },
+  errorMessage: {
+    text: "Enter secret code"
+  },
+  id: "with-prefix",
+  name: "example",
+  width: 5,
+  code: true,
+  button: {
+    variant: "brand"
+  }
+}) }}
+```
+
 #### without page heading
 
 ```njk
@@ -6827,7 +8679,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
-#### with width class
+#### with width
 
 ```njk
 {{ passwordInput({
@@ -6838,7 +8690,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   },
   id: "width-class",
   name: "example",
-  classes: "nhsuk-input--width-10"
+  width: 10
 }) }}
 ```
 
@@ -6890,7 +8742,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the radios component. |
-| `fieldset` | object |  | The fieldset used by the radios component. *(accepts nested component params)* |
+| `fieldset` | object |  | The fieldset used by the radios component. The `fieldset.html` option is not supported. *(accepts nested component params)* |
 | `hint` | object |  | Can be used to add a hint to the radios component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Can be used to add an error message to the radios component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
 | `formGroup` | object |  | Additional options for the form group containing the radios component. |
@@ -6909,9 +8761,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each radio item label. If `html` is provided, the `text` option will be ignored. |
 | `items.id` | string |  | Specific `id` attribute for the radio item. If omitted, then `idPrefix` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the radio input. |
-| `items.label` | object |  | Subset of options for the label used by each radio item within the radios component. *(accepts nested component params)* |
-| `items.label.classes` | string |  | Classes to add to the label tag. |
-| `items.label.attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
+| `items.label` | object |  | The label used by each radio item within the radios component. The `label.size` and `label.isPageHeading` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each radio item within the radios component. *(accepts nested component params)* |
 | `items.divider` | string |  | Divider text to separate radio items, for example the text `"or"`. |
 | `items.checked` | boolean |  | Whether the radio should be checked when the page loads. Takes precedence over the top-level `value` option. |
@@ -6921,6 +8771,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `items.classes` | string |  | Classes to add to the radio input tag. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the radio input tag. |
 | `value` | string |  | The value for the radio which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
+| `disabled` | boolean |  | If `true`, radio inputs used by the radios component will be disabled. |
+| `small` | boolean |  | If set to `true`, small radios will be used. |
+| `inline` | boolean |  | If set to `true`, inline radios will be used. |
 | `classes` | string |  | Classes to add to the radios container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the radios container. |
 
@@ -6932,18 +8785,118 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Are you 18 or over?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No"
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "disabled",
+  name: "example",
+  disabled: true,
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### disabled input
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "disabled-input",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message",
+      disabled: true
+    }
+  ]
+}) }}
+```
+
+#### disabled with enabled input
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
+    }
+  },
+  idPrefix: "disabled-enabled-input",
+  name: "example",
+  disabled: true,
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message",
+      disabled: false
     }
   ]
 }) }}
@@ -6955,26 +8908,28 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Do you know your NHS number?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
-    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
+    text: "Select 1 option"
   },
   idPrefix: "with-hint",
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes, I know my NHS number"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No, I do not know my NHS number"
+      value: "phone",
+      text: "Phone"
     },
     {
-      value: "not sure",
-      text: "I'm not sure"
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
@@ -6984,15 +8939,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ radios({
-  classes: "nhsuk-radios--inline",
   fieldset: {
     legend: {
-      text: "Are you 18 or over?"
+      text: "Are you 18 or over?",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "inline",
   name: "example",
-  value: "no",
+  inline: true,
   items: [
     {
       value: "yes",
@@ -7012,19 +8968,24 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Are you 18 or over?"
+      text: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   idPrefix: "custom-size",
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No"
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
@@ -7036,7 +8997,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Are you 18 or over?",
+      text: "How do you want to be contacted about this?",
       isPageHeading: false
     }
   },
@@ -7044,12 +9005,16 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No"
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
@@ -7061,7 +9026,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -7076,9 +9043,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -7087,9 +9056,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -7098,9 +9069,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -7114,26 +9087,31 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to sign in?"
+      text: "Do you know your NHS number?",
+      size: "l",
+      isPageHeading: true
     }
+  },
+  hint: {
+    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
   },
   idPrefix: "with-divider",
   name: "example",
   items: [
     {
-      value: "nhsuk-login",
-      text: "Use NHS login"
+      value: "yes",
+      text: "Yes, I know my NHS number"
     },
     {
-      value: "government-verify",
-      text: "Use GOV.UK Verify"
+      value: "no",
+      text: "No, I do not know my NHS number"
     },
     {
       divider: "or"
     },
     {
-      value: "create-account",
-      text: "Create an account"
+      value: "not sure",
+      text: "I'm not sure"
     }
   ]
 }) }}
@@ -7145,7 +9123,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Do you have a mobile phone with signal?"
+      text: "Do you have a mobile phone with signal?",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "with-hint-item",
@@ -7174,7 +9154,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ radios({
   fieldset: null,
-  id: "without-fieldset",
+  idPrefix: "without-fieldset",
   name: "colours",
   items: [
     {
@@ -7193,87 +9173,70 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 }) }}
 ```
 
-#### with disabled item
-
-```njk
-{{ radios({
-  fieldset: {
-    legend: {
-      text: "Have you changed your name?"
-    }
-  },
-  hint: {
-    text: "This includes changing your last name or spelling your name differently"
-  },
-  idPrefix: "with-disabled-item",
-  name: "example",
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      disabled: true
-    },
-    {
-      value: "no",
-      text: "No",
-      disabled: true
-    }
-  ]
-}) }}
-```
-
 #### with error message
 
 ```njk
 {{ radios({
   fieldset: {
     legend: {
-      text: "Have you changed your name?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   errorMessage: {
-    text: "Select yes if you have changed your name"
+    text: "Select how you want to be contacted"
   },
   idPrefix: "with-error-message",
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No"
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ radios({
   fieldset: {
     legend: {
-      text: "Have you changed your name?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
-    text: "This includes changing your last name or spelling your name differently"
+    text: "Select 1 option"
   },
   errorMessage: {
-    text: "Select yes if you have changed your name"
+    text: "Select how you want to be contacted"
   },
   idPrefix: "with-hint-error",
   name: "example",
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "email",
+      text: "Email"
     },
     {
-      value: "no",
-      text: "No"
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
     }
   ]
 }) }}
@@ -7285,7 +9248,9 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ radios({
   fieldset: {
     legend: {
-      text: "Venenatis Condimentum"
+      text: "Venenatis Condimentum",
+      size: "l",
+      isPageHeading: true
     }
   },
   idPrefix: "with-long-text",
@@ -7327,7 +9292,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -7341,9 +9308,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -7352,9 +9321,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -7363,9 +9334,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -7379,7 +9352,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -7393,9 +9368,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -7404,9 +9381,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -7415,9 +9394,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -7431,14 +9412,16 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
     text: "Select 1 option"
   },
   errorMessage: {
-    text: "Select how you prefer to be contacted"
+    text: "Select how you want to be contacted"
   },
   idPrefix: "conditional",
   name: "example",
@@ -7448,9 +9431,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -7459,9 +9444,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
 "
       }
     },
@@ -7470,9 +9457,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -7486,7 +9475,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -7501,9 +9492,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Email",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
 "
       }
     },
@@ -7512,11 +9505,14 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Phone",
       conditional: {
         html: "<div class="nhsuk-form-group nhsuk-form-group--error">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>  <span class="nhsuk-error-message" id="phone-error">
-  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
-  </span>    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="phone" name="phone" type="tel" aria-describedby="phone-error"></div> 
+  </label>
+  <span class="nhsuk-error-message" id="contact-by-phone-error">
+    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
+  </span>
+  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">
+</div>
 "
       }
     },
@@ -7525,9 +9521,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Text message",
       conditional: {
         html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
 "
       }
     }
@@ -7541,7 +9539,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?"
+      text: "How do you want to be contacted about this?",
+      size: "l",
+      isPageHeading: true
     }
   },
   hint: {
@@ -7559,46 +9559,55 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       text: "Nested conditional",
       conditional: {
         html: "<div class="nhsuk-form-group">
-
-<fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">  <legend class="nhsuk-fieldset__legend">    How do you want to be contacted about this?
-</legend>  <div class="nhsuk-hint" id="example-inner-hint">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+    How do you want to be contacted about this?
+  </legend>
+  <div class="nhsuk-hint" id="example-inner-hint">
     Select 1 option
   </div>
-  <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" aria-controls="conditional-example-inner" aria-expanded="false">
+  <div class="nhsuk-radios" data-module="nhsuk-radios">
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" data-aria-controls="conditional-example-inner">
       <label class="nhsuk-label nhsuk-radios__label" for="example-inner">
         Email
-      </label>    </div>
+      </label>
+    </div>
     <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">
       <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="email">
+  <label class="nhsuk-label" for="contact-by-email">
     Email address
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" spellcheck="false"></div> 
-
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
+</div>
     </div>
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" aria-controls="conditional-example-inner-2" aria-expanded="false">
+      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" data-aria-controls="conditional-example-inner-2">
       <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">
         Phone
-      </label>    </div>
+      </label>
+    </div>
     <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">
       <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="phone">
+  <label class="nhsuk-label" for="contact-by-phone">
     Phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="tel"></div> 
-
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+</div>
     </div>
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" aria-controls="conditional-example-inner-3" aria-expanded="false">
+      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" data-aria-controls="conditional-example-inner-3">
       <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">
         Text message
-      </label>    </div>
+      </label>
+    </div>
     <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">
       <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="mobile">
+  <label class="nhsuk-label" for="contact-by-text">
     Mobile phone number
-  </label>    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="tel"></div> 
-
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+</div>
     </div>
   </div>
 </fieldset>
@@ -7607,6 +9616,457 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       }
     }
   ]
+}) }}
+```
+
+---
+
+## Search input
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `searchInput`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the input. Defaults to the value of `name`. |
+| `name` | string | ✓ | The name of the input, which is submitted with the form data. |
+| `value` | string |  | Optional initial value of the input. |
+| `disabled` | boolean |  | If `true`, input will be disabled. |
+| `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
+| `label` | object | ✓ | The label used by the search input component. *(accepts nested component params)* |
+| `hint` | object |  | Can be used to add a hint to a search input component. *(accepts nested component params)* |
+| `errorMessage` | object |  | Can be used to add an error message to the search input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
+| `prefix` | object |  | Can be used to add a prefix to the search input component. |
+| `prefix.text` | string | ✓ | Required. If `html` is set, this is not required. Text to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.html` | string | ✓ | Required. If `text` is set, this is not required. HTML to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.classes` | string |  | Classes to add to the prefix. |
+| `prefix.attributes` | object |  | HTML attributes (for example data attributes) to add to the prefix element. |
+| `suffix` | object |  | Can be used to add a suffix to the search input component. |
+| `suffix.text` | string | ✓ | If `html` is set, this is not required. Text to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.classes` | string |  | Classes to add to the suffix element. |
+| `suffix.attributes` | object |  | HTML attributes (for example data attributes) to add to the suffix element. |
+| `code` | boolean |  | If set to `true`, use a monospace font for codes or sequences. |
+| `width` | integer |  | Optional fixed width for the search input component – `2`, `3`, `4`, `5`, `10`, `20` or `30`. |
+| `large` | boolean |  | If set to `true`, larger input size will be used. |
+| `formGroup` | object |  | Additional options for the form group containing the search input component. |
+| `formGroup.classes` | string |  | Classes to add to the form group (for example to show error state for the whole group). |
+| `formGroup.attributes` | object |  | HTML attributes (for example data attributes) to add to the form group. |
+| `formGroup.beforeInput` | object |  | Content to add before the input used by the search input component. |
+| `formGroup.beforeInput.text` | string | ✓ | Text to add before the input. If `html` is provided, the `text` option will be ignored. |
+| `formGroup.beforeInput.html` | string | ✓ | HTML to add before the input. If `html` is provided, the `text` option will be ignored. |
+| `formGroup.afterInput` | object |  | Content to add after the input used by the search input component. |
+| `formGroup.afterInput.text` | string | ✓ | Text to add after the input. If `html` is provided, the `text` option will be ignored. |
+| `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
+| `classes` | string |  | Classes to add to the input. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. Default is `"off"`. |
+| `pattern` | string |  | Attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
+| `inputWrapper` | object |  | Additional options for the wrapping element containing the search input component. |
+| `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
+| `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the input. |
+| `button` | object |  | Optional object allowing customisation of the search button. *(accepts nested component params)* |
+| `button.variant` | string |  | Optional variant of search button – `"brand"`, `"login"`, `"reverse"`, `"secondary"`, `"secondary-solid"` or `"warning"`. |
+| `button.classes` | string |  | Classes to add to the search button. |
+| `button.ariaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when only an icon is used. |
+| `button.icon` | object |  | Can be used to add an icon to the search button. |
+| `button.icon.name` | string | ✓ | Icon name for the button – for example, `"search"`, `"arrow-right"`, `"plus"` or `"minus"`. |
+| `button.icon.html` | string | ✓ | HTML to use for the icon, as an alternative to the `name` option. If `html` is provided, the `name` option will be ignored. |
+| `button.icon.placement` | string | ✓ | Placement of the icon within the button – `"start"` or `"end"`. |
+
+### Examples
+
+#### default
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  placeholder: "NHS number",
+  hint: {
+    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  placeholder: "NHS number",
+  name: "example",
+  disabled: true
+}) }}
+```
+
+#### disabled with enabled button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  placeholder: "NHS number",
+  name: "example",
+  disabled: true,
+  button: {
+    disabled: false
+  }
+}) }}
+```
+
+#### disabled button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  placeholder: "NHS number",
+  name: "example",
+  button: {
+    disabled: true
+  }
+}) }}
+```
+
+#### large
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "l",
+    isPageHeading: true
+  },
+  name: "example",
+  large: true,
+  width: 30
+}) }}
+```
+
+#### large with brand button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "l",
+    isPageHeading: true
+  },
+  button: {
+    variant: "brand"
+  },
+  name: "example",
+  large: true,
+  width: 30
+}) }}
+```
+
+#### with alternative icon
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by postcode",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    icon: "arrow-right"
+  },
+  name: "example",
+  width: 10
+}) }}
+```
+
+#### with hint
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+  },
+  id: "with-hint",
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with hint and value
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+  },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error message
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error message and hint
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with prefix
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Code lookup",
+    size: "m",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "SNOMED"
+  },
+  id: "with-prefix",
+  name: "example",
+  value: "160245001",
+  width: 10,
+  code: true,
+  button: {
+    icon: "arrow-right",
+    variant: "brand"
+  }
+}) }}
+```
+
+#### with prefix and error message
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Code lookup",
+    size: "m",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "SNOMED"
+  },
+  errorMessage: {
+    text: "Enter a SNOMED code"
+  },
+  id: "with-prefix",
+  name: "example",
+  width: 10,
+  code: true,
+  button: {
+    icon: "arrow-right",
+    variant: "brand"
+  }
+}) }}
+```
+
+#### with hidden label
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    classes: "nhsuk-u-visually-hidden"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with brand button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    variant: "brand"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with brand button text
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    text: "Search",
+    variant: "brand"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with brand button text only
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Product order number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    icon: false,
+    text: "Find",
+    variant: "brand"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with secondary button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    variant: "secondary"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with secondary button text
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    text: "Search",
+    variant: "secondary"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### with secondary button text only
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Product order number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: {
+    icon: false,
+    text: "Find",
+    variant: "secondary"
+  },
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### without button
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number",
+    size: "m",
+    isPageHeading: true
+  },
+  button: false,
+  name: "example",
+  width: 20
+}) }}
+```
+
+#### without page heading
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number"
+  },
+  name: "example",
+  width: 20
 }) }}
 ```
 
@@ -7684,6 +10144,68 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
+#### disabled
+
+```njk
+{{ select({
+  label: {
+    text: "Sort by",
+    isPageHeading: true
+  },
+  name: "example",
+  disabled: true,
+  items: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated"
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ]
+}) }}
+```
+
+#### disabled option
+
+```njk
+{{ select({
+  label: {
+    text: "Sort by",
+    isPageHeading: true
+  },
+  name: "example",
+  items: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated"
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments",
+      disabled: true
+    }
+  ]
+}) }}
+```
+
 #### with divider
 
 ```njk
@@ -7712,38 +10234,6 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     {
       value: "last-name-descending",
       text: "Last name (Z to A)"
-    }
-  ]
-}) }}
-```
-
-#### with disabled item
-
-```njk
-{{ select({
-  label: {
-    text: "Sort by",
-    isPageHeading: true
-  },
-  id: "with-disabled-item",
-  name: "example",
-  items: [
-    {
-      value: "published",
-      text: "Recently published"
-    },
-    {
-      value: "updated",
-      text: "Recently updated"
-    },
-    {
-      value: "views",
-      text: "Most views"
-    },
-    {
-      value: "comments",
-      text: "Most comments",
-      disabled: true
     }
   ]
 }) }}
@@ -7864,17 +10354,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   ],
   formGroup: {
     afterInput: {
-      html: "
-
-
-
-
-<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small"
-  data-module="nhsuk-button"
- type="submit">
+      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
   Save
 </button>
-
 "
     }
   }
@@ -7941,17 +10423,9 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   ],
   formGroup: {
     afterInput: {
-      html: "
-
-
-
-
-<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small"
-  data-module="nhsuk-button"
- type="submit">
+      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
   Save
 </button>
-
 "
     }
   }
@@ -7964,6 +10438,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {{ select({
   label: {
     text: "Sort by",
+    size: "l",
     isPageHeading: true
   },
   id: "custom-size",
@@ -8077,7 +10552,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ select({
@@ -8200,6 +10675,24 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 }) }}
 ```
 
+#### without hash fragment
+
+```njk
+{{ skipLink({
+  href: "/nhsuk-frontend/components/boilerplate/",
+  text: "Skip to main content"
+}) }}
+```
+
+#### without link target
+
+```njk
+{{ skipLink({
+  href: "#this-element-does-not-exist",
+  text: "Skip to main content"
+}) }}
+```
+
 ---
 
 ## Summary list
@@ -8213,8 +10706,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the summary list. |
+| `border` | boolean |  | If set to `false`, remove separating borders from all rows. |
+| `lastRowBorder` | boolean |  | If set to `false`, remove separating border from the last row. |
 | `rows` | array | ✓ | The rows within the summary list component. |
 | `rows.classes` | string |  | Classes to add to the row `div`. |
+| `rows.border` | boolean |  | If set to `false`, remove separating border from the row. |
 | `rows.key` | object | ✓ | The reference content (key) for each row item in the summary list component. |
 | `rows.key.text` | string | ✓ | If `html` is set, this is not required. Text to use within each key. If `html` is provided, the `text` option will be ignored. |
 | `rows.key.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each key. If `html` is provided, the `text` option will be ignored. |
@@ -8568,7 +11064,7 @@ LS2 5ZN"
 
 ```njk
 {{ summaryList({
-  classes: "nhsuk-summary-list--no-border",
+  border: false,
   rows: [
     {
       key: {
@@ -8613,6 +11109,7 @@ LS2 5ZN"
 
 ```njk
 {{ summaryList({
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8641,7 +11138,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Contact details"
       },
@@ -8662,6 +11158,7 @@ LS2 5ZN"
     heading: "Regional Manager",
     headingSize: "m"
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8672,7 +11169,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -8714,7 +11210,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -8774,7 +11269,7 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
+      border: false,
       key: {
         text: "Medicines"
       },
@@ -8822,6 +11317,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8832,7 +11328,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -8851,7 +11346,7 @@ LS2 5ZN"
   card: {
     heading: "Regional Manager",
     headingSize: "m",
-    secondary: true,
+    variant: "secondary",
     actions: {
       items: [
         {
@@ -8865,6 +11360,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8875,7 +11371,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -8894,7 +11389,7 @@ LS2 5ZN"
   card: {
     heading: "Regional Manager",
     headingSize: "m",
-    feature: true,
+    variant: "feature",
     actions: {
       items: [
         {
@@ -8908,6 +11403,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8918,12 +11414,108 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
       value: {
         text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
+#### as a card (feature) with custom HTML
+
+```njk
+{{ summaryList({
+  card: {
+    heading: "Your read",
+    headingSize: "m",
+    variant: "feature"
+  },
+  rows: [
+    {
+      key: {
+        text: "Opinion"
+      },
+      value: {
+        html: "<p class="nhsuk-u-margin-bottom-3">
+  <strong class="nhsuk-tag nhsuk-tag--red">
+  Recall for assessment
+</strong>
+
+</p>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "opinion"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Detailed opinion"
+      },
+      value: {
+        html: "<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-half">
+    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
+      Right breast
+    </p>
+    <p class="nhsuk-u-margin-bottom-3">
+      <strong class="nhsuk-tag nhsuk-tag--red">
+  Abnormal
+</strong>
+
+    </p>
+  </div>
+
+  <div class="nhsuk-grid-column-one-half">
+    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
+      Left breast
+    </p>
+    <p class="nhsuk-u-margin-bottom-3 nhsuk-u-secondary-text-colour">
+      Not recorded
+    </p>
+  </div>
+</div>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "detailed opinion"
+          }
+        ]
+      }
+    },
+    {
+      classes: "nhsuk-summary-list__row--no-border",
+      key: {
+        text: "Annotations"
+      },
+      value: {
+        html: "<p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
+  Right breast
+</p>
+<p class="nhsuk-u-margin-bottom-0">
+  Microcalcification outside a mass, Clinical abnormality – Level 2 (benign)
+</p>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "annotations"
+          }
+        ]
       }
     }
   ]
@@ -8940,6 +11532,7 @@ LS2 5ZN"
     href: "#/card-clickable",
     clickable: true
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8950,7 +11543,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -8968,7 +11560,7 @@ LS2 5ZN"
 {{ summaryList({
   card: {
     heading: "Regional Manager",
-    type: "non-urgent",
+    variant: "non-urgent",
     actions: {
       items: [
         {
@@ -8982,6 +11574,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -8992,7 +11585,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -9010,7 +11602,7 @@ LS2 5ZN"
 {{ summaryList({
   card: {
     heading: "Regional Manager",
-    type: "urgent",
+    variant: "urgent",
     actions: {
       items: [
         {
@@ -9024,6 +11616,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -9034,7 +11627,6 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
@@ -9052,7 +11644,7 @@ LS2 5ZN"
 {{ summaryList({
   card: {
     heading: "Regional Manager",
-    type: "emergency",
+    variant: "emergency",
     actions: {
       items: [
         {
@@ -9066,6 +11658,7 @@ LS2 5ZN"
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -9076,12 +11669,88 @@ LS2 5ZN"
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Date of birth"
       },
       value: {
         text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
+#### example person: Karen Francis
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
+#### example person: Karen Francis (no border)
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      border: false,
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
+#### example person: Sarah Philips (no border)
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      }
+    },
+    {
+      border: false,
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
       }
     }
   ]
@@ -9119,8 +11788,14 @@ LS2 5ZN"
 | `captionSize` | string |  | Size of the caption – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `firstCellIsHeader` | boolean |  | If set to `true`, first cell in table row will be a TH instead of a TD. |
 | `responsive` | boolean |  | If set to `true`, responsive table classes will be applied. |
+| `variant` | string |  | Optional variant of table. You can use only `"reverse"` or empty values with this option. |
 | `card` | object |  | Can be used to wrap a card around the table component. If any of these options are present, a card will wrap around the table. *(accepts nested component params)* |
+| `panel` | boolean |  | If set to `true`, the table will render within a panel with a heading. Replaced by the `card` option. |
+| `panelClasses` | string |  | Classes to add to the table panel. Replaced by the `card.classes` option. |
+| `heading` | string |  | Heading text that displays above the table when `panel` is `true`. Replaced by the `card.heading` option. |
+| `headingLevel` | integer |  | Optional heading level for the table panel heading. Defaults to `3`. Replaced by the `card.headingLevel` option. |
 | `classes` | string |  | Classes to add to the table container. |
+| `tableClasses` | string |  | Classes to add to the table element. Replaced by the `classes` option. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the table container. |
 
 ### Examples
@@ -9306,7 +11981,255 @@ LS2 5ZN"
 }) }}
 ```
 
-#### with responsive layout
+#### with numeric data (full width, past day)
+
+```njk
+{{ table({
+  caption: "Past day",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "3",
+        format: "numeric"
+      },
+      {
+        text: "0",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1",
+        format: "numeric"
+      },
+      {
+        text: "0",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "2",
+        format: "numeric"
+      },
+      {
+        text: "0",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric data (full width, past week)
+
+```njk
+{{ table({
+  caption: "Past week",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "24",
+        format: "numeric"
+      },
+      {
+        text: "18",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "16",
+        format: "numeric"
+      },
+      {
+        text: "20",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24",
+        format: "numeric"
+      },
+      {
+        text: "27",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric data (full width, past month)
+
+```njk
+{{ table({
+  caption: "Past month",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98",
+        format: "numeric"
+      },
+      {
+        text: "95",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122",
+        format: "numeric"
+      },
+      {
+        text: "131",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126",
+        format: "numeric"
+      },
+      {
+        text: "142",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric data (full width, past year)
+
+```njk
+{{ table({
+  caption: "Past year",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380",
+        format: "numeric"
+      },
+      {
+        text: "1472",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129",
+        format: "numeric"
+      },
+      {
+        text: "1083",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "1539",
+        format: "numeric"
+      },
+      {
+        text: "1265",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### responsive
 
 ```njk
 {{ table({
@@ -9430,7 +12353,7 @@ LS2 5ZN"
 }) }}
 ```
 
-#### with responsive layout and custom HTML
+#### responsive and custom HTML
 
 ```njk
 {{ table({
@@ -9489,7 +12412,7 @@ LS2 5ZN"
       },
       {
         header: "Description",
-        html: "Can be used to add a row of table header cells (<code class="app-code">&lt;th&gt;</code>) at the top of the table component.
+        html: "Can be used to add a row of table header cells (<code>&lt;th&gt;</code>) at the top of the table component.
 <a href="#/macro-options">See macro options for head</a>."
       }
     ],
@@ -9532,7 +12455,7 @@ LS2 5ZN"
       },
       {
         header: "Description",
-        html: "If set to <code class="app-code">true</code>, the first cell in each row will be a table header (<code class="app-code">&lt;th&gt;</code>)."
+        html: "If set to <code>true</code>, the first cell in each row will be a table header (<code>&lt;th&gt;</code>)."
       }
     ],
     [
@@ -9598,8 +12521,7 @@ LS2 5ZN"
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: "
-<strong class="nhsuk-tag nhsuk-tag--green">
+        html: "<strong class="nhsuk-tag nhsuk-tag--green">
   Active
 </strong>
 "
@@ -9615,8 +12537,7 @@ LS2 5ZN"
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: "
-<strong class="nhsuk-tag nhsuk-tag--grey">
+        html: "<strong class="nhsuk-tag nhsuk-tag--grey">
   Inactive
 </strong>
 "
@@ -9751,7 +12672,7 @@ LS2 5ZN"
   card: {
     heading: "Other conditions like impetigo",
     headingSize: "m",
-    feature: true
+    variant: "feature"
   },
   caption: "Impetigo can look similar to other skin conditions",
   captionSize: "s",
@@ -9792,14 +12713,14 @@ LS2 5ZN"
 }) }}
 ```
 
-#### as a card (feature) with responsive layout
+#### as a card (feature) responsive
 
 ```njk
 {{ table({
   card: {
     heading: "Other conditions like impetigo",
     headingSize: "m",
-    feature: true
+    variant: "feature"
   },
   caption: "Impetigo can look similar to other skin conditions",
   captionSize: "s",
@@ -9882,40 +12803,240 @@ LS2 5ZN"
       label: "Past day",
       id: "past-day",
       panel: {
-        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past day</caption>    <thead class="nhsuk-table__head">
-      <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
-    </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">3</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">2</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">0</td>      </tr>    </tbody>
-  </table>"
+        html: "<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption">
+    Past day
+  </caption>
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Case manager
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases opened
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases closed
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        David Francis
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        3
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        0
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Paul Farmer
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        0
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Rita Patel
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        2
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        0
+      </td>
+    </tr>
+  </tbody>
+</table>
+"
       }
     },
     {
       label: "Past week",
       id: "past-week",
       panel: {
-        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past week</caption>    <thead class="nhsuk-table__head">
-      <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
-    </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">18</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">16</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">20</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">24</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">27</td>      </tr>    </tbody>
-  </table>"
+        html: "<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption">
+    Past week
+  </caption>
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Case manager
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases opened
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases closed
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        David Francis
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        24
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        18
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Paul Farmer
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        16
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        20
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Rita Patel
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        24
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        27
+      </td>
+    </tr>
+  </tbody>
+</table>
+"
       }
     },
     {
       label: "Past month",
       id: "past-month",
       panel: {
-        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past month</caption>    <thead class="nhsuk-table__head">
-      <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
-    </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">98</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">95</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">122</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">131</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">126</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">142</td>      </tr>    </tbody>
-  </table>"
+        html: "<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption">
+    Past month
+  </caption>
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Case manager
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases opened
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases closed
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        David Francis
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        98
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        95
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Paul Farmer
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        122
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        131
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Rita Patel
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        126
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        142
+      </td>
+    </tr>
+  </tbody>
+</table>
+"
       }
     },
     {
       label: "Past year",
       id: "past-year",
       panel: {
-        html: "  <table class="nhsuk-table">    <caption class="nhsuk-table__caption">Past year</caption>    <thead class="nhsuk-table__head">
-      <tr>          <th scope="col" class="nhsuk-table__header">Case manager</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases opened</th>          <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">Cases closed</th>      </tr>
-    </thead>    <tbody class="nhsuk-table__body">      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">David Francis</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1380</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1472</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Paul Farmer</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1129</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1083</td>      </tr>      <tr class="nhsuk-table__row">            <td class="nhsuk-table__cell">Rita Patel</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1539</td>            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1265</td>      </tr>    </tbody>
-  </table>"
+        html: "<table class="nhsuk-table">
+  <caption class="nhsuk-table__caption">
+    Past year
+  </caption>
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Case manager
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases opened
+      </th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+        Cases closed
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        David Francis
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1380
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1472
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Paul Farmer
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1129
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1083
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">
+        Rita Patel
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1539
+      </td>
+      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+        1265
+      </td>
+    </tr>
+  </tbody>
+</table>
+"
       }
     }
   ]
@@ -9977,104 +13098,35 @@ LS2 5ZN"
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the tag component. If `html` is provided, the `text` argument will be ignored. |
 | `classes` | string |  | Classes to add to the tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the tag. |
+| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"` or `"yellow"`. |
+| `border` | boolean |  | If set to `false`, remove border from the tag. |
 
 ### Examples
 
-#### default
+#### colour class
 
 ```njk
 {{ tag({
-  text: "Active"
-}) }}
-```
-
-#### white
-
-```njk
-{{ tag({
-  text: "In progress",
-  classes: "nhsuk-tag--white"
-}) }}
-```
-
-#### grey
-
-```njk
-{{ tag({
-  text: "Inactive",
-  classes: "nhsuk-tag--grey"
-}) }}
-```
-
-#### green
-
-```njk
-{{ tag({
-  text: "New",
+  text: "Green",
   classes: "nhsuk-tag--green"
 }) }}
 ```
 
-#### aqua-green
+#### colour class overriding colour param
 
 ```njk
 {{ tag({
-  text: "Active",
-  classes: "nhsuk-tag--aqua-green"
-}) }}
-```
-
-#### blue
-
-```njk
-{{ tag({
-  text: "Pending",
-  classes: "nhsuk-tag--blue"
-}) }}
-```
-
-#### purple
-
-```njk
-{{ tag({
-  text: "Received",
-  classes: "nhsuk-tag--purple"
-}) }}
-```
-
-#### pink
-
-```njk
-{{ tag({
-  text: "Sent",
-  classes: "nhsuk-tag--pink"
-}) }}
-```
-
-#### red
-
-```njk
-{{ tag({
-  text: "Rejected",
+  text: "Not green",
+  colour: "green",
   classes: "nhsuk-tag--red"
 }) }}
 ```
 
-#### orange
+#### without border
 
 ```njk
 {{ tag({
-  text: "Declined",
-  classes: "nhsuk-tag--orange"
-}) }}
-```
-
-#### yellow
-
-```njk
-{{ tag({
-  text: "Delayed",
-  classes: "nhsuk-tag--yellow"
+  border: false
 }) }}
 ```
 
@@ -10103,7 +13155,7 @@ LS2 5ZN"
 | `items.hint.text` | string | ✓ | Text to use within the hint. If `html` is provided, the `text` argument will be ignored. |
 | `items.hint.html` | string | ✓ | HTML to use within the hint. If `html` is provided, the `text` argument will be ignored. |
 | `items.status` | object | ✓ | The status for each task within the task list component. See items status. |
-| `items.status.tag` | object |  | Can be used to add a tag to the status of the task within the task list component. See tag. |
+| `items.status.tag` | object |  | Can be used to add a tag to the status of the task within the task list component. See tag. *(accepts nested component params)* |
 | `items.status.text` | string |  | Text to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` argument will be ignored. |
 | `items.status.html` | string |  | HTML to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` argument will be ignored. |
 | `items.status.classes` | string |  | Classes to add to the status container. |
@@ -10149,7 +13201,7 @@ LS2 5ZN"
       status: {
         tag: {
           text: "Incomplete",
-          classes: "nhsuk-tag--blue"
+          colour: "blue"
         }
       }
     },
@@ -10161,7 +13213,7 @@ LS2 5ZN"
       status: {
         tag: {
           text: "Incomplete",
-          classes: "nhsuk-tag--blue"
+          colour: "blue"
         }
       }
     },
@@ -10214,7 +13266,7 @@ LS2 5ZN"
       status: {
         tag: {
           text: "Incomplete",
-          classes: "nhsuk-tag--blue"
+          colour: "blue"
         }
       }
     }
@@ -10254,7 +13306,7 @@ LS2 5ZN"
 | `formGroup.afterInput.text` | string | ✓ | Text to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the textarea. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the textarea. |
-| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
+| `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"street-address"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the textarea. |
 
 ### Examples
@@ -10272,6 +13324,23 @@ LS2 5ZN"
     text: "Do not include personal information like your name, date of birth or NHS number"
   },
   name: "example"
+}) }}
+```
+
+#### disabled
+
+```njk
+{{ textarea({
+  label: {
+    text: "Can you provide more detail?",
+    size: "l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  name: "example",
+  disabled: true
 }) }}
 ```
 
@@ -10298,6 +13367,7 @@ LS2 5ZN"
 {{ textarea({
   label: {
     text: "Can you provide more detail?",
+    size: "l",
     isPageHeading: true
   },
   hint: {
@@ -10340,7 +13410,7 @@ LS2 5ZN"
 }) }}
 ```
 
-#### with hint and error
+#### with error message and hint
 
 ```njk
 {{ textarea({
@@ -10413,6 +13483,14 @@ LS2 5ZN"
 ```njk
 {{ warningCallout({
   heading: "School, nursery or work",
+  text: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
+}) }}
+```
+
+#### without heading
+
+```njk
+{{ warningCallout({
   text: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
 }) }}
 ```
