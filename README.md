@@ -140,8 +140,8 @@ nhs-llm-docs/
 │   ├── generate-nhs-frontend-component-docs.js
 │   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-component-reference.instructions.md
-│   ├── nhs-frontend-sass-reference.instructions.md
+│   ├── nhs-frontend-component-reference.md
+│   ├── nhs-frontend-sass-reference.md
 │   ├── nhs-frontend-sass-reference.json (optional)
 │   ├── nhs-frontend-guide.instructions.md
 │   └── nhs-prototype-kit-guide.instructions.md

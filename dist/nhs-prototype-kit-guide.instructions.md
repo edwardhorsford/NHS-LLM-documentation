@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.njk, **/*.html, app/routes/*.js"
+applyTo: "**/*.njk, **/*.html, app/**/*.js"
 ---
 
 # NHS prototype kit guide
@@ -9,6 +9,17 @@ A guide for building prototypes with the NHS prototype kit. This is kept separat
 ---
 ## General
 - Prefer clean html code with whitespace and line breaks for readability
+
+## Prototypes are not production code
+
+Prototypes are for testing ideas quickly - they are thrown away, not shipped. Unless specifically asked, do not add:
+
+- Automated tests, linters, or type checking
+- Production error handling or logging
+- Security hardening or authentication
+- A database - all data lives in the session
+
+Prefer the simplest thing that makes the user journey work.
 
 ## Styles
 - Prefer using NHS frontend classes and components over custom styles.
@@ -174,7 +185,7 @@ Form components support either a `value` or `values` params for pre-filling exis
   hint: {
     text: "Select all options that are relevant to you"
   },
-  values: data.contactMethods
+  values: data.contactMethods,
   items: [
     {
       value: "Email",
@@ -361,7 +372,7 @@ Checkboxes as only question on page:
   hint: {
     text: "Select all options that are relevant to you"
   },
-  values: data.contactMethods
+  values: data.contactMethods,
   items: [
     {
       value: "Email",

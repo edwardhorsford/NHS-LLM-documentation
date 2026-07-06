@@ -166,7 +166,15 @@ function generateHeader(version, gitInfo, generatedAt) {
 function formatAsNunjucks(obj, indent = 0) {
   if (obj === null) return 'null';
   if (typeof obj === 'undefined') return 'undefined';
-  if (typeof obj === 'string') return `"${obj}"`;
+  if (typeof obj === 'string') {
+    // Escape so the generated example is valid Nunjucks - some fixture
+    // strings contain double quotes (embedded HTML) or newlines
+    const escaped = obj
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"')
+      .replace(/\r?\n/g, '\\n')
+    return `"${escaped}"`;
+  }
   if (typeof obj === 'number' || typeof obj === 'boolean') return String(obj);
 
   if (Array.isArray(obj)) {

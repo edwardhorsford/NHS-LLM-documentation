@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.njk, **/*.html, app/routes/*.js"
+applyTo: "**/*.njk, **/*.html, **/*.scss, app/routes/**/*.js"
 ---
 
 # NHS Frontend guide
@@ -43,6 +43,10 @@ Hints should be kept short and simple, ideally one sentence. With no terminating
 Avoid formatting or using links within hints, as this can cause issues with screen readers. If you need to include links or formatting, use the question page pattern of putting this content in the main body of the page above the form, rather than in the hint. This is documented in the [NHS design system question page guidance](https://service-manual.nhs.uk/design-system/patterns/question-pages#asking-complex-questions-without-using-hint-text).
 
 ## Key conventions
+
+### Look up parameters - do not guess
+
+Component macros have exact parameter names and structures. If the project includes a component reference (for example `docs/nhs-frontend-component-reference.md`), always consult it when writing or changing a macro call rather than guessing parameter names from memory. Use its table of contents to jump to the component. The same applies to Sass: check the Sass reference (for example `docs/nhs-frontend-sass-reference.md`) for exact mixin, function, and variable names.
 
 ### Text vs HTML parameters
 
