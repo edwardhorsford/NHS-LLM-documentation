@@ -140,8 +140,8 @@ nhs-llm-docs/
 │   ├── generate-nhs-frontend-component-docs.js
 │   └── generate-nhs-frontend-sass-docs.js
 ├── dist/
-│   ├── nhs-frontend-component-reference.instructions.md
-│   ├── nhs-frontend-sass-reference.instructions.md
+│   ├── nhs-frontend-component-reference.md
+│   ├── nhs-frontend-sass-reference.md
 │   ├── nhs-frontend-sass-reference.json (optional)
 │   ├── nhs-frontend-guide.instructions.md
 │   └── nhs-prototype-kit-guide.instructions.md
@@ -155,6 +155,7 @@ nhs-llm-docs/
 **For regenerating component docs:**
 - Node.js 16+
 - NHS Frontend repository locally (expects sibling directory: `../nhsuk-frontend`)
+- NHS Frontend checkout must be v10.5+ with dependencies installed (`npm install` in that repo) - examples are formatted using NHS Frontend's own `lib`
 
 **For regenerating Sass docs:**
 - Node.js 16+

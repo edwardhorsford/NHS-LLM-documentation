@@ -3,10 +3,10 @@
 ---
 **Auto-generated Documentation**
 
-- **NHS Frontend Version:** 10.5.1
+- **NHS Frontend Version:** 10.5.2
 - **Git Branch:** detached
-- **Git Commit:** ddd8147
-- **Generated:** 2026-06-04 14:46:25 UTC
+- **Git Commit:** 67bf2f6
+- **Generated:** 2026-07-06 12:50:21 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -19,46 +19,46 @@ Use the component reference table below to find the line number for any componen
 
 | Component | Macro | Category | Line |
 |-----------|-------|----------|------|
-| Character count | `characterCount()` | Form Inputs | 2074 |
-| Checkboxes | `checkboxes()` | Form Inputs | 2558 |
-| Date input | `dateInput()` | Form Inputs | 3801 |
-| File upload | `fileUpload()` | Form Inputs | 5385 |
-| Input | `input()` | Form Inputs | 7154 |
-| Password input | `passwordInput()` | Form Inputs | 8428 |
-| Radios | `radios()` | Form Inputs | 8734 |
-| Search input | `searchInput()` | Form Inputs | 9624 |
-| Select | `select()` | Form Inputs | 10075 |
-| Textarea | `textarea()` | Form Inputs | 13279 |
+| Character count | `characterCount()` | Form Inputs | 2123 |
+| Checkboxes | `checkboxes()` | Form Inputs | 2617 |
+| Date input | `dateInput()` | Form Inputs | 3732 |
+| File upload | `fileUpload()` | Form Inputs | 5326 |
+| Input | `input()` | Form Inputs | 7082 |
+| Password input | `passwordInput()` | Form Inputs | 8303 |
+| Radios | `radios()` | Form Inputs | 8609 |
+| Search input | `searchInput()` | Form Inputs | 9338 |
+| Select | `select()` | Form Inputs | 9789 |
+| Textarea | `textarea()` | Form Inputs | 12701 |
 | Button | `button()` | Form Controls | 311 |
-| Error message | `errorMessage()` | Form Controls | 5116 |
-| Fieldset | `fieldset()` | Form Controls | 5275 |
-| Hint text | `hint()` | Form Controls | 7053 |
-| Label | `label()` | Form Controls | 7748 |
+| Error message | `errorMessage()` | Form Controls | 5055 |
+| Fieldset | `fieldset()` | Form Controls | 5214 |
+| Hint text | `hint()` | Form Controls | 6979 |
+| Label | `label()` | Form Controls | 7672 |
 | Back link | `backLink()` | Navigation | 109 |
 | Breadcrumb | `breadcrumb()` | Navigation | 162 |
-| Contents list | `contentsList()` | Navigation | 3689 |
-| Pagination | `pagination()` | Navigation | 8006 |
-| Skip link | `skipLink()` | Navigation | 10650 |
+| Contents list | `contentsList()` | Navigation | 3620 |
+| Pagination | `pagination()` | Navigation | 7904 |
+| Skip link | `skipLink()` | Navigation | 10358 |
 | Action link | `actionLink()` | Content | 66 |
 | Card | `card()` | Content | 1084 |
-| Code | `code()` | Content | 3556 |
-| Details | `details()` | Content | 4671 |
-| Do and Don't list | `list()` | Content | 4894 |
-| Hero | `hero()` | Content | 6978 |
-| Images | `image()` | Content | 7081 |
-| Inset text | `insetText()` | Content | 7718 |
-| Legend | `legend()` | Content | 7821 |
-| Panel | `panel()` | Content | 8315 |
-| Summary list | `summaryList()` | Content | 10698 |
-| Tables | `table()` | Content | 11762 |
-| Tabs | `tabs()` | Content | 12773 |
-| Tag | `tag()` | Content | 13086 |
-| Task list | `taskList()` | Content | 13135 |
-| Footer | `footer()` | Layout | 5605 |
-| Header | `header()` | Layout | 6201 |
-| Error summary | `errorSummary()` | Notifications | 5145 |
-| Notification banner | `notificationBanner()` | Notifications | 7840 |
-| Warning callout | `warningCallout()` | Notifications | 13450 |
+| Code | `code()` | Content | 3485 |
+| Details | `details()` | Content | 4602 |
+| Do and Don't list | `list()` | Content | 4833 |
+| Hero | `hero()` | Content | 6908 |
+| Images | `image()` | Content | 7007 |
+| Inset text | `insetText()` | Content | 7640 |
+| Legend | `legend()` | Content | 7745 |
+| Panel | `panel()` | Content | 8213 |
+| Summary list | `summaryList()` | Content | 10406 |
+| Tables | `table()` | Content | 11412 |
+| Tabs | `tabs()` | Content | 12415 |
+| Tag | `tag()` | Content | 12508 |
+| Task list | `taskList()` | Content | 12557 |
+| Footer | `footer()` | Layout | 5546 |
+| Header | `header()` | Layout | 6131 |
+| Error summary | `errorSummary()` | Notifications | 5084 |
+| Notification banner | `notificationBanner()` | Notifications | 7764 |
+| Warning callout | `warningCallout()` | Notifications | 12872 |
 
 
 ---
@@ -1136,16 +1136,19 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "If you need help now, but it's not an emergency",
   headingLevel: 3
-}) %}
-  <p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
-{% endcall %}
+}) -%}
+
+<p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
+
+{%- endcall %}
 ```
 
 #### basic without heading
 
 ```njk
 {{ card({
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1157,7 +1160,8 @@ Use the component reference table below to find the line number for any componen
   heading: "Introduction to care and support",
   headingSize: "m",
   headingLevel: 3,
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1167,11 +1171,13 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Help from NHS 111",
   headingLevel: 3
-}) %}
-  <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
-  <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
-  <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
-{% endcall %}
+}) -%}
+
+<p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
+<p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
+<p class="nhsuk-body">For a life-threatening emergency call 999.</p>
+
+{%- endcall %}
 ```
 
 #### basic with summary list
@@ -1180,26 +1186,28 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### basic with summary lists
@@ -1208,48 +1216,50 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Regional Managers",
   headingLevel: 3
-}) %}
-  <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-  
-  
-  <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Sarah Philips
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        5 January 1978
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+
+<h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Sarah Philips
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      5 January 1978
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### basic with summary list and button
@@ -1258,31 +1268,33 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-  
-  
-  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-    Add role
-  </button>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+  Add role
+</button>
+
+{%- endcall %}
 ```
 
 #### basic with summary list and actions
@@ -1303,26 +1315,28 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### basic with summary list and actions, without heading
@@ -1343,26 +1357,28 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### basic with summary list and actions (empty items)
@@ -1380,26 +1396,28 @@ Use the component reference table below to find the line number for any componen
       false
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### basic with summary list and heading link
@@ -1409,26 +1427,28 @@ Use the component reference table below to find the line number for any componen
   href: "#",
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary without heading
@@ -1436,7 +1456,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   variant: "secondary",
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1449,7 +1470,8 @@ Use the component reference table below to find the line number for any componen
   heading: "Introduction to care and support",
   headingSize: "m",
   headingLevel: 3,
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1460,11 +1482,13 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Help from NHS 111",
   headingLevel: 3
-}) %}
-  <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
-  <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
-  <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
-{% endcall %}
+}) -%}
+
+<p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
+<p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
+<p class="nhsuk-body">For a life-threatening emergency call 999.</p>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list
@@ -1474,26 +1498,28 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary with summary lists
@@ -1503,48 +1529,50 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Regional Managers",
   headingLevel: 3
-}) %}
-  <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-  
-  
-  <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Sarah Philips
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        5 January 1978
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+
+<h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Sarah Philips
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      5 January 1978
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list and button
@@ -1554,31 +1582,33 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-  
-  
-  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
-    Add role
-  </button>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+  Add role
+</button>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list and actions
@@ -1600,26 +1630,28 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list and actions, without heading
@@ -1641,26 +1673,28 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list and actions (empty items)
@@ -1679,26 +1713,28 @@ Use the component reference table below to find the line number for any componen
       false
     ]
   }
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### secondary with summary list and heading link
@@ -1709,26 +1745,28 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Regional Manager",
   headingLevel: 3
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### non-urgent (blue)
@@ -1738,15 +1776,17 @@ Use the component reference table below to find the line number for any componen
   heading: "Speak to a GP if:",
   headingLevel: 3,
   variant: "non-urgent"
-}) %}
-  <ul>
-    <li>you're not sure it's chickenpox</li>
-    <li>the skin around the blisters is red, hot or painful (signs of infection)</li>
-    <li>your child is <a href="https://www.nhs.uk/conditions/dehydration">dehydrated</a></li>
-    <li>you're concerned about your child or they get worse</li>
-  </ul>
-  <p>Tell the receptionist you think it's chickenpox before going in. They may recommend a special appointment time if other patients are at risk.</p>
-{% endcall %}
+}) -%}
+
+<ul>
+  <li>you're not sure it's chickenpox</li>
+  <li>the skin around the blisters is red, hot or painful (signs of infection)</li>
+  <li>your child is <a href="https://www.nhs.uk/conditions/dehydration">dehydrated</a></li>
+  <li>you're concerned about your child or they get worse</li>
+</ul>
+<p>Tell the receptionist you think it's chickenpox before going in. They may recommend a special appointment time if other patients are at risk.</p>
+
+{%- endcall %}
 ```
 
 #### urgent (red)
@@ -1756,15 +1796,17 @@ Use the component reference table below to find the line number for any componen
   heading: "Ask for an urgent GP appointment if:",
   headingLevel: 3,
   variant: "urgent"
-}) %}
-  <ul>
-    <li>you're an adult and have chickenpox</li>
-    <li>you're pregnant and haven't had chickenpox before and you've been near someone with it</li>
-    <li>you have a weakened immune system and you've been near someone with chickenpox</li>
-    <li>you think your newborn baby has chickenpox</li>
-  </ul>
-  <p>In these situations, your GP can prescribe medicine to prevent complications. You need to take it within 24 hours of the spots coming out.</p>
-{% endcall %}
+}) -%}
+
+<ul>
+  <li>you're an adult and have chickenpox</li>
+  <li>you're pregnant and haven't had chickenpox before and you've been near someone with it</li>
+  <li>you have a weakened immune system and you've been near someone with chickenpox</li>
+  <li>you think your newborn baby has chickenpox</li>
+</ul>
+<p>In these situations, your GP can prescribe medicine to prevent complications. You need to take it within 24 hours of the spots coming out.</p>
+
+{%- endcall %}
 ```
 
 #### emergency (red and black)
@@ -1774,14 +1816,16 @@ Use the component reference table below to find the line number for any componen
   heading: "Call 999 if you have sudden chest pain that:",
   headingLevel: 3,
   variant: "emergency"
-}) %}
-  <ul>
-    <li>spreads to your arms, back, neck or jaw</li>
-    <li>makes your chest feel tight or heavy</li>
-    <li>also started with shortness of breath, sweating and feeling or being sick</li>
-  </ul>
-  <p>You could be having a heart attack. Call 999 immediately as you need immediate treatment in hospital.</p>
-{% endcall %}
+}) -%}
+
+<ul>
+  <li>spreads to your arms, back, neck or jaw</li>
+  <li>makes your chest feel tight or heavy</li>
+  <li>also started with shortness of breath, sweating and feeling or being sick</li>
+</ul>
+<p>You could be having a heart attack. Call 999 immediately as you need immediate treatment in hospital.</p>
+
+{%- endcall %}
 ```
 
 #### emergency (red and black) with action link
@@ -1791,19 +1835,21 @@ Use the component reference table below to find the line number for any componen
   heading: "Call 999 or go to A&E now if:",
   headingLevel: 3,
   variant: "emergency"
-}) %}
-  <ul>
-    <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
-    <li>you have severe difficulty breathing – you're gasping, choking or not able to get words out</li>
-  </ul>
-  
-  <a class="nhsuk-action-link nhsuk-action-link--reverse" href="#">
-    <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
-      <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"/>
-    </svg>
-    <span class="nhsuk-action-link__text">Find your nearest A&amp;E</span>
-  </a>
-{% endcall %}
+}) -%}
+
+<ul>
+  <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
+  <li>you have severe difficulty breathing – you're gasping, choking or not able to get words out</li>
+</ul>
+
+<a class="nhsuk-action-link nhsuk-action-link--reverse" href="#">
+  <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+    <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"/>
+  </svg>
+  <span class="nhsuk-action-link__text">Find your nearest A&amp;E</span>
+</a>
+
+{%- endcall %}
 ```
 
 #### primary (with chevron)
@@ -1827,7 +1873,8 @@ Use the component reference table below to find the line number for any componen
   clickable: true,
   heading: "Introduction to care and support",
   headingSize: "m",
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1839,7 +1886,8 @@ Use the component reference table below to find the line number for any componen
   clickable: true,
   heading: "Introduction to care and support",
   headingSize: "m",
-  description: "A quick guide for people who have care and support needs and their carers"
+  description:
+    "A quick guide for people who have care and support needs and their carers"
 }) }}
 ```
 
@@ -1852,7 +1900,8 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Urgent and emergency care services",
   headingSize: "m",
-  description: "Services the NHS provides if you need urgent or emergency medical help"
+  description:
+    "Services the NHS provides if you need urgent or emergency medical help"
 }) }}
 ```
 
@@ -1864,8 +1913,8 @@ Use the component reference table below to find the line number for any componen
   variant: "secondary",
   heading: "Why we are reinvesting in the NHS Prototype kit",
   headingClasses: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2",
-  descriptionHtml: "<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>
-<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>"
+  descriptionHtml:
+    '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>\n<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>'
 }) }}
 ```
 
@@ -1887,11 +1936,8 @@ Use the component reference table below to find the line number for any componen
   heading: "A",
   headingId: "a",
   headingSize: "m",
-  descriptionHtml: "<ul class="nhsuk-list nhsuk-list--border">
-  <li><a href="#/conditions/abdominal-aortic-aneurysm/">AAA, see Abdominal aortic aneurysm</a></li>
-  <li><a href="#/conditions/abdominal-aortic-aneurysm/">Abdominal aortic aneurysm</a></li>
-  <li><a href="#/conditions/abscess/">Abscess</a></li>
-</ul>"
+  descriptionHtml:
+    '<ul class="nhsuk-list nhsuk-list--border">\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">AAA, see Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abscess/">Abscess</a></li>\n</ul>'
 }) }}
 ```
 
@@ -1901,26 +1947,28 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   variant: "feature",
   heading: "Feature card heading"
-}) %}
-  <dl class="nhsuk-summary-list">
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Name
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        Karen Francis
-      </dd>
-    </div>
-    <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-      <dt class="nhsuk-summary-list__key">
-        Date of birth
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        15 March 1984
-      </dd>
-    </div>
-  </dl>
-{% endcall %}
+}) -%}
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
+{%- endcall %}
 ```
 
 #### feature with nested card and summary list
@@ -1929,51 +1977,53 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   variant: "feature",
   heading: "Flu: Follow-up requested"
-}) %}
-  <p>Sarah Philips (Mum) would like to speak to a member of the team about other options for their child's vaccination.</p>
-  <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="#" role="button" draggable="false">
-    Record a new consent response
-  </a>
-  
-  
-  <h3 class="nhsuk-heading-s">Consent responses</h3>
-  
-  <div class="nhsuk-card nhsuk-card--clickable">
-    <div class="nhsuk-card__content">
-      <h4 class="nhsuk-card__heading">
-        <a class="nhsuk-card__link" href="#">Sarah Philips (Mum)</a>
-      </h4>
-      <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Email address
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            sarah.philips@example.com
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Date
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            25 August 2025 at 4:04 pm
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
-          <dt class="nhsuk-summary-list__key">
-            Response
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            <strong class="nhsuk-tag nhsuk-tag--orange">
-              Follow up requested
-            </strong>
-          </dd>
-        </div>
-      </dl>
-    </div>
+}) -%}
+
+<p>Sarah Philips (Mum) would like to speak to a member of the team about other options for their child's vaccination.</p>
+<a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="#" role="button" draggable="false">
+  Record a new consent response
+</a>
+
+
+<h3 class="nhsuk-heading-s">Consent responses</h3>
+
+<div class="nhsuk-card nhsuk-card--clickable">
+  <div class="nhsuk-card__content">
+    <h4 class="nhsuk-card__heading">
+      <a class="nhsuk-card__link" href="#">Sarah Philips (Mum)</a>
+    </h4>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          sarah.philips@example.com
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          25 August 2025 at 4:04 pm
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+        <dt class="nhsuk-summary-list__key">
+          Response
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <strong class="nhsuk-tag nhsuk-tag--orange">
+            Follow up requested
+          </strong>
+        </dd>
+      </div>
+    </dl>
   </div>
-{% endcall %}
+</div>
+
+{%- endcall %}
 ```
 
 #### warning
@@ -1982,7 +2032,8 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   variant: "warning",
   heading: "School, nursery or work",
-  description: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
+  description:
+    "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
 }) }}
 ```
 
@@ -1992,7 +2043,8 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   variant: "warning",
   heading: "School, nursery or work",
-  description: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.",
+  description:
+    "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.",
   actions: {
     items: [
       {
@@ -2015,7 +2067,8 @@ Use the component reference table below to find the line number for any componen
   clickable: true,
   heading: "Exercise",
   headingSize: "m",
-  description: "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
+  description:
+    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
 }) }}
 ```
 
@@ -2024,19 +2077,14 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   image: {
-    html: "<figure class="nhsuk-image">
-  <img class="nhsuk-image__img" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">
-  <figcaption class="nhsuk-image__caption">
-    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.
-  </figcaption>
-</figure>
-"
+    html: '<figure class="nhsuk-image">\n  <img class="nhsuk-image__img" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">\n  <figcaption class="nhsuk-image__caption">\n    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.\n  </figcaption>\n</figure>\n'
   },
   href: "#",
   clickable: true,
   heading: "Exercise",
   headingSize: "m",
-  description: "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
+  description:
+    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
 }) }}
 ```
 
@@ -2051,9 +2099,10 @@ Use the component reference table below to find the line number for any componen
   clickable: true,
   heading: "Why we are reinvesting in the NHS prototype kit",
   headingSize: "m",
-  headingHtml: "<p class="nhsuk-body-s nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-0"><span class="nhsuk-u-visually-hidden">Published on: </span>21 July 2025</p>
-<p class="nhsuk-body-s nhsuk-u-font-weight-bold">NHS England Design Matters blog</p>",
-  description: "Frankie Roberto and Mike Gallagher explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it."
+  headingHtml:
+    '<p class="nhsuk-body-s nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-0"><span class="nhsuk-u-visually-hidden">Published on: </span>21 July 2025</p>\n<p class="nhsuk-body-s nhsuk-u-font-weight-bold">NHS England Design Matters blog</p>',
+  description:
+    "Frankie Roberto and Mike Gallagher explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it."
 }) }}
 ```
 
@@ -2180,7 +2229,8 @@ Use the component reference table below to find the line number for any componen
   id: "with-error-message",
   name: "example",
   maxlength: 350,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
@@ -2202,7 +2252,8 @@ Use the component reference table below to find the line number for any componen
   id: "with-error-message",
   name: "example",
   maxlength: 350,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
@@ -2218,7 +2269,8 @@ Use the component reference table below to find the line number for any componen
   id: "with-value",
   name: "example",
   maxlength: 350,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
@@ -2345,7 +2397,8 @@ Use the component reference table below to find the line number for any componen
   name: "example",
   countType: "characters",
   maxlength: 350,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
@@ -2362,7 +2415,8 @@ Use the component reference table below to find the line number for any componen
   name: "example",
   countType: "characters",
   maxlength: 350,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
@@ -2378,7 +2432,8 @@ Use the component reference table below to find the line number for any componen
   id: "with-characters-count-type-threshold",
   name: "example",
   countType: "characters",
-  value: "Type another letter into this field after this message to see the threshold feature",
+  value:
+    "Type another letter into this field after this message to see the threshold feature",
   maxlength: 112,
   threshold: 75
 }) }}
@@ -2416,7 +2471,8 @@ Use the component reference table below to find the line number for any componen
   name: "example",
   countType: "words",
   maxlength: 51,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
 }) }}
 ```
 
@@ -2432,7 +2488,8 @@ Use the component reference table below to find the line number for any componen
   id: "with-words-count-type-threshold",
   name: "example",
   countType: "words",
-  value: "Type another word into this field after this message to see the threshold feature",
+  value:
+    "Type another word into this field after this message to see the threshold feature",
   maxlength: 51,
   threshold: 30
 }) }}
@@ -2451,7 +2508,8 @@ Use the component reference table below to find the line number for any componen
   name: "example",
   countType: "words",
   maxlength: 51,
-  value: "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels."
 }) }}
 ```
 
@@ -2466,7 +2524,8 @@ Use the component reference table below to find the line number for any componen
   },
   id: "with-threshold",
   name: "example",
-  value: "Type another letter into this field after this message to see the threshold feature",
+  value:
+    "Type another letter into this field after this message to see the threshold feature",
   maxlength: 112,
   threshold: 75
 }) }}
@@ -2822,48 +2881,27 @@ Use the component reference table below to find the line number for any componen
   },
   idPrefix: "conditional",
   name: "contact",
-  values: [
-    "email",
-    "text"
-  ],
+  values: ["email", "text"],
   items: [
     {
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -3019,29 +3057,15 @@ Use the component reference table below to find the line number for any componen
   items: [
     {
       value: "nullam",
-      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
-quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
-at eget metus."
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo\nquam. Pellentesque ornare sem lacinia quam venenatis vestibulum.\nMaecenas faucibus mollis interdum. Donec id elit non mi porta gravida\nat eget metus."
     },
     {
       value: "aenean",
-      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
-nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-venenatis vestibulum. Cras mattis consectetur purus sit amet
-fermentum."
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis\nvestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,\nnisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis\nnatoque penatibus et magnis dis parturient montes, nascetur ridiculus\nmus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam\nvenenatis vestibulum. Cras mattis consectetur purus sit amet\nfermentum."
     },
     {
       value: "fusce",
-      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-malesuada magna mollis euismod. Praesent commodo cursus magna, vel
-scelerisque nisl consectetur et. Etiam porta sem malesuada magna
-mollis euismod. Etiam porta sem malesuada magna mollis euismod.
-Donec sed odio dui. Sed posuere consectetur est at lobortis."
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum\nnibh, ut fermentum massa justo sit amet risus. Etiam porta sem\nmalesuada magna mollis euismod. Praesent commodo cursus magna, vel\nscelerisque nisl consectetur et. Etiam porta sem malesuada magna\nmollis euismod. Etiam porta sem malesuada magna mollis euismod.\nDonec sed odio dui. Sed posuere consectetur est at lobortis."
     }
   ]
 }) }}
@@ -3132,39 +3156,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -3192,39 +3198,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -3255,39 +3243,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -3310,50 +3280,27 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   },
   idPrefix: "conditional",
   name: "example",
-  values: [
-    "phone"
-  ],
+  values: ["phone"],
   items: [
     {
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <span class="nhsuk-error-message" id="contact-by-phone-error">
-    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
-  </span>
-  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">
-</div>
-"
+        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <p class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number\n  </p>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -3416,39 +3363,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     },
     {
@@ -3650,9 +3579,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {% call code({
   button: true
-}) %}
-  &lt;p&gt;This is a code block.&lt;/p&gt;
-{% endcall %}
+}) -%}
+
+&lt;p&gt;This is a code block.&lt;/p&gt;
+
+{%- endcall %}
 ```
 
 #### with scroll overflow
@@ -4696,17 +4627,19 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 ```njk
 {% call details({
   summaryText: "How to find your NHS number"
-}) %}
-  <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
-  <p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
-  <ul>
-    <li>prescriptions</li>
-    <li>test results</li>
-    <li>hospital referral letters</li>
-    <li>appointment letters</li>
-  </ul>
-  <p>Ask your GP surgery for help if you cannot find your NHS number.</p>
-{% endcall %}
+}) -%}
+
+<p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+<p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
+<ul>
+  <li>prescriptions</li>
+  <li>test results</li>
+  <li>hospital referral letters</li>
+  <li>appointment letters</li>
+</ul>
+<p>Ask your GP surgery for help if you cannot find your NHS number.</p>
+
+{%- endcall %}
 ```
 
 #### open
@@ -4715,17 +4648,19 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {% call details({
   summaryText: "How to find your NHS number",
   open: true
-}) %}
-  <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
-  <p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
-  <ul>
-    <li>prescriptions</li>
-    <li>test results</li>
-    <li>hospital referral letters</li>
-    <li>appointment letters</li>
-  </ul>
-  <p>Ask your GP surgery for help if you cannot find your NHS number.</p>
-{% endcall %}
+}) -%}
+
+<p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
+<p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
+<ul>
+  <li>prescriptions</li>
+  <li>test results</li>
+  <li>hospital referral letters</li>
+  <li>appointment letters</li>
+</ul>
+<p>Ask your GP surgery for help if you cannot find your NHS number.</p>
+
+{%- endcall %}
 ```
 
 #### expander
@@ -4734,78 +4669,80 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
 {% call details({
   summaryText: "Opening times",
   classes: "nhsuk-expander"
-}) %}
-  <table class="nhsuk-table">
-    <thead class="nhsuk-table__head">
-      <tr class="nhsuk-table__row">
-        <th scope="col" class="nhsuk-table__header">
-          Day of the week
-        </th>
-        <th scope="col" class="nhsuk-table__header">
-          Opening hours
-        </th>
-      </tr>
-    </thead>
-    <tbody class="nhsuk-table__body">
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Monday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Tuesday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Wednesday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Thursday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Friday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Saturday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 1pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Sunday
-        </th>
-        <td class="nhsuk-table__cell">
-          Closed
-        </td>
-      </tr>
-    </tbody>
-  </table>
-{% endcall %}
+}) -%}
+
+<table class="nhsuk-table">
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Day of the week
+      </th>
+      <th scope="col" class="nhsuk-table__header">
+        Opening hours
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Monday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Tuesday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Wednesday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Thursday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Friday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Saturday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 1pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Sunday
+      </th>
+      <td class="nhsuk-table__cell">
+        Closed
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{%- endcall %}
 ```
 
 #### expander open
@@ -4815,78 +4752,80 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   summaryText: "Opening times",
   classes: "nhsuk-expander",
   open: true
-}) %}
-  <table class="nhsuk-table">
-    <thead class="nhsuk-table__head">
-      <tr class="nhsuk-table__row">
-        <th scope="col" class="nhsuk-table__header">
-          Day of the week
-        </th>
-        <th scope="col" class="nhsuk-table__header">
-          Opening hours
-        </th>
-      </tr>
-    </thead>
-    <tbody class="nhsuk-table__body">
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Monday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Tuesday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Wednesday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Thursday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Friday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 6pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Saturday
-        </th>
-        <td class="nhsuk-table__cell">
-          9am to 1pm
-        </td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <th scope="row" class="nhsuk-table__header">
-          Sunday
-        </th>
-        <td class="nhsuk-table__cell">
-          Closed
-        </td>
-      </tr>
-    </tbody>
-  </table>
-{% endcall %}
+}) -%}
+
+<table class="nhsuk-table">
+  <thead class="nhsuk-table__head">
+    <tr class="nhsuk-table__row">
+      <th scope="col" class="nhsuk-table__header">
+        Day of the week
+      </th>
+      <th scope="col" class="nhsuk-table__header">
+        Opening hours
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Monday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Tuesday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Wednesday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Thursday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Friday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 6pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Saturday
+      </th>
+      <td class="nhsuk-table__cell">
+        9am to 1pm
+      </td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <th scope="row" class="nhsuk-table__header">
+        Sunday
+      </th>
+      <td class="nhsuk-table__cell">
+        Closed
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{%- endcall %}
 ```
 
 ---
@@ -5302,35 +5241,37 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     size: "l",
     isPageHeading: true
   }
-}) %}
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="address-line1">
-      Address line 1
-    </label>
-    <input class="nhsuk-input" id="address-line1" name="address-line1" type="text" autocomplete="address-line1">
-  </div>
-  
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="address-line2">
-      Address line 2 (optional)
-    </label>
-    <input class="nhsuk-input" id="address-line2" name="address-line2" type="text" autocomplete="address-line2">
-  </div>
-  
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="address-town">
-      Town or city
-    </label>
-    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
-  </div>
-  
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="address-postcode">
-      Postcode
-    </label>
-    <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-  </div>
-{% endcall %}
+}) -%}
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="address-line1">
+    Address line 1
+  </label>
+  <input class="nhsuk-input" id="address-line1" name="address-line1" type="text" autocomplete="address-line1">
+</div>
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="address-line2">
+    Address line 2 (optional)
+  </label>
+  <input class="nhsuk-input" id="address-line2" name="address-line2" type="text" autocomplete="address-line2">
+</div>
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="address-town">
+    Town or city
+  </label>
+  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+</div>
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="address-postcode">
+    Postcode
+  </label>
+  <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+</div>
+
+{%- endcall %}
 ```
 
 #### legend
@@ -5758,8 +5699,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     text: ""
   },
   meta: {
-    html: "<p class="nhsuk-body-s">All content is available under the Open Government Licence v3.0, except where otherwise stated.</p>
-<p class="nhsuk-body-s">© Custom copyright</p>",
+    html: '<p class="nhsuk-body-s">All content is available under the Open Government Licence v3.0, except where otherwise stated.</p>\n<p class="nhsuk-body-s">© Custom copyright</p>',
     items: [
       {
         href: "#",
@@ -6003,16 +5943,11 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
     },
     {
       width: "one-half",
-      html: "<p class="nhsuk-body-s nhsuk-u-margin-bottom-6"><strong>Manchester
-University NHS Foundation Trust (MFT)</strong> was formed on 1st
-October 2017 following the merger of Central Manchester University
-Hospitals NHS Foundation Trust (CMFT) and University Hospital of
-South Manchester NHS Foundation Trust (UHSM).</p>"
+      html: '<p class="nhsuk-body-s nhsuk-u-margin-bottom-6"><strong>Manchester\nUniversity NHS Foundation Trust (MFT)</strong> was formed on 1st\nOctober 2017 following the merger of Central Manchester University\nHospitals NHS Foundation Trust (CMFT) and University Hospital of\nSouth Manchester NHS Foundation Trust (UHSM).</p>'
     },
     {
       width: "full",
-      html: "<p class="nhsuk-body-s">Cobbett House, Manchester University NHS
-Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
+      html: '<p class="nhsuk-body-s">Cobbett House, Manchester University NHS\nFoundation Trust, Oxford Road, Manchester, M13 9WL</p>'
     }
   ]
 }) }}
@@ -6164,12 +6099,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     }
   ],
   meta: {
-    html: "<p class="nhsuk-body-s">
-  <svg class="nhsuk-u-static-margin-right-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 17" aria-hidden="true" focusable="false" height="17" width="41">
-    <path fill="currentColor" d="M35.77 12.4V.02l-4.3 2.8V16.8H41v-4.4Zm-10.38-.83a3.93 3.93 0 0 1-4.29.64 4.09 4.09 0 0 1-2.35-3.71 3.97 3.97 0 0 1 7.36-2.2l3.63-2.35A8.25 8.25 0 0 0 22.75.02c-3.1 0-5.8 1.74-7.22 4.3A8.3 8.3 0 0 0 8.3.02 8.4 8.4 0 0 0 0 8.5a8.4 8.4 0 0 0 8.3 8.48c3.1 0 5.8-1.75 7.22-4.32a8.17 8.17 0 0 0 12.7 2.2l1.64 1.93h.25V9.18h-6.79Zm-17.1 1.02A4.04 4.04 0 0 1 4.3 8.5c0-2.25 1.8-4.08 4-4.08s4 1.82 4 4.08c0 2.25-1.8 4.09-4 4.09"/>
-  </svg>
-  All content is available under the <a class="nhsuk-footer__list-item-link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
-</p>",
+    html: '<p class="nhsuk-body-s">\n  <svg class="nhsuk-u-static-margin-right-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 17" aria-hidden="true" focusable="false" height="17" width="41">\n    <path fill="currentColor" d="M35.77 12.4V.02l-4.3 2.8V16.8H41v-4.4Zm-10.38-.83a3.93 3.93 0 0 1-4.29.64 4.09 4.09 0 0 1-2.35-3.71 3.97 3.97 0 0 1 7.36-2.2l3.63-2.35A8.25 8.25 0 0 0 22.75.02c-3.1 0-5.8 1.74-7.22 4.3A8.3 8.3 0 0 0 8.3.02 8.4 8.4 0 0 0 0 8.5a8.4 8.4 0 0 0 8.3 8.48c3.1 0 5.8-1.75 7.22-4.32a8.17 8.17 0 0 0 12.7 2.2l1.64 1.93h.25V9.18h-6.79Zm-17.1 1.02A4.04 4.04 0 0 1 4.3 8.5c0-2.25 1.8-4.08 4-4.08s4 1.82 4 4.08c0 2.25-1.8 4.09-4 4.09"/>\n  </svg>\n  All content is available under the <a class="nhsuk-footer__list-item-link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated.\n</p>',
     items: [
       {
         href: "#",
@@ -7040,11 +6970,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   heading: "This is a header for the product or service",
   headingSize: "l",
   headingClasses: "nhsuk-u-margin-top-5",
-  html: "<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>
-<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
-  Sign up
-</a>
-"
+  html: '<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>\n<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Sign up\n</a>\n'
 }) }}
 ```
 
@@ -7119,7 +7045,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ image({
   src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
   sizes: "(max-width: 768px) 100vw, 66vw",
-  srcset: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
+  srcset:
+    "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
   caption: {
     text: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
   }
@@ -7132,7 +7059,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 {{ image({
   src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
   sizes: "(max-width: 768px) 100vw, 66vw",
-  srcset: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
+  srcset:
+    "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
   alt: "Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin.",
   caption: {
     text: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
@@ -7243,7 +7171,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     isPageHeading: true
   },
   hint: {
-    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   id: "with-hint",
   name: "example",
@@ -7271,10 +7199,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   spellcheck: false,
   formGroup: {
     afterInput: {
-      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
-  Search
-</button>
-"
+      html: '<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">\n  Search\n</button>\n'
     }
   }
 }) }}
@@ -7300,10 +7225,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   spellcheck: false,
   formGroup: {
     afterInput: {
-      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
-  Search
-</button>
-"
+      html: '<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">\n  Search\n</button>\n'
     }
   }
 }) }}
@@ -7340,7 +7262,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     isPageHeading: true
   },
   hint: {
-    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   errorMessage: {
     text: "Enter NHS number"
@@ -7438,7 +7360,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     isPageHeading: true
   },
   hint: {
-    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   id: "with-code-input-styling",
   name: "example",
@@ -7738,9 +7660,11 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 #### default
 
 ```njk
-{% call insetText({}) %}
-  <p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>
-{% endcall %}
+{% call insetText() -%}
+
+<p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>
+
+{%- endcall %}
 ```
 
 ---
@@ -7879,7 +7803,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  html: "<p class="nhsuk-notification-banner__heading">You have 9 days to send a response.</p>"
+  html: '<p class="nhsuk-notification-banner__heading">You have 9 days to send a response.</p>'
 }) }}
 ```
 
@@ -7887,12 +7811,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  html: "<h3 class="nhsuk-notification-banner__heading">
-  The patient record was updated
-</h3>
-<p class="nhsuk-body">
-  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there's a problem.
-</p>"
+  html: '<h3 class="nhsuk-notification-banner__heading">\n  The patient record was updated\n</h3>\n<p class="nhsuk-body">\n  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there\'s a problem.\n</p>'
 }) }}
 ```
 
@@ -7910,13 +7829,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 ```njk
 {{ notificationBanner({
   variant: "success",
-  html: "<h3 class="nhsuk-notification-banner__heading">
-  4 files uploaded
-</h3>
-<ul class="nhsuk-u-margin-0 nhsuk-list">
-  <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
-  <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>
-</ul>"
+  html: '<h3 class="nhsuk-notification-banner__heading">\n  4 files uploaded\n</h3>\n<ul class="nhsuk-u-margin-0 nhsuk-list">\n  <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>\n</ul>'
 }) }}
 ```
 
@@ -7924,13 +7837,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  html: "<h3 class="nhsuk-notification-banner__heading">4 files uploaded</h3>
-<ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-0">
-  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
-  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v2.pdf</a></li>
-  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v3-FINAL.pdf</a></li>
-  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v4-FINAL-v2.pdf</a></li>
-</ul>"
+  html: '<h3 class="nhsuk-notification-banner__heading">4 files uploaded</h3>\n<ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-0">\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v2.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v3-FINAL.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v4-FINAL-v2.pdf</a></li>\n</ul>'
 }) }}
 ```
 
@@ -7946,16 +7853,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 
 ```njk
 {{ notificationBanner({
-  html: "<h3 class="nhsuk-notification-banner__heading">
-  Check if you need to apply the reverse charge to this application
-</h3>
-<p class="nhsuk-body">
-  You will have to apply the <a href="#" class="nhsuk-notification-banner__link">reverse charge</a> if the applicant supplies any of these services:
-</p>
-<ul class="nhsuk-list nhsuk-list--bullet">
-  <li>constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services</li>
-  <li>constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours</li>
-</ul>"
+  html: '<h3 class="nhsuk-notification-banner__heading">\n  Check if you need to apply the reverse charge to this application\n</h3>\n<p class="nhsuk-body">\n  You will have to apply the <a href="#" class="nhsuk-notification-banner__link">reverse charge</a> if the applicant supplies any of these services:\n</p>\n<ul class="nhsuk-list nhsuk-list--bullet">\n  <li>constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services</li>\n  <li>constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours</li>\n</ul>'
 }) }}
 ```
 
@@ -8331,8 +8229,8 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the panel content. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. Text to use within the panel content. If `text` is provided, the `html` option will be ignored. |
 | `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire panel component in a `call` block. |
-| `classes` | string |  | Optional additional classes to add to the hint `div` tag. Separate each class with a space. |
-| `attributes` | object |  | Any extra HTML attributes (for example data attributes) to add to the input component. |
+| `classes` | string |  | Classes to add to the panel. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the panel. |
 | `variant` | string |  | Optional variant of panel. You can use only `"interruption"` or empty values with this option. |
 
 ### Examples
@@ -8353,15 +8251,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   titleText: "Jodie Brown had a COVID-19 vaccine less than 3 months ago",
   titleSize: "l",
   variant: "interruption",
-  html: "<p>They had a COVID-19 vaccine on 25 September 2025.</p>
-<p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>
-<div class="nhsuk-button-group">
-  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
-  Continue anyway
-</a>
-
-  <a href="#">Cancel</a>
-</div>"
+  html: '<p>They had a COVID-19 vaccine on 25 September 2025.</p>\n<p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Continue anyway\n</a>\n\n  <a href="#">Cancel</a>\n</div>'
 }) }}
 ```
 
@@ -8372,15 +8262,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   titleText: "Confirm you want to cancel your hospital appointment",
   titleSize: "l",
   variant: "interruption",
-  html: "<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>
-<p>Cancelling your appointment cannot be undone.</p>
-<div class="nhsuk-button-group">
-  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
-  Cancel appointment
-</a>
-
-  <a href="#">Change my weight</a>
-</div>"
+  html: '<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>\n<p>Cancelling your appointment cannot be undone.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Cancel appointment\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
 }) }}
 ```
 
@@ -8391,14 +8273,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   titleText: "Is your weight correct?",
   titleSize: "l",
   variant: "interruption",
-  html: "<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>
-<div class="nhsuk-button-group">
-  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">
-  Yes, this is correct
-</a>
-
-  <a href="#">Change my weight</a>
-</div>"
+  html: '<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Yes, this is correct\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
 }) }}
 ```
 
@@ -9042,39 +8917,21 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -9093,7 +8950,7 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
     }
   },
   hint: {
-    html: "This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   idPrefix: "with-divider",
   name: "example",
@@ -9258,29 +9115,15 @@ Foundation Trust, Oxford Road, Manchester, M13 9WL</p>"
   items: [
     {
       value: "nullam",
-      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo
-quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida
-at eget metus."
+      text: "Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo\nquam. Pellentesque ornare sem lacinia quam venenatis vestibulum.\nMaecenas faucibus mollis interdum. Donec id elit non mi porta gravida\nat eget metus."
     },
     {
       value: "aenean",
-      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-vestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,
-nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-venenatis vestibulum. Cras mattis consectetur purus sit amet
-fermentum."
+      text: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis\nvestibulum. Donec sed odio dui. Duis mollis, est non commodo luctus,\nnisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis\nnatoque penatibus et magnis dis parturient montes, nascetur ridiculus\nmus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam\nvenenatis vestibulum. Cras mattis consectetur purus sit amet\nfermentum."
     },
     {
       value: "fusce",
-      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-malesuada magna mollis euismod. Praesent commodo cursus magna, vel
-scelerisque nisl consectetur et. Etiam porta sem malesuada magna
-mollis euismod. Etiam porta sem malesuada magna mollis euismod.
-Donec sed odio dui. Sed posuere consectetur est at lobortis."
+      text: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum\nnibh, ut fermentum massa justo sit amet risus. Etiam porta sem\nmalesuada magna mollis euismod. Praesent commodo cursus magna, vel\nscelerisque nisl consectetur et. Etiam porta sem malesuada magna\nmollis euismod. Etiam porta sem malesuada magna mollis euismod.\nDonec sed odio dui. Sed posuere consectetur est at lobortis."
     }
   ]
 }) }}
@@ -9307,39 +9150,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -9367,39 +9192,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -9430,39 +9237,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -9491,42 +9280,21 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "email",
       text: "Email",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n'
       }
     },
     {
       value: "phone",
       text: "Phone",
       conditional: {
-        html: "<div class="nhsuk-form-group nhsuk-form-group--error">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <span class="nhsuk-error-message" id="contact-by-phone-error">
-    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number
-  </span>
-  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">
-</div>
-"
+        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <p class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number\n  </p>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
       }
     },
     {
       value: "text",
       text: "Text message",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n'
       }
     }
   ]
@@ -9558,61 +9326,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
       value: "nested",
       text: "Nested conditional",
       conditional: {
-        html: "<div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">
-  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-    How do you want to be contacted about this?
-  </legend>
-  <div class="nhsuk-hint" id="example-inner-hint">
-    Select 1 option
-  </div>
-  <div class="nhsuk-radios" data-module="nhsuk-radios">
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" data-aria-controls="conditional-example-inner">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-inner">
-        Email
-      </label>
-    </div>
-    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">
-      <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-email">
-    Email address
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">
-</div>
-    </div>
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" data-aria-controls="conditional-example-inner-2">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">
-        Phone
-      </label>
-    </div>
-    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">
-      <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-phone">
-    Phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
-</div>
-    </div>
-    <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" data-aria-controls="conditional-example-inner-3">
-      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">
-        Text message
-      </label>
-    </div>
-    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">
-      <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="contact-by-text">
-    Mobile phone number
-  </label>
-  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
-</div>
-    </div>
-  </div>
-</fieldset>
-</div>
-"
+        html: '<div class="nhsuk-form-group">\n  <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">\n  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">\n    How do you want to be contacted about this?\n  </legend>\n  <div class="nhsuk-hint" id="example-inner-hint">\n    Select 1 option\n  </div>\n  <div class="nhsuk-radios" data-module="nhsuk-radios">\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" data-aria-controls="conditional-example-inner">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner">\n        Email\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" data-aria-controls="conditional-example-inner-2">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">\n        Phone\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" data-aria-controls="conditional-example-inner-3">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">\n        Text message\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n    </div>\n  </div>\n</fieldset>\n</div>\n'
       }
     }
   ]
@@ -10354,10 +10068,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   ],
   formGroup: {
     afterInput: {
-      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
-  Save
-</button>
-"
+      html: '<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">\n  Save\n</button>\n'
     }
   }
 }) }}
@@ -10423,10 +10134,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
   ],
   formGroup: {
     afterInput: {
-      html: "<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">
-  Save
-</button>
-"
+      html: '<button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" data-module="nhsuk-button" type="submit">\n  Save\n</button>\n'
     }
   }
 }) }}
@@ -10778,9 +10486,7 @@ Donec sed odio dui. Sed posuere consectetur est at lobortis."
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       },
       actions: {
         items: [
@@ -10797,8 +10503,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
@@ -10849,9 +10554,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       },
       actions: {
         items: [
@@ -10868,8 +10571,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
@@ -10891,9 +10593,7 @@ LS2 5ZN"
         text: "Medicines"
       },
       value: {
-        html: "<p>Isotretinoin capsules (Roaccutane)</p>
-<p>Isotretinoin gel (Isotrex)</p>
-<p>Pepto-Bismol (bismuth subsalicylate)</p>"
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>\n<p>Isotretinoin gel (Isotrex)</p>\n<p>Pepto-Bismol (bismuth subsalicylate)</p>"
       },
       actions: {
         items: [
@@ -10950,9 +10650,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       },
       actions: {
         items: [
@@ -10970,8 +10668,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
@@ -10993,9 +10690,7 @@ LS2 5ZN"
         text: "Medicines"
       },
       value: {
-        html: "<p>Isotretinoin capsules (Roaccutane)</p>
-<p>Isotretinoin gel (Isotrex)</p>
-<p>Pepto-Bismol (bismuth subsalicylate)</p>"
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>\n<p>Isotretinoin gel (Isotrex)</p>\n<p>Pepto-Bismol (bismuth subsalicylate)</p>"
       },
       actions: {
         items: [
@@ -11042,9 +10737,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       }
     },
     {
@@ -11052,8 +10745,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -11087,9 +10779,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       }
     },
     {
@@ -11097,8 +10787,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -11132,9 +10821,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       }
     },
     {
@@ -11142,8 +10829,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       }
     }
   ]
@@ -11231,9 +10917,7 @@ LS2 5ZN"
         text: "Contact information"
       },
       value: {
-        html: "73 Roman Rd<br>
-Leeds<br>
-LS2 5ZN"
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
       },
       actions: {
         items: [
@@ -11250,8 +10934,7 @@ LS2 5ZN"
         text: "Contact details"
       },
       value: {
-        html: "<p>07700 900362</p>
-<p>karen.francis@example.com</p>"
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
       },
       actions: {
         items: [
@@ -11274,9 +10957,7 @@ LS2 5ZN"
         text: "Medicines"
       },
       value: {
-        html: "<p>Isotretinoin capsules (Roaccutane)</p>
-<p>Isotretinoin gel (Isotrex)</p>
-<p>Pepto-Bismol (bismuth subsalicylate)</p>"
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>\n<p>Isotretinoin gel (Isotrex)</p>\n<p>Pepto-Bismol (bismuth subsalicylate)</p>"
       },
       actions: {
         items: [
@@ -11440,12 +11121,7 @@ LS2 5ZN"
         text: "Opinion"
       },
       value: {
-        html: "<p class="nhsuk-u-margin-bottom-3">
-  <strong class="nhsuk-tag nhsuk-tag--red">
-  Recall for assessment
-</strong>
-
-</p>"
+        html: '<p class="nhsuk-u-margin-bottom-3">\n  <strong class="nhsuk-tag nhsuk-tag--red">\n  Recall for assessment\n</strong>\n\n</p>'
       },
       actions: {
         items: [
@@ -11462,28 +11138,7 @@ LS2 5ZN"
         text: "Detailed opinion"
       },
       value: {
-        html: "<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-one-half">
-    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
-      Right breast
-    </p>
-    <p class="nhsuk-u-margin-bottom-3">
-      <strong class="nhsuk-tag nhsuk-tag--red">
-  Abnormal
-</strong>
-
-    </p>
-  </div>
-
-  <div class="nhsuk-grid-column-one-half">
-    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
-      Left breast
-    </p>
-    <p class="nhsuk-u-margin-bottom-3 nhsuk-u-secondary-text-colour">
-      Not recorded
-    </p>
-  </div>
-</div>"
+        html: '<div class="nhsuk-grid-row">\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Right breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3">\n      <strong class="nhsuk-tag nhsuk-tag--red">\n  Abnormal\n</strong>\n\n    </p>\n  </div>\n\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Left breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3 nhsuk-u-secondary-text-colour">\n      Not recorded\n    </p>\n  </div>\n</div>'
       },
       actions: {
         items: [
@@ -11501,12 +11156,7 @@ LS2 5ZN"
         text: "Annotations"
       },
       value: {
-        html: "<p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">
-  Right breast
-</p>
-<p class="nhsuk-u-margin-bottom-0">
-  Microcalcification outside a mass, Clinical abnormality – Level 2 (benign)
-</p>"
+        html: '<p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n  Right breast\n</p>\n<p class="nhsuk-u-margin-bottom-0">\n  Microcalcification outside a mass, Clinical abnormality – Level 2 (benign)\n</p>'
       },
       actions: {
         items: [
@@ -12397,8 +12047,7 @@ LS2 5ZN"
       },
       {
         header: "Description",
-        html: "<strong>Required.</strong> The rows within the table component.
-<a href="#/macro-options">See macro options for rows</a>."
+        html: '<strong>Required.</strong> The rows within the table component.\n<a href="#/macro-options">See macro options for rows</a>.'
       }
     ],
     [
@@ -12412,8 +12061,7 @@ LS2 5ZN"
       },
       {
         header: "Description",
-        html: "Can be used to add a row of table header cells (<code>&lt;th&gt;</code>) at the top of the table component.
-<a href="#/macro-options">See macro options for head</a>."
+        html: 'Can be used to add a row of table header cells (<code>&lt;th&gt;</code>) at the top of the table component.\n<a href="#/macro-options">See macro options for head</a>.'
       }
     ],
     [
@@ -12483,7 +12131,7 @@ LS2 5ZN"
       },
       {
         header: "Description",
-        text: "	HTML attributes (for example data attributes) to add to the table container."
+        text: "\tHTML attributes (for example data attributes) to add to the table container."
       }
     ]
   ]
@@ -12507,7 +12155,7 @@ LS2 5ZN"
       text: "Status"
     },
     {
-      html: "<span class="nhsuk-u-visually-hidden">Actions</span>"
+      html: '<span class="nhsuk-u-visually-hidden">Actions</span>'
     }
   ],
   rows: [
@@ -12521,10 +12169,7 @@ LS2 5ZN"
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: "<strong class="nhsuk-tag nhsuk-tag--green">
-  Active
-</strong>
-"
+        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  Active\n</strong>\n'
       }
     ],
     [
@@ -12537,10 +12182,7 @@ LS2 5ZN"
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: "<strong class="nhsuk-tag nhsuk-tag--grey">
-  Inactive
-</strong>
-"
+        html: '<strong class="nhsuk-tag nhsuk-tag--grey">\n  Inactive\n</strong>\n'
       }
     ]
   ]
@@ -12803,240 +12445,28 @@ LS2 5ZN"
       label: "Past day",
       id: "past-day",
       panel: {
-        html: "<table class="nhsuk-table">
-  <caption class="nhsuk-table__caption">
-    Past day
-  </caption>
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
-        Case manager
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases opened
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases closed
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        David Francis
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        3
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        0
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Paul Farmer
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        0
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Rita Patel
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        2
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        0
-      </td>
-    </tr>
-  </tbody>
-</table>
-"
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past week",
       id: "past-week",
       panel: {
-        html: "<table class="nhsuk-table">
-  <caption class="nhsuk-table__caption">
-    Past week
-  </caption>
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
-        Case manager
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases opened
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases closed
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        David Francis
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        24
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        18
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Paul Farmer
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        16
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        20
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Rita Patel
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        24
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        27
-      </td>
-    </tr>
-  </tbody>
-</table>
-"
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past month",
       id: "past-month",
       panel: {
-        html: "<table class="nhsuk-table">
-  <caption class="nhsuk-table__caption">
-    Past month
-  </caption>
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
-        Case manager
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases opened
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases closed
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        David Francis
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        98
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        95
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Paul Farmer
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        122
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        131
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Rita Patel
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        126
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        142
-      </td>
-    </tr>
-  </tbody>
-</table>
-"
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past year",
       id: "past-year",
       panel: {
-        html: "<table class="nhsuk-table">
-  <caption class="nhsuk-table__caption">
-    Past year
-  </caption>
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
-        Case manager
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases opened
-      </th>
-      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
-        Cases closed
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        David Francis
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1380
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1472
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Paul Farmer
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1129
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1083
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <td class="nhsuk-table__cell">
-        Rita Patel
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1539
-      </td>
-      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
-        1265
-      </td>
-    </tr>
-  </tbody>
-</table>
-"
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -13052,29 +12482,21 @@ LS2 5ZN"
       label: "Tab 1",
       id: "tab-1",
       panel: {
-        html: "<h2>Tab 1 content</h2>
-<p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>
-<ul>
-  <li><a href="#tab-1" id="anchor">Tab panel 1</a></li>
-  <li><a href="#tab-2">Tab panel 2</a></li>
-  <li><a href="#tab-3">Tab panel 3</a></li>
-</ul>"
+        html: '<h2>Tab 1 content</h2>\n<p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>\n<ul>\n  <li><a href="#tab-1" id="anchor">Tab panel 1</a></li>\n  <li><a href="#tab-2">Tab panel 2</a></li>\n  <li><a href="#tab-3">Tab panel 3</a></li>\n</ul>'
       }
     },
     {
       label: "Tab 2",
       id: "tab-2",
       panel: {
-        html: "<h2>Tab 2 content</h2>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>"
+        html: "<h2>Tab 2 content</h2>\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>"
       }
     },
     {
       label: "Tab 3",
       id: "tab-3",
       panel: {
-        html: "<h2>Tab 3 content</h2>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
+        html: "<h2>Tab 3 content</h2>\n<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
       }
     }
   ]

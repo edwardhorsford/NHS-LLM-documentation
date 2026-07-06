@@ -4,260 +4,195 @@
 
 ## Metadata
 
-- NHS Frontend Version: 10.5.1
+- NHS Frontend Version: 10.5.2
 - Git Branch: detached
-- Git Commit: ddd8147
-- Generated: 2026-06-04 14:46:26 UTC
+- Git Commit: 67bf2f6
+- Generated: 2026-07-06 12:26:28 UTC
 - Source: https://github.com/nhsuk/nhsuk-frontend
 
 ## Table of Contents
 
 | Name | Type | Group | Line |
 |------|------|-------|------|
-| _map-sort-by-value | function | none | 205 |
-| _nhsuk-equilateral-height | function | tools | 262 |
-| _quick-sort | function | none | 302 |
-| _reverse-colour | function | none | 354 |
-| _should-warn | function | settings/warnings | 381 |
-| _warning-text | function | settings/warnings | 416 |
-| get-breakpoint-width | function | none | 452 |
-| nhsuk-chevron-size | function | tools | 501 |
-| nhsuk-colour | function | helpers/colour | 544 |
-| nhsuk-colour-compatible | function | helpers/colour | 593 |
-| nhsuk-em | function | tools | 663 |
-| nhsuk-font-url | function | tools | 724 |
-| nhsuk-grid-width | function | tools | 756 |
-| nhsuk-image-url | function | tools | 804 |
-| nhsuk-line-height | function | tools | 836 |
-| nhsuk-px-to-rem | function | tools | 895 |
-| nhsuk-shade | function | helpers/colour | 951 |
-| nhsuk-spacing | function | tools | 997 |
-| nhsuk-tint | function | helpers/colour | 1101 |
-| px2em | function | none | 1142 |
-| _header-link-style | mixin | components/header | 1191 |
-| _nhsuk-generate-responsive-spacing-overrides | mixin | utilities | 1244 |
-| _nhsuk-generate-static-spacing-overrides | mixin | utilities | 1303 |
-| _nhsuk-visually-hide-content | mixin | tools | 1353 |
-| add-breakpoint | mixin | none | 1423 |
-| care-card | mixin | tools | 1463 |
-| clearfix | mixin | tools | 1487 |
-| flex | mixin | tools | 1510 |
-| flex-item | mixin | tools | 1531 |
-| govuk-media-query | mixin | tools | 1552 |
-| heading-label | mixin | tools | 1577 |
-| mq | mixin | none | 1601 |
-| nhsuk-button-style | mixin | tools | 1721 |
-| nhsuk-care-card | mixin | tools | 1851 |
-| nhsuk-clearfix | mixin | tools | 1900 |
-| nhsuk-exports | mixin | tools | 1931 |
-| nhsuk-flex | mixin | tools | 1974 |
-| nhsuk-flex-item | mixin | tools | 2002 |
-| nhsuk-focused-box | mixin | tools | 2037 |
-| nhsuk-focused-button | mixin | tools | 2076 |
-| nhsuk-focused-checkbox | mixin | tools | 2122 |
-| nhsuk-focused-input | mixin | tools | 2166 |
-| nhsuk-focused-radio | mixin | tools | 2205 |
-| nhsuk-focused-text | mixin | tools | 2255 |
-| nhsuk-font | mixin | tools | 2305 |
-| nhsuk-font-dynamic-type | mixin | generic | 2359 |
-| nhsuk-font-size | mixin | tools | 2392 |
-| nhsuk-grid-column | mixin | tools | 2548 |
-| nhsuk-heading-label | mixin | tools | 2628 |
-| nhsuk-link-image | mixin | tools | 2703 |
-| nhsuk-link-style | mixin | tools | 2738 |
-| nhsuk-link-style-active | mixin | tools | 2787 |
-| nhsuk-link-style-default | mixin | tools | 2823 |
-| nhsuk-link-style-error | mixin | tools | 2858 |
-| nhsuk-link-style-focus | mixin | tools | 2901 |
-| nhsuk-link-style-hover | mixin | tools | 2939 |
-| nhsuk-link-style-no-underline | mixin | tools | 2976 |
-| nhsuk-link-style-no-visited-state | mixin | tools | 3014 |
-| nhsuk-link-style-reverse | mixin | tools | 3066 |
-| nhsuk-link-style-success | mixin | tools | 3119 |
-| nhsuk-link-style-text | mixin | tools | 3162 |
-| nhsuk-link-style-visited | mixin | tools | 3218 |
-| nhsuk-link-style-white | mixin | tools | 3254 |
-| nhsuk-logo-size | mixin | tools | 3280 |
-| nhsuk-media-query | mixin | tools | 3301 |
-| nhsuk-panel | mixin | tools | 3385 |
-| nhsuk-panel-with-label | mixin | tools | 3443 |
-| nhsuk-print-color | mixin | tools | 3490 |
-| nhsuk-print-colour | mixin | tools | 3514 |
-| nhsuk-print-hide | mixin | tools | 3557 |
-| nhsuk-reading-width | mixin | tools | 3600 |
-| nhsuk-remove-margin-mobile | mixin | tools | 3628 |
-| nhsuk-responsive-margin | mixin | tools | 3659 |
-| nhsuk-responsive-padding | mixin | tools | 3712 |
-| nhsuk-responsive-spacing | mixin | tools | 3764 |
-| nhsuk-shape-arrow | mixin | tools | 3883 |
-| nhsuk-shape-chevron | mixin | tools | 3962 |
-| nhsuk-text-break-word | mixin | tools | 4037 |
-| nhsuk-text-color | mixin | tools | 4079 |
-| nhsuk-text-colour | mixin | tools | 4102 |
-| nhsuk-top-and-bottom | mixin | tools | 4139 |
-| nhsuk-typography-responsive | mixin | tools | 4174 |
-| nhsuk-typography-weight-bold | mixin | tools | 4216 |
-| nhsuk-typography-weight-normal | mixin | tools | 4252 |
-| nhsuk-visually-hidden | mixin | tools | 4288 |
-| nhsuk-visually-hidden-focusable | mixin | tools | 4337 |
-| nhsuk-warning | mixin | settings/warnings | 4380 |
-| nhsuk-width-container | mixin | objects/layout | 4458 |
-| panel | mixin | tools | 4550 |
-| panel-with-label | mixin | tools | 4573 |
-| print-color | mixin | tools | 4597 |
-| print-hide | mixin | tools | 4621 |
-| reading-width | mixin | tools | 4644 |
-| remove-margin-mobile | mixin | tools | 4668 |
-| show-breakpoints | mixin | none | 4697 |
-| top-and-bottom | mixin | tools | 4763 |
-| visually-hidden | mixin | tools | 4787 |
-| visually-hidden-focusable | mixin | tools | 4809 |
-| visually-shown | mixin | tools | 4837 |
-| _icon-sizes | variable | styles | 4904 |
-| _spacing-directions | variable | utilities | 4921 |
-| imported-modules | variable | tools | 4947 |
-| mq-breakpoints | variable | none | 4970 |
-| mq-media-type | variable | none | 5007 |
-| mq-show-breakpoints | variable | none | 5041 |
-| nhsuk-assets-path | variable | settings/globals | 5072 |
-| nhsuk-body-background-colour | variable | settings/colours | 5089 |
-| nhsuk-border-colour | variable | settings/colours | 5106 |
-| nhsuk-border-hover-colour | variable | settings/colours | 5125 |
-| nhsuk-border-width | variable | settings/globals | 5142 |
-| nhsuk-border-width-form-element | variable | settings/globals | 5159 |
-| nhsuk-border-width-form-group-error | variable | settings/globals | 5182 |
-| nhsuk-brand-colour | variable | settings/colours | 5199 |
-| nhsuk-breakpoints | variable | settings/layout | 5216 |
-| nhsuk-button-active-colour | variable | settings/colours | 5238 |
-| nhsuk-button-border-radius | variable | settings/globals | 5255 |
-| nhsuk-button-colour | variable | settings/colours | 5276 |
-| nhsuk-button-hover-colour | variable | settings/colours | 5293 |
-| nhsuk-button-shadow-colour | variable | settings/colours | 5310 |
-| nhsuk-button-shadow-size | variable | settings/globals | 5327 |
-| nhsuk-button-text-colour | variable | settings/colours | 5349 |
-| nhsuk-card-background-colour | variable | settings/colours | 5366 |
-| nhsuk-code-colour | variable | settings/colours | 5383 |
-| nhsuk-code-font | variable | settings/typography | 5400 |
-| nhsuk-colours | variable | settings/colours | 5425 |
-| nhsuk-error-colour | variable | settings/colours | 5472 |
-| nhsuk-focus-colour | variable | settings/colours | 5498 |
-| nhsuk-focus-text-colour | variable | settings/colours | 5528 |
-| nhsuk-focus-width | variable | settings/globals | 5563 |
-| nhsuk-font-family | variable | settings/globals | 5596 |
-| nhsuk-font-family-print | variable | settings/globals | 5613 |
-| nhsuk-font-weight-bold | variable | settings/globals | 5633 |
-| nhsuk-font-weight-normal | variable | settings/globals | 5655 |
-| nhsuk-fonts-path | variable | settings/globals | 5677 |
-| nhsuk-grid-widths | variable | settings/globals | 5698 |
-| nhsuk-gutter | variable | settings/globals | 5727 |
-| nhsuk-gutter-half | variable | settings/globals | 5752 |
-| nhsuk-hover-colour | variable | settings/colours | 5783 |
-| nhsuk-hover-width | variable | settings/globals | 5802 |
-| nhsuk-images-path | variable | settings/globals | 5819 |
-| nhsuk-include-default-font-face | variable | settings/globals | 5840 |
-| nhsuk-include-dynamic-type | variable | settings/globals | 5860 |
-| nhsuk-input-background-colour | variable | settings/colours | 5888 |
-| nhsuk-input-border-colour | variable | settings/colours | 5905 |
-| nhsuk-link-active-colour | variable | settings/colours | 5924 |
-| nhsuk-link-colour | variable | settings/colours | 5945 |
-| nhsuk-link-hover-colour | variable | settings/colours | 5967 |
-| nhsuk-link-visited-colour | variable | settings/colours | 5988 |
-| nhsuk-login-button-active-colour | variable | settings/colours | 6005 |
-| nhsuk-login-button-colour | variable | settings/colours | 6022 |
-| nhsuk-login-button-hover-colour | variable | settings/colours | 6039 |
-| nhsuk-login-button-shadow-colour | variable | settings/colours | 6056 |
-| nhsuk-page-width | variable | settings/globals | 6073 |
-| nhsuk-panel-border-width | variable | components/panel | 6090 |
-| nhsuk-print-text-colour | variable | settings/colours | 6114 |
-| nhsuk-reverse-border-colour | variable | settings/colours | 6139 |
-| nhsuk-reverse-button-active-colour | variable | settings/colours | 6156 |
-| nhsuk-reverse-button-colour | variable | settings/colours | 6173 |
-| nhsuk-reverse-button-hover-colour | variable | settings/colours | 6190 |
-| nhsuk-reverse-button-shadow-colour | variable | settings/colours | 6207 |
-| nhsuk-reverse-button-text-colour | variable | settings/colours | 6224 |
-| nhsuk-reverse-text-colour | variable | settings/colours | 6241 |
-| nhsuk-root-font-size | variable | settings/globals | 6263 |
-| nhsuk-secondary-border-colour | variable | settings/colours | 6295 |
-| nhsuk-secondary-button-active-colour | variable | settings/colours | 6312 |
-| nhsuk-secondary-button-border-colour | variable | settings/colours | 6329 |
-| nhsuk-secondary-button-colour | variable | settings/colours | 6346 |
-| nhsuk-secondary-button-hover-colour | variable | settings/colours | 6363 |
-| nhsuk-secondary-button-shadow-colour | variable | settings/colours | 6380 |
-| nhsuk-secondary-button-solid-background-colour | variable | settings/colours | 6397 |
-| nhsuk-secondary-button-text-colour | variable | settings/colours | 6414 |
-| nhsuk-secondary-text-colour | variable | settings/colours | 6431 |
-| nhsuk-show-breakpoints | variable | settings/layout | 6450 |
-| nhsuk-spacing-points | variable | settings/spacing | 6469 |
-| nhsuk-spacing-responsive-scale | variable | settings/spacing | 6507 |
-| nhsuk-success-colour | variable | settings/colours | 6585 |
-| nhsuk-suppressed-warnings | variable | settings/warnings | 6611 |
-| nhsuk-template-background-colour | variable | settings/colours | 6659 |
-| nhsuk-text-colour | variable | settings/colours | 6679 |
-| nhsuk-typography-scale | variable | settings/typography | 6700 |
-| nhsuk-warning-button-active-colour | variable | settings/colours | 6853 |
-| nhsuk-warning-button-colour | variable | settings/colours | 6870 |
-| nhsuk-warning-button-hover-colour | variable | settings/colours | 6887 |
-| nhsuk-warning-button-shadow-colour | variable | settings/colours | 6904 |
+| _nhsuk-equilateral-height | function | tools | 197 |
+| _reverse-colour | function | none | 229 |
+| _should-warn | function | settings/warnings | 250 |
+| _warning-text | function | settings/warnings | 279 |
+| nhsuk-chevron-size | function | tools | 309 |
+| nhsuk-colour | function | helpers/colour | 335 |
+| nhsuk-colour-compatible | function | helpers/colour | 370 |
+| nhsuk-em | function | tools | 405 |
+| nhsuk-font-url | function | tools | 446 |
+| nhsuk-grid-width | function | tools | 472 |
+| nhsuk-image-url | function | tools | 510 |
+| nhsuk-line-height | function | tools | 536 |
+| nhsuk-px-to-rem | function | tools | 571 |
+| nhsuk-shade | function | helpers/colour | 612 |
+| nhsuk-spacing | function | tools | 649 |
+| nhsuk-tint | function | helpers/colour | 716 |
+| _header-link-style | mixin | components/header | 751 |
+| _nhsuk-generate-responsive-spacing-overrides | mixin | utilities | 780 |
+| _nhsuk-generate-static-spacing-overrides | mixin | utilities | 820 |
+| _nhsuk-visually-hide-content | mixin | tools | 854 |
+| care-card (deprecated) | mixin | tools | 882 |
+| clearfix (deprecated) | mixin | tools | 901 |
+| flex (deprecated) | mixin | tools | 919 |
+| flex-item (deprecated) | mixin | tools | 935 |
+| heading-label (deprecated) | mixin | tools | 951 |
+| nhsuk-button-style | mixin | tools | 970 |
+| nhsuk-care-card | mixin | tools | 1000 |
+| nhsuk-clearfix | mixin | tools | 1034 |
+| nhsuk-exports | mixin | tools | 1055 |
+| nhsuk-flex | mixin | tools | 1084 |
+| nhsuk-flex-item | mixin | tools | 1105 |
+| nhsuk-focused-box | mixin | tools | 1130 |
+| nhsuk-focused-button | mixin | tools | 1160 |
+| nhsuk-focused-checkbox | mixin | tools | 1184 |
+| nhsuk-focused-input | mixin | tools | 1208 |
+| nhsuk-focused-radio | mixin | tools | 1234 |
+| nhsuk-focused-text | mixin | tools | 1264 |
+| nhsuk-font | mixin | tools | 1292 |
+| nhsuk-font-code | mixin | tools | 1330 |
+| nhsuk-font-dynamic-type | mixin | generic | 1354 |
+| nhsuk-font-monospace | mixin | tools | 1372 |
+| nhsuk-font-size | mixin | tools | 1398 |
+| nhsuk-font-weight-bold | mixin | tools | 1465 |
+| nhsuk-font-weight-normal | mixin | tools | 1492 |
+| nhsuk-grid-column | mixin | tools | 1519 |
+| nhsuk-heading-label | mixin | tools | 1582 |
+| nhsuk-link-image | mixin | tools | 1624 |
+| nhsuk-link-style | mixin | tools | 1642 |
+| nhsuk-link-style-active | mixin | tools | 1677 |
+| nhsuk-link-style-default | mixin | tools | 1705 |
+| nhsuk-link-style-error | mixin | tools | 1730 |
+| nhsuk-link-style-focus | mixin | tools | 1762 |
+| nhsuk-link-style-hover | mixin | tools | 1788 |
+| nhsuk-link-style-no-underline | mixin | tools | 1816 |
+| nhsuk-link-style-no-visited-state | mixin | tools | 1839 |
+| nhsuk-link-style-reverse | mixin | tools | 1876 |
+| nhsuk-link-style-success | mixin | tools | 1911 |
+| nhsuk-link-style-text | mixin | tools | 1943 |
+| nhsuk-link-style-visited | mixin | tools | 1979 |
+| nhsuk-link-style-white (deprecated) | mixin | tools | 2007 |
+| nhsuk-logo-size | mixin | tools | 2025 |
+| nhsuk-panel | mixin | tools | 2039 |
+| nhsuk-panel-with-label | mixin | tools | 2078 |
+| nhsuk-print-color (deprecated) | mixin | tools | 2114 |
+| nhsuk-print-colour | mixin | tools | 2133 |
+| nhsuk-print-hide | mixin | tools | 2167 |
+| nhsuk-reading-width | mixin | tools | 2198 |
+| nhsuk-remove-margin-mobile | mixin | tools | 2220 |
+| nhsuk-responsive-margin | mixin | tools | 2242 |
+| nhsuk-responsive-padding | mixin | tools | 2289 |
+| nhsuk-responsive-spacing | mixin | tools | 2335 |
+| nhsuk-shape-arrow | mixin | tools | 2398 |
+| nhsuk-shape-chevron | mixin | tools | 2440 |
+| nhsuk-text-break-word | mixin | tools | 2471 |
+| nhsuk-text-color (deprecated) | mixin | tools | 2492 |
+| nhsuk-text-colour | mixin | tools | 2510 |
+| nhsuk-top-and-bottom | mixin | tools | 2537 |
+| nhsuk-typography-responsive (deprecated) | mixin | tools | 2560 |
+| nhsuk-typography-weight-bold (deprecated) | mixin | tools | 2594 |
+| nhsuk-typography-weight-normal (deprecated) | mixin | tools | 2612 |
+| nhsuk-visually-hidden | mixin | tools | 2630 |
+| nhsuk-visually-hidden-focusable | mixin | tools | 2661 |
+| nhsuk-warning | mixin | settings/warnings | 2692 |
+| nhsuk-width-container | mixin | objects/layout | 2760 |
+| panel (deprecated) | mixin | tools | 2799 |
+| panel-with-label (deprecated) | mixin | tools | 2817 |
+| print-color (deprecated) | mixin | tools | 2836 |
+| print-hide (deprecated) | mixin | tools | 2855 |
+| reading-width (deprecated) | mixin | tools | 2873 |
+| remove-margin-mobile (deprecated) | mixin | tools | 2892 |
+| top-and-bottom (deprecated) | mixin | tools | 2912 |
+| visually-hidden (deprecated) | mixin | tools | 2931 |
+| visually-hidden-focusable (deprecated) | mixin | tools | 2949 |
+| visually-shown (deprecated) | mixin | tools | 2969 |
+| _icon-sizes | variable | styles | 2996 |
+| _spacing-directions | variable | utilities | 3013 |
+| imported-modules | variable | tools | 3039 |
+| nhsuk-assets-path | variable | settings/globals | 3060 |
+| nhsuk-body-background-colour | variable | settings/colours | 3077 |
+| nhsuk-border-colour | variable | settings/colours | 3094 |
+| nhsuk-border-hover-colour (deprecated) | variable | settings/colours | 3113 |
+| nhsuk-border-width | variable | settings/globals | 3131 |
+| nhsuk-border-width-form-element | variable | settings/globals | 3148 |
+| nhsuk-border-width-form-group-error | variable | settings/globals | 3170 |
+| nhsuk-brand-colour | variable | settings/colours | 3187 |
+| nhsuk-breakpoints | variable | settings/layout | 3204 |
+| nhsuk-button-active-colour | variable | settings/colours | 3226 |
+| nhsuk-button-border-radius | variable | settings/globals | 3243 |
+| nhsuk-button-colour | variable | settings/colours | 3264 |
+| nhsuk-button-hover-colour | variable | settings/colours | 3281 |
+| nhsuk-button-shadow-colour | variable | settings/colours | 3298 |
+| nhsuk-button-shadow-size | variable | settings/globals | 3315 |
+| nhsuk-button-text-colour | variable | settings/colours | 3336 |
+| nhsuk-card-background-colour | variable | settings/colours | 3353 |
+| nhsuk-code-colour | variable | settings/colours | 3370 |
+| nhsuk-code-font | variable | settings/typography | 3387 |
+| nhsuk-colours | variable | settings/colours | 3416 |
+| nhsuk-error-colour | variable | settings/colours | 3462 |
+| nhsuk-focus-colour | variable | settings/colours | 3485 |
+| nhsuk-focus-text-colour | variable | settings/colours | 3514 |
+| nhsuk-focus-width | variable | settings/globals | 3544 |
+| nhsuk-font-family | variable | settings/globals | 3571 |
+| nhsuk-font-family-print | variable | settings/globals | 3588 |
+| nhsuk-font-weight-bold | variable | settings/globals | 3608 |
+| nhsuk-font-weight-normal | variable | settings/globals | 3629 |
+| nhsuk-fonts-path | variable | settings/globals | 3650 |
+| nhsuk-grid-widths | variable | settings/globals | 3671 |
+| nhsuk-gutter | variable | settings/globals | 3699 |
+| nhsuk-gutter-half | variable | settings/globals | 3720 |
+| nhsuk-hover-colour | variable | settings/colours | 3743 |
+| nhsuk-hover-width | variable | settings/globals | 3762 |
+| nhsuk-images-path | variable | settings/globals | 3779 |
+| nhsuk-include-default-font-face | variable | settings/globals | 3800 |
+| nhsuk-include-dynamic-type | variable | settings/globals | 3820 |
+| nhsuk-input-background-colour | variable | settings/colours | 3848 |
+| nhsuk-input-border-colour | variable | settings/colours | 3865 |
+| nhsuk-link-active-colour | variable | settings/colours | 3884 |
+| nhsuk-link-colour | variable | settings/colours | 3905 |
+| nhsuk-link-hover-colour | variable | settings/colours | 3926 |
+| nhsuk-link-visited-colour | variable | settings/colours | 3947 |
+| nhsuk-login-button-active-colour | variable | settings/colours | 3964 |
+| nhsuk-login-button-colour | variable | settings/colours | 3981 |
+| nhsuk-login-button-hover-colour | variable | settings/colours | 3998 |
+| nhsuk-login-button-shadow-colour | variable | settings/colours | 4015 |
+| nhsuk-page-width | variable | settings/globals | 4032 |
+| nhsuk-panel-border-width | variable | components/panel | 4049 |
+| nhsuk-print-text-colour | variable | settings/colours | 4073 |
+| nhsuk-reverse-border-colour | variable | settings/colours | 4098 |
+| nhsuk-reverse-button-active-colour | variable | settings/colours | 4115 |
+| nhsuk-reverse-button-colour | variable | settings/colours | 4132 |
+| nhsuk-reverse-button-hover-colour | variable | settings/colours | 4149 |
+| nhsuk-reverse-button-shadow-colour | variable | settings/colours | 4166 |
+| nhsuk-reverse-button-text-colour | variable | settings/colours | 4183 |
+| nhsuk-reverse-text-colour | variable | settings/colours | 4200 |
+| nhsuk-root-font-size | variable | settings/globals | 4221 |
+| nhsuk-secondary-border-colour (deprecated) | variable | settings/colours | 4252 |
+| nhsuk-secondary-button-active-colour | variable | settings/colours | 4270 |
+| nhsuk-secondary-button-border-colour | variable | settings/colours | 4287 |
+| nhsuk-secondary-button-colour | variable | settings/colours | 4304 |
+| nhsuk-secondary-button-hover-colour | variable | settings/colours | 4321 |
+| nhsuk-secondary-button-shadow-colour | variable | settings/colours | 4338 |
+| nhsuk-secondary-button-solid-background-colour | variable | settings/colours | 4355 |
+| nhsuk-secondary-button-text-colour | variable | settings/colours | 4372 |
+| nhsuk-secondary-text-colour | variable | settings/colours | 4389 |
+| nhsuk-show-breakpoints | variable | settings/layout | 4408 |
+| nhsuk-spacing-points | variable | settings/spacing | 4427 |
+| nhsuk-spacing-responsive-scale | variable | settings/spacing | 4464 |
+| nhsuk-success-colour | variable | settings/colours | 4541 |
+| nhsuk-suppressed-warnings | variable | settings/warnings | 4564 |
+| nhsuk-template-background-colour | variable | settings/colours | 4611 |
+| nhsuk-text-colour | variable | settings/colours | 4631 |
+| nhsuk-typography-scale | variable | settings/typography | 4652 |
+| nhsuk-warning-button-active-colour | variable | settings/colours | 4803 |
+| nhsuk-warning-button-colour | variable | settings/colours | 4820 |
+| nhsuk-warning-button-hover-colour | variable | settings/colours | 4837 |
+| nhsuk-warning-button-shadow-colour | variable | settings/colours | 4854 |
 
 
 ## Functions
-
-### _map-sort-by-value
-
-- Type: function
-- Access: private
-- Group: none
-- File: core/vendor/sass-mq.scss (L232-L255)
-
-Sort a map by values (works with numbers only)
-
-#### Implementation
-
-```scss
-$map-sorted: ();
-  $map-keys: map.keys($map);
-  $map-values: map.values($map);
-  $map-values-sorted: _quick-sort($map-values);
-
-  // Reorder key/value pairs based on key values
-  @each $value in $map-values-sorted {
-    $index: index($map-values, $value);
-    $key: list.nth($map-keys, $index);
-    $map-sorted: map.merge(
-      $map-sorted,
-      (
-        $key: $value
-      )
-    );
-
-    // Unset the value in $map-values to prevent the loop
-    // from finding the same index twice
-    $map-values: list.set-nth($map-values, $index, 0);
-  }
-
-  @return $map-sorted;
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| map | Map | No | - | Map to sort |
-
-#### Returns
-
-- Type: Map
-- Description: Map sorted by value
-
-#### Requires
-
-- function: _quick-sort
-
-#### Used By
-
-- mixin: add-breakpoint
-
----
 
 ### _nhsuk-equilateral-height
 
@@ -269,14 +204,6 @@ $map-sorted: ();
 Calculate the height of an equilateral triangle
 Multiplying half the length of the base of an equilateral triangle by the
 square root of three gives us its height. We use 1.732 as an approximation.
-
-#### Implementation
-
-```scss
-$square-root-of-three: 1.732;
-
-  @return math.div($base, 2) * $square-root-of-three;
-```
 
 #### Parameters
 
@@ -299,72 +226,14 @@ $square-root-of-three: 1.732;
 
 ---
 
-### _quick-sort
-
-- Type: function
-- Access: private
-- Group: none
-- File: core/vendor/sass-mq.scss (L203-L225)
-
-Quick sort
-
-#### Implementation
-
-```scss
-$less: ();
-  $equal: ();
-  $large: ();
-
-  @if length($list) > 1 {
-    $seed: list.nth($list, math.ceil(math.div(length($list), 2)));
-
-    @each $item in $list {
-      @if ($item == $seed) {
-        $equal: list.append($equal, $item);
-      } @else if ($item < $seed) {
-        $less: list.append($less, $item);
-      } @else if ($item > $seed) {
-        $large: list.append($large, $item);
-      }
-    }
-
-    @return join(join(_quick-sort($less), $equal), _quick-sort($large));
-  }
-
-  @return $list;
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| list | List | No | - | List to sort |
-
-#### Returns
-
-- Type: List
-- Description: Sorted List
-
-#### Used By
-
-- function: _map-sort-by-value
-
----
-
 ### _reverse-colour
 
 - Type: function
 - Access: private
 - Group: none
-- File: lib/highlighter/styles/index.scss (L24-L26)
+- File: lib/highlighter/styles/index.scss (L25-L27)
 
 Lighten colour for reverse backgrounds
-
-#### Implementation
-
-```scss
-@return nhsuk-colour-compatible(color.scale($code-colour, $lightness: 80%));
-```
 
 #### Parameters
 
@@ -386,12 +255,6 @@ Lighten colour for reverse backgrounds
 - File: core/settings/_warnings.scss (L71-L73)
 
 Check whether a key is present in the suppressed warnings list.
-
-#### Implementation
-
-```scss
-@return list.index($nhsuk-suppressed-warnings, $key) == null;
-```
 
 #### Parameters
 
@@ -422,12 +285,6 @@ Check whether a key is present in the suppressed warnings list.
 
 Format a warning by appending information on how to suppress it.
 
-#### Implementation
-
-```scss
-@return $message + " To silence this warning, update $nhsuk-suppressed-warnings " + 'with key: "#{$key}"';
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -449,55 +306,6 @@ Format a warning by appending information on how to suppress it.
 
 ---
 
-### get-breakpoint-width
-
-- Type: function
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L84-L91)
-
-Get a breakpoint's width
-
-#### Implementation
-
-```scss
-@if map.has-key($breakpoints, $name) {
-    @return map.get($breakpoints, $name);
-  } @else {
-    @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
-    @return null;
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| name | String | No | - | Name of the breakpoint. One of $mq-breakpoints |
-
-#### Returns
-
-- Type: Number
-- Description: Value in pixels
-
-#### Requires
-
-- variable: mq-breakpoints
-
-#### Used By
-
-- mixin: mq
-- mixin: show-breakpoints
-
-#### Examples
-
-```scss
-$tablet-width: get-breakpoint-width(tablet);
-@media (min-width: get-breakpoint-width(tablet)) {}
-```
-
----
-
 ### nhsuk-chevron-size
 
 - Type: function
@@ -506,23 +314,6 @@ $tablet-width: get-breakpoint-width(tablet);
 - File: core/tools/_functions.scss (L66-L79)
 
 Get the size (△↕) of chevron, from base to tip, given a certain font size
-
-#### Implementation
-
-```scss
-@if math.is-unitless($font-size) {
-    $font-size: $font-size * 1px;
-  }
-
-  // Get unitless chevron border width
-  $border: math.div($nhsuk-chevron-border, 1px);
-
-  // Get unitless length of one side of the chevron, minus the border
-  $box-size: math.div($font-size, 2px) - $border;
-
-  // Calculate width (△↕) of the chevron, from base to tip
-  @return math.sqrt(math.pow($box-size, 2) + math.pow($box-size, 2)) * 0.5;
-```
 
 #### Parameters
 
@@ -549,20 +340,6 @@ Get the size (△↕) of chevron, from base to tip, given a certain font size
 - File: core/helpers/_colour.scss (L21-L31)
 
 Get colour
-
-#### Implementation
-
-```scss
-@if meta.type-of($colour) == "color" {
-    $colour: string.quote("#{$colour}");
-  }
-
-  @if not map.has-key($nhsuk-colours, $colour) {
-    @error "Unknown colour `#{$colour}`";
-  }
-
-  @return map.get($nhsuk-colours, $colour);
-```
 
 #### Parameters
 
@@ -602,41 +379,6 @@ into hexadecimal notation where possible (e.g. no alpha transparency)
 
 This ensures the colour is rendered properly by Safari < 12
 
-#### Implementation
-
-```scss
-@if meta.type-of($colour) == "string" {
-    $colour: nhsuk-colour($colour);
-  }
-
-  $alpha: color.alpha($colour);
-  $parts: ();
-
-  // Maintain compatibility with Sass < v1.79.0 where colour space functions
-  // are unavailable and RGB channels are automatically rounded to integers
-  // https://github.com/sass/dart-sass/blob/1.79.0/CHANGELOG.md
-  @if not meta.function-exists("channel", "color") {
-    $parts: (
-      "red": color.red($colour),
-      "green": color.green($colour),
-      "blue": color.blue($colour),
-      "alpha": $alpha
-    );
-  } @else {
-    $colour: color.to-space($colour, rgb);
-    $alpha: color.channel($colour, "alpha");
-
-    $parts: (
-      "red": math.round(color.channel($colour, "red")),
-      "green": math.round(color.channel($colour, "green")),
-      "blue": math.round(color.channel($colour, "blue")),
-      "alpha": $alpha
-    );
-  }
-
-  @return color.change($colour, $parts...);
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -669,24 +411,6 @@ This ensures the colour is rendered properly by Safari < 12
 
 Convert pixels to em
 
-#### Implementation
-
-```scss
-@if math.is-unitless($value) {
-    $value: $value * 1px;
-  }
-
-  @if math.is-unitless($context-font-size) {
-    $context-font-size: $context-font-size * 1px;
-  }
-
-  @if math.compatible($value, 1rem) {
-    $value: math.div($value, 1rem) * $nhsuk-root-font-size;
-  }
-
-  @return math.div($value, $context-font-size) * 1em;
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -710,8 +434,6 @@ Convert pixels to em
 #### Used By
 
 - mixin: nhsuk-shape-chevron
-- mixin: nhsuk-shape-chevron
-- mixin: nhsuk-shape-chevron
 
 #### Examples
 
@@ -729,12 +451,6 @@ nhsuk-em(20px, $nhsuk-root-font-size);
 - File: core/tools/_font-url.scss (L12-L14)
 
 Font URL
-
-#### Implementation
-
-```scss
-@return url($nhsuk-fonts-path + $filename);
-```
 
 #### Parameters
 
@@ -761,16 +477,6 @@ Font URL
 - File: core/tools/_grid.scss (L20-L26)
 
 Grid width percentage
-
-#### Implementation
-
-```scss
-@if map.has-key($nhsuk-grid-widths, $key) {
-    @return map.get($nhsuk-grid-widths, $key);
-  }
-
-  @error "Unknown grid width `#{$key}`";
-```
 
 #### Parameters
 
@@ -810,12 +516,6 @@ Grid width percentage
 
 Font URL
 
-#### Implementation
-
-```scss
-@return url($nhsuk-images-path + $filename);
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -838,37 +538,13 @@ Font URL
 - Type: function
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L107-L127)
+- File: core/tools/_typography.scss (L162-L182)
 
 Line height
 
 Convert line-heights specified in pixels into a relative value, unless
 they are already unit-less (and thus already treated as relative values),
 in rems, or the units do not match the units used for the font size.
-
-#### Implementation
-
-```scss
-@if not math.is-unitless($line-height) {
-    @if math.compatible($line-height, 1rem) and math.compatible($font-size, 1px) {
-      $line-height: math.div($line-height, 1rem) * $nhsuk-root-font-size;
-
-      @if math.is-unitless($font-size) {
-        $font-size: $font-size * 1px;
-      }
-    }
-
-    @if math.compatible($line-height, 1px) and math.compatible($font-size, 1rem) {
-      $font-size: math.div($font-size, 1rem) * $nhsuk-root-font-size;
-    }
-
-    @if math.unit($line-height) == math.unit($font-size) {
-      $line-height: math.div($line-height, $font-size);
-    }
-  }
-
-  @return $line-height;
-```
 
 #### Parameters
 
@@ -904,20 +580,6 @@ Convert pixels to rem
 The $nhsuk-root-font-size (defined in settings/_globals.scss)
 must be configured to match the font-size of your root (html) element
 
-#### Implementation
-
-```scss
-@if math.is-unitless($value) {
-    $value: $value * 1px;
-  }
-
-  @if math.compatible($value, 1rem) {
-    @return $value;
-  }
-
-  @return math.div($value, $nhsuk-root-font-size) * 1rem;
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -935,7 +597,6 @@ must be configured to match the font-size of your root (html) element
 
 #### Used By
 
-- mixin: nhsuk-button-style
 - mixin: nhsuk-button-style
 - mixin: nhsuk-shape-arrow
 - mixin: nhsuk-font-size
@@ -957,14 +618,6 @@ nhsuk-px-to-rem(20px);
 
 Make a colour darker by mixing it with black
 
-#### Implementation
-
-```scss
-// Ensure the output is a hex string so that Safari <12 can render the colour
-  // without issues from float values in `rgb()`
-  @return nhsuk-colour-compatible(color.mix(black, $colour, $percentage));
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -982,7 +635,6 @@ Make a colour darker by mixing it with black
 
 #### Used By
 
-- mixin: nhsuk-link-style-success
 - mixin: nhsuk-link-style-success
 
 #### Examples
@@ -1004,34 +656,6 @@ nhsuk-shade(nhsuk-colour("blue"), 50%);
 Single point spacing
 
 Returns measurement corresponding to the spacing point requested.
-
-#### Implementation
-
-```scss
-$actual-input-type: meta.type-of($spacing-point);
-  @if $actual-input-type != "number" {
-    @error "Expected a number (integer), but got a "
-      + "#{$actual-input-type}.";
-  }
-
-  $is-negative: false;
-  @if $spacing-point < 0 {
-    $is-negative: true;
-    $spacing-point: math.abs($spacing-point);
-  }
-
-  @if not map.has-key($nhsuk-spacing-points, $spacing-point) {
-    @error "Unknown spacing variable `#{$spacing-point}`. Make sure you are using a point from the spacing scale in `_settings/spacing.scss`.";
-  }
-
-  $value: map.get($nhsuk-spacing-points, $spacing-point);
-
-  @if $is-negative {
-    @return $value * -1;
-  }
-
-  @return $value;
-```
 
 #### Parameters
 
@@ -1061,15 +685,6 @@ $actual-input-type: meta.type-of($spacing-point);
 #### Used By
 
 - mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-heading-label
-- mixin: _nhsuk-generate-static-spacing-overrides
 - mixin: _nhsuk-generate-static-spacing-overrides
 
 #### Examples
@@ -1107,14 +722,6 @@ Marking spacing declarations as important
 
 Make a colour lighter by mixing it with white
 
-#### Implementation
-
-```scss
-// Ensure the output is a hex string so that Safari <12 can render the colour
-  // without issues from float values in `rgb()`
-  @return nhsuk-colour-compatible(color.mix(white, $colour, $percentage));
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -1139,53 +746,6 @@ nhsuk-tint(nhsuk-colour("blue"), 10%);
 
 ---
 
-### px2em
-
-- Type: function
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L61-L71)
-
-Convert pixels to ems
-
-#### Implementation
-
-```scss
-@if math.is-unitless($px) {
-    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
-    @return px2em($px * 1px);
-  }
-  // if $px is compatible with em units, then return value unchanged
-  @if math.compatible($px, 1em) {
-    @return $px;
-  }
-  @return math.div($px, 16px) * 1em;
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| px | Number | No | - | value to convert |
-
-#### Returns
-
-- Number
-
-#### Used By
-
-- mixin: mq
-- mixin: show-breakpoints
-
-#### Examples
-
-```scss
-$font-size-in-ems: px2em(16px);
-p { font-size: px2em(16px); }
-```
-
----
-
 ## Mixins
 
 ### _header-link-style
@@ -1196,30 +756,6 @@ p { font-size: px2em(16px); }
 - File: components/header/_index.scss (L45-L69)
 
 Header link styling
-
-#### Implementation
-
-```scss
-& {
-    color: $link-colour;
-  }
-
-  @include nhsuk-link-style-visited($link-colour);
-  @include nhsuk-link-style-hover($link-hover-colour);
-  @include nhsuk-link-style-active($link-active-colour);
-  @include nhsuk-link-style-focus;
-
-  &:focus {
-    color: $nhsuk-focus-text-colour;
-    box-shadow: inset 0 ($nhsuk-focus-width * -1) $nhsuk-focus-text-colour;
-  }
-
-  @include nhsuk-print-colour($print-colour: inherit) {
-    &::after {
-      content: "";
-    }
-  }
-```
 
 #### Parameters
 
@@ -1252,25 +788,6 @@ Generate responsive spacing override classes
 
 Generate spacing override classes for the given property (e.g. margin)
 for each point in the responsive spacing scale.
-
-#### Implementation
-
-```scss
-// For each point in the spacing scale (defined in settings), create an
-  // override that affects all directions...
-  @each $scale-point, $scale-map in $nhsuk-spacing-responsive-scale {
-    .nhsuk-u-#{$property}-#{$scale-point} {
-      @include nhsuk-responsive-spacing($scale-point, $property, "all", true);
-    }
-
-    // ... and then an override for each individual direction
-    @each $direction in $_spacing-directions {
-      .nhsuk-u-#{$property}-#{$direction}-#{$scale-point} {
-        @include nhsuk-responsive-spacing($scale-point, $property, $direction, true);
-      }
-    }
-  }
-```
 
 #### Parameters
 
@@ -1312,22 +829,6 @@ Generate static spacing override classes
 Generate spacing override classes for the given property (e.g. margin)
 for each point in the non-responsive spacing scale.
 
-#### Implementation
-
-```scss
-@each $spacing-point in map.keys($nhsuk-spacing-points) {
-    .nhsuk-u-static-#{$property}-#{$spacing-point} {
-      #{$property}: nhsuk-spacing($spacing-point) !important;
-    }
-
-    @each $direction in $_spacing-directions {
-      .nhsuk-u-static-#{$property}-#{$direction}-#{$spacing-point} {
-        #{$property}-#{$direction}: nhsuk-spacing($spacing-point) !important;
-      }
-    }
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -1359,48 +860,6 @@ for each point in the non-responsive spacing scale.
 
 Helper function containing the common code for the following two mixins
 
-#### Implementation
-
-```scss
-$properties: (
-    "position": absolute,
-
-    "width": 1px,
-    "height": 1px,
-
-    // If margin is set to a negative value it can cause text to be announced in
-    // the wrong order in VoiceOver for OSX
-    "margin": 0,
-    "padding": 0,
-
-    "overflow": hidden,
-
-    // `clip` is needed for IE11 support
-    "clip": rect(0 0 0 0),
-    "clip-path": inset(50%),
-    "border": 0,
-
-    // For long content, line feeds are not interpreted as spaces and small width
-    // causes content to wrap 1 word per line:
-    // https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-    "white-space": nowrap
-  );
-
-  // Workaround to avoid deprecated `if()` function
-  @each $property, $value in $properties {
-    @if $important == true {
-      #{$property}: $value !important;
-    } @else {
-      #{$property}: $value;
-    }
-  }
-
-  // Prevent users from selecting or copying visually-hidden text. This prevents
-  // a user unintentionally copying more text than they intended and needing to
-  // manually trim it down again.
-  user-select: none;
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -1420,62 +879,17 @@ $properties: (
 
 ---
 
-### add-breakpoint
-
-- Type: mixin
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L267-L273)
-
-Add a breakpoint
-
-#### Implementation
-
-```scss
-$new-breakpoint: (
-    $name: $width
-  );
-  $mq-breakpoints: map.merge($mq-breakpoints, $new-breakpoint) !global;
-  $mq-breakpoints: _map-sort-by-value($mq-breakpoints) !global;
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| name | String | No | - | Name of the breakpoint |
-| width | Number | No | - | Width of the breakpoint |
-
-#### Requires
-
-- function: _map-sort-by-value
-- variable: mq-breakpoints
-
-#### Examples
-
-```scss
-@include add-breakpoint(tvscreen, 1920px);
-@include mq(tvscreen) {}
-```
-
----
-
 ### care-card
 
 - Type: mixin
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L416-L419)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-care-card
+- Alias of: nhsuk-care-card (prefer the original)
 
 Care card mixin, used for creating
 different coloured care cards (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("care-card", "care-card is deprecated. Use nhsuk-care-card instead.");
-  @include nhsuk-care-card($args...);
-```
 
 #### Requires
 
@@ -1490,15 +904,10 @@ different coloured care cards (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L34-L37)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-clearfix
+- Alias of: nhsuk-clearfix (prefer the original)
 
 Clearfix mixin (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("clearfix", "clearfix is deprecated. Use nhsuk-clearfix instead.");
-  @include nhsuk-clearfix;
-```
 
 #### Requires
 
@@ -1513,13 +922,8 @@ Clearfix mixin (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L503-L506)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("flex", "flex is deprecated. Use nhsuk-flex instead.");
-  @include nhsuk-flex;
-```
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-flex
+- Alias of: nhsuk-flex (prefer the original)
 
 #### Requires
 
@@ -1534,43 +938,13 @@ Clearfix mixin (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L527-L530)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("flex-item", "flex-item is deprecated. Use nhsuk-flex-item instead.");
-  @include nhsuk-flex-item;
-```
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-flex-item
+- Alias of: nhsuk-flex-item (prefer the original)
 
 #### Requires
 
 - mixin: nhsuk-warning
 - mixin: nhsuk-flex-item
-
----
-
-### govuk-media-query
-
-- Type: mixin
-- Access: public
-- Group: tools
-- File: core/tools/_sass-mq.scss (L70-L75)
-
-Media query (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("govuk-media-query", "govuk-media-query is deprecated. Use nhsuk-media-query instead.");
-  @include nhsuk-media-query($args...) {
-    @content;
-  }
-```
-
-#### Requires
-
-- mixin: nhsuk-warning
-- mixin: nhsuk-media-query
 
 ---
 
@@ -1580,16 +954,11 @@ Media query (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L381-L384)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-heading-label
+- Alias of: nhsuk-heading-label (prefer the original)
 
 Heading label mixin, adds a tab heading to
 warning callout, do and don't lists and panel (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("heading-label", "heading-label is deprecated. Use nhsuk-heading-label instead.");
-  @include nhsuk-heading-label($args...);
-```
 
 #### Requires
 
@@ -1598,234 +967,14 @@ warning callout, do and don't lists and panel (deprecated)
 
 ---
 
-### mq
-
-- Type: mixin
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L142-L195)
-
-Media Query mixin
-
-#### Implementation
-
-```scss
-$min-width: 0;
-  $max-width: 0;
-  $media-query: "";
-
-  @if not $silence-warning {
-    @include nhsuk-warning("mq", "mq is deprecated. Use nhsuk-media-query instead.");
-  }
-
-  // From: this breakpoint (inclusive)
-  @if $from {
-    @if meta.type-of($from) == number {
-      $min-width: px2em($from);
-    } @else {
-      $min-width: px2em(get-breakpoint-width($from, $breakpoints));
-    }
-  }
-
-  // Until: that breakpoint (exclusive)
-  @if $until {
-    @if meta.type-of($until) == number {
-      $max-width: px2em($until);
-    } @else {
-      $max-width: px2em(get-breakpoint-width($until, $breakpoints)) - 0.01em;
-    }
-  }
-
-  @if $min-width != 0 {
-    $media-query: "#{$media-query} and (min-width: #{$min-width})";
-  }
-  @if $max-width != 0 {
-    $media-query: "#{$media-query} and (max-width: #{$max-width})";
-  }
-  @if $and {
-    $media-query: "#{$media-query} and #{$and}";
-  }
-
-  // Remove unnecessary media query prefix 'all and '
-  @if ($media-type == "all" and $media-query != "") {
-    $media-type: "";
-    $media-query: string.slice(string.unquote($media-query), 6);
-  }
-
-  @media #{$media-type + $media-query} {
-    @content;
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| from | String \| Boolean | No | false | One of $mq-breakpoints |
-| until | String \| Boolean | No | false | One of $mq-breakpoints |
-| and | String \| Boolean | No | false | Additional media query parameters |
-| media-type | String | No | $mq-media-type | Media type: screen, print… |
-| silence-warning | Boolean | No | false | Whether to silence deprecation
-warning to use nhsuk-media-query instead |
-
-#### Requires
-
-- mixin: nhsuk-warning
-- variable: mq-media-type
-- variable: mq-breakpoints
-- function: px2em
-- function: get-breakpoint-width
-
-#### Links
-
-- [Full documentation and examples](https://github.com/sass-mq/sass-mq#responsive-mode-on-default)
-
-#### Used By
-
-- mixin: nhsuk-media-query
-- mixin: show-breakpoints
-
-#### Examples
-
-```scss
-@use 'path/to/mq' as *;
-.element {
-  @include mq($from: mobile) {
-    color: red;
-  }
-  @include mq($until: tablet) {
-    color: blue;
-  }
-  @include mq(mobile, tablet) {
-    color: green;
-  }
-  @include mq($from: tablet, $and: '(orientation: landscape)') {
-    color: teal;
-  }
-  @include mq(950px) {
-    color: hotpink;
-  }
-  @include mq(tablet, $media-type: screen) {
-    color: hotpink;
-  }
-  // Advanced use:
-  $my-breakpoints: (L: 900px, XL: 1200px);
-  @include mq(L, $breakpoints: $my-breakpoints) {
-    color: hotpink;
-  }
-}
-```
-
----
-
 ### nhsuk-button-style
 
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_buttons.scss (L22-L126)
+- File: core/tools/_buttons.scss (L22-L127)
 
 Button styling with colour overrides
-
-#### Implementation
-
-```scss
-background-color: $button-colour;
-  box-shadow: 0 $nhsuk-button-shadow-size 0 $button-shadow-colour;
-
-  &,
-  &:visited,
-  &:hover,
-  &:active {
-    color: $button-text-colour;
-  }
-
-  &[href] .nhsuk-icon {
-    fill: $button-text-colour;
-
-    @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-      fill: currentcolor;
-    }
-  }
-
-  &:hover {
-    @if $button-hover-colour {
-      background-color: $button-hover-colour;
-    } @else {
-      background-color: $button-colour;
-    }
-  }
-
-  &:active,
-  &:active:focus {
-    @if $button-active-colour {
-      background-color: $button-active-colour;
-    } @else {
-      background-color: $button-colour;
-    }
-  }
-
-  // Override default border radius
-  @if $button-border-radius != $nhsuk-button-border-radius {
-    &,
-    &::before,
-    &::after {
-      border-radius: nhsuk-px-to-rem($button-border-radius);
-    }
-  }
-
-  // Handle shadow on both the button and the pseudo element. The button shadow
-  // remains in place to prevent any pixel gaps due to browser rounding
-  @if $button-border-colour {
-    &,
-    &::after {
-      box-shadow: 0 $nhsuk-button-shadow-size 0 $button-shadow-colour;
-    }
-
-    &:active,
-    &:active:focus,
-    // Set border on click area for default and hover states which allows the
-    // border to render underneath the shadow and hide pixel artifacts, but
-    // ensuring the active "pressed" and focus states have priority
-    &:not(:focus):not(:active)::before {
-      border-color: $button-border-colour;
-
-      @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-        border-color: buttonborder;
-      }
-    }
-
-    // Inset the pseudo element shadow away from the edges, to restore lost
-    // border radius (and its shadow) previously hidden by the 2px border
-    &:not(:focus)::after {
-      right: 0;
-      left: 0;
-      border-radius: nhsuk-px-to-rem($button-border-radius - $nhsuk-border-width-form-element);
-    }
-
-    // Remove the pseudo element shadow when focused or pressed
-    &:focus::after,
-    &:active::after {
-      box-shadow: none;
-    }
-  }
-
-  // Override high-contrast link colours to match buttons
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    &,
-    &:visited,
-    &:active {
-      color: buttontext;
-    }
-
-    &:not(:focus):not(:active):hover,
-    &:not(:focus):not(:active):hover::before,
-    &:not(:focus):not(:active):hover::after {
-      border-color: Highlight;
-      color: Highlight;
-    }
-  }
-```
 
 #### Parameters
 
@@ -1857,21 +1006,6 @@ background-color: $button-colour;
 
 Care card mixin, used for creating
 different coloured care cards
-
-#### Implementation
-
-```scss
-.nhsuk-card__heading-container,
-  .nhsuk-card--care__heading-container {
-    color: $heading-text-colour;
-    background-color: $heading-background-colour;
-  }
-
-  @include nhsuk-print-colour {
-    border: $print-border-size solid $nhsuk-print-text-colour;
-    page-break-inside: avoid;
-  }
-```
 
 #### Parameters
 
@@ -1906,16 +1040,6 @@ different coloured care cards
 
 Clearfix mixin
 
-#### Implementation
-
-```scss
-&::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-```
-
 #### Used By
 
 - mixin: clearfix
@@ -1940,20 +1064,6 @@ Export module
 Ensure that the modules of CSS that we define throughout frontend are only
 included in the generated CSS once, no matter how many times they are
 imported across the individual components.
-
-#### Implementation
-
-```scss
-// If the mixin is not in the list of modules already exported...
-  @if not list.index($imported-modules, $name) {
-    // ... then add it to the list
-    $imported-modules: list.append($imported-modules, $name) !global;
-    // ... and output the CSS for that module
-    @content;
-  }
-  // The next time exports is called for the module of the same name, it will be
-  // found in the list and so nothing will be outputted.
-```
 
 #### Parameters
 
@@ -1980,13 +1090,6 @@ imported across the individual components.
 
 Flex mixin
 
-#### Implementation
-
-```scss
-display: flex;
-  flex-wrap: wrap;
-```
-
 #### Used By
 
 - mixin: flex
@@ -2007,16 +1110,6 @@ display: flex;
 - File: core/tools/_mixins.scss (L514-L520)
 
 Flex item mixin
-
-#### Implementation
-
-```scss
-display: flex;
-
-  @include nhsuk-media-query($until: desktop) {
-    flex: 0 0 100%;
-  }
-```
 
 #### Requires
 
@@ -2039,7 +1132,7 @@ display: flex;
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_focused.scss (L132-L137)
+- File: core/tools/_focused.scss (L128-L139)
 
 Focused box
 
@@ -2047,15 +1140,6 @@ Provides an outline to clearly indicate when the target element is focused.
 Unlike nhsuk-focused-text, which only draws an underline below the element,
 nhsuk-focused-box draws an outline around all sides of the element.
 Best used for non-text content contained within links.
-
-#### Implementation
-
-```scss
-outline: $nhsuk-focus-width solid transparent;
-  box-shadow:
-    0 0 0 4px $nhsuk-focus-colour,
-    0 0 0 8px $nhsuk-focus-text-colour;
-```
 
 #### Requires
 
@@ -2078,34 +1162,12 @@ outline: $nhsuk-focus-width solid transparent;
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_focused.scss (L105-L123)
+- File: core/tools/_focused.scss (L105-L119)
 
 Focused button
 
 Provides an additional outline and background to clearly indicate when
 the target element has focus. Used for buttons.
-
-#### Implementation
-
-```scss
-outline: $nhsuk-focus-width solid transparent;
-  outline-offset: $nhsuk-focus-width;
-  color: $nhsuk-focus-text-colour;
-  background-color: $nhsuk-focus-colour;
-  box-shadow: 0 $nhsuk-focus-width 0 0 $nhsuk-focus-text-colour;
-
-  .nhsuk-icon {
-    fill: $nhsuk-focus-text-colour;
-  }
-
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    color: buttontext;
-
-    .nhsuk-icon {
-      fill: buttontext;
-    }
-  }
-```
 
 #### Requires
 
@@ -2130,26 +1192,6 @@ Focused checkbox input (form element)
 
 Provides an additional outline and border to clearly indicate when
 the target element has focus. Used by checkbox.
-
-#### Implementation
-
-```scss
-border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;
-
-  // When colours are overridden, the yellow box-shadow becomes invisible
-  // which means the focus state is less obvious. By adding a transparent
-  // outline, which becomes solid (text-coloured) in that context, we ensure
-  // the focus remains clearly visible.
-  outline: $nhsuk-focus-width solid transparent;
-  outline-offset: 1px;
-  box-shadow: 0 0 0 $nhsuk-focus-width $nhsuk-focus-colour;
-
-  // When in an explicit forced-color mode, we can use the Highlight system
-  // color for the outline to better match focus states of native controls
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    outline-color: Highlight;
-  }
-```
 
 #### Requires
 
@@ -2176,19 +1218,6 @@ Provides an additional outline and border to clearly indicate when
 the target element has focus. Used for interactive input-based elements such
 as text inputs.
 
-#### Implementation
-
-```scss
-border: $nhsuk-border-width-form-element solid $nhsuk-focus-text-colour;
-  outline: $nhsuk-focus-width solid $nhsuk-focus-colour;
-  // Ensure outline appears outside of the element
-  outline-offset: 0;
-  // Double the border by adding its width again. Use `box-shadow` to do
-  // this instead of changing `border-width` (which changes element size)
-  // and since `outline` is already used for the yellow focus state.
-  box-shadow: inset 0 0 0 $nhsuk-border-width-form-element $nhsuk-focus-text-colour;
-```
-
 #### Requires
 
 - variable: nhsuk-border-width-form-element
@@ -2213,26 +1242,6 @@ Focused radio input (form element)
 
 Provides an additional outline and border to clearly indicate when
 the target element has focus. Used by radios.
-
-#### Implementation
-
-```scss
-border: $nhsuk-focus-width solid $nhsuk-focus-text-colour;
-
-  // When colours are overridden, the yellow box-shadow becomes invisible
-  // which means the focus state is less obvious. By adding a transparent
-  // outline, which becomes solid (text-coloured) in that context, we ensure
-  // the focus remains clearly visible.
-  outline: $nhsuk-focus-width solid transparent;
-  outline-offset: 1px;
-  box-shadow: 0 0 0 $focus-width $nhsuk-focus-colour;
-
-  // When in an explicit forced-color mode, we can use the Highlight system
-  // color for the outline to better match focus states of native controls
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    outline-color: Highlight;
-  }
-```
 
 #### Parameters
 
@@ -2264,28 +1273,6 @@ Focused text
 Provides an outline to clearly indicate when the target element is focused.
 Used for interactive text-based elements.
 
-#### Implementation
-
-```scss
-// When colours are overridden, for example when users have a dark mode,
-  // backgrounds and box-shadows disappear, so we need to ensure there's a
-  // transparent outline which will be set to a visible colour.
-  outline: $nhsuk-focus-width solid transparent;
-  color: $nhsuk-focus-text-colour;
-  background-color: $nhsuk-focus-colour;
-  box-shadow:
-    0 -2px $nhsuk-focus-colour,
-    0 $nhsuk-focus-width $nhsuk-focus-text-colour;
-
-  // When link is focussed, hide the default underline since the
-  // box shadow adds the "underline"
-  text-decoration: none;
-
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    color: linktext;
-  }
-```
-
 #### Requires
 
 - variable: nhsuk-focus-width
@@ -2307,25 +1294,9 @@ Used for interactive text-based elements.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L291-L303)
+- File: core/tools/_typography.scss (L346-L358)
 
 Font helper
-
-#### Implementation
-
-```scss
-& {
-    @if $weight == normal {
-      @include nhsuk-typography-weight-normal;
-    } @else if $weight == bold {
-      @include nhsuk-typography-weight-bold;
-    }
-  }
-
-  @if $size {
-    @include nhsuk-font-size($size, $line-height);
-  }
-```
 
 #### Parameters
 
@@ -2338,8 +1309,8 @@ Font helper
 
 #### Requires
 
-- mixin: nhsuk-typography-weight-normal
-- mixin: nhsuk-typography-weight-bold
+- mixin: nhsuk-font-weight-normal
+- mixin: nhsuk-font-weight-bold
 - mixin: nhsuk-font-size
 
 #### Examples
@@ -2356,6 +1327,30 @@ Font helper
 
 ---
 
+### nhsuk-font-code
+
+- Type: mixin
+- Access: public
+- Group: tools
+- File: core/tools/_typography.scss (L102-L106)
+
+Code font helper
+
+Used for codes and sequences
+
+#### Parameters
+
+| Name | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| important | Boolean | No | false | Whether to mark declarations as
+  \`!important\`. Generally used to create override classes. |
+
+#### Requires
+
+- mixin: nhsuk-font-monospace
+
+---
+
 ### nhsuk-font-dynamic-type
 
 - Type: mixin
@@ -2368,24 +1363,35 @@ Font 'Dynamic Type' support
 On Apple devices, uses the -apple-system-body font to enable system-level
 Dynamic Type for accessibility but prevents the system body font-family.
 
-#### Implementation
-
-```scss
-@at-root {
-    html {
-      font-size: math.percentage(math.div($nhsuk-root-font-size, 16px));
-
-      @supports (font: -apple-system-body) and (-webkit-touch-callout: default) {
-        // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
-        font: -apple-system-body;
-      }
-    }
-  }
-```
-
 #### Requires
 
 - variable: nhsuk-root-font-size
+
+---
+
+### nhsuk-font-monospace
+
+- Type: mixin
+- Access: public
+- Group: tools
+- File: core/tools/_typography.scss (L113-L122)
+
+Monospace font helper
+
+#### Parameters
+
+| Name | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| important | Boolean | No | false | Whether to mark declarations as
+  \`!important\`. Generally used to create override classes. |
+
+#### Requires
+
+- variable: nhsuk-code-font
+
+#### Used By
+
+- mixin: nhsuk-font-code
 
 ---
 
@@ -2394,7 +1400,7 @@ Dynamic Type for accessibility but prevents the system body font-family.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L165-L250)
+- File: core/tools/_typography.scss (L220-L305)
 
 Font size and line height helper
 
@@ -2419,95 +1425,6 @@ Example font map:
     line-height: 1.15
   )
 );
-```
-
-#### Implementation
-
-```scss
-// Flag font sizes that start with underscores so we can suppress warnings on
-  // deprecated sizes used internally, for example `nhsuk-font($size: "_24")`
-  $size-internal-use-only: string.slice(#{$size}, 1, 1) == "_";
-
-  // Remove underscore from font sizes flagged for internal use
-  @if $size-internal-use-only {
-    $size: string.slice(#{$size}, 2);
-  }
-
-  // Check for a font map exactly matching the given size
-  $font-map: map.get($nhsuk-typography-scale, $size);
-
-  // No match? Try with string type (e.g. $size: "16" not 16)
-  @if not $font-map {
-    @each $font-size in map.keys($nhsuk-typography-scale) {
-      @if not $font-map and "#{$font-size}" == "#{$size}" {
-        $font-map: map.get($nhsuk-typography-scale, $font-size);
-      }
-    }
-  }
-
-  // Still no match? Throw error
-  @if not $font-map {
-    @error "Unknown font size `#{$size}` - expected a point from the typography scale.";
-  }
-
-  // Check for a deprecation within the typography scale
-  $deprecation: map.get($font-map, "deprecation");
-
-  @if $deprecation {
-    // Warn on deprecated font sizes unless flagged for internal use
-    @if not $size-internal-use-only {
-      @include nhsuk-warning(map.get($deprecation, "key"), map.get($deprecation, "message"));
-    }
-
-    // remove the deprecation map keys so they do not break the breakpoint loop
-    $font-map: map.remove($font-map, "deprecation");
-  }
-
-  @each $breakpoint, $breakpoint-map in $font-map {
-    $font-size: map.get($breakpoint-map, "font-size");
-    $font-size-rem: nhsuk-px-to-rem($font-size);
-
-    // $calculated-line-height is a separate variable from $line-height,
-    // as otherwise the value would get redefined with each loop and
-    // eventually break nhsuk-line-height.
-    $calculated-line-height: $line-height;
-    @if $line-height == false {
-      $calculated-line-height: map.get($breakpoint-map, "line-height");
-    }
-
-    // We continue to call the param $line-height to stay consistent with the
-    // naming with nhsuk-font.
-    $calculated-line-height: nhsuk-line-height(
-      $line-height: $calculated-line-height,
-      $font-size: $font-size
-    );
-
-    // Mark rules as !important if $important is true - this will result in
-    // these variables becoming strings, so this needs to happen *after* they
-    // are used in calculations
-    @if $important == true {
-      $font-size: $font-size !important;
-      $font-size-rem: $font-size-rem !important;
-      $calculated-line-height: $calculated-line-height !important;
-    }
-
-    & {
-      @if not $breakpoint {
-        font-size: $font-size-rem;
-        line-height: $calculated-line-height;
-      } @else if $breakpoint == "print" {
-        @include nhsuk-media-query($media-type: print) {
-          font-size: $font-size;
-          line-height: $calculated-line-height;
-        }
-      } @else {
-        @include nhsuk-media-query($from: $breakpoint) {
-          font-size: $font-size-rem;
-          line-height: $calculated-line-height;
-        }
-      }
-    }
-  }
 ```
 
 #### Parameters
@@ -2545,6 +1462,60 @@ Example font map:
 
 ---
 
+### nhsuk-font-weight-bold
+
+- Type: mixin
+- Access: public
+- Group: tools
+- File: core/tools/_typography.scss (L74-L80)
+
+Bold font weight
+
+#### Parameters
+
+| Name | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| important | Boolean | No | false | Whether to mark declarations as
+  \`!important\`. Generally Used to create override classes. |
+
+#### Requires
+
+- variable: nhsuk-font-weight-bold
+
+#### Used By
+
+- mixin: nhsuk-typography-weight-bold
+- mixin: nhsuk-font
+
+---
+
+### nhsuk-font-weight-normal
+
+- Type: mixin
+- Access: public
+- Group: tools
+- File: core/tools/_typography.scss (L48-L54)
+
+Normal font weight
+
+#### Parameters
+
+| Name | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| important | Boolean | No | false | Whether to mark declarations as
+  \`!important\`. Generally Used to create override classes. |
+
+#### Requires
+
+- variable: nhsuk-font-weight-normal
+
+#### Used By
+
+- mixin: nhsuk-typography-weight-normal
+- mixin: nhsuk-font
+
+---
+
 ### nhsuk-grid-column
 
 - Type: mixin
@@ -2561,23 +1532,6 @@ Grid widths are defined in the `$nhsuk-grid-widths` map.
 By default the column width changes from 100% to specified width at the
 'desktop' breakpoint, but other breakpoints can be specified using the `$at`
 parameter.
-
-#### Implementation
-
-```scss
-box-sizing: border-box;
-
-  @if $at != tablet {
-    width: 100%;
-  }
-
-  padding: 0 $nhsuk-gutter-half;
-
-  @include nhsuk-media-query($from: $at) {
-    width: nhsuk-grid-width($width);
-    float: $float;
-  }
-```
 
 #### Parameters
 
@@ -2642,39 +1596,6 @@ warning callout, do and don't lists and panel
 5. Negative left margin aligns the heading to the box.
 6. Top positioning set to minus to make heading sit just outside the box.
 
-#### Implementation
-
-```scss
-display: inline-block; // [4]
-
-  position: relative;
-  top: nhsuk-spacing(-3); // [6]
-
-  margin: 0;
-  margin-bottom: nhsuk-spacing(2);
-  margin-left: nhsuk-spacing(-5) - 1px; // [5]
-  padding: nhsuk-spacing(2) nhsuk-spacing(5);
-
-  outline: 1px solid transparent; // [2]
-  outline-offset: -1px;
-
-  color: $heading-text-colour; // [3]
-  background-color: $heading-background-colour; // [1]
-
-  @include nhsuk-font-size(26);
-
-  @include nhsuk-media-query($until: tablet) {
-    top: nhsuk-spacing(-2); // [6]
-    margin-left: nhsuk-spacing(-4) - 1px; // [5]
-    padding: nhsuk-spacing(2) nhsuk-spacing(4);
-  }
-
-  @include nhsuk-print-colour {
-    top: 0;
-    background: none;
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -2705,29 +1626,12 @@ display: inline-block; // [4]
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L299-L312)
+- File: core/tools/_links.scss (L303-L316)
 
 Image link styles
 
 Prepares and provides the focus state for links that only contain images
 with no accompanying text.
-
-#### Implementation
-
-```scss
-// Needed to draw the focus around the entire image
-  display: inline-block;
-
-  // Remove extra space at the bottom of the image that's added by line-height
-  line-height: 0;
-
-  // Don't render an underline
-  text-decoration: none;
-
-  &:focus {
-    @include nhsuk-focused-box;
-  }
-```
 
 #### Requires
 
@@ -2740,23 +1644,9 @@ with no accompanying text.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L20-L35)
+- File: core/tools/_links.scss (L20-L39)
 
 Link styling with colour overrides
-
-#### Implementation
-
-```scss
-& {
-    color: $link-colour;
-    text-decoration: underline;
-  }
-
-  @include nhsuk-link-style-visited($link-visited-colour);
-  @include nhsuk-link-style-hover($link-hover-colour);
-  @include nhsuk-link-style-active($link-active-colour);
-  @include nhsuk-link-style-focus;
-```
 
 #### Parameters
 
@@ -2789,17 +1679,9 @@ Link styling with colour overrides
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L152-L156)
+- File: core/tools/_links.scss (L152-L160)
 
 Default link active only styling
-
-#### Implementation
-
-```scss
-&:active {
-    color: $link-active-colour;
-  }
-```
 
 #### Parameters
 
@@ -2825,21 +1707,11 @@ Default link active only styling
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L47-L53)
+- File: core/tools/_links.scss (L51-L53)
 
 Default link styles
 
 Makes links use the default unvisited, visited, hover and active colours.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style;
-
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    color: linktext;
-  }
-```
 
 #### Requires
 
@@ -2860,7 +1732,7 @@ Makes links use the default unvisited, visited, hover and active colours.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L173-L180)
+- File: core/tools/_links.scss (L177-L184)
 
 Error link styles
 
@@ -2869,17 +1741,6 @@ user hovers their cursor over it.
 
 If you use this mixin in a component, you must also include the
 `nhsuk-link-style-default` mixin to get the correct focus and hover states.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style(
-    $link-colour: $nhsuk-error-colour,
-    $link-visited-colour: $nhsuk-error-colour,
-    $link-hover-colour: nhsuk-colour-compatible(color.scale($nhsuk-error-colour, $lightness: -30%)),
-    $link-active-colour: $nhsuk-error-colour
-  );
-```
 
 #### Requires
 
@@ -2907,18 +1768,6 @@ If you use this mixin in a component, you must also include the
 
 Default link focus only styling
 
-#### Implementation
-
-```scss
-&:focus {
-    @include nhsuk-focused-text;
-  }
-
-  &:focus:hover {
-    text-decoration: none;
-  }
-```
-
 #### Requires
 
 - mixin: nhsuk-focused-text
@@ -2941,18 +1790,9 @@ Default link focus only styling
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L121-L126)
+- File: core/tools/_links.scss (L117-L126)
 
 Default link hover only styling
-
-#### Implementation
-
-```scss
-&:hover {
-    color: $link-hover-colour;
-    text-decoration: none;
-  }
-```
 
 #### Parameters
 
@@ -2985,21 +1825,6 @@ Remove underline from links
 Remove underlines from links unless the link is active or a user hovers
 their cursor over it.
 
-#### Implementation
-
-```scss
-// Allow ':hover' and ':active' companion classes from postcss-pseudo-classes
-  // which the plugin unfortunately doesn't handle automatically.
-  // stylelint-disable-next-line selector-class-pattern
-  &:not(:hover):not(.\:hover):not(:active):not(.\:active) {
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-```
-
 #### Examples
 
 ```scss
@@ -3016,7 +1841,7 @@ their cursor over it.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L225-L236)
+- File: core/tools/_links.scss (L229-L236)
 
 No visited state link mixin
 
@@ -3029,21 +1854,6 @@ that you’ve visited it before is not important.
 
 If you use this mixin in a component, you must also include the
 `nhsuk-link-style-default` mixin to get the correct focus and hover states.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style(
-    $link-colour: $nhsuk-link-colour,
-    $link-visited-colour: $nhsuk-link-colour,
-    $link-hover-colour: $nhsuk-link-hover-colour,
-    $link-active-colour: $nhsuk-link-active-colour
-  );
-
-  &:visited .nhsuk-icon {
-    fill: currentcolor;
-  }
-```
 
 #### Requires
 
@@ -3068,7 +1878,7 @@ If you use this mixin in a component, you must also include the
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L70-L84)
+- File: core/tools/_links.scss (L70-L76)
 
 Reverse link styles
 
@@ -3077,24 +1887,6 @@ against a dark background.
 
 If you use this mixin in a component, you must also include the
 `nhsuk-link-style-default` mixin to get the correct focus and hover states.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style-text($override-colour: $nhsuk-reverse-text-colour);
-
-  &:not(:focus) .nhsuk-icon {
-    fill: $nhsuk-reverse-text-colour;
-  }
-
-  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-    color: linktext;
-
-    &:not(:focus) .nhsuk-icon {
-      fill: currentcolor;
-    }
-  }
-```
 
 #### Requires
 
@@ -3121,7 +1913,7 @@ If you use this mixin in a component, you must also include the
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L197-L204)
+- File: core/tools/_links.scss (L201-L208)
 
 Success link styles
 
@@ -3130,17 +1922,6 @@ user hovers their cursor over it.
 
 If you use this mixin in a component you must also include the
 `nhsuk-link-style-default` mixin to get the correct focus and hover states.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style(
-    $link-colour: $nhsuk-success-colour,
-    $link-visited-colour: $nhsuk-success-colour,
-    $link-hover-colour: nhsuk-shade($nhsuk-success-colour, 20%),
-    $link-active-colour: nhsuk-shade($nhsuk-success-colour, 50%)
-  );
-```
 
 #### Requires
 
@@ -3164,32 +1945,12 @@ If you use this mixin in a component you must also include the
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L276-L292)
+- File: core/tools/_links.scss (L276-L296)
 
 Text link styles
 
 Makes links use the primary text colour, in all states. Use this mixin for
 navigation components, such as breadcrumbs or the back link.
-
-#### Implementation
-
-```scss
-@include nhsuk-link-style(
-    $link-colour: $override-colour,
-    $link-visited-colour: $override-colour,
-    $link-hover-colour: $override-colour,
-    $link-active-colour: $override-colour
-  );
-
-  // Force a colour change on hover to work around a bug in Safari
-  // Also allows for ':focus' companion classes from postcss-pseudo-classes
-  // which the plugin unfortunately doesn't handle automatically.
-  // https://bugs.webkit.org/show_bug.cgi?id=224483
-  // stylelint-disable-next-line selector-class-pattern
-  &:not(:focus):not(.\:focus):hover {
-    color: rgba($override-colour, 0.99);
-  }
-```
 
 #### Parameters
 
@@ -3220,17 +1981,9 @@ navigation components, such as breadcrumbs or the back link.
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L107-L111)
+- File: core/tools/_links.scss (L99-L107)
 
 Default link visited only styling
-
-#### Implementation
-
-```scss
-&:visited {
-    color: $link-visited-colour;
-  }
-```
 
 #### Parameters
 
@@ -3256,19 +2009,11 @@ Default link visited only styling
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_links.scss (L91-L97)
+- File: core/tools/_links.scss (L83-L89)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-link-style-reverse
+- Alias of: nhsuk-link-style-reverse (prefer the original)
 
 White link styles (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning(
-    "nhsuk-link-style-white",
-    "nhsuk-link-style-white is deprecated. Use nhsuk-link-style-reverse instead."
-  );
-  @include nhsuk-link-style-reverse;
-```
 
 #### Requires
 
@@ -3289,97 +2034,6 @@ NHS logo size helper
 Saves duplicating the code for when using the logo as a link.
 Used in the header and footer.
 
-#### Implementation
-
-```scss
-width: 100px;
-  height: 40px;
-```
-
----
-
-### nhsuk-media-query
-
-- Type: mixin
-- Access: public
-- Group: tools
-- File: core/tools/_sass-mq.scss (L59-L63)
-
-Media query
-
-This is a currently a wrapper for sass-mq - abstracted so that we can
-replace it in the future if we so choose.
-
-Due to Sass deprecated 'misplaced-rest' named argument warnings, all
-arguments must be passed to maintain `nhsuk-media-query(950px)` support.
-
-#### Implementation
-
-```scss
-@include mq($from, $until, $and, $media-type, $silence-warning: true) {
-    @content;
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| from | String \| Boolean | No | false | One of $nhsuk-breakpoints |
-| until | String \| Boolean | No | false | One of $nhsuk-breakpoints |
-| and | String \| Boolean | No | false | Additional media query parameters |
-| media-type | String | No | all | Media type: screen, print… |
-
-#### Requires
-
-- mixin: mq
-
-#### Links
-
-- [Original code taken from GDS (Government Digital Service)](https://github.com/alphagov/govuk-frontend)
-
-#### Used By
-
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-grid-column
-- mixin: nhsuk-panel
-- mixin: nhsuk-heading-label
-- mixin: nhsuk-print-colour
-- mixin: nhsuk-print-hide
-- mixin: nhsuk-flex-item
-- mixin: nhsuk-remove-margin-mobile
-- mixin: govuk-media-query
-- mixin: nhsuk-responsive-spacing
-- mixin: nhsuk-text-colour
-- mixin: nhsuk-font-size
-- mixin: nhsuk-font-size
-
-#### Examples
-
-```scss
-.element {
-  @include nhsuk-media-query($from: mobile) {
-    color: red;
-  }
-  @include nhsuk-media-query($until: tablet) {
-    color: blue;
-  }
-  @include nhsuk-media-query(mobile, tablet) {
-    color: green;
-  }
-  @include nhsuk-media-query($from: tablet, $and: '(orientation: landscape)') {
-    color: teal;
-  }
-  @include nhsuk-media-query(950px) {
-    color: hotpink;
-  }
-  @include nhsuk-media-query(tablet, $media-type: screen) {
-    color: hotpink;
-  }
-}
-```
-
 ---
 
 ### nhsuk-panel
@@ -3392,25 +2046,6 @@ arguments must be passed to maintain `nhsuk-media-query(950px)` support.
 Panel mixin
 
 See components/_panel
-
-#### Implementation
-
-```scss
-box-sizing: border-box;
-  @if $panel-border-colour {
-    border: 1px solid $panel-border-colour;
-  }
-  color: $panel-text-colour;
-  background-color: $panel-background-colour;
-
-  @include nhsuk-top-and-bottom;
-  @include nhsuk-responsive-margin(7, "bottom");
-
-  @include nhsuk-media-query($media-type: print) {
-    border: 1px solid $nhsuk-print-text-colour;
-    page-break-inside: avoid;
-  }
-```
 
 #### Parameters
 
@@ -3450,17 +2085,6 @@ box-sizing: border-box;
 Panel with label mixin, inherits panel styling
 and removes padding top for the label positioning
 
-#### Implementation
-
-```scss
-padding-top: 0 !important;
-  border: 1px solid $panel-border-colour;
-
-  @include nhsuk-panel($panel-background-colour, $panel-text-colour, $panel-border-colour);
-  @include nhsuk-responsive-margin(7, "top");
-  @include nhsuk-responsive-padding(5);
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -3493,16 +2117,11 @@ padding-top: 0 !important;
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L443-L446)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-print-colour
+- Alias of: nhsuk-print-colour (prefer the original)
 
 Print colour mixin, sets the text print colour
 warning callout, do and don't lists and panels (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("color-to-colour", "nhsuk-print-color is deprecated. Use nhsuk-print-colour instead.");
-  @include nhsuk-print-colour($args...);
-```
 
 #### Requires
 
@@ -3520,15 +2139,6 @@ warning callout, do and don't lists and panels (deprecated)
 
 Print colour mixin, sets the text print colour
 warning callout, do and don't lists and panels
-
-#### Implementation
-
-```scss
-@include nhsuk-media-query($media-type: print) {
-    color: $print-colour;
-    @content;
-  }
-```
 
 #### Parameters
 
@@ -3563,18 +2173,6 @@ warning callout, do and don't lists and panels
 
 Print hide mixin, hides the element from print
 
-#### Implementation
-
-```scss
-@include nhsuk-media-query($media-type: print) {
-    @if $important == true {
-      display: none !important;
-    } @else {
-      display: none;
-    }
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -3607,12 +2205,6 @@ Print hide mixin, hides the element from print
 Reading width mixin, add a maximum width
 to large pieces of content
 
-#### Implementation
-
-```scss
-max-width: 44em;
-```
-
 #### Used By
 
 - mixin: reading-width
@@ -3635,15 +2227,6 @@ max-width: 44em;
 Remove margin mobile mixin
 
 Removes left and right margin at tablet breakpoint
-
-#### Implementation
-
-```scss
-@include nhsuk-media-query($until: tablet) {
-    margin-right: -$nhsuk-gutter-half;
-    margin-left: -$nhsuk-gutter-half;
-  }
-```
 
 #### Requires
 
@@ -3668,12 +2251,6 @@ Responsive margin
 Adds responsive margin by fetching a 'spacing map' from the responsive
 spacing scale, which defines different spacing values at different
 breakpoints. Wrapper for the `nhsuk-responsive-spacing` mixin.
-
-#### Implementation
-
-```scss
-@include nhsuk-responsive-spacing($responsive-spacing-point, "margin", $direction, $important, $adjustment);
-```
 
 #### Parameters
 
@@ -3721,12 +2298,6 @@ Responsive padding
 Adds responsive padding by fetching a 'spacing map' from the responsive
 spacing scale, which defines different spacing values at different
 breakpoints. Wrapper for the `nhsuk-responsive-spacing` mixin.
-
-#### Implementation
-
-```scss
-@include nhsuk-responsive-spacing($responsive-spacing-point, "padding", $direction, $important, $adjustment);
-```
 
 #### Parameters
 
@@ -3777,61 +2348,6 @@ different spacing values at different breakpoints.
 To generate responsive spacing, use 'nhsuk-responsive-margin' or
 'nhsuk-responsive-padding' mixins
 
-#### Implementation
-
-```scss
-$actual-input-type: meta.type-of($responsive-spacing-point);
-  @if $actual-input-type != "number" {
-    @error "Expected a number (integer), but got a " + "#{$actual-input-type}.";
-  }
-
-  @if not map.has-key($nhsuk-spacing-responsive-scale, $responsive-spacing-point) {
-    @error "Unknown spacing point `#{$responsive-spacing-point}`. Make sure you are using a point from the "
-      + "responsive spacing scale in `_settings/spacing.scss`.";
-  }
-
-  $scale-map: map.get($nhsuk-spacing-responsive-scale, $responsive-spacing-point); // [1]
-  $actual-map-type: meta.type-of($scale-map);
-  @if $actual-map-type != "map" {
-    @error "Expected a number (integer), but got a "
-      + "#{$actual-map-type}. Make sure you are using a map to set the responsive spacing in `_settings/spacing.scss`)";
-  }
-
-  // [2]
-  @each $breakpoint, $breakpoint-value in $scale-map {
-    @if $adjustment {
-      @if not math.compatible($breakpoint-value, $adjustment) {
-        $breakpoint-value: calc($breakpoint-value + $adjustment);
-      } @else {
-        $breakpoint-value: $breakpoint-value + $adjustment;
-      }
-    }
-
-    @if $important == true {
-      $breakpoint-value: $breakpoint-value !important;
-    }
-
-    & {
-      // [3]
-      @if not $breakpoint {
-        @if $direction == all {
-          #{$property}: $breakpoint-value;
-        } @else {
-          #{$property}-#{$direction}: $breakpoint-value;
-        }
-      } @else {
-        @include nhsuk-media-query($from: $breakpoint) {
-          @if $direction == all {
-            #{$property}: $breakpoint-value;
-          } @else {
-            #{$property}-#{$direction}: $breakpoint-value;
-          }
-        }
-      }
-    }
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -3862,7 +2378,6 @@ $actual-input-type: meta.type-of($responsive-spacing-point);
 
 - mixin: nhsuk-responsive-margin
 - mixin: nhsuk-responsive-padding
-- mixin: _nhsuk-generate-responsive-spacing-overrides
 - mixin: _nhsuk-generate-responsive-spacing-overrides
 
 #### Examples
@@ -3897,43 +2412,6 @@ providing a clip path (3). Without this the transparent borders are
 overridden to become visible which results in a square.
 
 We need both because older browsers do not support clip-path.
-
-#### Implementation
-
-```scss
-display: $display;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: transparent; // 1
-
-  $base: nhsuk-px-to-rem($base);
-  $perpendicular: math.div($base, 2);
-
-  @if not $height {
-    $height: _nhsuk-equilateral-height($base);
-  }
-
-  @if $direction == "up" {
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); // 3
-    border-width: 0 $perpendicular $height;
-    border-bottom-color: inherit; // 2
-  } @else if $direction == "right" {
-    clip-path: polygon(0% 0%, 100% 50%, 0% 100%); // 3
-    border-width: $perpendicular 0 $perpendicular $height;
-    border-left-color: inherit; // 2
-  } @else if $direction == "down" {
-    clip-path: polygon(0% 0%, 50% 100%, 100% 0%); // 3
-    border-width: $height $perpendicular 0 $perpendicular;
-    border-top-color: inherit; // 2
-  } @else if $direction == "left" {
-    clip-path: polygon(0% 50%, 100% 100%, 100% 0%); // 3
-    border-width: $perpendicular $height $perpendicular 0;
-    border-right-color: inherit; // 2
-  } @else {
-    @error "Invalid arrow direction: expected `up`, `right`, `down` or `left`, got `#{$direction}`";
-  }
-```
 
 #### Parameters
 
@@ -3970,50 +2448,6 @@ Chevron mixin
 
 Generate chevron by using a box with borders on two sides, then rotating it.
 
-#### Implementation
-
-```scss
-$outline-width: nhsuk-em($nhsuk-chevron-border, $font-size);
-  $box-size: nhsuk-em(math.div($font-size, 2), $font-size);
-  $size: nhsuk-em(nhsuk-chevron-size($font-size));
-  display: $display;
-
-  width: $box-size;
-  height: $box-size;
-
-  clip-path: polygon(100% 100%, 100% 0, 0 0);
-
-  border-radius: $outline-width;
-
-  // Safari renders a hairline gap if we use borders, so use an inset outline
-  // instead. Because outlines are added to all sides of a box, we hide the
-  // outline on the two other two sides using clip-path.
-  outline: $outline-width solid currentcolor;
-  outline-offset: -$outline-width;
-
-  color: $colour;
-
-  @if $direction == "up" {
-    transform: translateY($outline-width) rotate(-45deg);
-  } @else if $direction == "right" {
-    transform: translateX(-$size + $outline-width) rotate(45deg);
-  } @else if $direction == "down" {
-    transform: translateY(-$size + $outline-width) rotate(135deg);
-  } @else if $direction == "left" {
-    transform: translateX($outline-width) rotate(225deg);
-  } @else {
-    @error "Invalid arrow direction: expected `up`, `right`, `down` or `left`, got `#{$direction}`";
-  }
-
-  @supports (outline-width: string.unquote("max(0px)")) {
-    // Ensure that the chevron outline never gets smaller than 2px
-    outline-width: string.unquote("max(#{$nhsuk-chevron-border}, #{$outline-width})");
-
-    // Ensure that the chevron never gets smaller than 16px
-    font-size: string.unquote("max(#{$font-size * 1px}, 1em)");
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -4039,33 +2473,12 @@ $outline-width: nhsuk-em($nhsuk-chevron-border, $font-size);
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L77-L94)
+- File: core/tools/_typography.scss (L132-L149)
 
 Word break helper
 
 Forcibly breaks long words that lack spaces, such as email addresses,
 across multiple lines when they wouldn't otherwise fit.
-
-#### Implementation
-
-```scss
-$properties: (
-    // IE 11 and Edge 16–17 only support the non-standard `word-wrap` property
-    "word-wrap": break-word,
-
-    // All other browsers support `overflow-wrap`
-    "overflow-wrap": break-word
-  );
-
-  // Workaround to avoid deprecated `if()` function
-  @each $property, $value in $properties {
-    @if $important == true {
-      #{$property}: $value !important;
-    } @else {
-      #{$property}: $value;
-    }
-  }
-```
 
 #### Parameters
 
@@ -4082,15 +2495,10 @@ $properties: (
 - Access: public
 - Group: tools
 - File: core/tools/_typography.scss (L38-L41)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-text-colour
+- Alias of: nhsuk-text-colour (prefer the original)
 
 Text colour (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("color-to-colour", "nhsuk-text-color is deprecated. Use nhsuk-text-colour instead.");
-  @include nhsuk-text-colour;
-```
 
 #### Requires
 
@@ -4109,16 +2517,6 @@ Text colour (deprecated)
 Text colour
 
 Sets the text colour, including a suitable override for print.
-
-#### Implementation
-
-```scss
-color: $nhsuk-text-colour;
-
-  @include nhsuk-media-query($media-type: print) {
-    color: $nhsuk-print-text-colour;
-  }
-```
 
 #### Requires
 
@@ -4146,18 +2544,6 @@ color: $nhsuk-text-colour;
 Top and bottom margin mixin, remove
 the top and bottom margin spacing
 
-#### Implementation
-
-```scss
-& > *:first-child {
-    margin-top: 0;
-  }
-
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-```
-
 #### Used By
 
 - mixin: top-and-bottom
@@ -4176,19 +2562,11 @@ the top and bottom margin spacing
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L267-L273)
+- File: core/tools/_typography.scss (L322-L328)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-font-size
+- Alias of: nhsuk-font-size (prefer the original)
 
 Font size and line height helper (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning(
-    "nhsuk-typography-responsive",
-    "nhsuk-typography-responsive is deprecated. Use nhsuk-font-size instead."
-  );
-  @include nhsuk-font-size($size, $override-line-height, $important);
-```
 
 #### Parameters
 
@@ -4218,34 +2596,16 @@ Font size and line height helper (deprecated)
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L61-L67)
+- File: core/tools/_typography.scss (L87-L93)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-font-weight-bold
+- Alias of: nhsuk-font-weight-bold (prefer the original)
 
-Bold font weight
-
-#### Implementation
-
-```scss
-@if $important == true {
-    font-weight: $nhsuk-font-weight-bold !important;
-  } @else {
-    font-weight: $nhsuk-font-weight-bold;
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| important | Boolean | No | false | Whether to mark declarations as
-  \`!important\`. Generally Used to create override classes. |
+Bold typography weight (deprecated)
 
 #### Requires
 
-- variable: nhsuk-font-weight-bold
-
-#### Used By
-
-- mixin: nhsuk-font
+- mixin: nhsuk-warning
+- mixin: nhsuk-font-weight-bold
 
 ---
 
@@ -4254,34 +2614,16 @@ Bold font weight
 - Type: mixin
 - Access: public
 - Group: tools
-- File: core/tools/_typography.scss (L48-L54)
+- File: core/tools/_typography.scss (L61-L67)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-font-weight-normal
+- Alias of: nhsuk-font-weight-normal (prefer the original)
 
-Normal font weight
-
-#### Implementation
-
-```scss
-@if $important == true {
-    font-weight: $nhsuk-font-weight-normal !important;
-  } @else {
-    font-weight: $nhsuk-font-weight-normal;
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| important | Boolean | No | false | Whether to mark declarations as
-  \`!important\`. Generally Used to create override classes. |
+Normal typography weight (deprecated)
 
 #### Requires
 
-- variable: nhsuk-font-weight-normal
-
-#### Used By
-
-- mixin: nhsuk-font
+- mixin: nhsuk-warning
+- mixin: nhsuk-font-weight-normal
 
 ---
 
@@ -4293,24 +2635,6 @@ Normal font weight
 - File: core/tools/_mixins.scss (L122-L136)
 
 Hide an element visually, but have it available for screen readers
-
-#### Implementation
-
-```scss
-@include _nhsuk-visually-hide-content($important: $important);
-
-  // Absolute positioning has the unintended consequence of removing any
-  // whitespace surrounding visually hidden text from the accessibility tree.
-  // Insert a space character before and after visually hidden text to separate
-  // it from any visible text surrounding it.
-  &::before {
-    content: "\00a0";
-  }
-
-  &::after {
-    content: "\00a0";
-  }
-```
 
 #### Parameters
 
@@ -4344,18 +2668,6 @@ Hide an element visually, but have it available for screen readers
 Hide an element visually, but have it available for screen readers whilst
 allowing the element to be focused when navigated to via the keyboard (e.g.
 for the skip link)
-
-#### Implementation
-
-```scss
-// IE 11 doesn't support the combined `:not(:active, :focus)` syntax.
-  // Also allows for ':focus' companion classes from postcss-pseudo-classes
-  // which the plugin unfortunately doesn't handle automatically.
-  // stylelint-disable-next-line selector-class-pattern
-  &:not(:active):not(:focus):not(.\:focus) {
-    @include _nhsuk-visually-hide-content($important: $important);
-  }
-```
 
 #### Parameters
 
@@ -4397,18 +2709,6 @@ in which case we don't call `@warn` and printing the warning to the user
 `$nhsuk-suppressed-warnings` after `@warn` is called to ensure it only runs
 once per sass compilation
 
-#### Implementation
-
-```scss
-@if _should-warn($key) {
-    @warn _warning-text($key, $message);
-
-    @if $silence-further-warnings {
-      $nhsuk-suppressed-warnings: list.append($nhsuk-suppressed-warnings, $key) !global;
-    }
-  }
-```
-
 #### Parameters
 
 | Name | Type | Required | Default | Description |
@@ -4449,6 +2749,8 @@ warnings that use the same $key |
 - mixin: remove-margin-mobile
 - mixin: govuk-media-query
 - mixin: nhsuk-text-color
+- mixin: nhsuk-typography-weight-normal
+- mixin: nhsuk-typography-weight-bold
 - mixin: nhsuk-font-size
 - mixin: nhsuk-typography-responsive
 - mixin: mq
@@ -4465,59 +2767,6 @@ warnings that use the same $key |
 Width container mixin
 
 Used to create page width and custom width container classes.
-
-#### Implementation
-
-```scss
-// By default, limit the width of the container to the page width
-  max-width: $width;
-
-  // On mobile, add half width gutters
-  margin-right: $nhsuk-gutter-half;
-  margin-left: $nhsuk-gutter-half;
-
-  // Respect 'display cutout' safe area (avoids notches and rounded corners)
-  @supports (margin: string.unquote("max(calc(0px))")) {
-    $gutter-safe-area-right: calc(#{$nhsuk-gutter-half} + env(safe-area-inset-right));
-    $gutter-safe-area-left: calc(#{$nhsuk-gutter-half} + env(safe-area-inset-left));
-
-    // Use max() to pick largest margin, default or with safe area
-    // Escaped due to Sass max() vs. CSS native max()
-    margin-right: string.unquote("max(#{$nhsuk-gutter-half}, #{$gutter-safe-area-right})");
-    margin-left: string.unquote("max(#{$nhsuk-gutter-half}, #{$gutter-safe-area-left})");
-  }
-
-  // On desktop, add full width gutters
-  @include nhsuk-media-query($from: desktop) {
-    margin-right: $nhsuk-gutter;
-    margin-left: $nhsuk-gutter;
-
-    // Respect 'display cutout' safe area (avoids notches and rounded corners)
-    @supports (margin: string.unquote("max(calc(0px))")) {
-      $gutter-safe-area-right: calc(#{$nhsuk-gutter-half} + env(safe-area-inset-right));
-      $gutter-safe-area-left: calc(#{$nhsuk-gutter-half} + env(safe-area-inset-left));
-
-      // Use max() to pick largest margin, default or with safe area
-      // Escaped due to Sass max() vs. CSS native max()
-      margin-right: string.unquote("max(#{$nhsuk-gutter}, #{$gutter-safe-area-right})");
-      margin-left: string.unquote("max(#{$nhsuk-gutter}, #{$gutter-safe-area-left})");
-    }
-  }
-
-  // As soon as the viewport is greater than the width of the page plus the
-  // gutters, just centre the content instead of adding gutters.
-  @include nhsuk-media-query($and: "(min-width: #{($width + $nhsuk-gutter * 2)})") {
-    margin-right: auto;
-    margin-left: auto;
-
-    // Since a safe area may have previously been set above,
-    // we need to duplicate this margin that centers the page.
-    @supports (margin: string.unquote("max(calc(0px))")) {
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-```
 
 #### Parameters
 
@@ -4553,15 +2802,10 @@ Creating a 1200px wide container class
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L291-L294)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-panel
+- Alias of: nhsuk-panel (prefer the original)
 
 Panel mixin (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("panel", "panel is deprecated. Use nhsuk-panel instead.");
-  @include nhsuk-panel($args...);
-```
 
 #### Requires
 
@@ -4576,16 +2820,11 @@ Panel mixin (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L322-L325)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-panel-with-label
+- Alias of: nhsuk-panel-with-label (prefer the original)
 
 Panel with label mixin, inherits panel styling
 and removes padding top for the label positioning (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("panel-with-label", "panel-with-label is deprecated. Use nhsuk-panel-with-label instead.");
-  @include nhsuk-panel-with-label($args...);
-```
 
 #### Requires
 
@@ -4600,16 +2839,11 @@ and removes padding top for the label positioning (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L454-L457)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-print-colour
+- Alias of: nhsuk-print-colour (prefer the original)
 
 Print colour mixin, sets the text print colour
 warning callout, do and don't lists and panels (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("print-color", "print-color is deprecated. Use nhsuk-print-colour instead.");
-  @include nhsuk-print-colour($args...);
-```
 
 #### Requires
 
@@ -4624,15 +2858,10 @@ warning callout, do and don't lists and panels (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L482-L485)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-print-hide
+- Alias of: nhsuk-print-hide (prefer the original)
 
 Print hide mixin, hides the element from print (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("print-hide", "print-hide is deprecated. Use nhsuk-print-hide instead.");
-  @include nhsuk-print-hide;
-```
 
 #### Requires
 
@@ -4647,16 +2876,11 @@ Print hide mixin, hides the element from print (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L56-L59)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-reading-width
+- Alias of: nhsuk-reading-width (prefer the original)
 
 Reading width mixin, add a maximum width
 to large pieces of content (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("reading-width", "reading-width is deprecated. Use nhsuk-reading-width instead.");
-  @include nhsuk-reading-width;
-```
 
 #### Requires
 
@@ -4671,92 +2895,17 @@ to large pieces of content (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L550-L557)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-remove-margin-mobile
+- Alias of: nhsuk-remove-margin-mobile (prefer the original)
 
 Remove margin mobile mixin (deprecated)
 
 Removes left and right margin at tablet breakpoint
 
-#### Implementation
-
-```scss
-@include nhsuk-warning(
-    "remove-margin-mobile",
-    "remove-margin-mobile is deprecated. Use nhsuk-remove-margin-mobile instead."
-  );
-
-  @include nhsuk-remove-margin-mobile;
-```
-
 #### Requires
 
 - mixin: nhsuk-warning
 - mixin: nhsuk-remove-margin-mobile
-
----
-
-### show-breakpoints
-
-- Type: mixin
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L290-L312)
-
-Show the active breakpoint in the top right corner of the viewport
-
-#### Implementation
-
-```scss
-body:before {
-    background-color: #fcf8e3;
-    border-bottom: 1px solid #fbeed5;
-    border-left: 1px solid #fbeed5;
-    color: #c09853;
-    font: small-caption;
-    padding: 3px 6px;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 100;
-
-    // Loop through the breakpoints that should be shown
-    @each $show-breakpoint in $show-breakpoints {
-      $width: get-breakpoint-width($show-breakpoint, $breakpoints);
-      @include mq($show-breakpoint, $breakpoints: $breakpoints, $silence-warning: true) {
-        content: "#{$show-breakpoint} ≥ #{$width} (#{px2em($width)})";
-      }
-    }
-  }
-```
-
-#### Parameters
-
-| Name | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| show-breakpoints | List | No | $mq-show-breakpoints | List of breakpoints to show in the top right corner |
-| breakpoints | Map | No | $mq-breakpoints | Breakpoint names and sizes |
-
-#### Requires
-
-- mixin: mq
-- function: get-breakpoint-width
-- function: px2em
-- variable: mq-breakpoints
-- variable: mq-show-breakpoints
-
-#### Links
-
-- [https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint](https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint)
-
-#### Examples
-
-```scss
-// Show breakpoints using global settings
-@include show-breakpoints;
-
-// Show breakpoints using custom settings
-@include show-breakpoints((L, XL), (S: 300px, L: 800px, XL: 1200px));
-```
 
 ---
 
@@ -4766,16 +2915,11 @@ body:before {
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L252-L255)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-top-and-bottom
+- Alias of: nhsuk-top-and-bottom (prefer the original)
 
 Top and bottom margin mixin, remove
 the top and bottom margin spacing (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning("top-and-bottom", "top-and-bottom is deprecated and will be removed in a future release.");
-  @include nhsuk-top-and-bottom;
-```
 
 #### Requires
 
@@ -4790,15 +2934,11 @@ the top and bottom margin spacing (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L144-L146)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-visually-hidden
+- Alias of: nhsuk-visually-hidden (prefer the original)
 
 Hide an element visually, but have it available for screen readers
 (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-visually-hidden;
-```
 
 #### Requires
 
@@ -4812,20 +2952,12 @@ Hide an element visually, but have it available for screen readers
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L173-L179)
+- **Deprecated:** To be removed in v11.0, replaced by nhsuk-visually-hidden-focusable
+- Alias of: nhsuk-visually-hidden-focusable (prefer the original)
 
 Hide an element visually, but have it available for screen readers whilst
 allowing the element to be focused when navigated to via the keyboard (e.g.
 for the skip link) (deprecated)
-
-#### Implementation
-
-```scss
-@include nhsuk-warning(
-    "visually-hidden-focusable",
-    "visually-hidden-focusable is deprecated. Use nhsuk-visually-hidden-focusable instead."
-  );
-  @include nhsuk-visually-hidden-focusable($args...);
-```
 
 #### Requires
 
@@ -4840,51 +2972,11 @@ for the skip link) (deprecated)
 - Access: public
 - Group: tools
 - File: core/tools/_mixins.scss (L190-L227)
+- **Deprecated:** To be removed in v11.0, use @media queries to apply \`visually-hidden\` instead
 
 Show an element visually that has previously been hidden by visually-hidden
 
 For differences between mobile and desktop views, use $display to set the CSS display property
-
-#### Implementation
-
-```scss
-@include nhsuk-warning(
-    "visually-shown",
-    "visually-shown is deprecated. Use @media queries to apply `visually-hidden` instead."
-  );
-
-  $properties: (
-    "position": static,
-
-    "width": auto,
-    "height": auto,
-    "margin": 0,
-    "padding": 0,
-
-    "overflow": visible,
-
-    "clip": auto,
-    "clip-path": none,
-
-    "border": none,
-
-    "white-space": normal,
-    "user-select": auto
-  );
-
-  // Workaround to avoid deprecated `if()` function
-  @each $property, $value in $properties {
-    @if $important == true {
-      #{$property}: $value !important;
-    } @else {
-      #{$property}: $value;
-    }
-  }
-
-  @if $display {
-    display: $display;
-  }
-```
 
 #### Parameters
 
@@ -4906,7 +2998,7 @@ For differences between mobile and desktop views, use $display to set the CSS di
 - Type: variable
 - Access: private
 - Group: styles
-- File: core/styles/_icons.scss (L30)
+- File: core/styles/_icons.scss (L37)
 
 Icon size adjustments
 
@@ -4962,110 +3054,6 @@ List of modules which have already been exported
 #### Used By
 
 - mixin: nhsuk-exports
-- mixin: nhsuk-exports
-- mixin: nhsuk-exports
-
----
-
-### mq-breakpoints
-
-- Type: variable
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L20-L25)
-
-Breakpoint list
-
-Name your breakpoints in a way that creates a ubiquitous language
-across team members. It will improve communication between
-stakeholders, designers, developers, and testers.
-
-#### Value
-
-```scss
-(
-  mobile: 320px,
-  tablet: 740px,
-  desktop: 980px,
-  wide: 1300px
-)
-```
-
-#### Links
-
-- [Full documentation and examples](https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint)
-
-#### Used By
-
-- function: get-breakpoint-width
-- mixin: mq
-- mixin: add-breakpoint
-- mixin: show-breakpoints
-
----
-
-### mq-media-type
-
-- Type: variable
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L49)
-
-Customize the media type (for example: `@media screen` or `@media print`)
-By default sass-mq uses an "all" media type (`@media all and …`)
-
-If you want to overried the media type, you can use this option.
-
-#### Value
-
-```scss
-all
-```
-
-#### Links
-
-- [Full documentation and example](https://github.com/sass-mq/sass-mq#changing-media-type)
-
-#### Used By
-
-- mixin: mq
-
-#### Examples
-
-```scss
-@use 'path/to/mq' with ($media-type: 'screen');
-```
-
----
-
-### mq-show-breakpoints
-
-- Type: variable
-- Access: public
-- Group: none
-- File: core/vendor/sass-mq.scss (L38)
-
-Show breakpoints in the top right corner
-
-If you want to display the currently active breakpoint in the top
-right corner of your site during development, add the breakpoints
-to this list, ordered by width. For example: (mobile, tablet, desktop).
-
-#### Value
-
-```scss
-()
-```
-
-#### Used By
-
-- mixin: show-breakpoints
-
-#### Examples
-
-```scss
-@use 'path/to/mq' with ($mq-show-breakpoints: ('mobile', 'tablet', 'desktop'));
-```
 
 ---
 
@@ -5128,6 +3116,7 @@ nhsuk-colour("grey-4")
 - Access: public
 - Group: settings/colours
 - File: core/settings/_colours-applied.scss (L115)
+- **Deprecated:** To be removed in v11.0
 
 Border hover colour
 
@@ -5174,7 +3163,6 @@ Form control border width
 #### Used By
 
 - mixin: nhsuk-button-style
-- mixin: nhsuk-focused-input
 - mixin: nhsuk-focused-input
 
 ---
@@ -5342,7 +3330,6 @@ Button shadow size
 #### Used By
 
 - mixin: nhsuk-button-style
-- mixin: nhsuk-button-style
 
 ---
 
@@ -5420,6 +3407,10 @@ default but we need to specify fallbacks for others:
 menlo, "Cascadia Mono", "Segoe UI Mono", consolas, "Liberation Mono", monospace
 ```
 
+#### Used By
+
+- mixin: nhsuk-font-monospace
+
 ---
 
 ### nhsuk-colours
@@ -5465,7 +3456,6 @@ NHS colour palette
 #### Used By
 
 - function: nhsuk-colour
-- function: nhsuk-colour
 
 ---
 
@@ -5488,9 +3478,6 @@ nhsuk-colour("red")
 
 #### Used By
 
-- mixin: nhsuk-link-style-error
-- mixin: nhsuk-link-style-error
-- mixin: nhsuk-link-style-error
 - mixin: nhsuk-link-style-error
 
 ---
@@ -5515,7 +3502,6 @@ nhsuk-colour("yellow")
 
 #### Used By
 
-- mixin: nhsuk-focused-text
 - mixin: nhsuk-focused-text
 - mixin: nhsuk-focused-input
 - mixin: nhsuk-focused-radio
@@ -5546,15 +3532,10 @@ nhsuk-colour("black")
 #### Used By
 
 - mixin: _header-link-style
-- mixin: _header-link-style
 - mixin: nhsuk-focused-text
-- mixin: nhsuk-focused-text
-- mixin: nhsuk-focused-input
 - mixin: nhsuk-focused-input
 - mixin: nhsuk-focused-radio
 - mixin: nhsuk-focused-checkbox
-- mixin: nhsuk-focused-button
-- mixin: nhsuk-focused-button
 - mixin: nhsuk-focused-button
 - mixin: nhsuk-focused-box
 
@@ -5579,15 +3560,9 @@ Border width of focus outline
 
 - mixin: _header-link-style
 - mixin: nhsuk-focused-text
-- mixin: nhsuk-focused-text
 - mixin: nhsuk-focused-input
 - mixin: nhsuk-focused-radio
-- mixin: nhsuk-focused-radio
 - mixin: nhsuk-focused-checkbox
-- mixin: nhsuk-focused-checkbox
-- mixin: nhsuk-focused-checkbox
-- mixin: nhsuk-focused-button
-- mixin: nhsuk-focused-button
 - mixin: nhsuk-focused-button
 - mixin: nhsuk-focused-box
 
@@ -5647,8 +3622,7 @@ $nhsuk-font-bold
 
 #### Used By
 
-- mixin: nhsuk-typography-weight-bold
-- mixin: nhsuk-typography-weight-bold
+- mixin: nhsuk-font-weight-bold
 
 ---
 
@@ -5669,8 +3643,7 @@ $nhsuk-font-normal
 
 #### Used By
 
-- mixin: nhsuk-typography-weight-normal
-- mixin: nhsuk-typography-weight-normal
+- mixin: nhsuk-font-weight-normal
 
 ---
 
@@ -5720,7 +3693,6 @@ Map of grid column widths
 #### Used By
 
 - function: nhsuk-grid-width
-- function: nhsuk-grid-width
 
 ---
 
@@ -5741,10 +3713,6 @@ Width of gutter between grid columns
 
 #### Used By
 
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
 - mixin: nhsuk-width-container
 
 ---
@@ -5767,15 +3735,7 @@ math.div($nhsuk-gutter, 2)
 #### Used By
 
 - mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
-- mixin: nhsuk-width-container
 - mixin: nhsuk-grid-column
-- mixin: nhsuk-remove-margin-mobile
 - mixin: nhsuk-remove-margin-mobile
 
 ---
@@ -5959,7 +3919,6 @@ nhsuk-colour("blue")
 
 #### Used By
 
-- mixin: nhsuk-link-style-no-visited-state
 - mixin: nhsuk-link-style-no-visited-state
 
 ---
@@ -6256,7 +4215,6 @@ nhsuk-colour("white")
 #### Used By
 
 - mixin: nhsuk-link-style-reverse
-- mixin: nhsuk-link-style-reverse
 
 ---
 
@@ -6288,7 +4246,6 @@ should be set to 16px.
 - function: nhsuk-em
 - function: nhsuk-px-to-rem
 - function: nhsuk-line-height
-- function: nhsuk-line-height
 
 ---
 
@@ -6298,6 +4255,7 @@ should be set to 16px.
 - Access: public
 - Group: settings/colours
 - File: core/settings/_colours-applied.scss (L122)
+- **Deprecated:** To be changed to "grey-3" in v11.0
 
 Secondary border colour
 
@@ -6499,7 +4457,6 @@ Single point spacing variables
 #### Used By
 
 - function: nhsuk-spacing
-- function: nhsuk-spacing
 - mixin: _nhsuk-generate-static-spacing-overrides
 
 ---
@@ -6577,7 +4534,6 @@ Access responsive spacing with `nhsuk-responsive-margin` or
 #### Used By
 
 - mixin: nhsuk-responsive-spacing
-- mixin: nhsuk-responsive-spacing
 - mixin: _nhsuk-generate-responsive-spacing-overrides
 
 ---
@@ -6601,9 +4557,6 @@ nhsuk-colour("green")
 
 #### Used By
 
-- mixin: nhsuk-link-style-success
-- mixin: nhsuk-link-style-success
-- mixin: nhsuk-link-style-success
 - mixin: nhsuk-link-style-success
 
 ---
@@ -6638,7 +4591,6 @@ it using the warning key, found in the warning message. For example:
 
 #### Used By
 
-- mixin: nhsuk-warning
 - mixin: nhsuk-warning
 - function: _should-warn
 - function: _warning-text
@@ -6844,8 +4796,6 @@ You can also specify a separate font size and line height for print media.
 
 #### Used By
 
-- mixin: nhsuk-font-size
-- mixin: nhsuk-font-size
 - mixin: nhsuk-font-size
 
 ---

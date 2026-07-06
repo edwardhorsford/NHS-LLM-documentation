@@ -172,10 +172,14 @@ function renderLinks(links) {
 function renderUsedBy(usedBy) {
   if (!Array.isArray(usedBy) || usedBy.length === 0) return '';
 
+  const unique = new Set();
   const lines = ['#### Used By', ''];
   for (const item of usedBy) {
     const contextType = item?.context?.type || 'unknown';
     const contextName = item?.context?.name || 'unknown';
+    const key = `${contextType}:${contextName}`;
+    if (unique.has(key)) continue;
+    unique.add(key);
     lines.push(`- ${escapeMarkdownInline(contextType)}: ${escapeMarkdownInline(contextName)}`);
   }
 
@@ -220,9 +224,9 @@ function renderContextSnippet(context) {
     return ['#### Value', '', '```scss', String(context.value), '```', ''].join('\n');
   }
 
-  const code = normalizeText(context.code);
-  if (!code) return '';
-  return ['#### Implementation', '', '```scss', code, '```', ''].join('\n');
+  // Implementation bodies for functions and mixins are omitted - parameters
+  // and examples are enough for usage, and full code inflates the file
+  return '';
 }
 
 function renderExamples(examples) {
@@ -271,6 +275,17 @@ function renderItem(item) {
     `- File: ${escapeMarkdownInline(filePath)} (${lineRange})`
   ];
 
+  // Surface @deprecated and @alias annotations so LLMs avoid outdated APIs
+  if ('deprecated' in item) {
+    const deprecatedNote = normalizeText(item.deprecated);
+    parts.push(deprecatedNote
+      ? `- **Deprecated:** ${escapeMarkdownInline(deprecatedNote)}`
+      : '- **Deprecated**');
+  }
+  if (item.alias) {
+    parts.push(`- Alias of: ${escapeMarkdownInline(String(item.alias))} (prefer the original)`);
+  }
+
   if (description) {
     parts.push('', description, '');
   } else {
@@ -307,7 +322,12 @@ function renderItem(item) {
 
 function generateMarkdownDocumentation(data) {
   const metadata = data.metadata || {};
-  const items = Array.isArray(data.items) ? data.items : [];
+  // Exclude vendored third-party code (sass-mq) - it is internal plumbing,
+  // not part of NHS Frontend's public Sass API
+  const items = (Array.isArray(data.items) ? data.items : []).filter(item => {
+    const filePath = normalizeText(item?.file?.path);
+    return !/(^|\/)vendor\//.test(filePath) && !/sass-mq/.test(filePath);
+  });
 
   const byType = new Map();
   for (const item of items) {
@@ -407,7 +427,8 @@ function generateMarkdownDocumentation(data) {
       ? validGroups.map(g => escapeMarkdownInline(g)).join(', ')
       : 'none';
     const lineNum = (headingLineNums[i] ?? 0) + lineOffset;
-    tocTable += `| ${name} | ${escapeMarkdownInline(type)} | ${groups} | ${lineNum} |\n`;
+    const nameCell = 'deprecated' in item ? `${name} (deprecated)` : name;
+    tocTable += `| ${nameCell} | ${escapeMarkdownInline(type)} | ${groups} | ${lineNum} |\n`;
   }
 
   return doc.replace(TOC_PLACEHOLDER, tocTable);
