@@ -163,39 +163,24 @@ function generateHeader(version, gitInfo, generatedAt) {
 /**
  * Format object as Nunjucks-style with unquoted keys
  */
-function formatAsNunjucks(obj, indent = 0) {
-  if (obj === null) return 'null';
-  if (typeof obj === 'undefined') return 'undefined';
-  if (typeof obj === 'string') {
-    // Escape so the generated example is valid Nunjucks - some fixture
-    // strings contain double quotes (embedded HTML) or newlines
-    const escaped = obj
-      .replace(/\\/g, '\\\\')
-      .replace(/"/g, '\\"')
-      .replace(/\r?\n/g, '\\n')
-    return `"${escaped}"`;
+// Formatter borrowed from NHS Frontend's own lib (the same code its review
+// app uses to display Nunjucks examples). Loaded in main() once the repo
+// path is known - see loadUpstreamMacroFormatter()
+let upstreamMacro = null;
+
+async function loadUpstreamMacroFormatter(repoPath) {
+  const libPath = path.join(repoPath, 'packages/nhsuk-frontend/src/nhsuk/lib/nunjucks/index.mjs');
+  try {
+    const lib = await import(`file://${path.resolve(libPath)}`);
+    upstreamMacro = lib.macro;
+  } catch (error) {
+    console.error('✗ Could not load the example formatter from NHS Frontend (lib/nunjucks)');
+    console.error(`   Tried: ${libPath}`);
+    console.error('   This needs an NHS Frontend checkout of v10.5+ with dependencies installed');
+    console.error('   (run npm install in the NHS Frontend repo)\n');
+    console.error(`   Underlying error: ${error.message}\n`);
+    process.exit(1);
   }
-  if (typeof obj === 'number' || typeof obj === 'boolean') return String(obj);
-
-  if (Array.isArray(obj)) {
-    if (obj.length === 0) return '[]';
-    const items = obj.map(item => '  '.repeat(indent + 1) + formatAsNunjucks(item, indent + 1));
-    return '[\n' + items.join(',\n') + '\n' + '  '.repeat(indent) + ']';
-  }
-
-  if (typeof obj === 'object') {
-    const keys = Object.keys(obj);
-    if (keys.length === 0) return '{}';
-
-    const items = keys.map(key => {
-      const value = formatAsNunjucks(obj[key], indent + 1);
-      return '  '.repeat(indent + 1) + `${key}: ${value}`;
-    });
-
-    return '{\n' + items.join(',\n') + '\n' + '  '.repeat(indent) + '}';
-  }
-
-  return String(obj);
 }
 
 /**
@@ -295,19 +280,14 @@ function formatExample(component, exampleName, example) {
   // Use the actual macro name if available, otherwise derive from component name
   const macroName = component.macroName || component.name.toLowerCase().replace(/\s+/g, '');
 
-  // Check if this example has a callBlock (content inside the component)
-  if (example.callBlock && typeof example.callBlock === 'string' && example.callBlock.trim().length > 0) {
-    // Show as a Nunjucks call block
-    // Note: callBlock is already a processed string (outdent template literals
-    // are evaluated at import time in fixtures.mjs)
-    let output = `{% call ${macroName}(${formatAsNunjucks(context)}) %}\n`;
-    output += example.callBlock.trim().replace(/^/gm, '  '); // Indent each line
-    output += `\n{% endcall %}`;
-    return output;
-  } else {
-    // Show wrapped in component macro syntax
-    return `{{ ${macroName}(${formatAsNunjucks(context)}) }}`;
-  }
+  const output = upstreamMacro(macroName, `${macroName}/macro.njk`, {
+    context,
+    callBlock: example.callBlock
+  });
+
+  // Drop the {% from ... %} import line - the prototype kit makes all
+  // component macros available globally, so examples shouldn't show imports
+  return output.replace(/^\{% from [^\n]*%\}\s*\n+/, '').trim();
 }
 
 /**
@@ -697,6 +677,9 @@ async function main() {
     }
   }
 
+  // Load NHS Frontend's own example formatter (exits with guidance if unavailable)
+  await loadUpstreamMacroFormatter(repoPath);
+
   // Create output directory
   await fs.mkdir(CONFIG.outputDir, { recursive: true });
 
@@ -767,6 +750,10 @@ async function main() {
 
   console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.md`);
   console.log('\n✅ Documentation generation complete!\n');
+
+  // Explicit exit - @prettier/sync (loaded via NHS Frontend's lib) keeps a
+  // worker thread alive that would otherwise stop the process ending
+  process.exit(0);
 }
 
 // Run the script
