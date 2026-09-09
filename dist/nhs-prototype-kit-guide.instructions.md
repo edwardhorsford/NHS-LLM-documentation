@@ -38,6 +38,8 @@ Prefer the simplest thing that makes the user journey work.
 
 Pages are `.html` files in `app/views`. The URL comes from the file path, so `app/views/contact-preference.html` is served at `/contact-preference` with no route needed. Each page extends the layout, sets `pageName` (used for the `<title>`) and fills the content block. Back links go in the `beforeContent` block.
 
+The layout provides the width container and main wrapper. Inside the content block, wrap content in a grid row and column. Question pages and body text use two thirds width.
+
 ```nunjucks
 {% extends "layout.html" %}
 
@@ -51,7 +53,13 @@ Pages are `.html` files in `app/views`. The URL comes from the file path, so `ap
 {% endblock %}
 
 {% block content %}
-  <h1 class="nhsuk-heading-l">{{ pageName }}</h1>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">{{ pageName }}</h1>
+
+      <p>Page content</p>
+    </div>
+  </div>
 {% endblock %}
 ```
 
