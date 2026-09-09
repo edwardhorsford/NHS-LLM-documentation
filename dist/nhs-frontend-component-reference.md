@@ -3,10 +3,10 @@
 ---
 **Auto-generated Documentation**
 
-- **NHS Frontend Version:** 10.5.2
+- **NHS Frontend Version:** 10.6.1
 - **Git Branch:** detached
-- **Git Commit:** 67bf2f6
-- **Generated:** 2026-07-06 12:50:21 UTC
+- **Git Commit:** ee96515
+- **Generated:** 2026-09-09 14:23:49 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -19,46 +19,49 @@ Use the component reference table below to find the line number for any componen
 
 | Component | Macro | Category | Line |
 |-----------|-------|----------|------|
-| Character count | `characterCount()` | Form Inputs | 2123 |
-| Checkboxes | `checkboxes()` | Form Inputs | 2617 |
-| Date input | `dateInput()` | Form Inputs | 3732 |
-| File upload | `fileUpload()` | Form Inputs | 5326 |
-| Input | `input()` | Form Inputs | 7082 |
-| Password input | `passwordInput()` | Form Inputs | 8303 |
-| Radios | `radios()` | Form Inputs | 8609 |
-| Search input | `searchInput()` | Form Inputs | 9338 |
-| Select | `select()` | Form Inputs | 9789 |
-| Textarea | `textarea()` | Form Inputs | 12701 |
-| Button | `button()` | Form Controls | 311 |
-| Error message | `errorMessage()` | Form Controls | 5055 |
-| Fieldset | `fieldset()` | Form Controls | 5214 |
-| Hint text | `hint()` | Form Controls | 6979 |
-| Label | `label()` | Form Controls | 7672 |
-| Back link | `backLink()` | Navigation | 109 |
-| Breadcrumb | `breadcrumb()` | Navigation | 162 |
-| Contents list | `contentsList()` | Navigation | 3620 |
-| Pagination | `pagination()` | Navigation | 7904 |
-| Skip link | `skipLink()` | Navigation | 10358 |
-| Action link | `actionLink()` | Content | 66 |
-| Card | `card()` | Content | 1084 |
-| Code | `code()` | Content | 3485 |
-| Details | `details()` | Content | 4602 |
-| Do and Don't list | `list()` | Content | 4833 |
-| Hero | `hero()` | Content | 6908 |
-| Images | `image()` | Content | 7007 |
-| Inset text | `insetText()` | Content | 7640 |
-| Legend | `legend()` | Content | 7745 |
-| Panel | `panel()` | Content | 8213 |
-| Summary list | `summaryList()` | Content | 10406 |
-| Tables | `table()` | Content | 11412 |
-| Tabs | `tabs()` | Content | 12415 |
-| Tag | `tag()` | Content | 12508 |
-| Task list | `taskList()` | Content | 12557 |
-| Footer | `footer()` | Layout | 5546 |
-| Header | `header()` | Layout | 6131 |
-| Error summary | `errorSummary()` | Notifications | 5084 |
-| Notification banner | `notificationBanner()` | Notifications | 7764 |
-| Warning callout | `warningCallout()` | Notifications | 12872 |
+| Character count | `characterCount()` | Form Inputs | 2395 |
+| Checkboxes | `checkboxes()` | Form Inputs | 2944 |
+| Date input | `dateInput()` | Form Inputs | 4447 |
+| File upload | `fileUpload()` | Form Inputs | 6337 |
+| Input | `input()` | Form Inputs | 8703 |
+| Password input | `passwordInput()` | Form Inputs | 10563 |
+| Radios | `radios()` | Form Inputs | 10929 |
+| Search input | `searchInput()` | Form Inputs | 11819 |
+| Select | `select()` | Form Inputs | 12318 |
+| Textarea | `textarea()` | Form Inputs | 18343 |
+| Button | `button()` | Form Controls | 352 |
+| Error message | `errorMessage()` | Form Controls | 5893 |
+| Fieldset | `fieldset()` | Form Controls | 6242 |
+| Hint text | `hint()` | Form Controls | 8527 |
+| Label | `label()` | Form Controls | 9363 |
+| Back link | `backLink()` | Navigation | 133 |
+| Breadcrumb | `breadcrumb()` | Navigation | 201 |
+| Contents list | `contentsList()` | Navigation | 4303 |
+| Pagination | `pagination()` | Navigation | 10066 |
+| Skip link | `skipLink()` | Navigation | 13114 |
+| Action link | `actionLink()` | Content | 69 |
+| Caption | `caption()` | Content | 1125 |
+| Card | `card()` | Content | 1147 |
+| Code | `code()` | Content | 4169 |
+| Details | `details()` | Content | 5335 |
+| Do and Don't list | `list()` | Content | 5583 |
+| Heading | `heading()` | Content | 8127 |
+| Hero | `hero()` | Content | 8326 |
+| Images | `image()` | Content | 8572 |
+| Inset text | `insetText()` | Content | 9317 |
+| Legend | `legend()` | Content | 9605 |
+| Panel | `panel()` | Content | 10383 |
+| Scroll | `scroll()` | Content | 11766 |
+| Summary list | `summaryList()` | Content | 13163 |
+| Tables | `table()` | Content | 14658 |
+| Tabs | `tabs()` | Content | 17656 |
+| Tag | `tag()` | Content | 17853 |
+| Task list | `taskList()` | Content | 17940 |
+| Footer | `footer()` | Layout | 6607 |
+| Header | `header()` | Layout | 7312 |
+| Error summary | `errorSummary()` | Notifications | 5965 |
+| Notification banner | `notificationBanner()` | Notifications | 9832 |
+| Warning callout | `warningCallout()` | Notifications | 18565 |
 
 
 ---
@@ -76,13 +79,14 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the action link. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the action link. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the action link. If `html` is provided, the `text` option will be ignored. |
-| `type` | string |  | Type of `button` – `"button"` or `"submit"`. Defaults to `"submit"`. This has no effect on `a` elements. |
-| `href` | string | ✓ | The value of the link `href` attribute. |
-| `openInNewWindow` | boolean |  | If set to `true`, then the link will open in a new window. This has no effect on `button` elements. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire action link component in a `call` block. |
+| `type` | string |  | Type of action link as a button – `"button"` or `"submit"`. Defaults to `"submit"` unless `href` is provided. |
+| `href` | string | ✓ | The action link `href` attribute. If set, the action link will use an `<a>` tag automatically unless `type` is provided. |
+| `openInNewWindow` | boolean |  | If set to `true`, then the action link will open in a new window. If `type` is set, this has no effect. |
 | `variant` | string |  | Optional variant of action link. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the action link component. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the action link component. |
-| `element` | string |  | HTML element for the action link component – `"button"` or `"a"`. Defaults to `"a"`. |
+| `element` | string |  | Configured automatically if `href` is provided. |
 
 ### Examples
 
@@ -91,7 +95,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ actionLink({
   text: "Find your nearest A&E",
-  href: "#"
+  href: "#/find"
 }) }}
 ```
 
@@ -100,8 +104,28 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ actionLink({
   text: "Find your nearest A&E",
-  element: "button"
+  type: "submit"
 }) }}
+```
+
+#### with HTML
+
+```njk
+{{ actionLink({
+  html: 'Start session<br>\n<span class="nhsuk-u-secondary-text-colour nhsuk-u-font-weight-normal nhsuk-u-font-size-19">(11 cases)</span>',
+  href: "#/start"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call actionLink({
+  href: "#/start"
+}) %}
+Start session<br>
+<span class="nhsuk-u-secondary-text-colour nhsuk-u-font-weight-normal nhsuk-u-font-size-19">(11 cases)</span>
+{%- endcall %}
 ```
 
 ---
@@ -117,15 +141,16 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the back link. |
-| `text` | string |  | Text to use within the back link component. If `html` is provided, the `text` argument will be ignored. Defaults to `"Back"`. |
-| `html` | string |  | HTML to use within the back link component. If `html` is provided, the `text` argument will be ignored. Defaults to `"Back"`. |
-| `type` | string |  | Type of `button` – `"button"` or `"submit"`. Defaults to `"submit"`. This has no effect on `a` elements. |
-| `href` | string |  | The value of the link `href` attribute. |
+| `text` | string |  | Text to use within the back link component. If `html` is provided, the `text` option will be ignored. Defaults to `"Back"`. |
+| `html` | string |  | HTML to use within the back link component. If `html` is provided, the `text` option will be ignored. Defaults to `"Back"`. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire back link component in a `call` block. |
+| `type` | string |  | Type of back link as a button – `"button"` or `"submit"`. Defaults to `"submit"` unless `href` is provided. |
+| `href` | string |  | The back link `href` attribute. If set, the back link will use an `<a>` tag automatically unless `type` is provided. |
 | `variant` | string |  | Optional variant of back link. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the back link component. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the back link component. |
 | `visuallyHiddenText` | string |  | An optional visually hidden prefix used before the back link text, for example `"Back to"` used by the breadcrumbs component. |
-| `element` | string |  | HTML element for the back link component – `"button"` or `"a"`. Defaults to `"a"`. |
+| `element` | string |  | Configured automatically if `href` is provided. |
 
 ### Examples
 
@@ -143,18 +168,32 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ backLink({
   text: "Back",
-  element: "button"
+  type: "submit"
 }) }}
 ```
 
-#### with visually hidden text
+#### with text escaping
 
 ```njk
 {{ backLink({
-  visuallyHiddenText: "Back to",
-  text: "Search results",
-  href: "#"
+  text: "What to expect at A&E"
 }) }}
+```
+
+#### with HTML
+
+```njk
+{{ backLink({
+  html: "What to expect at A&amp;E"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call backLink() %}
+What to expect at A&amp;E
+{%- endcall %}
 ```
 
 ---
@@ -170,16 +209,18 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the breadcrumb. |
-| `items` | array | ✓ | Array of breadcrumbs item objects. This should contain all pages in the breadcrumb except for the parent page. |
+| `items` | array | ✓ | Array of breadcrumbs items. |
 | `items.text` | string | ✓ | Text to use within the breadcrumbs item. |
-| `items.href` | string |  | The value of the breadcrumb item link `href` attribute. |
+| `items.html` | string | ✓ | HTML to use within the breadcrumbs item. |
+| `items.href` | string |  | The breadcrumb item `href` attribute. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the individual crumb. |
-| `text` | string | ✓ | Text to use for the parent page. |
-| `href` | string | ✓ | The value of the parent page link `href` attribute. |
+| `text` | string | ✓ | Replaced by `item.text` in the `items` option. |
+| `href` | string | ✓ | Replaced by `item.href` in the `items` option. |
 | `variant` | string |  | Optional variant of breadcrumb. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the container. |
-| `labelText` | string |  | Plain text label identifying the landmark to screen readers. Defaults to "Breadcrumb". |
+| `labelText` | string |  | Replaced by the `ariaLabel` option. |
+| `ariaLabel` | string |  | Accessible name identifying the landmark to screen readers. Defaults to "Breadcrumb". |
 | `backLink` | object |  | The back link used by the breadcrumbs component on mobile. *(accepts nested component params)* |
 
 ### Examples
@@ -242,7 +283,7 @@ Use the component reference table below to find the line number for any componen
     }
   ],
   backLink: {
-    element: "button"
+    type: "submit"
   }
 }) }}
 ```
@@ -319,22 +360,22 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the button. |
-| `element` | string |  | HTML element for the button component – `"input"`, `"button"` or `"a"`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. |
-| `text` | string | ✓ | If `html` or `ariaLabel` is set, this is not required. Text for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
-| `html` | string | ✓ | If `text` or `ariaLabel` is set, this is not required. HTML for the button or link. If `html` is provided, the `text` argument will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This argument has no effect if `element` is set to `"input"`. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire button component in a `call` block. |
-| `name` | string |  | Name for the `input` or `button`. This has no effect on `a` elements. |
-| `type` | string |  | Type of `input` or `button` – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"`. This has no effect on `a` elements. |
-| `value` | string |  | The `value` attribute for the `button` tag. This has no effect on `a` or `input` elements. |
-| `disabled` | boolean |  | Whether the button should be disabled. For button and input elements, `disabled` and `aria-disabled` attributes will be set automatically. |
-| `href` | string |  | The URL that the button should link to. If this is set, `element` will be automatically set to `"a"` if it has not already been defined. |
+| `element` | string |  | HTML element for the button – `"input"`, `"button"` or `"a"`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. |
+| `text` | string | ✓ | If `html` or `ariaLabel` is set, this is not required. Text for the button. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` or `ariaLabel` is set, this is not required. HTML for the button. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire button component in a `call` block. |
+| `name` | string |  | Name for the button. If `href` is provided, this has no effect. |
+| `type` | string |  | Type of button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
+| `value` | string |  | The button `value` attribute. If `href` is provided, this has no effect. |
+| `disabled` | boolean |  | Whether the button should be disabled. If `href` is provided, this has no effect. |
+| `href` | string |  | The button `href` attribute. If set, the button will use an `<a>` tag automatically unless `type` is provided. |
 | `variant` | string |  | Optional variant of button – `"brand"`, `"login"`, `"reverse"`, `"secondary"`, `"secondary-solid"` or `"warning"`. |
 | `small` | boolean |  | If set to `true`, smaller button size will be used. |
-| `classes` | string |  | Classes to add to the button component. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the button component. |
+| `classes` | string |  | Classes to add to the button. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the button. |
 | `ariaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when only an icon is used. |
 | `preventDoubleClick` | boolean |  | Prevent accidental double clicks on submit buttons from submitting forms multiple times. |
-| `icon` | object |  | Can be used to add an icon to the button component. |
+| `icon` | object |  | Can be used to add an icon to the button. |
 | `icon.name` | string | ✓ | Icon name for the button – for example, `"search"`, `"arrow-right"`, `"plus"` or `"minus"`. |
 | `icon.html` | string | ✓ | HTML to use for the icon, as an alternative to the `name` option. If `html` is provided, the `name` option will be ignored. |
 | `icon.placement` | string | ✓ | Placement of the icon within the button – `"start"` or `"end"`. |
@@ -1081,6 +1122,28 @@ Use the component reference table below to find the line number for any componen
 
 ---
 
+## Caption
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `caption`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the caption. |
+| `element` | string |  | HTML element for the caption – for example, `"span"`, `"p"`, `"h2"` or `"h3"`. Defaults to `"span"`. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the caption. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the caption. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire caption component in a `call` block. |
+| `placement` | string | ✓ | Placement of the caption relative to the heading – `"before"`, `"after"`, `"start"` or `"end"`. |
+| `size` | string |  | Size of the caption – `"m"`, `"l"`, `"xl"` or `"xxl"`. |
+| `classes` | string |  | Classes to add to the caption. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the caption. |
+
+---
+
 ## Card
 
 [↑ Back to top](#table-of-contents)
@@ -1092,39 +1155,55 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the card. |
-| `heading` | string | ✓ | Text to use within the heading of the card component. If `headingHtml` is provided, the `heading` argument will be ignored. |
-| `headingHtml` | string | ✓ | HTML to use within the heading of the card component. If `headingHtml` is provided, the `heading` argument will be ignored. |
-| `headingClasses` | string |  | Classes to add to the card heading. |
-| `headingSize` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
-| `headingLevel` | integer |  | Optional heading level for the card heading. Defaults to `2`. |
-| `headingId` | string |  | Optional `id` attribute for the card heading. |
-| `headingVisuallyHiddenText` | string |  | Optional visually hidden prefix used before the heading. |
-| `href` | string |  | The value of the card link `href` attribute. |
+| `heading` | object | ✓ | Heading of the card component. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. |
+| `heading.visuallyHiddenText` | string |  | Optional visually hidden prefix used before the heading. |
+| `heading.size` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `heading.level` | integer |  | Optional heading level. Defaults to `2`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `headingHtml` | string | ✓ | Replaced by the `heading.html` option. |
+| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
+| `headingSize` | string |  | Replaced by the `heading.size` option. |
+| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
+| `headingId` | string |  | Replaced by the `heading.id` option. |
+| `headingVisuallyHiddenText` | string |  | Replaced by the `heading.visuallyHiddenText` option. |
+| `href` | string |  | The card link `href` attribute. |
 | `clickable` | boolean |  | If set to `true`, then the whole card will become a clickable card variant. |
 | `variant` | string |  | Optional variant of card – `"feature"`, `"primary"`, `"secondary"`, `"warning"`, `"non-urgent"`, `"urgent"` or `"emergency"`. |
-| `type` | string |  | Optional type of care card – `"non-urgent"`, `"urgent"` or `"emergency"`. Replaced by the `variant` option. |
-| `feature` | boolean |  | If set to `true`, then the card will become a feature card variant. |
-| `primary` | boolean |  | If set to `true`, the card will become a primary card variant (with chevron). |
-| `secondary` | boolean |  | If set to `true`, the card will become a secondary card variant. |
-| `warning` | boolean |  | If set to `true`, then the card will become a warning card variant used by the warning callout. |
-| `imgURL` | string |  | The URL of the image in the card. Replaced by the `image.src` option. |
-| `imgALT` | string |  | The alternative text of the image in the card. Replaced by the `image.alt` option. |
+| `type` | string |  | Replaced by the `variant` option. |
+| `feature` | boolean |  | Replaced by the `variant: "feature"` option. |
+| `primary` | boolean |  | Replaced by the `variant: "primary"` option. |
+| `secondary` | boolean |  | Replaced by the `variant: "secondary"` option. |
+| `warning` | boolean |  | Replaced by the `variant: "warning"` option. |
+| `imgURL` | string |  | Replaced by the `image.src` option. |
+| `imgALT` | string |  | Replaced by the `image.alt` option. |
 | `image` | object |  | Can be used to add an image to the card component. |
 | `image.src` | string | ✓ | The URL of the image in the card. |
 | `image.alt` | string |  | The alternative text of the image in the card. |
-| `image.html` | string |  | HTML to use for the image content. If `html` is provided, the `src` and `alt` arguments will be ignored. |
-| `description` | string |  | Text description within the card content. If `descriptionHtml` is provided, the `description` argument will be ignored. |
-| `descriptionHtml` | string |  | HTML to use within the card content. If `descriptionHtml` is provided, the `description` argument will be ignored. |
+| `image.html` | string |  | HTML to use for the image content. If `html` is provided, the `src` and `alt` options will be ignored. |
+| `description` | object |  | Description to use within the card content. If `descriptionHtml` is provided, the `description` option will be ignored. |
+| `description.text` | string | ✓ | If `html` is set, this is not required. Text to use within the card content. If `html` is provided, the `text` option will be ignored. |
+| `description.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the card content. If `html` is provided, the `text` option will be ignored. |
+| `description.classes` | string |  | Classes to add to the card content. |
+| `description.attributes` | object |  | HTML attributes (for example data attributes) to add to the card content. |
+| `descriptionHtml` | string |  | Replaced by the `description.html` option. |
 | `actions` | object |  | Can be used to add actions to the card component. |
 | `actions.items` | array |  | Array of actions as links for use in the card component. |
-| `actions.items.href` | string | ✓ | The value of the link's `href` attribute for an action item. |
+| `actions.items.id` | string |  | The ID of the action item. |
 | `actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `actions.items.visuallyHiddenText` | string |  | Actions rely on context from the surrounding content so may require additional accessible text. Text supplied to this option is appended to the end. Use `html` for more complicated scenarios. |
+| `actions.items.name` | string |  | Name for the action as a button. If `href` is provided, this has no effect. |
+| `actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
+| `actions.items.value` | string |  | The `value` attribute for the action as a button. If `href` is provided, this has no effect. |
+| `actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
 | `actions.items.classes` | string |  | Classes to add to the action item. |
 | `actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
 | `actions.classes` | string |  | Classes to add to the actions wrapper. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire card component in a `call` block. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire card component in a `call` block. |
 | `classes` | string |  | Classes to add to the card. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the card. |
 
@@ -1134,12 +1213,23 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "If you need help now, but it's not an emergency",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "If you need help now, but it's not an emergency"
+  }
+}) %}
 <p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
+{%- endcall %}
+```
 
+#### heading
+
+```njk
+{% call card({
+  heading: {
+    text: "If you need help now, but it's not an emergency"
+  }
+}) %}
+<p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
 {%- endcall %}
 ```
 
@@ -1157,9 +1247,11 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  heading: "Introduction to care and support",
-  headingSize: "m",
-  headingLevel: 3,
+  heading: {
+    text: "Introduction to care and support",
+    size: "m",
+    level: 3
+  },
   description:
     "A quick guide for people who have care and support needs and their carers"
 }) }}
@@ -1169,14 +1261,26 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Help from NHS 111",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Help from NHS 111",
+    level: 3
+  }
+}) %}
 <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
 <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
 <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
+{%- endcall %}
+```
 
+#### basic with custom HTML and heading as string
+
+```njk
+{% call card({
+  heading: "Help from NHS 111"
+}) %}
+<p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
+<p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
+<p class="nhsuk-body">For a life-threatening emergency call 999.</p>
 {%- endcall %}
 ```
 
@@ -1184,11 +1288,12 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
-<dl class="nhsuk-summary-list">
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1197,7 +1302,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1206,7 +1311,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1214,10 +1318,11 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Regional Managers",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Regional Managers",
+    level: 3
+  }
+}) %}
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
@@ -1240,7 +1345,7 @@ Use the component reference table below to find the line number for any componen
 
 
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
-<dl class="nhsuk-summary-list">
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1249,7 +1354,7 @@ Use the component reference table below to find the line number for any componen
       Sarah Philips
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1258,7 +1363,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1266,10 +1370,11 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1293,7 +1398,82 @@ Use the component reference table below to find the line number for any componen
 <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
   Add role
 </button>
+{%- endcall %}
+```
 
+#### basic with summary list and action
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
+  actions: {
+    items: [
+      {
+        text: "Delete",
+        href: "#/delete"
+      }
+    ]
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+{%- endcall %}
+```
+
+#### basic with summary list and action as a button
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
+  actions: {
+    items: [
+      {
+        type: "submit",
+        text: "Delete"
+      }
+    ]
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
 {%- endcall %}
 ```
 
@@ -1301,8 +1481,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Regional Manager",
-  headingLevel: 3,
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
   actions: {
     items: [
       {
@@ -1315,9 +1497,8 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1326,7 +1507,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1335,7 +1516,88 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
+{%- endcall %}
+```
 
+#### basic with summary list and actions array
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
+  actions: [
+    {
+      text: "Delete",
+      href: "#/delete"
+    },
+    {
+      text: "Withdraw",
+      href: "#/withdraw"
+    }
+  ]
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+{%- endcall %}
+```
+
+#### basic with summary list and actions as buttons
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
+  actions: {
+    items: [
+      {
+        type: "submit",
+        text: "Delete"
+      },
+      {
+        type: "submit",
+        text: "Withdraw"
+      }
+    ]
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
 {%- endcall %}
 ```
 
@@ -1357,9 +1619,8 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1368,7 +1629,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1377,7 +1638,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1385,8 +1645,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Regional Manager",
-  headingLevel: 3,
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
   actions: {
     items: [
       {
@@ -1396,9 +1658,8 @@ Use the component reference table below to find the line number for any componen
       false
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1407,7 +1668,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1416,7 +1677,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1425,11 +1685,12 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   href: "#",
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
-<dl class="nhsuk-summary-list">
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1438,7 +1699,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1447,7 +1708,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1456,8 +1716,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   variant: "secondary",
-  description:
-    "A quick guide for people who have care and support needs and their carers"
+  description: {
+    text: "A quick guide for people who have care and support needs and their carers"
+  }
 }) }}
 ```
 
@@ -1467,11 +1728,14 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   href: "#",
   variant: "secondary",
-  heading: "Introduction to care and support",
-  headingSize: "m",
-  headingLevel: 3,
-  description:
-    "A quick guide for people who have care and support needs and their carers"
+  heading: {
+    text: "Introduction to care and support",
+    size: "m",
+    level: 3
+  },
+  description: {
+    text: "A quick guide for people who have care and support needs and their carers"
+  }
 }) }}
 ```
 
@@ -1480,14 +1744,14 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Help from NHS 111",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Help from NHS 111",
+    level: 3
+  }
+}) %}
 <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
 <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
 <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
-
 {%- endcall %}
 ```
 
@@ -1496,11 +1760,12 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
-<dl class="nhsuk-summary-list">
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1509,7 +1774,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1518,7 +1783,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1527,10 +1791,11 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Regional Managers",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Regional Managers",
+    level: 3
+  }
+}) %}
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
@@ -1553,7 +1818,7 @@ Use the component reference table below to find the line number for any componen
 
 
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
-<dl class="nhsuk-summary-list">
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1562,7 +1827,7 @@ Use the component reference table below to find the line number for any componen
       Sarah Philips
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1571,7 +1836,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1580,10 +1844,11 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1607,7 +1872,6 @@ Use the component reference table below to find the line number for any componen
 <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
   Add role
 </button>
-
 {%- endcall %}
 ```
 
@@ -1616,8 +1880,10 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Regional Manager",
-  headingLevel: 3,
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
   actions: {
     items: [
       {
@@ -1630,9 +1896,8 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1641,7 +1906,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1650,7 +1915,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1673,9 +1937,8 @@ Use the component reference table below to find the line number for any componen
       }
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1684,7 +1947,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1693,7 +1956,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1702,8 +1964,10 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   variant: "secondary",
-  heading: "Regional Manager",
-  headingLevel: 3,
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
   actions: {
     items: [
       {
@@ -1713,9 +1977,8 @@ Use the component reference table below to find the line number for any componen
       false
     ]
   }
-}) -%}
-
-<dl class="nhsuk-summary-list">
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1724,7 +1987,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1733,7 +1996,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1743,11 +2005,12 @@ Use the component reference table below to find the line number for any componen
 {% call card({
   href: "#",
   variant: "secondary",
-  heading: "Regional Manager",
-  headingLevel: 3
-}) -%}
-
-<dl class="nhsuk-summary-list">
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  }
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1756,7 +2019,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1765,7 +2028,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1773,11 +2035,12 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  heading: "Speak to a GP if:",
-  headingLevel: 3,
+  heading: {
+    text: "Speak to a GP if:",
+    level: 3
+  },
   variant: "non-urgent"
-}) -%}
-
+}) %}
 <ul>
   <li>you're not sure it's chickenpox</li>
   <li>the skin around the blisters is red, hot or painful (signs of infection)</li>
@@ -1785,7 +2048,6 @@ Use the component reference table below to find the line number for any componen
   <li>you're concerned about your child or they get worse</li>
 </ul>
 <p>Tell the receptionist you think it's chickenpox before going in. They may recommend a special appointment time if other patients are at risk.</p>
-
 {%- endcall %}
 ```
 
@@ -1794,10 +2056,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   heading: "Ask for an urgent GP appointment if:",
-  headingLevel: 3,
   variant: "urgent"
-}) -%}
-
+}) %}
 <ul>
   <li>you're an adult and have chickenpox</li>
   <li>you're pregnant and haven't had chickenpox before and you've been near someone with it</li>
@@ -1805,7 +2065,6 @@ Use the component reference table below to find the line number for any componen
   <li>you think your newborn baby has chickenpox</li>
 </ul>
 <p>In these situations, your GP can prescribe medicine to prevent complications. You need to take it within 24 hours of the spots coming out.</p>
-
 {%- endcall %}
 ```
 
@@ -1814,17 +2073,14 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   heading: "Call 999 if you have sudden chest pain that:",
-  headingLevel: 3,
   variant: "emergency"
-}) -%}
-
+}) %}
 <ul>
   <li>spreads to your arms, back, neck or jaw</li>
   <li>makes your chest feel tight or heavy</li>
   <li>also started with shortness of breath, sweating and feeling or being sick</li>
 </ul>
 <p>You could be having a heart attack. Call 999 immediately as you need immediate treatment in hospital.</p>
-
 {%- endcall %}
 ```
 
@@ -1833,10 +2089,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call card({
   heading: "Call 999 or go to A&E now if:",
-  headingLevel: 3,
   variant: "emergency"
-}) -%}
-
+}) %}
 <ul>
   <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
   <li>you have severe difficulty breathing – you're gasping, choking or not able to get words out</li>
@@ -1846,9 +2100,10 @@ Use the component reference table below to find the line number for any componen
   <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
     <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"/>
   </svg>
-  <span class="nhsuk-action-link__text">Find your nearest A&amp;E</span>
+  <span class="nhsuk-action-link__text">
+    Find your nearest A&amp;E
+  </span>
 </a>
-
 {%- endcall %}
 ```
 
@@ -1857,10 +2112,12 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
+  heading: {
+    text: "Breast screening",
+    size: "m"
+  },
   variant: "primary",
-  clickable: true,
-  heading: "Breast screening",
-  headingSize: "m"
+  clickable: true
 }) }}
 ```
 
@@ -1869,12 +2126,14 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  variant: "primary",
-  clickable: true,
-  heading: "Introduction to care and support",
-  headingSize: "m",
+  heading: {
+    text: "Introduction to care and support",
+    size: "m"
+  },
   description:
-    "A quick guide for people who have care and support needs and their carers"
+    "A quick guide for people who have care and support needs and their carers",
+  clickable: true,
+  variant: "primary"
 }) }}
 ```
 
@@ -1883,11 +2142,13 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  clickable: true,
-  heading: "Introduction to care and support",
-  headingSize: "m",
+  heading: {
+    text: "Introduction to care and support",
+    size: "m"
+  },
   description:
-    "A quick guide for people who have care and support needs and their carers"
+    "A quick guide for people who have care and support needs and their carers",
+  clickable: true
 }) }}
 ```
 
@@ -1896,12 +2157,14 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   href: "#",
-  clickable: true,
-  variant: "secondary",
-  heading: "Urgent and emergency care services",
-  headingSize: "m",
+  heading: {
+    text: "Urgent and emergency care services",
+    size: "m"
+  },
   description:
-    "Services the NHS provides if you need urgent or emergency medical help"
+    "Services the NHS provides if you need urgent or emergency medical help",
+  clickable: true,
+  variant: "secondary"
 }) }}
 ```
 
@@ -1911,10 +2174,13 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   href: "#",
   variant: "secondary",
-  heading: "Why we are reinvesting in the NHS Prototype kit",
-  headingClasses: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2",
-  descriptionHtml:
-    '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>\n<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>'
+  heading: {
+    text: "Why we are reinvesting in the NHS Prototype kit",
+    classes: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2"
+  },
+  description: {
+    html: '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>\n<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>'
+  }
 }) }}
 ```
 
@@ -1932,12 +2198,15 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
+  heading: {
+    text: "A",
+    id: "a",
+    size: "m"
+  },
   variant: "feature",
-  heading: "A",
-  headingId: "a",
-  headingSize: "m",
-  descriptionHtml:
-    '<ul class="nhsuk-list nhsuk-list--border">\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">AAA, see Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abscess/">Abscess</a></li>\n</ul>'
+  description: {
+    html: '<ul class="nhsuk-list nhsuk-list--border">\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">AAA, see Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abdominal-aortic-aneurysm/">Abdominal aortic aneurysm</a></li>\n  <li><a href="#/conditions/abscess/">Abscess</a></li>\n</ul>'
+  }
 }) }}
 ```
 
@@ -1945,11 +2214,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  variant: "feature",
-  heading: "Feature card heading"
-}) -%}
-
-<dl class="nhsuk-summary-list">
+  heading: "Feature card heading",
+  variant: "feature"
+}) %}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Name
@@ -1958,7 +2226,7 @@ Use the component reference table below to find the line number for any componen
       Karen Francis
     </dd>
   </div>
-  <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+  <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Date of birth
     </dt>
@@ -1967,7 +2235,6 @@ Use the component reference table below to find the line number for any componen
     </dd>
   </div>
 </dl>
-
 {%- endcall %}
 ```
 
@@ -1975,10 +2242,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {% call card({
-  variant: "feature",
-  heading: "Flu: Follow-up requested"
-}) -%}
-
+  heading: "Flu: Follow-up requested",
+  variant: "feature"
+}) %}
 <p>Sarah Philips (Mum) would like to speak to a member of the team about other options for their child's vaccination.</p>
 <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Record a new consent response
@@ -2022,7 +2288,6 @@ Use the component reference table below to find the line number for any componen
     </dl>
   </div>
 </div>
-
 {%- endcall %}
 ```
 
@@ -2030,10 +2295,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  variant: "warning",
   heading: "School, nursery or work",
   description:
-    "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
+    "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.",
+  variant: "warning"
 }) }}
 ```
 
@@ -2041,10 +2306,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ card({
-  variant: "warning",
   heading: "School, nursery or work",
   description:
     "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.",
+  variant: "warning",
   actions: {
     items: [
       {
@@ -2061,14 +2326,16 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   image: {
-    src: "https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg"
+    src: "/nhsuk-frontend/assets/example-image-exercise.jpg"
   },
   href: "#",
-  clickable: true,
-  heading: "Exercise",
-  headingSize: "m",
+  heading: {
+    text: "Exercise",
+    size: "m"
+  },
   description:
-    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
+    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing",
+  clickable: true
 }) }}
 ```
 
@@ -2077,14 +2344,16 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   image: {
-    html: '<figure class="nhsuk-image">\n  <img class="nhsuk-image__img" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">\n  <figcaption class="nhsuk-image__caption">\n    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.\n  </figcaption>\n</figure>\n'
+    html: '<figure class="nhsuk-image">\n  <img class="nhsuk-image__img" src="/nhsuk-frontend/assets/example-image-exercise.jpg" alt="">\n  <figcaption class="nhsuk-image__caption">\n    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.\n  </figcaption>\n</figure>\n'
   },
   href: "#",
-  clickable: true,
-  heading: "Exercise",
-  headingSize: "m",
+  heading: {
+    text: "Exercise",
+    size: "m"
+  },
   description:
-    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing"
+    "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing",
+  clickable: true
 }) }}
 ```
 
@@ -2093,14 +2362,15 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ card({
   image: {
-    src: "https://service-manual.nhs.uk/assets/blog-prototype-kit.png"
+    src: "/nhsuk-frontend/assets/example-image-prototype-kit.png"
   },
   href: "https://digital.nhs.uk/blog/design-matters/2025/why-we-are-reinvesting-in-the-nhs-prototype-kit",
   clickable: true,
-  heading: "Why we are reinvesting in the NHS prototype kit",
-  headingSize: "m",
-  headingHtml:
-    '<p class="nhsuk-body-s nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-0"><span class="nhsuk-u-visually-hidden">Published on: </span>21 July 2025</p>\n<p class="nhsuk-body-s nhsuk-u-font-weight-bold">NHS England Design Matters blog</p>',
+  heading: {
+    text: "Why we are reinvesting in the NHS prototype kit",
+    html: '<p class="nhsuk-body-s nhsuk-u-secondary-text-colour nhsuk-u-margin-bottom-0"><span class="nhsuk-u-visually-hidden">Published on: </span>21 July 2025</p>\n<p class="nhsuk-body-s nhsuk-u-font-weight-bold">NHS England Design Matters blog</p>',
+    size: "m"
+  },
   description:
     "Frankie Roberto and Mike Gallagher explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it."
 }) }}
@@ -2112,9 +2382,11 @@ Use the component reference table below to find the line number for any componen
 {{ card({
   href: "#",
   clickable: true,
-  heading: "Order a repeat prescription",
-  headingSize: "xs",
-  headingLevel: 3
+  heading: {
+    text: "Order a repeat prescription",
+    size: "xs",
+    level: 3
+  }
 }) }}
 ```
 
@@ -2135,7 +2407,7 @@ Use the component reference table below to find the line number for any componen
 | `rows` | string |  | Optional number of textarea rows (default is 5 rows). |
 | `value` | string |  | Optional initial value of the textarea. |
 | `maxlength` | string | ✓ | The maximum number of characters (or words if `countType` is set to `"words"`). |
-| `maxwords` | string | ✓ | The maximum number of words. Replaced by the `maxlength` and `countType: "words"` options. |
+| `maxwords` | string | ✓ | Replaced by the `maxlength` and `countType: "words"` options. |
 | `countType` | string |  | The count type used to count the text – `"length"` or `"words"`. Defaults to `"length"`. |
 | `threshold` | string |  | The percentage value of the limit at which point the count message is displayed. If this attribute is set, the count message will be hidden by default. |
 | `label` | object | ✓ | The label used by the character count component. *(accepts nested component params)* |
@@ -2157,7 +2429,13 @@ Use the component reference table below to find the line number for any componen
 | `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"street-address"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. |
 | `countMessage` | object |  | Additional options for the count message used by the character count component. |
 | `countMessage.classes` | string |  | Classes to add to the count message. |
-| `textareaDescriptionText` | string |  | Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page if `countType` is not supported or JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` parameter. |
+| `textareaDescriptionText` | string |  | Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page if `countType` is not supported or JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` option. |
+| `charactersUnderLimitText` | object |  | Message displayed when the number of characters is under the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining characters. [Our pluralisation rules apply to this macro option](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/configuration/localisation.md#understanding-pluralisation-rules) |
+| `charactersAtLimitText` | string |  | Message displayed when the number of characters reaches the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. |
+| `charactersOverLimitText` | object |  | Message displayed when the number of characters is over the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of characters above the maximum. [Our pluralisation rules apply to this macro option](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/configuration/localisation.md#understanding-pluralisation-rules) |
+| `wordsUnderLimitText` | object |  | Message displayed when the number of words is under the configured maximum, `maxlength` with `countType: "words"`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining words. [Our pluralisation rules apply to this macro option](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/configuration/localisation.md#understanding-pluralisation-rules) |
+| `wordsAtLimitText` | string |  | Message displayed when the number of words reaches the configured maximum, `maxlength` with `countType: "words"`. This message is displayed visually and through assistive technologies. |
+| `wordsOverLimitText` | object |  | Message displayed when the number of words is over the configured maximum, `maxlength` with `countType: "words"`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of words above the maximum. [Our pluralisation rules apply to this macro option](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/configuration/localisation.md#understanding-pluralisation-rules) |
 
 ### Examples
 
@@ -2166,9 +2444,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -2183,9 +2460,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -2201,9 +2477,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -2214,14 +2489,30 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ characterCount({
+  label: {
+    heading: "Enter a job description",
+    size: "l"
+  },
+  errorMessage: true,
+  id: "with-error-only",
+  name: "example",
+  maxlength: 350,
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   errorMessage: {
     text: "Job description must be 350 characters or less"
@@ -2239,9 +2530,65 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  errorMessage: {
+    text: "Job description must be 350 characters or less"
+  },
+  id: "with-error-message",
+  name: "example",
+  maxlength: 350,
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ characterCount({
+  label: {
+    heading: "Enter a job description",
+    size: "l"
+  },
+  hint: "Do not include personal information like your name, date of birth or NHS number",
+  errorMessage: "Job description must be 350 characters or less",
+  id: "with-error-message",
+  name: "example",
+  maxlength: 350,
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description"
+  },
+  errorMessage: {
+    text: "Job description must be 350 characters or less"
+  },
+  id: "with-error-message",
+  name: "example",
+  maxlength: 350,
+  value:
+    "👩🏻‍🚀 A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches across digital and offline channels. They make sure appropriate content is shown to a user in the right place and in the best format."
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ characterCount({
+  label: {
+    text: "Enter a job description"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -2262,9 +2609,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-value",
   name: "example",
@@ -2279,9 +2625,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   id: "custom-rows",
   name: "example",
@@ -2295,9 +2640,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   id: "custom-size",
   name: "example",
@@ -2305,13 +2649,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ characterCount({
-  label: {
-    text: "Tell us more about what happened"
-  },
+  label: "Tell us more about what happened",
   id: "without-heading",
   name: "example",
   maxlength: 150
@@ -2339,9 +2681,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-word-count",
   name: "example",
@@ -2354,9 +2695,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-length-count-type",
   name: "example",
@@ -2370,9 +2710,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-characters-count-type",
   name: "example",
@@ -2386,9 +2725,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   errorMessage: {
     text: "Job description must be 200 characters or less"
@@ -2407,9 +2745,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-characters-count-type-value",
   name: "example",
@@ -2425,9 +2762,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-characters-count-type-threshold",
   name: "example",
@@ -2444,9 +2780,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-words-count-type",
   name: "example",
@@ -2460,9 +2795,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   errorMessage: {
     text: "Job description must be 40 words or less"
@@ -2481,9 +2815,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-words-count-type-threshold",
   name: "example",
@@ -2500,9 +2833,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Enter a job description",
-    size: "l",
-    isPageHeading: true
+    heading: "Enter a job description",
+    size: "l"
   },
   id: "with-words-count-type-value",
   name: "example",
@@ -2518,9 +2850,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   id: "with-threshold",
   name: "example",
@@ -2536,9 +2867,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   textareaDescriptionText: "No more than %{count} characters",
   id: "no-maximum-description",
@@ -2553,9 +2883,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   id: "no-maximum",
   name: "example",
@@ -2569,9 +2898,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Allwch chi roi mwy o fanylion?",
-    size: "l",
-    isPageHeading: true
+    heading: "Allwch chi roi mwy o fanylion?",
+    size: "l"
   },
   hint: {
     text: "Peidiwch â chynnwys gwybodaeth bersonol, fel eich enw, dyddiad geni na rhif y GIG"
@@ -2603,9 +2931,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ characterCount({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   id: "to-configure-in-javascript",
   name: "example"
@@ -2646,7 +2973,7 @@ Use the component reference table below to find the line number for any componen
 | `items.id` | string |  | Specific `id` attribute for the checkbox item. If omitted, then component global `idPrefix` option will be applied. |
 | `items.name` | string |  | Specific `name` attribute for the checkbox item. If omitted, then component global `name` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the checkbox input. |
-| `items.label` | object |  | The label used by each checkbox item within the checkboxes component. The `label.size` and `label.isPageHeading` options are not supported. *(accepts nested component params)* |
+| `items.label` | object |  | The label used by each checkbox item within the checkboxes component. The `label.size` and `label.heading` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each checkbox item within the checkboxes component. *(accepts nested component params)* |
 | `items.divider` | string |  | Divider text to separate checkbox items, for example the text `"or"`. |
 | `items.checked` | boolean |  | Whether the checkbox should be checked when the page loads. Takes precedence over the top-level `values` option. |
@@ -2655,8 +2982,10 @@ Use the component reference table below to find the line number for any componen
 | `items.disabled` | boolean |  | If `true`, checkbox will be disabled. |
 | `items.classes` | string |  | Classes to add to the checkbox input tag. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the checkbox input tag. |
-| `items.exclusive` | boolean |  | If set to `true`, marks this checkbox as the None option in a None of these type behaviour. Unchecking all other checkboxes in the group when None is clicked. |
-| `items.exclusiveGroup` | string |  | Used in conjunction with `exclusive` - this should be set to a string which groups checkboxes together into a set for use in a None of these scenario. |
+| `items.behaviour` | string |  | Behaviour of the checkbox when JavaScript is enabled – `"exclusive"` or `"inclusive"`. Use `"exclusive"` for a "none" option or `"inclusive"` for an "all" option. |
+| `items.behaviourGroup` | string |  | Used in conjunction with `behaviour` - this should be set to a string which groups checkboxes together into a set for use with a "none" or "all" option. |
+| `items.exclusive` | boolean |  | Replaced by `item.behaviour` in the `items` option. |
+| `items.exclusiveGroup` | string |  | Replaced by `item.behaviourGroup` in the `items` option. |
 | `values` | array |  | Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
 | `disabled` | boolean |  | If `true`, checkbox inputs used by the checkboxes component will be disabled. |
 | `small` | boolean |  | If set to `true`, small checkboxes will be used. |
@@ -2672,9 +3001,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2704,9 +3032,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2738,9 +3065,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2772,9 +3098,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2807,9 +3132,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "What medical conditions do you have?",
-      size: "l",
-      isPageHeading: true
+      heading: "What medical conditions do you have?",
+      size: "l"
     }
   },
   hint: {
@@ -2844,9 +3168,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "Which nipple has changed?",
-      size: "l",
-      isPageHeading: true
+      heading: "Which nipple has changed?",
+      size: "l"
     }
   },
   idPrefix: "inline",
@@ -2871,9 +3194,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -2914,9 +3236,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "What medical conditions do you have?",
-      size: "l",
-      isPageHeading: true
+      heading: "What medical conditions do you have?",
+      size: "l"
     }
   },
   hint: {
@@ -2972,15 +3293,44 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  errorMessage: true,
+  idPrefix: "with-error-only",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   errorMessage: {
@@ -3011,9 +3361,106 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  hint: "Select all options that are relevant to you",
+  errorMessage: "Select how you want to be contacted",
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
       text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      size: null
+    }
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-error-message",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: null
     }
   },
   hint: {
@@ -3047,9 +3494,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "Venenatis Condimentum",
-      size: "l",
-      isPageHeading: true
+      heading: "Venenatis Condimentum",
+      size: "l"
     }
   },
   idPrefix: "with-long-text",
@@ -3103,18 +3549,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ checkboxes({
   fieldset: {
-    legend: {
-      text: "How do you want to be contacted about this?",
-      isPageHeading: false
-    }
-  },
-  hint: {
-    text: "Select all options that are relevant to you"
+    legend: "How do you want to be contacted about this?"
   },
   idPrefix: "without-heading",
   name: "example",
@@ -3141,9 +3581,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -3183,9 +3622,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -3225,9 +3663,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -3270,9 +3707,8 @@ Use the component reference table below to find the line number for any componen
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -3293,7 +3729,7 @@ Use the component reference table below to find the line number for any componen
       value: "phone",
       text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <p class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number\n  </p>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
+        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <span class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error: </span>Enter your phone number\n  </span>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
       }
     },
     {
@@ -3307,18 +3743,232 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with "none of the above" option
+#### with "all" option
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "Which vaccines would you like to include?",
+      size: "l"
     }
   },
-  idPrefix: "conditional",
+  idPrefix: "all",
+  name: "example",
+  items: [
+    {
+      value: "all",
+      text: "All 9 vaccines",
+      behaviour: "inclusive"
+    },
+    {
+      divider: "or",
+      behaviour: "inclusive"
+    },
+    {
+      value: "4in1",
+      text: "4-in-1 pre-school booster"
+    },
+    {
+      value: "6in1",
+      text: "6-in-1"
+    },
+    {
+      value: "hpv",
+      text: "HPV"
+    },
+    {
+      value: "menb",
+      text: "MenB"
+    },
+    {
+      value: "menacwy",
+      text: "MenACWY"
+    },
+    {
+      value: "mmrv",
+      text: "MMRV"
+    },
+    {
+      value: "rotavirus",
+      text: "Rotavirus"
+    },
+    {
+      value: "pneumococcal",
+      text: "Pneumococcal"
+    },
+    {
+      value: "tdipv",
+      text: "Td/IPV"
+    }
+  ]
+}) }}
+```
+
+#### with "all" option (named group)
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "Which vaccines would you like to include?",
+      size: "l"
+    }
+  },
+  idPrefix: "all",
+  name: "example",
+  items: [
+    {
+      value: "all",
+      text: "All 9 vaccines",
+      behaviour: "inclusive",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      divider: "or",
+      behaviour: "inclusive"
+    },
+    {
+      value: "4in1",
+      text: "4-in-1 pre-school booster",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "6in1",
+      text: "6-in-1",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "hpv",
+      text: "HPV",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "menb",
+      text: "MenB",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "menacwy",
+      text: "MenACWY",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "mmrv",
+      text: "MMRV",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "rotavirus",
+      text: "Rotavirus",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "pneumococcal",
+      text: "Pneumococcal",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      value: "tdipv",
+      text: "Td/IPV",
+      behaviourGroup: "vaccines-included"
+    }
+  ]
+}) }}
+```
+
+#### with "all" option (named group, unique)
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "Which vaccines would you like to include?",
+      size: "l"
+    }
+  },
+  idPrefix: "all",
+  items: [
+    {
+      name: "vaccines-all",
+      value: "all",
+      text: "All 9 vaccines",
+      behaviour: "inclusive",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      divider: "or",
+      behaviour: "inclusive"
+    },
+    {
+      name: "vaccines-4in1",
+      value: "4in1",
+      text: "4-in-1 pre-school booster",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-6in1",
+      value: "6in1",
+      text: "6-in-1",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-hpv",
+      value: "hpv",
+      text: "HPV",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-menb",
+      value: "menb",
+      text: "MenB",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-menacwy",
+      value: "menacwy",
+      text: "MenACWY",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-mmrv",
+      value: "mmrv",
+      text: "MMRV",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-rotavirus",
+      value: "rotavirus",
+      text: "Rotavirus",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-pneumococcal",
+      value: "pneumococcal",
+      text: "Pneumococcal",
+      behaviourGroup: "vaccines-included"
+    },
+    {
+      name: "vaccines-tdipv",
+      value: "tdipv",
+      text: "Td/IPV",
+      behaviourGroup: "vaccines-included"
+    }
+  ]
+}) }}
+```
+
+#### with "none" option
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  idPrefix: "none",
   name: "example",
   items: [
     {
@@ -3338,25 +3988,61 @@ Use the component reference table below to find the line number for any componen
     },
     {
       value: "none",
-      text: "None of the above",
+      text: "I do not want to be contacted",
+      behaviour: "exclusive"
+    }
+  ]
+}) }}
+```
+
+#### with "none" option, deprecated
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  idPrefix: "none",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "none",
+      text: "I do not want to be contacted",
       exclusive: true
     }
   ]
 }) }}
 ```
 
-#### with "none of the above" option, conditional content
+#### with "none" option, conditional content
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
-  idPrefix: "conditional",
+  idPrefix: "none",
   name: "example",
   items: [
     {
@@ -3385,25 +4071,24 @@ Use the component reference table below to find the line number for any componen
     },
     {
       value: "none",
-      text: "None of the above",
-      exclusive: true
+      text: "I do not want to be contacted",
+      behaviour: "exclusive"
     }
   ]
 }) }}
 ```
 
-#### with "none of the above" option (named group)
+#### with "none" option (named group)
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
-  idPrefix: "conditional",
+  idPrefix: "none",
   name: "example",
   items: [
     {
@@ -3426,26 +4111,25 @@ Use the component reference table below to find the line number for any componen
     },
     {
       value: "none",
-      text: "None of the above",
-      exclusive: true,
+      text: "I do not want to be contacted",
+      behaviour: "exclusive",
       exclusiveGroup: "communication-preferences"
     }
   ]
 }) }}
 ```
 
-#### with "none of the above" option (named group, unique)
+#### with "none" option (named group, unique)
 
 ```njk
 {{ checkboxes({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
-  idPrefix: "conditional",
+  idPrefix: "none",
   name: "example",
   items: [
     {
@@ -3472,8 +4156,8 @@ Use the component reference table below to find the line number for any componen
     {
       name: "preference-none",
       value: "yes",
-      text: "None of the above",
-      exclusive: true,
+      text: "I do not want to be contacted",
+      behaviour: "exclusive",
       exclusiveGroup: "communication-preferences"
     }
   ]
@@ -3495,6 +4179,7 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the code component. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text for the code element. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML for the code element. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire code component in a `call` block. |
 | `classes` | string |  | Classes to add to the code container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the code container. |
 | `copyButtonClassList` | array |  | Classes to add to the button. Default is `["nhsuk-button--secondary", "nhsuk-button--small"]`. |
@@ -3561,7 +4246,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ code({
-  html: "<p>This is an HTML code block.</p>"
+  html: "&lt;p&gt;This is an HTML code block.&lt;/p&gt;"
 }) }}
 ```
 
@@ -3569,7 +4254,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ code({
-  html: "<p>This is an HTML code block.</p>",
+  html: "&lt;p&gt;This is an HTML code block.&lt;/p&gt;",
   button: true
 }) }}
 ```
@@ -3579,10 +4264,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call code({
   button: true
-}) -%}
-
-&lt;p&gt;This is a code block.&lt;/p&gt;
-
+}) %}
+&lt;p&gt;This is an HTML code block.&lt;/p&gt;
 {%- endcall %}
 ```
 
@@ -3607,7 +4290,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ code({
-  html: "<p>Bloc cod HTML yw hwn.</p>",
+  html: "&lt;p&gt;Bloc cod HTML yw hwn.&lt;/p&gt;",
   button: true,
   copyButtonText: "Copïo cod",
   copiedButtonText: "Cod wedi'i gopïo",
@@ -3628,17 +4311,18 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the contents list. |
-| `items` | array | ✓ | Array of content list items objects. |
-| `items.href` | string | ✓ | The `href` attribute for the content list item label. Required unless `item.current` is set. |
+| `items` | array | ✓ | Array of contents list items objects. |
+| `items.href` | string | ✓ | The contents list item `href` attribute. Required unless `item.current` is set. |
 | `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
-| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each content list item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each content list item label. If `html` is provided, the `text` argument will be ignored. |
-| `items.classes` | string |  | Classes to add to the content list item label. |
-| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the content list item label. |
-| `landmarkLabel` | string |  | The label for the navigation landmark that wraps the contents list. Defaults to `"Pages in this guide"`. |
-| `classes` | string |  | Classes to add to the content list container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the content list container. |
-| `visuallyHiddenTitle` | string |  | Visually hidden title for the contents list items. Defaults to `"Contents"`. |
+| `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each contents list item. If `html` is provided, the `text` option will be ignored. |
+| `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each contents list item. If `html` is provided, the `text` option will be ignored. |
+| `items.classes` | string |  | Classes to add to the contents list item. |
+| `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the contents list item. |
+| `classes` | string |  | Classes to add to the contents list container. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the contents list container. |
+| `landmarkLabel` | string |  | Replaced by the `ariaLabel` option. |
+| `ariaLabel` | string |  | The accessible name for the navigation landmark that wraps the contents list. Defaults to `"Pages in this guide"`. |
+| `visuallyHiddenText` | string |  | Visually hidden heading for the contents list items. Defaults to `"Contents"`. |
 
 ### Examples
 
@@ -3727,6 +4411,37 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with visually hidden text
+
+```njk
+{{ contentsList({
+  visuallyHiddenText: "Table of contents",
+  items: [
+    {
+      href: "#",
+      text: "What is AMD?",
+      current: true
+    },
+    {
+      href: "#",
+      text: "Symptoms"
+    },
+    {
+      href: "#",
+      text: "Getting diagnosed"
+    },
+    {
+      href: "#",
+      text: "Treatments"
+    },
+    {
+      href: "#",
+      text: "Living with AMD"
+    }
+  ]
+}) }}
+```
+
 ---
 
 ## Date input
@@ -3740,10 +4455,10 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string | ✓ | This is used for the main component and to compose the `id` attribute for each item. |
-| `namePrefix` | string |  | Optional prefix. This is used to prefix each date input `name` attribute, wrapped in `[` and `]`. For example, setting `namePrefix: "dob"` will output the `name` attributes `dob[day]`, `dob[month]` and `dob[year]` respectively. |
+| `namePrefix` | string |  | Optional prefix. This is used to prefix each date input `name` attribute, wrapped in `[` and `]` – for example, `namePrefix: "dob"` will output the `name` attributes `dob[day]`, `dob[month]` and `dob[year]` respectively. |
 | `items` | array |  | The inputs within the date input component. The `input.errorMessage` and `input.hint` options are not supported. *(accepts nested component params)* |
 | `items.name` | string | ✓ | Item-specific `name` attribute. Defaults to `"day"`, `"month"` or `"year"`. |
-| `items.label` | object |  | Item-specific label. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `items.label` | object |  | Item-specific label. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `items.error` | boolean |  | If set to `true`, show a red border on the item input. |
 | `hint` | object |  | Can be used to add a hint to the date input component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Can be used to add an error message to the date input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
@@ -3760,17 +4475,17 @@ Use the component reference table below to find the line number for any componen
 | `day` | object |  | Can be used to customise the day input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `day.name` | string |  | The `name` attribute for the day input. Defaults to `"day"`. |
 | `day.value` | string |  | The `value` attribute for the day input. |
-| `day.label` | object |  | The label used by the day input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `day.label` | object |  | The label used by the day input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `day.error` | boolean |  | If set to `true`, show a red border on the day input. |
 | `month` | object |  | Can be used to customise the month input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `month.name` | string |  | The `name` attribute for the month input. Defaults to `"month"`. |
 | `month.value` | string |  | The `value` attribute for the month input. |
-| `month.label` | object |  | The label used by the month input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `month.label` | object |  | The label used by the month input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `month.error` | boolean |  | If set to `true`, show a red border on the month input. |
 | `year` | object |  | Can be used to customise the year input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `year.name` | string |  | The `name` attribute for the year input. Defaults to `"year"`. |
 | `year.value` | string |  | The `value` attribute for the year input. |
-| `year.label` | object |  | The label used by the year input. The `label.size` and `label.isPageHeading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `year.label` | object |  | The label used by the year input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `year.error` | boolean |  | If set to `true`, show a red border on the year input. |
 | `values` | object |  | An optional object used to specify `value` attributes for the inputs within the date input component without setting `items`. |
 | `values.day` | string |  | The `value` attribute for the day input. |
@@ -3778,9 +4493,6 @@ Use the component reference table below to find the line number for any componen
 | `values.year` | string |  | The `value` attribute for the year input. |
 | `disabled` | boolean |  | If `true`, inputs used by the date input component will be disabled. |
 | `classes` | string |  | Classes to add to the date input container. |
-| `inputWrapper` | object |  | Additional options for the wrapping element containing the date input component. |
-| `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
-| `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the date input container. |
 
 ### Examples
@@ -3791,9 +4503,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3809,9 +4520,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3828,9 +4538,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3850,9 +4559,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3871,9 +4579,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3904,9 +4611,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "Beth yw eich dyddiad geni?",
-      size: "l",
-      isPageHeading: true
+      heading: "Beth yw eich dyddiad geni?",
+      size: "l"
     }
   },
   hint: {
@@ -3914,19 +4620,13 @@ Use the component reference table below to find the line number for any componen
   },
   id: "example",
   day: {
-    label: {
-      text: "Dydd"
-    }
+    label: "Dydd"
   },
   month: {
-    label: {
-      text: "Mis"
-    }
+    label: "Mis"
   },
   year: {
-    label: {
-      text: "Blwyddyn"
-    }
+    label: "Blwyddyn"
   }
 }) }}
 ```
@@ -3937,9 +4637,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -3960,9 +4659,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your birthday?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your birthday?",
+      size: "l"
     }
   },
   hint: {
@@ -3979,9 +4677,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your birthday?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your birthday?",
+      size: "l"
     }
   },
   hint: {
@@ -4007,9 +4704,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your birthday?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your birthday?",
+      size: "l"
     }
   },
   hint: {
@@ -4036,9 +4732,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4055,9 +4750,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4083,9 +4777,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4112,9 +4805,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4137,9 +4829,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4166,9 +4857,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "When did you start your job?",
-      size: "l",
-      isPageHeading: true
+      heading: "When did you start your job?",
+      size: "l"
     }
   },
   hint: {
@@ -4189,9 +4879,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4201,17 +4890,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ dateInput({
   fieldset: {
-    legend: {
-      text: "What is your date of birth?"
-    }
-  },
-  hint: {
-    text: "For example, 31 3 1980"
+    legend: "What is your date of birth?"
   },
   id: "example"
 }) }}
@@ -4223,9 +4907,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4250,9 +4933,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4285,9 +4967,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4298,15 +4979,29 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  errorMessage: true,
+  id: "example"
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   errorMessage: {
@@ -4322,10 +5017,56 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  errorMessage: {
+    text: "Enter your date of birth"
+  },
+  id: "example"
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: "For example, 31 3 1980",
+  errorMessage: "Enter your date of birth",
+  id: "example"
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: "What is your date of birth?"
+  },
+  errorMessage: {
+    text: "Enter your date of birth"
+  },
+  id: "example"
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: "What is your date of birth?"
   },
   hint: {
     text: "For example, 31 3 1980"
@@ -4343,9 +5084,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   id: "example",
@@ -4367,9 +5107,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   id: "example",
@@ -4399,9 +5138,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4429,9 +5167,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4467,9 +5204,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4505,9 +5241,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4535,9 +5270,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4565,9 +5299,8 @@ Use the component reference table below to find the line number for any componen
 {{ dateInput({
   fieldset: {
     legend: {
-      text: "What is your date of birth?",
-      size: "l",
-      isPageHeading: true
+      heading: "What is your date of birth?",
+      size: "l"
     }
   },
   hint: {
@@ -4609,13 +5342,18 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `summaryText` | string | ✓ | If `summmaryHtml` is set, this is not required. Text to use within the summary element (the visible part of the details element). If `summaryHtml` is provided, the `summaryText` option will be ignored. |
-| `summaryHtml` | string | ✓ | If `summmaryText` is set, this is not required. HTML to use within the summary element (the visible part of the details element). If `summaryHtml` is provided, the `summaryText` option will be ignored. |
+| `summary` | object |  | Summary element content (the visible part of the details element). |
+| `summary.text` | string | ✓ | If `html` is set, this is not required. Text to use within the summary element (the visible part of the details element). If `html` is provided, the `text` option will be ignored. |
+| `summary.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the summary element (the visible part of the details element). If `html` is provided, the `text` option will be ignored. |
+| `summary.classes` | string |  | Classes to add to the summary element. |
+| `summary.attributes` | object |  | HTML attributes (for example data attributes) to add to the summary element. |
+| `summaryText` | string | ✓ | Replaced by the `summary.text` option. |
+| `summaryHtml` | string | ✓ | Replaced by the `summary.html` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the disclosed part of the details element. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the disclosed part of the details element. If `html` is provided, the `text` option will be ignored. |
 | `id` | string |  | The `id` to add to the details element. |
 | `open` | boolean |  | If `true`, details element will be expanded. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire details component in a `call` block. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire details component in a `call` block. |
 | `variant` | string |  | Optional variant of details. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the details element. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the details element. |
@@ -4625,31 +5363,57 @@ Use the component reference table below to find the line number for any componen
 #### default
 
 ```njk
-{% call details({
-  summaryText: "How to find your NHS number"
-}) -%}
-
-<p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
-<p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
-<ul>
-  <li>prescriptions</li>
-  <li>test results</li>
-  <li>hospital referral letters</li>
-  <li>appointment letters</li>
-</ul>
-<p>Ask your GP surgery for help if you cannot find your NHS number.</p>
-
-{%- endcall %}
+{{ details({
+  summary: {
+    text: "How to find your NHS number"
+  },
+  text: "You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you."
+}) }}
 ```
 
 #### open
 
 ```njk
-{% call details({
-  summaryText: "How to find your NHS number",
+{{ details({
+  summary: {
+    text: "How to find your NHS number"
+  },
+  text: "You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you.",
   open: true
-}) -%}
+}) }}
+```
 
+#### closed explicitly
+
+```njk
+{{ details({
+  summary: {
+    text: "How to find your NHS number"
+  },
+  text: "You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you.",
+  open: false
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ details({
+  summary: {
+    text: "How to find your NHS number"
+  },
+  html: '<p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>\n<p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>\n<ul>\n  <li>prescriptions</li>\n  <li>test results</li>\n  <li>hospital referral letters</li>\n  <li>appointment letters</li>\n</ul>\n<p>Ask your GP surgery for help if you cannot find your NHS number.</p>'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call details({
+  summary: {
+    text: "How to find your NHS number"
+  }
+}) %}
 <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
 <p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
 <ul>
@@ -4659,115 +5423,102 @@ Use the component reference table below to find the line number for any componen
   <li>appointment letters</li>
 </ul>
 <p>Ask your GP surgery for help if you cannot find your NHS number.</p>
-
 {%- endcall %}
+```
+
+#### with summary HTML
+
+```njk
+{{ details({
+  summary: {
+    html: "How to find your <span>NHS number</span>"
+  },
+  text: "An NHS number is a 10 digit number, like 999 123 4567"
+}) }}
+```
+
+#### with summary as string
+
+```njk
+{{ details({
+  summary: "How to find your NHS number",
+  text: "An NHS number is a 10 digit number, like 999 123 4567"
+}) }}
 ```
 
 #### expander
 
 ```njk
-{% call details({
-  summaryText: "Opening times",
+{{ details({
+  summary: {
+    text: "Opening times"
+  },
+  text: "We are open 9am to 6pm, Monday to Saturday.",
   classes: "nhsuk-expander"
-}) -%}
-
-<table class="nhsuk-table">
-  <thead class="nhsuk-table__head">
-    <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
-        Day of the week
-      </th>
-      <th scope="col" class="nhsuk-table__header">
-        Opening hours
-      </th>
-    </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Monday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 6pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Tuesday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 6pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Wednesday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 6pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Thursday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 6pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Friday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 6pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Saturday
-      </th>
-      <td class="nhsuk-table__cell">
-        9am to 1pm
-      </td>
-    </tr>
-    <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
-        Sunday
-      </th>
-      <td class="nhsuk-table__cell">
-        Closed
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-{%- endcall %}
+}) }}
 ```
 
 #### expander open
 
 ```njk
-{% call details({
-  summaryText: "Opening times",
+{{ details({
+  summary: {
+    text: "Opening times"
+  },
+  text: "We are open 9am to 6pm, Monday to Saturday.",
   classes: "nhsuk-expander",
   open: true
-}) -%}
+}) }}
+```
 
-<table class="nhsuk-table">
+#### expander closed explicitly
+
+```njk
+{{ details({
+  summary: {
+    text: "Opening times"
+  },
+  text: "We are open 9am to 6pm, Monday to Saturday.",
+  classes: "nhsuk-expander",
+  open: false
+}) }}
+```
+
+#### expander with HTML
+
+```njk
+{{ details({
+  summary: {
+    text: "Opening times"
+  },
+  html: '\n<table class="nhsuk-table nhsuk-table--no-last-row-border">\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Day of the week\n      </th>\n      <th class="nhsuk-table__header" scope="col">\n        Opening hours\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Monday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Tuesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Wednesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Thursday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Friday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Saturday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 1pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Sunday\n      </th>\n      <td class="nhsuk-table__cell">\n        Closed\n      </td>\n    </tr>\n  </tbody>\n</table>\n',
+  classes: "nhsuk-expander"
+}) }}
+```
+
+#### expander with HTML via call block
+
+```njk
+{% call details({
+  summary: {
+    text: "Opening times"
+  },
+  classes: "nhsuk-expander"
+}) %}
+<table class="nhsuk-table nhsuk-table--no-last-row-border">
   <thead class="nhsuk-table__head">
     <tr class="nhsuk-table__row">
-      <th scope="col" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="col">
         Day of the week
       </th>
-      <th scope="col" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="col">
         Opening hours
       </th>
     </tr>
   </thead>
   <tbody class="nhsuk-table__body">
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Monday
       </th>
       <td class="nhsuk-table__cell">
@@ -4775,7 +5526,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Tuesday
       </th>
       <td class="nhsuk-table__cell">
@@ -4783,7 +5534,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Wednesday
       </th>
       <td class="nhsuk-table__cell">
@@ -4791,7 +5542,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Thursday
       </th>
       <td class="nhsuk-table__cell">
@@ -4799,7 +5550,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Friday
       </th>
       <td class="nhsuk-table__cell">
@@ -4807,7 +5558,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Saturday
       </th>
       <td class="nhsuk-table__cell">
@@ -4815,7 +5566,7 @@ Use the component reference table below to find the line number for any componen
       </td>
     </tr>
     <tr class="nhsuk-table__row">
-      <th scope="row" class="nhsuk-table__header">
+      <th class="nhsuk-table__header" scope="row">
         Sunday
       </th>
       <td class="nhsuk-table__cell">
@@ -4824,7 +5575,6 @@ Use the component reference table below to find the line number for any componen
     </tr>
   </tbody>
 </table>
-
 {%- endcall %}
 ```
 
@@ -4841,16 +5591,24 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the do and don't list component. |
-| `title` | string | ✓ | Title to be displayed on the do and don't list component. |
+| `title` | string | ✓ | Replaced by the `heading.text` option. |
+| `heading` | object | ✓ | Heading to be displayed on the do and don't list component. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `heading.level` | integer |  | Optional heading level. Defaults to `3`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
 | `icon` | string |  | Optional icon modifier for the do and don't list items – `"cross"` or `"tick"`. Defaults to `"tick"`. |
-| `type` | string | ✓ | Optional type of do and don't list – `"cross"` or `"tick"`. Replaced by the `icon` option. |
+| `type` | string | ✓ | Replaced by the `icon` option. |
 | `items` | array | ✓ | Array of do and don't items objects. |
-| `items.item` | string | ✓ | Text to use within each do and don't item. Replaced by the `text` and `html` options. |
+| `items.item` | string | ✓ | Replaced by the `item.text` and `item.html` options. |
 | `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `prefixText` | string |  | Optional prefix text used before each do and don't item. Defaults to `"do not"` when `type` is `"cross"`. |
 | `hidePrefix` | boolean |  | If set to `true`, the optional `prefixText` will be removed from each do and don't item. |
-| `headingLevel` | integer |  | Optional heading level for the title heading. Defaults to `3`. |
 | `classes` | string |  | Classes to add to the do and don't list container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the do and don't list container. |
 
@@ -4860,7 +5618,75 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Do",
+  heading: {
+    text: "Do"
+  },
+  icon: "tick",
+  items: [
+    {
+      text: "cover blisters with a soft plaster or padded dressing"
+    },
+    {
+      text: "wash your hands before touching a burst blister"
+    },
+    {
+      text: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+    }
+  ]
+}) }}
+```
+
+#### with heading as string
+
+```njk
+{{ list({
+  heading: "Do",
+  icon: "tick",
+  items: [
+    {
+      text: "cover blisters with a soft plaster or padded dressing"
+    },
+    {
+      text: "wash your hands before touching a burst blister"
+    },
+    {
+      text: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+    }
+  ]
+}) }}
+```
+
+#### with heading level 1
+
+```njk
+{{ list({
+  heading: {
+    text: "Do",
+    level: 1
+  },
+  icon: "tick",
+  items: [
+    {
+      text: "cover blisters with a soft plaster or padded dressing"
+    },
+    {
+      text: "wash your hands before touching a burst blister"
+    },
+    {
+      text: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+    }
+  ]
+}) }}
+```
+
+#### with heading level 2
+
+```njk
+{{ list({
+  heading: {
+    text: "Do",
+    level: 2
+  },
   icon: "tick",
   items: [
     {
@@ -4880,7 +5706,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Do",
+  heading: {
+    text: "Do"
+  },
   icon: "tick",
   items: [
     {
@@ -4918,18 +5746,20 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Do",
+  heading: {
+    text: "Do"
+  },
   icon: "tick",
   prefixText: "always",
   items: [
     {
-      item: "cover blisters with a soft plaster or padded dressing"
+      text: "cover blisters with a soft plaster or padded dressing"
     },
     {
-      item: "wash your hands before touching a burst blister"
+      text: "wash your hands before touching a burst blister"
     },
     {
-      item: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
+      text: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
     }
   ]
 }) }}
@@ -4939,7 +5769,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Don't",
+  heading: {
+    text: "Don't"
+  },
   icon: "cross",
   items: [
     {
@@ -4962,17 +5794,19 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Don't",
+  heading: {
+    text: "Don't"
+  },
   icon: "cross",
   items: [
     {
-      item: "burst a blister yourself"
+      text: "burst a blister yourself"
     },
     {
-      item: "peel the skin off a burst blister"
+      text: "peel the skin off a burst blister"
     },
     {
-      item: "pick at the edges of the remaining skin"
+      text: "pick at the edges of the remaining skin"
     },
     false
   ]
@@ -5006,7 +5840,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Never",
+  heading: {
+    text: "Never"
+  },
   icon: "cross",
   prefixText: "never",
   items: [
@@ -5030,7 +5866,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ list({
-  title: "Don't",
+  heading: {
+    text: "Don't"
+  },
   icon: "cross",
   hidePrefix: true,
   items: [
@@ -5064,6 +5902,7 @@ Use the component reference table below to find the line number for any componen
 |-----------|------|----------|-------------|
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the error message. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the error message. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire error message component in a `call` block. |
 | `id` | string |  | The `id` attribute to add to the error message `<span>` tag. |
 | `classes` | string |  | Classes to add to the error message `<span>` tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the error message `<span>` tag. |
@@ -5076,6 +5915,48 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ errorMessage({
   text: "Enter your full name"
+}) }}
+```
+
+#### with text escaping
+
+```njk
+{{ errorMessage({
+  text: "Postcode must not include & and <"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ errorMessage({
+  html: "Postcode must not include &amp; and &lt;"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call errorMessage() %}
+Postcode must not include &amp; and &lt;
+{%- endcall %}
+```
+
+#### with translations
+
+```njk
+{{ errorMessage({
+  text: "Rhowch eich enw llawn",
+  visuallyHiddenText: "Gwall"
+}) }}
+```
+
+#### without visually hidden text
+
+```njk
+{{ errorMessage({
+  text: "There is an error on line 42",
+  visuallyHiddenText: ""
 }) }}
 ```
 
@@ -5092,16 +5973,27 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the error summary. |
-| `titleText` | string | ✓ | If `titleHtml` is set, this is not required. Text to use for the heading of the error summary block. If `titleHtml` is provided, `titleText` will be ignored. |
-| `titleHtml` | string | ✓ | If `titleText` is set, this is not required. HTML to use for the heading of the error summary block. If `titleHtml` is provided, `titleText` will be ignored. |
-| `descriptionText` | string |  | Text to use for the description of the errors. If you set `descriptionHtml`, the component will ignore `descriptionText`. |
-| `descriptionHtml` | string |  | HTML to use for the description of the errors. If you set this option, the component will ignore `descriptionText`. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but [Nunjucks code convention](https://mozilla.github.io/nunjucks/templating.html#call). Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire error summary component in a `call` block. |
+| `heading` | object | ✓ | Heading of the error summary component. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `titleText` | string | ✓ | Replaced by the `heading.text` option. |
+| `titleHtml` | string | ✓ | Replaced by the `heading.html` option. |
+| `description` | object |  | Description of the errors. |
+| `description.text` | string | ✓ | If `html` is set, this is not required. Text to use for the description of the errors. If `html` is provided, the `text` option will be ignored. |
+| `description.html` | string | ✓ | If `text` is set, this is not required. HTML to use for the description of the errors. If `html` is provided, the `text` option will be ignored. |
+| `description.classes` | string |  | Classes to add to the error summary body. |
+| `description.attributes` | object |  | HTML attributes (for example data attributes) to add to the error summary body. |
+| `descriptionText` | string |  | Replaced by the `description.text` option. |
+| `descriptionHtml` | string |  | Replaced by the `description.html` option. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire error summary component in a `call` block. |
 | `errorList` | array |  | A list of errors to include in the error summary. |
-| `errorList.href` | string |  | The `href` attribute for the error link item. If provided item will be an anchor. |
+| `errorList.href` | string |  | The error `href` attribute. If set, the error will become a link. |
 | `errorList.text` | string | ✓ | If `html` is set, this is not required. Text for the error link item. If `html` is provided, the `text` option will be ignored. |
 | `errorList.html` | string | ✓ | If `text` is set, this is not required. HTML for the error link item. If `html` is provided, the `text` option will be ignored. |
-| `errorList.attributes` | object |  | HTML attributes (for example data attributes) to add to the error link anchor. |
+| `errorList.attributes` | object |  | HTML attributes (for example data attributes) to add to the error link. |
 | `disableAutoFocus` | boolean |  | Prevent moving focus to the error summary when the page loads. |
 | `classes` | string |  | Classes to add to the error-summary container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the error-summary container. |
@@ -5112,8 +6004,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
-  descriptionText: "Describe the errors and how to correct them",
+  heading: {
+    text: "There is a problem"
+  },
   errorList: [
     {
       text: "Date of birth must be in the past",
@@ -5127,7 +6020,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
+  heading: {
+    text: "There is a problem"
+  },
   errorList: [
     {
       text: "Enter your first name",
@@ -5145,7 +6040,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
+  heading: {
+    text: "There is a problem"
+  },
   errorList: [
     {
       text: "Enter your first name",
@@ -5156,11 +6053,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without description
+#### with heading as string
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
+  heading: "There is a problem",
   errorList: [
     {
       text: "Date of birth must be in the past",
@@ -5170,12 +6067,139 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without error list
+#### with heading HTML
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
-  descriptionText: "Describe the errors and how to correct them"
+  heading: {
+    html: "There is a <span>problem</span>"
+  },
+  errorList: [
+    {
+      text: "Date of birth must be in the past",
+      href: "#example-day"
+    }
+  ]
+}) }}
+```
+
+#### with description
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  description: {
+    text: "Describe the errors and how to correct them"
+  },
+  errorList: [
+    {
+      text: "Date of birth must be in the past",
+      href: "#example-day"
+    }
+  ]
+}) }}
+```
+
+#### with description as string
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  description: "Describe the errors and how to correct them",
+  errorList: [
+    {
+      text: "Date of birth must be in the past",
+      href: "#example-day"
+    }
+  ]
+}) }}
+```
+
+#### with description HTML
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  description: {
+    html: "Describe the errors and <span>how to correct them</span>"
+  },
+  errorList: [
+    {
+      text: "Date of birth must be in the past",
+      href: "#example-day"
+    }
+  ]
+}) }}
+```
+
+#### with description via call block
+
+```njk
+{% call errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  errorList: [
+    {
+      text: "Date of birth must be in the past",
+      href: "#example-day"
+    }
+  ]
+}) %}
+Describe the errors and <span>how to correct them</span>
+{%- endcall %}
+```
+
+#### with description only
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  description: {
+    text: "Describe the errors and how to correct them"
+  }
+}) }}
+```
+
+#### without error link
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  errorList: [
+    {
+      text: "Invalid username or password"
+    }
+  ]
+}) }}
+```
+
+#### without error link (mixed)
+
+```njk
+{{ errorSummary({
+  heading: {
+    text: "There is a problem"
+  },
+  errorList: [
+    {
+      text: "Invalid username or password"
+    },
+    {
+      text: "Agree to the terms of service to log in",
+      href: "#example-terms-of-service"
+    }
+  ]
 }) }}
 ```
 
@@ -5183,7 +6207,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
+  heading: {
+    text: "There is a problem"
+  },
   errorList: [
     {
       text: "Date of birth must be in the past",
@@ -5198,7 +6224,9 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ errorSummary({
-  titleText: "There is a problem",
+  heading: {
+    text: "There is a problem"
+  },
   errorList: [
     {
       text: "Date of birth must be in the past",
@@ -5228,21 +6256,44 @@ Use the component reference table below to find the line number for any componen
 | `role` | string |  | Optional ARIA `role` attribute. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the fieldset container. |
 | `html` | string |  | HTML to use within the fieldset element. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire fieldset component in a `call` block. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire fieldset component in a `call` block. |
 
 ### Examples
 
 #### default
 
 ```njk
+{{ fieldset({
+  legend: {
+    heading: "What is your address?",
+    size: "l"
+  }
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ fieldset({
+  legend: {
+    caption: "About you",
+    heading: "What is your address?",
+    size: "l"
+  },
+  html: '<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="address-line1">\n    Address line 1\n  </label>\n  <input class="nhsuk-input" id="address-line1" name="address-line1" type="text" autocomplete="address-line1">\n</div>\n\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="address-line2">\n    Address line 2 (optional)\n  </label>\n  <input class="nhsuk-input" id="address-line2" name="address-line2" type="text" autocomplete="address-line2">\n</div>\n\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="address-town">\n    Town or city\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">\n</div>\n\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="address-postcode">\n    Postcode\n  </label>\n  <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">\n</div>\n'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
 {% call fieldset({
   legend: {
-    text: "What is your address?",
-    size: "l",
-    isPageHeading: true
+    caption: "About you",
+    heading: "What is your address?",
+    size: "l"
   }
-}) -%}
-
+}) %}
 <div class="nhsuk-form-group">
   <label class="nhsuk-label" for="address-line1">
     Address line 1
@@ -5270,54 +6321,14 @@ Use the component reference table below to find the line number for any componen
   </label>
   <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
 </div>
-
 {%- endcall %}
 ```
 
-#### legend
+#### without legend heading
 
 ```njk
 {{ fieldset({
-  legend: {
-    text: "What is your address?",
-    size: "l",
-    isPageHeading: true
-  }
-}) }}
-```
-
-#### with legend size class
-
-```njk
-{{ fieldset({
-  legend: {
-    text: "What is your address?",
-    classes: "nhsuk-fieldset__legend--l",
-    isPageHeading: true
-  }
-}) }}
-```
-
-#### with legend size class overriding size param
-
-```njk
-{{ fieldset({
-  legend: {
-    text: "What is your address?",
-    classes: "nhsuk-fieldset__legend--l",
-    size: "s",
-    isPageHeading: true
-  }
-}) }}
-```
-
-#### without page heading
-
-```njk
-{{ fieldset({
-  legend: {
-    text: "What is your address?"
-  }
+  legend: "What is your address?"
 }) }}
 ```
 
@@ -5367,9 +6378,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload"
@@ -5381,9 +6391,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload",
@@ -5396,13 +6405,26 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload your photo",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload your photo",
+    size: "l"
   },
   hint: {
     text: "Your photo may be in your Pictures, Photos, Downloads or Desktop folder"
   },
+  id: "file-upload",
+  name: "file-upload"
+}) }}
+```
+
+#### with error only
+
+```njk
+{{ fileUpload({
+  label: {
+    heading: "Upload a file",
+    size: "l"
+  },
+  errorMessage: true,
   id: "file-upload",
   name: "file-upload"
 }) }}
@@ -5413,9 +6435,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   errorMessage: {
     text: "The selected file must be a JPG, BMP or TIF"
@@ -5430,9 +6451,56 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
+  },
+  id: "file-upload",
+  name: "file-upload",
+  hint: {
+    text: "Your photo may be in your Pictures, Photos, Downloads or Desktop folder"
+  },
+  errorMessage: {
+    text: "The selected file must be a JPG, BMP or TIF"
+  }
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ fileUpload({
+  label: {
+    heading: "Upload a file",
+    size: "l"
+  },
+  id: "file-upload",
+  name: "file-upload",
+  hint: "Your photo may be in your Pictures, Photos, Downloads or Desktop folder",
+  errorMessage: "The selected file must be a JPG, BMP or TIF"
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ fileUpload({
+  label: {
+    text: "Upload a file"
+  },
+  errorMessage: {
+    text: "The selected file must be a JPG, BMP or TIF"
+  },
+  id: "file-upload",
+  name: "file-upload"
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ fileUpload({
+  label: {
+    text: "Upload a file"
   },
   id: "file-upload",
   name: "file-upload",
@@ -5450,9 +6518,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload"
@@ -5464,22 +6531,19 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload"
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ fileUpload({
-  label: {
-    text: "Upload a file"
-  },
+  label: "Upload a file",
   id: "file-upload",
   name: "file-upload"
 }) }}
@@ -5490,9 +6554,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload multiple files",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload multiple files",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload",
@@ -5508,9 +6571,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Llwythwch ffeil i fyny",
-    size: "l",
-    isPageHeading: true
+    heading: "Llwythwch ffeil i fyny",
+    size: "l"
   },
   id: "file-upload",
   name: "file-upload",
@@ -5532,9 +6594,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ fileUpload({
   label: {
-    text: "Upload a file",
-    size: "l",
-    isPageHeading: true
+    heading: "Upload a file",
+    size: "l"
   },
   id: "to-configure-in-javascript",
   name: "file-upload"
@@ -5556,7 +6617,16 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the footer. |
 | `columns` | integer |  | Number of columns to display per row in the navigation section of the footer – `4`, `3`, `2` or `1`. Defaults to `4`. |
 | `navigation` | object |  | The navigation section of the footer before the copyright information. Alternatively supports an array of `navigation` objects. |
-| `navigation.title` | string |  | Title for group of footer navigation links. |
+| `navigation.heading` | object |  | Heading for group of footer navigation links. *(accepts nested component params)* |
+| `navigation.heading.id` | string |  | The ID of the heading. |
+| `navigation.heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `navigation.heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `navigation.heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `navigation.heading.href` | string |  | If set, the heading will become a link. |
+| `navigation.heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `navigation.heading.classes` | string |  | Classes to add to the heading. |
+| `navigation.heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `navigation.title` | string |  | Replaced by the `navigation.heading.text` option. |
 | `navigation.text` | string |  | Optional text to use within each navigation section column. If `html` is provided, the `text` option will be ignored. |
 | `navigation.html` | string |  | Optional HTML to use within each navigation section column. If `html` is provided, the `text` option will be ignored. |
 | `navigation.width` | string |  | Width of each navigation section column in the footer. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"one-quarter"`. |
@@ -5564,9 +6634,10 @@ Use the component reference table below to find the line number for any componen
 | `navigation.items.href` | string | ✓ | Footer navigation link `href` attribute. |
 | `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each footer navigation link. If `html` is provided, the `text` option will be ignored. |
 | `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each footer navigation link. If `html` is provided, the `text` option will be ignored. |
-| `navigation.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the anchor in the footer meta section. |
+| `navigation.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the footer navigation link. |
 | `meta` | object |  | The meta section of the footer after any navigation, before the copyright information. |
-| `meta.visuallyHiddenTitle` | string |  | Title for meta `items` links. Defaults to `"Support links"`. |
+| `meta.visuallyHiddenText` | string |  | Visually hidden heading for meta `items` links. Defaults to `"Support links"`. |
+| `meta.visuallyHiddenTitle` | string |  | Replaced by the `meta.visuallyHiddenText` option. |
 | `meta.html` | string |  | HTML to add to the meta section of the footer, which will appear below any links specified using meta `items`. |
 | `meta.text` | string |  | Text to add to the meta section of the footer, which will appear below any links specified using meta `items`. If meta `html` is specified, this option is ignored. |
 | `meta.items` | array |  | Contains the array of key policy footer link items. |
@@ -5579,7 +6650,7 @@ Use the component reference table below to find the line number for any componen
 | `copyright.html` | string | ✓ | If `text` is set, this is not required. If `html` is provided, the `text` option will be ignored. If neither are provided, `"© NHS England"` is used. |
 | `containerClasses` | string |  | Classes to add to the footer container, useful if you want to make the footer fixed width. |
 | `classes` | string |  | Classes to add to the footer container. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire footer component in a `call` block. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire footer component in a `call` block. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the footer container. |
 
 ### Examples
@@ -5615,6 +6686,14 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with copyright text string
+
+```njk
+{{ footer({
+  copyright: "© East London NHS Foundation Trust"
+}) }}
+```
+
 #### with custom copyright text
 
 ```njk
@@ -5625,7 +6704,43 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with meta (links only)
+#### with meta text
+
+```njk
+{{ footer({
+  meta: {
+    text: "NHS prototype kit v8.0.0"
+  }
+}) }}
+```
+
+#### with meta text string
+
+```njk
+{{ footer({
+  meta: "NHS prototype kit v8.0.0"
+}) }}
+```
+
+#### with meta HTML
+
+```njk
+{{ footer({
+  meta: {
+    html: '<p class="nhsuk-body-s">NHS prototype kit v8.0.0</p>'
+  }
+}) }}
+```
+
+#### with meta HTML via call block
+
+```njk
+{% call footer() %}
+<p class="nhsuk-body-s">NHS prototype kit v8.0.0</p>
+{%- endcall %}
+```
+
+#### with meta links
 
 ```njk
 {{ footer({
@@ -5656,7 +6771,7 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with meta (links and text)
+#### with meta links and text
 
 ```njk
 {{ footer({
@@ -5691,7 +6806,7 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with meta (links and HTML)
+#### with meta links and HTML
 
 ```njk
 {{ footer({
@@ -5953,13 +7068,15 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with multiple titled navigation groups
+#### with multiple navigation groups and headings
 
 ```njk
 {{ footer({
   navigation: [
     {
-      title: "Legal",
+      heading: {
+        text: "Legal"
+      },
       items: [
         {
           href: "#",
@@ -5976,7 +7093,9 @@ Use the component reference table below to find the line number for any componen
       ]
     },
     {
-      title: "Get in touch",
+      heading: {
+        text: "Get in touch"
+      },
       items: [
         {
           href: "#",
@@ -5997,7 +7116,69 @@ Use the component reference table below to find the line number for any componen
       ]
     },
     {
-      title: "Follow us",
+      heading: {
+        text: "Follow us"
+      },
+      items: [
+        {
+          href: "#",
+          text: "LinkedIn"
+        },
+        {
+          href: "#",
+          text: "YouTube"
+        }
+      ]
+    }
+  ]
+}) }}
+```
+
+#### with multiple navigation groups and headings as strings
+
+```njk
+{{ footer({
+  navigation: [
+    {
+      heading: "Legal",
+      items: [
+        {
+          href: "#",
+          text: "Looking after your data"
+        },
+        {
+          href: "#",
+          text: "Freedom of information"
+        },
+        {
+          href: "#",
+          text: "Modern Slavery and human trafficking statement"
+        }
+      ]
+    },
+    {
+      heading: "Get in touch",
+      items: [
+        {
+          href: "#",
+          text: "Contact us"
+        },
+        {
+          href: "#",
+          text: "Press office"
+        },
+        {
+          href: "#",
+          text: "Tell us what you think of our website"
+        },
+        {
+          href: "#",
+          text: "RSS feeds"
+        }
+      ]
+    },
+    {
+      heading: "Follow us",
       items: [
         {
           href: "#",
@@ -6155,8 +7336,8 @@ Use the component reference table below to find the line number for any componen
 | `navigation` | object |  | Object containing settings for the primary navigation. |
 | `navigation.items` | array |  | Array of navigation links for use in the header. |
 | `navigation.items.href` | string |  | The href of a navigation item in the header. |
-| `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text for the navigation item. If `html` is provided, the `text` argument will be ignored. |
-| `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the navigation item. If `html` is provided, the `text` argument will be ignored. |
+| `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text for the navigation item. If `html` is provided, the `text` option will be ignored. |
+| `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the navigation item. If `html` is provided, the `text` option will be ignored. |
 | `navigation.items.current` | boolean |  | Set to `true` if this links to the current page being shown. |
 | `navigation.items.active` | boolean |  | Set to `true` if the current page is within this section, but the link doesn't necessarily link to the current page |
 | `navigation.items.classes` | string |  | Classes to add to the list item containing the link. |
@@ -6171,17 +7352,23 @@ Use the component reference table below to find the line number for any componen
 | `search` | object |  | Object containing settings for a search box. |
 | `search.action` | string |  | The search form `action` attribute. Defaults to `"https://www.nhs.uk/search"`. |
 | `search.method` | string |  | The search form `method` attribute. Defaults to `"get"`. |
-| `search.name` | string |  | The `name` attribute for the search field. Defaults to `"q"`. |
-| `search.placeholder` | string |  | The placeholder text for the search field. Defaults to `"Search"`. |
-| `search.visuallyHiddenLabel` | string |  | The label for the search field. Defaults to `"Search the NHS website"`. |
-| `search.visuallyHiddenButton` | string |  | The label for the visually hidden button. Defaults to `"Search"`. |
+| `search.name` | string |  | The `name` attribute for the search input. Defaults to `"q"`. |
+| `search.placeholder` | string |  | Replaced by the `search.input.placeholder` option. |
+| `search.visuallyHiddenLabel` | string |  | Replaced by the `search.label.visuallyHiddenText` option. |
+| `search.visuallyHiddenButton` | string |  | Replaced by the `search.button.ariaLabel` option. |
+| `search.label` | object |  | Optional object allowing customisation of the search input label. *(accepts nested component params)* |
+| `search.label.visuallyHiddenText` | string |  | The visually hidden label text for the search input. Defaults to `"Search the NHS website"`. |
+| `search.input` | object |  | Optional object allowing customisation of the search input. *(accepts nested component params)* |
+| `search.input.placeholder` | string |  | The placeholder text for the search input. Defaults to `"Search"`. |
+| `search.button` | object |  | Optional object allowing customisation of the search button. *(accepts nested component params)* |
+| `search.button.ariaLabel` | string |  | Search button text exposed to assistive technologies, like screen readers, when only an icon is used. Defaults to `"Search"`. |
 | `search.classes` | string |  | Classes to add to the search element. |
 | `search.attributes` | object |  | HTML attributes (for example data attributes) to add to the search element. |
 | `account` | object |  | Object containing settings for the account section of the header. |
 | `account.items` | array |  | Array of account items for use in the header. |
 | `account.items.href` | string |  | The href of an account item in the header. |
-| `account.items.text` | string | ✓ | If `html` is set, this is not required. Text for the account item. If `html` is provided, the `text` argument will be ignored. |
-| `account.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the account item. If `html` is provided, the `text` argument will be ignored. |
+| `account.items.text` | string | ✓ | If `html` is set, this is not required. Text for the account item. If `html` is provided, the `text` option will be ignored. |
+| `account.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the account item. If `html` is provided, the `text` option will be ignored. |
 | `account.items.icon` | boolean |  | Whether to include the account icon for the account item. Defaults to `false`. |
 | `account.items.action` | string |  | If set, the item will become a button wrapped in a form with the action given. Useful for log out buttons. |
 | `account.items.method` | string |  | The value to use for the `method` of the form if `action` is set. Defaults to `"post"`. |
@@ -6189,7 +7376,6 @@ Use the component reference table below to find the line number for any componen
 | `account.ariaLabel` | string |  | The `aria-label` for the account navigation. Defaults to `"Account"`. |
 | `account.classes` | string |  | Classes to add to the account navigation. |
 | `account.attributes` | object |  | HTML attributes (for example data attributes) to add to the account navigation. |
-| `baseUrl` | string |  | Base URL to prepend to the `logo.src` path. |
 | `containerClasses` | string |  | Classes to add to the header container, useful if you want to make the header fixed width. |
 | `classes` | string |  | Classes to add to the header container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the header container. |
@@ -6209,8 +7395,12 @@ Use the component reference table below to find the line number for any componen
     href: "#"
   },
   search: {
-    placeholder: "Search",
-    visuallyHiddenLabel: "Search the NHS digital service manual"
+    input: {
+      placeholder: "Search"
+    },
+    label: {
+      visuallyHiddenText: "Search the NHS digital service manual"
+    }
   },
   navigation: {
     items: [
@@ -6497,8 +7687,12 @@ Use the component reference table below to find the line number for any componen
     href: "#"
   },
   search: {
-    placeholder: "Search",
-    visuallyHiddenLabel: "Search the NHS digital service manual"
+    input: {
+      placeholder: "Search"
+    },
+    label: {
+      visuallyHiddenText: "Search the NHS digital service manual"
+    }
   },
   navigation: {
     items: [
@@ -6552,8 +7746,12 @@ Use the component reference table below to find the line number for any componen
     href: "#"
   },
   search: {
-    placeholder: "Search",
-    visuallyHiddenLabel: "Search the NHS digital service manual"
+    input: {
+      placeholder: "Search"
+    },
+    label: {
+      visuallyHiddenText: "Search the NHS digital service manual"
+    }
   },
   navigation: {
     colour: "white",
@@ -6705,6 +7903,17 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with service name (linked with logo, empty)
+
+```njk
+{{ header({
+  service: {
+    text: null,
+    href: "#"
+  }
+}) }}
+```
+
 #### with service name (linked and long), search
 
 ```njk
@@ -6729,8 +7938,12 @@ Use the component reference table below to find the line number for any componen
     text: "Manage patients"
   },
   search: {
-    placeholder: "Name or NHS number",
-    visuallyHiddenLabel: "Search patients by name or NHS number"
+    input: {
+      placeholder: "Name or NHS number"
+    },
+    label: {
+      visuallyHiddenText: "Search patients by name or NHS number"
+    }
   },
   account: {
     items: [
@@ -6780,8 +7993,12 @@ Use the component reference table below to find the line number for any componen
     href: "#"
   },
   search: {
-    placeholder: "Name or NHS number",
-    visuallyHiddenLabel: "Search patients by name or NHS number"
+    input: {
+      placeholder: "Name or NHS number"
+    },
+    label: {
+      visuallyHiddenText: "Search patients by name or NHS number"
+    }
   },
   account: {
     items: [
@@ -6873,7 +8090,9 @@ Use the component reference table below to find the line number for any componen
     descriptor: "NHS Foundation Trust"
   },
   search: {
-    visuallyHiddenLabel: "Search the Anytown Anyplace Anywhere website"
+    label: {
+      visuallyHiddenText: "Search the Anytown Anyplace Anywhere website"
+    }
   }
 }) }}
 ```
@@ -6905,6 +8124,205 @@ Use the component reference table below to find the line number for any componen
 
 ---
 
+## Heading
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `heading`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the heading. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the heading. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the heading. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire heading component in a `call` block. |
+| `visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `href` | string |  | If set, the heading will become a link. |
+| `caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `size` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `sizes` | array |  | Allowed sizes for the heading – Defaults to `["xxs", "xs", "s", "m", "l", "xl"]`. |
+| `level` | integer |  | Optional heading level. Defaults to `1`. |
+| `className` | string |  | Optional class to use for the heading. Defaults to `"nhsuk-heading"`. |
+| `classPrefix` | string |  | Optional class prefix to use for the heading. Defaults to `"nhsuk-heading-"`. |
+| `classes` | string |  | Classes to add to the heading. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `element` | string |  | HTML element for the heading component – for example, `"caption"`. Defaults to the `level` option prefixed with `"h"`. |
+
+### Examples
+
+#### default
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  size: "l"
+}) }}
+```
+
+#### text
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  size: "l"
+}) }}
+```
+
+#### text and caption
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: "About you",
+  size: "l"
+}) }}
+```
+
+#### text and caption "before"
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "before"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "before" as a heading
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "before",
+    element: "h2"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "after"
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "after"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "after" as a paragraph
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "after",
+    element: "p"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "start"
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "start"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "end"
+
+```njk
+{{ heading({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "end"
+  },
+  size: "l"
+}) }}
+```
+
+#### size class
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  classes: "nhsuk-heading-l"
+}) }}
+```
+
+#### size class overriding size option
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  classes: "nhsuk-heading-l",
+  size: "s"
+}) }}
+```
+
+#### with link
+
+```njk
+{{ heading({
+  text: "Skin colour changes",
+  href: "#/result/1",
+  size: "l"
+}) }}
+```
+
+#### with link and caption
+
+```njk
+{{ heading({
+  text: "Skin colour changes",
+  caption: "A to Z of NHS health writing",
+  href: "#/result/1",
+  size: "l"
+}) }}
+```
+
+#### with visually hidden text
+
+```njk
+{{ heading({
+  text: "Home address",
+  visuallyHiddenText: "(Karen Francis)",
+  size: "l"
+}) }}
+```
+
+#### with visually hidden text and caption
+
+```njk
+{{ heading({
+  text: "Home address",
+  visuallyHiddenText: "(Karen Francis)",
+  caption: "About you",
+  size: "l"
+}) }}
+```
+
+---
+
 ## Hero
 
 [↑ Back to top](#table-of-contents)
@@ -6916,19 +8334,48 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the hero. |
-| `heading` | string | ✓ | Text heading of the hero. |
-| `headingClasses` | string |  | Optional additional classes to add to heading. Separate each class with a space. |
-| `headingSize` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
-| `headingLevel` | integer |  | Optional heading level for the heading. Defaults to `1`. |
+| `content` | object |  | The content section of the hero. Alternatively supports an array of `content` objects. |
+| `content.heading` | object |  | Optional heading for content column. *(accepts nested component params)* |
+| `content.heading.id` | string |  | The ID of the heading. |
+| `content.heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `content.heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `content.heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `content.heading.href` | string |  | If set, the heading will become a link. |
+| `content.heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `content.heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. Defaults to `"xl"`. |
+| `content.heading.level` | integer |  | Optional heading level. Defaults to `1`. |
+| `content.heading.classes` | string |  | Classes to add to the heading. |
+| `content.heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `content.text` | string |  | Optional text to use within each content column. If `html` is provided, the `text` option will be ignored. |
+| `content.html` | string |  | Optional HTML to use within each content column. If `html` is provided, the `text` option will be ignored. |
+| `content.image` | object |  | Optional image to use within each content column. *(accepts nested component params)* |
+| `content.width` | string |  | Width of each content column. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"one-half"`. |
+| `content.classes` | string |  | Classes to add to the content column. |
+| `heading` | object | ✓ | Heading of the hero. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. Defaults to `"xl"`. |
+| `heading.level` | integer |  | Optional heading level. Defaults to `1`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
+| `headingSize` | string |  | Replaced by the `heading.size` option. |
+| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the hero. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. Text to use within the hero. If `text` is provided, the `html` option will be ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire hero component in a `call` block. |
-| `imageURL` | string |  | The URL of the image in the hero. Replaced by the `image.src` option. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire hero component in a `call` block. |
+| `imageURL` | string |  | Replaced by the `image.src` option. |
 | `image` | object |  | Can be used to add an image to the hero component. |
 | `image.src` | string | ✓ | The URL of the image in the hero. |
+| `width` | string |  | Width of the hero content. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"one-half"`. |
 | `containerClasses` | string |  | Classes to add to the hero container, useful if you want to make the hero fixed width. |
 | `classes` | string |  | Classes to add to the hero. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the hero. |
+| `border` | boolean |  | If set to `false`, remove border from the hero. |
 
 ### Examples
 
@@ -6936,8 +8383,54 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ hero({
-  heading: "We're here for you",
-  text: "Helping you take control of your health and wellbeing."
+  heading: {
+    text: "We're here for you"
+  },
+  text: "Helping you take control of your health and wellbeing.",
+  border: false
+}) }}
+```
+
+#### heading
+
+```njk
+{{ hero({
+  heading: {
+    text: "We're here for you"
+  },
+  text: "Helping you take control of your health and wellbeing.",
+  border: false
+}) }}
+```
+
+#### with heading as string
+
+```njk
+{{ hero({
+  heading: "Prototyping",
+  text: "Helping you take control of your health and wellbeing.",
+  border: false
+}) }}
+```
+
+#### with heading and caption
+
+```njk
+{{ hero({
+  heading: {
+    text: "Prototyping",
+    caption: "Setup"
+  }
+}) }}
+```
+
+#### with heading only
+
+```njk
+{{ hero({
+  heading: {
+    text: "Prototyping"
+  }
 }) }}
 ```
 
@@ -6946,7 +8439,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ hero({
   image: {
-    src: "https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg"
+    src: "/nhsuk-frontend/assets/example-hero-background.jpg"
   }
 }) }}
 ```
@@ -6955,22 +8448,77 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ hero({
-  heading: "We're here for you",
-  text: "Helping you take control of your health and wellbeing.",
+  heading: {
+    text: "We're here for you"
+  },
+  text: "Helping you take control of your health and wellbeing.",
   image: {
-    src: "https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg"
+    src: "/nhsuk-frontend/assets/example-hero-background.jpg"
   }
 }) }}
 ```
 
-#### with html content
+#### with image, content and caption
 
 ```njk
 {{ hero({
-  heading: "This is a header for the product or service",
-  headingSize: "l",
-  headingClasses: "nhsuk-u-margin-top-5",
-  html: '<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>\n<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Sign up\n</a>\n'
+  heading: {
+    text: "Find information and services to help you manage your health",
+    size: "l",
+    caption: {
+      text: "NHS website for England",
+      size: "xl"
+    }
+  },
+  width: "three-quarters",
+  image: {
+    src: "/nhsuk-frontend/assets/example-hero-background.jpg"
+  }
+}) }}
+```
+
+#### product page
+
+```njk
+{{ hero({
+  content: [
+    {
+      heading: {
+        text: "This is a header for the product or service",
+        size: "l"
+      },
+      html: '<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>\n<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Sign up\n</a>\n'
+    },
+    {
+      image: {
+        src: "/nhsuk-frontend/assets/example-hero-image.svg",
+        background: false,
+        border: false
+      }
+    }
+  ],
+  border: false
+}) }}
+```
+
+#### product page with heading as string
+
+```njk
+{{ hero({
+  content: [
+    {
+      heading: "Product or service",
+      html: '<p class="nhsuk-body-l">This is some more content which explains the product or service.</p>\n<a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Sign up\n</a>\n'
+    },
+    {
+      image: {
+        src: "/nhsuk-frontend/assets/example-hero-image.svg",
+        background: false,
+        border: false
+      }
+    }
+  ],
+  border: false
 }) }}
 ```
 
@@ -6986,8 +8534,9 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the hint. If `html` is provided, the `text` argument will be ignored. |
-| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the hint. If `html` is provided, the `text` argument will be ignored. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the hint. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the hint. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire hint component in a `call` block. |
 | `id` | string |  | The `id` attribute to add to the hint. |
 | `classes` | string |  | Classes to add to the hint. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the hint. |
@@ -7000,6 +8549,22 @@ Use the component reference table below to find the line number for any componen
 {{ hint({
   text: "Do not include personal information like your name, date of birth or NHS number"
 }) }}
+```
+
+#### with HTML
+
+```njk
+{{ hint({
+  html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call hint() %}
+This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App
+{%- endcall %}
 ```
 
 ---
@@ -7015,16 +8580,21 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the image. |
-| `src` | string | ✓ | The source location of the image. |
-| `alt` | string | ✓ | The alt text of the image. |
+| `src` | string | ✓ | The source location of the image. If `html` is provided, the `src`, `srcset`, `sizes` and `alt` options will be ignored. |
+| `srcset` | string |  | A list of image source URLs and their respective sizes. Separate each image with a comma. |
+| `sizes` | string |  | A list of screen sizes for the browser to load the correct image from the srcset images. |
+| `alt` | string |  | The alt text of the image. Defaults to `""`. If `html` is provided, the `src`, `srcset`, `sizes` and `alt` options will be ignored. |
+| `html` | string | ✓ | If `src` is set, this is not required. HTML to use within the image component. If `html` is provided, the `src`, `srcset`, `sizes` and `alt` options will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire image component in a `call` block. |
 | `caption` | object |  | Optional caption for the image. |
 | `caption.text` | string | ✓ | Text to add within the caption. If `html` is provided, the `text` option will be ignored. |
 | `caption.html` | string | ✓ | HTML to add within the caption. If `html` is provided, the `text` option will be ignored. |
 | `caption.classes` | string |  | Classes to add to the figcaption element. |
-| `sizes` | string |  | A list of screen sizes for the browser to load the correct image from the srcset images. |
-| `srcset` | string |  | A list of image source URLs and their respective sizes. Separate each image with a comma. |
-| `classes` | string |  | Classes to add to the image container. |
-| `attributes` | object |  | HTML attributes (for example data attributes) to add to the image container. |
+| `background` | string |  | Background colour for the image component – `"card"` or `false`. Defaults to `"card"`. To remove the background colour, set `background` to `false`. |
+| `border` | boolean |  | If set to `false`, removes the border-bottom from the image component. |
+| `width` | string |  | Width of the image component. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"two-thirds"`. |
+| `classes` | string |  | Classes to add to the image component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the image component. |
 
 ### Examples
 
@@ -7032,10 +8602,19 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ image({
-  src: "https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg",
+  src: "/nhsuk-frontend/assets/example-image-exercise.jpg",
   caption: {
     text: "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
   }
+}) }}
+```
+
+#### width
+
+```njk
+{{ image({
+  src: "/nhsuk-frontend/assets/example-image-exercise.jpg",
+  alt: "A person in a bright pink athletic top, listening to music, pauses for thought during a short training session."
 }) }}
 ```
 
@@ -7043,13 +8622,12 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ image({
-  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  src: "/nhsuk-frontend/assets/example-image-stretch-marks-600w.jpg",
   sizes: "(max-width: 768px) 100vw, 66vw",
   srcset:
-    "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
-  caption: {
-    text: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
-  }
+    "/nhsuk-frontend/assets/example-image-stretch-marks-600w.jpg 600w, /nhsuk-frontend/assets/example-image-stretch-marks-1000w.jpg 1000w",
+  caption:
+    "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
 }) }}
 ```
 
@@ -7057,14 +8635,13 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ image({
-  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  src: "/nhsuk-frontend/assets/example-image-stretch-marks-600w.jpg",
   sizes: "(max-width: 768px) 100vw, 66vw",
   srcset:
-    "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg 600w, https://service-manual.nhs.uk/assets/image-example-stretch-marks-1000w.jpg 1000w",
+    "/nhsuk-frontend/assets/example-image-stretch-marks-600w.jpg 600w, /nhsuk-frontend/assets/example-image-stretch-marks-1000w.jpg 1000w",
   alt: "Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin.",
-  caption: {
-    text: "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
-  }
+  caption:
+    "Stretch marks can be pink, red, brown, black, silver or purple. They usually start off darker and fade over time."
 }) }}
 ```
 
@@ -7072,9 +8649,53 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ image({
-  src: "https://service-manual.nhs.uk/assets/image-example-stretch-marks-600w.jpg",
+  src: "/nhsuk-frontend/assets/example-image-stretch-marks-1000w.jpg",
   alt: "Close-up of a person's tummy showing a number of creases in the skin under their belly button. Shown on light brown skin."
 }) }}
+```
+
+#### without background
+
+```njk
+{{ image({
+  background: false,
+  src: "/nhsuk-frontend/assets/example-image-exercise.jpg",
+  caption:
+    "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
+}) }}
+```
+
+#### without border
+
+```njk
+{{ image({
+  border: false,
+  src: "/nhsuk-frontend/assets/example-image-exercise.jpg",
+  caption:
+    "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
+}) }}
+```
+
+#### without background, border or caption
+
+```njk
+{{ image({
+  background: false,
+  border: false,
+  src: "/nhsuk-frontend/assets/example-image-exercise.jpg",
+  alt: "A person in a bright pink athletic top, listening to music, pauses for thought during a short training session."
+}) }}
+```
+
+#### with custom HTML
+
+```njk
+{% call image({
+  caption:
+    "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
+}) %}
+<img src="/nhsuk-frontend/assets/example-image-exercise.jpg" alt="">
+{%- endcall %}
 ```
 
 ---
@@ -7139,9 +8760,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your full name?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your full name?",
+    size: "l"
   },
   name: "example"
 }) }}
@@ -7152,9 +8772,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your full name?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your full name?",
+    size: "l"
   },
   name: "example",
   disabled: true
@@ -7166,9 +8785,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   hint: {
     html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
@@ -7187,9 +8805,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   id: "with-button",
   name: "example",
@@ -7210,9 +8827,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   errorMessage: {
     text: "Enter NHS number"
@@ -7231,14 +8847,31 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ input({
+  label: {
+    heading: "What is your NHS number?",
+    size: "l"
+  },
+  errorMessage: true,
+  id: "with-error-only",
+  name: "example",
+  width: 10,
+  code: true,
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   errorMessage: {
     text: "Enter NHS number"
@@ -7257,9 +8890,68 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
+  },
+  hint: {
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  id: "with-hint-error",
+  name: "example",
+  width: 10,
+  code: true,
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ input({
+  label: {
+    heading: "What is your NHS number?",
+    size: "l"
+  },
+  hint: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App",
+  errorMessage: "Enter NHS number",
+  id: "with-hint-error",
+  name: "example",
+  width: 10,
+  code: true,
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ input({
+  label: {
+    text: "What is your NHS number?"
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  id: "with-error-message",
+  name: "example",
+  width: 10,
+  code: true,
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ input({
+  label: {
+    text: "What is your NHS number?"
   },
   hint: {
     html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
@@ -7290,9 +8982,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   id: "input-width",
   name: "example",
@@ -7300,14 +8991,13 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### width class overriding width param
+#### width class overriding width option
 
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   id: "input-width",
   name: "example",
@@ -7321,9 +9011,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   id: "custom-size",
   name: "example",
@@ -7334,13 +9023,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ input({
-  label: {
-    text: "What is your NHS number?"
-  },
+  label: "What is your NHS number?",
   id: "without-heading",
   name: "example",
   width: 10,
@@ -7355,9 +9042,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "What is your NHS number?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your NHS number?",
+    size: "l"
   },
   hint: {
     html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
@@ -7377,8 +9063,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Cost in pounds",
-    isPageHeading: true
+    heading: "Cost in pounds"
   },
   id: "with-prefix",
   name: "example",
@@ -7394,8 +9079,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Cost in pounds",
-    isPageHeading: true
+    heading: "Cost in pounds"
   },
   id: "with-prefix",
   name: "example",
@@ -7406,13 +9090,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with prefix deprecated option
+#### with prefix as string
 
 ```njk
 {{ input({
   label: {
-    text: "Cost in pounds",
-    isPageHeading: true
+    heading: "Cost in pounds"
   },
   id: "with-prefix",
   name: "example",
@@ -7426,8 +9109,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Weight in kilograms",
-    isPageHeading: true
+    heading: "Weight in kilograms"
   },
   id: "with-suffix",
   name: "example",
@@ -7443,8 +9125,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Weight in kilograms",
-    isPageHeading: true
+    heading: "Weight in kilograms"
   },
   id: "with-suffix",
   name: "example",
@@ -7455,13 +9136,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with suffix deprecated option
+#### with suffix as string
 
 ```njk
 {{ input({
   label: {
-    text: "Weight in kilograms",
-    isPageHeading: true
+    heading: "Weight in kilograms"
   },
   id: "with-suffix",
   name: "example",
@@ -7475,8 +9155,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Cost per item, in pounds",
-    isPageHeading: true
+    heading: "Cost per item, in pounds"
   },
   id: "with-prefix-suffix",
   name: "example",
@@ -7495,8 +9174,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Cost per item, in pounds",
-    isPageHeading: true
+    heading: "Cost per item, in pounds"
   },
   errorMessage: {
     text: "Enter a cost per item, in pounds"
@@ -7518,8 +9196,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ input({
   label: {
-    text: "Enter a full postcode in England",
-    isPageHeading: true
+    heading: "Enter a full postcode in England"
   },
   hint: {
     text: "For example, LS1 1AB"
@@ -7648,9 +9325,9 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the inset text component. |
-| `text` | string | ✓ | Text content to be used within the inset text component. If `html` is provided, the `text` argument will be ignored. |
-| `html` | string | ✓ | HTML content to be used within the inset text component. If `html` is provided, the `text` argument will be ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire inset text component in a `call` block. |
+| `text` | string | ✓ | Text content to be used within the inset text component. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | HTML content to be used within the inset text component. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire inset text component in a `call` block. |
 | `classes` | string |  | Classes to add to the inset text. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the inset text. |
 | `visuallyHiddenText` | string |  | A visually hidden prefix used before the inset text. Defaults to `"Information"`. |
@@ -7660,10 +9337,24 @@ Use the component reference table below to find the line number for any componen
 #### default
 
 ```njk
-{% call insetText() -%}
+{{ insetText({
+  text: "You can report any suspected side effect using the Yellow Card safety scheme"
+}) }}
+```
 
+#### with HTML
+
+```njk
+{{ insetText({
+  html: '<p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call insetText() %}
 <p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>
-
 {%- endcall %}
 ```
 
@@ -7682,9 +9373,20 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the label. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire label component in a `call` block. |
-| `for` | string |  | The value of the `for` attribute, the ID of the input the label is associated with. |
-| `isPageHeading` | boolean |  | Whether the label also acts as the heading for the page. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire label component in a `call` block. |
+| `visuallyHiddenText` | string |  | A visually hidden suffix added to the label. |
+| `caption` | object |  | Optional caption for the label. *(accepts nested component params)* |
+| `for` | string |  | The label `for` attribute, the ID of the input the label is associated with. |
+| `heading` | object |  | Whether the label also acts as a heading. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the label heading. |
+| `heading.text` | string |  | If `html` is set, this is not required. Text to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string |  | If `text` is set, this is not required. HTML to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the label as a heading. |
+| `heading.caption` | object |  | Optional caption for the label as a heading. *(accepts nested component params)* |
+| `heading.size` | string |  | Size of the label as a heading – `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `heading.level` | integer |  | Optional label heading level. Defaults to `1`. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the label heading. |
+| `isPageHeading` | boolean |  | Replaced by the `heading` option. |
 | `size` | string |  | Size of the label – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `classes` | string |  | Classes to add to the label tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
@@ -7695,9 +9397,8 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ label({
-  text: "What is your full name?",
-  size: "l",
-  isPageHeading: true
+  heading: "What is your full name?",
+  size: "l"
 }) }}
 ```
 
@@ -7705,9 +9406,46 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ label({
+  heading: "What is your full name?",
+  size: "l"
+}) }}
+```
+
+#### text and caption
+
+```njk
+{{ label({
   text: "What is your full name?",
-  size: "l",
-  isPageHeading: true
+  caption: "About you",
+  size: "l"
+}) }}
+```
+
+#### text and caption "before" as a paragraph
+
+```njk
+{{ label({
+  text: "What is your full name?",
+  caption: {
+    text: "About you",
+    placement: "before",
+    element: "p"
+  },
+  size: "l"
+}) }}
+```
+
+#### text and caption "after" as a paragraph
+
+```njk
+{{ label({
+  text: "What is your full name?",
+  caption: {
+    text: "About you",
+    placement: "after",
+    element: "p"
+  },
+  size: "l"
 }) }}
 ```
 
@@ -7715,28 +9453,150 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ label({
-  text: "What is your full name?",
-  classes: "nhsuk-label--l",
-  isPageHeading: true
+  heading: "What is your full name?",
+  classes: "nhsuk-label--l"
 }) }}
 ```
 
-#### size class overriding size param
+#### size class overriding size option
+
+```njk
+{{ label({
+  heading: "What is your full name?",
+  classes: "nhsuk-label--l",
+  size: "s"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ label({
+  html: "What is your full name?",
+  heading: true,
+  size: "l"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call label({
+  heading: true,
+  size: "l"
+}) %}
+What is your full name?
+{%- endcall %}
+```
+
+#### with HTML via call block, without heading
+
+```njk
+{% call label({
+  size: "l"
+}) %}
+What is your full name?
+{%- endcall %}
+```
+
+#### with heading level 1
 
 ```njk
 {{ label({
   text: "What is your full name?",
-  classes: "nhsuk-label--l",
-  size: "s",
-  isPageHeading: true
+  size: "l",
+  heading: {
+    level: 1
+  }
 }) }}
 ```
 
-#### without page heading
+#### with heading level 2
+
+```njk
+{{ label({
+  text: "What is your full name?",
+  size: "m",
+  heading: {
+    level: 2
+  }
+}) }}
+```
+
+#### with heading level 3
+
+```njk
+{{ label({
+  text: "What is your full name?",
+  size: "s",
+  heading: {
+    level: 3
+  }
+}) }}
+```
+
+#### with heading options only
+
+```njk
+{{ label({
+  heading: {
+    text: "What is your full name?",
+    level: 3,
+    size: "s"
+  }
+}) }}
+```
+
+#### without heading
 
 ```njk
 {{ label({
   text: "What is your full name?"
+}) }}
+```
+
+#### with deprecated page heading
+
+```njk
+{{ label({
+  text: "What is your full name?",
+  size: "m",
+  isPageHeading: true
+}) }}
+```
+
+#### with deprecated page heading overriding heading
+
+```njk
+{{ label({
+  heading: {
+    text: "What is your full name?",
+    level: 3,
+    size: "s"
+  },
+  isPageHeading: false
+}) }}
+```
+
+#### with id attribute
+
+```njk
+{{ label({
+  id: "custom-id",
+  heading: "What is your full name?",
+  size: "l"
+}) }}
+```
+
+#### with id attribute on heading
+
+```njk
+{{ label({
+  heading: {
+    text: "What is your full name?",
+    id: "custom-id"
+  },
+  size: "l"
 }) }}
 ```
 
@@ -7752,12 +9612,220 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
+| `id` | string |  | The ID of the legend. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the legend. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the legend. If `html` is provided, the `text` option will be ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire legend component in a `call` block. |
-| `classes` | string |  | Classes to add to the legend. |
-| `isPageHeading` | boolean |  | Whether the legend also acts as the heading for the page. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire legend component in a `call` block. |
+| `visuallyHiddenText` | string |  | A visually hidden suffix added to the legend. |
+| `caption` | object |  | Optional caption for the legend. *(accepts nested component params)* |
 | `size` | string |  | Size of the legend – `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `heading` | object |  | Whether the legend also acts as a heading. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the legend heading. |
+| `heading.text` | string |  | If `html` is set, this is not required. Text to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string |  | If `text` is set, this is not required. HTML to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the legend as a heading. |
+| `heading.caption` | object |  | Optional caption for the legend as a heading. *(accepts nested component params)* |
+| `heading.size` | string |  | Size of the legend as a heading – `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `heading.level` | integer |  | Optional legend heading level. Defaults to `1`. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the legend heading. |
+| `isPageHeading` | boolean |  | Replaced by the `heading` option. |
+| `classes` | string |  | Classes to add to the legend. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the legend. |
+
+### Examples
+
+#### default
+
+```njk
+{{ legend({
+  heading: "What is your address?",
+  size: "l"
+}) }}
+```
+
+#### text
+
+```njk
+{{ legend({
+  heading: "What is your address?",
+  size: "l"
+}) }}
+```
+
+#### text and caption
+
+```njk
+{{ legend({
+  text: "What is your home address?",
+  caption: "About you",
+  size: "l"
+}) }}
+```
+
+#### text and caption "after" as a paragraph
+
+```njk
+{{ legend({
+  text: "What is your home address?",
+  caption: {
+    text: "About you",
+    placement: "after",
+    element: "p"
+  },
+  size: "l"
+}) }}
+```
+
+#### size class
+
+```njk
+{{ legend({
+  heading: "What is your address?",
+  classes: "nhsuk-fieldset__legend--l"
+}) }}
+```
+
+#### size class overriding size option
+
+```njk
+{{ legend({
+  heading: "What is your address?",
+  classes: "nhsuk-fieldset__legend--l",
+  size: "s"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ legend({
+  html: "What is your address?",
+  heading: true,
+  size: "l"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call legend({
+  heading: true,
+  size: "l"
+}) %}
+What is your address?
+{%- endcall %}
+```
+
+#### with HTML via call block, without heading
+
+```njk
+{% call legend({
+  size: "l"
+}) %}
+What is your address?
+{%- endcall %}
+```
+
+#### with heading level 1
+
+```njk
+{{ legend({
+  text: "What is your address?",
+  size: "l",
+  heading: {
+    level: 1
+  }
+}) }}
+```
+
+#### with heading level 2
+
+```njk
+{{ legend({
+  text: "What is your address?",
+  size: "m",
+  heading: {
+    level: 2
+  }
+}) }}
+```
+
+#### with heading level 3
+
+```njk
+{{ legend({
+  text: "What is your address?",
+  size: "s",
+  heading: {
+    level: 3
+  }
+}) }}
+```
+
+#### with heading options only
+
+```njk
+{{ legend({
+  heading: {
+    text: "What is your address?",
+    level: 3,
+    size: "s"
+  }
+}) }}
+```
+
+#### without heading
+
+```njk
+{{ legend({
+  text: "What is your address?"
+}) }}
+```
+
+#### with deprecated page heading
+
+```njk
+{{ legend({
+  text: "What is your address?",
+  size: "m",
+  isPageHeading: true
+}) }}
+```
+
+#### with deprecated page heading overriding heading
+
+```njk
+{{ legend({
+  heading: {
+    text: "What is your address?",
+    level: 3,
+    size: "s"
+  },
+  isPageHeading: false
+}) }}
+```
+
+#### with id attribute
+
+```njk
+{{ legend({
+  id: "custom-id",
+  heading: "What is your address?",
+  size: "l"
+}) }}
+```
+
+#### with id attribute on heading
+
+```njk
+{{ legend({
+  heading: {
+    text: "What is your address?",
+    id: "custom-id"
+  },
+  size: "l"
+}) }}
+```
 
 ---
 
@@ -7772,19 +9840,39 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the notification banner. |
+| `title` | object |  | The title that displays in the notification banner:
+- if you do not set `variant`, `title.text` defaults to `"Important"`
+- if you set `variant` to `"success"`, `title.text` defaults to `"Success"`
+- if you set `title.text` or `title.html`, the defaults are ignored *(accepts nested component params)* |
+| `title.id` | string |  | The ID of the title. |
+| `title.text` | string | ✓ | If `html` is set, this is not required. Text for the title. If `html` is provided, the `text` option will be ignored. |
+| `title.html` | string | ✓ | If `text` is set, this is not required. HTML for the title. If `html` is provided, the `text` option will be ignored. |
+| `title.visuallyHiddenText` | string |  | A visually hidden suffix added to the title. |
+| `title.headingLevel` | integer |  | Optional alias for the title heading `level` option. |
+| `title.level` | integer |  | Optional heading level for the title. Defaults to `2`. |
+| `title.classes` | string |  | Classes to add to the title. |
+| `title.attributes` | object |  | HTML attributes (for example data attributes) to add to the title. |
+| `titleId` | string |  | Replaced by the `title.id` option. |
+| `titleText` | string |  | Replaced by the `title.text` option. |
+| `titleHtml` | string |  | Replaced by the `title.html` option. |
+| `titleHeadingLevel` | integer |  | Replaced by the `title.level` option. |
+| `heading` | object |  | Heading to be used within the notification banner. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `heading.level` | integer |  | Optional heading level for the heading. Defaults to `3`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `heading.element` | string |  | HTML element for the heading – for example, `"p"`. Defaults to the `level` option prefixed with `"h"`. |
 | `text` | string | ✓ | The text that displays in the notification banner. You can use any string with this option. If you set `html`, this option is not required and is ignored. |
 | `html` | string | ✓ | The HTML to use within the notification banner. You can use any string with this option. If you set `html`, `text` is not required and is ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but [Nunjucks code convention](https://mozilla.github.io/nunjucks/templating.html#call). Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire notification banner component in a `call` block. |
-| `titleText` | string |  | The title text that displays in the notification banner. You can use any string with this option. Use this option to set text that does not contain HTML. The available default values are 'Important', 'Success', and null:
-- if you do not set `variant`, `titleText` defaults to `"Important"`
-- if you set `variant` to `success`, `titleText` defaults to `"Success"`
-- if you set `titleHtml`, this option is ignored |
-| `titleHtml` | string |  | The title HTML to use within the notification banner. You can use any string with this option. Use this option to set text that contains HTML. If you set `titleHtml`, the `titleText` option is ignored. |
-| `titleHeadingLevel` | string |  | Sets heading level for the title only. You can only use values between `1` and `6` with this option. The default is `2`. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire notification banner component in a `call` block. |
 | `variant` | string |  | Optional variant of notification banner. You can use only `"success"` or empty values with this option. If you set `variant` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `variant`, the notification banner sets `role` to `"region"`. |
-| `type` | string |  | Optional type of notification banner. You can use only `"success"` or empty values with this option. If you set `type` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `type`, the notification banner sets `role` to `"region"`. Replaced by the `variant` option. |
+| `type` | string |  | Replaced by the `variant` option. |
 | `role` | string |  | Overrides the value of the `role` attribute for the notification banner. Defaults to `"region"`. If you set `variant` to `"success"`, `role` defaults to `"alert"`. |
-| `titleId` | string |  | The `id` for the banner title, and the `aria-labelledby` attribute in the banner. Defaults to `"nhsuk-notification-banner-title"`. |
 | `disableAutoFocus` | boolean |  | If you set `variant` to `"success"`, or `role` to `"alert"`, JavaScript moves the keyboard focus to the notification banner when the page loads. To disable this behaviour, set `disableAutoFocus` to `true`. |
 | `classes` | string |  | The classes that you want to add to the notification banner. |
 | `attributes` | object |  | The HTML attributes that you want to add to the notification banner, for example, data attributes. |
@@ -7799,19 +9887,68 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### paragraph as html heading
+#### paragraph with heading class
 
 ```njk
 {{ notificationBanner({
-  html: '<p class="nhsuk-notification-banner__heading">You have 9 days to send a response.</p>'
+  heading: {
+    text: "You have 9 days to send a response.",
+    element: "p"
+  }
 }) }}
 ```
 
-#### with text as html
+#### with HTML
 
 ```njk
 {{ notificationBanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">\n  The patient record was updated\n</h3>\n<p class="nhsuk-body">\n  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there\'s a problem.\n</p>'
+  heading: {
+    text: "The patient record was updated"
+  },
+  html: '<p class="nhsuk-body">\n  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there\'s a problem.\n</p>'
+}) }}
+```
+
+#### with HTML and heading as string
+
+```njk
+{{ notificationBanner({
+  heading: "The patient record was updated",
+  html: '<p class="nhsuk-body">\n  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there\'s a problem.\n</p>'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call notificationBanner({
+  heading: {
+    text: "The patient record was updated"
+  }
+}) %}
+<p class="nhsuk-body">
+  Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there's a problem.
+</p>
+{%- endcall %}
+```
+
+#### with custom title
+
+```njk
+{{ notificationBanner({
+  title: {
+    text: "Important information"
+  },
+  text: "The patient record was updated."
+}) }}
+```
+
+#### with custom title as string
+
+```njk
+{{ notificationBanner({
+  title: "Important information",
+  text: "The patient record was updated."
 }) }}
 ```
 
@@ -7824,20 +9961,42 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### success with custom html
+#### success with HTML
 
 ```njk
 {{ notificationBanner({
   variant: "success",
-  html: '<h3 class="nhsuk-notification-banner__heading">\n  4 files uploaded\n</h3>\n<ul class="nhsuk-u-margin-0 nhsuk-list">\n  <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>\n</ul>'
+  heading: {
+    text: "4 files uploaded"
+  },
+  html: '<ul class="nhsuk-list">\n  <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>\n</ul>'
 }) }}
+```
+
+#### success with HTML via call block
+
+```njk
+{% call notificationBanner({
+  variant: "success",
+  heading: {
+    text: "4 files uploaded"
+  }
+}) %}
+<ul class="nhsuk-list">
+  <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
+  <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>
+</ul>
+{%- endcall %}
 ```
 
 #### with a list
 
 ```njk
 {{ notificationBanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">4 files uploaded</h3>\n<ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-0">\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v2.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v3-FINAL.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v4-FINAL-v2.pdf</a></li>\n</ul>'
+  heading: {
+    text: "4 files uploaded"
+  },
+  html: '<ul class="nhsuk-list nhsuk-list--bullet">\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v2.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v3-FINAL.pdf</a></li>\n  <li><a href="#" class="nhsuk-notification-banner__link">government-strategy-v4-FINAL-v2.pdf</a></li>\n</ul>'
 }) }}
 ```
 
@@ -7853,7 +10012,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ notificationBanner({
-  html: '<h3 class="nhsuk-notification-banner__heading">\n  Check if you need to apply the reverse charge to this application\n</h3>\n<p class="nhsuk-body">\n  You will have to apply the <a href="#" class="nhsuk-notification-banner__link">reverse charge</a> if the applicant supplies any of these services:\n</p>\n<ul class="nhsuk-list nhsuk-list--bullet">\n  <li>constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services</li>\n  <li>constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours</li>\n</ul>'
+  heading: {
+    text: "Check if you need to apply the reverse charge to this application"
+  },
+  html: '<p class="nhsuk-body">\n  You will have to apply the <a href="#" class="nhsuk-notification-banner__link">reverse charge</a> if the applicant supplies any of these services:\n</p>\n<ul class="nhsuk-list nhsuk-list--bullet">\n  <li>constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services</li>\n  <li>constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours</li>\n</ul>'
 }) }}
 ```
 
@@ -7914,28 +10076,36 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the pagination container. |
 | `items` | array |  | The items within the pagination component. |
 | `items.number` | string |  | The pagination item text – usually a page number.  Required unless the item is an ellipsis. |
-| `items.visuallyHiddenText` | string |  | The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". |
-| `items.href` | string |  | The link's URL. Required unless the item is an ellipsis. |
+| `items.visuallyHiddenText` | string |  | The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". Replaced by the `item.ariaLabel` option. |
+| `items.ariaLabel` | string |  | The accessible name for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". |
+| `items.href` | string | ✓ | The pagination item `href` attribute. Required unless the item is an ellipsis. |
 | `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
 | `items.ellipsis` | boolean |  | Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored. |
-| `items.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
+| `items.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the link. |
 | `previous` | object |  | A link to the previous page, if there is a previous page. |
 | `previous.text` | string |  | The text content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `previous.html` | string |  | The HTML content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
-| `previous.labelText` | string |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. |
+| `previous.labelText` | string |  | Replaced by the `previous.label.text` option. |
+| `previous.label` | object |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. |
+| `previous.label.text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
+| `previous.label.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `previous.href` | string | ✓ | The previous page's URL. |
-| `previous.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
-| `previousUrl` | string |  | The previous page's URL. Replaced by the `previous.href` option. |
-| `previousPage` | string |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. Replaced by the `previous.labelText` option. |
+| `previous.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the link. |
+| `previousUrl` | string |  | Replaced by the `previous.href` option. |
+| `previousPage` | string |  | Replaced by the `previous.label.text` option. |
 | `next` | object |  | A link to the next page, if there is a next page. |
 | `next.text` | string |  | The text content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `next.html` | string |  | The HTML content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
-| `next.labelText` | string |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. |
+| `next.labelText` | string |  | Replaced by the `next.label.text` option. |
+| `next.label` | object |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. |
+| `next.label.text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
+| `next.label.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `next.href` | string | ✓ | The next page's URL. |
-| `next.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the anchor. |
-| `nextUrl` | string |  | The next page's URL. Replaced by the `next.href` option. |
-| `nextPage` | string |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. Replaced by the `next.labelText` option. |
-| `landmarkLabel` | string |  | The label for the navigation landmark that wraps the pagination. Defaults to `"Pagination"`. |
+| `next.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the link. |
+| `nextUrl` | string |  | Replaced by the `next.href` option. |
+| `nextPage` | string |  | Replaced by the `next.label.text` option. |
+| `landmarkLabel` | string |  | Replaced by the `ariaLabel` option. |
+| `ariaLabel` | string |  | The accessible name for the navigation landmark that wraps the pagination. Defaults to `"Pagination"`. |
 | `classes` | string |  | The classes you want to add to the pagination `nav` parent. |
 | `attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the pagination `nav` parent. |
 
@@ -7946,11 +10116,11 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ pagination({
   previous: {
-    labelText: "Treatments",
+    label: "Treatments",
     href: "#/section/treatments"
   },
   next: {
-    labelText: "Symptoms",
+    label: "Symptoms",
     href: "#/section/symptoms"
   }
 }) }}
@@ -7972,7 +10142,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ pagination({
   previous: {
-    labelText: "Treatments",
+    label: "Treatments",
     href: "#/section/treatments"
   }
 }) }}
@@ -7983,7 +10153,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ pagination({
   next: {
-    labelText: "Symptoms",
+    label: "Symptoms",
     href: "#/section/symptoms"
   }
 }) }}
@@ -7995,12 +10165,12 @@ Use the component reference table below to find the line number for any componen
 {{ pagination({
   previous: {
     text: "Blaenorol",
-    labelText: "Driniaethau",
+    label: "Driniaethau",
     href: "#/section/driniaethau"
   },
   next: {
     text: "Nesaf",
-    labelText: "Symptomau",
+    label: "Symptomau",
     href: "#/section/symptomau"
   }
 }) }}
@@ -8221,14 +10391,25 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the panel. |
-| `titleText` | string | ✓ | If `titleHtml` is set, this is not required. Text to use within the panel. If `titleHtml` is provided, the `titleText` option will be ignored. |
-| `titleHtml` | string |  | If `titleText` is set, this is not required. HTML to use within the panel. If `titleHtml` is provided, the `titleText` option will be ignored. |
-| `titleSize` | string |  | Size of the title – `"m"`, `"l"` or `"xl"`. |
-| `titleClasses` | string |  | Optional additional classes to add to the heading tag. Separate each class with a space. |
-| `headingLevel` | integer |  | Heading level, from `1` to `6`. Defaults to `1`. |
+| `heading` | object | ✓ | Heading of the panel component. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
+| `heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. |
+| `heading.level` | integer |  | Optional heading level. Defaults to `1`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `titleText` | string | ✓ | Replaced by the `heading.text` option. |
+| `titleHtml` | string |  | Replaced by the `heading.html` option. |
+| `titleSize` | string |  | Replaced by the `heading.size` option. |
+| `titleClasses` | string |  | Replaced by the `heading.classes` option. |
+| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the panel content. If `html` is provided, the `text` option will be ignored. |
-| `html` | string | ✓ | If `text` is set, this is not required. Text to use within the panel content. If `text` is provided, the `html` option will be ignored. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire panel component in a `call` block. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the panel content. If `text` is provided, the `html` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire panel component in a `call` block. |
 | `classes` | string |  | Classes to add to the panel. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the panel. |
 | `variant` | string |  | Optional variant of panel. You can use only `"interruption"` or empty values with this option. |
@@ -8239,17 +10420,53 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ panel({
-  titleText: "Booking complete",
+  heading: {
+    text: "Booking complete"
+  },
   text: "We have sent you a confirmation email"
 }) }}
+```
+
+#### with heading as string
+
+```njk
+{{ panel({
+  heading: "Booking complete",
+  text: "We have sent you a confirmation email"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ panel({
+  heading: {
+    text: "Booking complete"
+  },
+  html: "We have sent you a confirmation email"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call panel({
+  heading: {
+    text: "Booking complete"
+  }
+}) %}
+We have sent you a confirmation email
+{%- endcall %}
 ```
 
 #### interruption
 
 ```njk
 {{ panel({
-  titleText: "Jodie Brown had a COVID-19 vaccine less than 3 months ago",
-  titleSize: "l",
+  heading: {
+    text: "Jodie Brown had a COVID-19 vaccine less than 3 months ago",
+    size: "l"
+  },
   variant: "interruption",
   html: '<p>They had a COVID-19 vaccine on 25 September 2025.</p>\n<p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Continue anyway\n</a>\n\n  <a href="#">Cancel</a>\n</div>'
 }) }}
@@ -8259,8 +10476,10 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ panel({
-  titleText: "Confirm you want to cancel your hospital appointment",
-  titleSize: "l",
+  heading: {
+    text: "Confirm you want to cancel your hospital appointment",
+    size: "l"
+  },
   variant: "interruption",
   html: '<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>\n<p>Cancelling your appointment cannot be undone.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Cancel appointment\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
 }) }}
@@ -8270,31 +10489,72 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ panel({
-  titleText: "Is your weight correct?",
-  titleSize: "l",
+  heading: {
+    text: "Is your weight correct?",
+    size: "l"
+  },
   variant: "interruption",
   html: '<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Yes, this is correct\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
 }) }}
 ```
 
-#### title
+#### heading
 
 ```njk
 {{ panel({
-  titleText: "Booking complete",
-  titleSize: "l",
+  heading: {
+    text: "Booking complete",
+    size: "l"
+  },
   text: "We have sent you a confirmation email"
 }) }}
 ```
 
-#### with title classes and heading level
+#### with heading classes
 
 ```njk
 {{ panel({
-  titleText: "Booking complete",
-  titleClasses: "nhsuk-panel__title--l",
-  text: "We have sent you a confirmation email",
-  headingLevel: 2
+  heading: {
+    text: "Booking complete",
+    classes: "nhsuk-panel__heading--l"
+  },
+  text: "We have sent you a confirmation email"
+}) }}
+```
+
+#### with heading level 1
+
+```njk
+{{ panel({
+  heading: {
+    text: "Booking complete",
+    level: 1
+  },
+  text: "We have sent you a confirmation email"
+}) }}
+```
+
+#### with heading level 2
+
+```njk
+{{ panel({
+  heading: {
+    text: "Booking complete",
+    level: 2
+  },
+  text: "We have sent you a confirmation email"
+}) }}
+```
+
+#### with heading level 3
+
+```njk
+{{ panel({
+  heading: {
+    text: "Booking complete",
+    level: 3
+  },
+  text: "We have sent you a confirmation email"
 }) }}
 ```
 
@@ -8318,6 +10578,16 @@ Use the component reference table below to find the line number for any componen
 | `label` | object | ✓ | Options for the label component. *(accepts nested component params)* |
 | `hint` | object |  | Options for the hint component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Options for the error message component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
+| `prefix` | object |  | Can be used to add a prefix to the password input component. |
+| `prefix.text` | string | ✓ | Required. If `html` is set, this is not required. Text to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.html` | string | ✓ | Required. If `text` is set, this is not required. HTML to use within the prefix. If `html` is provided, the `text` option will be ignored. |
+| `prefix.classes` | string |  | Classes to add to the prefix. |
+| `prefix.attributes` | object |  | HTML attributes (for example data attributes) to add to the prefix element. |
+| `suffix` | object |  | Can be used to add a suffix to the password input component. |
+| `suffix.text` | string | ✓ | If `html` is set, this is not required. Text to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the suffix. If `html` is provided, the `text` option will be ignored. |
+| `suffix.classes` | string |  | Classes to add to the suffix element. |
+| `suffix.attributes` | object |  | HTML attributes (for example data attributes) to add to the suffix element. |
 | `code` | boolean |  | If set to `true`, use a monospace font for codes or sequences. |
 | `width` | integer |  | Optional fixed width for the text input component – `2`, `3`, `4`, `5`, `10`, `20` or `30`. |
 | `large` | boolean |  | If set to `true`, larger input size will be used. |
@@ -8338,8 +10608,10 @@ Use the component reference table below to find the line number for any componen
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the input. |
 | `showPasswordText` | string |  | Button text when the password is hidden. Defaults to `"Show"`. |
 | `hidePasswordText` | string |  | Button text when the password is visible. Defaults to `"Hide"`. |
-| `showPasswordAriaLabelText` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is hidden. Defaults to `"Show password"`. |
-| `hidePasswordAriaLabelText` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is visible. Defaults to `"Hide password"`. |
+| `showPasswordAriaLabelText` | string |  | Replaced by `showPasswordAriaLabel`. |
+| `showPasswordAriaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is hidden. Defaults to `"Show password"`. |
+| `hidePasswordAriaLabelText` | string |  | Replaced by `hidePasswordAriaLabel`. |
+| `hidePasswordAriaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is visible. Defaults to `"Hide password"`. |
 | `passwordShownAnnouncementText` | string |  | Announcement made to screen reader users when their password has become visible in plain text. Defaults to `"Your password is visible"`. |
 | `passwordHiddenAnnouncementText` | string |  | Announcement made to screen reader users when their password has been obscured and is not visible. Defaults to `"Your password is hidden"`. |
 | `button` | object |  | Optional object allowing customisation of the toggle button. The `button.attributes` and `button.html` options are not supported. *(accepts nested component params)* |
@@ -8353,9 +10625,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example"
 }) }}
@@ -8366,9 +10637,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example",
   disabled: true
@@ -8380,9 +10650,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example",
   disabled: true,
@@ -8397,9 +10666,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example",
   button: {
@@ -8413,9 +10681,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example",
   button: {
@@ -8429,9 +10696,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   name: "example",
   button: {
@@ -8445,9 +10711,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   hint: {
     text: "It probably has some letters, numbers and maybe even some symbols in it"
@@ -8457,14 +10722,27 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ passwordInput({
+  label: {
+    heading: "Password",
+    size: "l"
+  },
+  errorMessage: true,
+  id: "with-error-only",
+  name: "example"
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   errorMessage: {
     text: "Enter a password"
@@ -8479,9 +10757,58 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
+  },
+  hint: {
+    text: "It probably has some letters, numbers and maybe even some symbols in it"
+  },
+  errorMessage: {
+    text: "Enter a password"
+  },
+  id: "with-error-message",
+  name: "example"
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ passwordInput({
+  label: {
+    heading: "Password",
+    size: "l"
+  },
+  hint: "It probably has some letters, numbers and maybe even some symbols in it",
+  errorMessage: "Enter a password",
+  id: "with-error-message",
+  name: "example"
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ passwordInput({
+  label: {
+    heading: "Password",
+    size: "l"
+  },
+  errorMessage: {
+    text: "Enter a password"
+  },
+  id: "with-error-message",
+  name: "example"
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ passwordInput({
+  label: {
+    heading: "Password",
+    size: "l"
   },
   hint: {
     text: "It probably has some letters, numbers and maybe even some symbols in it"
@@ -8499,9 +10826,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Secret code",
-    size: "m",
-    isPageHeading: true
+    heading: "Secret code",
+    size: "m"
   },
   prefix: {
     text: "PIN"
@@ -8522,9 +10848,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Secret code",
-    size: "m",
-    isPageHeading: true
+    heading: "Secret code",
+    size: "m"
   },
   prefix: {
     text: "PIN"
@@ -8542,13 +10867,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ passwordInput({
-  label: {
-    text: "Password"
-  },
+  label: "Password",
   id: "without-heading",
   name: "example"
 }) }}
@@ -8559,9 +10882,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   id: "width-class",
   name: "example",
@@ -8574,9 +10896,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Password",
-    size: "l",
-    isPageHeading: true
+    heading: "Password",
+    size: "l"
   },
   id: "new-password",
   name: "example",
@@ -8589,16 +10910,15 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ passwordInput({
   label: {
-    text: "Cyfrinair",
-    size: "l",
-    isPageHeading: true
+    heading: "Cyfrinair",
+    size: "l"
   },
   id: "password-translated",
   name: "example",
   showPasswordText: "Datguddia",
   hidePasswordText: "Cuddio",
-  showPasswordAriaLabelText: "Datgelu cyfrinair",
-  hidePasswordAriaLabelText: "Cuddio cyfrinair",
+  showPasswordAriaLabel: "Datgelu cyfrinair",
+  hidePasswordAriaLabel: "Cuddio cyfrinair",
   passwordShownAnnouncementText: "Mae eich cyfrinair yn weladwy.",
   passwordHiddenAnnouncementText: "Mae eich cyfrinair wedi'i guddio."
 }) }}
@@ -8636,7 +10956,7 @@ Use the component reference table below to find the line number for any componen
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each radio item label. If `html` is provided, the `text` option will be ignored. |
 | `items.id` | string |  | Specific `id` attribute for the radio item. If omitted, then `idPrefix` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the radio input. |
-| `items.label` | object |  | The label used by each radio item within the radios component. The `label.size` and `label.isPageHeading` options are not supported. *(accepts nested component params)* |
+| `items.label` | object |  | The label used by each radio item within the radios component. The `label.size` and `label.heading` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each radio item within the radios component. *(accepts nested component params)* |
 | `items.divider` | string |  | Divider text to separate radio items, for example the text `"or"`. |
 | `items.checked` | boolean |  | Whether the radio should be checked when the page loads. Takes precedence over the top-level `value` option. |
@@ -8660,9 +10980,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   name: "example",
@@ -8689,9 +11008,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   idPrefix: "disabled",
@@ -8720,9 +11038,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   idPrefix: "disabled-input",
@@ -8751,9 +11068,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   idPrefix: "disabled-enabled-input",
@@ -8783,9 +11099,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -8816,9 +11131,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "Are you 18 or over?",
-      size: "l",
-      isPageHeading: true
+      heading: "Are you 18 or over?",
+      size: "l"
     }
   },
   idPrefix: "inline",
@@ -8866,15 +11180,12 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ radios({
   fieldset: {
-    legend: {
-      text: "How do you want to be contacted about this?",
-      isPageHeading: false
-    }
+    legend: "How do you want to be contacted about this?"
   },
   idPrefix: "without-heading",
   name: "example",
@@ -8901,9 +11212,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -8944,9 +11254,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "Do you know your NHS number?",
-      size: "l",
-      isPageHeading: true
+      heading: "Do you know your NHS number?",
+      size: "l"
     }
   },
   hint: {
@@ -8980,9 +11289,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "Do you have a mobile phone with signal?",
-      size: "l",
-      isPageHeading: true
+      heading: "Do you have a mobile phone with signal?",
+      size: "l"
     }
   },
   idPrefix: "with-hint-item",
@@ -9030,15 +11338,44 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  errorMessage: true,
+  idPrefix: "with-error-only",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   errorMessage: {
@@ -9069,9 +11406,106 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "Select 1 option"
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  hint: "Select 1 option",
+  errorMessage: "Select how you want to be contacted",
+  idPrefix: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
       text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      size: null
+    }
+  },
+  errorMessage: {
+    text: "Select how you want to be contacted"
+  },
+  idPrefix: "with-error-message",
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      text: "How do you want to be contacted about this?",
+      size: null
     }
   },
   hint: {
@@ -9105,9 +11539,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "Venenatis Condimentum",
-      size: "l",
-      isPageHeading: true
+      heading: "Venenatis Condimentum",
+      size: "l"
     }
   },
   idPrefix: "with-long-text",
@@ -9135,9 +11568,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -9177,9 +11609,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -9219,9 +11650,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -9264,9 +11694,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -9287,7 +11716,7 @@ Use the component reference table below to find the line number for any componen
       value: "phone",
       text: "Phone",
       conditional: {
-        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <p class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your phone number\n  </p>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
+        html: '<div class="nhsuk-form-group nhsuk-form-group--error">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <span class="nhsuk-error-message" id="contact-by-phone-error">\n    <span class="nhsuk-u-visually-hidden">Error: </span>Enter your phone number\n  </span>\n  <input class="nhsuk-input nhsuk-input--error nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel" aria-describedby="contact-by-phone-error">\n</div>\n'
       }
     },
     {
@@ -9307,9 +11736,8 @@ Use the component reference table below to find the line number for any componen
 {{ radios({
   fieldset: {
     legend: {
-      text: "How do you want to be contacted about this?",
-      size: "l",
-      isPageHeading: true
+      heading: "How do you want to be contacted about this?",
+      size: "l"
     }
   },
   hint: {
@@ -9335,6 +11763,59 @@ Use the component reference table below to find the line number for any componen
 
 ---
 
+## Scroll
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `scroll`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The `id` to add to the scroll component. |
+| `labelledBy` | string |  | One or more element IDs to add to the scrolling content `aria-labelledby` attribute, used to provide accessible names for screenreader users. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the scrolling content. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the scrolling content. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire scroll component in a `call` block. |
+| `variant` | string |  | Optional variant of scroll. You can use only `"reverse"` or empty values with this option. |
+| `classes` | string |  | Classes to add to the scroll component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the scroll component. |
+
+### Examples
+
+#### default
+
+```njk
+{{ scroll({
+  text: "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ scroll({
+  html: '<h1 class="nhsuk-heading-m" id="example-heading">Example heading</h1>\n<p class="nhsuk-body">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>\n<p class="nhsuk-body">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.</p>\n<p class="nhsuk-body">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Bibendum commodo ullamcorper vulputate. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.</p>',
+  labelledBy: "example-heading"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call scroll({
+  labelledBy: "example-heading"
+}) %}
+<h1 class="nhsuk-heading-m" id="example-heading">Example heading</h1>
+  <p class="nhsuk-body">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+  <p class="nhsuk-body">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.</p>
+  <p class="nhsuk-body">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Bibendum commodo ullamcorper vulputate. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.</p>
+{%- endcall %}
+```
+
+---
+
 ## Search input
 
 [↑ Back to top](#table-of-contents)
@@ -9347,6 +11828,8 @@ Use the component reference table below to find the line number for any componen
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the input. Defaults to the value of `name`. |
 | `name` | string | ✓ | The name of the input, which is submitted with the form data. |
+| `type` | string |  | Type of input control, for example, an email input control. Defaults to `"search"`. |
+| `inputmode` | string |  | Optional value for [the `inputmode` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode). |
 | `value` | string |  | Optional initial value of the input. |
 | `disabled` | boolean |  | If `true`, input will be disabled. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
@@ -9377,7 +11860,9 @@ Use the component reference table below to find the line number for any componen
 | `formGroup.afterInput.html` | string | ✓ | HTML to add after the input. If `html` is provided, the `text` option will be ignored. |
 | `classes` | string |  | Classes to add to the input. |
 | `autocomplete` | string |  | Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for a full list of attributes that can be used. Default is `"off"`. |
-| `pattern` | string |  | Attribute to provide a regular expression pattern, used to match allowed character combinations for the input value. |
+| `placeholder` | string |  | Attribute to provide placeholder text for the search input. |
+| `spellcheck` | boolean |  | Optional field to enable or disable the `spellcheck` attribute on the search input. |
+| `autocapitalize` | string |  | Optional field to enable or disable autocapitalisation of user input. See the [Autocapitalization section in the HTML standard](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used. |
 | `inputWrapper` | object |  | Additional options for the wrapping element containing the search input component. |
 | `inputWrapper.classes` | string |  | Classes to add to the wrapping element. |
 | `inputWrapper.attributes` | object |  | HTML attributes (for example data attributes) to add to the wrapping element. |
@@ -9398,13 +11883,12 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   placeholder: "NHS number",
   hint: {
-    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   name: "example",
   width: 20
@@ -9416,9 +11900,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   placeholder: "NHS number",
   name: "example",
@@ -9431,9 +11914,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   placeholder: "NHS number",
   name: "example",
@@ -9449,9 +11931,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   placeholder: "NHS number",
   name: "example",
@@ -9466,9 +11947,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "l",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "l"
   },
   name: "example",
   large: true,
@@ -9481,9 +11961,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "l",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "l"
   },
   button: {
     variant: "brand"
@@ -9499,9 +11978,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by postcode",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by postcode",
+    size: "m"
   },
   button: {
     icon: "arrow-right"
@@ -9516,12 +11994,11 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   hint: {
-    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   id: "with-hint",
   name: "example",
@@ -9534,13 +12011,27 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   hint: {
-    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error only
+
+```njk
+{{ searchInput({
+  label: {
+    heading: "Search by NHS number",
+    size: "m"
+  },
+  errorMessage: true,
   name: "example",
   value: "999 123 4567",
   width: 20
@@ -9552,13 +12043,28 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   errorMessage: {
     text: "Enter NHS number"
   },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ searchInput({
+  label: {
+    heading: "Search by NHS number",
+    size: "m"
+  },
+  hint: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App",
+  errorMessage: "Enter NHS number",
   name: "example",
   value: "999 123 4567",
   width: 20
@@ -9570,12 +12076,46 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   hint: {
-    text: "This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App"
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number"
+  },
+  errorMessage: {
+    text: "Enter NHS number"
+  },
+  name: "example",
+  value: "999 123 4567",
+  width: 20
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ searchInput({
+  label: {
+    text: "Search by NHS number"
+  },
+  hint: {
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
   },
   errorMessage: {
     text: "Enter NHS number"
@@ -9591,9 +12131,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Code lookup",
-    size: "m",
-    isPageHeading: true
+    heading: "Code lookup",
+    size: "m"
   },
   prefix: {
     text: "SNOMED"
@@ -9615,9 +12154,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Code lookup",
-    size: "m",
-    isPageHeading: true
+    heading: "Code lookup",
+    size: "m"
   },
   prefix: {
     text: "SNOMED"
@@ -9654,9 +12192,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   button: {
     variant: "brand"
@@ -9671,9 +12208,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   button: {
     text: "Search",
@@ -9689,9 +12225,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Product order number",
-    size: "m",
-    isPageHeading: true
+    heading: "Product order number",
+    size: "m"
   },
   button: {
     icon: false,
@@ -9708,9 +12243,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   button: {
     variant: "secondary"
@@ -9725,9 +12259,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   button: {
     text: "Search",
@@ -9743,9 +12276,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Product order number",
-    size: "m",
-    isPageHeading: true
+    heading: "Product order number",
+    size: "m"
   },
   button: {
     icon: false,
@@ -9762,9 +12294,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ searchInput({
   label: {
-    text: "Search by NHS number",
-    size: "m",
-    isPageHeading: true
+    heading: "Search by NHS number",
+    size: "m"
   },
   button: false,
   name: "example",
@@ -9772,13 +12303,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ searchInput({
-  label: {
-    text: "Search by NHS number"
-  },
+  label: "Search by NHS number",
   name: "example",
   width: 20
 }) }}
@@ -9796,7 +12325,7 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string |  | ID for the select box. Defaults to the value of `name`. |
+| `id` | string |  | ID for the select. Defaults to the value of `name`. |
 | `name` | string | ✓ | The `name` attribute for the select. |
 | `items` | array | ✓ | The items within the select component. |
 | `items.value` | string |  | The `value` attribute for the option. If this is omitted, the value is taken from the text content of the option element. |
@@ -9806,7 +12335,7 @@ Use the component reference table below to find the line number for any componen
 | `items.disabled` | boolean |  | Sets the option item as disabled. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the option. |
 | `value` | string |  | The value for the option which should be selected. Use this as an alternative to setting the `selected` option on each individual item. |
-| `disabled` | boolean |  | If `true`, select box will be disabled. Use the `disabled` option on each individual item to only disable certain options. |
+| `disabled` | boolean |  | If `true`, select will be disabled. Use the `disabled` option on each individual item to only disable certain options. |
 | `describedBy` | string |  | One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users. |
 | `label` | object | ✓ | The label used by the select component. *(accepts nested component params)* |
 | `hint` | object |  | Can be used to add a hint to the select component. *(accepts nested component params)* |
@@ -9833,8 +12362,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   name: "example",
   items: [
@@ -9863,8 +12392,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   name: "example",
   disabled: true,
@@ -9894,8 +12423,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   name: "example",
   items: [
@@ -9925,8 +12454,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   name: "example",
   items: [
@@ -9958,8 +12487,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Choose location",
-    isPageHeading: true
+    heading: "Choose location",
+    size: "l"
   },
   hint: {
     text: "This can be different to where you went before"
@@ -10016,8 +12545,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Choose location",
-    isPageHeading: true
+    heading: "Choose location",
+    size: "l"
   },
   hint: {
     text: "This can be different to where you went before"
@@ -10079,8 +12608,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Choose location",
-    isPageHeading: true
+    heading: "Choose location",
+    size: "l"
   },
   hint: {
     text: "This can be different to where you went before"
@@ -10145,9 +12674,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    size: "l",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   id: "custom-size",
   name: "example",
@@ -10172,13 +12700,11 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
 
 ```njk
 {{ select({
-  label: {
-    text: "Sort by"
-  },
+  label: "Sort by",
   id: "without-heading",
   name: "example",
   items: [
@@ -10202,13 +12728,69 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with error only
+
+```njk
+{{ select({
+  label: {
+    heading: "Choose location",
+    size: "l"
+  },
+  errorMessage: true,
+  id: "with-error-only",
+  name: "example",
+  items: [
+    {
+      value: "choose",
+      text: "Choose location"
+    },
+    {
+      value: "eastmidlands",
+      text: "East Midlands"
+    },
+    {
+      value: "eastofengland",
+      text: "East of England"
+    },
+    {
+      value: "london",
+      text: "London"
+    },
+    {
+      value: "northeast",
+      text: "North East"
+    },
+    {
+      value: "northwest",
+      text: "North West"
+    },
+    {
+      value: "southeast",
+      text: "South East"
+    },
+    {
+      value: "southwest",
+      text: "South West"
+    },
+    {
+      value: "westmidlands",
+      text: "West Midlands"
+    },
+    {
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
+    }
+  ]
+}) }}
+```
+
 #### with error message
 
 ```njk
 {{ select({
   label: {
-    text: "Choose location",
-    isPageHeading: true
+    heading: "Choose location",
+    size: "l"
   },
   errorMessage: {
     text: "Select a location"
@@ -10265,8 +12847,182 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Choose location",
-    isPageHeading: true
+    heading: "Choose location",
+    size: "l"
+  },
+  hint: {
+    text: "This can be different to where you went before"
+  },
+  errorMessage: {
+    text: "Select a location"
+  },
+  id: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "choose",
+      text: "Choose location"
+    },
+    {
+      value: "eastmidlands",
+      text: "East Midlands"
+    },
+    {
+      value: "eastofengland",
+      text: "East of England"
+    },
+    {
+      value: "london",
+      text: "London"
+    },
+    {
+      value: "northeast",
+      text: "North East"
+    },
+    {
+      value: "northwest",
+      text: "North West"
+    },
+    {
+      value: "southeast",
+      text: "South East"
+    },
+    {
+      value: "southwest",
+      text: "South West"
+    },
+    {
+      value: "westmidlands",
+      text: "West Midlands"
+    },
+    {
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ select({
+  label: {
+    heading: "Choose location",
+    size: "l"
+  },
+  hint: "This can be different to where you went before",
+  errorMessage: "Select a location",
+  id: "with-hint-error",
+  name: "example",
+  items: [
+    {
+      value: "choose",
+      text: "Choose location"
+    },
+    {
+      value: "eastmidlands",
+      text: "East Midlands"
+    },
+    {
+      value: "eastofengland",
+      text: "East of England"
+    },
+    {
+      value: "london",
+      text: "London"
+    },
+    {
+      value: "northeast",
+      text: "North East"
+    },
+    {
+      value: "northwest",
+      text: "North West"
+    },
+    {
+      value: "southeast",
+      text: "South East"
+    },
+    {
+      value: "southwest",
+      text: "South West"
+    },
+    {
+      value: "westmidlands",
+      text: "West Midlands"
+    },
+    {
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
+    }
+  ]
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ select({
+  label: {
+    text: "Choose location"
+  },
+  errorMessage: {
+    text: "Select a location"
+  },
+  id: "with-error-message",
+  name: "example",
+  items: [
+    {
+      value: "choose",
+      text: "Choose location"
+    },
+    {
+      value: "eastmidlands",
+      text: "East Midlands"
+    },
+    {
+      value: "eastofengland",
+      text: "East of England"
+    },
+    {
+      value: "london",
+      text: "London"
+    },
+    {
+      value: "northeast",
+      text: "North East"
+    },
+    {
+      value: "northwest",
+      text: "North West"
+    },
+    {
+      value: "southeast",
+      text: "South East"
+    },
+    {
+      value: "southwest",
+      text: "South West"
+    },
+    {
+      value: "westmidlands",
+      text: "West Midlands"
+    },
+    {
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
+    }
+  ]
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ select({
+  label: {
+    text: "Choose location"
   },
   hint: {
     text: "This can be different to where you went before"
@@ -10326,8 +13082,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ select({
   label: {
-    text: "Sort by",
-    isPageHeading: true
+    heading: "Sort by",
+    size: "l"
   },
   id: "with-value",
   name: "example",
@@ -10368,7 +13124,8 @@ Use the component reference table below to find the line number for any componen
 | `id` | string |  | The ID of the skip link. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the skip link. If `html` is provided, the `text` option will be ignored. Defaults to `"Skip to main content"`. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the skip link. If `html` is provided, the `text` option will be ignored. Defaults to `"Skip to main content"`. |
-| `href` | string |  | The value of the skip link's `href` attribute. Defaults to `"#maincontent"`. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire skip link component in a `call` block. |
+| `href` | string |  | The skip link `href` attribute. Defaults to `"#maincontent"`. |
 | `classes` | string |  | Classes to add to the skip link. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the skip link. |
 
@@ -10417,25 +13174,41 @@ Use the component reference table below to find the line number for any componen
 | `border` | boolean |  | If set to `false`, remove separating borders from all rows. |
 | `lastRowBorder` | boolean |  | If set to `false`, remove separating border from the last row. |
 | `rows` | array | ✓ | The rows within the summary list component. |
-| `rows.classes` | string |  | Classes to add to the row `div`. |
+| `rows.id` | string |  | The ID of the row. |
+| `rows.classes` | string |  | Classes to add to the row. |
+| `rows.attributes` | string |  | HTML attributes (for example data attributes) to add to the row. |
 | `rows.border` | boolean |  | If set to `false`, remove separating border from the row. |
 | `rows.key` | object | ✓ | The reference content (key) for each row item in the summary list component. |
+| `rows.key.id` | string |  | The ID of the key item. |
 | `rows.key.text` | string | ✓ | If `html` is set, this is not required. Text to use within each key. If `html` is provided, the `text` option will be ignored. |
 | `rows.key.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each key. If `html` is provided, the `text` option will be ignored. |
+| `rows.key.width` | string |  | Specify the key wrapper width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
 | `rows.key.classes` | string |  | Classes to add to the key wrapper. |
+| `rows.key.attributes` | string |  | HTML attributes (for example data attributes) to add to the key wrapper. |
 | `rows.value` | object | ✓ | The value for each row item in the summary list component. |
+| `rows.value.id` | string |  | The ID of the value item. |
 | `rows.value.text` | string | ✓ | If `html` is set, this is not required. Text to use within each value. If `html` is provided, the `text` option will be ignored. |
 | `rows.value.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each value. If `html` is provided, the `text` option will be ignored. |
+| `rows.value.width` | string |  | Specify the value wrapper width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
 | `rows.value.classes` | string |  | Classes to add to the value wrapper. |
+| `rows.value.attributes` | string |  | HTML attributes (for example data attributes) to add to the value wrapper. |
 | `rows.actions` | object |  | The action link content for each row item in the summary list component. |
 | `rows.actions.items` | array |  | The action link items within the row item of the summary list component. |
-| `rows.actions.items.href` | string | ✓ | The value of the link's `href` attribute for an action item. |
+| `rows.actions.items.id` | string |  | The ID of the action item. |
 | `rows.actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `rows.actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `rows.actions.items.visuallyHiddenText` | string |  | Actions rely on context from the surrounding content so may require additional accessible text. Text supplied to this option is appended to the end. Use `html` for more complicated scenarios. |
+| `rows.actions.items.name` | string |  | Name for the action as a button. If `type` is set, this has no effect. |
+| `rows.actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
+| `rows.actions.items.value` | string |  | The `value` attribute for the action as a button. If `type` is set, this has no effect. |
+| `rows.actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
 | `rows.actions.items.classes` | string |  | Classes to add to the action item. |
 | `rows.actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
+| `rows.actions.width` | string |  | Specify the actions wrapper width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
 | `rows.actions.classes` | string |  | Classes to add to the actions wrapper. |
+| `rows.actions.attributes` | string |  | HTML attributes (for example data attributes) to add to the actions wrapper. |
+| `html` | string |  | HTML to use within the summary list. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire summary list component in a `call` block. |
 | `card` | object |  | Can be used to wrap a card around the summary list component. If any of these options are present, a card will wrap around the summary list. *(accepts nested component params)* |
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the container. |
@@ -10443,6 +13216,47 @@ Use the component reference table below to find the line number for any componen
 ### Examples
 
 #### default
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      }
+    }
+  ]
+}) }}
+```
+
+#### with actions
 
 ```njk
 {{ summaryList({
@@ -10509,6 +13323,154 @@ Use the component reference table below to find the line number for any componen
         items: [
           {
             href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+```
+
+#### with actions array
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      },
+      actions: [
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "name"
+        }
+      ]
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      },
+      actions: [
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "date of birth"
+        }
+      ]
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      },
+      actions: {
+        items: [
+          {
+            href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      },
+      actions: [
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "contact details"
+        }
+      ]
+    }
+  ]
+}) }}
+```
+
+#### with actions as buttons
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
             text: "Change",
             visuallyHiddenText: "contact details"
           }
@@ -10604,6 +13566,101 @@ Use the component reference table below to find the line number for any componen
           },
           {
             href: "#/change",
+            text: "Change",
+            visuallyHiddenText: "medicines"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+```
+
+#### with multiple actions as buttons
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "contact information"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Add",
+            visuallyHiddenText: "new contact details"
+          },
+          {
+            type: "submit",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Medicines"
+      },
+      value: {
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>\n<p>Isotretinoin gel (Isotrex)</p>\n<p>Pepto-Bismol (bismuth subsalicylate)</p>"
+      },
+      actions: {
+        items: [
+          {
+            type: "submit",
+            text: "Add",
+            visuallyHiddenText: "new medicine"
+          },
+          {
+            type: "submit",
             text: "Change",
             visuallyHiddenText: "medicines"
           }
@@ -10711,14 +13768,15 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without actions
+#### with item widths
 
 ```njk
 {{ summaryList({
   rows: [
     {
       key: {
-        text: "Name"
+        text: "Name",
+        width: "one-half"
       },
       value: {
         text: "Karen Francis"
@@ -10726,27 +13784,29 @@ Use the component reference table below to find the line number for any componen
     },
     {
       key: {
-        text: "Date of birth"
+        text: "Date of birth",
+        width: "one-half"
       },
       value: {
         text: "15 March 1984"
       }
+    }
+  ]
+}) }}
+```
+
+#### with item strings
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: "Name",
+      value: "Karen Francis"
     },
     {
-      key: {
-        text: "Contact information"
-      },
-      value: {
-        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
-      }
-    },
-    {
-      key: {
-        text: "Contact details"
-      },
-      value: {
-        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
-      }
+      key: "Date of birth",
+      value: "15 March 1984"
     }
   ]
 }) }}
@@ -10794,7 +13854,7 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without row border
+#### without last row border
 
 ```njk
 {{ summaryList({
@@ -10836,13 +13896,57 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### without specific row border
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      }
+    },
+    {
+      border: false,
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      }
+    }
+  ]
+}) }}
+```
+
 #### as a card
 
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "m"
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    }
   },
   lastRowBorder: false,
   rows: [
@@ -10871,8 +13975,10 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "l",
+    heading: {
+      text: "Regional Manager",
+      size: "l"
+    },
     actions: {
       items: [
         {
@@ -10886,6 +13992,7 @@ Use the component reference table below to find the line number for any componen
       ]
     }
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -10952,7 +14059,6 @@ Use the component reference table below to find the line number for any componen
       }
     },
     {
-      border: false,
       key: {
         text: "Medicines"
       },
@@ -10978,13 +14084,95 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### as a card with action
+
+```njk
+{{ summaryList({
+  card: {
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
+    actions: {
+      items: [
+        {
+          text: "Delete",
+          href: "#/delete"
+        }
+      ]
+    }
+  },
+  lastRowBorder: false,
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
+#### as a card with action as a button
+
+```njk
+{{ summaryList({
+  card: {
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
+    actions: {
+      items: [
+        {
+          type: "submit",
+          text: "Delete"
+        }
+      ]
+    }
+  },
+  lastRowBorder: false,
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
 #### as a card with actions
 
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "m",
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
     actions: {
       items: [
         {
@@ -11020,13 +14208,59 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### as a card with actions as buttons
+
+```njk
+{{ summaryList({
+  card: {
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
+    actions: {
+      items: [
+        {
+          type: "submit",
+          text: "Delete"
+        },
+        {
+          type: "submit",
+          text: "Withdraw"
+        }
+      ]
+    }
+  },
+  lastRowBorder: false,
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      }
+    }
+  ]
+}) }}
+```
+
 #### as a card (secondary) with actions
 
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "m",
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
     variant: "secondary",
     actions: {
       items: [
@@ -11068,8 +14302,10 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "m",
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
     variant: "feature",
     actions: {
       items: [
@@ -11111,10 +14347,13 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Your read",
-    headingSize: "m",
+    heading: {
+      text: "Your read",
+      size: "m"
+    },
     variant: "feature"
   },
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -11151,7 +14390,6 @@ Use the component reference table below to find the line number for any componen
       }
     },
     {
-      classes: "nhsuk-summary-list__row--no-border",
       key: {
         text: "Annotations"
       },
@@ -11177,8 +14415,10 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
-    headingSize: "m",
+    heading: {
+      text: "Regional Manager",
+      size: "m"
+    },
     href: "#/card-clickable",
     clickable: true
   },
@@ -11209,7 +14449,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
+    heading: {
+      text: "Regional Manager"
+    },
     variant: "non-urgent",
     actions: {
       items: [
@@ -11251,7 +14493,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
+    heading: {
+      text: "Regional Manager"
+    },
     variant: "urgent",
     actions: {
       items: [
@@ -11293,7 +14537,9 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ summaryList({
   card: {
-    heading: "Regional Manager",
+    heading: {
+      text: "Regional Manager"
+    },
     variant: "emergency",
     actions: {
       items: [
@@ -11359,6 +14605,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ summaryList({
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -11369,7 +14616,6 @@ Use the component reference table below to find the line number for any componen
       }
     },
     {
-      border: false,
       key: {
         text: "Date of birth"
       },
@@ -11385,6 +14631,7 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ summaryList({
+  lastRowBorder: false,
   rows: [
     {
       key: {
@@ -11395,7 +14642,6 @@ Use the component reference table below to find the line number for any componen
       }
     },
     {
-      border: false,
       key: {
         text: "Date of birth"
       },
@@ -11420,33 +14666,64 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the table. |
+| `border` | boolean |  | If set to `false`, remove separating borders from all rows. |
+| `lastRowBorder` | boolean |  | If set to `false`, remove separating border from the last row. |
 | `rows` | array | ✓ | Array of table rows and cells. |
-| `rows.text` | string | ✓ | If `html` is set, this is not required. Text for cells in table rows. If `html` is provided, the `text` argument will be ignored. |
-| `rows.html` | string | ✓ | If `text` is set, this is not required. HTML for cells in table rows. If `html` is provided, the `text` argument will be ignored. |
-| `rows.header` | string |  | Header text for cells in responsive table rows only. |
-| `rows.format` | string |  | Specify format of a cell. Currently we only use `"numeric"`. |
-| `rows.colspan` | integer |  | Specify how many columns a cell extends. |
-| `rows.rowspan` | integer |  | Specify how many rows a cell extends. |
+| `rows.text` | string | ✓ | If `html` is set, this is not required. Text for cells in table rows. If `html` is provided, the `text` option will be ignored. |
+| `rows.html` | string | ✓ | If `text` is set, this is not required. HTML for cells in table rows. If `html` is provided, the `text` option will be ignored. |
+| `rows.visuallyHiddenText` | string |  | A visually hidden suffix added to the table cell. |
+| `rows.header` | string |  | Set automatically by table head cells in the `head` option. |
+| `rows.href` | string |  | If set, the table cell will become a link. |
+| `rows.format` | string |  | Specify format of a cell – `"numeric"` or `"string"`. Defaults to `"string"` |
+| `rows.sortValue` | string |  | Sort value text for cells in table rows. |
+| `rows.colspan` | integer |  | Specify how many columns a cell spans. |
+| `rows.rowspan` | integer |  | Specify how many rows a cell spans. |
+| `rows.align` | string |  | Specify the table cell alignment – `"left"`, `"centre"`, or `"right"`. Defaults to `"left"` |
+| `rows.width` | string |  | Specify the table cell width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
+| `rows.classes` | string |  | Classes to add to the table cell. |
+| `rows.attributes` | object |  | HTML attributes (for example data attributes) to add to the table cell. |
 | `head` | array |  | Array of table head cells. |
-| `head.text` | string |  | If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` argument will be ignored. |
-| `head.html` | string |  | If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` argument will be ignored. |
-| `head.format` | string |  | Specify format of a cell. Currently we only use `"numeric"`. |
-| `head.colspan` | integer |  | Specify how many columns a cell extends. |
-| `head.rowspan` | integer |  | Specify how many rows a cell extends. |
-| `caption` | string |  | Caption text. |
-| `captionClasses` | string |  | Classes for caption text size. Classes to add to the table caption, for example `"nhsuk-table__caption--l"`. |
-| `captionSize` | string |  | Size of the caption – `"s"`, `"m"`, `"l"` or `"xl"`. |
-| `firstCellIsHeader` | boolean |  | If set to `true`, first cell in table row will be a TH instead of a TD. |
+| `head.text` | string |  | If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` option will be ignored. |
+| `head.html` | string |  | If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` option will be ignored. |
+| `head.visuallyHiddenText` | string |  | A visually hidden suffix added to the table head cell. |
+| `head.href` | string |  | If set, the table header will become a link for server-side table sorting. Use `sort` to set the column sort direction. |
+| `head.format` | string |  | Specify format of a cell – `"numeric"` or `"string"`. Defaults to `"string"` |
+| `head.colspan` | integer |  | Specify how many columns a cell spans. |
+| `head.rowspan` | integer |  | Specify how many rows a cell spans. |
+| `head.align` | string |  | Specify the table head cell alignment – `"left"`, `"centre"`, or `"right"`. Defaults to `"left"` |
+| `head.width` | string |  | Specify the table head cell width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
+| `head.classes` | string |  | Classes to add to the table head cell. |
+| `head.attributes` | object |  | HTML attributes (for example data attributes) to add to the table head cell. |
+| `head.sort` | string |  | The sort direction applied to the column using `aria-sort` – `"ascending"`, `"descending"`, `"none"` or `true`. To enable sorting without a default direction, set `sort` to `"none"` or `true`. |
+| `head.sortNext` | string |  | The next sort direction applied to the column using `aria-sort` when clicked – `"ascending"` or `"descending"`. Defaults to `"ascending"`. If you set `sort` to `"ascending"`, `sortNext` defaults to `"descending"`. |
+| `caption` | object |  | Table caption. *(accepts nested component params)* |
+| `caption.id` | string |  | The ID of the table caption and the `aria-labelledby` attribute in the scrolling container. Defaults to the table `id` option suffixed with `"-caption"`. If neither are provided, the ID is generated from the caption `text` option. |
+| `caption.text` | string | ✓ | If `html` is set, this is not required. Text for the table caption. If `html` is provided, the `text` option will be ignored. |
+| `caption.html` | string | ✓ | If `text` is set, this is not required. HTML for the table caption. If `html` is provided, the `text` option will be ignored. |
+| `caption.visuallyHiddenText` | string |  | Message made available to assistive technologies to describe that the table is sortable. Defaults to `"Column headers are sortable"`. |
+| `caption.caption` | object |  | Optional caption for the table caption. *(accepts nested component params)* |
+| `caption.size` | string |  | Size of the table caption – `"s"`, `"m"`, `"l"` or `"xl"`. |
+| `caption.classes` | string |  | Classes to add to the table caption, for example `"nhsuk-table__caption--l"`. |
+| `caption.attributes` | object |  | HTML attributes (for example data attributes) to add to the table caption. |
+| `captionClasses` | string |  | Replaced by the `caption.classes` option. |
+| `captionSize` | string |  | Replaced by the `caption.size` option. |
+| `firstCellIsHeader` | boolean |  | If set to `true`, first cell in table row will be a `th` instead of a `td`. |
+| `compact` | boolean |  | If set to `true`, vertical padding will be reduced for table cells. |
 | `responsive` | boolean |  | If set to `true`, responsive table classes will be applied. |
+| `scroll` | boolean |  | If set to `true`, wrap a scrolling container around the table component. Scrolling tables require the `caption.text` and `caption.id` options. |
+| `striped` | boolean |  | If set to `true`, striped background colours will be applied to table rows. |
 | `variant` | string |  | Optional variant of table. You can use only `"reverse"` or empty values with this option. |
 | `card` | object |  | Can be used to wrap a card around the table component. If any of these options are present, a card will wrap around the table. *(accepts nested component params)* |
-| `panel` | boolean |  | If set to `true`, the table will render within a panel with a heading. Replaced by the `card` option. |
-| `panelClasses` | string |  | Classes to add to the table panel. Replaced by the `card.classes` option. |
-| `heading` | string |  | Heading text that displays above the table when `panel` is `true`. Replaced by the `card.heading` option. |
-| `headingLevel` | integer |  | Optional heading level for the table panel heading. Defaults to `3`. Replaced by the `card.headingLevel` option. |
+| `panel` | boolean |  | Replaced by the `card` option. |
+| `panelClasses` | string |  | Replaced by the `card.classes` option. |
+| `heading` | string |  | Replaced by the `card.heading.text` option. |
+| `headingLevel` | integer |  | Replaced by the `card.heading.level` option. |
 | `classes` | string |  | Classes to add to the table container. |
-| `tableClasses` | string |  | Classes to add to the table element. Replaced by the `classes` option. |
+| `tableClasses` | string |  | Replaced by the `classes` option. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the table container. |
+| `ascendingText` | string |  | Text for columns in ascending sort order, used to populate the `%{direction}` placeholder in `sortAnnouncementText`. Defaults to `"ascending"`. |
+| `descendingText` | string |  | Text for columns in descending sort order, used to populate the `%{direction}` placeholder in `sortAnnouncementText`. Defaults to `"descending"`. |
+| `sortAnnouncementText` | string |  | Announcement made to screen reader users when a table column has been sorted. The component will replace the `%{header}` placeholder with the column header, and the `%{direction}` placeholder with the `ascendingText` or `descendingText` option value. |
 
 ### Examples
 
@@ -11454,8 +14731,11 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ table({
-  caption: "Impetigo can look similar to other skin conditions",
-  captionSize: "m",
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
   head: [
     {
       text: "Skin symptoms"
@@ -11493,523 +14773,105 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with empty items
+#### with column widths
 
 ```njk
 {{ table({
-  caption: "Vaccinations given",
-  captionSize: "m",
-  head: [
-    {
-      text: "Date"
-    },
-    {
-      text: "Vaccine"
-    },
-    false
-  ],
-  rows: [
-    [
-      {
-        text: "10 July 2024"
-      },
-      {
-        text: "RSV"
-      },
-      false
-    ],
-    false
-  ]
-}) }}
-```
-
-#### with missing data
-
-```njk
-{{ table({
-  caption: "Vaccinations given",
-  captionSize: "m",
-  head: [
-    {
-      text: "Date"
-    },
-    {
-      text: "Vaccine"
-    },
-    {
-      text: "Product"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "10 July 2024"
-      },
-      {
-        text: "RSV"
-      },
-      {
-        text: "Abrysvo"
-      }
-    ],
-    [
-      {
-        text: "6 September 2023"
-      },
-      {
-        text: "Flu"
-      },
-      {
-        text: "No data",
-        classes: "nhsuk-u-secondary-text-colour"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### with numeric data
-
-```njk
-{{ table({
-  caption: "Prescription prepayment certificate (PPC) charges",
-  captionSize: "m",
-  head: [
-    {
-      text: "Item"
-    },
-    {
-      text: "Current charge",
-      format: "numeric"
-    },
-    {
-      text: "New charge",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "3-month"
-      },
-      {
-        text: "£31.25",
-        format: "numeric"
-      },
-      {
-        text: "£32.05",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "12-month"
-      },
-      {
-        text: "£111.60",
-        format: "numeric"
-      },
-      {
-        text: "£114.50",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "HRT"
-      },
-      {
-        text: "£19.30",
-        format: "numeric"
-      },
-      {
-        text: "£19.80",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### with numeric data (full width, past day)
-
-```njk
-{{ table({
-  caption: "Past day",
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened",
-      format: "numeric"
-    },
-    {
-      text: "Cases closed",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "3",
-        format: "numeric"
-      },
-      {
-        text: "0",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1",
-        format: "numeric"
-      },
-      {
-        text: "0",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "2",
-        format: "numeric"
-      },
-      {
-        text: "0",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### with numeric data (full width, past week)
-
-```njk
-{{ table({
-  caption: "Past week",
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened",
-      format: "numeric"
-    },
-    {
-      text: "Cases closed",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "24",
-        format: "numeric"
-      },
-      {
-        text: "18",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "16",
-        format: "numeric"
-      },
-      {
-        text: "20",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "24",
-        format: "numeric"
-      },
-      {
-        text: "27",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### with numeric data (full width, past month)
-
-```njk
-{{ table({
-  caption: "Past month",
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened",
-      format: "numeric"
-    },
-    {
-      text: "Cases closed",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "98",
-        format: "numeric"
-      },
-      {
-        text: "95",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "122",
-        format: "numeric"
-      },
-      {
-        text: "131",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "126",
-        format: "numeric"
-      },
-      {
-        text: "142",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### with numeric data (full width, past year)
-
-```njk
-{{ table({
-  caption: "Past year",
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened",
-      format: "numeric"
-    },
-    {
-      text: "Cases closed",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "1380",
-        format: "numeric"
-      },
-      {
-        text: "1472",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1129",
-        format: "numeric"
-      },
-      {
-        text: "1083",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "1539",
-        format: "numeric"
-      },
-      {
-        text: "1265",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### responsive
-
-```njk
-{{ table({
-  caption: "Ibuprofen syrup dosages for children",
-  captionSize: "m",
-  responsive: true,
+  caption: {
+    text: "Ibuprofen 100mg/5ml liquid dosages for children by age",
+    size: "m"
+  },
+  firstCellIsHeader: true,
   head: [
     {
       text: "Age",
-      classes: "nhsuk-u-width-one-half"
+      width: "one-third"
     },
     {
       text: "How much?",
-      classes: "nhsuk-u-width-one-quarter"
+      width: "one-quarter"
     },
     {
-      text: "How often?",
-      classes: "nhsuk-u-width-one-quarter"
+      text: "How often?"
     }
   ],
   rows: [
     [
       {
-        header: "Age",
-        text: "3 to 5 months (weighing more than 5kg)"
+        html: "3 to 5 months (weighing more than 5kg)"
       },
       {
-        header: "How much?",
-        text: "2.5ml"
+        text: "2.5ml (50mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: "Age",
         text: "6 to 11 months"
       },
       {
-        header: "How much?",
-        text: "2.5ml"
+        text: "2.5ml (50mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 to 4 times in 24 hours"
       }
     ],
     [
       {
-        header: "Age",
         text: "1 to 3 years"
       },
       {
-        header: "How much?",
-        text: "5ml"
+        text: "5ml (100mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: "Age",
         text: "4 to 6 years"
       },
       {
-        header: "How much?",
-        text: "7.5ml"
+        text: "7.5ml (150mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: "Age",
         text: "7 to 9 years"
       },
       {
-        header: "How much?",
-        text: "10ml"
+        text: "10ml (200mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 times in 24 hours"
       }
     ],
     [
       {
-        header: "Age",
         text: "10 to 11 years"
       },
       {
-        header: "How much?",
-        text: "15ml"
+        text: "15ml (300mg)"
       },
       {
-        header: "How often?",
         text: "Max 3 times in 24 hours"
-      }
-    ],
-    [
-      {
-        header: "Age",
-        text: "12 to 17 years"
-      },
-      {
-        header: "How much?",
-        text: "15ml to 20ml"
-      },
-      {
-        header: "How often?",
-        text: "Max 3 to 4 times in 24 hours"
       }
     ]
   ]
 }) }}
 ```
 
-#### responsive and custom HTML
+#### with custom HTML
 
 ```njk
 {{ table({
   caption: "Nunjucks macro options",
   firstCellIsHeader: true,
-  responsive: true,
   head: [
     {
       text: "Name"
@@ -12024,113 +14886,89 @@ Use the component reference table below to find the line number for any componen
   rows: [
     [
       {
-        header: "Name",
         text: "id"
       },
       {
-        header: "Type",
         text: "string"
       },
       {
-        header: "Description",
         text: "The ID of the table."
       }
     ],
     [
       {
-        header: "Name",
         text: "rows"
       },
       {
-        header: "Type",
         text: "array"
       },
       {
-        header: "Description",
         html: '<strong>Required.</strong> The rows within the table component.\n<a href="#/macro-options">See macro options for rows</a>.'
       }
     ],
     [
       {
-        header: "Name",
         text: "head"
       },
       {
-        header: "Type",
         text: "array"
       },
       {
-        header: "Description",
         html: 'Can be used to add a row of table header cells (<code>&lt;th&gt;</code>) at the top of the table component.\n<a href="#/macro-options">See macro options for head</a>.'
       }
     ],
     [
       {
-        header: "Name",
         text: "caption"
       },
       {
-        header: "Type",
         text: "string"
       },
       {
-        header: "Description",
         text: "Caption text."
       }
     ],
     [
       {
-        header: "Name",
         text: "captionClasses"
       },
       {
-        header: "Type",
         text: "string"
       },
       {
-        header: "Description",
         text: "Classes for caption text size. Classes should correspond to the available typography heading classes."
       }
     ],
     [
       {
-        header: "Name",
         text: "firstCellIsHeader"
       },
       {
-        header: "Type",
         text: "string"
       },
       {
-        header: "Description",
         html: "If set to <code>true</code>, the first cell in each row will be a table header (<code>&lt;th&gt;</code>)."
       }
     ],
     [
       {
-        header: "Name",
         text: "classes"
       },
       {
-        header: "Type",
         text: "string"
       },
       {
-        header: "Description",
         text: "Classes to add to the table container."
       }
     ],
     [
       {
-        header: "Name",
         text: "attributes"
       },
       {
-        header: "Type",
         text: "object"
       },
       {
-        header: "Description",
         text: "\tHTML attributes (for example data attributes) to add to the table container."
       }
     ]
@@ -12138,51 +14976,46 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### with word breaks
+#### with tags
 
 ```njk
 {{ table({
-  caption: "Users",
-  captionSize: "m",
-  head: [
-    {
-      text: "Name"
-    },
-    {
-      text: "Email address"
-    },
-    {
-      text: "Status"
-    },
-    {
-      html: '<span class="nhsuk-u-visually-hidden">Actions</span>'
-    }
-  ],
+  caption: "Tags",
+  firstCellIsHeader: true,
+  head: ["Name", "Colour", "Tag"],
   rows: [
     [
+      "Default",
+      "None",
       {
-        text: "Stephanie Meyer",
-        classes: "nhsuk-u-text-break-word"
-      },
-      {
-        text: "stephanie.meyer9@test.com",
-        classes: "nhsuk-u-text-break-word"
-      },
-      {
-        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  Active\n</strong>\n'
+        html: '<strong class="nhsuk-tag">\n  Default\n</strong>\n'
       }
     ],
     [
+      "Red",
       {
-        text: "Aleksandrina Featherstonehaugh-Whitehead",
-        classes: "nhsuk-u-text-break-word"
+        html: '<var class="nhsuk-body-s">red</var>'
       },
       {
-        text: "aleksandrina.featherstonehaughwhitehead23@folkestonepharmacy.test.com",
-        classes: "nhsuk-u-text-break-word"
+        html: '<strong class="nhsuk-tag nhsuk-tag--red">\n  Rejected\n</strong>\n'
+      }
+    ],
+    [
+      "Blue",
+      {
+        html: '<var class="nhsuk-body-s">blue</var>'
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--grey">\n  Inactive\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--blue">\n  Pending\n</strong>\n'
+      }
+    ],
+    [
+      "Green",
+      {
+        html: '<var class="nhsuk-body-s">green</var>'
+      },
+      {
+        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  New\n</strong>\n'
       }
     ]
   ]
@@ -12194,6 +15027,7 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ table({
   firstCellIsHeader: true,
+  lastRowBorder: false,
   head: [
     {
       text: "Day of the week"
@@ -12263,13 +15097,641 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with empty items
+
+```njk
+{{ table({
+  caption: {
+    text: "Vaccinations given",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "Vaccine"
+    },
+    false
+  ],
+  rows: [
+    [
+      {
+        text: "10 July 2024"
+      },
+      {
+        text: "RSV"
+      },
+      false
+    ],
+    false
+  ]
+}) }}
+```
+
+#### with string items
+
+```njk
+{{ table({
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: ["Skin symptoms", "Possible cause"],
+  rows: [
+    ["Blisters on lips or around the mouth", "Cold sores"],
+    ["Itchy, dry, cracked, sore", "Eczema"],
+    ["Itchy blisters", "Shingles, chickenpox"]
+  ]
+}) }}
+```
+
+#### with empty items and string items
+
+```njk
+{{ table({
+  caption: {
+    text: "Vaccinations given",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: ["Date", "Vaccine", false],
+  rows: [["10 July 2024", "RSV", false], false]
+}) }}
+```
+
+#### with missing data
+
+```njk
+{{ table({
+  caption: {
+    text: "Vaccinations given",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "Vaccine"
+    },
+    {
+      text: "Product"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "10 July 2024"
+      },
+      {
+        text: "RSV"
+      },
+      {
+        text: "Abrysvo"
+      }
+    ],
+    [
+      {
+        text: "6 September 2023"
+      },
+      {
+        text: "Flu"
+      },
+      {
+        text: "No data",
+        classes: "nhsuk-u-secondary-text-colour"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format
+
+```njk
+{{ table({
+  caption: {
+    text: "Prescription prepayment certificate (PPC) charges",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Item"
+    },
+    {
+      text: "Current charge",
+      format: "numeric"
+    },
+    {
+      text: "New charge",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "3-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£31.25"
+      },
+      {
+        text: "£32.05"
+      }
+    ],
+    [
+      {
+        text: "12-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£111.60"
+      },
+      {
+        text: "£114.50"
+      }
+    ],
+    [
+      {
+        text: "HRT"
+      },
+      {
+        text: "£19.30"
+      },
+      {
+        text: "£19.80"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format and missing data
+
+```njk
+{{ table({
+  caption: {
+    text: "Prescription prepayment certificate (PPC) charges",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Item"
+    },
+    {
+      text: "Current charge",
+      format: "numeric"
+    },
+    {
+      text: "New charge",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "3-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£31.25"
+      },
+      {
+        text: "£32.05"
+      }
+    ],
+    [
+      {
+        text: "12-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£111.60"
+      },
+      {
+        text: "No data",
+        format: "string",
+        classes: "nhsuk-u-secondary-text-colour"
+      }
+    ],
+    [
+      {
+        text: "HRT"
+      },
+      {
+        text: "£19.30"
+      },
+      {
+        text: "£19.80"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format (full width, past day)
+
+```njk
+{{ table({
+  caption: "Past day",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "3"
+      },
+      {
+        text: "0"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "0"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "2"
+      },
+      {
+        text: "0"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format (full width, past week)
+
+```njk
+{{ table({
+  caption: "Past week",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "18"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "16"
+      },
+      {
+        text: "20"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24"
+      },
+      {
+        text: "27"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format (full width, past month)
+
+```njk
+{{ table({
+  caption: "Past month",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "98"
+      },
+      {
+        text: "95"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "122"
+      },
+      {
+        text: "131"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "126"
+      },
+      {
+        text: "142"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with numeric format (full width, past year)
+
+```njk
+{{ table({
+  caption: "Past year",
+  head: [
+    {
+      text: "Case manager"
+    },
+    {
+      text: "Cases opened",
+      format: "numeric"
+    },
+    {
+      text: "Cases closed",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380"
+      },
+      {
+        text: "1472"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129"
+      },
+      {
+        text: "1083"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "1539"
+      },
+      {
+        text: "1265"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with word breaks
+
+```njk
+{{ table({
+  caption: {
+    text: "Users",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Email address"
+    },
+    {
+      text: "Status"
+    },
+    {
+      visuallyHiddenText: "Actions"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Stephanie Meyer",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        text: "stephanie.meyer9@test.com",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  Active\n</strong>\n'
+      }
+    ],
+    [
+      {
+        text: "Aleksandrina Featherstonehaugh-Whitehead",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        text: "aleksandrina.featherstonehaughwhitehead23@folkestonepharmacy.test.com",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        html: '<strong class="nhsuk-tag nhsuk-tag--grey">\n  Inactive\n</strong>\n'
+      }
+    ],
+    [
+      {
+        text: "Karen Francis",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        text: "karen.francis@example.com",
+        classes: "nhsuk-u-text-break-word"
+      },
+      {
+        html: '<strong class="nhsuk-tag nhsuk-tag--blue">\n  Thisisaverylongwaytosaythatsomethingisincomplete\n</strong>\n'
+      }
+    ]
+  ]
+}) }}
+```
+
+#### without border
+
+```njk
+{{ table({
+  caption: {
+    text: "Cases per manager",
+    classes: "nhsuk-u-visually-hidden"
+  },
+  border: false,
+  head: [
+    {
+      text: "Manager"
+    },
+    {
+      text: "Cases",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### without last row border
+
+```njk
+{{ table({
+  caption: {
+    text: "Cases per manager",
+    classes: "nhsuk-u-visually-hidden"
+  },
+  lastRowBorder: false,
+  head: [
+    {
+      text: "Manager"
+    },
+    {
+      text: "Cases",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "David Francis"
+      },
+      {
+        text: "1380"
+      }
+    ],
+    [
+      {
+        text: "Paul Farmer"
+      },
+      {
+        text: "1129"
+      }
+    ],
+    [
+      {
+        text: "Rita Patel"
+      },
+      {
+        text: "24"
+      }
+    ]
+  ]
+}) }}
+```
+
 #### as a card
 
 ```njk
 {{ table({
   card: true,
-  caption: "Impetigo can look similar to other skin conditions",
-  captionSize: "m",
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  lastRowBorder: false,
   head: [
     {
       text: "Skin symptoms"
@@ -12312,12 +15774,18 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ table({
   card: {
-    heading: "Other conditions like impetigo",
-    headingSize: "m",
+    heading: {
+      text: "Other conditions like impetigo",
+      size: "m"
+    },
     variant: "feature"
   },
-  caption: "Impetigo can look similar to other skin conditions",
-  captionSize: "s",
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "s"
+  },
+  firstCellIsHeader: true,
+  lastRowBorder: false,
   head: [
     {
       text: "Skin symptoms"
@@ -12355,18 +15823,19 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### as a card (feature) responsive
+#### as a card (feature) with deprecated options
 
 ```njk
 {{ table({
-  card: {
-    heading: "Other conditions like impetigo",
-    headingSize: "m",
-    variant: "feature"
+  heading: "Other conditions like impetigo",
+  headingLevel: 3,
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "s"
   },
-  caption: "Impetigo can look similar to other skin conditions",
-  captionSize: "s",
-  responsive: true,
+  firstCellIsHeader: true,
+  lastRowBorder: false,
+  panel: true,
   head: [
     {
       text: "Skin symptoms"
@@ -12378,34 +15847,1806 @@ Use the component reference table below to find the line number for any componen
   rows: [
     [
       {
-        header: "Skin problems",
         text: "Blisters on lips or around the mouth"
       },
       {
-        header: "Possible cause",
         text: "Cold sores"
       }
     ],
     [
       {
-        header: "Skin problems",
         text: "Itchy, dry, cracked, sore"
       },
       {
-        header: "Possible cause",
         text: "Eczema"
       }
     ],
     [
       {
-        header: "Skin problems",
         text: "Itchy blisters"
       },
       {
-        header: "Possible cause",
         text: "Shingles, chickenpox"
       }
     ]
+  ]
+}) }}
+```
+
+#### scrolling
+
+```njk
+{{ table({
+  caption: {
+    id: "scrolling-caption",
+    text: "Childhood vaccination coverage by nation",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  scroll: true,
+  head: [
+    {
+      text: "Nation"
+    },
+    {
+      text: "2013 to 2014",
+      format: "numeric"
+    },
+    {
+      text: "2014 to 2015",
+      format: "numeric"
+    },
+    {
+      text: "2015 to 2016",
+      format: "numeric"
+    },
+    {
+      text: "2016 to 2017",
+      format: "numeric"
+    },
+    {
+      text: "2017 to 2018",
+      format: "numeric"
+    },
+    {
+      text: "2018 to 2019",
+      format: "numeric"
+    },
+    {
+      text: "2019 to 2020",
+      format: "numeric"
+    },
+    {
+      text: "2020 to 2021",
+      format: "numeric"
+    },
+    {
+      text: "2021 to 2022",
+      format: "numeric"
+    },
+    {
+      text: "2022 to 2023",
+      format: "numeric"
+    },
+    {
+      text: "2023 to 2024",
+      format: "numeric"
+    },
+    {
+      text: "2024 to 2025",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "94.34%"
+      },
+      {
+        text: "94.23%"
+      },
+      {
+        text: "93.56%"
+      },
+      {
+        text: "93.41%"
+      },
+      {
+        text: "93.12%"
+      },
+      {
+        text: "92.09%"
+      },
+      {
+        text: "92.57%"
+      },
+      {
+        text: "92.04%"
+      },
+      {
+        text: "91.84%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.22%"
+      },
+      {
+        text: "91.30%"
+      }
+    ],
+    [
+      {
+        text: "Northern Ireland"
+      },
+      {
+        text: "97.48%"
+      },
+      {
+        text: "96.84%"
+      },
+      {
+        text: "97.22%"
+      },
+      {
+        text: "97.04%"
+      },
+      {
+        text: "96.20%"
+      },
+      {
+        text: "94.52%"
+      },
+      {
+        text: "94.45%"
+      },
+      {
+        text: "94.53%"
+      },
+      {
+        text: "93.52%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.00%"
+      }
+    ],
+    [
+      {
+        text: "Scotland"
+      },
+      {
+        text: "97.51%"
+      },
+      {
+        text: "97.39%"
+      },
+      {
+        text: "97.15%"
+      },
+      {
+        text: "96.77%"
+      },
+      {
+        text: "96.51%"
+      },
+      {
+        text: "95.80%"
+      },
+      {
+        text: "96.23%"
+      },
+      {
+        text: "96.54%"
+      },
+      {
+        text: "96.32%"
+      },
+      {
+        text: "95.55%"
+      },
+      {
+        text: "94.84%"
+      },
+      {
+        text: "94.50%"
+      }
+    ],
+    [
+      {
+        text: "Wales"
+      },
+      {
+        text: "96.70%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.34%"
+      },
+      {
+        text: "95.92%"
+      },
+      {
+        text: "95.42%"
+      },
+      {
+        text: "95.77%"
+      },
+      {
+        text: "95.56%"
+      },
+      {
+        text: "95.18%"
+      },
+      {
+        text: "94.47%"
+      },
+      {
+        text: "94.19%"
+      },
+      {
+        text: "94.10%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### scrolling sortable
+
+```njk
+{{ table({
+  caption: {
+    id: "scrolling-sortable-caption",
+    text: "Childhood vaccination coverage by nation",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  scroll: true,
+  head: [
+    {
+      text: "Nation",
+      sort: "ascending"
+    },
+    {
+      text: "2013 to 2014",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2014 to 2015",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2015 to 2016",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2016 to 2017",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2017 to 2018",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2018 to 2019",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2019 to 2020",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2020 to 2021",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2021 to 2022",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2022 to 2023",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2023 to 2024",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2024 to 2025",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "94.34%"
+      },
+      {
+        text: "94.23%"
+      },
+      {
+        text: "93.56%"
+      },
+      {
+        text: "93.41%"
+      },
+      {
+        text: "93.12%"
+      },
+      {
+        text: "92.09%"
+      },
+      {
+        text: "92.57%"
+      },
+      {
+        text: "92.04%"
+      },
+      {
+        text: "91.84%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.22%"
+      },
+      {
+        text: "91.30%"
+      }
+    ],
+    [
+      {
+        text: "Northern Ireland"
+      },
+      {
+        text: "97.48%"
+      },
+      {
+        text: "96.84%"
+      },
+      {
+        text: "97.22%"
+      },
+      {
+        text: "97.04%"
+      },
+      {
+        text: "96.20%"
+      },
+      {
+        text: "94.52%"
+      },
+      {
+        text: "94.45%"
+      },
+      {
+        text: "94.53%"
+      },
+      {
+        text: "93.52%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.00%"
+      }
+    ],
+    [
+      {
+        text: "Scotland"
+      },
+      {
+        text: "97.51%"
+      },
+      {
+        text: "97.39%"
+      },
+      {
+        text: "97.15%"
+      },
+      {
+        text: "96.77%"
+      },
+      {
+        text: "96.51%"
+      },
+      {
+        text: "95.80%"
+      },
+      {
+        text: "96.23%"
+      },
+      {
+        text: "96.54%"
+      },
+      {
+        text: "96.32%"
+      },
+      {
+        text: "95.55%"
+      },
+      {
+        text: "94.84%"
+      },
+      {
+        text: "94.50%"
+      }
+    ],
+    [
+      {
+        text: "Wales"
+      },
+      {
+        text: "96.70%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.34%"
+      },
+      {
+        text: "95.92%"
+      },
+      {
+        text: "95.42%"
+      },
+      {
+        text: "95.77%"
+      },
+      {
+        text: "95.56%"
+      },
+      {
+        text: "95.18%"
+      },
+      {
+        text: "94.47%"
+      },
+      {
+        text: "94.19%"
+      },
+      {
+        text: "94.10%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### scrolling as a card
+
+```njk
+{{ table({
+  card: {
+    heading: {
+      text: "Leeds",
+      size: "m"
+    },
+    actions: {
+      items: [
+        {
+          text: "Edit",
+          href: "#/view/leeds"
+        }
+      ]
+    }
+  },
+  caption: {
+    id: "scrolling-card-caption",
+    text: "Vaccine types (12 months)",
+    size: "s"
+  },
+  lastRowBorder: false,
+  scroll: true,
+  head: [
+    {
+      text: "Location"
+    },
+    {
+      text: "6‑in‑1",
+      format: "numeric",
+      align: "left"
+    },
+    {
+      text: "MenB",
+      format: "numeric",
+      align: "left"
+    },
+    {
+      text: "Pneumococcal",
+      format: "numeric",
+      align: "left"
+    },
+    {
+      text: "Rotavirus",
+      format: "numeric",
+      align: "left"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "91.30%"
+      },
+      {
+        text: "91.00%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "88.80%"
+      }
+    ],
+    [
+      {
+        text: "Yorkshire"
+      },
+      {
+        text: "91.90%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "94.20%"
+      },
+      {
+        text: "89.20%"
+      }
+    ],
+    [
+      {
+        text: "Leeds"
+      },
+      {
+        text: "88.40%"
+      },
+      {
+        text: "88.50%"
+      },
+      {
+        text: "92.20%"
+      },
+      {
+        text: "85.60%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### scrolling sortable as a card
+
+```njk
+{{ table({
+  card: {
+    heading: {
+      text: "Leeds",
+      size: "m"
+    },
+    actions: {
+      items: [
+        {
+          text: "Edit",
+          href: "#/view/leeds"
+        }
+      ]
+    }
+  },
+  caption: {
+    id: "scrolling-card-caption",
+    text: "Vaccine types (12 months)",
+    size: "s"
+  },
+  lastRowBorder: false,
+  scroll: true,
+  head: [
+    {
+      text: "Location"
+    },
+    {
+      text: "6‑in‑1",
+      format: "numeric",
+      align: "left",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "MenB",
+      format: "numeric",
+      align: "left",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "Pneumococcal",
+      format: "numeric",
+      align: "left",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "Rotavirus",
+      format: "numeric",
+      align: "left",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "91.30%"
+      },
+      {
+        text: "91.00%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "88.80%"
+      }
+    ],
+    [
+      {
+        text: "Yorkshire"
+      },
+      {
+        text: "91.90%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "94.20%"
+      },
+      {
+        text: "89.20%"
+      }
+    ],
+    [
+      {
+        text: "Leeds"
+      },
+      {
+        text: "88.40%"
+      },
+      {
+        text: "88.50%"
+      },
+      {
+        text: "92.20%"
+      },
+      {
+        text: "85.60%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### scrolling (full width)
+
+```njk
+{{ table({
+  caption: {
+    id: "scrolling-full-width-caption",
+    text: "Childhood vaccination coverage by nation",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  scroll: true,
+  head: [
+    {
+      text: "Nation"
+    },
+    {
+      text: "2013 to 2014",
+      format: "numeric"
+    },
+    {
+      text: "2014 to 2015",
+      format: "numeric"
+    },
+    {
+      text: "2015 to 2016",
+      format: "numeric"
+    },
+    {
+      text: "2016 to 2017",
+      format: "numeric"
+    },
+    {
+      text: "2017 to 2018",
+      format: "numeric"
+    },
+    {
+      text: "2018 to 2019",
+      format: "numeric"
+    },
+    {
+      text: "2019 to 2020",
+      format: "numeric"
+    },
+    {
+      text: "2020 to 2021",
+      format: "numeric"
+    },
+    {
+      text: "2021 to 2022",
+      format: "numeric"
+    },
+    {
+      text: "2022 to 2023",
+      format: "numeric"
+    },
+    {
+      text: "2023 to 2024",
+      format: "numeric"
+    },
+    {
+      text: "2024 to 2025",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "94.34%"
+      },
+      {
+        text: "94.23%"
+      },
+      {
+        text: "93.56%"
+      },
+      {
+        text: "93.41%"
+      },
+      {
+        text: "93.12%"
+      },
+      {
+        text: "92.09%"
+      },
+      {
+        text: "92.57%"
+      },
+      {
+        text: "92.04%"
+      },
+      {
+        text: "91.84%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.22%"
+      },
+      {
+        text: "91.30%"
+      }
+    ],
+    [
+      {
+        text: "Northern Ireland"
+      },
+      {
+        text: "97.48%"
+      },
+      {
+        text: "96.84%"
+      },
+      {
+        text: "97.22%"
+      },
+      {
+        text: "97.04%"
+      },
+      {
+        text: "96.20%"
+      },
+      {
+        text: "94.52%"
+      },
+      {
+        text: "94.45%"
+      },
+      {
+        text: "94.53%"
+      },
+      {
+        text: "93.52%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.00%"
+      }
+    ],
+    [
+      {
+        text: "Scotland"
+      },
+      {
+        text: "97.51%"
+      },
+      {
+        text: "97.39%"
+      },
+      {
+        text: "97.15%"
+      },
+      {
+        text: "96.77%"
+      },
+      {
+        text: "96.51%"
+      },
+      {
+        text: "95.80%"
+      },
+      {
+        text: "96.23%"
+      },
+      {
+        text: "96.54%"
+      },
+      {
+        text: "96.32%"
+      },
+      {
+        text: "95.55%"
+      },
+      {
+        text: "94.84%"
+      },
+      {
+        text: "94.50%"
+      }
+    ],
+    [
+      {
+        text: "Wales"
+      },
+      {
+        text: "96.70%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.34%"
+      },
+      {
+        text: "95.92%"
+      },
+      {
+        text: "95.42%"
+      },
+      {
+        text: "95.77%"
+      },
+      {
+        text: "95.56%"
+      },
+      {
+        text: "95.18%"
+      },
+      {
+        text: "94.47%"
+      },
+      {
+        text: "94.19%"
+      },
+      {
+        text: "94.10%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### scrolling sortable (full width)
+
+```njk
+{{ table({
+  caption: {
+    id: "scrolling-sortable-full-width-caption",
+    text: "Childhood vaccination coverage by nation",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  scroll: true,
+  head: [
+    {
+      text: "Nation",
+      sort: "ascending"
+    },
+    {
+      text: "2013 to 2014",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2014 to 2015",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2015 to 2016",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2016 to 2017",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2017 to 2018",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2018 to 2019",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2019 to 2020",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2020 to 2021",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2021 to 2022",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2022 to 2023",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2023 to 2024",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "2024 to 2025",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "England"
+      },
+      {
+        text: "94.34%"
+      },
+      {
+        text: "94.23%"
+      },
+      {
+        text: "93.56%"
+      },
+      {
+        text: "93.41%"
+      },
+      {
+        text: "93.12%"
+      },
+      {
+        text: "92.09%"
+      },
+      {
+        text: "92.57%"
+      },
+      {
+        text: "92.04%"
+      },
+      {
+        text: "91.84%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.22%"
+      },
+      {
+        text: "91.30%"
+      }
+    ],
+    [
+      {
+        text: "Northern Ireland"
+      },
+      {
+        text: "97.48%"
+      },
+      {
+        text: "96.84%"
+      },
+      {
+        text: "97.22%"
+      },
+      {
+        text: "97.04%"
+      },
+      {
+        text: "96.20%"
+      },
+      {
+        text: "94.52%"
+      },
+      {
+        text: "94.45%"
+      },
+      {
+        text: "94.53%"
+      },
+      {
+        text: "93.52%"
+      },
+      {
+        text: "93.10%"
+      },
+      {
+        text: "91.80%"
+      },
+      {
+        text: "91.00%"
+      }
+    ],
+    [
+      {
+        text: "Scotland"
+      },
+      {
+        text: "97.51%"
+      },
+      {
+        text: "97.39%"
+      },
+      {
+        text: "97.15%"
+      },
+      {
+        text: "96.77%"
+      },
+      {
+        text: "96.51%"
+      },
+      {
+        text: "95.80%"
+      },
+      {
+        text: "96.23%"
+      },
+      {
+        text: "96.54%"
+      },
+      {
+        text: "96.32%"
+      },
+      {
+        text: "95.55%"
+      },
+      {
+        text: "94.84%"
+      },
+      {
+        text: "94.50%"
+      }
+    ],
+    [
+      {
+        text: "Wales"
+      },
+      {
+        text: "96.70%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.57%"
+      },
+      {
+        text: "96.34%"
+      },
+      {
+        text: "95.92%"
+      },
+      {
+        text: "95.42%"
+      },
+      {
+        text: "95.77%"
+      },
+      {
+        text: "95.56%"
+      },
+      {
+        text: "95.18%"
+      },
+      {
+        text: "94.47%"
+      },
+      {
+        text: "94.19%"
+      },
+      {
+        text: "94.10%"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable
+
+```njk
+{{ table({
+  caption: "Appointments",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Time",
+      sort: "ascending"
+    },
+    {
+      text: "Name",
+      sort: true
+    },
+    {
+      text: "Date of birth",
+      classes: "nhsuk-u-nowrap"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "11:00"
+      },
+      {
+        text: "Laura Stone"
+      },
+      {
+        text: "4 January 1986"
+      }
+    ],
+    [
+      {
+        text: "11:30"
+      },
+      {
+        text: "Emma Katie-Brown"
+      },
+      {
+        text: "7 February 1976"
+      }
+    ],
+    [
+      {
+        text: "13:10"
+      },
+      {
+        text: "David Chen"
+      },
+      {
+        text: "19 March 1981"
+      }
+    ],
+    [
+      {
+        text: "13:40"
+      },
+      {
+        text: "Michael Thompson"
+      },
+      {
+        text: "6 December 1964"
+      }
+    ],
+    [
+      {
+        text: "14:20"
+      },
+      {
+        text: "Juan Martinez"
+      },
+      {
+        text: "18 April 1975"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable server-side
+
+```njk
+{{ table({
+  caption: "Appointments",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Name",
+      href: "#",
+      sort: "descending",
+      width: "one-half"
+    },
+    {
+      text: "Last log in",
+      href: "#",
+      sort: true,
+      align: "right",
+      width: "one-third",
+      classes: "nhsuk-u-nowrap"
+    },
+    {
+      visuallyHiddenText: "Action"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Zadie Munroe"
+      },
+      {
+        text: "7 May 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Zadie Munroe"
+      }
+    ],
+    [
+      {
+        text: "Yolanda Pierce"
+      },
+      {
+        text: "13 May 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Yolanda Pierce"
+      }
+    ],
+    [
+      {
+        text: "Xanthe Beaumont"
+      },
+      {
+        text: "19 May 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Xanthe Beaumont"
+      }
+    ],
+    [
+      {
+        text: "Wendell Shaw"
+      },
+      {
+        text: "25 May 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Wendell Shaw"
+      }
+    ],
+    [
+      {
+        text: "Val Cruz"
+      },
+      {
+        text: "1 June 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Val Cruz"
+      }
+    ],
+    [
+      {
+        text: "Uta Brennan"
+      },
+      {
+        text: "7 June 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Uta Brennan"
+      }
+    ],
+    [
+      {
+        text: "Tamsin Foley-Whitworth"
+      },
+      {
+        text: "14 June 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Tamsin Foley-Whitworth"
+      }
+    ],
+    [
+      {
+        text: "Stellan Park"
+      },
+      {
+        text: "20 June 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Stellan Park"
+      }
+    ],
+    [
+      {
+        text: "Ro Nkosi"
+      },
+      {
+        text: "28 June 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Ro Nkosi"
+      }
+    ],
+    [
+      {
+        text: "Reuben Tate"
+      },
+      {
+        text: "1 May 2026"
+      },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "details for Reuben Tate"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable with numeric format
+
+```njk
+{{ table({
+  caption: {
+    text: "Prescription prepayment certificate (PPC) charges",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Item"
+    },
+    {
+      text: "Current charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "New charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "3-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£31.25"
+      },
+      {
+        text: "£32.05"
+      }
+    ],
+    [
+      {
+        text: "12-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£111.60"
+      },
+      {
+        text: "£114.50"
+      }
+    ],
+    [
+      {
+        text: "HRT"
+      },
+      {
+        text: "£19.30"
+      },
+      {
+        text: "£19.80"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable with numeric format and missing data
+
+```njk
+{{ table({
+  caption: {
+    text: "Prescription prepayment certificate (PPC) charges",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Item"
+    },
+    {
+      text: "Current charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "New charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "3-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£31.25"
+      },
+      {
+        text: "£32.05"
+      }
+    ],
+    [
+      {
+        text: "12-month",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£111.60"
+      },
+      {
+        text: "No data",
+        format: "string",
+        classes: "nhsuk-u-secondary-text-colour"
+      }
+    ],
+    [
+      {
+        text: "HRT"
+      },
+      {
+        text: "£19.30"
+      },
+      {
+        text: "£19.80"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable with numeric format and sort values
+
+```njk
+{{ table({
+  caption: {
+    text: "Prescription prepayment certificate (PPC) charges",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Item",
+      sort: "ascending"
+    },
+    {
+      text: "Current charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    },
+    {
+      text: "New charge",
+      format: "numeric",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "3-month",
+        sortValue: "3",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£31.25",
+        sortValue: "31.25"
+      },
+      {
+        text: "£32.05",
+        sortValue: "32.05"
+      }
+    ],
+    [
+      {
+        text: "12-month",
+        sortValue: "12",
+        classes: "nhsuk-u-nowrap"
+      },
+      {
+        text: "£111.60",
+        sortValue: "111.60"
+      },
+      {
+        text: "£114.50",
+        sortValue: "114.50"
+      }
+    ],
+    [
+      {
+        text: "HRT",
+        sortValue: "100"
+      },
+      {
+        text: "£19.30",
+        sortValue: "19.30"
+      },
+      {
+        text: "£19.80",
+        sortValue: "19.80"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable with sort values
+
+```njk
+{{ table({
+  caption: "Appointments",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Time",
+      sort: "ascending"
+    },
+    {
+      text: "Name",
+      sort: true
+    },
+    {
+      text: "Date of birth",
+      sort: true,
+      sortNext: "descending"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "11:00am",
+        sortValue: "11:00"
+      },
+      {
+        text: "Laura Stone",
+        sortValue: "Stone, Laura"
+      },
+      {
+        text: "4 January 1986",
+        sortValue: "1986-01-04"
+      }
+    ],
+    [
+      {
+        text: "11:30am",
+        sortValue: "11:30"
+      },
+      {
+        text: "Emma Katie-Brown",
+        sortValue: "Katie-Brown, Emma"
+      },
+      {
+        text: "7 February 1976",
+        sortValue: "1976-02-07"
+      }
+    ],
+    [
+      {
+        text: "1:10pm",
+        sortValue: "13:10"
+      },
+      {
+        text: "David Chen",
+        sortValue: "Chen, David"
+      },
+      {
+        text: "19 March 1981",
+        sortValue: "1981-03-19"
+      }
+    ],
+    [
+      {
+        text: "1:40pm",
+        sortValue: "13:40"
+      },
+      {
+        text: "Michael Thompson",
+        sortValue: "Thompson, Michael"
+      },
+      {
+        text: "6 December 1964",
+        sortValue: "1964-12-06"
+      }
+    ],
+    [
+      {
+        text: "2:20pm",
+        sortValue: "14:20"
+      },
+      {
+        text: "Juan Martinez",
+        sortValue: "Martinez, Juan"
+      },
+      {
+        text: "18 April 1975",
+        sortValue: "1975-04-18"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### sortable with string items
+
+```njk
+{{ table({
+  caption: "Appointments",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Time",
+      sort: "ascending"
+    },
+    {
+      text: "Name",
+      sort: true
+    },
+    {
+      text: "Date of birth",
+      classes: "nhsuk-u-nowrap"
+    }
+  ],
+  rows: [
+    ["11:00", "Laura Stone", "4 January 1986"],
+    ["11:30", "Emma Katie-Brown", "7 February 1976"],
+    ["13:10", "David Chen", "19 March 1981"],
+    ["13:40", "Michael Thompson", "6 December 1964"],
+    ["14:20", "Juan Martinez", "18 April 1975"]
   ]
 }) }}
 ```
@@ -12422,17 +17663,20 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string |  | This is used for the main component and to compose the `id` attribute for each item. |
-| `idPrefix` | string |  | String to prefix the `id` for each tab item if no `id` is specified on each item. |
-| `title` | string |  | Title for the tabs table of contents. |
+| `id` | string |  | The ID of the tabs component. |
+| `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for each tab item and panel, separated by `-`. Defaults to the `id` option value. |
+| `title` | string |  | Replaced by the `visuallyHiddenText` option. |
+| `visuallyHiddenText` | string |  | Visually hidden heading for the tabs contents list items. Defaults to `"Contents"`. |
 | `items` | array | ✓ | Array of tab items. |
 | `items.id` | string | ✓ | Specific `id` attribute for the tab item. If omitted, then `idPrefix` string is required instead. |
 | `items.label` | string | ✓ | The text label of a tab item. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the tab. |
-| `items.panel` | object | ✓ | Content for the panel. |
-| `items.panel.text` | string | ✓ | Specific `id` attribute for the tab item. If omitted, then `idPrefix` string is required instead. |
-| `items.panel.html` | string | ✓ | The title of the panel. |
-| `items.panel.attributes` | object |  | The body of the panel. |
+| `items.panel` | object | ✓ | Content for the tab panel. |
+| `items.panel.text` | string | ✓ | If `html` is set, this is not required. Text for the tab panel. If `html` is provided, the `text` option will be ignored. |
+| `items.panel.html` | string | ✓ | If `text` is set, this is not required. HTML for the tab panel. If `html` is provided, the `text` option will be ignored. |
+| `items.panel.attributes` | object |  | HTML attributes (for example data attributes) to add to the tab panel. |
+| `classes` | string |  | Classes to add to the tabs component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the tabs components. |
 
 ### Examples
 
@@ -12440,33 +17684,30 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ tabs({
+  idPrefix: "example",
   items: [
     {
       label: "Past day",
-      id: "past-day",
       panel: {
-        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past week",
-      id: "past-week",
       panel: {
-        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past month",
-      id: "past-month",
       panel: {
-        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
       label: "Past year",
-      id: "past-year",
       panel: {
-        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th scope="col" class="nhsuk-table__header">\n        Case manager\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases opened\n      </th>\n      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -12477,26 +17718,130 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ tabs({
+  idPrefix: "with-anchor",
   items: [
     {
       label: "Tab 1",
-      id: "tab-1",
       panel: {
-        html: '<h2>Tab 1 content</h2>\n<p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>\n<ul>\n  <li><a href="#tab-1" id="anchor">Tab panel 1</a></li>\n  <li><a href="#tab-2">Tab panel 2</a></li>\n  <li><a href="#tab-3">Tab panel 3</a></li>\n</ul>'
+        html: '<h2>Tab 1 content</h2>\n<p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>\n<ul>\n  <li><a href="#with-anchor-1" id="anchor">Tab panel 1</a></li>\n  <li><a href="#with-anchor-2">Tab panel 2</a></li>\n  <li><a href="#with-anchor-3">Tab panel 3</a></li>\n</ul>'
       }
     },
     {
       label: "Tab 2",
-      id: "tab-2",
       panel: {
         html: "<h2>Tab 2 content</h2>\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>"
       }
     },
     {
       label: "Tab 3",
-      id: "tab-3",
       panel: {
         html: "<h2>Tab 3 content</h2>\n<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
+      }
+    }
+  ]
+}) }}
+```
+
+#### with id attribute
+
+```njk
+{{ tabs({
+  id: "tab-id-attribute",
+  items: [
+    {
+      label: "Past day",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past week",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past month",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past year",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    }
+  ]
+}) }}
+```
+
+#### with id attribute on panels
+
+```njk
+{{ tabs({
+  items: [
+    {
+      label: "Past day",
+      id: "past-day",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past week",
+      id: "past-week",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past month",
+      id: "past-month",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past year",
+      id: "past-year",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    }
+  ]
+}) }}
+```
+
+#### with visually hidden text
+
+```njk
+{{ tabs({
+  idPrefix: "visually-hidden",
+  visuallyHiddenText: "Cases per manager",
+  items: [
+    {
+      label: "Past day",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past week",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past month",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    },
+    {
+      label: "Past year",
+      panel: {
+        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -12516,11 +17861,12 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the tag. |
-| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the tag component. If `html` is provided, the `text` argument will be ignored. |
-| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the tag component. If `html` is provided, the `text` argument will be ignored. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the tag component. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the tag component. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire tag component in a `call` block. |
 | `classes` | string |  | Classes to add to the tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the tag. |
-| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"` or `"yellow"`. |
+| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"` or `"yellow"`. If set to `false`, remove colour from the tag. |
 | `border` | boolean |  | If set to `false`, remove border from the tag. |
 
 ### Examples
@@ -12534,7 +17880,7 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### colour class overriding colour param
+#### colour class overriding colour option
 
 ```njk
 {{ tag({
@@ -12544,11 +17890,48 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with text escaping
+
+```njk
+{{ tag({
+  text: "A&E",
+  colour: "red"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ tag({
+  html: "A&amp;E",
+  colour: "red"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call tag({
+  colour: "red"
+}) %}
+A&amp;E
+{%- endcall %}
+```
+
 #### without border
 
 ```njk
 {{ tag({
   border: false
+}) }}
+```
+
+#### without colour
+
+```njk
+{{ tag({
+  text: "Completed",
+  colour: false
 }) }}
 ```
 
@@ -12564,22 +17947,26 @@ Use the component reference table below to find the line number for any componen
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | string |  | The ID of the button. |
+| `id` | string |  | The ID of the task list. |
 | `classes` | string |  | Classes to add to the `ul` container for the task list. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the `ul` container for the task list. |
 | `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for the task list item tag and hint, separated by `"-"`. Defaults to `"task-list"`. |
-| `items` | array | ✓ | The items for each task within the task list component. See items. |
-| `items.title` | object | ✓ | The main title for the task within the task list component. See title. |
-| `items.title.text` | string | ✓ | Text to use within the title. If `html` is provided, the `text` argument will be ignored. |
-| `items.title.html` | string | ✓ | HTML to use within the title. If `html` is provided, the `text` argument will be ignored. |
-| `items.title.classes` | string |  | Classes to add to the title wrapper. |
-| `items.hint` | object |  | Can be used to add a hint to each task within the task list component. See items hint. |
-| `items.hint.text` | string | ✓ | Text to use within the hint. If `html` is provided, the `text` argument will be ignored. |
-| `items.hint.html` | string | ✓ | HTML to use within the hint. If `html` is provided, the `text` argument will be ignored. |
-| `items.status` | object | ✓ | The status for each task within the task list component. See items status. |
-| `items.status.tag` | object |  | Can be used to add a tag to the status of the task within the task list component. See tag. *(accepts nested component params)* |
-| `items.status.text` | string |  | Text to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` argument will be ignored. |
-| `items.status.html` | string |  | HTML to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` argument will be ignored. |
+| `items` | array | ✓ | The items for each task within the task list component. |
+| `items.title` | object | ✓ | Replaced by the `item.heading` option. *(accepts nested component params)* |
+| `items.heading` | object | ✓ | The main heading for the task within the task list component. *(accepts nested component params)* |
+| `items.heading.id` | string |  | The ID of the heading. |
+| `items.heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `items.heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `items.heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `items.heading.classes` | string |  | Classes to add to the heading. |
+| `items.heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `items.hint` | object |  | Can be used to add a hint to each task within the task list component. |
+| `items.hint.text` | string | ✓ | Text to use within the hint. If `html` is provided, the `text` option will be ignored. |
+| `items.hint.html` | string | ✓ | HTML to use within the hint. If `html` is provided, the `text` option will be ignored. |
+| `items.status` | object | ✓ | The status for each task within the task list component. |
+| `items.status.tag` | object |  | Can be used to add a tag to the status of the task within the task list component. *(accepts nested component params)* |
+| `items.status.text` | string |  | Text to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` option will be ignored. |
+| `items.status.html` | string |  | HTML to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` option will be ignored. |
 | `items.status.classes` | string |  | Classes to add to the status container. |
 | `items.href` | string |  | The value of the link's `href` attribute for the task list item. |
 | `items.classes` | string |  | Classes to add to the item `div`. |
@@ -12593,10 +17980,166 @@ Use the component reference table below to find the line number for any componen
   idPrefix: "your-health",
   items: [
     {
+      heading: {
+        text: "Exercise"
+      },
+      href: "#/task/exercise",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      heading: {
+        text: "Personal health"
+      },
+      href: "#/task/personal-health",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      heading: {
+        text: "Family health history"
+      },
+      hint: {
+        text: "Details of your parents, brothers and sisters"
+      },
+      href: "#/task/family-health-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      heading: {
+        text: "Smoking history"
+      },
+      href: "#/task/smoking-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      heading: {
+        text: "Blood test"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal nhsuk-u-secondary-text-colour"
+        }
+      }
+    }
+  ]
+}) }}
+```
+
+#### with deprecated titles
+
+```njk
+{{ taskList({
+  idPrefix: "your-health",
+  items: [
+    {
       title: {
         text: "Exercise"
       },
-      href: "#",
+      href: "#/task/exercise",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Personal health"
+      },
+      href: "#/task/personal-health",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Family health history"
+      },
+      hint: {
+        text: "Details of your parents, brothers and sisters"
+      },
+      href: "#/task/family-health-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Smoking history"
+      },
+      href: "#/task/smoking-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Blood test"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal nhsuk-u-secondary-text-colour"
+        }
+      }
+    }
+  ]
+}) }}
+```
+
+#### with deprecated status classes
+
+```njk
+{{ taskList({
+  idPrefix: "your-health",
+  items: [
+    {
+      title: {
+        text: "Exercise"
+      },
+      href: "#/task/exercise",
       status: {
         text: "Completed",
         classes: "nhsuk-task-list__status--completed"
@@ -12606,7 +18149,7 @@ Use the component reference table below to find the line number for any componen
       title: {
         text: "Personal health"
       },
-      href: "#",
+      href: "#/task/personal-health",
       status: {
         text: "Completed",
         classes: "nhsuk-task-list__status--completed"
@@ -12619,7 +18162,7 @@ Use the component reference table below to find the line number for any componen
       hint: {
         text: "Details of your parents, brothers and sisters"
       },
-      href: "#",
+      href: "#/task/family-health-history",
       status: {
         tag: {
           text: "Incomplete",
@@ -12631,7 +18174,7 @@ Use the component reference table below to find the line number for any componen
       title: {
         text: "Smoking history"
       },
-      href: "#",
+      href: "#/task/smoking-history",
       status: {
         tag: {
           text: "Incomplete",
@@ -12652,6 +18195,97 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
+#### with headings and hints as strings
+
+```njk
+{{ taskList({
+  idPrefix: "your-health",
+  items: [
+    {
+      heading: "Exercise",
+      href: "#/task/exercise",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      heading: "Personal health",
+      href: "#/task/personal-health",
+      status: {
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
+      }
+    },
+    {
+      heading: "Family health history",
+      hint: "Details of your parents, brothers and sisters",
+      href: "#/task/family-health-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      heading: "Smoking history",
+      href: "#/task/smoking-history",
+      status: {
+        tag: {
+          text: "Incomplete",
+          colour: "blue"
+        }
+      }
+    },
+    {
+      heading: "Blood test",
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal nhsuk-u-secondary-text-colour"
+        }
+      }
+    }
+  ]
+}) }}
+```
+
+#### with headings and status text as strings
+
+```njk
+{{ taskList({
+  idPrefix: "your-health",
+  items: [
+    {
+      heading: "Exercise",
+      href: "#/task/exercise",
+      status: "Not applicable"
+    },
+    {
+      heading: "Personal health",
+      href: "#/task/personal-health",
+      status: "Not applicable"
+    },
+    {
+      heading: "Blood test",
+      href: "#/task/blood-test",
+      status: "Not applicable"
+    }
+  ]
+}) }}
+```
+
 #### with empty items
 
 ```njk
@@ -12659,32 +18293,40 @@ Use the component reference table below to find the line number for any componen
   idPrefix: "your-health",
   items: [
     {
-      title: {
+      heading: {
         text: "Exercise"
       },
-      href: "#",
+      href: "#/task/exercise",
       status: {
-        text: "Completed",
-        classes: "nhsuk-task-list__status--completed"
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
       }
     },
     {
-      title: {
+      heading: {
         text: "Personal health"
       },
-      href: "#",
+      href: "#/task/personal-health",
       status: {
-        text: "Completed",
-        classes: "nhsuk-task-list__status--completed"
+        tag: {
+          text: "Completed",
+          border: false,
+          colour: false,
+          classes: "nhsuk-u-font-weight-normal"
+        }
       }
     },
     false,
     false,
     {
-      title: {
+      heading: {
         text: "Blood test"
       },
-      href: "#",
+      href: "#/task/blood-test",
       status: {
         tag: {
           text: "Incomplete",
@@ -12738,9 +18380,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -12754,9 +18395,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -12771,9 +18411,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -12788,9 +18427,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -12800,17 +18438,27 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### without page heading
+#### without heading
+
+```njk
+{{ textarea({
+  label: "Can you provide more detail?",
+  hint: "Do not include personal information like your name, date of birth or NHS number",
+  id: "without-heading",
+  name: "example"
+}) }}
+```
+
+#### with error only
 
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?"
+    heading: "Can you provide more detail?",
+    size: "l"
   },
-  hint: {
-    text: "Do not include personal information like your name, date of birth or NHS number"
-  },
-  id: "without-heading",
+  errorMessage: true,
+  id: "with-error-only",
   name: "example"
 }) }}
 ```
@@ -12820,9 +18468,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
   },
   errorMessage: {
     text: "You must provide an explanation"
@@ -12837,9 +18484,56 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Can you provide more detail?",
-    size: "l",
-    isPageHeading: true
+    heading: "Can you provide more detail?",
+    size: "l"
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  errorMessage: {
+    text: "You must provide an explanation"
+  },
+  id: "with-hint-error",
+  name: "example"
+}) }}
+```
+
+#### with error message and hint as strings
+
+```njk
+{{ textarea({
+  label: {
+    heading: "Can you provide more detail?",
+    size: "l"
+  },
+  hint: "Do not include personal information like your name, date of birth or NHS number",
+  errorMessage: "You must provide an explanation",
+  id: "with-hint-error",
+  name: "example"
+}) }}
+```
+
+#### with error message, without heading
+
+```njk
+{{ textarea({
+  label: {
+    text: "Can you provide more detail?"
+  },
+  errorMessage: {
+    text: "You must provide an explanation"
+  },
+  id: "with-error-message",
+  name: "example"
+}) }}
+```
+
+#### with error message and hint, without heading
+
+```njk
+{{ textarea({
+  label: {
+    text: "Can you provide more detail?"
   },
   hint: {
     text: "Do not include personal information like your name, date of birth or NHS number"
@@ -12857,9 +18551,8 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {{ textarea({
   label: {
-    text: "Full address",
-    size: "l",
-    isPageHeading: true
+    heading: "Full address",
+    size: "l"
   },
   id: "with-autocomplete-attribute",
   name: "example",
@@ -12880,11 +18573,32 @@ Use the component reference table below to find the line number for any componen
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the warning callout. |
-| `heading` | string | ✓ | Heading to be used on the warning callout. |
-| `headingLevel` | integer |  | Optional heading level for the heading. Defaults to `3`. |
+| `heading` | object | ✓ | Heading to be used on the warning callout. *(accepts nested component params)* |
+| `heading.id` | string |  | The ID of the heading. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
+| `heading.level` | integer |  | Optional heading level for the heading. Defaults to `3`. |
+| `heading.classes` | string |  | Classes to add to the heading. |
+| `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
+| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
+| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
 | `text` | string | ✓ | Text content to be used within the warning callout. |
 | `html` | string | ✓ | HTML content to be used within the warning callout. |
-| `caller` | nunjucks-block |  | Not strictly a parameter but a Nunjucks code convention. Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire warning callout component in a `call` block. |
+| `actions` | object |  | Can be used to add actions to the warning callout. |
+| `actions.items` | array |  | Array of actions as links for use in the warning callout. |
+| `actions.items.id` | string |  | The ID of the action item. |
+| `actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
+| `actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
+| `actions.items.visuallyHiddenText` | string |  | Actions rely on context from the surrounding content so may require additional accessible text. Text supplied to this option is appended to the end. Use `html` for more complicated scenarios. |
+| `actions.items.name` | string |  | Name for the action as a button. If `type` is set, this has no effect. |
+| `actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
+| `actions.items.value` | string |  | The `value` attribute for the action as a button. If `type` is set, this has no effect. |
+| `actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
+| `actions.items.classes` | string |  | Classes to add to the action item. |
+| `actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
+| `actions.classes` | string |  | Classes to add to the actions wrapper. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire warning callout component in a `call` block. |
 | `classes` | string |  | Classes to add to the warning callout. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the warning callout. |
 | `visuallyHiddenText` | string |  | A visually hidden prefix used before the heading. Defaults to `"Important"`. |
@@ -12895,12 +18609,48 @@ Use the component reference table below to find the line number for any componen
 
 ```njk
 {{ warningCallout({
-  heading: "Important",
+  heading: {
+    text: "Important"
+  },
   text: "For safety, tell your doctor or pharmacist if you're taking any other medicines, including herbal medicines, vitamins or supplements."
 }) }}
 ```
 
+#### with HTML
+
+```njk
+{{ warningCallout({
+  heading: {
+    text: "Important"
+  },
+  html: '<p class="nhsuk-card__description">Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call warningCallout({
+  heading: {
+    text: "Important"
+  }
+}) %}
+<p class="nhsuk-card__description">Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>
+{%- endcall %}
+```
+
 #### with custom heading
+
+```njk
+{{ warningCallout({
+  heading: {
+    text: "School, nursery or work"
+  },
+  text: "Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared."
+}) }}
+```
+
+#### with custom heading as string
 
 ```njk
 {{ warningCallout({

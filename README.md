@@ -64,6 +64,7 @@ cd ../nhsuk-frontend
 git fetch --all --tags
 git checkout main
 git pull
+npm install   # refresh the clone's deps (needed by the example renderer)
 ```
 
 If you want docs for a specific release, checkout the relevant tag/branch in that clone (or point `NHS_FRONTEND_PATH` at another clone), then run the generation scripts in this repository.
@@ -78,6 +79,7 @@ To keep `dist/` aligned to the latest public release:
 cd ../nhsuk-frontend
 git fetch --all --tags
 git checkout "$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)"
+npm install   # refresh the clone's deps for this checkout
 
 # Back in this repo, regenerate docs from that checkout
 cd ../nhs-llm-documentation
@@ -155,7 +157,8 @@ nhs-llm-docs/
 **For regenerating component docs:**
 - Node.js 16+
 - NHS Frontend repository locally (expects sibling directory: `../nhsuk-frontend`)
-- NHS Frontend checkout must be v10.5+ with dependencies installed (`npm install` in that repo) - examples are formatted using NHS Frontend's own `lib`
+- NHS Frontend checkout must be v10.5+ with its own dependencies installed - run `npm install` **in the `../nhsuk-frontend` clone**, not here (this repo has no `package.json`, so there is nothing to install for it)
+- No build of the clone is needed: examples are rendered from the clone's `src/` via NHS Frontend's own `lib`, so a freshly built `dist/` is not required
 
 **For regenerating Sass docs:**
 - Node.js 16+

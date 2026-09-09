@@ -23,7 +23,7 @@ Prefer the simplest thing that makes the user journey work.
 
 ## Styles
 - Prefer using NHS frontend classes and components over custom styles.
-- Avoid inline styles in views - use classes instead.
+- Avoid inline styles in views - use override classes or new classes instead.
 - Keep SCSS files organised by component or page rather than putting everything in main.scss.
 
 ## Nunjucks preferences
@@ -33,6 +33,35 @@ Prefer the simplest thing that makes the user journey work.
 - Use `elseif` rather than `elif`
 - Default to pre-filling existing answers in components.
 - Prefer using `set` or `call` blocks for HTML in components rather than inline.
+
+## Pages
+
+Pages are `.html` files in `app/views`. The URL comes from the file path, so `app/views/contact-preference.html` is served at `/contact-preference` with no route needed. Each page extends the layout, sets `pageName` (used for the `<title>`) and fills the content block. Back links go in the `beforeContent` block.
+
+The layout provides the width container and main wrapper. Inside the content block, wrap content in a grid row and column. Question pages and body text use two thirds width.
+
+```nunjucks
+{% extends "layout.html" %}
+
+{% set pageName = "Contact preference" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "start",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">{{ pageName }}</h1>
+
+      <p>Page content</p>
+    </div>
+  </div>
+{% endblock %}
+```
 
 ## Saving data
 
@@ -61,6 +90,7 @@ Prefer `camelCase` for names.
 - Doing custom processing of data before saving
 - Redirecting users based on missing data
 - Dynamically rendering several pages with the same view (eg a generic summary page)
+- The kit uses a post, redirect, get pattern. If you post to a page, it will redirect to a GET on the same page.
 
 ### Creating a route
 
@@ -74,7 +104,7 @@ When adding a route, **don't post to the same page**. Instead, post to a separat
     fieldset: {
       legend: {
         text: "How would you like to be contacted?",
-        classes: "nhsuk-fieldset__legend--l",
+        size: "l",
         isPageHeading: true
       }
     },
@@ -123,10 +153,10 @@ router.post('/contact-preference-answer', function (req, res) {
 Bad:
 
 ```javascript
-// Route unecessary if no branching or data manipulation is needed
-router.post("/power-type-answer", function (req, res) {
-  res.redirect("magical-origin");
-});
+// Route unnecessary if no branching or data manipulation is needed
+router.post('/power-type-answer', function (req, res) {
+  res.redirect('magical-origin')
+})
 ```
 
 ### Checking for missing data
@@ -147,8 +177,7 @@ router.post('/contact-preference-answer', function (req, res) {
   // Continue with branching logic
   if (contactPreference === 'Email') {
     res.redirect('email-address')
-  }
-  else {
+  } else {
     res.redirect('phone-number')
   }
 })
@@ -158,7 +187,7 @@ router.post('/contact-preference-answer', function (req, res) {
 
 ## Prefilling data
 
-Form components support either a `value` or `values` params for pre-filling existing data. Default to pre-filling existing answers unless asked not to or it doesn't make sense.
+Form components support either a `value` or `values` param for pre-filling existing data. Default to pre-filling existing answers unless asked not to or it doesn't make sense.
 
 ```nunjucks
 {{ input({
@@ -178,7 +207,7 @@ Form components support either a `value` or `values` params for pre-filling exis
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },
@@ -342,19 +371,15 @@ Bad:
 }) }}
 ```
 
-## Labelling inputs
-
-For text inputs, checkboxes, radios, selects, prefer setting the `value` param to the same text as the `text` param. This makes it quicker to display data in views and routes without needing to apply logic to convert from a value to display text. If logic is likely to be needed, use `camelCase` for the value.
-
 ## Fieldsets
 
 Do not use a fieldset to wrap a single input. They are only needed when grouping related inputs together - like address input. They're already included for radios and checkboxes.
 
-## Page headings and single or multiple questions on a page.
+## Page headings and single or multiple questions on a page
 
-If a form input is the only question on the page, set the `isPageHeading` param to `true`. You may also need to set a related styling class.
+If a form input is the only question on the page, set `isPageHeading: true` and `size: "l"` on its label or legend.
 
-If a form component is not the only question on the page, set the param to false. There should be a separate h1 on the page.
+If a form component is not the only question on the page, set `isPageHeading: false` with a smaller size. There should be a separate h1 on the page.
 
 Checkboxes as only question on page:
 
@@ -365,7 +390,7 @@ Checkboxes as only question on page:
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },
@@ -399,7 +424,7 @@ Checkboxes where there are other questions or another h1 on the page:
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--m",
+      size: "m",
       isPageHeading: false
     }
   },
@@ -430,8 +455,8 @@ Text input as only question on page:
 {{ input({
   label: {
     text: "What is your home postcode?",
-    isPageHeading: true,
-    classes: "nhsuk-label--l"
+    size: "l",
+    isPageHeading: true
   },
   classes: "nhsuk-input--width-10",
   name: "postcode",
