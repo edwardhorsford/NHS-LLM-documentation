@@ -1,650 +1,226 @@
 ---
-applyTo: "**/*.njk, **/*.html, **/*.scss, app/routes/**/*.js"
+applyTo: "**/*.njk, **/*.html, **/*.scss"
 ---
 
 # NHS Frontend guide
 
-A curated guide for using NHS Frontend components effectively with Large Language Models.
+How to use NHS Frontend (the `nhsuk-frontend` package) components and write custom styles alongside them. Describes NHS Frontend version 10 and later, which renamed most of the Sass API: older names from training data are often wrong.
+
+This guide covers conventions. For exact names, use the references:
+
+- **Component reference** (for example `docs/nhs-frontend-component-reference.md`) - every macro with its parameters and examples. Find a component via the table of contents, or search for `## Component name` or `**Macro name:** \`macroName\``.
+- **Sass reference** (for example `docs/nhs-frontend-sass-reference.md`) - every mixin, function and variable. Find an item via the table of contents, or search for `### name`.
+
+**Do not guess parameter, mixin, function or variable names.** Look them up in the reference before writing or changing a macro call or stylesheet.
 
 ---
 
-## Overview
-
-**NHS Frontend** is the official component library for building NHS digital services. It provides:
-
-- Accessible, tested HTML/CSS/JavaScript components
-- Nunjucks macros for server-side templating
-- NHS branding and design patterns
-- WCAG 2.2 Level AA accessibility
-
-**When to use NHS Frontend:**
-- Building NHS digital services
-- Creating NHS prototypes (via NHS prototype kit)
-- Implementing NHS design patterns
-
-**Related projects:**
-- **NHS design system** - Design guidance and patterns
-- **NHS prototype kit** - Prototyping tool that includes NHS Frontend
-- **GOV.UK Frontend** - Similar component library for UK government services (different branding)
-
-## General design system guidance
-
-- Follow the [NHS design system](https://service-manual.nhs.uk/design-system) for overall design patterns and guidance
-
 ## Content
 
-  - Use clear, concise language
-  - Follow NHS tone of voice guidelines
-  - Use British English spelling and grammar
-  - Sentence case for all text and headings
+- Follow the [NHS design system](https://service-manual.nhs.uk/design-system) for patterns and content guidance
+- Use clear, concise language and British English spelling
+- Sentence case for all text and headings
+- Hints are short (ideally one sentence) with no full stop, and plain text only. Screen readers read hints via `aria-describedby`, so links in hints are not announced. If a hint needs a link or formatting, put that content in the page body above the form instead, following the [question page guidance](https://service-manual.nhs.uk/design-system/patterns/question-pages#asking-complex-questions-without-using-hint-text)
 
-### Hints
-Hints should be kept short and simple, ideally one sentence. With no terminating full stop.
+---
 
-Avoid formatting or using links within hints, as this can cause issues with screen readers. If you need to include links or formatting, use the question page pattern of putting this content in the main body of the page above the form, rather than in the hint. This is documented in the [NHS design system question page guidance](https://service-manual.nhs.uk/design-system/patterns/question-pages#asking-complex-questions-without-using-hint-text).
+## Using components
 
-## Key conventions
+### Text vs HTML
 
-### Look up parameters - do not guess
+Most components accept either `text` or `html`. Prefer `text`, which is escaped. Use `html` only for formatted content such as links, and prefer building it in a `set` or `call` block rather than inline.
 
-Component macros have exact parameter names and structures. If the project includes a component reference (for example `docs/nhs-frontend-component-reference.md`),  consult it when writing or changing a macro call rather than guessing parameter names from memory. Use its table of contents to jump to the component. The same applies to Sass: check the Sass reference (for example `docs/nhs-frontend-sass-reference.md`) for exact mixin, function, and variable names.
-
-### Text vs HTML parameters
-
-Most NHS Frontend components accept **either** `text` OR `html` parameters. Prefer `text` where possible.
-
-**✅ Correct:**
 ```njk
 {{ insetText({ text: "You'll need to bring photo ID to your appointment" }) }}
-{{ insetText({ html: '<a href="/cancel">cancel your appointment</a> online' }) }}
 ```
 
-**When to use each:**
-- **`text`** - Preferred for simple content. Automatically escaped for security.
-- **`html`** - Only when you need formatted content (bold, links, etc.). Not escaped.
+Use double quotes for string values in macros and HTML attributes. Nunjucks does not support trailing commas.
 
-**Quote style:** Use double quotes for string values in Nunjucks macros and HTML attributes.
+### Classes and attributes
 
-### Classes parameter
-
-Add custom CSS classes to any component using the `classes` parameter:
+Every component takes `classes` (added to the root element) and `attributes` (an object of extra HTML attributes).
 
 ```njk
-{{ button({ 
-  text: "Submit", 
-  classes: "nhsuk-button--secondary nhsuk-u-margin-bottom-4" 
-}) }}
-```
-
-**Common utility classes:**
-- `nhsuk-u-nowrap` - Prevent wrapping - useful for tags that may otherwise wrap awkwardly
-- `nhsuk-u-margin-bottom-*` - Bottom margin (0-9)
-- `nhsuk-u-margin-top-*` - Top margin (0-9)
-- `nhsuk-u-visually-hidden` - Hide visually but keep for screen readers
-
-**Class naming conventions:**
-
-NHS Frontend uses the **Block Element Modifier (BEM)** methodology:
-
-Examples:
-```scss
-.nhsuk-card {}                // Block
-.nhsuk-card__heading {}       // Element
-.nhsuk-card--clickable {}     // Modifier
-```
-
-All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes. Do not create `.nhsuk-` classes for your own purposes unless working on NHS Frontend itself. Do not restyle NHS Frontend components by overriding `.nhsuk-` classes - use custom classes and modifiers instead.
-
-### Attributes parameter
-
-Add custom HTML attributes using the `attributes` object:
-
-```njk
-{{ button({ 
-  text: "Submit",
+{{ button({
+  text: "Save and continue",
+  classes: "nhsuk-button--secondary nhsuk-u-margin-bottom-4",
   attributes: {
-    "data-module": "custom-module",
-    "aria-describedby": "help-text"
+    "data-module": "app-save-tracker"
   }
 }) }}
 ```
 
-**HTML attribute order:**
-
-When writing HTML directly (not via Nunjucks macros), use this attribute order for consistency:
-
-1. `class`
-2. `id`, `name`
-3. `data-*`
-4. `src`, `for`, `type`, `href`, `value`
-5. `title`, `alt`
-6. `role`, `aria-*`
-
-### Parameter naming patterns
-
-NHS Frontend uses consistent naming patterns:
-
-- **`classes`** - CSS classes in addition to the default classes (string)
-- **`id`** - HTML id attribute (string)
-- **`name`** - HTML name attribute for form inputs (string)
-- **`value`** - Current value of form inputs (string)
-- **`items`** - Array of sub-items (for lists, navigation, form options)
-- **`href`** - Link URL (string)
-- **`label`** - Form input label (object with `text` or `html`)
-- **`hint`** - Helper text (object with `text` or `html`)
-- **`errorMessage`** - Error message (object with `text` or `html`)
-- **`fieldset`** - Grouping wrapper (object with `legend`)
-
-**Naming convention:** Parameter names use **camelCase**.
-
----
-
-## Common patterns
+Use `classes` for built-in modifiers (for example `nhsuk-button--secondary`, `nhsuk-fieldset__legend--l`, `nhsuk-input--width-10`), utility classes, and your own classes. The component reference lists each component's modifiers.
 
 ### Form inputs
 
-All form inputs follow a consistent structure:
+All form inputs share the same shape. `label`, `hint` and `errorMessage` are objects with `text` or `html`. `id` is for the label, `name` is for form submission. Include `errorMessage` only when there is an error.
 
 ```njk
 {{ input({
-  id: "national-insurance-number",
-  name: "ni-number",
+  id: "nhs-number",
+  name: "nhsNumber",
   label: {
-    text: "National Insurance number"
+    text: "What is your NHS number?",
+    size: "l",
+    isPageHeading: true
   },
   hint: {
-    text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+    text: "It's a 10 digit number, for example 485 777 3456"
   },
   errorMessage: {
-    text: "Enter a National Insurance number in the correct format"
-  } if errors
+    text: "Enter your NHS number"
+  } if errors.nhsNumber
 }) }}
 ```
 
-**Key points:**
-- `id` and `name` are separate (id for labels, name for form submission)
-- `label`, `hint`, and `errorMessage` are objects with `text` or `html`
-- Error messages should only be included when there's an error
+When the input is the only question on the page, make its label (or fieldset legend) the page heading with `isPageHeading: true` and `size: "l"`. Otherwise the page needs its own `h1`.
 
-### Conditional content
+### Groups of radios and checkboxes
 
-Use Nunjucks conditionals to show/hide content:
-
-```njk
-{{ errorSummary({
-  titleText: "There is a problem",
-  errorList: errors
-}) if errors }}
-```
-
-### Arrays of items
-
-Many components use an `items` array. Items can be made conditional with no need to manually filter the array.
+Groups need a `fieldset` with a `legend`. A single checkbox (like “I agree”) does not.
 
 ```njk
 {{ radios({
-  name: "contact-method",
+  name: "contactMethod",
   fieldset: {
     legend: {
-      text: "How would you like to be contacted?"
+      text: "How would you like to be contacted?",
+      size: "l",
+      isPageHeading: true
     }
   },
   items: [
     {
-      value: "email",
+      value: "Email",
       text: "Email"
     },
     {
-      value: "phone",
+      value: "Phone",
       text: "Phone"
     },
     {
-      value: "text",
+      value: "Text message",
       text: "Text message"
     } if supportsText
   ]
 }) }}
 ```
 
-### Nested parameters
-
-Some parameters have nested objects (use dot notation in parameter tables):
-
-```njk
-{{ input({
-  label: {
-    text: "Name",
-    size: "l",
-    isPageHeading: true
-  }
-}) }}
-```
+Items in an `items` array can be made conditional inline, as above, with no need to filter the array. Whole components can be conditional the same way: `{{ errorSummary({ ... }) if errors }}`.
 
 ---
 
-## Component categories
+## Page structure and layout
 
-**Form inputs** - Components for collecting user data:
-- **Input** - Single-line text input
-- **Textarea** - Multi-line text input
-- **Radios** - Single choice from options
-- **Checkboxes** - Multiple choices
-- **Select** - Dropdown selection
-- **Date input** - Date entry with separate day/month/year fields
-- **File upload** - File selection
-- **Character count** - Text input/textarea with character counter
+Pages sit inside a width container and main wrapper, with content in grid rows and columns:
 
-**Form controls** - Supporting elements for forms:
-- **Button** - Submit or action buttons
-- **Fieldset** - Group related form inputs
-- **Label** - Form input labels
-- **Hint** - Helper text
-- **Error message** - Validation error messages
-- **Error summary** - List of page errors
+```html
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Page title</h1>
+      </div>
+    </div>
+  </main>
+</div>
+```
 
-**Navigation** - Components for moving between pages:
-- **Back link** - Return to previous page
-- **Breadcrumb** - Show current location in hierarchy
-- **Pagination** - Navigate between pages of content
-- **Skip link** - Accessibility link to skip to main content
-- **Contents list** - Table of contents navigation
+Grid columns: `nhsuk-grid-column-full`, `-one-half`, `-one-third`, `-two-thirds`, `-one-quarter`, `-three-quarters`. Question pages and body text usually use two thirds.
 
-**Content** - Components for displaying information:
-- **Card** - Grouped content with optional action
-- **Details** - Expandable/collapsible content
-- **Inset text** - Highlighted secondary content
-- **Summary list** - Key-value pairs (like a definition list)
-- **Table** - Tabular data
-- **Tag** - Status or category indicator
+Use NHS Frontend's typography classes rather than styling headings and text yourself:
 
-**Layout** - Structural components:
-- **Header** - Site-wide header with navigation
-- **Footer** - Site-wide footer with links
-- **Width container** - Constrain content width
+- Headings: `nhsuk-heading-xl`, `-l`, `-m`, `-s`, `-xs`. Heading size is independent of heading level
+- Body text: `nhsuk-body-l`, `-m`, `-s`; `nhsuk-lede-text` for an intro paragraph; `nhsuk-caption-l` and `-m` for a caption above a heading
+- Lists: `nhsuk-list` with `nhsuk-list--bullet`, `--number`, `--tick`, `--cross`
 
-**Notifications** - Components for important messages:
-- **Warning callout** - Important warnings
-- **Error summary** - Form validation errors
-- **Notification banner** - Success or information messages
+Common utility classes:
+
+- Spacing: `nhsuk-u-margin-{direction}-{0-9}` and `nhsuk-u-padding-{direction}-{0-9}`, where direction is `top`, `right`, `bottom` or `left` (or omitted for all sides). These are responsive: larger points reduce on mobile. `nhsuk-u-static-margin-*` does not
+- Text: `nhsuk-u-font-weight-bold`, `nhsuk-u-font-size-{scale}` (for example `nhsuk-u-font-size-19`), `nhsuk-u-secondary-text-colour`, `nhsuk-u-text-align-centre`, `nhsuk-u-nowrap`, `nhsuk-u-reading-width`
+- Width: `nhsuk-u-width-full`, `-one-half`, `-one-third`, `-two-thirds`, `-one-quarter`, `-three-quarters`
+- Visibility: `nhsuk-u-visually-hidden`, `nhsuk-u-display-none`, `nhsuk-u-display-none-print`
 
 ---
 
-## Working with Sass and custom styles
+## Writing custom Sass
 
-### Custom CSS classes
+**Custom Sass should be rare.** Try in order: a component as-is, a built-in modifier, a utility class, and only then a new class. Assume NHS Frontend is already loaded into the project's main stylesheet, so its functions, mixins and variables are available in your files.
 
-**Never create classes in the `nhsuk-` namespace.** This namespace is reserved for NHS Frontend components.
+### Naming
 
-**✅ Correct:**
-```scss
-// Use your own namespace
-.app-custom-component {
-  padding: 20px;
-}
+- All NHS Frontend classes use the `nhsuk-` namespace. Use your own namespace, such as `app-`, for custom classes. Never create `nhsuk-` classes and never override `nhsuk-` classes to restyle components
+- Follow Block Element Modifier (BEM): `.app-card`, `.app-card__heading`, `.app-card--featured`. Not `.app-card__heading__link`
+- Keep selectors flat. Write out each block, element and modifier as its own top-level selector rather than nesting with `&__` or `&--`. Nesting pseudo-classes and pseudo-elements (`&:hover`, `&::before`) is fine
+- Style classes, not elements. Not `li {}` or `.app-list li {}`
+- Never build selectors dynamically (`.app- { &foo {} }`). Full class names must be searchable
+- One file per block, named after it (`_app-card.scss`), loaded from the main stylesheet
 
-.myorg-special-input {
-  border: 2px solid $color-nhs-blue;
-}
-```
+### Use NHS Frontend's tokens, not hardcoded values
 
-**❌ Wrong:**
-```scss
-// Don't use nhsuk- namespace
-.nhsuk-custom-component {
-  padding: 20px;
-}
-```
+Never write hex colours, pixel sizes or breakpoint widths. Everything below is in the Sass reference with its full signature.
 
-### Modifying component styles
-
-**Prefer adding modifier classes instead of overriding NHS Frontend styles directly.**
-
-**✅ Correct:**
-```scss
-// Add a modifier class
-.app-input--compact {
-  padding: 8px;
-}
-```
-
-```njk
-{{ input({
-  name: "postcode",
-  classes: "app-input--compact",
-  label: { text: "Postcode" }
-}) }}
-```
-
-**❌ Avoid:**
-```scss
-// Overriding NHS Frontend classes directly
-.nhsuk-input {
-  padding: 8px; // Don't override the base class
-}
-```
-
-### Using existing NHS Frontend modifiers
-
-NHS Frontend provides some modifier classes you can use. Some are specific to individual components, some are more general-purpose.
-
-```njk
-{# Use built-in modifiers where available #}
-{{ button({
-  text: "Secondary action",
-  classes: "nhsuk-button--secondary"
-}) }}
-
-{{ button({
-  text: "Reverse (for dark backgrounds)",
-  classes: "nhsuk-button--reverse nhsuk-u-margin-bottom-0"
-}) }}
-```
-
-### Use Sass variables, not magic numbers
-
-NHS Frontend provides Sass variables for colours, spacing, typography, and more. Prefer these instead of hardcoded hex values.
-
-**✅ Correct:**
 ```scss
 .app-highlight {
-  background-color: nhsuk-colour("blue");
-  padding: nhsuk-spacing(4);
-  font-size: $nhsuk-base-font-size;
-}
-```
+  @include nhsuk-responsive-margin(4, "bottom");
+  @include nhsuk-font(19);
+  padding: nhsuk-spacing(3);
+  border-left: nhsuk-spacing(1) solid nhsuk-colour("blue");
+  background-color: nhsuk-colour("pale-yellow");
+  color: $nhsuk-text-colour;
 
-**❌ Wrong:**
-```scss
-.app-highlight {
-  background-color: #005eb8; // Magic number
-  padding: 24px; // Magic number
-  font-size: 16px; // Magic number
-}
-```
-
-**Common Sass variables:**
-- **Colors:** `$color-nhs-blue`, `$color-nhs-white`, `$color-nhs-black`, `$color-nhs-green`, etc.
-- **Spacing:** `nhsuk-spacing(1)` through `nhsuk-spacing(9)`
-- **Typography:** `$nhsuk-base-font-size`, `$nhsuk-base-line-height`
-- **Breakpoints:** `$tablet`, `$desktop`
-
-### Sass best practices
-
-**Prefer direct class selectors, not nested selectors** - Keep selectors flat and specific rather than deeply nested. A small amount of nesting is acceptable if it improves readability, but avoid unnecessary nesting.
-
-**✅ Correct:**
-```scss
-.app-card {
-  padding: nhsuk-spacing(4);
-}
-
-.app-card__title {
-  font-weight: bold;
-}
-
-.app-card__content {
-  margin-top: nhsuk-spacing(2);
-}
-```
-
-**❌ Avoid:**
-```scss
-.app-card {
-  padding: nhsuk-spacing(4);
-  
-  .title { // nested and not using BEM
-    font-weight: bold;
+  @include nhsuk-media-query($from: tablet) {
+    padding: nhsuk-spacing(4);
   }
-  
-  .content { // nested and not using BEM
-    margin-top: nhsuk-spacing(2);
+}
+
+.app-highlight__link {
+  @include nhsuk-link-style-default;
+}
+
+.app-highlight__button {
+  &:focus {
+    @include nhsuk-focused-text;
   }
 }
 ```
 
-**Avoid styling HTML elements directly** - Use classes for styling.
+- **Colours:** `nhsuk-colour("name")` for palette colours (`blue`, `white`, `black`, `green`, `purple`, `dark-pink`, `red`, `yellow`, `dark-blue`, `pale-yellow`, `warm-yellow`, `orange`, `aqua-green`, `pink`). Prefer the semantic variables where one fits: `$nhsuk-text-colour`, `$nhsuk-secondary-text-colour`, `$nhsuk-link-colour`, `$nhsuk-border-colour`, `$nhsuk-error-colour`, `$nhsuk-focus-colour`. `nhsuk-tint()` and `nhsuk-shade()` derive lighter and darker variants
+- **Spacing:** `nhsuk-spacing(0-9)` returns a fixed value from the spacing scale. `nhsuk-responsive-margin()` and `nhsuk-responsive-padding()` take the same points but reduce on mobile, and are what NHS Frontend components use for their own outer spacing
+- **Typography:** `nhsuk-font($size, $weight, $line-height)` sets a responsive size from the scale (14, 16, 19, 22, 26, 36, 48, 64 - the desktop pixel size) plus the font family. `nhsuk-font-size($size)` sets size only
+- **Breakpoints:** mobile-first. `nhsuk-media-query($from: tablet)`, `$until:`, with breakpoints `mobile`, `tablet`, `desktop`, `large-desktop`
+- **Focus and links:** anything interactive needs the NHS Frontend focus style. Use `nhsuk-focused-text` for inline elements and `nhsuk-focused-box` for block elements. Custom links use `nhsuk-link-style-default` (or `-no-visited-state`, `-reverse`)
+- **Deprecated names:** the reference marks deprecated items. Only use `nhsuk-` prefixed mixins and functions. Older unprefixed names like `mq`, `care-card`, `visually-hidden` and `px2em`, and `$color_nhs-*` variables, no longer exist or are being removed
 
-**✅ Correct:**
-```scss
-.app-list-item {
-  padding: nhsuk-spacing(2);
-}
-```
+### Adding to a component
 
-**❌ Avoid:**
-```scss
-li {
-  padding: nhsuk-spacing(2);
-}
+To vary a component, add a modifier class in your own namespace through `classes` and style that. Do not add styles to the `nhsuk-` class.
 
-.app-list {
-  li {
-    padding: nhsuk-spacing(2);
-  }
-}
-```
-
-**Never dynamically build selectors** - Write out full class names explicitly.
-
-**✅ Correct:**
-```scss
-.app-foo {
-  color: $color-nhs-blue;
-}
-
-.app-bar {
-  color: $color-nhs-green;
-}
-```
-
-**❌ Avoid:**
-```scss
-.app- {
-  &foo {
-    color: $color-nhs-blue;
-  }
-  
-  &bar {
-    color: $color-nhs-green;
-  }
-}
-```
-
-This makes selectors easier to search for.
-
-### When to use custom Sass
-
-**Custom Sass should be rare.** You'll typically only need it for:
-- Organization-specific components not in NHS Frontend
-- Unusual layout requirements
-- Custom service-specific patterns
-
-**Most styling needs should be met by:**
-1. Using NHS Frontend components as-is
-2. Using built-in modifier classes
-3. Following NHS design system patterns
-
----
-
-## Common mistakes and gotchas
-
-### Forgetting fieldset for radio/checkbox groups
-
-Groups of radios or checkboxes need a fieldset and legend. Single checkboxes (like "I agree") don't need this.
-
-**❌ Wrong:**
 ```njk
-{# Wrong - multiple options without grouping #}
-{{ radios({
-  name: "contact",
-  items: [
-    { value: "email", text: "Email" },
-    { value: "phone", text: "Phone" }
-  ]
-}) }}
-```
-
-**✅ Correct:**
-```njk
-{# Correct - multiple options with fieldset #}
-{{ radios({
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "How would you like to be contacted?"
-    }
+{{ card({
+  heading: {
+    text: "Your appointments"
   },
-  items: [
-    { value: "email", text: "Email" },
-    { value: "phone", text: "Phone" }
-  ]
+  classes: "app-card--compact"
 }) }}
 ```
 
-**✅ Also correct for single checkbox:**
-```njk
-{# Also correct - single checkbox without fieldset #}
-{{ checkboxes({
-  name: "terms",
-  items: [
-    { value: "agreed", text: "I agree to the terms and conditions" }
-  ]
-}) }}
-```
-
-**✅ Also correct using fieldset as a call block:**
-```njk
-{% call fieldset({
-  legend: {
-    text: "Have you changed your name?"
-  },
-  describedBy: "contact-hint contact-error"
-}) %}
-  {{ hint({
-    id: "contact-hint",
-    text: "This includes changing your last name or spelling your name differently"
-  }) }}
-  {{ errorMessage({
-    id: "contact-error",
-    text: "Select yes if you have changed your name"
-  }) }}
-  {{ radios({
-    name: "contact",
-    items: [
-      { value: "yes", text: "Yes" },
-      { value: "no", text: "No" }
-    ]
-  }) }}
-{% endcall %}
-```
-
-### Hint text should be plain text only
-
-Keep hint text short and with no full stop.
-
-**Hints should avoid links** because when hint text is announced by screen readers (via `aria-describedby`), only the text content is read out - link destinations are not announced. Bold text is less problematic but should still be used sparingly.
-
-**✅ Correct:**
-```njk
-{{ input({
-  name: "nhs-number",
-  label: { text: "NHS number" },
-  hint: { 
-    text: "Your NHS number is a 10 digit number that you can find on any letter the NHS has sent you, for example, 458 777 3456"
-  }
-}) }}
-```
-
-**❌ Avoid:**
-```njk
-{{ input({
-  name: "nhs-number",
-  label: { text: "NHS number" },
-  hint: { 
-    html: "Your NHS number is a 10 digit number. <a href='/help'>Get help finding your NHS number</a>." 
-  }
-}) }}
-```
-
-**This applies to most hints**, including:
-- Hints within fieldsets for radios and checkboxes
-- Hints for all form inputs
-- Any content using `aria-describedby`
-
-**What to do if you need complex hint content:**
-
-Follow the NHS design system pattern for [asking complex questions without using hint text](https://service-manual.nhs.uk/design-system/patterns/question-pages#asking-complex-questions-without-using-hint-text):
-
-```njk
-<h1>Finding your NHS number</h1>
-
-<p>Your NHS number is a 10 digit number that you can find on any letter the NHS has sent you.</p>
-<p>For example, 458 777 3456.</p>
-<p><a href="/help">Get help finding your NHS number</a></p>
-
-{{ input({
-  name: "nhs-number",
-  label: {
-    text: "NHS number"
-  }
-}) }}
+```scss
+.app-card--compact {
+  @include nhsuk-responsive-padding(3);
+}
 ```
 
 ---
 
-## Accessibility requirements
+## JavaScript
 
-NHS Frontend components are designed to meet WCAG 2.2 Level AA, but correct usage is required:
-
-**Always provide labels** - Form inputs must always have a label and it usually should be visible:
-```njk
-{{ input({
-  name: "email",
-  label: { text: "Email address" }
-}) }}
-```
-
-**Use fieldset and legend for groups** - Groups of radio buttons and checkboxes must be grouped with a fieldset and include a legend:
-```njk
-{{ radios({
-  fieldset: {
-    legend: {
-      text: "What is your address?"
-    }
-  }
-}) }}
-```
-
-**Provide error messages** - Error messages must be associated with form inputs:
-```njk
-{{ input({
-  name: "email",
-  label: { text: "Email" },
-  errorMessage: {
-    text: "Enter an email address"
-  } if errors
-}) }}
-```
-
----
-
-## Best practices
-
-**Use semantic HTML** - NHS Frontend components output semantic HTML - don't override this unnecessarily.
-
-**Follow NHS design system guidance** - Components should be used according to [NHS design system](https://service-manual.nhs.uk/design-system) guidance.
-
-**Test with assistive technology** - Even with accessible components, test your implementation with screen readers.
-
-**Keep components simple** - Don't over-customize components - they're designed to work out of the box.
-
-**Use NHS design system patterns** - For complex interactions (like dates of birth, addresses), follow NHS design system patterns.
+Some components (character count, checkboxes and radios with conditional content, error summary, file upload, header, notification banner, password input, skip link, tabs) need NHS Frontend's JavaScript, which is initialised with `initAll()` from the package. Assume the project already does this. Custom behaviour goes in your own modules, attached with a `data-module` attribute. Pages must still work without JavaScript.
 
 ---
 
 ## Further reading
 
-- [NHS design system](https://service-manual.nhs.uk/design-system) - Design guidance
-- [NHS Frontend GitHub](https://github.com/nhsuk/nhsuk-frontend) - Source code and examples
-- [NHS Frontend coding standards](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/contributing/coding-standards.md) - Detailed coding conventions
-- [NHS prototype kit](https://prototype-kit.service.manual.nhs.uk/) - Prototyping tool
+- [NHS design system](https://service-manual.nhs.uk/design-system) - components, patterns and content guidance
+- [NHS Frontend on GitHub](https://github.com/nhsuk/nhsuk-frontend) - source, [coding standards](https://github.com/nhsuk/nhsuk-frontend/blob/main/docs/contributing/coding-standards.md) and [configuration docs](https://github.com/nhsuk/nhsuk-frontend/tree/main/docs/configuration)
