@@ -8,6 +8,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import readline from 'readline';
 
+// Render examples from NHS Frontend's src templates, not its built dist/. Its
+// nunjucks env uses dist/ unless NODE_ENV=test, and a stale dist build renders
+// the current src fixtures wrong (e.g. object-shaped params as [object Object]).
+process.env.NODE_ENV = 'test';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

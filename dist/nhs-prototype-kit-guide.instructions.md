@@ -23,7 +23,7 @@ Prefer the simplest thing that makes the user journey work.
 
 ## Styles
 - Prefer using NHS frontend classes and components over custom styles.
-- Avoid inline styles in views - use classes instead.
+- Avoid inline styles in views - use override classes or new classes instead.
 - Keep SCSS files organised by component or page rather than putting everything in main.scss.
 
 ## Nunjucks preferences
@@ -61,6 +61,7 @@ Prefer `camelCase` for names.
 - Doing custom processing of data before saving
 - Redirecting users based on missing data
 - Dynamically rendering several pages with the same view (eg a generic summary page)
+- The kit uses a post, redirect, get pattern. If you post to a page, it will redirect to a GET on the same page.
 
 ### Creating a route
 
@@ -158,7 +159,7 @@ router.post('/contact-preference-answer', function (req, res) {
 
 ## Prefilling data
 
-Form components support either a `value` or `values` params for pre-filling existing data. Default to pre-filling existing answers unless asked not to or it doesn't make sense.
+Form components support either a `value` or `values` param for pre-filling existing data. Default to pre-filling existing answers unless asked not to or it doesn't make sense.
 
 ```nunjucks
 {{ input({
@@ -365,7 +366,7 @@ Checkboxes as only question on page:
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },
@@ -399,7 +400,7 @@ Checkboxes where there are other questions or another h1 on the page:
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--m",
+      size: "m",
       isPageHeading: false
     }
   },
@@ -430,8 +431,8 @@ Text input as only question on page:
 {{ input({
   label: {
     text: "What is your home postcode?",
-    isPageHeading: true,
-    classes: "nhsuk-label--l"
+    size: "l",
+    isPageHeading: true
   },
   classes: "nhsuk-input--width-10",
   name: "postcode",

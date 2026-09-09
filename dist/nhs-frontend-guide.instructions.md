@@ -30,6 +30,7 @@ A curated guide for using NHS Frontend components effectively with Large Languag
 ## General design system guidance
 
 - Follow the [NHS design system](https://service-manual.nhs.uk/design-system) for overall design patterns and guidance
+
 ## Content
 
   - Use clear, concise language
@@ -46,21 +47,16 @@ Avoid formatting or using links within hints, as this can cause issues with scre
 
 ### Look up parameters - do not guess
 
-Component macros have exact parameter names and structures. If the project includes a component reference (for example `docs/nhs-frontend-component-reference.md`), always consult it when writing or changing a macro call rather than guessing parameter names from memory. Use its table of contents to jump to the component. The same applies to Sass: check the Sass reference (for example `docs/nhs-frontend-sass-reference.md`) for exact mixin, function, and variable names.
+Component macros have exact parameter names and structures. If the project includes a component reference (for example `docs/nhs-frontend-component-reference.md`),  consult it when writing or changing a macro call rather than guessing parameter names from memory. Use its table of contents to jump to the component. The same applies to Sass: check the Sass reference (for example `docs/nhs-frontend-sass-reference.md`) for exact mixin, function, and variable names.
 
 ### Text vs HTML parameters
 
-Most NHS Frontend components accept **either** `text` OR `html` parameters - never use both together. Prefer `text` where possible.
+Most NHS Frontend components accept **either** `text` OR `html` parameters. Prefer `text` where possible.
 
 **✅ Correct:**
 ```njk
 {{ insetText({ text: "You'll need to bring photo ID to your appointment" }) }}
 {{ insetText({ html: '<a href="/cancel">cancel your appointment</a> online' }) }}
-```
-
-**❌ Wrong:**
-```njk
-{{ insetText({ text: "Simple text", html: '<a href="#">Link</a>' }) }}
 ```
 
 **When to use each:**
@@ -90,22 +86,14 @@ Add custom CSS classes to any component using the `classes` parameter:
 
 NHS Frontend uses the **Block Element Modifier (BEM)** methodology:
 
-- `.nhsuk-block` - The root of a component
-- `.nhsuk-block__element` - A part of the block
-- `.nhsuk-block--modifier` - A variant of the block
-
 Examples:
 ```scss
 .nhsuk-card {}                // Block
 .nhsuk-card__heading {}       // Element
 .nhsuk-card--clickable {}     // Modifier
-
-.nhsuk-a-z-nav {}             // Block (can be hyphenated)
-.nhsuk-a-z-nav__link {}       // Element
-.nhsuk-a-z-nav__link--disabled {} // Modifier
 ```
 
-All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes. Do not restyle NHS Frontend components by overriding `.nhsuk-` classes - use custom classes and modifiers instead.
+All NHS Frontend classes use the `.nhsuk-` namespace. Use your own namespace (like `.app-` or `.myorg-`) for custom classes. Do not create `.nhsuk-` classes for your own purposes unless working on NHS Frontend itself. Do not restyle NHS Frontend components by overriding `.nhsuk-` classes - use custom classes and modifiers instead.
 
 ### Attributes parameter
 
@@ -121,8 +109,6 @@ Add custom HTML attributes using the `attributes` object:
 }) }}
 ```
 
-**Note:** Keys should be quoted, values should be quoted strings.
-
 **HTML attribute order:**
 
 When writing HTML directly (not via Nunjucks macros), use this attribute order for consistency:
@@ -134,12 +120,11 @@ When writing HTML directly (not via Nunjucks macros), use this attribute order f
 5. `title`, `alt`
 6. `role`, `aria-*`
 
-Classes make for great reusable components, so they come first. IDs are more specific and should be used sparingly.
-
 ### Parameter naming patterns
 
 NHS Frontend uses consistent naming patterns:
 
+- **`classes`** - CSS classes in addition to the default classes (string)
 - **`id`** - HTML id attribute (string)
 - **`name`** - HTML name attribute for form inputs (string)
 - **`value`** - Current value of form inputs (string)
@@ -150,7 +135,7 @@ NHS Frontend uses consistent naming patterns:
 - **`errorMessage`** - Error message (object with `text` or `html`)
 - **`fieldset`** - Grouping wrapper (object with `legend`)
 
-**Naming convention:** Parameter names use **camelCase** (e.g., `errorMessage`, not `error_message` or `error-message`).
+**Naming convention:** Parameter names use **camelCase**.
 
 ---
 
@@ -229,7 +214,7 @@ Some parameters have nested objects (use dot notation in parameter tables):
 {{ input({
   label: {
     text: "Name",
-    classes: "nhsuk-label--l",
+    size: "l",
     isPageHeading: true
   }
 }) }}
@@ -340,7 +325,7 @@ Some parameters have nested objects (use dot notation in parameter tables):
 
 ### Using existing NHS Frontend modifiers
 
-NHS Frontend provides some modifier classes you can use:
+NHS Frontend provides some modifier classes you can use. Some are specific to individual components, some are more general-purpose.
 
 ```njk
 {# Use built-in modifiers where available #}
@@ -351,18 +336,18 @@ NHS Frontend provides some modifier classes you can use:
 
 {{ button({
   text: "Reverse (for dark backgrounds)",
-  classes: "nhsuk-button--reverse"
+  classes: "nhsuk-button--reverse nhsuk-u-margin-bottom-0"
 }) }}
 ```
 
 ### Use Sass variables, not magic numbers
 
-NHS Frontend provides Sass variables for colors, spacing, typography, and more. Prefer these instead of hardcoded values.
+NHS Frontend provides Sass variables for colours, spacing, typography, and more. Prefer these instead of hardcoded hex values.
 
 **✅ Correct:**
 ```scss
 .app-highlight {
-  background-color: $color-nhs-blue;
+  background-color: nhsuk-colour("blue");
   padding: nhsuk-spacing(4);
   font-size: $nhsuk-base-font-size;
 }
@@ -407,17 +392,17 @@ NHS Frontend provides Sass variables for colors, spacing, typography, and more. 
 .app-card {
   padding: nhsuk-spacing(4);
   
-  .title {
+  .title { // nested and not using BEM
     font-weight: bold;
   }
   
-  .content {
+  .content { // nested and not using BEM
     margin-top: nhsuk-spacing(2);
   }
 }
 ```
 
-**Avoid styling HTML elements directly** - Always use classes for styling.
+**Avoid styling HTML elements directly** - Use classes for styling.
 
 **✅ Correct:**
 ```scss
@@ -465,7 +450,7 @@ li {
 }
 ```
 
-This makes selectors easier to search for and understand.
+This makes selectors easier to search for.
 
 ### When to use custom Sass
 
@@ -482,21 +467,6 @@ This makes selectors easier to search for and understand.
 ---
 
 ## Common mistakes and gotchas
-
-### Quoting object keys in Nunjucks
-
-**❌ Wrong:**
-```njk
-{# Wrong - keys should be unquoted in Nunjucks #}
-{{ button({ "text": "Submit" }) }}
-```
-
-**✅ Correct:**
-```njk
-{{ button({ text: "Submit" }) }}
-```
-
-Nunjucks uses JavaScript object syntax where keys are unquoted.
 
 ### Forgetting fieldset for radio/checkbox groups
 
