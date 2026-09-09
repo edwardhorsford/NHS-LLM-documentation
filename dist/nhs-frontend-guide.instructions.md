@@ -134,6 +134,7 @@ Use NHS Frontend's typography classes rather than styling headings and text your
 - Headings: `nhsuk-heading-xl`, `-l`, `-m`, `-s`, `-xs`. Heading size is independent of heading level
 - Body text: `nhsuk-body-l`, `-m`, `-s`; `nhsuk-lede-text` for an intro paragraph; `nhsuk-caption-l` and `-m` for a caption above a heading
 - Lists: `nhsuk-list` with `nhsuk-list--bullet`, `--number`, `--tick`, `--cross`
+- Links: `nhsuk-link` with `nhsuk-link--no-visited-state` for navigation links that should not show as visited (the usual choice within a service), `--no-underline`, `--text-colour`, `--reverse`
 
 Common utility classes:
 
