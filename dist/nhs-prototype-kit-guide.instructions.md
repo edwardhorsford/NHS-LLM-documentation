@@ -34,6 +34,27 @@ Prefer the simplest thing that makes the user journey work.
 - Default to pre-filling existing answers in components.
 - Prefer using `set` or `call` blocks for HTML in components rather than inline.
 
+## Pages
+
+Pages are `.html` files in `app/views`. The URL comes from the file path, so `app/views/contact-preference.html` is served at `/contact-preference` with no route needed. Each page extends the layout, sets `pageName` (used for the `<title>`) and fills the content block. Back links go in the `beforeContent` block.
+
+```nunjucks
+{% extends "layout.html" %}
+
+{% set pageName = "Contact preference" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "start",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-l">{{ pageName }}</h1>
+{% endblock %}
+```
+
 ## Saving data
 
 All data submitted via POST or GET will be saved to `req.session.data` using the 'name' parameter.
@@ -75,7 +96,7 @@ When adding a route, **don't post to the same page**. Instead, post to a separat
     fieldset: {
       legend: {
         text: "How would you like to be contacted?",
-        classes: "nhsuk-fieldset__legend--l",
+        size: "l",
         isPageHeading: true
       }
     },
@@ -124,10 +145,10 @@ router.post('/contact-preference-answer', function (req, res) {
 Bad:
 
 ```javascript
-// Route unecessary if no branching or data manipulation is needed
-router.post("/power-type-answer", function (req, res) {
-  res.redirect("magical-origin");
-});
+// Route unnecessary if no branching or data manipulation is needed
+router.post('/power-type-answer', function (req, res) {
+  res.redirect('magical-origin')
+})
 ```
 
 ### Checking for missing data
@@ -148,8 +169,7 @@ router.post('/contact-preference-answer', function (req, res) {
   // Continue with branching logic
   if (contactPreference === 'Email') {
     res.redirect('email-address')
-  }
-  else {
+  } else {
     res.redirect('phone-number')
   }
 })
@@ -179,7 +199,7 @@ Form components support either a `value` or `values` param for pre-filling exist
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },
@@ -343,19 +363,15 @@ Bad:
 }) }}
 ```
 
-## Labelling inputs
-
-For text inputs, checkboxes, radios, selects, prefer setting the `value` param to the same text as the `text` param. This makes it quicker to display data in views and routes without needing to apply logic to convert from a value to display text. If logic is likely to be needed, use `camelCase` for the value.
-
 ## Fieldsets
 
 Do not use a fieldset to wrap a single input. They are only needed when grouping related inputs together - like address input. They're already included for radios and checkboxes.
 
-## Page headings and single or multiple questions on a page.
+## Page headings and single or multiple questions on a page
 
-If a form input is the only question on the page, set the `isPageHeading` param to `true`. You may also need to set a related styling class.
+If a form input is the only question on the page, set `isPageHeading: true` and `size: "l"` on its label or legend.
 
-If a form component is not the only question on the page, set the param to false. There should be a separate h1 on the page.
+If a form component is not the only question on the page, set `isPageHeading: false` with a smaller size. There should be a separate h1 on the page.
 
 Checkboxes as only question on page:
 

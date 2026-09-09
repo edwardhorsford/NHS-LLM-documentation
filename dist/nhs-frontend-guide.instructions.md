@@ -33,9 +33,6 @@ Most components accept either `text` or `html`. Prefer `text`, which is escaped.
 ```njk
 {{ insetText({ text: "You'll need to bring photo ID to your appointment" }) }}
 ```
-
-Since 10.6, options that take an object with `text` or `html` (such as `label`, `hint`, `errorMessage`, `heading`, summary list `key` and `value`) also accept a plain string, which means the same as `text`. Use the string form when no other nested options are needed.
-
 Use double quotes for string values in macros and HTML attributes. Nunjucks does not support trailing commas.
 
 ### Classes and attributes
@@ -56,22 +53,27 @@ Use `classes` for built-in modifiers (for example `nhsuk-button--secondary`, `nh
 
 ### Form inputs
 
-All form inputs share the same shape. `label`, `hint` and `errorMessage` take a string, or an object with `text` or `html` and further options. `id` is for the label, `name` is for form submission. Include `errorMessage` only when there is an error.
+All form inputs share the same shape. `label`, `hint` and `errorMessage` are objects with `text` or `html`. `id` is for the label, `name` is for form submission. Include `errorMessage` only when there is an error.
 
 ```njk
 {{ input({
   id: "nhs-number",
   name: "nhsNumber",
   label: {
-    heading: "What is your NHS number?",
-    size: "l"
+    text: "What is your NHS number?",
+    size: "l",
+    isPageHeading: true
   },
-  hint: "It's a 10 digit number, for example 485 777 3456",
-  errorMessage: "Enter your NHS number" if errors.nhsNumber
+  hint: {
+    text: "It's a 10 digit number, for example 485 777 3456"
+  },
+  errorMessage: {
+    text: "Enter your NHS number"
+  } if errors.nhsNumber
 }) }}
 ```
 
-When the input is the only question on the page, make its label (or fieldset legend) the page heading by passing the text as `heading` instead of `text`, with `size: "l"`. Otherwise use `text` and give the page its own `h1`. `isPageHeading` is deprecated since 10.6.
+When the input is the only question on the page, make its label (or fieldset legend) the page heading with `isPageHeading: true` and `size: "l"`. Otherwise the page needs its own `h1`.
 
 ### Groups of radios and checkboxes
 
@@ -82,8 +84,9 @@ Groups need a `fieldset` with a `legend`. A single checkbox (like “I agree”)
   name: "contactMethod",
   fieldset: {
     legend: {
-      heading: "How would you like to be contacted?",
-      size: "l"
+      text: "How would you like to be contacted?",
+      size: "l",
+      isPageHeading: true
     }
   },
   items: [
@@ -196,7 +199,9 @@ To vary a component, add a modifier class in your own namespace through `classes
 
 ```njk
 {{ card({
-  heading: "Your appointments",
+  heading: {
+    text: "Your appointments"
+  },
   classes: "app-card--compact"
 }) }}
 ```
