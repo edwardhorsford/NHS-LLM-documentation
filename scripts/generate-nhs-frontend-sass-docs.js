@@ -323,10 +323,11 @@ function renderItem(item) {
 function generateMarkdownDocumentation(data) {
   const metadata = data.metadata || {};
   // Exclude vendored third-party code (sass-mq) - it is internal plumbing,
-  // not part of NHS Frontend's public Sass API
+  // not part of NHS Frontend's public Sass API. NHS Frontend's own wrapper
+  // in core/tools/_sass-mq.scss (nhsuk-media-query) is kept.
   const items = (Array.isArray(data.items) ? data.items : []).filter(item => {
     const filePath = normalizeText(item?.file?.path);
-    return !/(^|\/)vendor\//.test(filePath) && !/sass-mq/.test(filePath);
+    return !/(^|\/)vendor\//.test(filePath);
   });
 
   const byType = new Map();
