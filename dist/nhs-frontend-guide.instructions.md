@@ -49,7 +49,7 @@ Every component takes `classes` (added to the root element) and `attributes` (an
 }) }}
 ```
 
-Use `classes` for built-in modifiers (for example `nhsuk-button--secondary`, `nhsuk-fieldset__legend--l`, `nhsuk-input--width-10`), utility classes, and your own classes. The component reference lists each component's modifiers.
+Use `classes` for built-in modifiers (for example `nhsuk-button--secondary`, `nhsuk-input--width-10`, `nhsuk-list--bullet`), utility classes, and your own classes. The component reference lists each component's modifiers.
 
 ### Form inputs
 
