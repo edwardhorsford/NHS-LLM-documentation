@@ -196,8 +196,8 @@ async function extractMacroName(componentDir) {
     const macroPath = path.join(componentDir, 'macro.njk');
     const macroContent = await fs.readFile(macroPath, 'utf-8');
     
-    // Match {% macro macroName(params) %}
-    const match = macroContent.match(/\{%\s*macro\s+(\w+)\s*\(/);
+    // Match {% macro macroName(params) %} or {%- macro macroName(params) %}
+    const match = macroContent.match(/\{%-?\s*macro\s+(\w+)\s*\(/);
     if (match) {
       return match[1];
     }
@@ -374,6 +374,7 @@ function categorizeComponent(component) {
     'button': 'Form Controls',
     'fieldset': 'Form Controls',
     'label': 'Form Controls',
+    'legend': 'Form Controls',
     'hint': 'Form Controls',
     'error-message': 'Form Controls',
     'error-summary': 'Form Controls',
@@ -385,6 +386,7 @@ function categorizeComponent(component) {
     'pagination': 'Navigation',
     'skip-link': 'Navigation',
     'contents-list': 'Navigation',
+    'link': 'Navigation',
     
     // Layout
     'header': 'Layout',
@@ -533,6 +535,12 @@ ${header}Use the component reference table below to find the line number for any
 
 ${TOC_PLACEHOLDER}
 
+## Reading the parameter tables
+
+- Options listed as \`object\` with nested \`text\` and \`html\` usually also accept a plain string when only text is needed, for example \`label: "Full name"\`, \`hint: "..."\` or \`errorMessage: "..."\`. This includes labels, legends, hints, error messages, headings, captions, descriptions and summaries, and table, summary list and tab content. The examples show which options accept a string.
+- A plain string is always escaped. For HTML, use the \`html\` option, including for HTML built in a \`set\` block.
+- Options marked as deprecated still work but will be removed. Use their replacement.
+
 ---
 
 `;
@@ -562,10 +570,14 @@ ${TOC_PLACEHOLDER}
 
       for (const param of flatParams) {
         const type = param.type || 'unknown';
-        const required = param.required ? '✓' : '';
+        // Upstream keeps required: true on deprecated params that have a replacement
+        const required = param.required && !param.deprecated ? '✓' : '';
         let description = param.description || '';
         if (param.isComponent) {
           description = description ? `${description} *(accepts nested component params)*` : '*(accepts nested component params)*';
+        }
+        if (param.deprecated) {
+          description = `**Deprecated in ${param.deprecated}, do not use.** ${description}`.trim();
         }
 
         doc += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
@@ -575,7 +587,9 @@ ${TOC_PLACEHOLDER}
     }
 
     // Examples section
-    const exampleKeys = Object.keys(component.examples);
+    // Upstream keeps fixtures that exercise deprecated options, named as such
+    const exampleKeys = Object.keys(component.examples)
+      .filter(exampleKey => !exampleKey.toLowerCase().includes('deprecated'));
 
     if (exampleKeys.length > 0) {
       doc += `### Examples\n\n`;

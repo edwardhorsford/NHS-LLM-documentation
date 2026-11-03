@@ -3,10 +3,10 @@
 ---
 **Auto-generated Documentation**
 
-- **NHS Frontend Version:** 10.6.1
+- **NHS Frontend Version:** 10.7.1
 - **Git Branch:** detached
-- **Git Commit:** ee96515
-- **Generated:** 2026-09-09 14:23:49 UTC
+- **Git Commit:** 1036222
+- **Generated:** 2026-11-03 14:21:33 UTC
 - **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
 
 *This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
@@ -19,50 +19,59 @@ Use the component reference table below to find the line number for any componen
 
 | Component | Macro | Category | Line |
 |-----------|-------|----------|------|
-| Character count | `characterCount()` | Form Inputs | 2395 |
-| Checkboxes | `checkboxes()` | Form Inputs | 2944 |
-| Date input | `dateInput()` | Form Inputs | 4447 |
-| File upload | `fileUpload()` | Form Inputs | 6337 |
-| Input | `input()` | Form Inputs | 8703 |
-| Password input | `passwordInput()` | Form Inputs | 10563 |
-| Radios | `radios()` | Form Inputs | 10929 |
-| Search input | `searchInput()` | Form Inputs | 11819 |
-| Select | `select()` | Form Inputs | 12318 |
-| Textarea | `textarea()` | Form Inputs | 18343 |
-| Button | `button()` | Form Controls | 352 |
-| Error message | `errorMessage()` | Form Controls | 5893 |
-| Fieldset | `fieldset()` | Form Controls | 6242 |
-| Hint text | `hint()` | Form Controls | 8527 |
-| Label | `label()` | Form Controls | 9363 |
-| Back link | `backLink()` | Navigation | 133 |
-| Breadcrumb | `breadcrumb()` | Navigation | 201 |
-| Contents list | `contentsList()` | Navigation | 4303 |
-| Pagination | `pagination()` | Navigation | 10066 |
-| Skip link | `skipLink()` | Navigation | 13114 |
-| Action link | `actionLink()` | Content | 69 |
-| Caption | `caption()` | Content | 1125 |
-| Card | `card()` | Content | 1147 |
-| Code | `code()` | Content | 4169 |
-| Details | `details()` | Content | 5335 |
-| Do and Don't list | `list()` | Content | 5583 |
-| Heading | `heading()` | Content | 8127 |
-| Hero | `hero()` | Content | 8326 |
-| Images | `image()` | Content | 8572 |
-| Inset text | `insetText()` | Content | 9317 |
-| Legend | `legend()` | Content | 9605 |
-| Panel | `panel()` | Content | 10383 |
-| Scroll | `scroll()` | Content | 11766 |
-| Summary list | `summaryList()` | Content | 13163 |
-| Tables | `table()` | Content | 14658 |
-| Tabs | `tabs()` | Content | 17656 |
-| Tag | `tag()` | Content | 17853 |
-| Task list | `taskList()` | Content | 17940 |
-| Footer | `footer()` | Layout | 6607 |
-| Header | `header()` | Layout | 7312 |
-| Error summary | `errorSummary()` | Notifications | 5965 |
-| Notification banner | `notificationBanner()` | Notifications | 9832 |
-| Warning callout | `warningCallout()` | Notifications | 18565 |
+| Character count | `characterCount()` | Form Inputs | 2911 |
+| Checkboxes | `checkboxes()` | Form Inputs | 3484 |
+| Date input | `dateInput()` | Form Inputs | 5024 |
+| File upload | `fileUpload()` | Form Inputs | 7047 |
+| Input | `input()` | Form Inputs | 9556 |
+| Password input | `passwordInput()` | Form Inputs | 11720 |
+| Radios | `radios()` | Form Inputs | 12106 |
+| Search input | `searchInput()` | Form Inputs | 13067 |
+| Select | `select()` | Form Inputs | 13637 |
+| Textarea | `textarea()` | Form Inputs | 19861 |
+| Button | `button()` | Form Controls | 381 |
+| Error message | `errorMessage()` | Form Controls | 6602 |
+| Fieldset | `fieldset()` | Form Controls | 6951 |
+| Hint text | `hint()` | Form Controls | 9380 |
+| Label | `label()` | Form Controls | 10236 |
+| Legend | `legend()` | Form Controls | 10455 |
+| Back link | `backLink()` | Navigation | 153 |
+| Breadcrumb | `breadcrumb()` | Navigation | 230 |
+| Contents list | `contentsList()` | Navigation | 4880 |
+| Link | `link()` | Navigation | 10659 |
+| Pagination | `pagination()` | Navigation | 11233 |
+| Skip link | `skipLink()` | Navigation | 14471 |
+| Action link | `actionLink()` | Content | 78 |
+| Caption | `caption()` | Content | 1414 |
+| Card | `card()` | Content | 1436 |
+| Code | `code()` | Content | 4746 |
+| Details | `details()` | Content | 6026 |
+| Do and Don't list | `list()` | Content | 6275 |
+| Heading | `heading()` | Content | 8863 |
+| Hero | `hero()` | Content | 9170 |
+| Images | `image()` | Content | 9425 |
+| Inset text | `insetText()` | Content | 10190 |
+| Panel | `panel()` | Content | 11539 |
+| Scroll | `scroll()` | Content | 13014 |
+| Summary list | `summaryList()` | Content | 14520 |
+| Tables | `table()` | Content | 16137 |
+| Tabs | `tabs()` | Content | 19219 |
+| Tag | `tag()` | Content | 19512 |
+| Task list | `taskList()` | Content | 19599 |
+| Visually hidden | `visuallyHidden()` | Content | 20106 |
+| Footer | `footer()` | Layout | 7338 |
+| Header | `header()` | Layout | 8046 |
+| Environment banner | `environmentBanner()` | Notifications | 6542 |
+| Error summary | `errorSummary()` | Notifications | 6674 |
+| Notification banner | `notificationBanner()` | Notifications | 10998 |
+| Warning callout | `warningCallout()` | Notifications | 20139 |
 
+
+## Reading the parameter tables
+
+- Options listed as `object` with nested `text` and `html` usually also accept a plain string when only text is needed, for example `label: "Full name"`, `hint: "..."` or `errorMessage: "..."`. This includes labels, legends, hints, error messages, headings, captions, descriptions and summaries, and table, summary list and tab content. The examples show which options accept a string.
+- A plain string is always escaped. For HTML, use the `html` option, including for HTML built in a `set` block.
+- Options marked as deprecated still work but will be removed. Use their replacement.
 
 ---
 
@@ -82,11 +91,12 @@ Use the component reference table below to find the line number for any componen
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire action link component in a `call` block. |
 | `type` | string |  | Type of action link as a button – `"button"` or `"submit"`. Defaults to `"submit"` unless `href` is provided. |
 | `href` | string | ✓ | The action link `href` attribute. If set, the action link will use an `<a>` tag automatically unless `type` is provided. |
-| `openInNewWindow` | boolean |  | If set to `true`, then the action link will open in a new window. If `type` is set, this has no effect. |
+| `openInNewWindow` | boolean |  | Optional alias for the `openInNewTab` option. |
+| `openInNewTab` | boolean |  | If set to `true`, then the action link will open in a new tab. If `type` is set, this has no effect. |
 | `variant` | string |  | Optional variant of action link. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the action link component. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the action link component. |
-| `element` | string |  | Configured automatically if `href` is provided. |
+| `element` | string |  | **Deprecated in 10.6.0, do not use.** Configured automatically if `href` is provided. |
 
 ### Examples
 
@@ -99,12 +109,13 @@ Use the component reference table below to find the line number for any componen
 }) }}
 ```
 
-#### as a button
+#### opens in a new tab
 
 ```njk
 {{ actionLink({
   text: "Find your nearest A&E",
-  type: "submit"
+  href: "#/find",
+  openInNewTab: true
 }) }}
 ```
 
@@ -122,10 +133,19 @@ Use the component reference table below to find the line number for any componen
 ```njk
 {% call actionLink({
   href: "#/start"
-}) %}
+}) -%}
 Start session<br>
 <span class="nhsuk-u-secondary-text-colour nhsuk-u-font-weight-normal nhsuk-u-font-size-19">(11 cases)</span>
 {%- endcall %}
+```
+
+#### as a button
+
+```njk
+{{ actionLink({
+  text: "Find your nearest A&E",
+  type: "submit"
+}) }}
 ```
 
 ---
@@ -150,7 +170,7 @@ Start session<br>
 | `classes` | string |  | Classes to add to the back link component. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the back link component. |
 | `visuallyHiddenText` | string |  | An optional visually hidden prefix used before the back link text, for example `"Back to"` used by the breadcrumbs component. |
-| `element` | string |  | Configured automatically if `href` is provided. |
+| `element` | string |  | **Deprecated in 10.6.0, do not use.** Configured automatically if `href` is provided. |
 
 ### Examples
 
@@ -160,15 +180,6 @@ Start session<br>
 {{ backLink({
   text: "Back",
   href: "#"
-}) }}
-```
-
-#### as a button
-
-```njk
-{{ backLink({
-  text: "Back",
-  type: "submit"
 }) }}
 ```
 
@@ -191,9 +202,27 @@ Start session<br>
 #### with HTML via call block
 
 ```njk
-{% call backLink() %}
+{% call backLink({}) -%}
 What to expect at A&amp;E
 {%- endcall %}
+```
+
+#### with visually hidden text
+
+```njk
+{{ backLink({
+  text: "A&E",
+  visuallyHiddenText: "Back to"
+}) }}
+```
+
+#### as a button
+
+```njk
+{{ backLink({
+  text: "Back",
+  type: "submit"
+}) }}
 ```
 
 ---
@@ -209,17 +238,17 @@ What to expect at A&amp;E
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the breadcrumb. |
-| `items` | array | ✓ | Array of breadcrumbs items. |
+| `items` | array | ✓ | Array of breadcrumbs items. *(accepts nested component params)* |
 | `items.text` | string | ✓ | Text to use within the breadcrumbs item. |
 | `items.html` | string | ✓ | HTML to use within the breadcrumbs item. |
 | `items.href` | string |  | The breadcrumb item `href` attribute. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the individual crumb. |
-| `text` | string | ✓ | Replaced by `item.text` in the `items` option. |
-| `href` | string | ✓ | Replaced by `item.href` in the `items` option. |
+| `text` | string |  | **Deprecated in 7.1.0, do not use.** Replaced by `item.text` in the `items` option. |
+| `href` | string |  | **Deprecated in 7.1.0, do not use.** Replaced by `item.href` in the `items` option. |
 | `variant` | string |  | Optional variant of breadcrumb. You can use only `"reverse"` or empty values with this option. |
 | `classes` | string |  | Classes to add to the container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the container. |
-| `labelText` | string |  | Replaced by the `ariaLabel` option. |
+| `labelText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `ariaLabel` option. |
 | `ariaLabel` | string |  | Accessible name identifying the landmark to screen readers. Defaults to "Breadcrumb". |
 | `backLink` | object |  | The back link used by the breadcrumbs component on mobile. *(accepts nested component params)* |
 
@@ -360,17 +389,20 @@ What to expect at A&amp;E
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the button. |
-| `element` | string |  | HTML element for the button – `"input"`, `"button"` or `"a"`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. |
+| `element` | string |  | **Deprecated in 10.6.0, do not use.** HTML element for the button – `"input"`, `"button"` or `"a"`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. |
 | `text` | string | ✓ | If `html` or `ariaLabel` is set, this is not required. Text for the button. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` or `ariaLabel` is set, this is not required. HTML for the button. If `html` is provided, the `text` option will be ignored. |
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire button component in a `call` block. |
+| `visuallyHiddenText` | string |  | A visually hidden prefix used before the button text. Defaults to `"Warning"` for warning buttons. If `ariaLabel` is provided, this has no effect. |
 | `name` | string |  | Name for the button. If `href` is provided, this has no effect. |
 | `type` | string |  | Type of button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
 | `value` | string |  | The button `value` attribute. If `href` is provided, this has no effect. |
 | `disabled` | boolean |  | Whether the button should be disabled. If `href` is provided, this has no effect. |
 | `href` | string |  | The button `href` attribute. If set, the button will use an `<a>` tag automatically unless `type` is provided. |
+| `openInNewTab` | boolean |  | If set to `true`, then the button link will open in a new tab unless `type` is provided. |
 | `variant` | string |  | Optional variant of button – `"brand"`, `"login"`, `"reverse"`, `"secondary"`, `"secondary-solid"` or `"warning"`. |
 | `small` | boolean |  | If set to `true`, smaller button size will be used. |
+| `className` | string |  | Optional class to use for the button. Defaults to `"nhsuk-button"`. |
 | `classes` | string |  | Classes to add to the button. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the button. |
 | `ariaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when only an icon is used. |
@@ -437,6 +469,177 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### as a link opens in a new tab
+
+```njk
+{{ button({
+  text: "Link button",
+  href: "#",
+  openInNewTab: true
+}) }}
+```
+
+#### as a link opens in a new tab (with "target" attribute)
+
+```njk
+{{ button({
+  text: "Link button",
+  href: "#",
+  openInNewTab: true,
+  attributes: {
+    target: "_blank"
+  }
+}) }}
+```
+
+#### as a link opens in a new tab (with "rel" attribute)
+
+```njk
+{{ button({
+  text: "Link button",
+  href: "#",
+  openInNewTab: true,
+  attributes: {
+    rel: "noopener"
+  }
+}) }}
+```
+
+#### as a link opens in a new tab (with "target" and "rel" attributes)
+
+```njk
+{{ button({
+  text: "Link button",
+  href: "#",
+  openInNewTab: true,
+  attributes: {
+    target: "_blank",
+    rel: "noopener"
+  }
+}) }}
+```
+
+#### with custom class
+
+```njk
+{{ button({
+  text: "Link as a button",
+  className: "nhsuk-link"
+}) }}
+```
+
+#### with small class
+
+```njk
+{{ button({
+  text: "Save and continue",
+  classes: "nhsuk-button--small"
+}) }}
+```
+
+#### with small class overriding small option
+
+```njk
+{{ button({
+  text: "Save and continue",
+  classes: "nhsuk-button--small",
+  small: true
+}) }}
+```
+
+#### without class
+
+```njk
+{{ button({
+  text: "Default button",
+  className: false
+}) }}
+```
+
+#### with icon
+
+```njk
+{{ button({
+  text: "Increase",
+  icon: "plus"
+}) }}
+```
+
+#### with icon, small
+
+```njk
+{{ button({
+  text: "Increase",
+  icon: "plus",
+  small: true
+}) }}
+```
+
+#### with icon only
+
+```njk
+{{ button({
+  ariaLabel: "Increase",
+  icon: "plus"
+}) }}
+```
+
+#### with icon only, small
+
+```njk
+{{ button({
+  ariaLabel: "Increase",
+  icon: "plus",
+  small: true
+}) }}
+```
+
+#### with icon HTML
+
+```njk
+{{ button({
+  text: "Increase",
+  icon: {
+    html: '<svg class="nhsuk-icon nhsuk-icon--plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">\n  <path d="M13.5 5.5a1.5 1.5 0 0 0-3 0v5h-5a1.5 1.5 0 0 0 0 3h5v5a1.5 1.5 0 0 0 3 0v-5h5a1.5 1.5 0 0 0 0-3h-5v-5Z"/>\n</svg>\n'
+  }
+}) }}
+```
+
+#### with icon HTML, small
+
+```njk
+{{ button({
+  text: "Increase",
+  icon: {
+    html: '<svg class="nhsuk-icon nhsuk-icon--plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">\n  <path d="M13.5 5.5a1.5 1.5 0 0 0-3 0v5h-5a1.5 1.5 0 0 0 0 3h5v5a1.5 1.5 0 0 0 3 0v-5h5a1.5 1.5 0 0 0 0-3h-5v-5Z"/>\n</svg>\n'
+  },
+  small: true
+}) }}
+```
+
+#### with icon HTML only
+
+```njk
+{{ button({
+  ariaLabel: "Increase",
+  icon: {
+    html: '<svg class="nhsuk-icon nhsuk-icon--plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">\n  <path d="M13.5 5.5a1.5 1.5 0 0 0-3 0v5h-5a1.5 1.5 0 0 0 0 3h5v5a1.5 1.5 0 0 0 3 0v-5h5a1.5 1.5 0 0 0 0-3h-5v-5Z"/>\n</svg>\n'
+  }
+}) }}
+```
+
+#### with icon HTML only, small
+
+```njk
+{{ button({
+  ariaLabel: "Increase",
+  icon: {
+    html: '<svg class="nhsuk-icon nhsuk-icon--plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">\n  <path d="M13.5 5.5a1.5 1.5 0 0 0-3 0v5h-5a1.5 1.5 0 0 0 0 3h5v5a1.5 1.5 0 0 0 3 0v-5h5a1.5 1.5 0 0 0 0-3h-5v-5Z"/>\n</svg>\n'
+  },
+  small: true
+}) }}
+```
+
 #### with icon at start
 
 ```njk
@@ -446,6 +649,33 @@ What to expect at A&amp;E
     name: "arrow-left",
     placement: "start"
   }
+}) }}
+```
+
+#### with icon at start and visually hidden text
+
+```njk
+{{ button({
+  text: "Previous",
+  visuallyHiddenText: "Important",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  }
+}) }}
+```
+
+#### with icon at start and visually hidden text, small
+
+```njk
+{{ button({
+  text: "Previous",
+  visuallyHiddenText: "Important",
+  icon: {
+    name: "arrow-left",
+    placement: "start"
+  },
+  small: true
 }) }}
 ```
 
@@ -502,6 +732,15 @@ What to expect at A&amp;E
 {{ button({
   text: "Save and continue",
   preventDoubleClick: false
+}) }}
+```
+
+#### with visually hidden text
+
+```njk
+{{ button({
+  text: "Update",
+  visuallyHiddenText: "Important"
 }) }}
 ```
 
@@ -620,6 +859,16 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### login class overriding variant option
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "brand",
+  classes: "nhsuk-button--login"
+}) }}
+```
+
 #### reverse
 
 ```njk
@@ -732,6 +981,16 @@ What to expect at A&amp;E
     placement: "end"
   },
   small: true
+}) }}
+```
+
+#### reverse class overriding variant option
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "brand",
+  classes: "nhsuk-button--reverse"
 }) }}
 ```
 
@@ -850,6 +1109,16 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### secondary class overriding variant option
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "brand",
+  classes: "nhsuk-button--secondary"
+}) }}
+```
+
 #### secondary, solid background
 
 ```njk
@@ -962,6 +1231,16 @@ What to expect at A&amp;E
     placement: "end"
   },
   small: true
+}) }}
+```
+
+#### secondary, solid background class overriding variant option
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "brand",
+  classes: "nhsuk-button--secondary-solid"
 }) }}
 ```
 
@@ -1080,6 +1359,16 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### warning class overriding variant option
+
+```njk
+{{ button({
+  text: "Continue",
+  variant: "brand",
+  classes: "nhsuk-button--warning"
+}) }}
+```
+
 #### example reverse search button, small
 
 ```njk
@@ -1159,27 +1448,31 @@ What to expect at A&amp;E
 | `heading.id` | string |  | The ID of the heading. |
 | `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. |
 | `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. |
-| `heading.visuallyHiddenText` | string |  | Optional visually hidden prefix used before the heading. |
+| `heading.visuallyHiddenText` | string |  | A visually hidden prefix used before the heading. |
+| `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
+| `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `heading.size` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `heading.level` | integer |  | Optional heading level. Defaults to `2`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `headingHtml` | string | ✓ | Replaced by the `heading.html` option. |
-| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
-| `headingSize` | string |  | Replaced by the `heading.size` option. |
-| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
-| `headingId` | string |  | Replaced by the `heading.id` option. |
-| `headingVisuallyHiddenText` | string |  | Replaced by the `heading.visuallyHiddenText` option. |
+| `headingHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.html` option. |
+| `headingClasses` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.classes` option. |
+| `headingSize` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.size` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.level` option. |
+| `headingId` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.id` option. |
+| `headingVisuallyHiddenText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.visuallyHiddenText` option. |
 | `href` | string |  | The card link `href` attribute. |
+| `openInNewTab` | boolean |  | If set to `true`, then the card link will open in a new tab. |
 | `clickable` | boolean |  | If set to `true`, then the whole card will become a clickable card variant. |
 | `variant` | string |  | Optional variant of card – `"feature"`, `"primary"`, `"secondary"`, `"warning"`, `"non-urgent"`, `"urgent"` or `"emergency"`. |
-| `type` | string |  | Replaced by the `variant` option. |
-| `feature` | boolean |  | Replaced by the `variant: "feature"` option. |
-| `primary` | boolean |  | Replaced by the `variant: "primary"` option. |
-| `secondary` | boolean |  | Replaced by the `variant: "secondary"` option. |
-| `warning` | boolean |  | Replaced by the `variant: "warning"` option. |
-| `imgURL` | string |  | Replaced by the `image.src` option. |
-| `imgALT` | string |  | Replaced by the `image.alt` option. |
+| `type` | string |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant` option. |
+| `feature` | boolean |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant: "feature"` option. |
+| `primary` | boolean |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant: "primary"` option. |
+| `secondary` | boolean |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant: "secondary"` option. |
+| `warning` | boolean |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant: "warning"` option. |
+| `imgURL` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `image.src` option. |
+| `imgALT` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `image.alt` option. |
 | `image` | object |  | Can be used to add an image to the card component. |
 | `image.src` | string | ✓ | The URL of the image in the card. |
 | `image.alt` | string |  | The alternative text of the image in the card. |
@@ -1187,11 +1480,14 @@ What to expect at A&amp;E
 | `description` | object |  | Description to use within the card content. If `descriptionHtml` is provided, the `description` option will be ignored. |
 | `description.text` | string | ✓ | If `html` is set, this is not required. Text to use within the card content. If `html` is provided, the `text` option will be ignored. |
 | `description.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the card content. If `html` is provided, the `text` option will be ignored. |
+| `description.visuallyHiddenText` | string |  | A visually hidden suffix added to the description. |
+| `description.href` | string |  | The card description link `href` attribute. |
+| `description.openInNewTab` | boolean |  | If set to `true`, then the card description link will open in a new tab. |
 | `description.classes` | string |  | Classes to add to the card content. |
 | `description.attributes` | object |  | HTML attributes (for example data attributes) to add to the card content. |
-| `descriptionHtml` | string |  | Replaced by the `description.html` option. |
+| `descriptionHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `description.html` option. |
 | `actions` | object |  | Can be used to add actions to the card component. |
-| `actions.items` | array |  | Array of actions as links for use in the card component. |
+| `actions.items` | array |  | Array of actions as links for use in the card component. *(accepts nested component params)* |
 | `actions.items.id` | string |  | The ID of the action item. |
 | `actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
@@ -1200,6 +1496,7 @@ What to expect at A&amp;E
 | `actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
 | `actions.items.value` | string |  | The `value` attribute for the action as a button. If `href` is provided, this has no effect. |
 | `actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
+| `actions.items.openInNewTab` | boolean |  | If set to `true`, then the action will open in a new tab. |
 | `actions.items.classes` | string |  | Classes to add to the action item. |
 | `actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
 | `actions.classes` | string |  | Classes to add to the actions wrapper. |
@@ -1216,7 +1513,7 @@ What to expect at A&amp;E
   heading: {
     text: "If you need help now, but it's not an emergency"
   }
-}) %}
+}) -%}
 <p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
 {%- endcall %}
 ```
@@ -1228,7 +1525,7 @@ What to expect at A&amp;E
   heading: {
     text: "If you need help now, but it's not an emergency"
   }
-}) %}
+}) -%}
 <p class="nhsuk-card__description">Go to <a href="#">NHS 111 online</a> or <a href="#">call 111</a>.</p>
 {%- endcall %}
 ```
@@ -1246,11 +1543,27 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
   heading: {
     text: "Introduction to care and support",
+    href: "#",
     size: "m",
     level: 3
+  },
+  description:
+    "A quick guide for people who have care and support needs and their carers"
+}) }}
+```
+
+#### basic with heading link opens in a new tab
+
+```njk
+{{ card({
+  heading: {
+    text: "Introduction to care and support",
+    href: "#",
+    size: "m",
+    level: 3,
+    openInNewTab: true
   },
   description:
     "A quick guide for people who have care and support needs and their carers"
@@ -1265,7 +1578,7 @@ What to expect at A&amp;E
     text: "Help from NHS 111",
     level: 3
   }
-}) %}
+}) -%}
 <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
 <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
 <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
@@ -1277,7 +1590,7 @@ What to expect at A&amp;E
 ```njk
 {% call card({
   heading: "Help from NHS 111"
-}) %}
+}) -%}
 <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
 <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
 <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
@@ -1292,7 +1605,7 @@ What to expect at A&amp;E
     text: "Regional Manager",
     level: 3
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1311,6 +1624,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1322,7 +1636,7 @@ What to expect at A&amp;E
     text: "Regional Managers",
     level: 3
   }
-}) %}
+}) -%}
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
@@ -1343,7 +1657,6 @@ What to expect at A&amp;E
   </div>
 </dl>
 
-
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
@@ -1363,6 +1676,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1374,7 +1688,7 @@ What to expect at A&amp;E
     text: "Regional Manager",
     level: 3
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1394,10 +1708,10 @@ What to expect at A&amp;E
   </div>
 </dl>
 
-
 <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
   Add role
 </button>
+
 {%- endcall %}
 ```
 
@@ -1417,7 +1731,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1436,6 +1750,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1455,7 +1770,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1474,6 +1789,47 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
+{%- endcall %}
+```
+
+#### basic with summary list and action opens in a new tab
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    level: 3
+  },
+  actions: {
+    items: [
+      {
+        text: "Delete",
+        href: "#/delete",
+        openInNewTab: true
+      }
+    ]
+  }
+}) -%}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
 {%- endcall %}
 ```
 
@@ -1497,7 +1853,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1516,6 +1872,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1537,7 +1894,7 @@ What to expect at A&amp;E
       href: "#/withdraw"
     }
   ]
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1556,6 +1913,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1579,7 +1937,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1598,6 +1956,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1619,7 +1978,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1638,6 +1997,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1658,7 +2018,7 @@ What to expect at A&amp;E
       false
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1677,6 +2037,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1684,12 +2045,12 @@ What to expect at A&amp;E
 
 ```njk
 {% call card({
-  href: "#",
   heading: {
     text: "Regional Manager",
+    href: "#",
     level: 3
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1708,6 +2069,40 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
+{%- endcall %}
+```
+
+#### basic with summary list and heading link opens in a new tab
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    href: "#",
+    level: 3,
+    openInNewTab: true
+  }
+}) -%}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
 {%- endcall %}
 ```
 
@@ -1726,16 +2121,50 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
-  variant: "secondary",
   heading: {
     text: "Introduction to care and support",
+    href: "#",
     size: "m",
     level: 3
   },
   description: {
     text: "A quick guide for people who have care and support needs and their carers"
-  }
+  },
+  variant: "secondary"
+}) }}
+```
+
+#### secondary with heading link opens in a new tab
+
+```njk
+{{ card({
+  heading: {
+    text: "Introduction to care and support",
+    href: "#",
+    size: "m",
+    level: 3,
+    openInNewTab: true
+  },
+  description: {
+    text: "A quick guide for people who have care and support needs and their carers"
+  },
+  variant: "secondary"
+}) }}
+```
+
+#### secondary with heading link and custom HTML
+
+```njk
+{{ card({
+  heading: {
+    text: "Why we are reinvesting in the NHS Prototype kit",
+    classes: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2",
+    href: "#"
+  },
+  description: {
+    html: '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>\n<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>'
+  },
+  variant: "secondary"
 }) }}
 ```
 
@@ -1748,7 +2177,7 @@ What to expect at A&amp;E
     text: "Help from NHS 111",
     level: 3
   }
-}) %}
+}) -%}
 <p class="nhsuk-body">If you're worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p>
 <p class="nhsuk-body">Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p>
 <p class="nhsuk-body">For a life-threatening emergency call 999.</p>
@@ -1764,7 +2193,7 @@ What to expect at A&amp;E
     text: "Regional Manager",
     level: 3
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1783,6 +2212,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1795,7 +2225,7 @@ What to expect at A&amp;E
     text: "Regional Managers",
     level: 3
   }
-}) %}
+}) -%}
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">East</h4>
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
@@ -1816,7 +2246,6 @@ What to expect at A&amp;E
   </div>
 </dl>
 
-
 <h4 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">West</h4>
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
@@ -1836,6 +2265,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1848,7 +2278,7 @@ What to expect at A&amp;E
     text: "Regional Manager",
     level: 3
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1868,10 +2298,10 @@ What to expect at A&amp;E
   </div>
 </dl>
 
-
 <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
   Add role
 </button>
+
 {%- endcall %}
 ```
 
@@ -1896,7 +2326,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1915,6 +2345,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1937,7 +2368,7 @@ What to expect at A&amp;E
       }
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1956,6 +2387,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -1977,7 +2409,7 @@ What to expect at A&amp;E
       false
     ]
   }
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -1996,6 +2428,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -2003,13 +2436,13 @@ What to expect at A&amp;E
 
 ```njk
 {% call card({
-  href: "#",
-  variant: "secondary",
   heading: {
     text: "Regional Manager",
+    href: "#",
     level: 3
-  }
-}) %}
+  },
+  variant: "secondary"
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -2028,6 +2461,41 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
+{%- endcall %}
+```
+
+#### secondary with summary list and heading link opens in a new tab
+
+```njk
+{% call card({
+  heading: {
+    text: "Regional Manager",
+    href: "#",
+    level: 3,
+    openInNewTab: true
+  },
+  variant: "secondary"
+}) -%}
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      Karen Francis
+    </dd>
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      15 March 1984
+    </dd>
+  </div>
+</dl>
+
 {%- endcall %}
 ```
 
@@ -2040,7 +2508,7 @@ What to expect at A&amp;E
     level: 3
   },
   variant: "non-urgent"
-}) %}
+}) -%}
 <ul>
   <li>you're not sure it's chickenpox</li>
   <li>the skin around the blisters is red, hot or painful (signs of infection)</li>
@@ -2057,7 +2525,7 @@ What to expect at A&amp;E
 {% call card({
   heading: "Ask for an urgent GP appointment if:",
   variant: "urgent"
-}) %}
+}) -%}
 <ul>
   <li>you're an adult and have chickenpox</li>
   <li>you're pregnant and haven't had chickenpox before and you've been near someone with it</li>
@@ -2074,7 +2542,7 @@ What to expect at A&amp;E
 {% call card({
   heading: "Call 999 if you have sudden chest pain that:",
   variant: "emergency"
-}) %}
+}) -%}
 <ul>
   <li>spreads to your arms, back, neck or jaw</li>
   <li>makes your chest feel tight or heavy</li>
@@ -2090,12 +2558,11 @@ What to expect at A&amp;E
 {% call card({
   heading: "Call 999 or go to A&E now if:",
   variant: "emergency"
-}) %}
+}) -%}
 <ul>
   <li>you're coughing up more than just a few spots or streaks of blood – this could be a sign of serious bleeding in your lungs</li>
   <li>you have severe difficulty breathing – you're gasping, choking or not able to get words out</li>
 </ul>
-
 <a class="nhsuk-action-link nhsuk-action-link--reverse" href="#">
   <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
     <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z"/>
@@ -2104,6 +2571,7 @@ What to expect at A&amp;E
     Find your nearest A&amp;E
   </span>
 </a>
+
 {%- endcall %}
 ```
 
@@ -2111,13 +2579,28 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
   heading: {
     text: "Breast screening",
     size: "m"
   },
+  href: "#",
   variant: "primary",
   clickable: true
+}) }}
+```
+
+#### primary (with chevron) opens in a new tab
+
+```njk
+{{ card({
+  heading: {
+    text: "Breast screening",
+    size: "m"
+  },
+  href: "#",
+  variant: "primary",
+  clickable: true,
+  openInNewTab: true
 }) }}
 ```
 
@@ -2125,13 +2608,13 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
   heading: {
     text: "Introduction to care and support",
     size: "m"
   },
   description:
     "A quick guide for people who have care and support needs and their carers",
+  href: "#",
   clickable: true,
   variant: "primary"
 }) }}
@@ -2141,13 +2624,64 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
   heading: {
     text: "Introduction to care and support",
     size: "m"
   },
   description:
     "A quick guide for people who have care and support needs and their carers",
+  href: "#",
+  clickable: true
+}) }}
+```
+
+#### clickable opens in a new tab
+
+```njk
+{{ card({
+  heading: {
+    text: "Introduction to care and support",
+    size: "m"
+  },
+  description:
+    "A quick guide for people who have care and support needs and their carers",
+  href: "#",
+  clickable: true,
+  openInNewTab: true
+}) }}
+```
+
+#### clickable with description link
+
+```njk
+{{ card({
+  heading: {
+    text: "91",
+    visuallyHiddenText: "Applicants",
+    classes: "nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1"
+  },
+  description: {
+    text: "Applicants",
+    href: "#"
+  },
+  clickable: true
+}) }}
+```
+
+#### clickable with description link opens in a new tab
+
+```njk
+{{ card({
+  heading: {
+    text: "91",
+    visuallyHiddenText: "Applicants",
+    classes: "nhsuk-u-font-size-64 nhsuk-u-margin-bottom-1"
+  },
+  description: {
+    text: "Applicants",
+    href: "#",
+    openInNewTab: true
+  },
   clickable: true
 }) }}
 ```
@@ -2156,31 +2690,15 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
   heading: {
     text: "Urgent and emergency care services",
     size: "m"
   },
   description:
     "Services the NHS provides if you need urgent or emergency medical help",
+  href: "#",
   clickable: true,
   variant: "secondary"
-}) }}
-```
-
-#### secondary non-clickable with custom description
-
-```njk
-{{ card({
-  href: "#",
-  variant: "secondary",
-  heading: {
-    text: "Why we are reinvesting in the NHS Prototype kit",
-    classes: "nhsuk-u-font-size-22 nhsuk-u-margin-bottom-2"
-  },
-  description: {
-    html: '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2">21 July 2025</p>\n<p class="nhsuk-card__description">Frankie and Mike explain why we revived the NHS prototype kit, the benefits of prototyping in code and how digital teams in the NHS can get started using it.</p>'
-  }
 }) }}
 ```
 
@@ -2216,7 +2734,7 @@ What to expect at A&amp;E
 {% call card({
   heading: "Feature card heading",
   variant: "feature"
-}) %}
+}) -%}
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -2235,6 +2753,7 @@ What to expect at A&amp;E
     </dd>
   </div>
 </dl>
+
 {%- endcall %}
 ```
 
@@ -2244,15 +2763,13 @@ What to expect at A&amp;E
 {% call card({
   heading: "Flu: Follow-up requested",
   variant: "feature"
-}) %}
+}) -%}
 <p>Sarah Philips (Mum) would like to speak to a member of the team about other options for their child's vaccination.</p>
 <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="#" role="button" draggable="false">
   Record a new consent response
 </a>
 
-
 <h3 class="nhsuk-heading-s">Consent responses</h3>
-
 <div class="nhsuk-card nhsuk-card--clickable">
   <div class="nhsuk-card__content">
     <h4 class="nhsuk-card__heading">
@@ -2280,14 +2797,13 @@ What to expect at A&amp;E
           Response
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <strong class="nhsuk-tag nhsuk-tag--orange">
-            Follow up requested
-          </strong>
+          <strong class="nhsuk-tag nhsuk-tag--orange">Follow up requested</strong>
         </dd>
       </div>
     </dl>
   </div>
 </div>
+
 {%- endcall %}
 ```
 
@@ -2328,13 +2844,13 @@ What to expect at A&amp;E
   image: {
     src: "/nhsuk-frontend/assets/example-image-exercise.jpg"
   },
-  href: "#",
   heading: {
     text: "Exercise",
     size: "m"
   },
   description:
     "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing",
+  href: "#",
   clickable: true
 }) }}
 ```
@@ -2346,13 +2862,13 @@ What to expect at A&amp;E
   image: {
     html: '<figure class="nhsuk-image">\n  <img class="nhsuk-image__img" src="/nhsuk-frontend/assets/example-image-exercise.jpg" alt="">\n  <figcaption class="nhsuk-image__caption">\n    No specific amount of time is recommended, but a typical training session could take less than 20 minutes.\n  </figcaption>\n</figure>\n'
   },
-  href: "#",
   heading: {
     text: "Exercise",
     size: "m"
   },
   description:
     "Programmes, workouts and tips to get you moving and improve your fitness and wellbeing",
+  href: "#",
   clickable: true
 }) }}
 ```
@@ -2380,13 +2896,13 @@ What to expect at A&amp;E
 
 ```njk
 {{ card({
-  href: "#",
-  clickable: true,
   heading: {
     text: "Order a repeat prescription",
     size: "xs",
     level: 3
-  }
+  },
+  href: "#",
+  clickable: true
 }) }}
 ```
 
@@ -2407,7 +2923,7 @@ What to expect at A&amp;E
 | `rows` | string |  | Optional number of textarea rows (default is 5 rows). |
 | `value` | string |  | Optional initial value of the textarea. |
 | `maxlength` | string | ✓ | The maximum number of characters (or words if `countType` is set to `"words"`). |
-| `maxwords` | string | ✓ | Replaced by the `maxlength` and `countType: "words"` options. |
+| `maxwords` | string |  | **Deprecated in 10.5.0, do not use.** Replaced by the `maxlength` and `countType: "words"` options. |
 | `countType` | string |  | The count type used to count the text – `"length"` or `"words"`. Defaults to `"length"`. |
 | `threshold` | string |  | The percentage value of the limit at which point the count message is displayed. If this attribute is set, the count message will be hidden by default. |
 | `label` | object | ✓ | The label used by the character count component. *(accepts nested component params)* |
@@ -2926,6 +3442,30 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### with before and after input content
+
+```njk
+{{ characterCount({
+  label: {
+    heading: "Can you provide more detail?",
+    size: "l"
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  name: "example",
+  maxlength: 200,
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 #### to configure in JavaScript
 
 ```njk
@@ -2973,19 +3513,22 @@ What to expect at A&amp;E
 | `items.id` | string |  | Specific `id` attribute for the checkbox item. If omitted, then component global `idPrefix` option will be applied. |
 | `items.name` | string |  | Specific `name` attribute for the checkbox item. If omitted, then component global `name` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the checkbox input. |
-| `items.label` | object |  | The label used by each checkbox item within the checkboxes component. The `label.size` and `label.heading` options are not supported. *(accepts nested component params)* |
+| `items.label` | object |  | The label used by each checkbox item within the checkboxes component. The `label.caption`, `label.heading` and `label.size` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each checkbox item within the checkboxes component. *(accepts nested component params)* |
-| `items.divider` | string |  | Divider text to separate checkbox items, for example the text `"or"`. |
+| `items.divider` | object |  | Divider text to separate checkbox items, for example the text `"or"`. |
+| `items.divider.text` | string | ✓ | If `html` is set, this is not required. Text for the divider. If `html` is provided, the `text` option will be ignored. |
+| `items.divider.html` | string | ✓ | If `text` is set, this is not required. HTML for the divider. If `html` is provided, the `text` option will be ignored. |
 | `items.checked` | boolean |  | Whether the checkbox should be checked when the page loads. Takes precedence over the top-level `values` option. |
 | `items.conditional` | object |  | Provide additional content to reveal when the checkbox is checked. |
-| `items.conditional.html` | string | ✓ | The HTML to reveal when the checkbox is checked. |
+| `items.conditional.text` | string | ✓ | If `html` is set, this is not required. The text to reveal when the checkbox is checked. |
+| `items.conditional.html` | string | ✓ | If `text` is set, this is not required. The HTML to reveal when the checkbox is checked. |
 | `items.disabled` | boolean |  | If `true`, checkbox will be disabled. |
 | `items.classes` | string |  | Classes to add to the checkbox input tag. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the checkbox input tag. |
 | `items.behaviour` | string |  | Behaviour of the checkbox when JavaScript is enabled – `"exclusive"` or `"inclusive"`. Use `"exclusive"` for a "none" option or `"inclusive"` for an "all" option. |
 | `items.behaviourGroup` | string |  | Used in conjunction with `behaviour` - this should be set to a string which groups checkboxes together into a set for use with a "none" or "all" option. |
-| `items.exclusive` | boolean |  | Replaced by `item.behaviour` in the `items` option. |
-| `items.exclusiveGroup` | string |  | Replaced by `item.behaviourGroup` in the `items` option. |
+| `items.exclusive` | boolean |  | **Deprecated in 10.6.0, do not use.** Replaced by `item.behaviour` in the `items` option. |
+| `items.exclusiveGroup` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by `item.behaviourGroup` in the `items` option. |
 | `values` | array |  | Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item. |
 | `disabled` | boolean |  | If `true`, checkbox inputs used by the checkboxes component will be disabled. |
 | `small` | boolean |  | If set to `true`, small checkboxes will be used. |
@@ -3616,6 +4159,38 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### with conditional content as strings
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "What is your favourite colour?",
+      size: "l"
+    }
+  },
+  idPrefix: "conditional-strings",
+  name: "example",
+  items: [
+    {
+      value: "red",
+      text: "Red",
+      conditional: "I like red"
+    },
+    {
+      value: "green",
+      text: "Green",
+      conditional: "I like green"
+    },
+    {
+      value: "blue",
+      text: "Blue",
+      conditional: "I like blue"
+    }
+  ]
+}) }}
+```
+
 #### with conditional content, special characters
 
 ```njk
@@ -3995,43 +4570,6 @@ What to expect at A&amp;E
 }) }}
 ```
 
-#### with "none" option, deprecated
-
-```njk
-{{ checkboxes({
-  fieldset: {
-    legend: {
-      heading: "How do you want to be contacted about this?",
-      size: "l"
-    }
-  },
-  idPrefix: "none",
-  name: "example",
-  items: [
-    {
-      value: "email",
-      text: "Email"
-    },
-    {
-      value: "phone",
-      text: "Phone"
-    },
-    {
-      value: "text",
-      text: "Text message"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "none",
-      text: "I do not want to be contacted",
-      exclusive: true
-    }
-  ]
-}) }}
-```
-
 #### with "none" option, conditional content
 
 ```njk
@@ -4164,6 +4702,45 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### with before and after inputs content
+
+```njk
+{{ checkboxes({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ],
+  formGroup: {
+    beforeInputs: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInputs: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 ---
 
 ## Code
@@ -4264,7 +4841,7 @@ What to expect at A&amp;E
 ```njk
 {% call code({
   button: true
-}) %}
+}) -%}
 &lt;p&gt;This is an HTML code block.&lt;/p&gt;
 {%- endcall %}
 ```
@@ -4311,16 +4888,16 @@ What to expect at A&amp;E
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the contents list. |
-| `items` | array | ✓ | Array of contents list items objects. |
-| `items.href` | string | ✓ | The contents list item `href` attribute. Required unless `item.current` is set. |
-| `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
+| `items` | array | ✓ | Array of contents list items objects. *(accepts nested component params)* |
 | `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each contents list item. If `html` is provided, the `text` option will be ignored. |
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each contents list item. If `html` is provided, the `text` option will be ignored. |
+| `items.href` | string | ✓ | The contents list item `href` attribute. Required unless `item.current` is set. |
+| `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
 | `items.classes` | string |  | Classes to add to the contents list item. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the contents list item. |
 | `classes` | string |  | Classes to add to the contents list container. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the contents list container. |
-| `landmarkLabel` | string |  | Replaced by the `ariaLabel` option. |
+| `landmarkLabel` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `ariaLabel` option. |
 | `ariaLabel` | string |  | The accessible name for the navigation landmark that wraps the contents list. Defaults to `"Pages in this guide"`. |
 | `visuallyHiddenText` | string |  | Visually hidden heading for the contents list items. Defaults to `"Contents"`. |
 
@@ -4456,9 +5033,10 @@ What to expect at A&amp;E
 |-----------|------|----------|-------------|
 | `id` | string | ✓ | This is used for the main component and to compose the `id` attribute for each item. |
 | `namePrefix` | string |  | Optional prefix. This is used to prefix each date input `name` attribute, wrapped in `[` and `]` – for example, `namePrefix: "dob"` will output the `name` attributes `dob[day]`, `dob[month]` and `dob[year]` respectively. |
-| `items` | array |  | The inputs within the date input component. The `input.errorMessage` and `input.hint` options are not supported. *(accepts nested component params)* |
+| `items` | array |  | The inputs within the date input component. The `input.code`, `input.errorMessage`, `input.formGroup`, `input.hint` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `items.name` | string | ✓ | Item-specific `name` attribute. Defaults to `"day"`, `"month"` or `"year"`. |
-| `items.label` | object |  | Item-specific label. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `items.value` | string |  | If provided, it will be used as the initial `value` attribute of the input. |
+| `items.label` | object |  | Item-specific label. The `label.caption`, `label.heading` and `label.size` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `items.error` | boolean |  | If set to `true`, show a red border on the item input. |
 | `hint` | object |  | Can be used to add a hint to the date input component. *(accepts nested component params)* |
 | `errorMessage` | object |  | Can be used to add an error message to the date input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`. *(accepts nested component params)* |
@@ -4472,20 +5050,20 @@ What to expect at A&amp;E
 | `formGroup.afterInputs.text` | string | ✓ | Text to add after the inputs. If `html` is provided, the `text` option will be ignored. |
 | `formGroup.afterInputs.html` | string | ✓ | HTML to add after the inputs. If `html` is provided, the `text` option will be ignored. |
 | `fieldset` | object |  | Can be used to add a fieldset to the date input component. The `fieldset.html` option is not supported. *(accepts nested component params)* |
-| `day` | object |  | Can be used to customise the day input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `day` | object |  | Can be used to customise the day input within the date input component. The `input.code`, `input.errorMessage`, `input.formGroup`, `input.hint` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `day.name` | string |  | The `name` attribute for the day input. Defaults to `"day"`. |
 | `day.value` | string |  | The `value` attribute for the day input. |
-| `day.label` | object |  | The label used by the day input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `day.label` | object |  | The label used by the day input. The `label.caption`, `label.heading` and `label.size` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `day.error` | boolean |  | If set to `true`, show a red border on the day input. |
-| `month` | object |  | Can be used to customise the month input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `month` | object |  | Can be used to customise the month input within the date input component. The `input.code`, `input.errorMessage`, `input.formGroup`, `input.hint` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `month.name` | string |  | The `name` attribute for the month input. Defaults to `"month"`. |
 | `month.value` | string |  | The `value` attribute for the month input. |
-| `month.label` | object |  | The label used by the month input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `month.label` | object |  | The label used by the month input. The `label.caption`, `label.heading` and `label.size` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `month.error` | boolean |  | If set to `true`, show a red border on the month input. |
-| `year` | object |  | Can be used to customise the year input within the date input component. The `input.formGroup` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
+| `year` | object |  | Can be used to customise the year input within the date input component. The `input.code`, `input.errorMessage`, `input.formGroup`, `input.hint` and `input.inputWrapper` options are not supported. *(accepts nested component params)* |
 | `year.name` | string |  | The `name` attribute for the year input. Defaults to `"year"`. |
 | `year.value` | string |  | The `value` attribute for the year input. |
-| `year.label` | object |  | The label used by the year input. The `label.size` and `label.heading` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
+| `year.label` | object |  | The label used by the year input. The `label.caption`, `label.heading` and `label.size` options are not supported. Defaults to the `name` option capitalised. *(accepts nested component params)* |
 | `year.error` | boolean |  | If set to `true`, show a red border on the year input. |
 | `values` | object |  | An optional object used to specify `value` attributes for the inputs within the date input component without setting `items`. |
 | `values.day` | string |  | The `value` attribute for the day input. |
@@ -4631,6 +5209,72 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### with fields
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
+  day: {
+    value: "5"
+  },
+  month: {
+    value: "8"
+  },
+  year: {
+    value: "2024"
+  }
+}) }}
+```
+
+#### with fields as strings
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
+  day: "5",
+  month: "8",
+  year: "2024"
+}) }}
+```
+
+#### with fields as numbers
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "For example, 11 2023"
+  },
+  id: "example",
+  day: 5,
+  month: 8,
+  year: 2024
+}) }}
+```
+
 #### with values
 
 ```njk
@@ -4649,6 +5293,28 @@ What to expect at A&amp;E
     day: "5",
     month: "8",
     year: "2024"
+  }
+}) }}
+```
+
+#### with values as numbers
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  values: {
+    day: 5,
+    month: 8,
+    year: 2024
   }
 }) }}
 ```
@@ -5330,6 +5996,31 @@ What to expect at A&amp;E
 }) }}
 ```
 
+#### with before and after inputs content
+
+```njk
+{{ dateInput({
+  fieldset: {
+    legend: {
+      heading: "What is your date of birth?",
+      size: "l"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  id: "example",
+  formGroup: {
+    beforeInputs: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInputs: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 ---
 
 ## Details
@@ -5347,8 +6038,8 @@ What to expect at A&amp;E
 | `summary.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the summary element (the visible part of the details element). If `html` is provided, the `text` option will be ignored. |
 | `summary.classes` | string |  | Classes to add to the summary element. |
 | `summary.attributes` | object |  | HTML attributes (for example data attributes) to add to the summary element. |
-| `summaryText` | string | ✓ | Replaced by the `summary.text` option. |
-| `summaryHtml` | string | ✓ | Replaced by the `summary.html` option. |
+| `summaryText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `summary.text` option. |
+| `summaryHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `summary.html` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the disclosed part of the details element. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the disclosed part of the details element. If `html` is provided, the `text` option will be ignored. |
 | `id` | string |  | The `id` to add to the details element. |
@@ -5413,7 +6104,7 @@ What to expect at A&amp;E
   summary: {
     text: "How to find your NHS number"
   }
-}) %}
+}) -%}
 <p>An NHS number is a 10 digit number, like <span class="nhsuk-u-nowrap">999 123 4567</span>.</p>
 <p>You can find your NHS number by logging in to the NHS App or on any document the NHS has sent you, such as your:</p>
 <ul>
@@ -5491,7 +6182,7 @@ What to expect at A&amp;E
   summary: {
     text: "Opening times"
   },
-  html: '\n<table class="nhsuk-table nhsuk-table--no-last-row-border">\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Day of the week\n      </th>\n      <th class="nhsuk-table__header" scope="col">\n        Opening hours\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Monday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Tuesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Wednesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Thursday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Friday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Saturday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 1pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Sunday\n      </th>\n      <td class="nhsuk-table__cell">\n        Closed\n      </td>\n    </tr>\n  </tbody>\n</table>\n',
+  html: '<table class="nhsuk-table nhsuk-table--no-last-row-border">\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Day of the week\n      </th>\n      <th class="nhsuk-table__header" scope="col">\n        Opening hours\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Monday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Tuesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Wednesday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Thursday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Friday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 6pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Saturday\n      </th>\n      <td class="nhsuk-table__cell">\n        9am to 1pm\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="row">\n        Sunday\n      </th>\n      <td class="nhsuk-table__cell">\n        Closed\n      </td>\n    </tr>\n  </tbody>\n</table>\n',
   classes: "nhsuk-expander"
 }) }}
 ```
@@ -5504,7 +6195,7 @@ What to expect at A&amp;E
     text: "Opening times"
   },
   classes: "nhsuk-expander"
-}) %}
+}) -%}
 <table class="nhsuk-table nhsuk-table--no-last-row-border">
   <thead class="nhsuk-table__head">
     <tr class="nhsuk-table__row">
@@ -5575,6 +6266,7 @@ What to expect at A&amp;E
     </tr>
   </tbody>
 </table>
+
 {%- endcall %}
 ```
 
@@ -5591,7 +6283,7 @@ What to expect at A&amp;E
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the do and don't list component. |
-| `title` | string | ✓ | Replaced by the `heading.text` option. |
+| `title` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.text` option. |
 | `heading` | object | ✓ | Heading to be displayed on the do and don't list component. *(accepts nested component params)* |
 | `heading.id` | string |  | The ID of the heading. |
 | `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
@@ -5600,11 +6292,11 @@ What to expect at A&amp;E
 | `heading.level` | integer |  | Optional heading level. Defaults to `3`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.level` option. |
 | `icon` | string |  | Optional icon modifier for the do and don't list items – `"cross"` or `"tick"`. Defaults to `"tick"`. |
-| `type` | string | ✓ | Replaced by the `icon` option. |
+| `type` | string |  | **Deprecated in 10.4.0, do not use.** Replaced by the `icon` option. |
 | `items` | array | ✓ | Array of do and don't items objects. |
-| `items.item` | string | ✓ | Replaced by the `item.text` and `item.html` options. |
+| `items.item` | string |  | **Deprecated in 10.1.0, do not use.** Replaced by the `item.text` and `item.html` options. |
 | `items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each do and don't item. If `html` is provided, the `text` option will be ignored. |
 | `prefixText` | string |  | Optional prefix text used before each do and don't item. Defaults to `"do not"` when `type` is `"cross"`. |
@@ -5722,26 +6414,6 @@ What to expect at A&amp;E
 }) }}
 ```
 
-#### (do) with deprecated options
-
-```njk
-{{ list({
-  title: "Do",
-  icon: "tick",
-  items: [
-    {
-      item: "cover blisters with a soft plaster or padded dressing"
-    },
-    {
-      item: "wash your hands before touching a burst blister"
-    },
-    {
-      item: "allow the fluid in a burst blister to drain before covering it with a plaster or dressing"
-    }
-  ]
-}) }}
-```
-
 #### (do) with custom prefix
 
 ```njk
@@ -5813,29 +6485,6 @@ What to expect at A&amp;E
 }) }}
 ```
 
-#### (don't) with deprecated options
-
-```njk
-{{ list({
-  title: "Don't",
-  icon: "cross",
-  items: [
-    {
-      item: "burst a blister yourself"
-    },
-    {
-      item: "peel the skin off a burst blister"
-    },
-    {
-      item: "pick at the edges of the remaining skin"
-    },
-    {
-      item: "wear the shoes or use the equipment that caused your blister until it heals"
-    }
-  ]
-}) }}
-```
-
 #### (don't) with custom prefix
 
 ```njk
@@ -5890,6 +6539,66 @@ What to expect at A&amp;E
 
 ---
 
+## Environment banner
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `environmentBanner`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the environment banner. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the environment banner. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the environment banner. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire environment banner component in a `call` block. |
+| `name` | object |  | Environment name. |
+| `name.text` | string | ✓ | If `html` is set, this is not required. Text for the environment name. If `html` is provided, the `text` option will be ignored. |
+| `name.html` | string | ✓ | If `text` is set, this is not required. HTML for the environment name. If `html` is provided, the `text` option will be ignored. |
+| `tag` | object |  | Environment tag. If set to `false`, remove the tag. *(accepts nested component params)* |
+| `containerClasses` | string |  | Classes to add to the environment banner container, useful if you want to make the environment banner fixed width. |
+| `classes` | string |  | Classes to add to the environment banner. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the environment banner. |
+| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"`, `"warm-yellow"` or `"yellow"`. |
+
+### Examples
+
+#### with HTML
+
+```njk
+{{ environmentBanner({
+  tag: {
+    text: "Custom",
+    colour: "red"
+  },
+  html: 'This is a %{name} environment for <a class="nhsuk-link nhsuk-link--reverse" href="https://github.com/nhsuk/nhsuk-frontend/pulls">pull request #1234</a>'
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call environmentBanner({
+  tag: {
+    text: "Custom",
+    colour: "red"
+  }
+}) -%}
+This is a %{name} environment for <a class="nhsuk-link nhsuk-link--reverse" href="https://github.com/nhsuk/nhsuk-frontend/pulls">pull request #1234</a>
+{%- endcall %}
+```
+
+#### without tag
+
+```njk
+{{ environmentBanner({
+  tag: false
+}) }}
+```
+
+---
+
 ## Error message
 
 [↑ Back to top](#table-of-contents)
@@ -5937,7 +6646,7 @@ What to expect at A&amp;E
 #### with HTML via call block
 
 ```njk
-{% call errorMessage() %}
+{% call errorMessage({}) -%}
 Postcode must not include &amp; and &lt;
 {%- endcall %}
 ```
@@ -5979,20 +6688,20 @@ Postcode must not include &amp; and &lt;
 | `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `titleText` | string | ✓ | Replaced by the `heading.text` option. |
-| `titleHtml` | string | ✓ | Replaced by the `heading.html` option. |
+| `titleText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.text` option. |
+| `titleHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.html` option. |
 | `description` | object |  | Description of the errors. |
 | `description.text` | string | ✓ | If `html` is set, this is not required. Text to use for the description of the errors. If `html` is provided, the `text` option will be ignored. |
 | `description.html` | string | ✓ | If `text` is set, this is not required. HTML to use for the description of the errors. If `html` is provided, the `text` option will be ignored. |
 | `description.classes` | string |  | Classes to add to the error summary body. |
 | `description.attributes` | object |  | HTML attributes (for example data attributes) to add to the error summary body. |
-| `descriptionText` | string |  | Replaced by the `description.text` option. |
-| `descriptionHtml` | string |  | Replaced by the `description.html` option. |
+| `descriptionText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `description.text` option. |
+| `descriptionHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `description.html` option. |
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire error summary component in a `call` block. |
 | `errorList` | array |  | A list of errors to include in the error summary. |
-| `errorList.href` | string |  | The error `href` attribute. If set, the error will become a link. |
 | `errorList.text` | string | ✓ | If `html` is set, this is not required. Text for the error link item. If `html` is provided, the `text` option will be ignored. |
 | `errorList.html` | string | ✓ | If `text` is set, this is not required. HTML for the error link item. If `html` is provided, the `text` option will be ignored. |
+| `errorList.href` | string |  | The error `href` attribute. If set, the error will become a link. |
 | `errorList.attributes` | object |  | HTML attributes (for example data attributes) to add to the error link. |
 | `disableAutoFocus` | boolean |  | Prevent moving focus to the error summary when the page loads. |
 | `classes` | string |  | Classes to add to the error-summary container. |
@@ -6151,7 +6860,7 @@ Postcode must not include &amp; and &lt;
       href: "#example-day"
     }
   ]
-}) %}
+}) -%}
 Describe the errors and <span>how to correct them</span>
 {%- endcall %}
 ```
@@ -6293,7 +7002,7 @@ Describe the errors and <span>how to correct them</span>
     heading: "What is your address?",
     size: "l"
   }
-}) %}
+}) -%}
 <div class="nhsuk-form-group">
   <label class="nhsuk-label" for="address-line1">
     Address line 1
@@ -6321,6 +7030,7 @@ Describe the errors and <span>how to correct them</span>
   </label>
   <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
 </div>
+
 {%- endcall %}
 ```
 
@@ -6589,6 +7299,27 @@ Describe the errors and <span>how to correct them</span>
 }) }}
 ```
 
+#### with before and after input content
+
+```njk
+{{ fileUpload({
+  label: {
+    heading: "Upload a file",
+    size: "l"
+  },
+  id: "file-upload",
+  name: "file-upload",
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 #### to configure in JavaScript
 
 ```njk
@@ -6623,25 +7354,28 @@ Describe the errors and <span>how to correct them</span>
 | `navigation.heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `navigation.heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `navigation.heading.href` | string |  | If set, the heading will become a link. |
+| `navigation.heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `navigation.heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `navigation.heading.classes` | string |  | Classes to add to the heading. |
 | `navigation.heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `navigation.title` | string |  | Replaced by the `navigation.heading.text` option. |
+| `navigation.title` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `navigation.heading.text` option. |
 | `navigation.text` | string |  | Optional text to use within each navigation section column. If `html` is provided, the `text` option will be ignored. |
 | `navigation.html` | string |  | Optional HTML to use within each navigation section column. If `html` is provided, the `text` option will be ignored. |
 | `navigation.width` | string |  | Width of each navigation section column in the footer. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"one-quarter"`. |
-| `navigation.items` | array |  | Contains the array of footer navigation link items for this group. |
+| `navigation.items` | array |  | Contains the array of footer navigation link items for this group. *(accepts nested component params)* |
 | `navigation.items.href` | string | ✓ | Footer navigation link `href` attribute. |
+| `navigation.items.openInNewTab` | boolean |  | If set to `true`, then the footer navigation link will open in a new tab. |
 | `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each footer navigation link. If `html` is provided, the `text` option will be ignored. |
 | `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each footer navigation link. If `html` is provided, the `text` option will be ignored. |
 | `navigation.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the footer navigation link. |
 | `meta` | object |  | The meta section of the footer after any navigation, before the copyright information. |
 | `meta.visuallyHiddenText` | string |  | Visually hidden heading for meta `items` links. Defaults to `"Support links"`. |
-| `meta.visuallyHiddenTitle` | string |  | Replaced by the `meta.visuallyHiddenText` option. |
+| `meta.visuallyHiddenTitle` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `meta.visuallyHiddenText` option. |
 | `meta.html` | string |  | HTML to add to the meta section of the footer, which will appear below any links specified using meta `items`. |
 | `meta.text` | string |  | Text to add to the meta section of the footer, which will appear below any links specified using meta `items`. If meta `html` is specified, this option is ignored. |
-| `meta.items` | array |  | Contains the array of key policy footer link items. |
+| `meta.items` | array |  | Contains the array of key policy footer link items. *(accepts nested component params)* |
 | `meta.items.href` | string | ✓ | Footer meta link `href` attribute. |
+| `meta.items.openInNewTab` | boolean |  | If set to `true`, then the footer meta link will open in a new tab. |
 | `meta.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each footer meta link. If `html` is provided, the `text` option will be ignored. |
 | `meta.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each footer meta link. If `html` is provided, the `text` option will be ignored. |
 | `meta.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the footer meta link. |
@@ -6735,7 +7469,7 @@ Describe the errors and <span>how to correct them</span>
 #### with meta HTML via call block
 
 ```njk
-{% call footer() %}
+{% call footer({}) -%}
 <p class="nhsuk-body-s">NHS prototype kit v8.0.0</p>
 {%- endcall %}
 ```
@@ -7321,23 +8055,24 @@ Describe the errors and <span>how to correct them</span>
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the header. |
 | `logo` | object |  | Object containing options for the logo. |
-| `logo.href` | string |  | The `href` of the link for the logo. If not set, and a `service.href` is set, or both are set to same value, then the logo and service name will be combined into a single link. |
+| `logo.href` | string |  | The logo link `href` attribute. If not set, and a `service.href` is set, or both are set to same value, then the logo and service name will be combined into a single link. |
 | `logo.src` | string |  | The path of the logo image, if you are not using the default NHS logo. |
 | `logo.alt` | string |  | The alt text for the logo. Defaults to `"NHS"`. |
 | `logo.ariaLabel` | string |  | The `aria-label` for a linked logo. Defaults to `"NHS homepage"`. |
 | `service` | object |  | Object containing options for the service name. |
 | `service.text` | string |  | The text to use for the service name. |
-| `service.href` | string |  | The `href` of the link for the service name. |
+| `service.href` | string |  | The service name link `href` attribute. |
 | `inline` | boolean |  | If set to `true`, positions the search box (or account links) inline with the NHS logo. |
 | `organisation` | object |  | Settings for header with organisational logo. |
 | `organisation.name` | string |  | Organisation name. |
 | `organisation.split` | string |  | Longer organisation names can be split onto multiple lines. |
 | `organisation.descriptor` | string |  | Organisation descriptor. |
 | `navigation` | object |  | Object containing settings for the primary navigation. |
-| `navigation.items` | array |  | Array of navigation links for use in the header. |
-| `navigation.items.href` | string |  | The href of a navigation item in the header. |
+| `navigation.items` | array |  | Array of navigation links for use in the header. *(accepts nested component params)* |
 | `navigation.items.text` | string | ✓ | If `html` is set, this is not required. Text for the navigation item. If `html` is provided, the `text` option will be ignored. |
 | `navigation.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the navigation item. If `html` is provided, the `text` option will be ignored. |
+| `navigation.items.href` | string |  | The navigation item `href` attribute. |
+| `navigation.items.openInNewTab` | boolean |  | If set to `true`, then the navigation item link will open in a new tab. |
 | `navigation.items.current` | boolean |  | Set to `true` if this links to the current page being shown. |
 | `navigation.items.active` | boolean |  | Set to `true` if the current page is within this section, but the link doesn't necessarily link to the current page |
 | `navigation.items.classes` | string |  | Classes to add to the list item containing the link. |
@@ -7353,9 +8088,9 @@ Describe the errors and <span>how to correct them</span>
 | `search.action` | string |  | The search form `action` attribute. Defaults to `"https://www.nhs.uk/search"`. |
 | `search.method` | string |  | The search form `method` attribute. Defaults to `"get"`. |
 | `search.name` | string |  | The `name` attribute for the search input. Defaults to `"q"`. |
-| `search.placeholder` | string |  | Replaced by the `search.input.placeholder` option. |
-| `search.visuallyHiddenLabel` | string |  | Replaced by the `search.label.visuallyHiddenText` option. |
-| `search.visuallyHiddenButton` | string |  | Replaced by the `search.button.ariaLabel` option. |
+| `search.placeholder` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `search.input.placeholder` option. |
+| `search.visuallyHiddenLabel` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `search.label.visuallyHiddenText` option. |
+| `search.visuallyHiddenButton` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `search.button.ariaLabel` option. |
 | `search.label` | object |  | Optional object allowing customisation of the search input label. *(accepts nested component params)* |
 | `search.label.visuallyHiddenText` | string |  | The visually hidden label text for the search input. Defaults to `"Search the NHS website"`. |
 | `search.input` | object |  | Optional object allowing customisation of the search input. *(accepts nested component params)* |
@@ -7365,11 +8100,12 @@ Describe the errors and <span>how to correct them</span>
 | `search.classes` | string |  | Classes to add to the search element. |
 | `search.attributes` | object |  | HTML attributes (for example data attributes) to add to the search element. |
 | `account` | object |  | Object containing settings for the account section of the header. |
-| `account.items` | array |  | Array of account items for use in the header. |
-| `account.items.href` | string |  | The href of an account item in the header. |
+| `account.items` | array |  | Array of account items for use in the header. *(accepts nested component params)* |
 | `account.items.text` | string | ✓ | If `html` is set, this is not required. Text for the account item. If `html` is provided, the `text` option will be ignored. |
 | `account.items.html` | string | ✓ | If `text` is set, this is not required. HTML for the account item. If `html` is provided, the `text` option will be ignored. |
 | `account.items.icon` | boolean |  | Whether to include the account icon for the account item. Defaults to `false`. |
+| `account.items.href` | string |  | The account item `href` attribute. |
+| `account.items.openInNewTab` | boolean |  | If set to `true`, then the account item link will open in a new tab. |
 | `account.items.action` | string |  | If set, the item will become a button wrapped in a form with the action given. Useful for log out buttons. |
 | `account.items.method` | string |  | The value to use for the `method` of the form if `action` is set. Defaults to `"post"`. |
 | `account.items.classes` | string |  | Classes to add to the list item containing the account item. |
@@ -8140,6 +8876,7 @@ Describe the errors and <span>how to correct them</span>
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire heading component in a `call` block. |
 | `visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `href` | string |  | If set, the heading will become a link. |
+| `openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `size` | string |  | Size of the heading – `"xxs"`, `"xs"`, `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `sizes` | array |  | Allowed sizes for the heading – Defaults to `["xxs", "xs", "s", "m", "l", "xl"]`. |
@@ -8166,6 +8903,15 @@ Describe the errors and <span>how to correct them</span>
 ```njk
 {{ heading({
   text: "What is your full name?",
+  size: "l"
+}) }}
+```
+
+#### text escaping
+
+```njk
+{{ heading({
+  text: "What to expect at A&E",
   size: "l"
 }) }}
 ```
@@ -8279,6 +9025,63 @@ Describe the errors and <span>how to correct them</span>
 }) }}
 ```
 
+#### with HTML
+
+```njk
+{{ heading({
+  html: "What to expect at A&amp;E",
+  size: "l"
+}) }}
+```
+
+#### with HTML and caption
+
+```njk
+{{ heading({
+  html: "What to expect at A&amp;E",
+  caption: "Urgent and emergency care services",
+  size: "l"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call heading({
+  size: "l"
+}) -%}
+What to expect at A&amp;E
+{%- endcall %}
+```
+
+#### with HTML via call block and caption "start"
+
+```njk
+{% call heading({
+  caption: {
+    text: "Urgent and emergency care services",
+    placement: "start"
+  },
+  size: "l"
+}) -%}
+What to expect at A&amp;E
+{%- endcall %}
+```
+
+#### with HTML via call block and caption "end"
+
+```njk
+{% call heading({
+  caption: {
+    text: "Urgent and emergency care services",
+    placement: "end"
+  },
+  size: "l"
+}) -%}
+What to expect at A&amp;E
+{%- endcall %}
+```
+
 #### with link
 
 ```njk
@@ -8293,9 +9096,20 @@ Describe the errors and <span>how to correct them</span>
 
 ```njk
 {{ heading({
+  href: "#/result/1",
   text: "Skin colour changes",
   caption: "A to Z of NHS health writing",
+  size: "l"
+}) }}
+```
+
+#### with link opens in a new tab
+
+```njk
+{{ heading({
   href: "#/result/1",
+  text: "Skin colour changes",
+  openInNewTab: true,
   size: "l"
 }) }}
 ```
@@ -8321,6 +9135,36 @@ Describe the errors and <span>how to correct them</span>
 }) }}
 ```
 
+#### with custom class and size
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  className: "app-heading",
+  size: "s"
+}) }}
+```
+
+#### with custom class and size as modifier
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  className: "app-heading",
+  classPrefix: "app-heading--",
+  size: "s"
+}) }}
+```
+
+#### without class
+
+```njk
+{{ heading({
+  text: "What is your full name?",
+  className: false
+}) }}
+```
+
 ---
 
 ## Hero
@@ -8341,6 +9185,7 @@ Describe the errors and <span>how to correct them</span>
 | `content.heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `content.heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `content.heading.href` | string |  | If set, the heading will become a link. |
+| `content.heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `content.heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `content.heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. Defaults to `"xl"`. |
 | `content.heading.level` | integer |  | Optional heading level. Defaults to `1`. |
@@ -8357,18 +9202,19 @@ Describe the errors and <span>how to correct them</span>
 | `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. Defaults to `"xl"`. |
 | `heading.level` | integer |  | Optional heading level. Defaults to `1`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
-| `headingSize` | string |  | Replaced by the `heading.size` option. |
-| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
+| `headingClasses` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.classes` option. |
+| `headingSize` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.size` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.level` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the hero. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. Text to use within the hero. If `text` is provided, the `html` option will be ignored. |
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire hero component in a `call` block. |
-| `imageURL` | string |  | Replaced by the `image.src` option. |
+| `imageURL` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `image.src` option. |
 | `image` | object |  | Can be used to add an image to the hero component. |
 | `image.src` | string | ✓ | The URL of the image in the hero. |
 | `width` | string |  | Width of the hero content. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. Defaults to `"one-half"`. |
@@ -8386,8 +9232,7 @@ Describe the errors and <span>how to correct them</span>
   heading: {
     text: "We're here for you"
   },
-  text: "Helping you take control of your health and wellbeing.",
-  border: false
+  text: "Helping you take control of your health and wellbeing."
 }) }}
 ```
 
@@ -8398,8 +9243,7 @@ Describe the errors and <span>how to correct them</span>
   heading: {
     text: "We're here for you"
   },
-  text: "Helping you take control of your health and wellbeing.",
-  border: false
+  text: "Helping you take control of your health and wellbeing."
 }) }}
 ```
 
@@ -8408,8 +9252,7 @@ Describe the errors and <span>how to correct them</span>
 ```njk
 {{ hero({
   heading: "Prototyping",
-  text: "Helping you take control of your health and wellbeing.",
-  border: false
+  text: "Helping you take control of your health and wellbeing."
 }) }}
 ```
 
@@ -8477,6 +9320,18 @@ Describe the errors and <span>how to correct them</span>
 }) }}
 ```
 
+#### without border
+
+```njk
+{{ hero({
+  heading: {
+    text: "We're here for you"
+  },
+  text: "Helping you take control of your health and wellbeing.",
+  border: false
+}) }}
+```
+
 #### product page
 
 ```njk
@@ -8496,8 +9351,7 @@ Describe the errors and <span>how to correct them</span>
         border: false
       }
     }
-  ],
-  border: false
+  ]
 }) }}
 ```
 
@@ -8517,8 +9371,7 @@ Describe the errors and <span>how to correct them</span>
         border: false
       }
     }
-  ],
-  border: false
+  ]
 }) }}
 ```
 
@@ -8562,7 +9415,7 @@ Describe the errors and <span>how to correct them</span>
 #### with HTML via call block
 
 ```njk
-{% call hint() %}
+{% call hint({}) -%}
 This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App
 {%- endcall %}
 ```
@@ -8693,7 +9546,7 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 {% call image({
   caption:
     "No specific amount of time is recommended, but a typical training session could take less than 20 minutes."
-}) %}
+}) -%}
 <img src="/nhsuk-frontend/assets/example-image-exercise.jpg" alt="">
 {%- endcall %}
 ```
@@ -9207,6 +10060,26 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 }) }}
 ```
 
+#### with before and after input content
+
+```njk
+{{ input({
+  label: {
+    heading: "What is your full name?",
+    size: "l"
+  },
+  name: "example",
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 #### example email address
 
 ```njk
@@ -9353,7 +10226,7 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 #### with HTML via call block
 
 ```njk
-{% call insetText() %}
+{% call insetText({}) -%}
 <p>You can report any suspected side effect using the <a href="#">Yellow Card safety scheme</a>.</p>
 {%- endcall %}
 ```
@@ -9379,14 +10252,14 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 | `for` | string |  | The label `for` attribute, the ID of the input the label is associated with. |
 | `heading` | object |  | Whether the label also acts as a heading. *(accepts nested component params)* |
 | `heading.id` | string |  | The ID of the label heading. |
-| `heading.text` | string |  | If `html` is set, this is not required. Text to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
-| `heading.html` | string |  | If `text` is set, this is not required. HTML to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label as a heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the label as a heading. |
 | `heading.caption` | object |  | Optional caption for the label as a heading. *(accepts nested component params)* |
 | `heading.size` | string |  | Size of the label as a heading – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `heading.level` | integer |  | Optional label heading level. Defaults to `1`. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the label heading. |
-| `isPageHeading` | boolean |  | Replaced by the `heading` option. |
+| `isPageHeading` | boolean |  | **Deprecated in 10.6.1, do not use.** Replaced by the `heading` option. |
 | `size` | string |  | Size of the label – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `classes` | string |  | Classes to add to the label tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the label tag. |
@@ -9449,7 +10322,7 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 }) }}
 ```
 
-#### size class
+#### with size class
 
 ```njk
 {{ label({
@@ -9458,7 +10331,7 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 }) }}
 ```
 
-#### size class overriding size option
+#### with size class overriding size option
 
 ```njk
 {{ label({
@@ -9484,7 +10357,7 @@ This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>
 {% call label({
   heading: true,
   size: "l"
-}) %}
+}) -%}
 What is your full name?
 {%- endcall %}
 ```
@@ -9494,7 +10367,7 @@ What is your full name?
 ```njk
 {% call label({
   size: "l"
-}) %}
+}) -%}
 What is your full name?
 {%- endcall %}
 ```
@@ -9555,29 +10428,6 @@ What is your full name?
 }) }}
 ```
 
-#### with deprecated page heading
-
-```njk
-{{ label({
-  text: "What is your full name?",
-  size: "m",
-  isPageHeading: true
-}) }}
-```
-
-#### with deprecated page heading overriding heading
-
-```njk
-{{ label({
-  heading: {
-    text: "What is your full name?",
-    level: 3,
-    size: "s"
-  },
-  isPageHeading: false
-}) }}
-```
-
 #### with id attribute
 
 ```njk
@@ -9621,14 +10471,14 @@ What is your full name?
 | `size` | string |  | Size of the legend – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `heading` | object |  | Whether the legend also acts as a heading. *(accepts nested component params)* |
 | `heading.id` | string |  | The ID of the legend heading. |
-| `heading.text` | string |  | If `html` is set, this is not required. Text to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
-| `heading.html` | string |  | If `text` is set, this is not required. HTML to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.text` | string | ✓ | If `html` is set, this is not required. Text to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
+| `heading.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the legend as a heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the legend as a heading. |
 | `heading.caption` | object |  | Optional caption for the legend as a heading. *(accepts nested component params)* |
 | `heading.size` | string |  | Size of the legend as a heading – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `heading.level` | integer |  | Optional legend heading level. Defaults to `1`. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the legend heading. |
-| `isPageHeading` | boolean |  | Replaced by the `heading` option. |
+| `isPageHeading` | boolean |  | **Deprecated in 10.6.1, do not use.** Replaced by the `heading` option. |
 | `classes` | string |  | Classes to add to the legend. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the legend. |
 
@@ -9676,7 +10526,7 @@ What is your full name?
 }) }}
 ```
 
-#### size class
+#### with size class
 
 ```njk
 {{ legend({
@@ -9685,7 +10535,7 @@ What is your full name?
 }) }}
 ```
 
-#### size class overriding size option
+#### with size class overriding size option
 
 ```njk
 {{ legend({
@@ -9711,7 +10561,7 @@ What is your full name?
 {% call legend({
   heading: true,
   size: "l"
-}) %}
+}) -%}
 What is your address?
 {%- endcall %}
 ```
@@ -9721,7 +10571,7 @@ What is your address?
 ```njk
 {% call legend({
   size: "l"
-}) %}
+}) -%}
 What is your address?
 {%- endcall %}
 ```
@@ -9782,29 +10632,6 @@ What is your address?
 }) }}
 ```
 
-#### with deprecated page heading
-
-```njk
-{{ legend({
-  text: "What is your address?",
-  size: "m",
-  isPageHeading: true
-}) }}
-```
-
-#### with deprecated page heading overriding heading
-
-```njk
-{{ legend({
-  heading: {
-    text: "What is your address?",
-    level: 3,
-    size: "s"
-  },
-  isPageHeading: false
-}) }}
-```
-
 #### with id attribute
 
 ```njk
@@ -9824,6 +10651,345 @@ What is your address?
     id: "custom-id"
   },
   size: "l"
+}) }}
+```
+
+---
+
+## Link
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `link`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the link. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the link. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the link. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire link component in a `call` block. |
+| `visuallyHiddenText` | string |  | Optional alias for the link component `visuallyHidden` option. Defaults to `"end"` placement when set to a string. |
+| `visuallyHidden` | object | ✓ | Can be used to add visually hidden content to the link component. If `ariaLabel` is provided, this has no effect. *(accepts nested component params)* |
+| `ariaLabel` | string |  | Accessible name identifying the link to screen readers. |
+| `name` | string |  | Name for the link as a button. If `href` is provided, this has no effect. |
+| `value` | string |  | Link as a button `value` attribute. If `href` is provided, this has no effect. |
+| `type` | string |  | Type of link as a button – `"button"` or `"submit"`. |
+| `href` | string |  | The link `href` attribute. If set, the link will use an `<a>` tag automatically unless `type` is provided. |
+| `openInNewTab` | boolean |  | If set to `true`, then the link will open in a new tab. If `type` is set, this has no effect. |
+| `current` | string |  | Identifies the current item to screen readers using `aria-current` – for example, `"page"` or `true`. |
+| `variant` | string |  | Optional variant of link. You can use only `"reverse"` or empty values with this option. |
+| `moduleName` | string |  | Optional JavaScript module name to use for the link. |
+| `className` | string |  | Alternative class to use for the link. Defaults to `"nhsuk-link"`. |
+| `classes` | string |  | Classes to add to the link. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the link. |
+| `slots` | object |  | Specified points for injecting custom content relative to the link component. |
+| `slots.before` | object |  | Custom content injected before the link component. |
+| `slots.before.text` | string | ✓ | Custom text injected before the link component. |
+| `slots.before.html` | string | ✓ | Custom HTML injected before the link component. |
+| `slots.start` | object |  | Custom content injected at the start, within the link component. |
+| `slots.start.text` | string | ✓ | Custom text injected at the start, within the link component. |
+| `slots.start.html` | string | ✓ | Custom HTML injected at the start, within the link component. |
+| `slots.end` | object |  | Custom content injected at the end, within the link component. |
+| `slots.end.text` | string | ✓ | Custom text injected at the end, within the link component. |
+| `slots.end.html` | string | ✓ | Custom HTML injected at the end, within the link component. |
+| `slots.after` | object |  | Custom content injected after the link component. |
+| `slots.after.text` | string | ✓ | Custom text injected after the link component. |
+| `slots.after.html` | string | ✓ | Custom HTML injected after the link component. |
+| `element` | string |  | **Deprecated in 10.7.0, do not use.** Configured automatically if `href` is provided. |
+
+### Examples
+
+#### default
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change"
+}) }}
+```
+
+#### current
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  current: true
+}) }}
+```
+
+#### current "page"
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  current: "page"
+}) }}
+```
+
+#### opens in a new tab
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  openInNewTab: true
+}) }}
+```
+
+#### opens in a new tab (with "target" attribute)
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  openInNewTab: true,
+  attributes: {
+    target: "_blank"
+  }
+}) }}
+```
+
+#### opens in a new tab (with "rel" attribute)
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  openInNewTab: true,
+  attributes: {
+    rel: "noopener"
+  }
+}) }}
+```
+
+#### opens in a new tab (with "target" and "rel" attributes)
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  openInNewTab: true,
+  attributes: {
+    target: "_blank",
+    rel: "noopener"
+  }
+}) }}
+```
+
+#### with ARIA label
+
+```njk
+{{ link({
+  text: "Read more",
+  href: "#/privacy-policy",
+  ariaLabel: "Read more about our privacy policy"
+}) }}
+```
+
+#### with text escaping
+
+```njk
+{{ link({
+  text: "A&E waiting times",
+  href: "#/waiting-times"
+}) }}
+```
+
+#### with HTML
+
+```njk
+{{ link({
+  html: "A&amp;E waiting times",
+  href: "#/waiting-times"
+}) }}
+```
+
+#### with HTML via call block
+
+```njk
+{% call link({
+  href: "#/waiting-times"
+}) -%}
+A&amp;E waiting times
+{%- endcall %}
+```
+
+#### with visually hidden array of text
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  visuallyHidden: ["date of birth", "(Karen Francis)"]
+}) }}
+```
+
+#### with visually hidden text
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  visuallyHidden: "date of birth"
+}) }}
+```
+
+#### with visually hidden text (alias)
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  visuallyHiddenText: "date of birth"
+}) }}
+```
+
+#### with visually hidden text "start"
+
+```njk
+{{ link({
+  text: "Enter your date of birth",
+  href: "#/date-of-birth",
+  visuallyHidden: {
+    text: "Error:",
+    placement: "start",
+    slots: {
+      end: " "
+    }
+  }
+}) }}
+```
+
+#### with visually hidden text "end"
+
+```njk
+{{ link({
+  text: "Enter your date of birth",
+  href: "#/date-of-birth",
+  visuallyHidden: {
+    text: "(Karen Francis)",
+    placement: "end",
+    slots: {
+      start: " "
+    }
+  }
+}) }}
+```
+
+#### with visually hidden text escaping
+
+```njk
+{{ link({
+  text: "Visit",
+  href: "#/visit",
+  visuallyHidden: {
+    text: "A&E",
+    slots: {
+      start: " "
+    }
+  }
+}) }}
+```
+
+#### with visually hidden HTML
+
+```njk
+{{ link({
+  text: "Visit",
+  href: "#/visit",
+  visuallyHidden: {
+    html: "A&amp;E",
+    slots: {
+      start: " "
+    }
+  }
+}) }}
+```
+
+#### with content slots
+
+```njk
+{{ link({
+  text: "A&E waiting times",
+  href: "#/waiting-times",
+  slots: {
+    before: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    start: {
+      html: '<samp class="app-annotate app-annotate--start">Start</samp>'
+    },
+    end: {
+      html: '<samp class="app-annotate app-annotate--end">End</samp>'
+    },
+    after: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
+#### with custom class
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  className: "app-link"
+}) }}
+```
+
+#### with reverse class
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  classes: "nhsuk-link--reverse"
+}) }}
+```
+
+#### with reverse class overriding reverse variant
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  classes: "nhsuk-link--reverse",
+  variant: "reverse"
+}) }}
+```
+
+#### without class
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  className: false
+}) }}
+```
+
+#### reverse
+
+```njk
+{{ link({
+  text: "Change",
+  href: "#/change",
+  variant: "reverse"
+}) }}
+```
+
+#### as a button
+
+```njk
+{{ link({
+  text: "Change",
+  type: "submit"
 }) }}
 ```
 
@@ -9852,16 +11018,17 @@ What is your address?
 | `title.level` | integer |  | Optional heading level for the title. Defaults to `2`. |
 | `title.classes` | string |  | Classes to add to the title. |
 | `title.attributes` | object |  | HTML attributes (for example data attributes) to add to the title. |
-| `titleId` | string |  | Replaced by the `title.id` option. |
-| `titleText` | string |  | Replaced by the `title.text` option. |
-| `titleHtml` | string |  | Replaced by the `title.html` option. |
-| `titleHeadingLevel` | integer |  | Replaced by the `title.level` option. |
+| `titleId` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `title.id` option. |
+| `titleText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `title.text` option. |
+| `titleHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `title.html` option. |
+| `titleHeadingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `title.level` option. |
 | `heading` | object |  | Heading to be used within the notification banner. *(accepts nested component params)* |
 | `heading.id` | string |  | The ID of the heading. |
 | `heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `heading.level` | integer |  | Optional heading level for the heading. Defaults to `3`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
@@ -9871,7 +11038,7 @@ What is your address?
 | `html` | string | ✓ | The HTML to use within the notification banner. You can use any string with this option. If you set `html`, `text` is not required and is ignored. |
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire notification banner component in a `call` block. |
 | `variant` | string |  | Optional variant of notification banner. You can use only `"success"` or empty values with this option. If you set `variant` to `"success"`, the notification banner sets `role` to `"alert"`. JavaScript then moves the keyboard focus to the notification banner when the page loads. If you do not set `variant`, the notification banner sets `role` to `"region"`. |
-| `type` | string |  | Replaced by the `variant` option. |
+| `type` | string |  | **Deprecated in 10.4.0, do not use.** Replaced by the `variant` option. |
 | `role` | string |  | Overrides the value of the `role` attribute for the notification banner. Defaults to `"region"`. If you set `variant` to `"success"`, `role` defaults to `"alert"`. |
 | `disableAutoFocus` | boolean |  | If you set `variant` to `"success"`, or `role` to `"alert"`, JavaScript moves the keyboard focus to the notification banner when the page loads. To disable this behaviour, set `disableAutoFocus` to `true`. |
 | `classes` | string |  | The classes that you want to add to the notification banner. |
@@ -9925,7 +11092,7 @@ What is your address?
   heading: {
     text: "The patient record was updated"
   }
-}) %}
+}) -%}
 <p class="nhsuk-body">
   Contact <a class="nhsuk-notification-banner__link" href="#">example@nhs.uk</a> if you think there's a problem.
 </p>
@@ -9981,7 +11148,7 @@ What is your address?
   heading: {
     text: "4 files uploaded"
   }
-}) %}
+}) -%}
 <ul class="nhsuk-list">
   <li><a href="link-1" class="nhsuk-notification-banner__link">government-strategy.pdf</a></li>
   <li><a href="link-2" class="nhsuk-notification-banner__link">government-strategy-v1.pdf</a></li>
@@ -10076,7 +11243,7 @@ What is your address?
 | `id` | string |  | The ID of the pagination container. |
 | `items` | array |  | The items within the pagination component. |
 | `items.number` | string |  | The pagination item text – usually a page number.  Required unless the item is an ellipsis. |
-| `items.visuallyHiddenText` | string |  | The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". Replaced by the `item.ariaLabel` option. |
+| `items.visuallyHiddenText` | string |  | **Deprecated in 10.6.0, do not use.** The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". Replaced by the `item.ariaLabel` option. |
 | `items.ariaLabel` | string |  | The accessible name for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1". |
 | `items.href` | string | ✓ | The pagination item `href` attribute. Required unless the item is an ellipsis. |
 | `items.current` | boolean |  | Set to `true` to indicate the current page the user is on. |
@@ -10085,26 +11252,26 @@ What is your address?
 | `previous` | object |  | A link to the previous page, if there is a previous page. |
 | `previous.text` | string |  | The text content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `previous.html` | string |  | The HTML content of the link to the previous page. Defaults to `"Previous page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
-| `previous.labelText` | string |  | Replaced by the `previous.label.text` option. |
+| `previous.labelText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `previous.label.text` option. |
 | `previous.label` | object |  | The optional label that goes underneath the link to the previous page, providing further context for the user about where the link goes. |
 | `previous.label.text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `previous.label.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `previous.href` | string | ✓ | The previous page's URL. |
 | `previous.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the link. |
-| `previousUrl` | string |  | Replaced by the `previous.href` option. |
-| `previousPage` | string |  | Replaced by the `previous.label.text` option. |
+| `previousUrl` | string |  | **Deprecated in 10.1.0, do not use.** Replaced by the `previous.href` option. |
+| `previousPage` | string |  | **Deprecated in 10.1.0, do not use.** Replaced by the `previous.label.text` option. |
 | `next` | object |  | A link to the next page, if there is a next page. |
 | `next.text` | string |  | The text content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
 | `next.html` | string |  | The HTML content of the link to the next page. Defaults to `"Next page"`, with 'page' being visually hidden. If `html` is provided, the `text` option will be ignored. |
-| `next.labelText` | string |  | Replaced by the `next.label.text` option. |
+| `next.labelText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `next.label.text` option. |
 | `next.label` | object |  | The optional label that goes underneath the link to the next page, providing further context for the user about where the link goes. |
 | `next.label.text` | string | ✓ | If `html` is set, this is not required. Text to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `next.label.html` | string | ✓ | If `text` is set, this is not required. HTML to use within the label. If `html` is provided, the `text` option will be ignored. |
 | `next.href` | string | ✓ | The next page's URL. |
 | `next.attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the link. |
-| `nextUrl` | string |  | Replaced by the `next.href` option. |
-| `nextPage` | string |  | Replaced by the `next.label.text` option. |
-| `landmarkLabel` | string |  | Replaced by the `ariaLabel` option. |
+| `nextUrl` | string |  | **Deprecated in 10.1.0, do not use.** Replaced by the `next.href` option. |
+| `nextPage` | string |  | **Deprecated in 10.1.0, do not use.** Replaced by the `next.label.text` option. |
+| `landmarkLabel` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `ariaLabel` option. |
 | `ariaLabel` | string |  | The accessible name for the navigation landmark that wraps the pagination. Defaults to `"Pagination"`. |
 | `classes` | string |  | The classes you want to add to the pagination `nav` parent. |
 | `attributes` | object |  | The HTML attributes (for example, data attributes) you want to add to the pagination `nav` parent. |
@@ -10123,17 +11290,6 @@ What is your address?
     label: "Symptoms",
     href: "#/section/symptoms"
   }
-}) }}
-```
-
-#### with deprecated options
-
-```njk
-{{ pagination({
-  previousUrl: "#/section/treatments",
-  previousPage: "Treatments",
-  nextUrl: "#/section/symptoms",
-  nextPage: "Symptoms"
 }) }}
 ```
 
@@ -10397,16 +11553,17 @@ What is your address?
 | `heading.html` | string | ✓ | If `text` is set, this is not required. HTML for the heading. If `html` is provided, the `text` option will be ignored. |
 | `heading.visuallyHiddenText` | string |  | A visually hidden suffix added to the heading. |
 | `heading.href` | string |  | If set, the heading will become a link. |
+| `heading.openInNewTab` | boolean |  | If set to `true`, then the heading link will open in a new tab. |
 | `heading.caption` | object |  | Optional caption for the heading. *(accepts nested component params)* |
 | `heading.size` | string |  | Size of the heading – `"m"`, `"l"` or `"xl"`. |
 | `heading.level` | integer |  | Optional heading level. Defaults to `1`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `titleText` | string | ✓ | Replaced by the `heading.text` option. |
-| `titleHtml` | string |  | Replaced by the `heading.html` option. |
-| `titleSize` | string |  | Replaced by the `heading.size` option. |
-| `titleClasses` | string |  | Replaced by the `heading.classes` option. |
-| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
+| `titleText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.text` option. |
+| `titleHtml` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.html` option. |
+| `titleSize` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.size` option. |
+| `titleClasses` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.classes` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.level` option. |
 | `text` | string | ✓ | If `html` is set, this is not required. Text to use within the panel content. If `html` is provided, the `text` option will be ignored. |
 | `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the panel content. If `text` is provided, the `html` option will be ignored. |
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire panel component in a `call` block. |
@@ -10454,7 +11611,7 @@ What is your address?
   heading: {
     text: "Booking complete"
   }
-}) %}
+}) -%}
 We have sent you a confirmation email
 {%- endcall %}
 ```
@@ -10468,7 +11625,7 @@ We have sent you a confirmation email
     size: "l"
   },
   variant: "interruption",
-  html: '<p>They had a COVID-19 vaccine on 25 September 2025.</p>\n<p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Continue anyway\n</a>\n\n  <a href="#">Cancel</a>\n</div>'
+  html: '<p>They had a COVID-19 vaccine on 25 September 2025.</p>\n<p>For most people, the minimum recommended gap between COVID-19 vaccine doses is 3 months.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n    Continue anyway\n  </a>\n  \n  <a href="#">Cancel</a>\n</div>'
 }) }}
 ```
 
@@ -10481,7 +11638,7 @@ We have sent you a confirmation email
     size: "l"
   },
   variant: "interruption",
-  html: '<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>\n<p>Cancelling your appointment cannot be undone.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Cancel appointment\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
+  html: '<p>You will be able to reschedule your appointment for another time, but this may delay your treatment.</p>\n<p>Cancelling your appointment cannot be undone.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n    Cancel appointment\n  </a>\n  \n  <a href="#">Change my weight</a>\n</div>'
 }) }}
 ```
 
@@ -10494,7 +11651,7 @@ We have sent you a confirmation email
     size: "l"
   },
   variant: "interruption",
-  html: '<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n  Yes, this is correct\n</a>\n\n  <a href="#">Change my weight</a>\n</div>'
+  html: '<p>You entered your weight as <b>21.4 kilograms</b>. This is lower than expected.</p>\n<div class="nhsuk-button-group">\n  <a class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" href="#" role="button" draggable="false">\n    Yes, this is correct\n  </a>\n  \n  <a href="#">Change my weight</a>\n</div>'
 }) }}
 ```
 
@@ -10608,9 +11765,9 @@ We have sent you a confirmation email
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the input. |
 | `showPasswordText` | string |  | Button text when the password is hidden. Defaults to `"Show"`. |
 | `hidePasswordText` | string |  | Button text when the password is visible. Defaults to `"Hide"`. |
-| `showPasswordAriaLabelText` | string |  | Replaced by `showPasswordAriaLabel`. |
+| `showPasswordAriaLabelText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by `showPasswordAriaLabel`. |
 | `showPasswordAriaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is hidden. Defaults to `"Show password"`. |
-| `hidePasswordAriaLabelText` | string |  | Replaced by `hidePasswordAriaLabel`. |
+| `hidePasswordAriaLabelText` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by `hidePasswordAriaLabel`. |
 | `hidePasswordAriaLabel` | string |  | Button text exposed to assistive technologies, like screen readers, when the password is visible. Defaults to `"Hide password"`. |
 | `passwordShownAnnouncementText` | string |  | Announcement made to screen reader users when their password has become visible in plain text. Defaults to `"Your password is visible"`. |
 | `passwordHiddenAnnouncementText` | string |  | Announcement made to screen reader users when their password has been obscured and is not visible. Defaults to `"Your password is hidden"`. |
@@ -10672,6 +11829,26 @@ We have sent you a confirmation email
   name: "example",
   button: {
     disabled: true
+  }
+}) }}
+```
+
+#### with before and after input content
+
+```njk
+{{ passwordInput({
+  label: {
+    heading: "Password",
+    size: "l"
+  },
+  name: "example",
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
   }
 }) }}
 ```
@@ -10915,9 +12092,9 @@ We have sent you a confirmation email
   },
   id: "password-translated",
   name: "example",
-  showPasswordText: "Datguddia",
+  showPasswordText: "Dangos",
   hidePasswordText: "Cuddio",
-  showPasswordAriaLabel: "Datgelu cyfrinair",
+  showPasswordAriaLabel: "Dangos cyfrinair",
   hidePasswordAriaLabel: "Cuddio cyfrinair",
   passwordShownAnnouncementText: "Mae eich cyfrinair yn weladwy.",
   passwordHiddenAnnouncementText: "Mae eich cyfrinair wedi'i guddio."
@@ -10956,12 +12133,15 @@ We have sent you a confirmation email
 | `items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each radio item label. If `html` is provided, the `text` option will be ignored. |
 | `items.id` | string |  | Specific `id` attribute for the radio item. If omitted, then `idPrefix` string will be applied. |
 | `items.value` | string | ✓ | The `value` attribute for the radio input. |
-| `items.label` | object |  | The label used by each radio item within the radios component. The `label.size` and `label.heading` options are not supported. *(accepts nested component params)* |
+| `items.label` | object |  | The label used by each radio item within the radios component. The `label.caption`, `label.heading` and `label.size` options are not supported. *(accepts nested component params)* |
 | `items.hint` | object |  | Can be used to add a hint to each radio item within the radios component. *(accepts nested component params)* |
-| `items.divider` | string |  | Divider text to separate radio items, for example the text `"or"`. |
+| `items.divider` | object |  | Divider text to separate radio items, for example the text `"or"`. |
+| `items.divider.text` | string | ✓ | If `html` is set, this is not required. Text for the divider. If `html` is provided, the `text` option will be ignored. |
+| `items.divider.html` | string | ✓ | If `text` is set, this is not required. HTML for the divider. If `html` is provided, the `text` option will be ignored. |
 | `items.checked` | boolean |  | Whether the radio should be checked when the page loads. Takes precedence over the top-level `value` option. |
 | `items.conditional` | object |  | Provide additional content to reveal when the radio is checked. |
-| `items.conditional.html` | string | ✓ | The HTML to reveal when the radio is checked. |
+| `items.conditional.text` | string | ✓ | If `html` is set, this is not required. The text to reveal when the radio is checked. |
+| `items.conditional.html` | string | ✓ | If `text` is set, this is not required. The HTML to reveal when the radio is checked. |
 | `items.disabled` | boolean |  | If `true`, radio will be disabled. |
 | `items.classes` | string |  | Classes to add to the radio input tag. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the radio input tag. |
@@ -11603,6 +12783,38 @@ We have sent you a confirmation email
 }) }}
 ```
 
+#### with conditional content as strings
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      heading: "What is your favourite colour?",
+      size: "l"
+    }
+  },
+  idPrefix: "conditional-strings",
+  name: "example",
+  items: [
+    {
+      value: "red",
+      text: "Red",
+      conditional: "I like red"
+    },
+    {
+      value: "green",
+      text: "Green",
+      conditional: "I like green"
+    },
+    {
+      value: "blue",
+      text: "Blue",
+      conditional: "I like blue"
+    }
+  ]
+}) }}
+```
+
 #### with conditional content, special characters
 
 ```njk
@@ -11754,10 +12966,46 @@ We have sent you a confirmation email
       value: "nested",
       text: "Nested conditional",
       conditional: {
-        html: '<div class="nhsuk-form-group">\n  <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">\n  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">\n    How do you want to be contacted about this?\n  </legend>\n  <div class="nhsuk-hint" id="example-inner-hint">\n    Select 1 option\n  </div>\n  <div class="nhsuk-radios" data-module="nhsuk-radios">\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" data-aria-controls="conditional-example-inner">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner">\n        Email\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" data-aria-controls="conditional-example-inner-2">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">\n        Phone\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" data-aria-controls="conditional-example-inner-3">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">\n        Text message\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">\n      <div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n    </div>\n  </div>\n</fieldset>\n</div>\n'
+        html: '<div class="nhsuk-form-group">\n  <fieldset class="nhsuk-fieldset" aria-describedby="example-inner-hint">\n  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">\n    How do you want to be contacted about this?\n  </legend>\n  <div class="nhsuk-hint" id="example-inner-hint">\n    Select 1 option\n  </div>\n  <div class="nhsuk-radios" data-module="nhsuk-radios">\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner" name="example-inner" type="radio" value="email" data-aria-controls="conditional-example-inner">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner">\n        Email\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner">\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-email">\n    Email address\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-2" name="example-inner" type="radio" value="phone" data-aria-controls="conditional-example-inner-2">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-2">\n        Phone\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-2">\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-phone">\n    Phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">\n</div>\n    </div>\n    <div class="nhsuk-radios__item">\n      <input class="nhsuk-radios__input" id="example-inner-3" name="example-inner" type="radio" value="text" data-aria-controls="conditional-example-inner-3">\n      <label class="nhsuk-label nhsuk-radios__label" for="example-inner-3">\n        Text message\n      </label>\n    </div>\n    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-example-inner-3">\n<div class="nhsuk-form-group">\n  <label class="nhsuk-label" for="contact-by-text">\n    Mobile phone number\n  </label>\n  <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">\n</div>\n    </div>\n  </div>\n</fieldset>\n</div>\n'
       }
     }
   ]
+}) }}
+```
+
+#### with before and after inputs content
+
+```njk
+{{ radios({
+  fieldset: {
+    legend: {
+      heading: "How do you want to be contacted about this?",
+      size: "l"
+    }
+  },
+  name: "example",
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "phone",
+      text: "Phone"
+    },
+    {
+      value: "text",
+      text: "Text message"
+    }
+  ],
+  formGroup: {
+    beforeInputs: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInputs: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
 }) }}
 ```
 
@@ -11806,7 +13054,7 @@ We have sent you a confirmation email
 ```njk
 {% call scroll({
   labelledBy: "example-heading"
-}) %}
+}) -%}
 <h1 class="nhsuk-heading-m" id="example-heading">Example heading</h1>
   <p class="nhsuk-body">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   <p class="nhsuk-body">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.</p>
@@ -11956,6 +13204,28 @@ We have sent you a confirmation email
 }) }}
 ```
 
+#### large with before and after input content
+
+```njk
+{{ searchInput({
+  label: {
+    heading: "Search by NHS number",
+    size: "l"
+  },
+  name: "example",
+  large: true,
+  width: 30,
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 #### large with brand button
 
 ```njk
@@ -11970,6 +13240,55 @@ We have sent you a confirmation email
   name: "example",
   large: true,
   width: 30
+}) }}
+```
+
+#### large with prefix
+
+```njk
+{{ searchInput({
+  label: {
+    heading: "Code lookup",
+    size: "m"
+  },
+  prefix: {
+    text: "SNOMED"
+  },
+  id: "with-prefix",
+  name: "example",
+  value: "160245001",
+  large: true,
+  width: 10,
+  code: true,
+  button: {
+    icon: "arrow-right",
+    variant: "brand"
+  }
+}) }}
+```
+
+#### with before and after input content
+
+```njk
+{{ searchInput({
+  label: {
+    heading: "Search by NHS number",
+    size: "m"
+  },
+  placeholder: "NHS number",
+  hint: {
+    html: 'This is a 10 digit number (like <span class="nhsuk-u-nowrap">999 123 4567</span>) that you can find on an NHS letter, prescription or in the NHS App'
+  },
+  name: "example",
+  width: 20,
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
 }) }}
 ```
 
@@ -13109,6 +14428,44 @@ We have sent you a confirmation email
 }) }}
 ```
 
+#### with before and after input content
+
+```njk
+{{ select({
+  label: {
+    heading: "Sort by",
+    size: "l"
+  },
+  name: "example",
+  items: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated"
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ],
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
 ---
 
 ## Skip link
@@ -13193,15 +14550,16 @@ We have sent you a confirmation email
 | `rows.value.classes` | string |  | Classes to add to the value wrapper. |
 | `rows.value.attributes` | string |  | HTML attributes (for example data attributes) to add to the value wrapper. |
 | `rows.actions` | object |  | The action link content for each row item in the summary list component. |
-| `rows.actions.items` | array |  | The action link items within the row item of the summary list component. |
+| `rows.actions.items` | array |  | The action link items within the row item of the summary list component. *(accepts nested component params)* |
 | `rows.actions.items.id` | string |  | The ID of the action item. |
 | `rows.actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `rows.actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `rows.actions.items.visuallyHiddenText` | string |  | Actions rely on context from the surrounding content so may require additional accessible text. Text supplied to this option is appended to the end. Use `html` for more complicated scenarios. |
-| `rows.actions.items.name` | string |  | Name for the action as a button. If `type` is set, this has no effect. |
+| `rows.actions.items.name` | string |  | Name for the action as a button. If `href` is provided, this has no effect. |
 | `rows.actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
-| `rows.actions.items.value` | string |  | The `value` attribute for the action as a button. If `type` is set, this has no effect. |
+| `rows.actions.items.value` | string |  | The `value` attribute for the action as a button. If `href` is provided, this has no effect. |
 | `rows.actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
+| `rows.actions.items.openInNewTab` | boolean |  | If set to `true`, then the action will open in a new tab. |
 | `rows.actions.items.classes` | string |  | Classes to add to the action item. |
 | `rows.actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
 | `rows.actions.width` | string |  | Specify the actions wrapper width. You can pass any design system grid width here – for example, `"one-third"`, `"two-thirds"` or `"one-half"`. |
@@ -13576,6 +14934,93 @@ We have sent you a confirmation email
 }) }}
 ```
 
+#### with multiple actions array
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Karen Francis"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "15 March 1984"
+      },
+      actions: [
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "date of birth"
+        }
+      ]
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "73 Roman Rd<br>\nLeeds<br>\nLS2 5ZN"
+      },
+      actions: [
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "contact information"
+        }
+      ]
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: "<p>07700 900362</p>\n<p>karen.francis@example.com</p>"
+      },
+      actions: [
+        {
+          href: "#/add",
+          text: "Add",
+          visuallyHiddenText: "new contact details"
+        },
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "contact details"
+        }
+      ]
+    },
+    {
+      key: {
+        text: "Medicines"
+      },
+      value: {
+        html: "<p>Isotretinoin capsules (Roaccutane)</p>\n<p>Isotretinoin gel (Isotrex)</p>\n<p>Pepto-Bismol (bismuth subsalicylate)</p>"
+      },
+      actions: [
+        {
+          href: "#/add",
+          text: "Add",
+          visuallyHiddenText: "new medicine"
+        },
+        {
+          href: "#/change",
+          text: "Change",
+          visuallyHiddenText: "medicines"
+        }
+      ]
+    }
+  ]
+}) }}
+```
+
 #### with multiple actions as buttons
 
 ```njk
@@ -13795,7 +15240,24 @@ We have sent you a confirmation email
 }) }}
 ```
 
-#### with item strings
+#### with item values as array of strings
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: "Name",
+      value: ["Karen Francis"]
+    },
+    {
+      key: "Appointments",
+      value: ["18 November 2023", "5 August 2024"]
+    }
+  ]
+}) }}
+```
+
+#### with item values as strings
 
 ```njk
 {{ summaryList({
@@ -13807,6 +15269,23 @@ We have sent you a confirmation email
     {
       key: "Date of birth",
       value: "15 March 1984"
+    }
+  ]
+}) }}
+```
+
+#### with item values as numbers
+
+```njk
+{{ summaryList({
+  rows: [
+    {
+      key: "Name",
+      value: "Karen Francis"
+    },
+    {
+      key: "Age",
+      value: 42
     }
   ]
 }) }}
@@ -14360,7 +15839,7 @@ We have sent you a confirmation email
         text: "Opinion"
       },
       value: {
-        html: '<p class="nhsuk-u-margin-bottom-3">\n  <strong class="nhsuk-tag nhsuk-tag--red">\n  Recall for assessment\n</strong>\n\n</p>'
+        html: '<p class="nhsuk-u-margin-bottom-3">\n  <strong class="nhsuk-tag nhsuk-tag--red">Recall for assessment</strong>\n  \n</p>'
       },
       actions: {
         items: [
@@ -14377,7 +15856,7 @@ We have sent you a confirmation email
         text: "Detailed opinion"
       },
       value: {
-        html: '<div class="nhsuk-grid-row">\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Right breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3">\n      <strong class="nhsuk-tag nhsuk-tag--red">\n  Abnormal\n</strong>\n\n    </p>\n  </div>\n\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Left breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3 nhsuk-u-secondary-text-colour">\n      Not recorded\n    </p>\n  </div>\n</div>'
+        html: '<div class="nhsuk-grid-row">\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Right breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3">\n      <strong class="nhsuk-tag nhsuk-tag--red">Abnormal</strong>\n      \n    </p>\n  </div>\n  <div class="nhsuk-grid-column-one-half">\n    <p class="nhsuk-u-margin-bottom-1 nhsuk-u-font-weight-bold">\n      Left breast\n    </p>\n    <p class="nhsuk-u-margin-bottom-3 nhsuk-u-secondary-text-colour">\n      Not recorded\n    </p>\n  </div>\n</div>'
       },
       actions: {
         items: [
@@ -14672,8 +16151,9 @@ We have sent you a confirmation email
 | `rows.text` | string | ✓ | If `html` is set, this is not required. Text for cells in table rows. If `html` is provided, the `text` option will be ignored. |
 | `rows.html` | string | ✓ | If `text` is set, this is not required. HTML for cells in table rows. If `html` is provided, the `text` option will be ignored. |
 | `rows.visuallyHiddenText` | string |  | A visually hidden suffix added to the table cell. |
-| `rows.header` | string |  | Set automatically by table head cells in the `head` option. |
+| `rows.header` | string |  | **Deprecated in 10.6.0, do not use.** Set automatically by table head cells in the `head` option. |
 | `rows.href` | string |  | If set, the table cell will become a link. |
+| `rows.openInNewTab` | boolean |  | If set to `true`, then the table cell link will open in a new tab. |
 | `rows.format` | string |  | Specify format of a cell – `"numeric"` or `"string"`. Defaults to `"string"` |
 | `rows.sortValue` | string |  | Sort value text for cells in table rows. |
 | `rows.colspan` | integer |  | Specify how many columns a cell spans. |
@@ -14683,10 +16163,11 @@ We have sent you a confirmation email
 | `rows.classes` | string |  | Classes to add to the table cell. |
 | `rows.attributes` | object |  | HTML attributes (for example data attributes) to add to the table cell. |
 | `head` | array |  | Array of table head cells. |
-| `head.text` | string |  | If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` option will be ignored. |
-| `head.html` | string |  | If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` option will be ignored. |
+| `head.text` | string | ✓ | If `html` is set, this is not required. Text for table head cells. If `html` is provided, the `text` option will be ignored. |
+| `head.html` | string | ✓ | If `text` is set, this is not required. HTML for table head cells. If `html` is provided, the `text` option will be ignored. |
 | `head.visuallyHiddenText` | string |  | A visually hidden suffix added to the table head cell. |
 | `head.href` | string |  | If set, the table header will become a link for server-side table sorting. Use `sort` to set the column sort direction. |
+| `head.openInNewTab` | boolean |  | If set to `true`, then the table header link will open in a new tab. |
 | `head.format` | string |  | Specify format of a cell – `"numeric"` or `"string"`. Defaults to `"string"` |
 | `head.colspan` | integer |  | Specify how many columns a cell spans. |
 | `head.rowspan` | integer |  | Specify how many rows a cell spans. |
@@ -14705,8 +16186,8 @@ We have sent you a confirmation email
 | `caption.size` | string |  | Size of the table caption – `"s"`, `"m"`, `"l"` or `"xl"`. |
 | `caption.classes` | string |  | Classes to add to the table caption, for example `"nhsuk-table__caption--l"`. |
 | `caption.attributes` | object |  | HTML attributes (for example data attributes) to add to the table caption. |
-| `captionClasses` | string |  | Replaced by the `caption.classes` option. |
-| `captionSize` | string |  | Replaced by the `caption.size` option. |
+| `captionClasses` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `caption.classes` option. |
+| `captionSize` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `caption.size` option. |
 | `firstCellIsHeader` | boolean |  | If set to `true`, first cell in table row will be a `th` instead of a `td`. |
 | `compact` | boolean |  | If set to `true`, vertical padding will be reduced for table cells. |
 | `responsive` | boolean |  | If set to `true`, responsive table classes will be applied. |
@@ -14714,12 +16195,12 @@ We have sent you a confirmation email
 | `striped` | boolean |  | If set to `true`, striped background colours will be applied to table rows. |
 | `variant` | string |  | Optional variant of table. You can use only `"reverse"` or empty values with this option. |
 | `card` | object |  | Can be used to wrap a card around the table component. If any of these options are present, a card will wrap around the table. *(accepts nested component params)* |
-| `panel` | boolean |  | Replaced by the `card` option. |
-| `panelClasses` | string |  | Replaced by the `card.classes` option. |
-| `heading` | string |  | Replaced by the `card.heading.text` option. |
-| `headingLevel` | integer |  | Replaced by the `card.heading.level` option. |
+| `panel` | boolean |  | **Deprecated in 10.3.0, do not use.** Replaced by the `card` option. |
+| `panelClasses` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `card.classes` option. |
+| `heading` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `card.heading.text` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.3.0, do not use.** Replaced by the `card.heading.level` option. |
 | `classes` | string |  | Classes to add to the table container. |
-| `tableClasses` | string |  | Replaced by the `classes` option. |
+| `tableClasses` | string |  | **Deprecated in 10.3.0, do not use.** Replaced by the `classes` option. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the table container. |
 | `ascendingText` | string |  | Text for columns in ascending sort order, used to populate the `%{direction}` placeholder in `sortAnnouncementText`. Defaults to `"ascending"`. |
 | `descendingText` | string |  | Text for columns in descending sort order, used to populate the `%{direction}` placeholder in `sortAnnouncementText`. Defaults to `"descending"`. |
@@ -14976,6 +16457,95 @@ We have sent you a confirmation email
 }) }}
 ```
 
+#### with 0 rows
+
+```njk
+{{ table({
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Skin symptoms"
+    },
+    {
+      text: "Possible cause"
+    }
+  ],
+  rows: []
+}) }}
+```
+
+#### with 1 row
+
+```njk
+{{ table({
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Skin symptoms"
+    },
+    {
+      text: "Possible cause"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Blisters on lips or around the mouth"
+      },
+      {
+        text: "Cold sores"
+      }
+    ]
+  ]
+}) }}
+```
+
+#### with 2 rows
+
+```njk
+{{ table({
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Skin symptoms"
+    },
+    {
+      text: "Possible cause"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Blisters on lips or around the mouth"
+      },
+      {
+        text: "Cold sores"
+      }
+    ],
+    [
+      {
+        text: "Itchy, dry, cracked, sore"
+      },
+      {
+        text: "Eczema"
+      }
+    ]
+  ]
+}) }}
+```
+
 #### with tags
 
 ```njk
@@ -14988,7 +16558,7 @@ We have sent you a confirmation email
       "Default",
       "None",
       {
-        html: '<strong class="nhsuk-tag">\n  Default\n</strong>\n'
+        html: '<strong class="nhsuk-tag">Default</strong>\n'
       }
     ],
     [
@@ -14997,7 +16567,7 @@ We have sent you a confirmation email
         html: '<var class="nhsuk-body-s">red</var>'
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--red">\n  Rejected\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--red">Rejected</strong>\n'
       }
     ],
     [
@@ -15006,7 +16576,7 @@ We have sent you a confirmation email
         html: '<var class="nhsuk-body-s">blue</var>'
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--blue">\n  Pending\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--blue">Pending</strong>\n'
       }
     ],
     [
@@ -15015,7 +16585,7 @@ We have sent you a confirmation email
         html: '<var class="nhsuk-body-s">green</var>'
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  New\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--green">New</strong>\n'
       }
     ]
   ]
@@ -15113,6 +16683,10 @@ We have sent you a confirmation email
     {
       text: "Vaccine"
     },
+    {
+      text: "",
+      visuallyHiddenText: "Action"
+    },
     false
   ],
   rows: [
@@ -15123,9 +16697,32 @@ We have sent you a confirmation email
       {
         text: "RSV"
       },
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: false
+      },
       false
     ],
     false
+  ]
+}) }}
+```
+
+#### with array items
+
+```njk
+{{ table({
+  caption: {
+    text: "Impetigo can look similar to other skin conditions",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: ["Skin symptoms", "Possible cause"],
+  rows: [
+    ["Blisters on lips or around the mouth", "Cold sores"],
+    [["Itchy", "dry", "cracked", "sore"], "Eczema"],
+    ["Itchy blisters", ["Shingles", "chickenpox"]]
   ]
 }) }}
 ```
@@ -15158,7 +16755,25 @@ We have sent you a confirmation email
   },
   firstCellIsHeader: true,
   head: ["Date", "Vaccine", false],
-  rows: [["10 July 2024", "RSV", false], false]
+  rows: [["10 July 2024", "RSV", false], true]
+}) }}
+```
+
+#### with number items
+
+```njk
+{{ table({
+  caption: {
+    text: "Vaccination count",
+    size: "m"
+  },
+  firstCellIsHeader: true,
+  head: ["Date", "Vaccine", "Count"],
+  rows: [
+    ["10 July 2024", "RSV", 0],
+    ["6 September 2023", "Flu", 89],
+    ["15 October 2023", "MMR", 44]
+  ]
 }) }}
 ```
 
@@ -15594,7 +17209,7 @@ We have sent you a confirmation email
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--green">\n  Active\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--green">Active</strong>\n'
       }
     ],
     [
@@ -15607,7 +17222,7 @@ We have sent you a confirmation email
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--grey">\n  Inactive\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--grey">Inactive</strong>\n'
       }
     ],
     [
@@ -15620,7 +17235,7 @@ We have sent you a confirmation email
         classes: "nhsuk-u-text-break-word"
       },
       {
-        html: '<strong class="nhsuk-tag nhsuk-tag--blue">\n  Thisisaverylongwaytosaythatsomethingisincomplete\n</strong>\n'
+        html: '<strong class="nhsuk-tag nhsuk-tag--blue">Thisisaverylongwaytosaythatsomethingisincomplete</strong>\n'
       }
     ]
   ]
@@ -15632,8 +17247,7 @@ We have sent you a confirmation email
 ```njk
 {{ table({
   caption: {
-    text: "Cases per manager",
-    classes: "nhsuk-u-visually-hidden"
+    visuallyHiddenText: "Cases per manager"
   },
   border: false,
   head: [
@@ -15679,8 +17293,7 @@ We have sent you a confirmation email
 ```njk
 {{ table({
   caption: {
-    text: "Cases per manager",
-    classes: "nhsuk-u-visually-hidden"
+    visuallyHiddenText: "Cases per manager"
   },
   lastRowBorder: false,
   head: [
@@ -15786,56 +17399,6 @@ We have sent you a confirmation email
   },
   firstCellIsHeader: true,
   lastRowBorder: false,
-  head: [
-    {
-      text: "Skin symptoms"
-    },
-    {
-      text: "Possible cause"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Blisters on lips or around the mouth"
-      },
-      {
-        text: "Cold sores"
-      }
-    ],
-    [
-      {
-        text: "Itchy, dry, cracked, sore"
-      },
-      {
-        text: "Eczema"
-      }
-    ],
-    [
-      {
-        text: "Itchy blisters"
-      },
-      {
-        text: "Shingles, chickenpox"
-      }
-    ]
-  ]
-}) }}
-```
-
-#### as a card (feature) with deprecated options
-
-```njk
-{{ table({
-  heading: "Other conditions like impetigo",
-  headingLevel: 3,
-  caption: {
-    text: "Impetigo can look similar to other skin conditions",
-    size: "s"
-  },
-  firstCellIsHeader: true,
-  lastRowBorder: false,
-  panel: true,
   head: [
     {
       text: "Skin symptoms"
@@ -17665,11 +19228,13 @@ We have sent you a confirmation email
 |-----------|------|----------|-------------|
 | `id` | string |  | The ID of the tabs component. |
 | `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for each tab item and panel, separated by `-`. Defaults to the `id` option value. |
-| `title` | string |  | Replaced by the `visuallyHiddenText` option. |
+| `title` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `visuallyHiddenText` option. |
 | `visuallyHiddenText` | string |  | Visually hidden heading for the tabs contents list items. Defaults to `"Contents"`. |
 | `items` | array | ✓ | Array of tab items. |
 | `items.id` | string | ✓ | Specific `id` attribute for the tab item. If omitted, then `idPrefix` string is required instead. |
-| `items.label` | string | ✓ | The text label of a tab item. |
+| `items.label` | object | ✓ | The label of a tab item. |
+| `items.label.text` | string | ✓ | If `html` is set, this is not required. Text for the tab label. If `html` is provided, the `text` option will be ignored. |
+| `items.label.html` | string | ✓ | If `text` is set, this is not required. HTML for the tab label. If `html` is provided, the `text` option will be ignored. |
 | `items.attributes` | object |  | HTML attributes (for example data attributes) to add to the tab. |
 | `items.panel` | object | ✓ | Content for the tab panel. |
 | `items.panel.text` | string | ✓ | If `html` is set, this is not required. Text for the tab panel. If `html` is provided, the `text` option will be ignored. |
@@ -17687,27 +19252,35 @@ We have sent you a confirmation email
   idPrefix: "example",
   items: [
     {
-      label: "Past day",
+      label: {
+        text: "Past day"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past week",
+      label: {
+        text: "Past week"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past month",
+      label: {
+        text: "Past month"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past year",
+      label: {
+        text: "Past year"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -17721,19 +19294,25 @@ We have sent you a confirmation email
   idPrefix: "with-anchor",
   items: [
     {
-      label: "Tab 1",
+      label: {
+        text: "Tab 1"
+      },
       panel: {
         html: '<h2>Tab 1 content</h2>\n<p>Testing that when you <a href="#anchor">click the link</a> it moves focus.</p>\n<ul>\n  <li><a href="#with-anchor-1" id="anchor">Tab panel 1</a></li>\n  <li><a href="#with-anchor-2">Tab panel 2</a></li>\n  <li><a href="#with-anchor-3">Tab panel 3</a></li>\n</ul>'
       }
     },
     {
-      label: "Tab 2",
+      label: {
+        text: "Tab 2"
+      },
       panel: {
         html: "<h2>Tab 2 content</h2>\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>"
       }
     },
     {
-      label: "Tab 3",
+      label: {
+        text: "Tab 3"
+      },
       panel: {
         html: "<h2>Tab 3 content</h2>\n<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
       }
@@ -17749,27 +19328,35 @@ We have sent you a confirmation email
   id: "tab-id-attribute",
   items: [
     {
-      label: "Past day",
+      label: {
+        text: "Past day"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past week",
+      label: {
+        text: "Past week"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past month",
+      label: {
+        text: "Past month"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past year",
+      label: {
+        text: "Past year"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -17782,31 +19369,95 @@ We have sent you a confirmation email
 {{ tabs({
   items: [
     {
-      label: "Past day",
+      label: {
+        text: "Past day"
+      },
       id: "past-day",
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past week",
+      label: {
+        text: "Past week"
+      },
       id: "past-week",
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past month",
+      label: {
+        text: "Past month"
+      },
       id: "past-month",
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past year",
+      label: {
+        text: "Past year"
+      },
       id: "past-year",
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+      }
+    }
+  ]
+}) }}
+```
+
+#### with panels as strings
+
+```njk
+{{ tabs({
+  idPrefix: "with-panels-strings",
+  items: [
+    {
+      label: {
+        text: "Tab 1"
+      },
+      panel: "Tab 1 content"
+    },
+    {
+      label: {
+        text: "Tab 2"
+      },
+      panel: "Tab 2 content"
+    },
+    {
+      label: {
+        text: "Tab 3"
+      },
+      panel: "Tab 3 content"
+    }
+  ]
+}) }}
+```
+
+#### with labels as strings
+
+```njk
+{{ tabs({
+  idPrefix: "with-labels-strings",
+  items: [
+    {
+      label: "Tab 1",
+      panel: {
+        text: "Tab 1 content"
+      }
+    },
+    {
+      label: "Tab 2",
+      panel: {
+        text: "Tab 2 content"
+      }
+    },
+    {
+      label: "Tab 3",
+      panel: {
+        text: "Tab 3 content"
       }
     }
   ]
@@ -17821,27 +19472,35 @@ We have sent you a confirmation email
   visuallyHiddenText: "Cases per manager",
   items: [
     {
-      label: "Past day",
+      label: {
+        text: "Past day"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past day\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        3\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        2\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        0\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past week",
+      label: {
+        text: "Past week"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past week\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        18\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        16\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        20\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        24\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        27\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past month",
+      label: {
+        text: "Past month"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past month\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        98\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        95\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        122\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        131\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        126\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        142\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     },
     {
-      label: "Past year",
+      label: {
+        text: "Past year"
+      },
       panel: {
-        html: '\n<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
+        html: '<table class="nhsuk-table">\n  <caption class="nhsuk-table__caption">\n    Past year\n  </caption>\n  <thead class="nhsuk-table__head">\n    <tr class="nhsuk-table__row">\n      <th class="nhsuk-table__header" scope="col">\n        Case manager\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases opened\n      </th>\n      <th class="nhsuk-table__header nhsuk-table__header--numeric" scope="col">\n        Cases closed\n      </th>\n    </tr>\n  </thead>\n  <tbody class="nhsuk-table__body">\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        David Francis\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1380\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1472\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Paul Farmer\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1129\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1083\n      </td>\n    </tr>\n    <tr class="nhsuk-table__row">\n      <td class="nhsuk-table__cell">\n        Rita Patel\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1539\n      </td>\n      <td class="nhsuk-table__cell nhsuk-table__cell--numeric">\n        1265\n      </td>\n    </tr>\n  </tbody>\n</table>\n'
       }
     }
   ]
@@ -17866,7 +19525,7 @@ We have sent you a confirmation email
 | `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire tag component in a `call` block. |
 | `classes` | string |  | Classes to add to the tag. |
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the tag. |
-| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"` or `"yellow"`. If set to `false`, remove colour from the tag. |
+| `colour` | string |  | Optional colour modifier for the tag – `"white"`, `"grey"`, `"green"`, `"aqua-green"`, `"blue"`, `"purple"`, `"pink"`, `"red"`, `"orange"`, `"warm-yellow"` or `"yellow"`. If set to `false`, remove colour from the tag. |
 | `border` | boolean |  | If set to `false`, remove border from the tag. |
 
 ### Examples
@@ -17913,7 +19572,7 @@ We have sent you a confirmation email
 ```njk
 {% call tag({
   colour: "red"
-}) %}
+}) -%}
 A&amp;E
 {%- endcall %}
 ```
@@ -17952,7 +19611,10 @@ A&amp;E
 | `attributes` | object |  | HTML attributes (for example data attributes) to add to the `ul` container for the task list. |
 | `idPrefix` | string |  | Optional prefix. This is used to prefix the `id` attribute for the task list item tag and hint, separated by `"-"`. Defaults to `"task-list"`. |
 | `items` | array | ✓ | The items for each task within the task list component. |
-| `items.title` | object | ✓ | Replaced by the `item.heading` option. *(accepts nested component params)* |
+| `items.title` | object |  | **Deprecated in 10.6.0, do not use.** Replaced by the `item.heading` option. *(accepts nested component params)* |
+| `items.title.text` | string | ✓ | Text to use within the title. If `html` is provided, the `text` option will be ignored. |
+| `items.title.html` | string | ✓ | HTML to use within the title. If `html` is provided, the `text` option will be ignored. |
+| `items.title.classes` | string |  | Classes to add to the title wrapper. |
 | `items.heading` | object | ✓ | The main heading for the task within the task list component. *(accepts nested component params)* |
 | `items.heading.id` | string |  | The ID of the heading. |
 | `items.heading.text` | string | ✓ | If `html` is set, this is not required. Text for the heading. If `html` is provided, the `text` option will be ignored. |
@@ -17968,7 +19630,7 @@ A&amp;E
 | `items.status.text` | string |  | Text to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` option will be ignored. |
 | `items.status.html` | string |  | HTML to use for the status, as an alternative to using a tag. If `html` or `tag` is provided, the `text` option will be ignored. |
 | `items.status.classes` | string |  | Classes to add to the status container. |
-| `items.href` | string |  | The value of the link's `href` attribute for the task list item. |
+| `items.href` | string |  | The task list item link `href` attribute. |
 | `items.classes` | string |  | Classes to add to the item `div`. |
 
 ### Examples
@@ -18045,150 +19707,6 @@ A&amp;E
           colour: false,
           classes: "nhsuk-u-font-weight-normal nhsuk-u-secondary-text-colour"
         }
-      }
-    }
-  ]
-}) }}
-```
-
-#### with deprecated titles
-
-```njk
-{{ taskList({
-  idPrefix: "your-health",
-  items: [
-    {
-      title: {
-        text: "Exercise"
-      },
-      href: "#/task/exercise",
-      status: {
-        tag: {
-          text: "Completed",
-          border: false,
-          colour: false,
-          classes: "nhsuk-u-font-weight-normal"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Personal health"
-      },
-      href: "#/task/personal-health",
-      status: {
-        tag: {
-          text: "Completed",
-          border: false,
-          colour: false,
-          classes: "nhsuk-u-font-weight-normal"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Family health history"
-      },
-      hint: {
-        text: "Details of your parents, brothers and sisters"
-      },
-      href: "#/task/family-health-history",
-      status: {
-        tag: {
-          text: "Incomplete",
-          colour: "blue"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Smoking history"
-      },
-      href: "#/task/smoking-history",
-      status: {
-        tag: {
-          text: "Incomplete",
-          colour: "blue"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Blood test"
-      },
-      status: {
-        tag: {
-          text: "Cannot start yet",
-          border: false,
-          colour: false,
-          classes: "nhsuk-u-font-weight-normal nhsuk-u-secondary-text-colour"
-        }
-      }
-    }
-  ]
-}) }}
-```
-
-#### with deprecated status classes
-
-```njk
-{{ taskList({
-  idPrefix: "your-health",
-  items: [
-    {
-      title: {
-        text: "Exercise"
-      },
-      href: "#/task/exercise",
-      status: {
-        text: "Completed",
-        classes: "nhsuk-task-list__status--completed"
-      }
-    },
-    {
-      title: {
-        text: "Personal health"
-      },
-      href: "#/task/personal-health",
-      status: {
-        text: "Completed",
-        classes: "nhsuk-task-list__status--completed"
-      }
-    },
-    {
-      title: {
-        text: "Family health history"
-      },
-      hint: {
-        text: "Details of your parents, brothers and sisters"
-      },
-      href: "#/task/family-health-history",
-      status: {
-        tag: {
-          text: "Incomplete",
-          colour: "blue"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Smoking history"
-      },
-      href: "#/task/smoking-history",
-      status: {
-        tag: {
-          text: "Incomplete",
-          colour: "blue"
-        }
-      }
-    },
-    {
-      title: {
-        text: "Blood test"
-      },
-      status: {
-        text: "Cannot start yet",
-        classes: "nhsuk-task-list__status--cannot-start-yet"
       }
     }
   ]
@@ -18560,6 +20078,62 @@ A&amp;E
 }) }}
 ```
 
+#### with before and after input content
+
+```njk
+{{ textarea({
+  label: {
+    heading: "Can you provide more detail?",
+    size: "l"
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  },
+  name: "example",
+  formGroup: {
+    beforeInput: {
+      html: '<samp class="app-annotate">Before</samp>'
+    },
+    afterInput: {
+      html: '<samp class="app-annotate">After</samp>'
+    }
+  }
+}) }}
+```
+
+---
+
+## Visually hidden
+
+[↑ Back to top](#table-of-contents)
+
+**Macro name:** `visuallyHidden`
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | string |  | The ID of the visually hidden component. |
+| `text` | string | ✓ | If `html` is set, this is not required. Text to use within the visually hidden component. If `html` is provided, the `text` option will be ignored. |
+| `html` | string | ✓ | If `text` is set, this is not required. HTML to use within the visually hidden component. If `html` is provided, the `text` option will be ignored. |
+| `caller` | nunjucks-block |  | Not strictly an option but supports the [`call` block](https://mozilla.github.io/nunjucks/templating.html#call) as an alternative to the `html` option. To use it, you will need to wrap the entire visually hidden component in a `call` block. |
+| `classes` | string |  | Classes to add to the visually hidden component. |
+| `attributes` | object |  | HTML attributes (for example data attributes) to add to the visually hidden component. |
+| `element` | string |  | HTML element for the visually hidden component – for example, `"span"`, `"p"`, `"h2"` or `"h3"`. Defaults to `"span"`. |
+| `slots` | object |  | Specified points for injecting custom content relative to the visually hidden component. |
+| `slots.before` | object |  | Custom content injected before the visually hidden component. |
+| `slots.before.text` | string | ✓ | Custom text injected before the visually hidden component. |
+| `slots.before.html` | string | ✓ | Custom HTML injected before the visually hidden component. |
+| `slots.start` | object |  | Custom content injected at the start, within the visually hidden component. |
+| `slots.start.text` | string | ✓ | Custom text injected at the start, within the visually hidden component. |
+| `slots.start.html` | string | ✓ | Custom HTML injected at the start, within the visually hidden component. |
+| `slots.end` | object |  | Custom content injected at the end, within the visually hidden component. |
+| `slots.end.text` | string | ✓ | Custom text injected at the end, within the visually hidden component. |
+| `slots.end.html` | string | ✓ | Custom HTML injected at the end, within the visually hidden component. |
+| `slots.after` | object |  | Custom content injected after the visually hidden component. |
+| `slots.after.text` | string | ✓ | Custom text injected after the visually hidden component. |
+| `slots.after.html` | string | ✓ | Custom HTML injected after the visually hidden component. |
+
 ---
 
 ## Warning callout
@@ -18581,20 +20155,21 @@ A&amp;E
 | `heading.level` | integer |  | Optional heading level for the heading. Defaults to `3`. |
 | `heading.classes` | string |  | Classes to add to the heading. |
 | `heading.attributes` | object |  | HTML attributes (for example data attributes) to add to the heading. |
-| `headingLevel` | integer |  | Replaced by the `heading.level` option. |
-| `headingClasses` | string |  | Replaced by the `heading.classes` option. |
+| `headingLevel` | integer |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.level` option. |
+| `headingClasses` | string |  | **Deprecated in 10.6.0, do not use.** Replaced by the `heading.classes` option. |
 | `text` | string | ✓ | Text content to be used within the warning callout. |
 | `html` | string | ✓ | HTML content to be used within the warning callout. |
 | `actions` | object |  | Can be used to add actions to the warning callout. |
-| `actions.items` | array |  | Array of actions as links for use in the warning callout. |
+| `actions.items` | array |  | Array of actions as links for use in the warning callout. *(accepts nested component params)* |
 | `actions.items.id` | string |  | The ID of the action item. |
 | `actions.items.text` | string | ✓ | If `html` is set, this is not required. Text to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `actions.items.html` | string | ✓ | If `text` is set, this is not required. HTML to use within each action item. If `html` is provided, the `text` option will be ignored. |
 | `actions.items.visuallyHiddenText` | string |  | Actions rely on context from the surrounding content so may require additional accessible text. Text supplied to this option is appended to the end. Use `html` for more complicated scenarios. |
-| `actions.items.name` | string |  | Name for the action as a button. If `type` is set, this has no effect. |
+| `actions.items.name` | string |  | Name for the action as a button. If `href` is provided, this has no effect. |
 | `actions.items.type` | string |  | Type of action as a button – `"button"`, `"submit"` or `"reset"`. Defaults to `"submit"` unless `href` is provided. |
-| `actions.items.value` | string |  | The `value` attribute for the action as a button. If `type` is set, this has no effect. |
+| `actions.items.value` | string |  | The `value` attribute for the action as a button. If `href` is provided, this has no effect. |
 | `actions.items.href` | string | ✓ | The action `href` attribute. If set, the action will use an `<a>` tag automatically unless `type` is provided. |
+| `actions.items.openInNewTab` | boolean |  | If set to `true`, then the action will open in a new tab. |
 | `actions.items.classes` | string |  | Classes to add to the action item. |
 | `actions.items.attributes` | object |  | HTML attributes (for example data attributes) to add to the action item. |
 | `actions.classes` | string |  | Classes to add to the actions wrapper. |
@@ -18634,7 +20209,7 @@ A&amp;E
   heading: {
     text: "Important"
   }
-}) %}
+}) -%}
 <p class="nhsuk-card__description">Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>
 {%- endcall %}
 ```
