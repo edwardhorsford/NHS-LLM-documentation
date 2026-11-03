@@ -157,7 +157,7 @@ nhs-llm-docs/
 **For regenerating component docs:**
 - Node.js 16+
 - NHS Frontend repository locally (expects sibling directory: `../nhsuk-frontend`)
-- NHS Frontend checkout must be v10.5+ with its own dependencies installed - run `npm install` **in the `../nhsuk-frontend` clone**, not here (this repo has no `package.json`, so there is nothing to install for it)
+- NHS Frontend checkout must be v10.7+ with its own dependencies installed - run `npm install` **in the `../nhsuk-frontend` clone**, not here (this repo has no `package.json`, so there is nothing to install for it)
 - No build of the clone is needed: examples are rendered from the clone's `src/` via NHS Frontend's own `lib`, so a freshly built `dist/` is not required
 
 **For regenerating Sass docs:**

@@ -33,6 +33,7 @@ Prefer the simplest thing that makes the user journey work.
 - Use `elseif` rather than `elif`
 - Default to pre-filling existing answers in components.
 - Prefer using `set` or `call` blocks for HTML in components rather than inline.
+- When an option only needs text, pass a string rather than an object: `label: "Full name"`, `hint: "..."`, `errorMessage: "..."`.
 
 ## Pages
 
@@ -69,9 +70,7 @@ All data submitted via POST or GET will be saved to `req.session.data` using the
 
 ```nunjucks
 {{ input({
-  label: {
-    text: "Full name"
-  },
+  label: "Full name",
   id: "fullName",
   name: "fullName"
 }) }}
@@ -103,9 +102,8 @@ When adding a route, **don't post to the same page**. Instead, post to a separat
     name: "contactPreference",
     fieldset: {
       legend: {
-        text: "How would you like to be contacted?",
-        size: "l",
-        isPageHeading: true
+        heading: "How would you like to be contacted?",
+        size: "l"
       }
     },
     items: [
@@ -191,9 +189,7 @@ Form components support either a `value` or `values` param for pre-filling exist
 
 ```nunjucks
 {{ input({
-  label: {
-    text: "Full name"
-  },
+  label: "Full name",
   id: "fullName",
   name: "fullName",
   value: data.fullName
@@ -206,14 +202,11 @@ Form components support either a `value` or `values` param for pre-filling exist
   name: "contactMethods",
   fieldset: {
     legend: {
-      text: "How would you like to be contacted?",
-      size: "l",
-      isPageHeading: true
+      heading: "How would you like to be contacted?",
+      size: "l"
     }
   },
-  hint: {
-    text: "Select all options that are relevant to you"
-  },
+  hint: "Select all options that are relevant to you",
   values: data.contactMethods,
   items: [
     {
@@ -309,7 +302,7 @@ If the logic is more than one or two conditions, prefer using a `set` or `call` 
 
 ## HTML in components
 
-Avoid directly setting html in components - prefer `set` or `call` blocks instead.
+Avoid directly setting html in components - prefer `set` or `call` blocks instead. Always pass the result through the `html` option, as a plain string is escaped and would show the tags on the page.
 
 Good:
 
@@ -325,21 +318,17 @@ Good:
 {{ summaryList({
   rows: [
     {
-      key: {
-        text: "Address"
-      },
+      key: "Address",
       value: {
         html: addressHtml
       },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
+      actions: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "address"
+        }
+      ]
     }
   ]
 }) }}
@@ -351,21 +340,30 @@ Bad:
 {{ summaryList({
   rows: [
     {
-      key: {
-        text: "Address"
-      },
+      key: "Address",
       value: {
         html: "<ul class='nhsuk-list'><li>Line 1</li><li>Line 2</li><li>Line 3</li></ul>"
       },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
+      actions: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "address"
+        }
+      ]
+    }
+  ]
+}) }}
+```
+
+Also bad - the tags are escaped and show on the page:
+
+```nunjucks
+{{ summaryList({
+  rows: [
+    {
+      key: "Address",
+      value: addressHtml
     }
   ]
 }) }}
@@ -377,9 +375,9 @@ Do not use a fieldset to wrap a single input. They are only needed when grouping
 
 ## Page headings and single or multiple questions on a page
 
-If a form input is the only question on the page, set `isPageHeading: true` and `size: "l"` on its label or legend.
+If a form input is the only question on the page, set `heading` (rather than `text`) and `size: "l"` on its label or legend. This wraps it in an h1. `isPageHeading` is deprecated.
 
-If a form component is not the only question on the page, set `isPageHeading: false` with a smaller size. There should be a separate h1 on the page.
+If a form component is not the only question on the page, use `text` with a smaller size. There should be a separate h1 on the page.
 
 Checkboxes as only question on page:
 
@@ -389,14 +387,11 @@ Checkboxes as only question on page:
   name: "contactMethods",
   fieldset: {
     legend: {
-      text: "How would you like to be contacted?",
-      size: "l",
-      isPageHeading: true
+      heading: "How would you like to be contacted?",
+      size: "l"
     }
   },
-  hint: {
-    text: "Select all options that are relevant to you"
-  },
+  hint: "Select all options that are relevant to you",
   values: data.contactMethods,
   items: [
     {
@@ -424,13 +419,10 @@ Checkboxes where there are other questions or another h1 on the page:
   fieldset: {
     legend: {
       text: "How would you like to be contacted?",
-      size: "m",
-      isPageHeading: false
+      size: "m"
     }
   },
-  hint: {
-    text: "Select all options that are relevant to you"
-  },
+  hint: "Select all options that are relevant to you",
   values: data.contactMethods,
   items: [
     {
@@ -454,11 +446,10 @@ Text input as only question on page:
 ```nunjucks
 {{ input({
   label: {
-    text: "What is your home postcode?",
-    size: "l",
-    isPageHeading: true
+    heading: "What is your home postcode?",
+    size: "l"
   },
-  classes: "nhsuk-input--width-10",
+  width: 10,
   name: "postcode",
   autocomplete: "postal-code"
 }) }}
