@@ -1,0 +1,46 @@
+name: Update references
+
+# About 4 runs a month. A run with nothing to update opens no pull request.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Update nhsuk-frontend to the latest release
+        run: npm install nhsuk-frontend@latest
+
+      - id: version
+        run: echo "nhsuk-frontend=$(node -p "require('nhsuk-frontend/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # Includes npm test, so a release that breaks the docs fails here rather than opening a pull request
+      - name: Regenerate references
+        run: npm run reference
+
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-references
+          delete-branch: true
+          commit-message: Update references for nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}
+          title: Update references for nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}
+          body: |
+            Regenerated with `npm run reference` against nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}.
+
+            Check the diff for new or deprecated parameters. The guides are written by hand, so check whether they need updating too.

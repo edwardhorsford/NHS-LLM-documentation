@@ -10,8 +10,9 @@ Examples use syntax added in version 10.6.1. On older versions labels, legends a
 
 This guide covers conventions. For exact names, use the references:
 
-- **Component reference** (for example `docs/nhs-frontend-component-reference.md`) - every macro with its parameters and examples. Find a component via the table of contents, or search for `## Component name` or `**Macro name:** \`macroName\``.
-- **Sass reference** (for example `docs/nhs-frontend-sass-reference.md`) - every mixin, function and variable. Find an item via the table of contents, or search for `### name`.
+- **Component reference** (for example `docs/nhsuk-frontend/index.md`) - lists every component, with one file per component for its parameters and examples, such as `components/button.md`.
+- **Utility classes** (for example `docs/nhsuk-frontend/utility-classes.md`) - every `nhsuk-u-` class and what it does.
+- **Sass reference** (for example `docs/nhsuk-frontend/sass-reference.md`) - every mixin, function and variable. Find an item via the table of contents, or search for `### name`.
 
 **Do not guess parameter, mixin, function or variable names.** Look them up in the reference before writing or changing a macro call or stylesheet.
 
