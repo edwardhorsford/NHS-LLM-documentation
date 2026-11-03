@@ -147,6 +147,7 @@ nhs-llm-docs/
 │   ├── nhs-frontend-sass-reference.json (optional)
 │   ├── nhs-frontend-guide.instructions.md
 │   └── nhs-prototype-kit-guide.instructions.md
+├── .nvmrc
 └── .gitignore
 ```
 
@@ -155,13 +156,13 @@ nhs-llm-docs/
 **For using the docs:** None - just copy/paste or upload!
 
 **For regenerating component docs:**
-- Node.js 16+
+- Node.js 26 (current LTS, see `.nvmrc`)
 - NHS Frontend repository locally (expects sibling directory: `../nhsuk-frontend`)
 - NHS Frontend checkout must be v10.7+ with its own dependencies installed - run `npm install` **in the `../nhsuk-frontend` clone**, not here (this repo has no `package.json`, so there is nothing to install for it)
 - No build of the clone is needed: examples are rendered from the clone's `src/` via NHS Frontend's own `lib`, so a freshly built `dist/` is not required
 
 **For regenerating Sass docs:**
-- Node.js 16+
+- Node.js 26 (current LTS, see `.nvmrc`)
 - NHS Frontend repository locally (expects sibling directory: `../nhsuk-frontend`)
 - sassdoc (automatically used via npx, or install globally with `npm install -g sassdoc`)
 
