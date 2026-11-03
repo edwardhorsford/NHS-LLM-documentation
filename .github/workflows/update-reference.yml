@@ -15,9 +15,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -34,13 +34,24 @@ jobs:
       - name: Regenerate references
         run: npm run reference
 
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          branch: update-references
-          delete-branch: true
-          commit-message: Update references for nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}
-          title: Update references for nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}
-          body: |
-            Regenerated with `npm run reference` against nhsuk-frontend v${{ steps.version.outputs.nhsuk-frontend }}.
+      - name: Open a pull request if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.nhsuk-frontend }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to update"
+            exit 0
+          fi
 
-            Check the diff for new or deprecated parameters. The guides are written by hand, so check whether they need updating too.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C update-references
+          git add -A
+          git commit -m "Update references for nhsuk-frontend v$VERSION"
+          git push --force origin update-references
+
+          gh pr view update-references --json state --jq '.state' | grep -q OPEN \
+            || gh pr create \
+              --title "Update references for nhsuk-frontend v$VERSION" \
+              --body "Regenerated with \`npm run reference\`. Check the diff for new or deprecated parameters, and whether the guides need updating."
