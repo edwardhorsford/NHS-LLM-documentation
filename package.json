@@ -18,5 +18,10 @@
     "nunjucks": "^3.2.4",
     "outdent": "^0.8.0",
     "sassdoc": "^2.7.4"
+  },
+  "overrides": {
+    "sassdoc-extras": {
+      "marked": "4.0.10"
+    }
   }
 }
