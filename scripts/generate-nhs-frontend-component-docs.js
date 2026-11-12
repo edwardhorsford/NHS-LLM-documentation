@@ -1,788 +1,203 @@
 #!/usr/bin/env node
 
-// Generate documentation for NHS Frontend components
-// Usage: node generate-nhs-frontend-component-docs.js
+// Generates one file per component, their variants and the index from the installed nhsuk-frontend package.
 
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import readline from 'readline';
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import {
+  attribution,
+  exampleCode,
+  frontendVersion,
+  headingAnchor,
+  loadComponents,
+  loadNunjucksLib,
+  outputDir,
+  writeFileCreatingFolders
+} from './lib.js'
 
-// Render examples from NHS Frontend's src templates, not its built dist/. Its
-// nunjucks env uses dist/ unless NODE_ENV=test, and a stale dist build renders
-// the current src fixtures wrong (e.g. object-shaped params as [object Object]).
-process.env.NODE_ENV = 'test';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Find project root (parent of scripts/ directory)
-const projectRoot = path.resolve(__dirname, '..');
-
-// Configuration - all paths relative to project root
-const CONFIG = {
-  repoPath: process.env.NHS_FRONTEND_PATH || path.join(projectRoot, '../nhsuk-frontend'),
-  outputDir: path.join(projectRoot, 'dist'),
-  componentsPath: 'packages/nhsuk-frontend/src/nhsuk/components'
-};
-
-/**
- * Prompt user for input
- */
-function prompt(question) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  return new Promise(resolve => {
-    rl.question(question, answer => {
-      rl.close();
-      resolve(answer.trim());
-    });
-  });
+const categories = {
+  'Form inputs': ['character-count', 'checkboxes', 'date-input', 'file-upload', 'input', 'password-input', 'radios', 'search-input', 'select', 'textarea'],
+  'Form controls': ['button', 'error-message', 'fieldset', 'hint', 'label', 'legend'],
+  Navigation: ['back-link', 'breadcrumb', 'contents-list', 'link', 'pagination', 'skip-link'],
+  Layout: ['footer', 'header'],
+  Notifications: ['environment-banner', 'error-summary', 'notification-banner', 'warning-callout']
 }
 
-/**
- * Show help message
- */
-function showHelp() {
-  console.log(`
-NHS Frontend Documentation Generator
-====================================
+const categoryOf = slug =>
+  Object.keys(categories).find(category => categories[category].includes(slug)) || 'Content'
 
-Generates comprehensive documentation from NHS Frontend components.
+const escapeTableCell = text => (text || '').replace(/\|/g, '\\|').replace(/\n+/g, ' ')
 
-USAGE:
-  node generate-nhs-frontend-component-docs.js [options]
+function parameterRows(params, componentSlugs, prefix = '')
+{
+  return params.flatMap(param =>
+  {
+    const name = prefix + param.name
+    // Upstream keeps required: true on deprecated params that have a replacement
+    const required = param.required && !param.deprecated ? '✓' : ''
+    let description = param.description || ''
 
-OPTIONS:
-  --help              Show this help message
-  --allow-internal    Allow generation from *-internal.* versions
-
-ENVIRONMENT VARIABLES:
-  NHS_FRONTEND_PATH   Path to NHS Frontend repository
-                      Default: ../nhsuk-frontend (relative to project root)
-
-EXAMPLES:
-  # Use default repository location
-  node generate-nhs-frontend-component-docs.js
-
-  # Use custom repository location
-  NHS_FRONTEND_PATH=/path/to/nhsuk-frontend node generate-nhs-frontend-component-docs.js
-
-OUTPUT:
-  Files are generated in ./dist/
-  - nhs-frontend-component-reference.md  Complete component documentation with parameters and examples
-
-NOTE:
-  By default, this script exits if the NHS Frontend version contains "-internal.".
-  Use --allow-internal (or ALLOW_INTERNAL_NHS_FRONTEND=1) to override.
-`);
-  process.exit(0);
-}
-
-function isInternalVersion(version) {
-  return typeof version === 'string' && version.includes('-internal.');
-}
-
-function shouldAllowInternal() {
-  return process.argv.includes('--allow-internal') || process.env.ALLOW_INTERNAL_NHS_FRONTEND === '1';
-}
-
-/**
- * Get NHS Frontend version from package.json
- */
-async function getNHSFrontendVersion(repoPath) {
-  try {
-    const packageJsonPath = path.join(repoPath, 'packages/nhsuk-frontend/package.json');
-    const packageJson = await fs.readFile(packageJsonPath, 'utf-8');
-    const parsed = JSON.parse(packageJson);
-    return parsed.version || 'unknown';
-  } catch (error) {
-    return 'unknown';
-  }
-}
-
-/**
- * Get git commit hash and branch from NHS Frontend repo
- */
-async function getGitInfo(repoPath) {
-  try {
-    // Get commit hash
-    const headPath = path.join(repoPath, '.git', 'HEAD');
-    const headContent = await fs.readFile(headPath, 'utf-8');
-    
-    let commitHash = 'unknown';
-    let branch = 'unknown';
-    
-    // Check if HEAD points to a branch or is detached
-    if (headContent.startsWith('ref: ')) {
-      // HEAD points to a branch
-      const refPath = headContent.trim().substring(5); // Remove 'ref: '
-      branch = refPath.split('/').pop(); // Get branch name from refs/heads/main
-      
-      const refFullPath = path.join(repoPath, '.git', refPath);
-      const commitContent = await fs.readFile(refFullPath, 'utf-8');
-      commitHash = commitContent.trim().substring(0, 7); // Short hash
-    } else {
-      // Detached HEAD - HEAD contains the commit hash directly
-      commitHash = headContent.trim().substring(0, 7);
-      branch = 'detached';
+    if (param.isComponent)
+    {
+      const slug = param.name.replace(/([A-Z])/g, '-$1').toLowerCase()
+      const pointer = componentSlugs.has(slug)
+        ? `*(accepts nested component params, see [${slug}](${slug}.md))*`
+        : '*(accepts nested component params)*'
+      description = `${description} ${pointer}`.trim()
     }
-    
-    return { commitHash, branch };
-  } catch (error) {
-    return { commitHash: 'unknown', branch: 'unknown' };
-  }
-}
-
-/**
- * Format current date and time
- */
-function formatDateTime() {
-  const now = new Date();
-  return now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
-}
-
-/**
- * Generate documentation header
- */
-function generateHeader(version, gitInfo, generatedAt) {
-  return `---
-**Auto-generated Documentation**
-
-- **NHS Frontend Version:** ${version}
-- **Git Branch:** ${gitInfo.branch}
-- **Git Commit:** ${gitInfo.commitHash}
-- **Generated:** ${generatedAt}
-- **Source:** [NHS Frontend Repository](https://github.com/nhsuk/nhsuk-frontend)
-
-*This documentation is automatically extracted from NHS Frontend component definitions. Do not edit manually.*
-
----
-
-`;
-}
-
-/**
- * Format object as Nunjucks-style with unquoted keys
- */
-// Formatter borrowed from NHS Frontend's own lib (the same code its review
-// app uses to display Nunjucks examples). Loaded in main() once the repo
-// path is known - see loadUpstreamMacroFormatter()
-let upstreamMacro = null;
-
-async function loadUpstreamMacroFormatter(repoPath) {
-  const libPath = path.join(repoPath, 'packages/nhsuk-frontend/src/nhsuk/lib/nunjucks/index.mjs');
-  try {
-    const lib = await import(`file://${path.resolve(libPath)}`);
-    upstreamMacro = lib.macro;
-  } catch (error) {
-    console.error('✗ Could not load the example formatter from NHS Frontend (lib/nunjucks)');
-    console.error(`   Tried: ${libPath}`);
-    console.error('   This needs an NHS Frontend checkout of v10.5+ with dependencies installed');
-    console.error('   (run npm install in the NHS Frontend repo)\n');
-    console.error(`   Underlying error: ${error.message}\n`);
-    process.exit(1);
-  }
-}
-
-/**
- * Extract the macro name from a macro.njk file
- */
-async function extractMacroName(componentDir) {
-  try {
-    const macroPath = path.join(componentDir, 'macro.njk');
-    const macroContent = await fs.readFile(macroPath, 'utf-8');
-    
-    // Match {% macro macroName(params) %} or {%- macro macroName(params) %}
-    const match = macroContent.match(/\{%-?\s*macro\s+(\w+)\s*\(/);
-    if (match) {
-      return match[1];
+    if (param.deprecated)
+    {
+      description = `**Deprecated in ${param.deprecated}, do not use.** ${description}`.trim()
     }
-    return null;
-  } catch (error) {
-    return null;
-  }
+
+    return [
+      `| \`${name}\` | ${param.type || 'unknown'} | ${required} | ${escapeTableCell(description)} |`,
+      ...parameterRows(param.params || [], componentSlugs, `${name}.`)
+    ]
+  })
 }
 
-/**
- * Dynamically import examples from a fixtures.mjs file (separate from macro-options.mjs)
- */
-async function loadFixtures(componentDir) {
-  try {
-    const fixturesPath = path.join(componentDir, 'fixtures.mjs');
-    const fixturesUrl = `file://${path.resolve(fixturesPath)}`;
-    const fixturesModule = await import(fixturesUrl);
-    return fixturesModule.examples || {};
-  } catch (error) {
-    // No fixtures file, or it failed to import - return empty
-    return {};
+const codeBlock = code => ['```njk', code, '```', '']
+
+function renderComponent(component, componentSlugs, nunjucksLib)
+{
+  const lines = [
+    `# ${component.name}`,
+    '',
+    `> ${attribution} [How to read this file](../index.md#reading-the-parameter-tables).`,
+    '',
+    `**Macro name:** \`${component.macroName}\``,
+    ''
+  ]
+
+  if (component.params.length)
+  {
+    lines.push(
+      '## Parameters',
+      '',
+      '| Parameter | Type | Required | Description |',
+      '|-----------|------|----------|-------------|',
+      ...parameterRows(component.params, componentSlugs),
+      ''
+    )
   }
-}
 
-/**
- * Dynamically import and parse a macro-options.mjs file
- */
-async function parseComponentFile(filePath) {
-  try {
-    // Convert to file:// URL for dynamic import
-    const fileUrl = `file://${path.resolve(filePath)}`;
-    const module = await import(fileUrl);
-
-    const componentDir = path.dirname(filePath);
-    const macroName = await extractMacroName(componentDir);
-
-    // Examples live in fixtures.mjs (separate from macro-options.mjs)
-    const examples = await loadFixtures(componentDir);
-
-    return {
-      name: module.name || path.basename(path.dirname(filePath)),
-      macroName: macroName,
-      params: module.params || {},
-      examples,
-      options: module.options || {},
-      filePath
-    };
-  } catch (error) {
-    // Silently skip files that can't be imported
-    return null;
+  if (component.examples.length)
+  {
+    lines.push('## Examples', '')
   }
-}
 
-/**
- * Extract flattened parameters including nested ones
- */
-function flattenParams(params, prefix = '') {
-  const flattened = [];
-
-  for (const [name, param] of Object.entries(params)) {
-    const fullName = prefix ? `${prefix}.${name}` : name;
-
-    flattened.push({
-      name: fullName,
-      ...param
-    });
-
-    // Recursively flatten nested params
-    if (param.params && typeof param.params === 'object') {
-      flattened.push(...flattenParams(param.params, fullName));
+  for (const { name, variants } of component.examples)
+  {
+    const [first, ...others] = variants
+    lines.push(`### ${name}`, '')
+    if (first.description)
+    {
+      lines.push(first.description, '')
+    }
+    lines.push(...codeBlock(exampleCode(nunjucksLib, component, first)))
+    if (others.length)
+    {
+      lines.push(`[${others.length} more ${others.length === 1 ? 'variant' : 'variants'} of this example](variants/${component.slug}.md#${headingAnchor(name)})`, '')
     }
   }
 
-  return flattened;
+  return lines.join('\n')
 }
 
-/**
- * Format a single example for display
- */
-function formatExample(component, exampleName, example) {
-  // Some examples (e.g. inset-text) use only a callBlock with no context params — treat as {}
-  if (!example.context && !example.callBlock) return null;
-  const context = example.context ?? {};
+function renderVariants(component, nunjucksLib)
+{
+  const examplesWithVariants = component.examples.filter(({ variants }) => variants.length > 1)
+  if (!examplesWithVariants.length)
+  {
+    return null
+  }
 
-  // Use the actual macro name if available, otherwise derive from component name
-  const macroName = component.macroName || component.name.toLowerCase().replace(/\s+/g, '');
+  const lines = [
+    `# ${component.name} variants`,
+    '',
+    `> ${attribution} Parameters and main examples are in [${component.slug}.md](../${component.slug}.md).`,
+    ''
+  ]
 
-  const output = upstreamMacro(macroName, `${macroName}/macro.njk`, {
-    context,
-    callBlock: example.callBlock
-  });
+  for (const { name, variants } of examplesWithVariants)
+  {
+    lines.push(`## ${name}`, '')
+    variants.slice(1).forEach((variant, index) =>
+    {
+      lines.push(`### ${variant.description || `Variant ${index + 2}`}`, '')
+      lines.push(...codeBlock(exampleCode(nunjucksLib, component, variant)))
+    })
+  }
 
-  // Drop the {% from ... %} import line - the prototype kit makes all
-  // component macros available globally, so examples shouldn't show imports
-  return output.replace(/^\{% from [^\n]*%\}\s*\n+/, '').trim();
+  return lines.join('\n')
 }
 
-/**
- * Get example value based on parameter type and name
- */
-function getExampleValue(type, name) {
-  switch (type) {
-    case 'string':
-      if (name.includes('id') || name.includes('Id')) return '"example-id"';
-      if (name === 'name') return '"example-name"';
-      if (name === 'text') return '"Example text"';
-      if (name === 'href') return '"#example"';
-      if (name === 'classes') return '"nhsuk-example-class"';
-      return '"example"';
-    case 'boolean':
-      return 'false';
-    case 'array':
-      return '[]';
-    case 'object':
-      return '{}';
-    case 'integer':
-      return '1';
-    default:
-      return '"example"';
-  }
+function renderIndex(components)
+{
+  return [
+    '# NHS Frontend reference',
+    '',
+    `> Describes NHS Frontend v${frontendVersion}. ${attribution}`,
+    '',
+    '## How to use these docs',
+    '',
+    '- Before writing or changing a macro call, read that component\'s file. Do not guess parameter names: names from memory are often out of date.',
+    '- Use only the parameters listed in a component\'s table.',
+    '- Use the macros. Do not hand-write component HTML when a macro exists.',
+    '- Read only the files you need. Each component\'s main file has its parameters and examples, and links to more variants where they exist.',
+    '- Check the `nhsuk-frontend` version in the project\'s `package.json` against the version above. Older versions may not support everything listed here.',
+    '',
+    '## Other references',
+    '',
+    '- [Utility classes](utility-classes.md): every `nhsuk-u-` class and what it does, including the spacing and type scales',
+    '- [Sass reference](sass-reference.md): every mixin, function and variable, with a line-numbered table of contents',
+    '',
+    '## Components',
+    '',
+    '| Component | Macro | Category | File |',
+    '|-----------|-------|----------|------|',
+    ...components.map(({ name, macroName, slug }) => `| ${name} | \`${macroName}()\` | ${categoryOf(slug)} | [components/${slug}.md](components/${slug}.md) |`),
+    '',
+    '## Reading the parameter tables',
+    '',
+    '- Options listed as `object` with nested `text` and `html` usually also accept a plain string when only text is needed, for example `label: "Full name"`, `hint: "..."` or `errorMessage: "..."`. This includes labels, legends, hints, error messages, headings, captions, descriptions and summaries, and table, summary list and tab content. The examples show which options accept a string.',
+    '- A plain string is always escaped. For HTML, use the `html` option, including for HTML built in a `set` block.',
+    '- Options marked as deprecated still work but will be removed. Use their replacement.',
+    ''
+  ].join('\n')
 }
 
-/**
- * Generate fallback example when no real examples exist
- */
-function generateFallbackExample(component) {
-  const flatParams = flattenParams(component.params);
-  const requiredParams = flatParams
-    .filter(param => param.required)
-    .slice(0, 5);
+async function main()
+{
+  const components = await loadComponents()
+  const nunjucksLib = await loadNunjucksLib()
+  const componentSlugs = new Set(components.map(({ slug }) => slug))
 
-  if (requiredParams.length > 0) {
-    let output = `{\n`;
-    for (const param of requiredParams) {
-      const exampleValue = getExampleValue(param.type, param.name);
-      output += `  ${param.name}: ${exampleValue},\n`;
-    }
-    output += `  // ... other optional params\n`;
-    output += `}`;
-    return output;
-  } else {
-    return '*No required parameters*';
-  }
-}
+  // Removes files for components that upstream has renamed or deleted
+  await fs.rm(path.join(outputDir, 'components'), { recursive: true, force: true })
 
-/**
- * Create URL-safe slug from component name
- */
-function slugify(text) {
-  return text.toLowerCase().replace(/\s+/g, '-');
-}
+  for (const component of components)
+  {
+    const componentFile = path.join(outputDir, 'components', `${component.slug}.md`)
+    await writeFileCreatingFolders(componentFile, renderComponent(component, componentSlugs, nunjucksLib))
 
-/**
- * Intelligently categorize a component based on its characteristics
- */
-function categorizeComponent(component) {
-  const slug = component.name.toLowerCase().replace(/\s+/g, '-');
-  const flatParams = flattenParams(component.params);
-  const paramNames = flatParams.map(p => p.name);
-  
-  // Static mapping for known components (takes precedence)
-  const knownCategories = {
-    // Form Inputs
-    'input': 'Form Inputs',
-    'textarea': 'Form Inputs',
-    'select': 'Form Inputs',
-    'radios': 'Form Inputs',
-    'checkboxes': 'Form Inputs',
-    'date-input': 'Form Inputs',
-    'file-upload': 'Form Inputs',
-    'character-count': 'Form Inputs',
-    
-    // Form Controls
-    'button': 'Form Controls',
-    'fieldset': 'Form Controls',
-    'label': 'Form Controls',
-    'legend': 'Form Controls',
-    'hint': 'Form Controls',
-    'error-message': 'Form Controls',
-    'error-summary': 'Form Controls',
-    
-    // Navigation
-    'back-link': 'Navigation',
-    'breadcrumb': 'Navigation',
-    'breadcrumbs': 'Navigation',
-    'pagination': 'Navigation',
-    'skip-link': 'Navigation',
-    'contents-list': 'Navigation',
-    'link': 'Navigation',
-    
-    // Layout
-    'header': 'Layout',
-    'footer': 'Layout',
-    'width-container': 'Layout',
-    'container': 'Layout',
-    
-    // Notifications
-    'warning-callout': 'Notifications',
-    'care-card': 'Notifications',
-    'error-summary': 'Notifications',
-    
-    // Content
-    'action-link': 'Content',
-    'card': 'Content',
-    'details': 'Content',
-    'expander': 'Content',
-    'images': 'Content',
-    'image': 'Content',
-    'inset-text': 'Content',
-    'summary-list': 'Content',
-    'table': 'Content',
-    'tag': 'Content',
-    'do-dont-list': 'Content',
-    'review-date': 'Content'
-  };
-  
-  // Check known categories first
-  if (knownCategories[slug]) {
-    return knownCategories[slug];
-  }
-  
-  // Dynamic categorization based on characteristics
-  
-  // Check if it's a form input (has input-like parameters)
-  if (paramNames.includes('name') && paramNames.includes('id') && 
-      (paramNames.includes('value') || paramNames.includes('items'))) {
-    return 'Form Inputs';
-  }
-  
-  // Check if it's navigation (has href or items for navigation)
-  if (slug.includes('nav') || slug.includes('link') || slug.includes('menu') ||
-      (paramNames.includes('href') && (slug.includes('back') || slug.includes('skip')))) {
-    return 'Navigation';
-  }
-  
-  // Check if it's a notification/callout (has visual prominence indicators)
-  if (slug.includes('alert') || slug.includes('warning') || slug.includes('callout') || 
-      slug.includes('banner') || slug.includes('notification')) {
-    return 'Notifications';
-  }
-  
-  // Check if it's layout (has structural role)
-  if (slug.includes('container') || slug.includes('wrapper') || slug.includes('grid') ||
-      slug.includes('header') || slug.includes('footer')) {
-    return 'Layout';
-  }
-  
-  // Check if it's a form control (has label, error, hint type params)
-  if ((slug.includes('label') || slug.includes('error') || slug.includes('hint')) ||
-      (paramNames.includes('label') && paramNames.includes('errorMessage'))) {
-    return 'Form Controls';
-  }
-  
-  // Default to Content
-  return 'Content';
-}
-
-/**
- * Categorize all components and return organized structure
- */
-function categorizeComponents(components) {
-  const categories = {
-    'Form Inputs': [],
-    'Form Controls': [],
-    'Navigation': [],
-    'Content': [],
-    'Layout': [],
-    'Notifications': []
-  };
-  
-  const uncategorizedComponents = [];
-
-  for (const component of components) {
-    const category = categorizeComponent(component);
-    
-    if (categories[category]) {
-      categories[category].push(component);
-    } else {
-      // Shouldn't happen with current logic, but safe fallback
-      categories['Content'].push(component);
-      uncategorizedComponents.push(component.name);
+    const variants = renderVariants(component, nunjucksLib)
+    if (variants)
+    {
+      await writeFileCreatingFolders(path.join(outputDir, 'components/variants', `${component.slug}.md`), variants)
     }
   }
 
-  // Remove empty categories
-  for (const [category, comps] of Object.entries(categories)) {
-    if (comps.length === 0) {
-      delete categories[category];
-    }
-  }
-  
-  // Log any components that might need manual categorization
-  if (uncategorizedComponents.length > 0) {
-    console.log(`ℹ️  Note: The following components were auto-categorized to 'Content':`);
-    console.log(`   ${uncategorizedComponents.join(', ')}`);
-  }
+  await writeFileCreatingFolders(path.join(outputDir, 'index.md'), renderIndex(components))
+  console.log(`Wrote ${components.length} components for NHS Frontend v${frontendVersion}`)
 
-  return categories;
+  // @prettier/sync, loaded by NHS Frontend's lib, keeps a worker thread alive
+  process.exit(0)
 }
 
-/**
- * Generate detailed component reference.
- *
- * Uses a two-pass approach so the TOC table can contain accurate line numbers:
- *  Pass 1 – build the full document with a single-line %%TOC%% placeholder.
- *            Scan that text to find the line number of every ## heading.
- *  Pass 2 – build the real TOC table. The placeholder (1 line) expands into
- *            (4 + N) lines, so shift every recorded line number by (3 + N).
- *            Replace the placeholder with the finished table.
- */
-function generateDocumentation(components, version, gitInfo, generatedAt) {
-  const header = generateHeader(version, gitInfo, generatedAt);
-  
-  // Categorize components
-  const categories = categorizeComponents(components);
-
-  // Build a flat ordered list of { comp, category } matching the TOC order
-  const tocRows = [];
-  for (const [category, comps] of Object.entries(categories)) {
-    for (const comp of comps) {
-      tocRows.push({ comp, category });
-    }
-  }
-
-  // ── PASS 1 ───────────────────────────────────────────────────────────────
-  // Build full document with a one-line placeholder where the TOC table will go.
-
-  const TOC_PLACEHOLDER = '%%TOC%%';
-
-  let doc = `# NHS Frontend Component Reference
-
-${header}Use the component reference table below to find the line number for any component, then read it with a file tool.
-
-## Table of Contents
-
-${TOC_PLACEHOLDER}
-
-## Reading the parameter tables
-
-- Options listed as \`object\` with nested \`text\` and \`html\` usually also accept a plain string when only text is needed, for example \`label: "Full name"\`, \`hint: "..."\` or \`errorMessage: "..."\`. This includes labels, legends, hints, error messages, headings, captions, descriptions and summaries, and table, summary list and tab content. The examples show which options accept a string.
-- A plain string is always escaped. For HTML, use the \`html\` option, including for HTML built in a \`set\` block.
-- Options marked as deprecated still work but will be removed. Use their replacement.
-
----
-
-`;
-
-  // Process each component
-  for (const component of components) {
-    doc += `## ${component.name}\n\n`;
-    doc += `[↑ Back to top](#table-of-contents)\n\n`;
-
-    if (component.macroName) {
-      doc += `**Macro name:** \`${component.macroName}\`\n\n`;
-    }
-
-    // Add component description if available in examples
-    const defaultExample = component.examples.default || component.examples[Object.keys(component.examples)[0]];
-    if (defaultExample?.description) {
-      doc += `${defaultExample.description}\n\n`;
-    }
-
-    // Parameters section
-    if (Object.keys(component.params).length > 0) {
-      doc += `### Parameters\n\n`;
-      doc += `| Parameter | Type | Required | Description |\n`;
-      doc += `|-----------|------|----------|-------------|\n`;
-
-      const flatParams = flattenParams(component.params);
-
-      for (const param of flatParams) {
-        const type = param.type || 'unknown';
-        // Upstream keeps required: true on deprecated params that have a replacement
-        const required = param.required && !param.deprecated ? '✓' : '';
-        let description = param.description || '';
-        if (param.isComponent) {
-          description = description ? `${description} *(accepts nested component params)*` : '*(accepts nested component params)*';
-        }
-        if (param.deprecated) {
-          description = `**Deprecated in ${param.deprecated}, do not use.** ${description}`.trim();
-        }
-
-        doc += `| \`${param.name}\` | ${type} | ${required} | ${description} |\n`;
-      }
-
-      doc += `\n`;
-    }
-
-    // Examples section
-    // Upstream keeps fixtures that exercise deprecated options, named as such
-    const exampleKeys = Object.keys(component.examples)
-      .filter(exampleKey => !exampleKey.toLowerCase().includes('deprecated'));
-
-    if (exampleKeys.length > 0) {
-      doc += `### Examples\n\n`;
-
-      for (const exampleKey of exampleKeys) {
-        const example = component.examples[exampleKey];
-        const formattedExample = formatExample(component, exampleKey, example);
-
-        if (formattedExample) {
-          doc += `#### ${exampleKey}\n\n`;
-          doc += `\`\`\`njk\n`;
-          doc += formattedExample;
-          doc += `\n\`\`\`\n\n`;
-        }
-      }
-    }
-
-    doc += `---\n\n`;
-  }
-
-  // ── PASS 2 ───────────────────────────────────────────────────────────────
-  // Scan the placeholder document to find where each ## heading landed.
-  const lines = doc.split('\n');
-  const headingLineMap = {};
-  for (let i = 0; i < lines.length; i++) {
-    const match = lines[i].match(/^## (.+)$/);
-    if (match && match[1] !== 'Table of Contents') {
-      headingLineMap[match[1]] = i + 1; // 1-based
-    }
-  }
-
-  // The placeholder (1 line) will be replaced by the TOC table.
-  // The replacement has: 1 column-header row + 1 separator row + N data rows = (2+N) content lines.
-  // The trailing \n on tocTable creates an extra blank before the following \n\n in the template,
-  // adding 1 more line. Net shift = (2+N+1) - 1 = 2+N.
-  const lineOffset = 2 + tocRows.length;
-
-  // Build the TOC table with corrected line numbers.
-  let tocTable = `| Component | Macro | Category | Line |\n`;
-  tocTable    += `|-----------|-------|----------|------|\n`;
-  for (const { comp, category } of tocRows) {
-    const macroLabel = comp.macroName ? `\`${comp.macroName}()\`` : '—';
-    const lineNum = (headingLineMap[comp.name] ?? 0) + lineOffset;
-    tocTable += `| ${comp.name} | ${macroLabel} | ${category} | ${lineNum} |\n`;
-  }
-
-  return doc.replace(TOC_PLACEHOLDER, tocTable);
-}
-
-/**
- * Find all component directories
- */
-async function findComponents(componentsDir) {
-  try {
-    const entries = await fs.readdir(componentsDir, { withFileTypes: true });
-    const componentDirs = entries
-      .filter(entry => entry.isDirectory())
-      .map(entry => entry.name);
-
-    return componentDirs;
-  } catch (error) {
-    console.error('Error reading components directory:', error.message);
-    return [];
-  }
-}
-
-/**
- * Main execution function
- */
-async function main() {
-  // Check for help flag
-  if (process.argv.includes('--help') || process.argv.includes('-h')) {
-    showHelp();
-  }
-
-  console.log('🏥 NHS Frontend Component Documentation Generator');
-  console.log('==================================================\n');
-
-  // Resolve paths
-  let repoPath = path.resolve(CONFIG.repoPath);
-  let componentsDir = path.join(repoPath, CONFIG.componentsPath);
-
-  // Verify repository exists - prompt if not found
-  let pathValid = false;
-  while (!pathValid) {
-    try {
-      await fs.access(componentsDir);
-      console.log(`✓ Found NHS Frontend at: ${repoPath}\n`);
-      pathValid = true;
-    } catch (error) {
-      console.error(`✗ NHS Frontend not found at: ${repoPath}`);
-      console.error(`   Looking for: ${componentsDir}\n`);
-      
-      const userPath = await prompt('Enter path to NHS Frontend repository (or press Ctrl+C to cancel): ');
-      
-      if (!userPath) {
-        console.error('No path provided. Exiting.\n');
-        process.exit(1);
-      }
-
-      // Update paths with user input
-      repoPath = path.resolve(userPath);
-      componentsDir = path.join(repoPath, CONFIG.componentsPath);
-    }
-  }
-
-  // Load NHS Frontend's own example formatter (exits with guidance if unavailable)
-  await loadUpstreamMacroFormatter(repoPath);
-
-  // Create output directory
-  await fs.mkdir(CONFIG.outputDir, { recursive: true });
-
-  // Find all components
-  console.log('🔍 Scanning for components...');
-  const componentDirs = await findComponents(componentsDir);
-
-  if (componentDirs.length === 0) {
-    console.error('✗ No component directories found. Check repository structure.');
-    process.exit(1);
-  }
-
-  // Parse each component
-  const components = [];
-  let successCount = 0;
-
-  for (const componentDir of componentDirs) {
-    const macroOptionsPath = path.join(componentsDir, componentDir, 'macro-options.mjs');
-
-    try {
-      await fs.access(macroOptionsPath);
-      
-      const componentData = await parseComponentFile(macroOptionsPath);
-      if (componentData) {
-        components.push(componentData);
-        successCount++;
-        process.stdout.write('.');
-      }
-    } catch (error) {
-      // Component doesn't have macro-options.mjs, skip silently
-    }
-  }
-
-  console.log(''); // New line after dots
-  console.log(`✓ Found ${successCount} components\n`);
-
-  if (components.length === 0) {
-    console.error('✗ No components were successfully parsed. Check repository structure.');
-    process.exit(1);
-  }
-
-  // Sort components alphabetically
-  components.sort((a, b) => a.name.localeCompare(b.name));
-
-  // Get NHS Frontend version and git info
-  console.log('📋 Reading NHS Frontend version and git info...');
-  const version = await getNHSFrontendVersion(repoPath);
-  const gitInfo = await getGitInfo(repoPath);
-  const generatedAt = formatDateTime();
-
-  if (isInternalVersion(version) && !shouldAllowInternal()) {
-    console.error(`✗ Refusing to generate docs from internal NHS Frontend version: ${version}`);
-    console.error('   This usually means you are on an unreleased branch/commit (for example main).');
-    console.error('   To generate docs for latest release, checkout a stable tag in your nhsuk-frontend clone, e.g.:');
-    console.error('   git fetch --all --tags');
-    console.error("   git checkout \"$(git tag --sort=-v:refname | grep -E '^v[0-9]+\\.[0-9]+\\.[0-9]+$' | head -n1)\"");
-    console.error('   If you really want internal docs, rerun with --allow-internal or ALLOW_INTERNAL_NHS_FRONTEND=1.\n');
-    process.exit(1);
-  }
-
-  console.log(`✓ NHS Frontend v${version} (${gitInfo.branch}@${gitInfo.commitHash})\n`);
-
-  // Generate documentation
-  console.log('📝 Generating documentation...');
-  const fullReference = generateDocumentation(components, version, gitInfo, generatedAt);
-
-  await fs.writeFile(path.join(CONFIG.outputDir, 'nhs-frontend-component-reference.md'), fullReference);
-
-  console.log(`✓ Component reference: ${CONFIG.outputDir}/nhs-frontend-component-reference.md`);
-  console.log('\n✅ Documentation generation complete!\n');
-
-  // Explicit exit - @prettier/sync (loaded via NHS Frontend's lib) keeps a
-  // worker thread alive that would otherwise stop the process ending
-  process.exit(0);
-}
-
-// Run the script
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main().catch(error => {
-    console.error('\n✗ Error generating documentation:');
-    console.error(error.message);
-    console.error('\nRun with --help for usage information.\n');
-    process.exit(1);
-  });
-}
-
-export { main, parseComponentFile, generateDocumentation };
+main().catch(error =>
+{
+  console.error(error)
+  process.exit(1)
+})

@@ -2,6 +2,8 @@
 applyTo: "**/*.njk, **/*.html, app/**/*.js"
 ---
 
+Agents reading this guide: do not modify this guide. It comes from https://github.com/edwardhorsford/NHS-LLM-documentation and will be overwritten.
+
 # NHS prototype kit guide
 
 A guide for building prototypes with the NHS prototype kit. This is kept separate from the main NHS frontend guide as it focuses on specifics of using the prototype kit rather than general NHS frontend usage.

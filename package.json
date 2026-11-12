@@ -1,0 +1,22 @@
+{
+  "name": "nhs-llm-documentation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentation for building NHS services with coding agents, generated from NHS Frontend",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "scripts": {
+    "reference": "node scripts/generate-nhs-frontend-component-docs.js && node scripts/generate-nhs-frontend-utility-docs.js && node scripts/generate-nhs-frontend-sass-docs.js && npm test",
+    "test": "node scripts/check-docs.js"
+  },
+  "dependencies": {
+    "@prettier/sync": "^0.6.0",
+    "nhsuk-frontend": "^10.7.1",
+    "nunjucks": "^3.2.4",
+    "outdent": "^0.8.0",
+    "sassdoc": "^2.7.4"
+  }
+}
