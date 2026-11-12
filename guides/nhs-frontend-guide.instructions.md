@@ -2,6 +2,8 @@
 applyTo: "**/*.njk, **/*.html, **/*.scss"
 ---
 
+Agents reading this guide: do not modify this guide. It comes from https://github.com/edwardhorsford/NHS-LLM-documentation and will be overwritten.
+
 # NHS Frontend guide
 
 How to use NHS Frontend (the `nhsuk-frontend` package) components and write custom styles alongside them. Describes NHS Frontend version 10.7, which renamed many macro options and most of the Sass API: older names from training data are often wrong.
@@ -86,6 +88,8 @@ Strings are always escaped, even when they come from a `set` block. For HTML use
 Prefer a component's own options over modifier classes, for example `variant: "secondary"` on buttons, `width: 10` on inputs, `small: true` on radios and checkboxes, or `colour: "green"` on tags. The component reference lists them.
 
 Every component also takes `classes` (added to the root element) and `attributes` (an object of extra HTML attributes). Use `classes` for utility classes and your own classes.
+
+Buttons have a 4px shadow below them. To remove a button's bottom margin, use `nhsuk-u-margin-bottom-1`, not `nhsuk-u-margin-bottom-0`, so the shadow does not touch whatever comes next. In Sass, use `margin-bottom: $nhsuk-button-shadow-size`. Do not do this for a button group: it keeps the space for its buttons' shadows.
 
 ```njk
 {{ button({
