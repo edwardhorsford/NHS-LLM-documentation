@@ -320,6 +320,44 @@
 }) }}
 ```
 
+### with HTML
+
+```njk
+{{ summaryList({
+  html: '<div class="nhsuk-summary-list__row">\n  <dt class="nhsuk-summary-list__key">\n    Name\n  </dt>\n  <dd class="nhsuk-summary-list__value">\n    Karen Francis\n  </dd>\n  <dd class="nhsuk-summary-list__actions">\n    <a class="nhsuk-link" href="#/change">Change<span class="nhsuk-u-visually-hidden"> name</span></a>\n  </dd>\n</div>\n<div class="nhsuk-summary-list__row">\n  <dt class="nhsuk-summary-list__key">\n    Date of birth\n  </dt>\n  <dd class="nhsuk-summary-list__value">\n    15 March 1984\n  </dd>\n  <dd class="nhsuk-summary-list__actions">\n    <a class="nhsuk-link" href="#/change">Change<span class="nhsuk-u-visually-hidden"> date of birth</span></a>\n  </dd>\n</div>\n'
+}) }}
+```
+
+### with HTML via call block
+
+```njk
+{% call summaryList() -%}
+<div class="nhsuk-summary-list__row">
+  <dt class="nhsuk-summary-list__key">
+    Name
+  </dt>
+  <dd class="nhsuk-summary-list__value">
+    Karen Francis
+  </dd>
+  <dd class="nhsuk-summary-list__actions">
+    <a class="nhsuk-link" href="#/change">Change<span class="nhsuk-u-visually-hidden"> name</span></a>
+  </dd>
+</div>
+<div class="nhsuk-summary-list__row">
+  <dt class="nhsuk-summary-list__key">
+    Date of birth
+  </dt>
+  <dd class="nhsuk-summary-list__value">
+    15 March 1984
+  </dd>
+  <dd class="nhsuk-summary-list__actions">
+    <a class="nhsuk-link" href="#/change">Change<span class="nhsuk-u-visually-hidden"> date of birth</span></a>
+  </dd>
+</div>
+
+{%- endcall %}
+```
+
 ### with item values as array of strings
 
 ```njk

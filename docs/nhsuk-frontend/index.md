@@ -1,6 +1,6 @@
 # NHS Frontend reference
 
-> Describes NHS Frontend v10.7.1. Generated from [NHS Frontend](https://github.com/nhsuk/nhsuk-frontend), © NHS England, MIT licence. Do not edit by hand.
+> Describes NHS Frontend v10.7.2. Generated from [NHS Frontend](https://github.com/nhsuk/nhsuk-frontend), © NHS England, MIT licence. Do not edit by hand.
 
 ## How to use these docs
 
