@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@prettier/sync": "^0.6.0",
-    "nhsuk-frontend": "^10.7.1",
+    "nhsuk-frontend": "^10.7.2",
     "nunjucks": "^3.2.4",
     "outdent": "^0.8.0",
     "sassdoc": "^2.7.4"
